@@ -3,6 +3,9 @@
 import cherrypy
 import os.path
 from webapp.root import Root
+from modules.database import init_db
+
+init_db()
 
 cherrypy.tree.mount(Root(), '', 'app.conf')
 
