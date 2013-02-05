@@ -6,5 +6,5 @@ class Root:
 
     @cherrypy.expose
     def index(self):
-        raise cherrypy.InternalRedirect("/workouts.html")
+        raise cherrypy.InternalRedirect("/Code/index.html")
 
