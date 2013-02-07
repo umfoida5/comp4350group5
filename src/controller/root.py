@@ -1,10 +1,10 @@
 import cherrypy
 from jinja2 import Environment, FileSystemLoader
-from workouts import Workouts
+from athletes import Athletes
 env = Environment(loader=FileSystemLoader('view/web/templates'))
 
 class Root:
-    workouts = Workouts()
+    athletes = Athletes()
 
     @cherrypy.expose
     def index(self):
