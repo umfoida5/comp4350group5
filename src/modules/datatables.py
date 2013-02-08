@@ -3,7 +3,7 @@ from sqlalchemy import or_
 def dtify(query, search_filter, convert_fn, params):
     response = {'sEcho': int(params['sEcho'])}
 
-    if search_filter:
+    if search_filter is not None:
         filtered_query = query.filter(search_filter)
     else:
         filtered_query = query
