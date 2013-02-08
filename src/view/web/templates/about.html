@@ -16,37 +16,9 @@ Copyright [2013] [UofM]
    limitations under the License. 
 -->
 
-
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>CardioQuest - About</title>
-	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">	 
-</head>
-
-<!-- Modified from Bootstrap United Sample Code-->
-<body>
-<div class="container">
-
-	<!-- NAVIGATION BAR ======================================= -->
-	<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container">
-				<a class="brand" href="index.html">CardioQuest</a>
-				<div class="nav-collapse">
-					<ul class="nav" id="main-menu-left">
-					<li><a href="athlete.html">Athlete</a></li>
-					<li><a href="exercise.html">Exercise</a></li>
-					<li><a href="about.html">About</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div><!-- .navbar-->
-
-
 	<!-- those two br tags are weird; need to fix spacing with css (TODO)-->
-	
+{% extends "index.html" %}
+{% block body %}
 	<div class="span16">
 
 		<br><br>
@@ -86,15 +58,4 @@ Copyright [2013] [UofM]
 		<p>Here we can credit CherryPy, Bootstrap, etc.</p>
 
 	</div> <!-- .span container-->
-
-	<!-- FOOTER ======================================= -->
-    <div id="footer">
-      <div class="container">
-        <p class="muted credit"> &copy; COMP 4350 Group 5. &nbsp;&nbsp;&nbsp;&nbsp; <a href="about.html">About</a> </p>
-      </div>
-    </div> <!-- .footer -->
-
-
-</div><!-- .container -->
-</body>
-</html>
+{% endblock body %}
