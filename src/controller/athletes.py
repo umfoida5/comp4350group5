@@ -3,6 +3,7 @@ from sqlalchemy import or_
 from modules.database import db_session
 from model.athlete import Athlete
 from modules.template import env
+from modules.datatables import dtify
 
 class Athletes:
     @cherrypy.expose
@@ -28,20 +29,11 @@ class Athletes:
     @cherrypy.tools.json_out()
     @cherrypy.expose
     def json(self, **params):
-        response = {'sEcho': int(params['sEcho'])}
-
         search = '%%%s%%' % params['sSearch']
-        athletes_filter = Athlete.query.filter(or_(Athlete.first_name.like(search), Athlete.last_name.like(search)))
+        search_filter = or_(Athlete.first_name.like(search), Athlete.last_name.like(search))
 
-        response['iTotalRecords'] = Athlete.query.count()
-        response['iTotalDisplayRecords'] = athletes_filter.count()
+        def convert(row):
+            return (row.first_name, row.last_name)
 
-        athletes = athletes_filter.limit(params['iDisplayLength']).offset(params['iDisplayStart']).all()
+        return dtify(Athlete.query, search_filter, convert, params)
 
-        aaData = []
-        for athlete in athletes:
-            aaData.append((athlete.first_name, athlete.last_name))
-        response['aaData'] = aaData
-
-        return response
-    
