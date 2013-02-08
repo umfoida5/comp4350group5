@@ -4,7 +4,7 @@ from modules.database import Base
 class Activity(Base):
     __tablename__ = 'activities'
     id = Column(Integer, primary_key=True)
-    athlete_id = Column(Integer, ForeignKey("athletes.id"), nullable=False)
+    #athlete_id = Column(Integer, ForeignKey("athletes.id"), nullable=False)
     distance = Column(Integer)
     duration = Column(Integer)
     #birth_date = Column(Date())
@@ -13,6 +13,7 @@ class Activity(Base):
     #height = Column(Integer)
 
     def __init__(self, distance, duration):
+        #self.athlete = athlete
         self.distance = distance
         self.duration = duration
 
