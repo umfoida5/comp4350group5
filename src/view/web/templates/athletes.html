@@ -1,48 +1,25 @@
-<!DOCTYPE html>
+{% extends "index.html" %}
 
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>CardioQuest</title>
-	<link rel="stylesheet" href="../css/bootstrap.min.css">
-        <script src="../js/jquery.min.js"></script>
-	<script src="../js/jquery.dataTables.min.js"></script>
+{% block script  %}
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/jquery.dataTables.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#athleteTable').dataTable( {
+	"bProcessing": true,
+	"bServerSide": true,
+	"sAjaxSource": "json"
+	} );
+      } );
+  </script>
+{% endblock script %}
 
-	<script>
-		$(document).ready(function() {
-		    $('#athleteTable').dataTable( {
-		        "bProcessing": true,
-		        "bServerSide": true,
-		        "sAjaxSource": "json"
-		    } );
-		} );
-	</script>
-
-</head>
-
-<!-- Modified from Bootstrap United Sample Code-->
-<body>
-<div class="container">
-
-	<!-- NAVIGATION BAR ======================================= -->
-	<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container">
-				<a class="brand" href="../">CardioQuest</a>
-				<div class="nav-collapse">
-					<ul class="nav" id="main-menu-left">
-					<li><a href="../athlete">Athlete</a></li>
-					<li><a href="../activities">Activities</a></li>
-					<li><a href="../about">About</a></li>
-					</ul>
-				</div>
-			</div> 
-		</div>
-	</div><!-- .navbar-->
+{% block body %}
+  <!-- TABLE ======================================= -->
+   <br><br><br><br>
 
 
-<!-- TABLE ======================================= -->
-<table class="table table-bordered table-striped table-hover" id="athleteTable">
+    <table class="table table-bordered table-striped table-hover" id="athleteTable">
     <thead>
       <tr>
         <th>First Name</th>
@@ -53,22 +30,5 @@
 
     </tbody>
   </table>
-<!-- end table ======================================= -->
-
-
-
-
-
-
-
-	<!-- FOOTER ======================================= -->
-    <div id="footer">
-      <div class="container">
-        <p class="muted credit"> &copy; COMP 4350 Group 5. &nbsp;&nbsp;&nbsp;&nbsp; <a href="about.html">About</a> </p>
-      </div>
-    </div> <!-- .footer -->
-
-
-</div><!-- .container -->
-</body>
-</html>
+  <!-- end table ======================================= -->
+{% endblock body %}
