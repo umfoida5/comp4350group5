@@ -1,6 +1,6 @@
 import cherrypy
 from modules.database import db_session
-from model.athlete import Athlete
+from model.activity import Activity
 from modules.template import env
 
 class Activities:
@@ -13,11 +13,11 @@ class Activities:
     @cherrypy.expose
     def json(self):
         response = {}
-        athletes = Athlete.query.all()
+        activities = Activity.query.all()
 
         aaData = []
-        for athlete in athletes:
-            aaData.append((athlete.first_name, athlete.last_name))
+        for activity in activities:
+            aaData.append((activity.distance, activity.duration))
         response['aaData'] = aaData
 
         return response
