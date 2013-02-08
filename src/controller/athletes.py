@@ -11,7 +11,7 @@ class Athletes:
 
     @cherrypy.tools.json_out()
     @cherrypy.expose
-    def json(self):
+    def json(self, **params):
         response = {}
         athletes = Athlete.query.all()
 
