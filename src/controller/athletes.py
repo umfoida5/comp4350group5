@@ -1,4 +1,5 @@
 import cherrypy
+from sqlalchemy import or_
 from modules.database import db_session
 from model.athlete import Athlete
 from modules.template import env
@@ -12,8 +13,15 @@ class Athletes:
     @cherrypy.tools.json_out()
     @cherrypy.expose
     def json(self, **params):
-        response = {}
-        athletes = Athlete.query.all()
+        response = {'sEcho': int(params['sEcho'])}
+
+        search = '%%%s%%' % params['sSearch']
+        athletes_filter = Athlete.query.filter(or_(Athlete.first_name.like(search), Athlete.last_name.like(search)))
+
+        response['iTotalRecords'] = Athlete.query.count()
+        response['iTotalDisplayRecords'] = athletes_filter.count()
+
+        athletes = athletes_filter.all()
 
         aaData = []
         for athlete in athletes:
