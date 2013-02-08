@@ -1,8 +1,7 @@
 import cherrypy
-from jinja2 import Environment, FileSystemLoader
 from athletes import Athletes
 from activities import Activities
-env = Environment(loader=FileSystemLoader('view/web/templates'))
+from modules.template import env
 
 class Root:
     athletes = Athletes()
