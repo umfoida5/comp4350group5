@@ -9,6 +9,17 @@ init_db()
 db_session.add(Athlete("Joe", "Smith"))
 db_session.add(Athlete("Bob", "Brown"))
 db_session.add(Athlete("Frank", "Reese"))
+db_session.add(Athlete("Joe", "Smith"))
+db_session.add(Athlete("Bob", "Brown"))
+db_session.add(Athlete("Frank", "Reese"))
+db_session.add(Athlete("Joe", "Smith"))
+db_session.add(Athlete("Bob", "Brown"))
+db_session.add(Athlete("Frank", "Reese"))
+db_session.add(Athlete("Joe", "Smith"))
+db_session.add(Athlete("Bob", "Brown"))
+db_session.add(Athlete("Frank", "Reese"))
+
+db_session.commit()
 
 athletes = Athlete.query.all()
 

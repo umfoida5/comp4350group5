@@ -1,56 +1,54 @@
 <!DOCTYPE html>
 <html>
-<head>
-	{% block head %}
-	<meta charset="utf-8">
-	<title>CardioQuest</title>
-	<link rel="stylesheet" href="../css/bootstrap.min.css">	 
-	{% endblock head %}
-        {% block script %}
-	{% endblock script %}
-</head>
+  <head>
+    {% block head %}
+      <meta charset="utf-8">
+      <title>CardioQuest</title>
+      <link rel="stylesheet" href="../css/bootstrap.min.css">	 
+    {% endblock head %}
+    {% block script %}
+    {% endblock script %}
+  </head>
 
-<!-- Modified from Bootstrap United Sample Code-->
-<body>
-<div class="container">
-
-	{% block navigation_bar %}
-	<!-- NAVIGATION BAR ======================================= -->
-	<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container">
-				<a class="brand" href="../">CardioQuest</a>
-				<div class="nav-collapse">
-					<ul class="nav" id="main-menu-left">
-					<li><a href="../athletes">Athlete</a></li>
-					<li><a href="../activities">Activities</a></li>
-					<li><a href="../about">About</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div><!-- .navbar-->
-	{% endblock navigation_bar %}
-
-	{% block body %}
-	<!-- HERO UNIT ======================================= -->
-	<div class="hero-unit">
-		<h1>CardioQuest</h1>
-		<p>Your journey to a better life starts here.</p>
-		<p><a class="btn btn-primary btn-large pull-right">Get Started &raquo;</a></p>
-	</div><!-- .hero-unit -->
-	{% endblock body %}
-
-	{% block footer %}
-	<!-- FOOTER ======================================= -->
-    <div id="footer">
-      <div class="container">
-        <p class="muted credit" style="text-align:center"> &copy; COMP 4350 Group 5. &nbsp;&nbsp;&nbsp;&nbsp; <a href="../about">About</a> </p>
+  <!-- Modified from Bootstrap United Sample Code-->
+  <body>
+    <div class="container">
+      {% block navigation_bar %}
+      <!-- NAVIGATION BAR ======================================= -->
+      <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="brand" href="../">CardioQuest</a>
+            <div class="nav-collapse">
+              <ul class="nav" id="main-menu-left">
+                <li><a href="../athletes">Athlete</a></li>
+                <li><a href="../activities">Activities</a></li>
+                <li><a href="../about">About</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
-    </div> <!-- .footer -->
-	{% endblock footer %}
+      <!-- .navbar-->
+    {% endblock navigation_bar %}
+    
+    {% block body %}
+      <!-- HERO UNIT ======================================= -->
+      <div class="hero-unit">
+        <h1>CardioQuest</h1>
+        <p>Your journey to a better life starts here.</p>
+        <p><a class="btn btn-primary btn-large pull-right">Get Started &raquo;</a></p>
+      </div><!-- .hero-unit -->
+    {% endblock body %}
 
-
-</div><!-- .container -->
-</body>
+    {% block footer %}
+    <!-- FOOTER ======================================= -->
+      <div id="footer">
+        <div class="container">
+          <p class="muted credit" style="text-align:center"> &copy; COMP 4350 Group 5. &nbsp;&nbsp;&nbsp;&nbsp; <a href="../about">About</a> </p>
+        </div>
+      </div> <!-- .footer -->
+    {% endblock footer %}
+  </div><!-- .container -->
+  </body>
 </html>

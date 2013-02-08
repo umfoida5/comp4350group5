@@ -1,27 +1,26 @@
 {% extends "index.html" %}
 {% block body %}
-<br><br><br><br>
-{% block header %}
-{% endblock header %}
-{% block form %}
-<form class="form-horizontal">
-  <div class="control-group">
-    <label class="control-label" for="distance">Distance</label>
-    <div class="controls">
-      <input type="text" id="distance" placeholder="Distance">
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label" for="duration">Duration</label>
-    <div class="controls">
-      <input type="text" id="duration" placeholder="Duration">
-    </div>
-  </div>
-  <div class="control-group">
-    <div class="controls">
-      <button type="submit" class="btn">Save</button>
-    </div>
-  </div>
-</form>
-{% endblock form %}
+  {% block header %}
+  {% endblock header %}
+  {% block form %}
+    <form class="form-horizontal">
+      <div class="control-group">
+        <label class="control-label" for="distance">Distance</label>
+        <div class="controls">
+          <input type="text" id="distance" placeholder="Distance">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="duration">Duration</label>
+        <div class="controls">
+          <input type="text" id="duration" placeholder="Duration">
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <button type="submit" class="btn">Save</button>
+        </div>
+      </div>
+    </form>
+  {% endblock form %}
 {% endblock body %}

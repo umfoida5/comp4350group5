@@ -36,7 +36,7 @@ class Athletes:
         response['iTotalRecords'] = Athlete.query.count()
         response['iTotalDisplayRecords'] = athletes_filter.count()
 
-        athletes = athletes_filter.all()
+        athletes = athletes_filter.limit(params['iDisplayLength']).offset(params['iDisplayStart']).all()
 
         aaData = []
         for athlete in athletes:

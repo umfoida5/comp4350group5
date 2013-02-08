@@ -6,19 +6,16 @@
   <script>
     $(document).ready(function() {
       $('#athleteTable').dataTable( {
-	"bProcessing": true,
-	"bServerSide": true,
-	"sAjaxSource": "json"
-	} );
+        "bProcessing": true,
+        "bServerSide": true,
+        "sAjaxSource": "json"
+        } );
       } );
   </script>
 {% endblock script %}
 
 {% block body %}
   <!-- TABLE ======================================= -->
-   <br><br><br><br>
-
-
     <table class="table table-bordered table-striped table-hover" id="athleteTable">
     <thead>
       <tr>
@@ -27,7 +24,6 @@
       </tr>
     </thead>
     <tbody>
-
     </tbody>
   </table>
   <!-- end table ======================================= -->
