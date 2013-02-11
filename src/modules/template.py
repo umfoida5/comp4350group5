@@ -1,3 +1,6 @@
+import os
 from jinja2 import Environment, FileSystemLoader
 
-env = Environment(loader=FileSystemLoader('view/web/templates'))
+templatesdir = os.path.join(os.getcwd(), 'view/web/templates')
+
+env = Environment(loader=FileSystemLoader(templatesdir))

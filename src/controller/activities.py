@@ -1,7 +1,9 @@
 import cherrypy
+from sqlalchemy import or_
 from modules.database import db_session
 from model.activity import Activity
 from modules.template import env
+from modules.datatables import dtify
 
 class Activities:
     @cherrypy.expose
@@ -26,14 +28,13 @@ class Activities:
 
     @cherrypy.tools.json_out()
     @cherrypy.expose
-    def json(self):
-        response = {}
-        activities = Activity.query.all()
+    def json(self, **params):
+        search = '%%%s%%' % params['sSearch']
+        #search_filter = or_(Activity.distance.like(search), Activity.duration.like(search))
+        search_filter = None
 
-        aaData = []
-        for activity in activities:
-            aaData.append((activity.distance, activity.duration))
-        response['aaData'] = aaData
+        def convert(row):
+            return (row.distance, row.duration)
 
-        return response
+        return dtify(Activity.query, search_filter, convert, params)
     
