@@ -11,7 +11,7 @@ class Root:
     activities = Activities()
     events = Events()
     stats = Stats()
-	profiles = Profiles()
+    profiles = Profiles()
 
     @cherrypy.expose
     def index(self):
