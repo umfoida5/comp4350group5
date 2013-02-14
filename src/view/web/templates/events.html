@@ -3,25 +3,37 @@
 {% block script  %}
   <script src="../js/jquery.min.js"></script>
   <script src="../js/jquery.dataTables.min.js"></script>
+  <script src="../js/bootstrapPagination.js"></script>
   <script>
     $(document).ready(function() {
       $('#eventTable').dataTable( {
         "bProcessing": true,
         "bServerSide": true,
-        "sAjaxSource": "json"
+        "bLengthChange": false,
+        "sAjaxSource": "json",
+        "sPaginationType": "bootstrap",
+        "oLanguage": { "sSearch": "Filter by City: " },
+        "aoColumns": [
+            { sWidth: '15%', "bSearchable": true },
+            { sWidth: '55%', "bSearchable": false },
+            { sWidth: '20%', "bSearchable": true },
+            { sWidth: '10%', "bSearchable": false } ]
         } );
       } );
   </script>
 {% endblock script %}
 
 {% block body %}
+  <a class="btn btn-primary btn-large" href="create">Post an Event in your Area</a>
+  <h1>Upcoming Events</h1>
+
   <!-- TABLE ======================================= -->
     <table class="table table-bordered table-striped table-hover" id="eventTable">
     <thead>
       <tr>
         <th>Date</th>
-        <th>Description</th>
-        <th>Location</th>
+        <th>Event Description</th>
+        <th>City</th>
         <th>Distance(KM)</th>
       </tr>
     </thead>
