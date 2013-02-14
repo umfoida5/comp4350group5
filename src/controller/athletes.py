@@ -29,8 +29,8 @@ class Athletes:
     @cherrypy.tools.json_out()
     @cherrypy.expose
     def json(self, **params):
-        search = '%%%s%%' % params['sSearch']
-        search_filter = or_(Athlete.first_name.like(search), Athlete.last_name.like(search))
+        search = '%%%s%%' % params.get('sSearch', "")
+        search_filter = or_(Athlete.first_name.ilike(search), Athlete.last_name.ilike(search))
 
         def convert(row):
             return (row.first_name, row.last_name)

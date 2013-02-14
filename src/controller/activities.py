@@ -29,9 +29,8 @@ class Activities:
     @cherrypy.tools.json_out()
     @cherrypy.expose
     def json(self, **params):
-        search = '%%%s%%' % params['sSearch']
-        #search_filter = or_(Activity.distance.like(search), Activity.duration.like(search))
-        search_filter = None
+        search = '%%%s%%' % params.get('sSearch', "")
+        search_filter = or_(Activity.distance.ilike(search), Activity.duration.ilike(search))
 
         def convert(row):
             return (row.distance, row.duration)
