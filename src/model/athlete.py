@@ -6,7 +6,7 @@ class Athlete(Base):
     id = Column(Integer, primary_key=True)
     first_name = Column(String(50))
     last_name = Column(String(50))
-    #email = Column(String(120))
+    #~ email = Column(String(120))
     #birth_date = Column(Date())
     #about_me = Column(String(200))
     #location = Column(String(200))
@@ -17,5 +17,7 @@ class Athlete(Base):
         self.last_name = last_name
 
     def __repr__(self):
-        return '<Athlete %r %r>' % (self.first_name, self.last_name)
+        return '<Athlete %r %r >' % (self.first_name, self.last_name)
 
+    #~ def getAthlete(aid):
+        

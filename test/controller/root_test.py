@@ -2,7 +2,7 @@ import unittest
 import cherrypy
 import sys
 import os
-from jinja2 import Environment, FileSystemLoader
+#~ from jinja2 import Environment, FileSystemLoader
 sys.path.append('../../src')
 from controller.root import Root
 
