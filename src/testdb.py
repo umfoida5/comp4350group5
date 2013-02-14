@@ -33,8 +33,8 @@ db_session.commit()
 
 curr_time = datetime.datetime.now()
 
-db_session.add(Event(curr_time, "Join us at the Manitoba Marathon on Fathers Day.  More details at http://www.manitobamarathon.mb.ca/", "Winnipeg", 2))
-db_session.add(Event(curr_time, "Come join the run2!", "Brandon", 3))
-db_session.add(Event(curr_time, "Come join the run3!", "Saskatoon", 10))
+db_session.add(Event(curr_time, "Join us at the Manitoba Marathon on Fathers Day.  More details at http://www.manitobamarathon.mb.ca/", "winnipeg", 2))
+db_session.add(Event(curr_time, "Come join the run2!", "brandon", 3))
+db_session.add(Event(curr_time, "Come join the run3!", "saskatoon", 10))
 
 db_session.commit()
