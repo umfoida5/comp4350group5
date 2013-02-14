@@ -11,23 +11,18 @@ class Events:
         return tmpl.render()
 
     @cherrypy.expose
-    def new(self):
-        tmpl = env.get_template('events_new.html')
-        return tmpl.render()
-
-    @cherrypy.expose
-    def edit(self):
-        tmpl = env.get_template('events_edit.html')
+    def create(self):
+        tmpl = env.get_template('events_create.html')
         return tmpl.render()
 
     @cherrypy.tools.json_out()
     @cherrypy.expose
     def json(self, **params):
         search = '%%%s%%' % params['sSearch']
-        search_filter = None
+        search_filter = Event.location.like(search.lower()) #Search by location, lower case (we convert all input for City into lowercase)
 
         def convert(row):
-            return (row.event_date.strftime('%m/%d/%Y'), row.description, row.location, row.distance)
+            return (row.event_date.strftime('%b %d, %Y'), row.description, row.location, row.distance) #return the date string rather than the date itself
 
         return dtify(Event.query, search_filter, convert, params)
     
