@@ -1,13 +1,17 @@
 import cherrypy
 from athletes import Athletes
 from activities import Activities
+from events import Events
+from stats import Stats
 from profiles import Profiles
 from modules.template import env
 
 class Root:
     athletes = Athletes()
     activities = Activities()
-    profiles = Profiles()
+    events = Events()
+    stats = Stats()
+	profiles = Profiles()
 
     @cherrypy.expose
     def index(self):

@@ -6,28 +6,35 @@
   <script src="../js/bootstrapPagination.js"></script>
   <script>
     $(document).ready(function() {
-      $('#athleteTable').dataTable( {
+      $('#eventTable').dataTable( {
         "bProcessing": true,
         "bServerSide": true,
         "bLengthChange": false,
+        "sAjaxSource": "json",
         "sPaginationType": "bootstrap",
-        "sAjaxSource": "json"
+        "oLanguage": { "sSearch": "Filter by City: " },
+        "aoColumns": [
+            { sWidth: '15%', "bSearchable": true },
+            { sWidth: '55%', "bSearchable": false },
+            { sWidth: '20%', "bSearchable": true },
+            { sWidth: '10%', "bSearchable": false } ]
         } );
       } );
   </script>
 {% endblock script %}
 
 {% block body %}
-  <!-- Temporary Links to Access new/edit/view Pages -->
-  <a href="new">New Athlete</a>
-  <a href="edit">Edit Athlete</a>
-  <a href="view">View Athlete</a>
+  <a class="btn btn-primary btn-large" href="create">Post an Event in your Area</a>
+  <h1>Upcoming Events</h1>
+
   <!-- TABLE ======================================= -->
-    <table class="table table-bordered table-striped table-hover" id="athleteTable">
+    <table class="table table-bordered table-striped table-hover" id="eventTable">
     <thead>
       <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
+        <th>Date</th>
+        <th>Event Description</th>
+        <th>City</th>
+        <th>Distance(KM)</th>
       </tr>
     </thead>
     <tbody>
