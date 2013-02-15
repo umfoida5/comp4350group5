@@ -27,7 +27,7 @@ class Activities:
         search_filter = None
 
         def convert(row):
-            return (row.distance, row.duration)
+            return {"distance":row.distance, "duration":row.duration}
 
         return dtify(Activity.query, search_filter, convert, params)
     
