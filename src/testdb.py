@@ -1,12 +1,13 @@
 #!/usr/bin/python
 
-from modules.database import init_db, db_session
+from modules import database
 from model.athlete import Athlete
 from model.activity import Activity
 from model.event import Event
 import datetime
 
-init_db()
+database.init()
+db_session = database.session
 
 db_session.add(Athlete("Joe", "Smith"))
 db_session.add(Athlete("Bob", "Brown"))

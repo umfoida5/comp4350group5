@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, Date
-from modules.database import Base
+from modules import database
 
-class Athlete(Base):
+class Athlete(database.Base):
     __tablename__ = 'athletes'
     id = Column(Integer, primary_key=True)
     first_name = Column(String(50))

@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, Date, ForeignKey
-from modules.database import Base
+from modules import database
 
-class Event(Base):
+class Event(database.Base):
     __tablename__ = 'events'
     id = Column(Integer, primary_key=True)
     event_date = Column(Date())

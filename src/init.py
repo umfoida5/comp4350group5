@@ -3,9 +3,9 @@
 import cherrypy
 import os.path
 from controller.root import Root
-from modules.database import init_db
+from modules import database
 
-init_db()
+database.init()
 
 cherrypy.tree.mount(Root(), '', 'config/app.conf')
 

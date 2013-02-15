@@ -1,6 +1,6 @@
 import cherrypy
 from sqlalchemy import or_
-from modules.database import db_session
+from modules import database
 from model.activity import Activity
 from model.athlete import Athlete
 from modules.template import env
@@ -14,6 +14,8 @@ class Activities:
 
     @cherrypy.expose
     def create(self, distance, duration):
+        db_session = database.session
+
         athlete = Athlete.query.first()
         new = Activity(athlete.id, int(distance), int(duration))
         db_session.add(new)

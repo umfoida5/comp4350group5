@@ -1,6 +1,6 @@
 import cherrypy
 from datetime import datetime
-from modules.database import db_session
+from modules import database
 from model.event import Event
 from modules.template import env
 from modules.datatables import dtify
@@ -29,6 +29,8 @@ class Events:
     
     @cherrypy.expose
     def createEvent(self, eventDate=None, eventLocation=None, eventDistance=None, eventDescription=None):
+        db_session = database.session
+
         if eventDate is not None and eventLocation is not None and eventDistance is not None and eventDescription is not None:
             newEvent = Event(datetime.strptime(eventDate, "%d-%m-%Y"), eventDescription, eventLocation, int(eventDistance))
             db_session.add(newEvent)
