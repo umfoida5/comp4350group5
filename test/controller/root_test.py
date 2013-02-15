@@ -6,12 +6,10 @@ import os
 sys.path.append('../../src')
 from controller.root import Root
 
-env = Environment(loader=FileSystemLoader('view/web/templates'))
 
 class RootTest(unittest.TestCase):
 	
 	def indexTest(self):
-		return True
-		
+		self.assertTrue(True)	
 if(__name__ == '__main__'):
 	unittest.main()

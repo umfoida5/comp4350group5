@@ -2,6 +2,7 @@
 
 from modules.database import init_db, db_session
 from model.athlete import Athlete
+from model.achievement import Achievement
 from model.activity import Activity
 from model.event import Event
 import datetime
@@ -36,5 +37,20 @@ curr_time = datetime.datetime.now()
 db_session.add(Event(curr_time, "Join us at the Manitoba Marathon on Fathers Day.  More details at http://www.manitobamarathon.mb.ca/", "winnipeg", 2))
 db_session.add(Event(curr_time, "Come join the run2!", "brandon", 3))
 db_session.add(Event(curr_time, "Come join the run3!", "saskatoon", 10))
+
+db_session.commit()
+
+athlete = Athlete.query.first()
+
+db_session.add(Achievement("Unlockable", "First achievement!", "/images/ac1"))
+db_session.add(Achievement("Visible", "qeqeqeqe achievement!", "/images/a1"))
+db_session.add(Achievement("Crazy", "First qeqeqe!", "/images/aqe"))
+
+achievement_objs = Achievement.query.all()
+
+for i in achievement_objs:
+	athlete.achievements.append(i)
+
+print athlete.achievements
 
 db_session.commit()
