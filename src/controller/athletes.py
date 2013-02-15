@@ -33,7 +33,7 @@ class Athletes:
         search_filter = or_(Athlete.first_name.ilike(search), Athlete.last_name.ilike(search))
 
         def convert(row):
-            return (row.first_name, row.last_name)
+            return {"first_name": row.first_name, "last_name": row.last_name}
 
         return dtify(Athlete.query, search_filter, convert, params)
 
