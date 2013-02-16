@@ -31,6 +31,12 @@ class Jsonable:
         cls.to_dict = to_dict
         return cls
 
+"""
+    This function accepts a jsonable value (list or single element)
+    and calls to_dict() to transform the value into a python dictionary.
+
+    Useful for passing lists resulting from a query
+"""
 def make_jsonable(value):
 	if isinstance(value, list):
 		jsonable_data = []	
