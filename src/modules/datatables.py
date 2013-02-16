@@ -12,7 +12,7 @@ def send_datatable_response(query, search_filter, request_params):
     )
     if sort_col:
         sort_direction = request_params.get("sSortDir_0", "asc")
-        sorted_query = filtered_query.order_by(
+        filtered_query = filtered_query.order_by(
             "%s %s" % (sort_col, sort_direction)
         )
 
@@ -20,11 +20,13 @@ def send_datatable_response(query, search_filter, request_params):
         request_params.get('iDisplayLength', 10)
     ).offset(
         request_params.get('iDisplayStart', 0)
-    ).all()    
+    ).all()
 
-    response = {'sEcho': int(request_params.get('sEcho', 0))}
-    response['iTotalRecords'] = query.count()
-    response['iTotalDisplayRecords'] = filtered_query.count()
-    response['aaData'] = make_jsonable(rows)
+    response = {
+        'sEcho': int(request_params.get('sEcho', 0)),
+        'iTotalRecords': query.count(),
+        'iTotalDisplayRecords': filtered_query.count(),
+        'aaData': make_jsonable(rows)
+    }
 
     return response
