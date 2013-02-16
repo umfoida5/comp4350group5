@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Date
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 from modules import database
 from achievement import AthleteAchievements

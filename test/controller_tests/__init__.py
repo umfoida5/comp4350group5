@@ -1,2 +1,3 @@
 from root_test import RootTest
-from athlete_test import AthleteTest
+from athletes_test import AthletesTest
+from achievements_test import AchievementsTest

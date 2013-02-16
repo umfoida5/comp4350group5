@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Date, ForeignKey, Table, Text, DateTime
+from sqlalchemy import Column, Table, ForeignKey, Integer, String, DateTime
 from modules.database import Base
 from modules.jsonable import Jsonable
 from datetime import datetime
