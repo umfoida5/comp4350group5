@@ -1,5 +1,10 @@
+import datetime
 import json
 
+"""
+    Decorator class that adds a to_dict() function to the decorated
+    class
+"""
 class Jsonable:
     def __init__(self, *args):
         self.fields = args
@@ -21,7 +26,10 @@ class Jsonable:
                         else:
                             dict_representation[attribute].append(i)
                     continue
-                if hasattr(value.__class__, '_jsonFields'):
+
+                if type(value) is datetime.date:
+                    dict_representation[attribute] = str(value)                
+                elif hasattr(value.__class__, '_jsonFields'):
                     dict_representation[attribute] = value.to_dict()
                 else:
                     dict_representation[attribute] = value
