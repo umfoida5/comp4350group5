@@ -4,6 +4,7 @@ from activities import Activities
 from events import Events
 from stats import Stats
 from profiles import Profiles
+from achievements import Achievements
 from modules.template import env
 
 class Root:
@@ -12,6 +13,7 @@ class Root:
     events = Events()
     stats = Stats()
     profiles = Profiles()
+    achievements = Achievements()
 
     @cherrypy.expose
     def index(self):

@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, String, Date, ForeignKey, Table, Text, DateTime
 from modules.database import Base
+from modules.jsonable import Jsonable
 from datetime import datetime
 
 AthleteAchievements = Table(
@@ -9,6 +10,7 @@ AthleteAchievements = Table(
     Column('achievement_id', Integer, ForeignKey('achievements.id'))
 )
 
+@Jsonable('title', 'description', 'image_url')
 class Achievement(Base):
     __tablename__ = 'achievements'
 

@@ -1,13 +1,13 @@
 from decorator import decorator
-from database import db_session
+import database
 
 @decorator
 def commit_on_success(f, *args, **kw):
     try : 
         func = f(*args, **kw)
-        db_session.commit()
+        database.session.commit()
     except : 
-        db_session.rollback()
+        database.session.rollback()
         raise
 
     return func    

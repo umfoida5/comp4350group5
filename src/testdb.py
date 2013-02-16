@@ -13,15 +13,14 @@ db_session = database.session
 db_session.add(Athlete("Joe", "Smith"))
 db_session.add(Athlete("Bob", "Brown"))
 db_session.add(Athlete("Frank", "Reese"))
-db_session.add(Athlete("Joe", "Smith"))
+db_session.add(Athlete("Sam", "Smith"))
+db_session.add(Athlete("Justin", "Bieber"))
+db_session.add(Athlete("Frank", "Hollywood"))
+db_session.add(Athlete("Joe", "Hangry"))
 db_session.add(Athlete("Bob", "Brown"))
 db_session.add(Athlete("Frank", "Reese"))
 db_session.add(Athlete("Joe", "Smith"))
 db_session.add(Athlete("Bob", "Brown"))
-db_session.add(Athlete("Frank", "Reese"))
-db_session.add(Athlete("Joe", "Smith"))
-db_session.add(Athlete("Bob", "Brown"))
-db_session.add(Athlete("Frank", "Reese"))
 
 db_session.commit()
 
@@ -41,17 +40,37 @@ db_session.add(Event(curr_time, "Come join the run3!", "saskatoon", 10))
 
 db_session.commit()
 
+db_session.add(Achievement(
+	"Newbie",
+	"Congratulations, this is the very first time you are running!",
+	"/images/achievements/newbie.jpeg"
+))
+db_session.add(Achievement(
+	"Runner",
+	"Yay! You have achieved the title of runner",
+	"/images/achievements/runner.jpeg"
+))
+db_session.add(Achievement(
+	"Crazy",
+	"Yaaaahaaa, WOwhooo, beepee beepee",
+	"/images/achievements/crazy.jpeg"
+))
+db_session.add(Achievement(
+	"Local",
+	"You must know all the locals by now - you are always running around!",
+	"/images/achievements/local.jpeg"
+))
+db_session.add(Achievement(
+	"Adventurer",
+	"Using the same route everyday? That's not for you - congratulations, you have acquired the adventurer badge",
+	"/images/achievements/crazy.jpeg"
+))
+db_session.commit()
+
 athlete = Athlete.query.first()
-
-db_session.add(Achievement("Unlockable", "First achievement!", "/images/ac1"))
-db_session.add(Achievement("Visible", "qeqeqeqe achievement!", "/images/a1"))
-db_session.add(Achievement("Crazy", "First qeqeqe!", "/images/aqe"))
-
 achievement_objs = Achievement.query.all()
 
 for i in achievement_objs:
 	athlete.achievements.append(i)
-
-print athlete.achievements
 
 db_session.commit()
