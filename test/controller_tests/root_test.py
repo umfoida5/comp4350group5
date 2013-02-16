@@ -1,7 +1,7 @@
 import unittest
 
 class RootTest(unittest.TestCase):
-	def test_index(self):
-		return True
-		
 
+	@unittest.skip("Not Implemented")
+	def test_index(self):
+		self.fail("Not implemented")
