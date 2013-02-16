@@ -3,21 +3,21 @@
 {% block script  %}
   <script src="../js/jquery.min.js"></script>
   <script src="../js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" href="../css/datatables.css">
   <script src="../js/bootstrapPagination.js"></script>
   <script>
     $(document).ready(function() {
       $('#eventTable').dataTable( {
         "bProcessing": true,
         "bServerSide": true,
-        "bLengthChange": false,
         "sAjaxSource": "update_datatable",
         "sPaginationType": "bootstrap",
-        "oLanguage": { "sSearch": "Filter by City: " },
+        "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
         "aoColumns": [
-            { sWidth: '15%', "bSearchable": true },
-            { sWidth: '55%', "bSearchable": false },
-            { sWidth: '20%', "bSearchable": true },
-            { sWidth: '10%', "bSearchable": false } ]
+            { "mData": "event_date", "sWidth": '15%', "bSearchable": true },
+            { "mData": "description", "sWidth": '55%', "bSearchable": false },
+            { "mData": "location", "sWidth": '15%', "bSearchable": true },
+            { "mData": "distance", "sWidth": '15%', "bSearchable": false } ]
         } );
       } );
   </script>

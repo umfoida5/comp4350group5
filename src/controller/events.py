@@ -20,7 +20,7 @@ class Events:
     @cherrypy.expose
     def update_datatable(self, **params):
         search = '%%%s%%' % params['sSearch']
-        search_filter = Event.location.like(search.lower()) #Search by location, lower case (we convert all input for City into lowercase)
+        search_filter = Event.location.ilike(search.lower()) #Search by location, lower case (we convert all input for City into lowercase)
         return send_datatable_response(Event.query, search_filter, params)
     
     @cherrypy.expose
