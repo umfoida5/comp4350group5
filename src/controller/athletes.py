@@ -2,7 +2,7 @@ import cherrypy
 from sqlalchemy import or_
 from model.athlete import Athlete
 from modules.template import env
-from modules.datatables import dtify
+from modules.datatables import send_datatable_response
 
 class Athletes:
     @cherrypy.expose
@@ -27,12 +27,10 @@ class Athletes:
 
     @cherrypy.tools.json_out()
     @cherrypy.expose
-    def json(self, **params):
+    def update_datatable(self, **params):
         search = '%%%s%%' % params.get('sSearch', "")
-        search_filter = or_(Athlete.first_name.ilike(search), Athlete.last_name.ilike(search))
-
-        def convert(row):
-            return {"first_name": row.first_name, "last_name": row.last_name}
-
-        return dtify(Athlete.query, search_filter, convert, params)
-
+        search_filter = or_(
+            Athlete.first_name.ilike(search),
+            Athlete.last_name.ilike(search)
+        )
+        return send_datatable_response(Athlete.query, search_filter, params)

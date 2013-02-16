@@ -1,8 +1,11 @@
-from sqlalchemy import Column, Integer, String, Date, ForeignKey
+from sqlalchemy import Column, Integer, String, Date
 from modules import database
+from modules.jsonable import Jsonable
 
+@Jsonable('event_date', 'description', 'location', 'distance')
 class Event(database.Base):
     __tablename__ = 'events'
+
     id = Column(Integer, primary_key=True)
     event_date = Column(Date())
     description = Column(String(1000))
@@ -16,5 +19,10 @@ class Event(database.Base):
         self.distance = distance
 
     def __repr__(self):
-        return '<Event %r %r %r %r>' % (self.event_date, self.description, self.location, self.distance)
+        return '<Event %r %r %r %r>' % (
+            self.event_date,
+            self.description,
+            self.location,
+            self.distance
+        )
 

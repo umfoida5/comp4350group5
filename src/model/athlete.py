@@ -1,8 +1,10 @@
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 from modules import database
+from modules.jsonable import Jsonable
 from achievement import AthleteAchievements
 
+@Jsonable('first_name', 'last_name')
 class Athlete(database.Base):
     __tablename__ = 'athletes'
 
