@@ -1,15 +1,52 @@
 {% extends "index.html" %}
+
+{% block script  %}
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" href="../css/datatables.css">	 
+  <script src="../js/bootstrapPagination.js"></script>
+  <script>
+    $(document).ready(function() {
+      var athleteTable = $('#athleteTable').dataTable( {
+        "bProcessing": true,
+        "bServerSide": true,
+        //"bLengthChange": false,
+        "sPaginationType": "bootstrap",
+        "sAjaxSource": "json",
+        "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
+        "aoColumns": [
+          { "mData": "duration" },
+          { "mData": "distance" }
+        ]
+      } );
+
+      $("form").submit(function() {
+        $.post("create", $(this).serialize(), function() {
+          athleteTable.fnDraw();
+        } );
+        return false;
+      } );
+    } );
+  </script>
+{% endblock script %}
+
 {% block body %}
-  <!-- Temporary Links to Access new/edit/view Pages -->
-  <a href="new">New Activity</a>
-  <a href="edit">Edit Activity</a>
-  <a href="view">View Activity</a>
-  <table class="table table-striped">
+  Enter excercise
+  <form>
+    Duration <input type="number" name="duration" style="width: 4em;" min="0" required />
+    Distance <input type="number" name="distance" style="width: 4em;" min="0" required />
+    <input type="submit" value="Create" />
+  </form>
+  <!-- TABLE ======================================= -->
+    <table class="table table-bordered table-striped table-hover" id="athleteTable">
     <thead>
-      <tr><td>Test1</td><td>Test2</td></tr>
+      <tr>
+        <th>Duration</th>
+        <th>Distance</th>
+      </tr>
     </thead>
     <tbody>
-      <tr><td>Test3</td><td>Test4</td></tr>
     </tbody>
   </table>
+  <!-- end table ======================================= -->
 {% endblock body %}

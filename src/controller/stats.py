@@ -1,6 +1,6 @@
 import datetime
 import cherrypy
-from modules.database import db_session
+from modules import database
 from model.event import Event
 from modules.template import env
 from modules.datatables import dtify

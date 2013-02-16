@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, Date, ForeignKey
-from modules.database import Base
+from modules import database 
 
-class Activity(Base):
+class Activity(database.Base):
     __tablename__ = 'activities'
     id = Column(Integer, primary_key=True)
     athlete_id = Column(Integer, ForeignKey("athletes.id"), nullable=False)

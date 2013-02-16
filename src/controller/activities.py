@@ -1,7 +1,8 @@
 import cherrypy
 from sqlalchemy import or_
-from modules.database import db_session
+from modules import database
 from model.activity import Activity
+from model.athlete import Athlete
 from modules.template import env
 from modules.datatables import dtify
 
@@ -12,29 +13,23 @@ class Activities:
         return tmpl.render()
 
     @cherrypy.expose
-    def new(self):
-        tmpl = env.get_template('activities_new.html')
-        return tmpl.render()
+    def create(self, distance, duration):
+        db_session = database.session
 
-    @cherrypy.expose
-    def edit(self):
-        tmpl = env.get_template('activities_edit.html')
-        return tmpl.render()
-
-    @cherrypy.expose
-    def view(self):
-        tmpl = env.get_template('activity_view.html')
-        return tmpl.render()
+        athlete = Athlete.query.first()
+        new = Activity(athlete.id, int(distance), int(duration))
+        db_session.add(new)
+        db_session.commit()
 
     @cherrypy.tools.json_out()
     @cherrypy.expose
     def json(self, **params):
-        search = '%%%s%%' % params['sSearch']
-        #search_filter = or_(Activity.distance.like(search), Activity.duration.like(search))
+        search = '%%%s%%' % params.get('sSearch', "")
+        #search_filter = or_(Activity.distance.ilike(search), Activity.duration.ilike(search))
         search_filter = None
 
         def convert(row):
-            return (row.distance, row.duration)
+            return {"distance":row.distance, "duration":row.duration}
 
         return dtify(Activity.query, search_filter, convert, params)
     

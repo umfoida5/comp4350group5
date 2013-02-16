@@ -6,8 +6,7 @@ from modules.database import init_db, db_session
 from model.achievement import Achievement
 
 class AchievementTests(unittest.TestCase):	
-	
-	def test_cretion(self):
+	def test_init(self):
 		achievement1 = Achievement("Title1", "desc1", "/images/a1.jpeg")
 		achievement2 = Achievement("Title2", "desc2", "/images/a2.jpeg")
 		achievement2 = Achievement("Title3", "desc3", "/images/a3.jpeg")

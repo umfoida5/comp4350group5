@@ -1,5 +1,15 @@
 How to run the project production (background):
-cherryd -d -i init
+  cd src
+  cherryd -d -i init
+
+  To kill it:  pkill cherryd
 
 How to run the project development (foreground):
-./init.py
+  cd src
+  ./init.py
+
+  To kill it:  press ctrl c
+
+How to run the project's unittests:
+  cd test
+  ./test.py
