@@ -1,5 +1,4 @@
 import cherrypy
-from model.goal import Goal
 from modules.template import env
 
 class Goals:
