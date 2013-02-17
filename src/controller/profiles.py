@@ -1,9 +1,6 @@
 import cherrypy
-from sqlalchemy import or_
 from modules import database
-from model.athlete import Athlete
 from modules.template import env
-from modules.datatables import dtify
 
 class Profiles:
     @cherrypy.expose

@@ -1,9 +1,5 @@
-import datetime
 import cherrypy
-from modules import database
-from model.event import Event
 from modules.template import env
-from modules.datatables import dtify
 
 class Stats:
     @cherrypy.expose

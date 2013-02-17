@@ -1,9 +1,10 @@
 from sqlalchemy import Column, Integer, String, Date
 from sqlalchemy.orm import relationship
 from modules import database
+from modules.jsonable import Jsonable
 from achievement import AthleteAchievements
 
-#Athlete data model
+@Jsonable('first_name', 'last_name')
 class Athlete(database.Base):
     __tablename__ = 'athletes'
 
@@ -16,7 +17,7 @@ class Athlete(database.Base):
     address = Column(String(200))
     avatar = Column(String(200))
     achievements = relationship("Achievement",
-                    secondary=AthleteAchievements)  
+                    secondary=AthleteAchievements)    
 
 	#initialise the Data model for the athlete
     def __init__(self, first_name, last_name, email, birth_date, about_me, address, avatar):

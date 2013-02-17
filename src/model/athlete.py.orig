@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, Date
 from sqlalchemy.orm import relationship
 from modules import database
 from achievement import AthleteAchievements
@@ -10,17 +10,18 @@ class Athlete(database.Base):
     id = Column(Integer, primary_key=True)
     first_name = Column(String(50))
     last_name = Column(String(50))
-<<<<<<< HEAD
     email = Column(String(120))
     birth_date = Column(Date())
     about_me = Column(String(200))
     address = Column(String(200))
+<<<<<<< Updated upstream
     avatar = Column(String(200))
-    #height = Column(Integer)
-=======
     achievements = relationship("Achievement",
-                    secondary=AthleteAchievements)    
->>>>>>> 1380b5550cb2f84fcd9a551080a9bc0f956c25f8
+                    secondary=AthleteAchievements)  
+=======
+    avatar = Column(String(200))	
+    #height = Column(Integer)
+>>>>>>> Stashed changes
 
 	#initialise the Data model for the athlete
     def __init__(self, first_name, last_name, email, birth_date, about_me, address, avatar):
@@ -34,15 +35,13 @@ class Athlete(database.Base):
 
 	
     def __repr__(self):
-<<<<<<< HEAD
-        return '<Athlete %r %r %r %r %r %r %r>' % (self.first_name, self.last_name, self.email, self.birth_date, self.about_me, self.address, self.avatar)
-
-    #~ def getAthlete(aid):
-        
-=======
-        return '<Athlete %r %r %r>' % (
+        return '<Athlete %r %r %r %r %r %r %r %r>' % (
             self.first_name,
             self.last_name,
+			self.email,
+			self.birth_date,
+			self.about_me,
+			self.address,
+			self.avatar,
             self.achievements
         )
->>>>>>> 1380b5550cb2f84fcd9a551080a9bc0f956c25f8

@@ -1,9 +1,10 @@
 import cherrypy
-from datetime import datetime
-from modules import database
+from sqlalchemy import or_
 from model.event import Event
+from modules import database
 from modules.template import env
-from modules.datatables import dtify
+from modules.datatables import send_datatable_response
+from datetime import datetime
 
 class Events:
     @cherrypy.expose
@@ -18,14 +19,13 @@ class Events:
 
     @cherrypy.tools.json_out()
     @cherrypy.expose
-    def json(self, **params):
+    def update_datatable(self, **params):
         search = '%%%s%%' % params['sSearch']
-        search_filter = Event.location.like(search.lower()) #Search by location, lower case (we convert all input for City into lowercase)
-
-        def convert(row):
-            return (row.event_date.strftime('%b %d, %Y'), row.description, row.location, row.distance) #return the date string rather than the date itself
-
-        return dtify(Event.query, search_filter, convert, params)
+        search_filter = or_(
+            Event.location.ilike(search),
+            Event.description.ilike(search)
+        )
+        return send_datatable_response(Event.query, search_filter, params)
     
     @cherrypy.expose
     def createEvent(self, eventDate=None, eventLocation=None, eventDistance=None, eventDescription=None):

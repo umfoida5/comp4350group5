@@ -1,28 +1,32 @@
 from sqlalchemy import or_
+from jsonable import make_jsonable
 
-def dtify(query, search_filter, convert_fn, params):
-    response = {'sEcho': int(params.get('sEcho', 0))}
+def send_datatable_response(query, search_filter, request_params):
+    filtered_query = query
 
     if search_filter is not None:
         filtered_query = query.filter(search_filter)
-    else:
-        filtered_query = query
-    
-    response['iTotalRecords'] = query.count()
-    response['iTotalDisplayRecords'] = filtered_query.count()
 
-    sort_col = params.get("mDataProp_%s" % int(params.get("iSortCol_0", 0)))
-    sorted_query = filtered_query
+    sort_col = request_params.get(
+        "mDataProp_%s" % int(request_params.get("iSortCol_0", 0))
+    )
     if sort_col:
-        sort_dir = params.get("sSortDir_0", "asc")
-        sorted_query = sorted_query.order_by("%s %s" % (sort_col, sort_dir))
+        sort_direction = request_params.get("sSortDir_0", "asc")
+        filtered_query = filtered_query.order_by(
+            "%s %s" % (sort_col, sort_direction)
+        )
 
-    rows = sorted_query.limit(params.get('iDisplayLength', 10)).offset(params.get('iDisplayStart', 0)).all()
+    rows = filtered_query.limit(
+        request_params.get('iDisplayLength', 10)
+    ).offset(
+        request_params.get('iDisplayStart', 0)
+    ).all()
 
-    aaData = []
-    for row in rows:
-        aaData.append(convert_fn(row))
-    response['aaData'] = aaData
+    response = {
+        'sEcho': int(request_params.get('sEcho', 0)),
+        'iTotalRecords': query.count(),
+        'iTotalDisplayRecords': filtered_query.count(),
+        'aaData': make_jsonable(rows)
+    }
 
     return response
-

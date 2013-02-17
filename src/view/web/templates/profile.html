@@ -1,4 +1,31 @@
 <!DOCTYPE html>
 {% extends "index.html" %}
+{% block script  %}
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" href="../css/datatables.css">
+  <script src="../js/bootstrapPagination.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#athleteTable').dataTable( {
+        "bProcessing": true,
+        "bServerSide": true,
+        "sPaginationType": "bootstrap",
+        "sAjaxSource": "getAthlete",
+        "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
+        "aoColumns": [
+          { "mData": "first_name" },
+          { "mData": "last_name" },
+          {	"mData": "email" },
+          { "mData": "about_me" }
+          //~ { "mData": "about_me" }
+        ]
+      } );
+    } );
+  </script>
+{% endblock script %}
 {% block body %}
+<!-- Temporary Links to Access new/edit/view Pages -->
+  <h1>Name:</h1>
+  <!-- end table ======================================= -->
 {% endblock body %}
