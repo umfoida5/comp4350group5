@@ -30,12 +30,7 @@ class Athletes:
     @cherrypy.tools.json_out()
     @cherrypy.expose
     def update_datatable(self, **params):
-        search = '%%%s%%' % params.get('sSearch', "")
-        search_filter = or_(
-            Athlete.first_name.ilike(search),
-            Athlete.last_name.ilike(search)
-        )
-        return send_datatable_response(Athlete.query, search_filter, params)
+        return send_datatable_response(Athlete, params)
         
     @cherrypy.tools.json_out()
     @cherrypy.expose

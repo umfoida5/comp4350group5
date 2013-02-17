@@ -24,10 +24,4 @@ class Activities:
     @cherrypy.tools.json_out()
     @cherrypy.expose
     def update_datatable(self, **params):
-        search = '%%%s%%' % params.get('sSearch', "")
-        #search_filter = or_(
-        #    Activity.distance.ilike(search),
-        #    Activity.duration.ilike(search)
-        #)
-        search_filter = None
-        return send_datatable_response(Activity.query, search_filter, params)
+        return send_datatable_response(Activity, params)

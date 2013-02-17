@@ -10,13 +10,12 @@
       var athleteTable = $('#athleteTable').dataTable( {
         "bProcessing": true,
         "bServerSide": true,
-        //"bLengthChange": false,
         "sPaginationType": "bootstrap",
         "sAjaxSource": "update_datatable",
         "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
         "aoColumns": [
-          { "mData": "duration" },
-          { "mData": "distance" }
+          { "mData": "duration", "sWidth": '50%', "bSearchable": false },
+          { "mData": "distance", "sWidth": '50%', "bSearchable": false }
         ]
       } );
 

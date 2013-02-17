@@ -20,12 +20,7 @@ class Events:
     @cherrypy.tools.json_out()
     @cherrypy.expose
     def update_datatable(self, **params):
-        search = '%%%s%%' % params['sSearch']
-        search_filter = or_(
-            Event.location.ilike(search),
-            Event.description.ilike(search)
-        )
-        return send_datatable_response(Event.query, search_filter, params)
+        return send_datatable_response(Event, params)
     
     @cherrypy.expose
     def createEvent(self, eventDate=None, eventLocation=None, eventDistance=None, eventDescription=None):
