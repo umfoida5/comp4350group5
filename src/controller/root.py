@@ -5,6 +5,7 @@ from events import Events
 from stats import Stats
 from profiles import Profiles
 from achievements import Achievements
+from goals import Goals
 from modules.template import env
 
 def http_methods_allowed(methods=['GET', 'HEAD']):
@@ -22,6 +23,7 @@ class Root:
     stats = Stats()
     profiles = Profiles()
     achievements = Achievements()
+    goals = Goals()
 
     @cherrypy.expose
     def index(self):
@@ -32,5 +34,3 @@ class Root:
     def about(self):
         tmpl = env.get_template('about.html')
         return tmpl.render()
-
-
