@@ -2,6 +2,8 @@
 
 {% block script  %}
   <script src="../js/jquery.min.js"></script>
+  <link href="../css/datepicker.css" rel="stylesheet">
+  <script src="../js/bootstrap-datepicker.js"></script>
   <script src="../js/jquery.dataTables.min.js"></script>
   <link rel="stylesheet" href="../css/datatables.css">	 
   <script src="../js/bootstrapPagination.js"></script>
@@ -14,10 +16,15 @@
         "sAjaxSource": "update_datatable",
         "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
         "aoColumns": [
-          { "mData": "duration", "sWidth": '50%', "bSearchable": false },
-          { "mData": "distance", "sWidth": '50%', "bSearchable": false }
+          { "mData": "type", "sWidth": '25%' },
+          { "mData": "date", "sWidth": '30%', "bSearchable": false },
+          { "mData": "duration", "sWidth": '15%', "bSearchable": false },
+          { "mData": "distance", "sWidth": '15%', "bSearchable": false },
+          { "mData": "max_speed", "sWidth": '15%', "bSearchable": false }
         ]
       } );
+
+      $('#dateInput').datepicker();
 
       $("form").submit(function() {
         $.post("create", $(this).serialize(), function() {
@@ -32,16 +39,26 @@
 {% block body %}
   Enter excercise
   <form>
+      Type <input type="text" name="type" style="width: 10em;" required /><br/>
+    Date 
+      <div class="input-append date" id="dateInput" data-date="26-02-2013" data-date-format="dd-mm-yyyy">
+        <input class="span2" name="date" size="16" type="text" >
+        <span class="add-on"><i class="icon-th"></i></span>
+      </div>
     Duration <input type="number" name="duration" style="width: 4em;" min="0" required />
     Distance <input type="number" name="distance" style="width: 4em;" min="0" required />
+    Max speed <input type="number" name="max_speed" style="width: 4em;" min="0" required />
     <input type="submit" value="Create" />
   </form>
   <!-- TABLE ======================================= -->
     <table class="table table-bordered table-striped table-hover" id="athleteTable">
     <thead>
       <tr>
+        <th>Type</th>
+        <th>Date</th>
         <th>Duration</th>
         <th>Distance</th>
+        <th>Max speed</th>
       </tr>
     </thead>
     <tbody>
