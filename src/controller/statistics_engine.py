@@ -8,20 +8,6 @@ import datetime
 
 class StatisticsEngine:
     	
-    sql_template = \
-            """
-            SELECT
-                {0}({1}) AS {0}, EXTRACT({6} from activities.date) as period
-            FROM
-                activities
-            WHERE
-                activities.athlete_id    = {2}   AND
-                activities.activity_type = '{3}' AND
-                activities.date BETWEEN    to_date('{4}', 'mm/dd/yyyy') AND to_date('{5}', 'mm/dd/yyyy')
-            GROUP BY
-                EXTRACT ({6} FROM activities.date)
-            """
-
     """
     total()
     
@@ -108,9 +94,9 @@ class StatisticsEngine:
         search_col = getattr(Activity, column_name);
 
         # select columns for query
-        sum_col = func.max(search_col).label('max')
+        max_col = func.max(search_col).label('max')
 
-        return self.run_query(sum_col, activity_name, athlete_id, start_date, end_date, group_by)
+        return self.run_query(max_col, activity_name, athlete_id, start_date, end_date, group_by)
 
     """
     count()
@@ -192,6 +178,3 @@ class StatisticsEngine:
             all_things = all_things.filter(Activity.date <= end_date)
         
         return all_things.all()
-
-        result = database.session.execute(sql)
-        return result.fetchall() 
