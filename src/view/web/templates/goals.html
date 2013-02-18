@@ -89,26 +89,21 @@
         <option value="kmph">Kmph</option>
       </select>
 
-      <!-- TODO: make default current date -->
-      <label>Start:&nbsp;
-        <div class="input-append date" id="dateInput" data-date="26-02-2013" data-date-format="dd-mm-yyyy">
-          <input class="span2" name="startDate" size="16" type="text" value="26-02-2013">
-          <span class="add-on"><i class="icon-th"></i></span>
-        </div>
-      </label>
-
-      
-      <!-- TODO: make default current date +1 day-->
-      <label>End:&nbsp;
-        <div class="input-append date" id="dateInput" data-date="27-02-2013" data-date-format="dd-mm-yyyy">
-          <input class="span2" name="endDate" size="16" type="text" value="27-02-2013">
-          <span class="add-on"><i class="icon-th"></i></span>
-        </div>
-      </label>
-
-      <label>Recurring&nbsp;
-        <input type="checkbox">
-      </label>
+      <div class="input-append date" id="dateInput" data-date="26-02-2013" data-date-format="dd-mm-yyyy">
+        <!-- TODO: make default current date -->
+        <label>Start:&nbsp;
+            <input class="span2" name="startDate" size="16" type="text" value="26-02-2013">
+            <span class="add-on"><i class="icon-th"></i></span>
+        </label>
+        <!-- TODO: make default current date +1 day-->
+        <label>End:&nbsp;
+            <input class="span2" name="endDate" size="16" type="text" value="27-02-2013">
+            <span class="add-on"><i class="icon-th"></i></span>
+        </label>
+        <label>Recurring&nbsp;
+          <input type="checkbox">
+        </label>
+      </div>
 
       <button type="submit" class="btn btn-primary">Create</button>
 
