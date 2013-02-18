@@ -3,14 +3,17 @@
 
 
 {% block script  %}
+  <link rel="stylesheet" href="../css/datepicker.css">
+  <link rel="stylesheet" href="../css/datatables.css">   
   <script src="../js/jquery.min.js"></script>
   <script src="../js/jquery.dataTables.min.js"></script>
   <script src="../js/bootstrap-datepicker.js"></script>
-  <link rel="stylesheet" href="../css/datatables.css">	 
   <script src="../js/bootstrapPagination.js"></script>
   <script>
     $(document).ready(function() {
-      var athleteTable = $('#athleteTable').dataTable( {
+
+      // create the goal table
+      var goalTable = $('#goalTable').dataTable( {
         "bProcessing": true,
         "bServerSide": true,
         //"bLengthChange": false,
@@ -18,114 +21,105 @@
         "sAjaxSource": "update_datatable",
         "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
         "aoColumns": [
-          { "mData": "duration" },
-          { "mData": "distance" }
+          { "mData": "activity" },
+          { "mData": "operator" },
+          { "mData": "quantity" },
+          { "mData": "metric" },
+          { "mData": "start" },
+          { "mData": "end" },
+          { "mData": "complete" }
         ]
       } );
 
+      // for submitting the new goal
       $("form").submit(function() {
         $.post("create", $(this).serialize(), function() {
-          athleteTable.fnDraw();
+          //athleteTable.fnDraw();
+          // TODO
         } );
         return false;
       } );
-    } );
-  </script>
 
-  <script>
-    $(document).ready(function() {
+      // for the start and end date inputs
       $('#dateInput').datepicker();
+
+      // for the recurring checkbox
+      $('#switch').toggleButtons({
+        width: 220,
+        label: {
+            enabled: "One-time",
+            disabled: "Recurring"
+        }
+      });
+
     } );
   </script>
 
+
   <script>
-    $('#text-toggle-button').toggleButtons({
-      width: 220,
-      label: {
-          enabled: "One-time",
-          disabled: "Recurring"
-      }
-    });
+
   </script>
 {% endblock script %}
 
 {% block body %}
   {% block form %}
-    <form class="form-horizontal">
+    <form class="form-inline well" action="createGoal">
+      <fieldset>
+      <legend>Create Goal</legend>
 
-      <!-- TODO: fill with activity types from db in script-->
-      <div class="control-group">
-        <label class="control-label"></label>
-        <div class="controls">
-          <select id="activity">
-            <option value="run">Run</option>
-            <option value="bike">Bike</option>
-            <option value="swim">Swim</option>
-          </select>
-        </div>
-      </div>
+        <!-- TODO: fill with activity types from db in script-->
+        <select id="activity">
+          <option value="run">Run</option>
+          <option value="bike">Bike</option>
+          <option value="swim">Swim</option>
+        </select>
 
-      <!-- TODO: fill with operator types from db in script-->
-      <div class="control-group">
-        <label class="control-label"></label>
-        <div class="controls">
-          <select id="operator">
-            <option value="total">Total</option>
-            <option value="min">Min</option>
-            <option value="max">Max</option>
-            <option value="average">Average</option>
-          </select>
-        </div>
-      </div>
+        <!-- TODO: fill with operator types from db in script-->
+        <select id="operator">
+          <option value="total">Total</option>
+          <option value="min">Min</option>
+          <option value="max">Max</option>
+          <option value="average">Average</option>
+        </select>
 
-      <div class="control-group">
-        <label class="control-label" for="quantity"></label>
-        <div class="controls">
-          <input type="text" id="quantity" placeholder="Quantity">
-        </div>
-      </div>
+        <input type="text" id="quantity" placeholder="Quantity">
+        
+        <!-- TODO: fill with metric types from db in script-->
+        <select id="metric">
+          <option value="km">Km</option>
+          <option value="kmph">Kmph</option>
+        </select>
 
-      <!-- TODO: fill with metric types from db in script-->
-      <div class="control-group">
-        <label class="control-label"></label>
-        <div class="controls">
-          <select id="metric">
-            <option value="km">Km</option>
-            <option value="kmph">Kmph</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- TODO: make default current date -->
-      <div class="control-group">
+        <!-- TODO: make default current date -->
         <label class="control-label" for="dateInput">Start:&nbsp;</label>
         <div class="input-append date" id="dateInput" data-date="26-02-2013" data-date-format="dd-mm-yyyy">
           <input class="span2" name="startDate" size="16" type="text" value="26-02-2013">
           <span class="add-on"><i class="icon-th"></i></span>
         </div>
-      </div>
-
-      <!-- TODO: make default current date +1 day-->
-      <div class="control-group">
+        
+        <!-- TODO: make default current date +1 day-->
         <label class="control-label" for="dateInput">End:&nbsp;</label>
         <div class="input-append date" id="dateInput" data-date="27-02-2013" data-date-format="dd-mm-yyyy">
           <input class="span2" name="endDate" size="16" type="text" value="27-02-2013">
           <span class="add-on"><i class="icon-th"></i></span>
         </div>
-      </div>
+        
+        <label class="control-label">Recurring&nbsp;
+          <input type="checkbox">
+        </label>
+        
+        <button type="submit" class="btn">Create</button>
 
-      <div id="text-toggle-button">
-        <input type="checkbox">
-      </div>
-
-      <div class="control-group">
-        <div class="controls">
-          <button type="submit" class="btn">Create</button>
-        </div>
-      </div>
-
-
-
+      </fieldset>
     </form>
   {% endblock form %}
+
+  <!-- CURRENT GOALS TABLE -->
+  <table class="table table-bordered table-striped table-hover" id="cGoalsTable">
+    <caption>Current Goals</caption>
+  </table>
+
+  <!-- PAST GOALS TABLE -->
+
+
 {% endblock body %}
