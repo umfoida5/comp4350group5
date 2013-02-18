@@ -12,8 +12,25 @@
   <script>
     $(document).ready(function() {
 
-      // create the goal table
-      var goalTable = $('#goalTable').dataTable( {
+      var currentGoalsTable = $('#currentGoalsTable').dataTable( {
+        "bProcessing": true,
+        "bServerSide": true,
+        //"bLengthChange": false,
+        "sPaginationType": "bootstrap",
+        "sAjaxSource": "update_datatable",
+        "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
+        "aoColumns": [
+          { "mData": "activity" },
+          { "mData": "operator" },
+          { "mData": "quantity" },
+          { "mData": "metric" },
+          { "mData": "start" },
+          { "mData": "end" },
+          { "mData": "complete" }
+        ]
+      } );
+
+      var pastGoalsTable = $('#pastGoalsTable').dataTable( {
         "bProcessing": true,
         "bServerSide": true,
         //"bLengthChange": false,
@@ -34,23 +51,15 @@
       // for submitting the new goal
       $("form").submit(function() {
         $.post("create", $(this).serialize(), function() {
-          //athleteTable.fnDraw();
-          // TODO
+          currentGoalsTable.fnDraw();
+          pastGoalsTable.fnDraw();
         } );
         return false;
       } );
 
       // for the start and end date inputs
-      $('#dateInput').datepicker();
-
-      // for the recurring checkbox
-      $('#switch').toggleButtons({
-        width: 220,
-        label: {
-            enabled: "One-time",
-            disabled: "Recurring"
-        }
-      });
+      $('#startDate').datepicker();
+      $('#endDate').datepicker();
 
     } );
   </script>
@@ -92,22 +101,22 @@
 
     <div class="control-group">
       <!-- TODO: make default current date -->
-      <label>Start:&nbsp;
-        <div class="input-append date" id="dateInput" data-date="26-02-2013" data-date-format="dd-mm-yyyy">
+      <label>Start:
+        <div class="input-append date" id="startDate" data-date="26-02-2013" data-date-format="dd-mm-yyyy">
           <input class="span2" name="startDate" size="16" type="text" value="26-02-2013">
           <span class="add-on"><i class="icon-th"></i></span>
         </div>
       </label>
       
       <!-- TODO: make default current date +1 day-->
-      <label>End:&nbsp;
-        <div class="input-append date" id="dateInput" data-date="27-02-2013" data-date-format="dd-mm-yyyy">
+      <label>End:
+        <div class="input-append date" id="endDate" data-date="27-02-2013" data-date-format="dd-mm-yyyy">
           <input class="span2" name="endDate" size="16" type="text" value="27-02-2013">
           <span class="add-on"><i class="icon-th"></i></span>
         </div>
       </label>
 
-      <label>Recurring&nbsp;
+      <label>Recurring
         <input type="checkbox">
       </label>
     </div>
