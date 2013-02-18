@@ -6,26 +6,43 @@
   <link rel="stylesheet" href="../css/datatables.css">
   <script src="../js/bootstrapPagination.js"></script>
   <script>
-    $(document).ready(function() {
-      $('#athleteTable').dataTable( {
-        "bProcessing": true,
-        "bServerSide": true,
-        "sPaginationType": "bootstrap",
-        "sAjaxSource": "getAthlete",
-        "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
-        "aoColumns": [
-          { "mData": "first_name" },
-          { "mData": "last_name" },
-          {	"mData": "email" },
-          { "mData": "about_me" }
-          //~ { "mData": "about_me" }
-        ]
-      } );
-    } );
+    $(document).ready(function(){
+      var athlete;
+      $.getJSON('get_athlete', athlete, function(athlete){
+        $("#profile_name").append(athlete['first_name'] + " " + athlete['last_name']);
+        $("#dob").append(athlete['birth_date']);
+        $("#address").append(athlete['address']);
+        $("#email").append(athlete['email']);
+        $("#about_me").append(athlete['about_me']);
+      });
+    });
+    
   </script>
 {% endblock script %}
 {% block body %}
 <!-- Temporary Links to Access new/edit/view Pages -->
-  <h1>Name:</h1>
+  <h1 id="profile_name"></h1><br>
   <!-- end table ======================================= -->
+  <table>
+    <tr><th>Personal Information</th></tr>
+    <tr>
+      <td>
+        <p id="dob">Birth Date: </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p id="address">Address: </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p id="email">Email: </p>
+      </td>
+    </tr>
+  </table>
+  <table>
+    <tr><th>About Me</th></tr>
+    <tr><td><p id="about_me"></p></td></tr>
+  </table>
 {% endblock body %}

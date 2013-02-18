@@ -5,6 +5,7 @@ sys.path.append('..')
 from model.athlete import Athlete
 from modules.template import env
 from modules.datatables import send_datatable_response
+#~ from modules.database import session
 
 class Athletes:
     @cherrypy.expose
@@ -32,14 +33,4 @@ class Athletes:
     def update_datatable(self, **params):
         return send_datatable_response(Athlete, params)
         
-    @cherrypy.tools.json_out()
-    @cherrypy.expose
-    def getAthlete(self, **params):
-		result = Athlete.query.get(5)
-		return result
-		
-		
-if(__name__ == '__main__'):
-	ath = Athletes()
-	print(ath.getAthlete())
-	
+    
