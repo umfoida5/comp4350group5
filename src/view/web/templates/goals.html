@@ -1,5 +1,7 @@
 {% extends "index.html" %}
 
+
+
 {% block script  %}
   <script src="../js/jquery.min.js"></script>
   <script src="../js/jquery.dataTables.min.js"></script>
@@ -31,61 +33,57 @@
 {% endblock script %}
 
 {% block body %}
-  Enter new goal:
+  {% block form %}
+    <form class="form-horizontal">
 
-  <!-- TODO: populate with all activity types from db with script-->
-  <select name="activity">
-    <option value="run">Run</option>
-    <option value="bike">Bike</option>
-    <option value="swim">Swim</option>
-  </select>
+      <!-- TODO: fill with activity types from db in script-->
+      <div class="control-group">
+        <label class="control-label"></label>
+        <div class="controls">
+          <select id="activity">
+            <option value="run">Run</option>
+            <option value="bike">Bike</option>
+            <option value="swim">Swim</option>
+          </select>
+        </div>
+      </div>
 
-  <!-- TODO: populate with all operators from db with script -->
-  <select name="operator">
-  	<option value="total">Total</option>
-    <option value="max">Max</option>
-    <option value="min">Min</option>
-    <option value="average">Average</option>
-  </select>
+      <!-- TODO: fill with operator types from db in script-->
+      <div class="control-group">
+        <label class="control-label"></label>
+        <div class="controls">
+          <select id="operator">
+            <option value="total">Total</option>
+            <option value="min">Min</option>
+            <option value="max">Max</option>
+            <option value="average">Average</option>
+          </select>
+        </div>
+      </div>
 
-  <input type="number" name="quantity" style="width: 4em;" min="0" required />
+      <div class="control-group">
+        <label class="control-label" for="quantity"></label>
+        <div class="controls">
+          <input type="text" id="quantity" placeholder="Quantity">
+        </div>
+      </div>
 
-  <!-- TODO: populate with all metrics from db with script -->
-  <select name="metric">
-  	<option value="kmph">Km/hr</option>
-    <option value="km">Km</option>
-  </select>
-  
-  <br>
+      <!-- TODO: fill with metric types from db in script-->
+      <div class="control-group">
+        <label class="control-label"></label>
+        <div class="controls">
+          <select id="metric">
+            <option value="km">Km</option>
+            <option value="kmph">Kmph</option>
+          </select>
+        </div>
+      </div>
 
-  <!-- TODO: get current dates and put them in start and end data-date defaults -->
-  <div class="control-group">
-    <div class="input-append date" id="dateInput" data-date="26-02-2013" data-date-format="dd-mm-yyyy">
-
-      <label class="control-label" for="dateInput">Start:&nbsp;</label>
-      <input class="span2" name="startDate" size="16" type="text" value="26-02-2013">
-      <span class="add-on"><i class="icon-th"></i></span>
-
-      <label class="control-label" for="dateInput">End:&nbsp;</label>
-      <input class="span2" name="endDate" size="16" type="text" value="26-02-2013">
-      <span class="add-on"><i class="icon-th"></i></span>
-
-      <input type="submit" value="Create" />
-      
-    </div>
-  </div>
-
-
-  <!-- TABLE ======================================= -->
-    <table class="table table-bordered table-striped table-hover" id="athleteTable">
-    <thead>
-      <tr>
-        <th>Duration</th>
-        <th>Distance</th>
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
-  </table>
-  <!-- end table ======================================= -->
+      <div class="control-group">
+        <div class="controls">
+          <button type="submit" class="btn">Create</button>
+        </div>
+      </div>
+    </form>
+  {% endblock form %}
 {% endblock body %}
