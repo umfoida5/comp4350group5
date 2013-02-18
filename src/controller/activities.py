@@ -5,6 +5,7 @@ from model.athlete import Athlete
 from modules import database
 from modules.template import env
 from modules.datatables import send_datatable_response
+from datetime import datetime
 
 class Activities:
     @cherrypy.expose
@@ -13,11 +14,11 @@ class Activities:
         return tmpl.render()
 
     @cherrypy.expose
-    def create(self, distance, duration):
+    def create(self, type, date, distance, duration, max_speed):
         db_session = database.session
 
         athlete = Athlete.query.first()
-        new = Activity(athlete.id, int(distance), int(duration))
+        new = Activity(athlete.id, type, datetime.strptime(date, "%d-%m-%Y"), int(distance), int(duration), max_speed)
         db_session.add(new)
         db_session.commit()
 

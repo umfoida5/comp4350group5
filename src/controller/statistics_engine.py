@@ -1,24 +1,13 @@
 #!/usr/bin/python
 
 import cherrypy
-from modules.database import db_session
+from modules import database
+from model.activity import Activity
+from sqlalchemy import func, Integer
+import datetime
 
 class StatisticsEngine:
     	
-    sql_template = \
-            """
-            SELECT
-                {0}({1}) AS {0}
-            FROM
-                activities
-            WHERE
-                activities.athlete_id    = {2}   AND
-                activities.activity_type = '{3}' AND
-                activities.date BETWEEN    to_date('{4}', 'mm/dd/yyyy') AND to_date('{5}', 'mm/dd/yyyy')
-            GROUP BY
-                EXTRACT ({6} FROM activities.date)
-            """
-
     """
     total()
     
@@ -26,21 +15,22 @@ class StatisticsEngine:
     the through the date range, grouped by the given time period
     """
     def total(self, 
-        column,
-        activity, 
-        athlete,
+        column_name,
+        activity_name, 
+        athlete_id,
         start_date,
         end_date,
         group_by):
 
-        return self.run_query(
-            "sum", 
-            column, 
-            activity, 
-            athlete, 
-            start_date, 
-            end_date, 
-            group_by)
+        #determines the search column from the table by name
+        search_col = getattr(Activity, column_name);
+
+        # select columns for query
+        sum_col = func.sum(search_col).label('sum')
+
+        return self.run_query(sum_col, activity_name, athlete_id, start_date, end_date, group_by)
+
+
 
     """
     average()
@@ -49,30 +39,20 @@ class StatisticsEngine:
     the through the date range, grouped by the given time period
     """
     def average(self, 
-        column,
-        activity,
-        athlete,
+        column_name,
+        activity_name,
+        athlete_id,
         start_date,
         end_date,
         group_by):
 
-        if (column      is None or
-            activity    is None or
-            athlete     is None or
-            start_date  is None or
-            end_date    is None or 
-            group_by    is None):
-            
-            raise Exception("NULL PARAMTER PASSED to StatisticsEngine::average()")
+        #determines the search column from the table by name
+        search_col = getattr(Activity, column_name);
 
-        return self.run_query(
-            "avg", 
-            column, 
-            activity, 
-            athlete, 
-            start_date, 
-            end_date, 
-            group_by)
+        # select columns for query
+        sum_col = func.avg(search_col).label('avg')
+
+        return self.run_query(sum_col, activity_name, athlete_id, start_date, end_date, group_by)
         
     """
     minimum()
@@ -81,31 +61,20 @@ class StatisticsEngine:
     the through the date range, grouped by the given time period
     """
     def minimum(self,
-        column, 
-        activity, 
-        athlete, 
+        column_name, 
+        activity_name, 
+        athlete_id, 
         start_date,
         end_date,
         group_by):
 
-        if (column      is None or
-            activity    is None or
-            athlete     is None or
-            start_date  is None or
-            end_date    is None or 
-            group_by    is None):
-            
-            raise Exception("NULL PARAMTER PASSED to StatisticsEngine::minimum()")
+        #determines the search column from the table by name
+        search_col = getattr(Activity, column_name);
 
-        return self.run_query(
-            "min", 
-            column, 
-            activity, 
-            athlete, 
-            start_date, 
-            end_date, 
-            group_by)
+        # select columns for query
+        sum_col = func.min(search_col).label('min')
 
+        return self.run_query(sum_col, activity_name, athlete_id, start_date, end_date, group_by)
     
     """
     maximum()
@@ -114,30 +83,20 @@ class StatisticsEngine:
     the through the date range, grouped by the given time period
     """
     def maximum(self, 
-        column, 
-        activity, 
-        athlete, 
+        column_name, 
+        activity_name, 
+        athlete_id, 
         start_date, 
         end_date, 
         group_by):
 
-        if (column      is None or
-            activity    is None or
-            athlete     is None or
-            start_date  is None or
-            end_date    is None or 
-            group_by    is None):
-            
-            raise Exception("NULL PARAMTER PASSED to StatisticsEngine::maximum()")
-         
-        return self.run_query(
-            "max", 
-            column, 
-            activity, 
-            athlete, 
-            start_date, 
-            end_date, 
-            group_by)
+        #determines the search column from the table by name
+        search_col = getattr(Activity, column_name);
+
+        # select columns for query
+        max_col = func.max(search_col).label('max')
+
+        return self.run_query(max_col, activity_name, athlete_id, start_date, end_date, group_by)
 
     """
     count()
@@ -146,30 +105,20 @@ class StatisticsEngine:
     through the date range, grouped by the given time period
     """
     def count(self,
-        column, 
-        activity, 
-        athlete, 
+        column_name, 
+        activity_name, 
+        athlete_id, 
         start_date, 
         end_date, 
         group_by):
 
-        if (column     is None or
-            activity   is None or
-            athlete    is None or
-            start_date is None or
-            end_date   is None or 
-            group_by   is None):
-            
-            raise Exception("NULL PARAMTER PASSED to StatisticsEngine::count()")
+        #determines the search column from the table by name
+        search_col = getattr(Activity, column_name);
 
-        return self.run_query(
-            "sum", 
-            column, 
-            activity, 
-            athlete, 
-            start_date, 
-            end_date, 
-            group_by)
+        # select columns for query
+        sum_col = func.count(search_col).label('count')
+
+        return self.run_query(sum_col, activity_name, athlete_id, start_date, end_date, group_by)
 
 
     """
@@ -179,34 +128,53 @@ class StatisticsEngine:
     through the given date range, grouped by the given time period
     """
     def run_query(self, 
-        operator, 
-        column, 
-        activity, 
-        athlete, 
+        operator_col, 
+        activity_name, 
+        athlete_id, 
         start_date, 
         end_date, 
         group_by):
 
-        if (operator   is None or 
-            column     is None or
-            activity   is None or
-            athlete    is None or
-            start_date is None or
-            end_date   is None or 
-            group_by   is None):
-            
-            raise Exception("NULL PARAMTER PASSED to StatisticsEngine::run_query()")
+        year_extract  = func.extract("year" , Activity.date).label('year')
+        month_extract = func.extract("month", Activity.date).label('month')
+        day_extract   = func.extract("day"  , Activity.date).label('day')
 
-        sql = self.sql_template.format(
-            operator, 
-            column, 
-            athlete, 
-            activity, 
-            start_date,
-            end_date,
-            group_by)
+        #if a group by has been provided for period, perform groupby
+        if group_by is not None:
+            if (group_by == "year"):
+                all_things = database.session\
+                    .query(operator_col, year_extract)\
+                    .group_by(year_extract)
 
-        result = db_session.execute(sql)
-        print sql
-        print result.fetchall()
-        return "good to go"     
+            elif (group_by == "month"):
+                all_things = database.session\
+                    .query(operator_col, year_extract, month_extract)\
+                    .group_by(year_extract, month_extract)
+
+            elif (group_by == "day"):
+                all_things = database.session\
+                    .query(operator_col, year_extract, month_extract, day_extract)\
+                    .group_by(year_extract, month_extract, day_extract)
+
+            else:
+                raise "Incorrect group_by passed to StatisticsEngine"
+        else:
+            all_things = database.session.query(operator_col)
+
+        # if an activity has been provided, filter by activity
+        if activity_name is not None:
+            all_things = all_things.filter(Activity.type == activity_name)
+
+        # if an athlete_id has been provided, filter by athlete_id
+        if athlete_id is not None:
+            all_things = all_things.filter(Activity.athlete_id == athlete_id)
+
+        # if a starting date has been provided, filter dates earlier than start
+        if start_date is not None:
+            all_things = all_things.filter(Activity.date >= start_date)
+
+        # if an ending date has been provided, filter dates later than end        
+        if end_date is not None:
+            all_things = all_things.filter(Activity.date <= end_date)
+        
+        return all_things.all()

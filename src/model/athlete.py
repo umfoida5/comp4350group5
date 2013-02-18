@@ -19,7 +19,7 @@ class Athlete(database.Base):
     achievements = relationship("Achievement",
                     secondary=AthleteAchievements)    
 
-    #initialise the Data model for the athlete
+	#initialise the Data model for the athlete
     def __init__(self, first_name, last_name, email, birth_date, about_me, address, avatar):
         self.first_name = first_name
         self.last_name = last_name
@@ -34,10 +34,10 @@ class Athlete(database.Base):
         return '<Athlete %r %r %r %r %r %r %r %r>' % (
             self.first_name,
             self.last_name,
-	    self.email,
-	    self.birth_date,
-	    self.about_me,
-	    self.address,
-	    self.avatar,
+			self.email,
+			self.birth_date,
+			self.about_me,
+			self.address,
+			self.avatar,
             self.achievements
         )
