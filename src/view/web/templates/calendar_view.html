@@ -1,0 +1,50 @@
+{% extends "index.html" %}
+
+{% block script %}
+    <link rel='stylesheet' type='text/css' href='../css/fullcalendar.css' />
+    <link rel='stylesheet' type='text/css' href='../css/fullcalendar.print.css' media='print' />
+    <script type='text/javascript' src='../js/jquery-1.8.1.min.js'></script>
+    <script type='text/javascript' src='../js/jquery.min.js'></script>
+    <script type='text/javascript' src='../js/jquery-ui-1.8.23.custom.min.js'></script>
+    <script type='text/javascript' src='../js/fullcalendar.min.js'></script>
+
+    <script>
+        $(document).ready(function() {
+
+    		var date = new Date();
+    		var d = date.getDate();
+    		var m = date.getMonth();
+    		var y = date.getFullYear();
+
+            var json;
+			var the_events = [];
+            $.getJSON("get", json, function(json) {
+                $(json.activities).each(function() {              
+                    the_events.push({
+                        title: $(this).attr('type') + "\n" + 
+                               $(this).attr('distance') + " km : " + 
+                               $(this).attr('duration') + " mins",
+                        start: $(this).attr('date'),
+                        end:   $(this).attr('date')
+                    });
+                });
+            
+            $('#calendar').fullCalendar({
+                header: {
+				    left: 'prev',
+				    center: 'title',
+				    right: 'today, next'
+		        },
+                weekMode: 'variable',
+                editable: false,
+                events: the_events,
+                
+            })
+        });});
+    </script>
+
+{% endblock script %}
+
+{% block body %}
+    <div id='calendar'></div>
+{% endblock body %}
