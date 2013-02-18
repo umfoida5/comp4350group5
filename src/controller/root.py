@@ -6,6 +6,7 @@ from stats import Stats
 from profiles import Profiles
 from achievements import Achievements
 from modules.template import env
+from calendar import Calendar
 
 def http_methods_allowed(methods=['GET', 'HEAD']):
     method = cherrypy.request.method.upper()
@@ -22,6 +23,7 @@ class Root:
     stats = Stats()
     profiles = Profiles()
     achievements = Achievements()
+    calendar = Calendar()
 
     @cherrypy.expose
     def index(self):
