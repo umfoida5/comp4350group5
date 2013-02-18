@@ -1,3 +1,44 @@
 {% extends "index.html" %}
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/highcharts.js"></script>
+
+{% block script  %}
+
+{% endblock script %}
+
 {% block body %}
+
+<p>I would like to find my</p>
+	<div class="dropdown">
+    <ul class="dropdown" role="menu" aria-labelledby="dropdownMenu" style="display: block; position: static; margin-bottom: 5px; *width: 180px;">
+    <li><a tabindex="0" href="#">Total</a></li>
+    <li><a tabindex="1" href="#">Average</a></li>
+    <li><a tabindex="2" href="#">Maximum</a></li>
+    </ul>
+    </div>
+<p>of my</p>
+	<div class="dropdown">
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" style="display: block; position: static; margin-bottom: 5px; *width: 180px;">
+    <li><a tabindex="0" href="#">Speed</a></li>
+    <li><a tabindex="1" href="#">Distance</a></li>
+    <li><a tabindex="2" href="#">Duration</a></li>
+    </ul>
+    </div>
+<p>for the</p>
+	<div class="dropdown">
+	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" style="display: block; position: static; margin-bottom: 5px; *width: 180px;">
+	<li><a tabindex="0" href="#">Day</a></li>
+	<li><a tabindex="1" href="#">Week</a></li>
+    <li><a tabindex="2" href="#">Month</a></li>
+    <li><a tabindex="3" href="#">Year</a></li>
+    </ul>
+    </div>
+    <button class="btn">GO!</button>
+<br>
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+
 {% endblock body %}
