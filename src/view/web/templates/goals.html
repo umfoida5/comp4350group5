@@ -5,6 +5,7 @@
 {% block script  %}
   <script src="../js/jquery.min.js"></script>
   <script src="../js/jquery.dataTables.min.js"></script>
+  <script src="../js/bootstrap-datepicker.js"></script>
   <link rel="stylesheet" href="../css/datatables.css">	 
   <script src="../js/bootstrapPagination.js"></script>
   <script>
@@ -28,6 +29,12 @@
         } );
         return false;
       } );
+    } );
+  </script>
+
+  <script>
+    $(document).ready(function() {
+      $('#dateInput').datepicker();
     } );
   </script>
 
