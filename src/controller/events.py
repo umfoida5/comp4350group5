@@ -13,9 +13,12 @@ class Events:
         return tmpl.render()
 
     @cherrypy.expose
-    def create(self):
-        tmpl = env.get_template('events_create.html')
-        return tmpl.render()
+    def create(self, date, location, distance, description):
+        db_session = database.session
+
+        newEvent = Event(datetime.strptime(date, "%d-%m-%Y"), str(description), str(location), int(distance))
+        db_session.add(newEvent)
+        db_session.commit()
 
     @cherrypy.tools.json_out()
     @cherrypy.expose

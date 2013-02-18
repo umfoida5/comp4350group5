@@ -2,11 +2,26 @@
 
 {% block script  %}
   <script src="../js/jquery.min.js"></script>
+  <script type='text/javascript' src='../js/bootstrap.js'></script>
+  <link href="../css/datepicker.css" rel="stylesheet">
+  <script src="../js/bootstrap-datepicker.js"></script>
   <script src="../js/jquery.dataTables.min.js"></script>
   <link rel="stylesheet" href="../css/datatables.css">
   <script src="../js/bootstrapPagination.js"></script>
   <script>
     $(document).ready(function() {
+      $('#enterButton').click(function() {
+        $('#enter_event_modal').modal('show');
+        $('#date_input').attr('value', '');
+        $('#city_input').attr('value', '');
+        $('#distance_input').attr('value', '');
+        $('#event_description').attr('value', '');
+      });
+      
+      $('#closeButton').click(function() {
+        $('#enter_event_modal').modal('hide');
+      });
+      
       $('#eventTable').dataTable( {
         "bProcessing": true,
         "bServerSide": true,
@@ -20,13 +35,58 @@
           { "mData": "distance", "sWidth": '15%', "bSearchable": false }
         ]
       } );
+      
+      $('#date_wrapper').datepicker();
+      
+      $("form").submit(function() {
+        $.post("create", $(this).serialize(), function() {
+          eventTable.fnDraw();
+          $('#enter_event_modal').modal('hide');
+        } );
+        return false;
+      } );
     } );
   </script>
 {% endblock script %}
 
 {% block body %}
-  <a class="btn btn-primary btn-large" href="create">Post an Event in your Area</a>
-  <h1>Upcoming Events</h1>
+<div align="right">
+    <button type="button" id="enterButton" class="btn">Post an Event in your Area</button>
+</div>
+
+<div class="modal hide fade" id="enter_event_modal" name="enter_event_modal">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 id="modal_title">Post an Upcoming Event:</h3>
+    </div> 
+    <form>
+        <div class="modal-body">
+            <div class="control-group">
+                <label class="control-label" for="date_wrapper">Date:&nbsp;</label>
+                <div class="input-append date" id="date_wrapper" data-date="26-02-2013" data-date-format="dd-mm-yyyy">
+                  <input class="span2" id="date_input" name="eventDate" size="16" type="text">
+                  <span class="add-on"><i class="icon-th"></i></span>
+                </div>
+            </div>
+          <div class="control-group">
+              <label class="control-label" for="city_input">City:&nbsp;</label>
+              <input type="text" name="city_input" class="input-xlarge" id="city_input">
+          </div>
+          <div class="control-group">
+              <label class="control-label" for="distance_input">Distance(KM):&nbsp;</label>
+              <input type="number"  name="distance_input" class="input-xlarge" id="distance_input">
+          </div>
+          <div class="control-group">
+              <label class="control-label" for="event_description">Event Description:&nbsp;</label>
+              <textarea class="input-xlarge" name="event_description" id="event_description" rows="10"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+            <a class="btn" id="closeButton">Close</a>
+            <input class="btn btn-primary" id="saveButton" type="submit" value="Post Event" />
+        </div>
+    </form>
+</div>
 
   <!-- TABLE ======================================= -->
     <table class="table table-bordered table-striped table-hover" id="eventTable">
