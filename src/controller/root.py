@@ -5,6 +5,7 @@ from events import Events
 from stats import Stats
 from profiles import Profiles
 from achievements import Achievements
+from goals import Goals
 from modules.template import env
 from calendar import Calendar
 
@@ -24,6 +25,7 @@ class Root:
     profiles = Profiles()
     achievements = Achievements()
     calendar = Calendar()
+    goals = Goals()
 
     @cherrypy.expose
     def index(self):
@@ -34,5 +36,3 @@ class Root:
     def about(self):
         tmpl = env.get_template('about.html')
         return tmpl.render()
-
-
