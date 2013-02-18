@@ -14,7 +14,8 @@ class StatisticsEngine:
     finds the sum of values from the given table and column for 
     the through the date range, grouped by the given time period
     """
-    def total(self, 
+    def total(
+        self, 
         column_name,
         activity_name, 
         athlete_id,
@@ -38,7 +39,8 @@ class StatisticsEngine:
     finds the average value from the given table and column for 
     the through the date range, grouped by the given time period
     """
-    def average(self, 
+    def average(
+        self, 
         column_name,
         activity_name,
         athlete_id,
@@ -60,7 +62,8 @@ class StatisticsEngine:
     finds the minimum vaue from the given table and column for 
     the through the date range, grouped by the given time period
     """
-    def minimum(self,
+    def minimum(
+        self,
         column_name, 
         activity_name, 
         athlete_id, 
@@ -82,7 +85,8 @@ class StatisticsEngine:
     finds the maximim vaue from the given table and column for 
     the through the date range, grouped by the given time period
     """
-    def maximum(self, 
+    def maximum(
+        self, 
         column_name, 
         activity_name, 
         athlete_id, 
@@ -104,7 +108,8 @@ class StatisticsEngine:
     performs a count on the given table and column for the 
     through the date range, grouped by the given time period
     """
-    def count(self,
+    def count(
+        self,
         column_name, 
         activity_name, 
         athlete_id, 
@@ -127,7 +132,8 @@ class StatisticsEngine:
     Queries the table for the values in the given table and column
     through the given date range, grouped by the given time period
     """
-    def run_query(self, 
+    def run_query(
+        self, 
         operator_col, 
         activity_name, 
         athlete_id, 
