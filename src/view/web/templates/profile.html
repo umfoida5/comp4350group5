@@ -20,29 +20,44 @@
   </script>
 {% endblock script %}
 {% block body %}
-<!-- Temporary Links to Access new/edit/view Pages -->
-  <h1 id="profile_name"></h1><br>
-  <!-- end table ======================================= -->
-  <table>
-    <tr><th>Personal Information</th></tr>
-    <tr>
-      <td>
-        <p id="dob">Birth Date: </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p id="address">Address: </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p id="email">Email: </p>
-      </td>
-    </tr>
-  </table>
-  <table>
-    <tr><th>About Me</th></tr>
-    <tr><td><p id="about_me"></p></td></tr>
-  </table>
+  <div class="row-fluid">
+    <div class="span3 thumbnails">
+      <a href="#" class="thumbnail">
+        <img data-src="holder.js/250x200" style="width:250px; height:200px" alt="">
+      </a>
+    </div>
+    <div class="span9">
+      <div>
+        <h1 id="profile_name"></h1>
+        <hr style="border-top:1px solid #ff3333">
+      </div>
+      <div class="span6">
+        <div class="well" style="height:75px">
+          <dl>
+            <dt>About Me</dt>
+            <dd id="about_me"></dd>
+          </dl>
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span3">
+
+      <ul class="nav nav-list">
+        <li class="nav-header">Personal Information</li>
+        <li id="dob"></li>
+        <li id="address"></li>
+        <li id="email"></li>
+      </ul>
+
+    </div>
+
+  </div>
+
+      
+  
+  
 {% endblock body %}
