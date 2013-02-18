@@ -11,16 +11,17 @@ class StatisticsEngineTest(unittest.TestCase):
     statseng = StatisticsEngine()
     test_athlete = None
  
+    @classmethod
+    def setUpClass(cls):
+        database.init("tracker_test")
+
     def setUp(self):
         """
         This method is run before tests to provide setup
-        """
-        database.init("tracker_test")      
+        """  
         stats_eng = StatisticsEngine() 
 
-        # cleans athletes and activities table
-        Activity.query.delete()
-        Athlete.query.delete()
+        database.empty_database()
 
         # intialize the Athlete table with known values
         database.session.add(
@@ -77,12 +78,6 @@ class StatisticsEngineTest(unittest.TestCase):
 
         database.session.commit()
         
-
-    def tearDown(self):
-        """
-        This method is run before tests to provide setup
-        """
-
     '''
     Test the group_by statistical aggregation for each method by
     day, month and year groupings

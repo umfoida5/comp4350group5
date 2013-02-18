@@ -15,7 +15,7 @@ class Achievement(Base):
     __tablename__ = 'achievements'
 
     id = Column(Integer, primary_key=True)
-    title = Column(String(128), nullable=False)
+    title = Column(String(128))
     description = Column(String(500))
     creation_date = Column(DateTime, default=datetime.now())
     image_url = Column(String(256))
