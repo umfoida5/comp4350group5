@@ -51,8 +51,9 @@
       // for submitting the new goal
       $("form").submit(function() {
         $.post("create", $(this).serialize(), function() {
-          currentGoalsTable.fnDraw();
-          pastGoalsTable.fnDraw();
+          // TODO: actually make it grab stuff from the database.
+          //currentGoalsTable.fnDraw();
+          //pastGoalsTable.fnDraw();
         } );
         return false;
       } );
