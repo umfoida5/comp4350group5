@@ -11,17 +11,21 @@
         $(document).ready(function() {
             $('#calendar').fullCalendar({
                 header: {
-        	        left: 'prev',
+        	        left:   'prev',
 			        center: 'title',
-				    right: 'today, next'
+				    right:  'today, next'
 		        },
-                weekMode: 'variable',
-                editable: false,
-                eventColor:    "#dd4814",
+                weekMode:   'variable',
+                editable:   false,
+                eventColor: "#dd4814",
                 events: function(start, end, callback) {
                     $.ajax({
                         url:        'get',
                         dataType:   'json',
+                        data: {
+                            start_date: start.toJSON(),
+                            end_date:   end.toJSON()
+                        },
                         success: function(doc) {
                             var events = [];
                             $(doc.activities).each(function() {
