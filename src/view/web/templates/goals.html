@@ -62,68 +62,96 @@
 {% endblock script %}
 
 {% block body %}
-  {% block form %}
-    <form class="form-inline well" action="createGoal">
-      <fieldset>
-      <legend>Create Goal</legend>
+  <form class="form-horizontal well" action="createGoal">
+    <fieldset>
+    <legend>Create Goal</legend>
 
-        <!-- TODO: fill with activity types from db in script-->
-        <select id="activity">
-          <option value="run">Run</option>
-          <option value="bike">Bike</option>
-          <option value="swim">Swim</option>
-        </select>
+      <!-- TODO: fill with activity types from db in script-->
+      <select id="activity">
+        <option value="run">Run</option>
+        <option value="bike">Bike</option>
+        <option value="swim">Swim</option>
+      </select>
 
-        <!-- TODO: fill with operator types from db in script-->
-        <select id="operator">
-          <option value="total">Total</option>
-          <option value="min">Min</option>
-          <option value="max">Max</option>
-          <option value="average">Average</option>
-        </select>
+      <!-- TODO: fill with operator types from db in script-->
+      <select id="operator">
+        <option value="total">Total</option>
+        <option value="min">Min</option>
+        <option value="max">Max</option>
+        <option value="average">Average</option>
+      </select>
 
-        <input type="text" id="quantity" placeholder="Quantity">
-        
-        <!-- TODO: fill with metric types from db in script-->
-        <select id="metric">
-          <option value="km">Km</option>
-          <option value="kmph">Kmph</option>
-        </select>
+      <input type="text" id="quantity" placeholder="Quantity">
+      
+      <!-- TODO: fill with metric types from db in script-->
+      <select id="metric">
+        <option value="km">Km</option>
+        <option value="kmph">Kmph</option>
+      </select>
 
-        <br>
+      <!-- TODO: make default current date -->
+      <label class="control-label" for="dateInput">Start:&nbsp;</label>
+      <div class="input-append date" id="dateInput" data-date="26-02-2013" data-date-format="dd-mm-yyyy">
+        <input class="span2" name="startDate" size="16" type="text" value="26-02-2013">
+        <span class="add-on"><i class="icon-th"></i></span>
+      </div>
+      
+      <!-- TODO: make default current date +1 day-->
+      <label class="control-label" for="dateInput">End:&nbsp;</label>
+      <div class="input-append date" id="dateInput" data-date="27-02-2013" data-date-format="dd-mm-yyyy">
+        <input class="span2" name="endDate" size="16" type="text" value="27-02-2013">
+        <span class="add-on"><i class="icon-th"></i></span>
+      </div>
 
-        <!-- TODO: make default current date -->
-        <label class="control-label" for="dateInput">Start:&nbsp;</label>
-        <div class="input-append date" id="dateInput" data-date="26-02-2013" data-date-format="dd-mm-yyyy">
-          <input class="span2" name="startDate" size="16" type="text" value="26-02-2013">
-          <span class="add-on"><i class="icon-th"></i></span>
-        </div>
-        
-        <!-- TODO: make default current date +1 day-->
-        <label class="control-label" for="dateInput">End:&nbsp;</label>
-        <div class="input-append date" id="dateInput" data-date="27-02-2013" data-date-format="dd-mm-yyyy">
-          <input class="span2" name="endDate" size="16" type="text" value="27-02-2013">
-          <span class="add-on"><i class="icon-th"></i></span>
-        </div>
+      <label class="control-label">Recurring&nbsp;
+        <input type="checkbox">
+      </label>
 
-        <label class="control-label">Recurring&nbsp;
-          <input type="checkbox">
-        </label>
-        
-        <br>
+      <button type="submit" class="btn btn-primary">Create</button>
 
-        <button type="submit" class="btn">Create</button>
-
-      </fieldset>
-    </form>
-  {% endblock form %}
+    </fieldset>
+  </form>
 
   <!-- CURRENT GOALS TABLE -->
-  <table class="table table-bordered table-striped table-hover" id="cGoalsTable">
-    <caption>Current Goals</caption>
-  </table>
+  <form class="form-horizontal well">
+    <legend>Current Goals</legend>
+
+    <table class="table table-bordered table-striped table-hover" id="currentGoalsTable">
+      <thead>
+      <tr>
+        <th>Activity</th>
+        <th>Operator</th>
+        <th>Quantity</th>
+        <th>Metric</th>
+        <th>Start</th>
+        <th>End</th>
+        <th>Completed</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    </table>
+  </form>
 
   <!-- PAST GOALS TABLE -->
+  <form class="form-horizontal well">
+    <legend>Past Goals</legend>
 
+    <table class="table table-bordered table-striped table-hover" id="pastGoalsTable">
+      <thead>
+      <tr>
+        <th>Activity</th>
+        <th>Operator</th>
+        <th>Quantity</th>
+        <th>Metric</th>
+        <th>Start</th>
+        <th>End</th>
+        <th>Completed</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    </table>
+  </form>
 
 {% endblock body %}
