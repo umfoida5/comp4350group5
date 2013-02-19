@@ -1,8 +1,10 @@
 import cherrypy
 from modules.template import env
 from model.activity import Activity
+from model.athlete import Athlete
 from modules.jsonable import make_jsonable
-import datetime
+from modules import database
+from datetime import datetime
 
 class Calendar:
     @cherrypy.expose
@@ -12,12 +14,17 @@ class Calendar:
 
     @cherrypy.tools.json_out()
     @cherrypy.expose
-    @cherrypy.tools.allow(methods=['GET'])
-    def get(self, **args):
-        if (len(args) >= 2):
-            activities = Activity.query.filter(Activity.date.between(args["start_date"], args["end_date"])).all()
-        else:
-            activities = Activity.query.all()
+    def json(self, start_date, end_date):
+        activities = Activity.query.filter(Activity.date.between(start_date, end_date)).all()
 
         json_data = {"activities":make_jsonable(activities)}      
         return json_data
+
+    @cherrypy.expose
+    def create(self, type, date, distance, duration, max_speed):
+        db_session = database.session
+
+        athlete = Athlete.query.first()
+        new = Activity(athlete.id, type, datetime.strptime(date, "%d-%m-%Y"), int(distance), int(duration), max_speed)
+        db_session.add(new)
+        db_session.commit()
