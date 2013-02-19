@@ -3,8 +3,64 @@
 {% block script  %}
 <script src="../js/jquery.min.js"></script>
 <script src="../js/highcharts.js"></script>
-<script src="../js/bootstrap-dropdown.js"></script>
 <script>
+
+$(document).ready(function() {
+
+	$("button").click(function(){
+		var today = new Date();
+		var startDate = today;
+		var graphData = new Array();
+
+		//find the correct startDate based on selection (select3)
+		if ($("#select3").val() == "Day"){
+			startDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+		}
+
+		if ($("#select3").val() == "Week"){
+			startDate = new Date(today.getFullYear(), today.getMonth(), today.getDate()-today.getDay());
+		}
+		else if ($("#select3").val() == "Month"){
+			startDate = new Date(today.getFullYear(), today.getMonth(), 0);
+		}
+		else if ($("#select3").val() == "Year"){
+			startDate = new Date(today.getFullYear(), 0, 0);
+		}
+
+
+		//ask server for the data and dump it into the graphdata variable
+		//TODO
+		if ($("#select1").val() == "Total"){
+
+			//../src/controller/statistics_engine.py
+			$.getJSON("get_total",
+			{
+				column_name: $("#select3").val(),
+				activity_name: $("#select0").val(),
+				athlete_id: 0,
+				start_date: startDate,
+        		end_date: today
+			},
+				function(graphData)
+				{
+					alert(graphData);
+    			});
+		}
+
+		else if ($("#select1").val() == "Average"){
+			//$.get("statistics_engine.py",average(self,column_name,activity_name,athlete_id,startDate,today,group_by){
+		}
+		else if ($("#select1").val() == "Maximum"){
+			//$.get("statistics_engine.py",maximum(self,column_name,activity_name,athlete_id,startDate,today,group_by)
+		}
+		else if ($("#select1").val() == "Minimum"){
+			//$.get("statistics_engine.py",minimum(self,column_name,activity_name,athlete_id,startDate,today,group_by){
+		}
+
+
+	});//button click function
+});//document ready
+
 $(document).ready(function() {
     var chart1 = new Highcharts.Chart({
         chart: {
@@ -38,26 +94,34 @@ $(document).ready(function() {
 
 <div id=search terms>
 <label>
+Activity:
+<select size="1" id="select0" aria-controls="graphContainer">
+	<option value ="Walk" selected="selected">Walk</option>
+	<option value ="Run" selected="selected">Run</option>
+	<option value ="Bike" selected="selected">Bike</option>
+</select><br>
 I would like to find my
-<select size="1" name="select1" aria-controls="graphContainer">
+<select size="1" id="select1" aria-controls="graphContainer">
 	<option value ="Total" selected="selected">Total</option>
 	<option value ="Average" selected="selected">Average</option>
 	<option value ="Maximum" selected="selected">Maximum</option>
+	<option value ="Minimum" selected="selected">Maximum</option>
 </select>
  of my
-<select size="1" name="select2" aria-controls="graphContainer">
+<select size="1" id="select2" aria-controls="graphContainer">
 	<option value ="Speed" selected="selected">Speed</option>
 	<option value ="Distance" selected="selected">Distance</option>
 	<option value ="Duration" selected="selected">Duration</option>
 </select>
  for the
-<select size="1" name="select3" aria-controls="graphContainer">
+<select size="1" id="select3" aria-controls="graphContainer">
 	<option value ="Day" selected="selected">Day</option>
 	<option value ="Week" selected="selected">Week</option>
 	<option value ="Month" selected="selected">Month</option>
 	<option value ="Year" selected="selected">Year</option>
 </select>
 </label>
+<button type="button" class="btn btn-primary" data-loading-text="Updating...">Update</button>
 </div>
 
 <div id="graphContainer" style="width:100%; height:400px;"></div>
