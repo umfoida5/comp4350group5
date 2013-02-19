@@ -94,6 +94,7 @@
         var onedit   = settings.onedit   || function() { }; 
         var onsubmit = settings.onsubmit || function() { };
         var onreset  = settings.onreset  || function() { };
+        var intercept = settings.intercept || function(s) {return s; };
         var onerror  = settings.onerror  || reset;
           
         /* show tooltip */
@@ -346,6 +347,7 @@
                                   dataType: 'html',
                                   url     : settings.target,
                                   success : function(result, status) {
+                                      result = intercept.apply(self,[result]);
                                       if (ajaxoptions.dataType == 'html') {
                                         $(self).html(result);
                                       }
@@ -355,6 +357,7 @@
                                           $(self).html(settings.placeholder);
                                       }
                                   },
+                                  
                                   error   : function(xhr, status, error) {
                                       onerror.apply(form, [settings, self, xhr]);
                                   }

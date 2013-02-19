@@ -9,7 +9,7 @@
   <script>
     $(document).ready(function(){
       var athlete;
-      $.getJSON('get_athlete', athlete, function(athlete){
+      $.getJSON('athlete', athlete, function(athlete){
         $("#profile_name").append(athlete['first_name'] + " " + athlete['last_name']);
         $("#dob").html(athlete['birth_date']);
         $("#address").html(athlete['address']);
@@ -17,43 +17,72 @@
         $("#about_me").html(athlete['about_me']);
       });
       
-      $('#dob').editable('/update_dob', {
+      $('#dob').editable('update_dob', {
           indicator: 'Saving',
           tooltip:  'Click to change',
           onblur: 'cancel',
           submit: 'OK',
-          cancel: 'Cancel'
+          cancel: 'Cancel',
+          name: 'birth_date',
+          //~ method: 'PUT',
+          type: 'text',
+          intercept: function (jsondata) {
+            obj = jQuery.parseJSON(jsondata);
+            // do something with obj.status and obj.other
+            return(obj.birth_date);
+          }        
+        });
+        
+        
+      $('#address').editable('update_address', {
+          indicator: 'Saving',
+          tooltip:  'Click to change',
+          onblur: 'cancel',
+          submit: 'OK',
+          cancel: 'Cancel',
+          name: 'address',
+          //~ method: 'PUT',
+          type: 'text',
+          intercept: function (jsondata) {
+            obj = jQuery.parseJSON(jsondata);
+            // do something with obj.status and obj.other
+            return(obj.address);
+          }
+        });
+        
+        
+      $('#email').editable('update_email', {
+          indicator: 'Saving',
+          tooltip:  'Click to change',
+          onblur: 'cancel',
+          submit: 'OK',
+          cancel: 'Cancel',
+          name: 'email',
+          //~ method: 'PUT',
+          type: 'text',
+          intercept: function (jsondata) {
+            obj = jQuery.parseJSON(jsondata);
+            // do something with obj.status and obj.other
+            return(obj.email);
+          }
         
         });
         
         
-      $('#address').editable('/update_address', {
+        $('#about_me').editable('update_about', {
           indicator: 'Saving',
           tooltip:  'Click to change',
           onblur: 'cancel',
           submit: 'OK',
-          cancel: 'Cancel'
-        
-        });
-        
-        
-            $('#email').editable('/update_email', {
-          indicator: 'Saving',
-          tooltip:  'Click to change',
-          onblur: 'cancel',
-          submit: 'OK',
-          cancel: 'Cancel'
-        
-        });
-        
-        
-              $('#about_me').editable('/update_about', {
-          indicator: 'Saving',
-          tooltip:  'Click to change',
-          onblur: 'cancel',
-          submit: 'OK',
-          cancel: 'Cancel'
-        
+          cancel: 'Cancel',
+          name: 'about_msg',
+          //~ method: 'PUT',
+          type: 'text',
+          intercept: function (jsondata) {
+            obj = jQuery.parseJSON(jsondata);
+            // do something with obj.status and obj.other
+            return(obj.about_me);
+          }
         });
     });
     //~ alert(window.location.href);
