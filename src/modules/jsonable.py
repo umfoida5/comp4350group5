@@ -28,6 +28,8 @@ class Jsonable:
                     continue
 
                 if type(value) is datetime.date:
+                    dict_representation[attribute] = str(value) 
+                elif type(value) is datetime.datetime:
                     dict_representation[attribute] = str(value)                
                 elif hasattr(value.__class__, '_jsonFields'):
                     dict_representation[attribute] = value.to_dict()

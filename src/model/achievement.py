@@ -10,12 +10,12 @@ AthleteAchievements = Table(
     Column('achievement_id', Integer, ForeignKey('achievements.id'))
 )
 
-@Jsonable('title', 'description', 'image_url')
+@Jsonable('title', 'description', 'image_url', 'creation_date')
 class Achievement(Base):
     __tablename__ = 'achievements'
 
     id = Column(Integer, primary_key=True)
-    title = Column(String(128))
+    title = Column(String(128), nullable=False)
     description = Column(String(500))
     creation_date = Column(DateTime, default=datetime.now())
     image_url = Column(String(256))

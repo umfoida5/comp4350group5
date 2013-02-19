@@ -1,17 +1,23 @@
 import cherrypy, httplib
 from modules.transaction import commit_on_success
 from modules.jsonable import make_jsonable
+from modules.template import env
 from model.athlete import Athlete
-from model.achievement import Achievement
+from model.achievement import Achievement, AthleteAchievements
 
 class Achievements:
+
+    @cherrypy.expose
+    def badges(self):
+        tmpl = env.get_template('achievements.html')
+        return tmpl.render(achievements=Achievement.query.all())
+
     @cherrypy.tools.json_out()
     @cherrypy.expose
     @cherrypy.tools.allow(methods=['GET'])
-    def get_all(self):
-        achievements = Achievement.query.all()
-        json_data = {"achievements":make_jsonable(achievements)}
-        return json_data
+    def get_athlete_achievements(self):
+        athlete_achievements = (Athlete.query.get(1)).achievements
+        return make_jsonable(athlete_achievements)
 
     @cherrypy.tools.json_out()
     @cherrypy.expose
