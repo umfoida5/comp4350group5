@@ -6,6 +6,7 @@ from modules import database
 from model.athlete import Athlete
 from modules.template import env
 from modules.jsonable import make_jsonable
+from hashlib import md5
 class Profiles:
     #~ global athlete_id = 1
     @cherrypy.expose
@@ -15,11 +16,31 @@ class Profiles:
         
     @cherrypy.tools.json_out()
     @cherrypy.expose
-    def get_athlete(self, **params):
+    def get_athlete(self, **kwargs):
 	result = Athlete.query.get(1)
 	#~ return result
 	return make_jsonable(result)
+    
+    @cherrypy.tools.json_in()
+    @cherrypy.expose
+    def update_about(self, msg):
+        """updates the profiles about"""
 
+    @cherrypy.tools.json_in()
+    @cherrypy.expose
+    def update_address(self, **kwargs):
+        """update the address"""
+        
+    @cherrypy.tools.json_in()
+    @cherrypy.expose
+    def update_dob(sef, **kwargs):
+        """update the date of birth"""
+
+    @cherrypy.tools.json_in()
+    @cherrypy.expose
+    def update_email(self, **kwargs):
+        """update the email adress"""
+        
 if(__name__ == '__main__'):
     
     database.init()
