@@ -1,3 +1,65 @@
 {% extends "index.html" %}
+
+{% block script  %}
+<script src="../js/jquery.min.js"></script>
+<script src="../js/highcharts.js"></script>
+<script src="../js/bootstrap-dropdown.js"></script>
+<script>
+$(document).ready(function() {
+    var chart1 = new Highcharts.Chart({
+        chart: {
+            renderTo: 'graphContainer',
+            type: 'bar'
+        },
+        title: {
+            text: 'Fruit Consumption'
+        },
+        xAxis: {
+            categories: ['Apples', 'Bananas', 'Oranges']
+        },
+        yAxis: {
+            title: {
+                text: 'Fruit eaten'
+            }
+        },
+        series: [{
+            name: 'Jane',
+            data: [1, 0, 4]
+        }, {
+            name: 'John',
+            data: [5, 7, 3]
+        }]
+    });
+});
+</script>
+{% endblock script %}
+
 {% block body %}
+
+<div id=search terms>
+<label>
+I would like to find my
+<select size="1" name="select1" aria-controls="graphContainer">
+	<option value ="Total" selected="selected">Total</option>
+	<option value ="Average" selected="selected">Average</option>
+	<option value ="Maximum" selected="selected">Maximum</option>
+</select>
+ of my
+<select size="1" name="select2" aria-controls="graphContainer">
+	<option value ="Speed" selected="selected">Speed</option>
+	<option value ="Distance" selected="selected">Distance</option>
+	<option value ="Duration" selected="selected">Duration</option>
+</select>
+ for the
+<select size="1" name="select3" aria-controls="graphContainer">
+	<option value ="Day" selected="selected">Day</option>
+	<option value ="Week" selected="selected">Week</option>
+	<option value ="Month" selected="selected">Month</option>
+	<option value ="Year" selected="selected">Year</option>
+</select>
+</label>
+</div>
+
+<div id="graphContainer" style="width:100%; height:400px;"></div>
+
 {% endblock body %}
