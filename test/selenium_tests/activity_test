@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>activity_test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">activity_test</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Activities</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enterButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=type</td>
+	<td>Test1</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.icon-th</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=td.day.active</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=duration</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=max_speed</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enterButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=type</td>
+	<td>Test2</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.icon-th</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=td.day.active</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=duration</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=max_speed</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enterButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=type</td>
+	<td>Test3</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.icon-th</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=td.day.active</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=duration</td>
+	<td>3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=max_speed</td>
+	<td>3</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enterButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=type</td>
+	<td>Test4</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.icon-th</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=td.day.active</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=duration</td>
+	<td>4</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>4</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=max_speed</td>
+	<td>4</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enterButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=type</td>
+	<td>Test5</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=date</td>
+	<td>05-02-2013</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=duration</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=max_speed</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enterButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=type</td>
+	<td>Test6</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=date</td>
+	<td>06-02-2013</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=duration</td>
+	<td>6</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>6</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=max_speed</td>
+	<td>6</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enterButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=type</td>
+	<td>Test7</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=date</td>
+	<td>Test7</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=duration</td>
+	<td>7</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>7</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=max_speed</td>
+	<td>7</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=date</td>
+	<td>07-02-2013</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enterButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=type</td>
+	<td>Test8</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.icon-th</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.icon-th</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=td.day.active</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=duration</td>
+	<td>8</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>8</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=max_speed</td>
+	<td>8</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enterButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=type</td>
+	<td>Test9</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=date</td>
+	<td>09-02-2013</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=duration</td>
+	<td>9</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>9</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=max_speed</td>
+	<td>9</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enterButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=type</td>
+	<td>Test11</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=date</td>
+	<td>11-02-2013</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=duration</td>
+	<td>11</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>11</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=max_speed</td>
+	<td>11</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=athleteTable_length</td>
+	<td>label=25</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enterButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=type</td>
+	<td>Test12</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=date</td>
+	<td>12-02-2013</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=duration</td>
+	<td>12</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>12</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=max_speed</td>
+	<td>12</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=athleteTable_length</td>
+	<td>label=10</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=← Previous</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Next →</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=athleteTable_length</td>
+	<td>label=25</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=athleteTable_length</td>
+	<td>label=50</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=athleteTable_length</td>
+	<td>label=100</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=athleteTable_length</td>
+	<td>label=10</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.sorting_asc</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.sorting_desc</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.sorting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.sorting_asc</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//table[@id='athleteTable']/thead/tr/th[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.sorting_asc</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//table[@id='athleteTable']/thead/tr/th[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.sorting_asc</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//table[@id='athleteTable']/thead/tr/th[5]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.sorting_asc</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.sorting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.sorting_asc</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=athleteTable_length</td>
+	<td>label=25</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=option[value=&quot;25&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.sorting_desc</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.sorting_asc</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.sorting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.sorting_asc</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//table[@id='athleteTable']/thead/tr/th[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.sorting_asc</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//table[@id='athleteTable']/thead/tr/th[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.sorting_asc</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//table[@id='athleteTable']/thead/tr/th[5]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.sorting_asc</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input[type=&quot;text&quot;]</td>
+	<td>Test1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input[type=&quot;text&quot;]</td>
+	<td>Test2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input[type=&quot;text&quot;]</td>
+	<td>Test3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input[type=&quot;text&quot;]</td>
+	<td>Test4</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input[type=&quot;text&quot;]</td>
+	<td>Test5</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input[type=&quot;text&quot;]</td>
+	<td>Test6</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input[type=&quot;text&quot;]</td>
+	<td>Test7</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input[type=&quot;text&quot;]</td>
+	<td>Test9</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input[type=&quot;text&quot;]</td>
+	<td>Test10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input[type=&quot;text&quot;]</td>
+	<td>Test11</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input[type=&quot;text&quot;]</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
