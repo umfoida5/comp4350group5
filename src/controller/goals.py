@@ -20,7 +20,7 @@ class Goals:
         return make_jsonable(result)
 
     @cherrypy.expose
-    def create(self, activity, operator, quantity, metric, start_date, end_date, recurring, parent_id=None):
+    def create(self, activity, operator, quantity, metric, start_date, end_date, recurring=False, parent_id=None):
         db_session = database.session
         
         athlete = Athlete.query.first()
