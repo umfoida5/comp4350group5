@@ -12,7 +12,7 @@
   <script>
     $(document).ready(function() {
 
-      var currentGoalsTable = $('#currentGoalsTable').dataTable( {
+      var goalsTable = $('#goalsTable').dataTable( {
         "bProcessing": true,
         "bServerSide": true,
         //"bLengthChange": false,
@@ -24,35 +24,16 @@
           { "mData": "operator" },
           { "mData": "quantity" },
           { "mData": "metric" },
-          { "mData": "start" },
-          { "mData": "end" },
-          { "mData": "complete" }
-        ]
-      } );
-
-      var pastGoalsTable = $('#pastGoalsTable').dataTable( {
-        "bProcessing": true,
-        "bServerSide": true,
-        //"bLengthChange": false,
-        "sPaginationType": "bootstrap",
-        "sAjaxSource": "update_datatable",
-        "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
-        "aoColumns": [
-          { "mData": "activity" },
-          { "mData": "operator" },
-          { "mData": "quantity" },
-          { "mData": "metric" },
-          { "mData": "start" },
-          { "mData": "end" },
-          { "mData": "complete" }
+          { "mData": "startDate" },
+          { "mData": "endDate" },
+          { "mData": "recurring" }
         ]
       } );
 
       // for submitting the new goal
       $("form").submit(function() {
         $.post("create", $(this).serialize(), function() {
-          currentGoalsTable.fnDraw();
-          pastGoalsTable.fnDraw();
+          goalsTable.fnDraw();
         } );
         return false;
       } );
@@ -76,24 +57,24 @@
 
     <div class="control-group">  
       <!-- TODO: fill with activity types from db in script-->
-      <select class="span2" id="activity">
+      <select class="span2" name="activity" id="activity">
         <option value="run">Run</option>
         <option value="bike">Bike</option>
         <option value="swim">Swim</option>
       </select>
 
       <!-- TODO: fill with operator types from db in script-->
-      <select class="span2" id="operator">
+      <select class="span2" name="operator" id="operator">
         <option value="total">Total</option>
         <option value="min">Min</option>
         <option value="max">Max</option>
         <option value="average">Average</option>
       </select>
 
-      <input class="span2" type="text" id="quantity" placeholder="Quantity" required >
+      <input class="span2" type="text" name="quantity" id="quantity" placeholder="Quantity" required >
       
       <!-- TODO: fill with metric types from db in script-->
-      <select class="span2" id="metric">
+      <select class="span2" name="metric" id="metric">
         <option value="km">Km</option>
         <option value="kmph">Kmph</option>
       </select>
@@ -117,7 +98,7 @@
       </label>
 
       <label>Recurring
-        <input type="checkbox">
+        <input name="recurring" id="recurring" type="checkbox">
       </label>
     </div>
     
@@ -128,30 +109,9 @@
 
   <!-- CURRENT GOALS TABLE -->
   <form class="form-horizontal well">
-    <legend>Current Goals</legend>
+    <legend>Goals</legend>
 
-    <table class="table table-bordered table-striped table-hover" id="currentGoalsTable">
-      <thead>
-      <tr>
-        <th>Activity</th>
-        <th>Operator</th>
-        <th>Quantity</th>
-        <th>Metric</th>
-        <th>Start</th>
-        <th>End</th>
-        <th>Completed</th>
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
-    </table>
-  </form>
-
-  <!-- PAST GOALS TABLE -->
-  <form class="form-horizontal well">
-    <legend>Past Goals</legend>
-
-    <table class="table table-bordered table-striped table-hover" id="pastGoalsTable">
+    <table class="table table-bordered table-striped table-hover" id="GoalsTable">
       <thead>
       <tr>
         <th>Activity</th>
