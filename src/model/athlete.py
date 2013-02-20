@@ -4,7 +4,7 @@ from modules import database
 from modules.jsonable import Jsonable
 from achievement import AthleteAchievements
 
-@Jsonable('first_name', 'last_name', 'email', 'birth_date', 'about_me', 'address', 'avatar')
+@Jsonable('first_name', 'last_name', 'email', 'birth_date', 'about_me', 'address', 'avatar', 'achievements')
 class Athlete(database.Base):
     __tablename__ = 'athletes'
 

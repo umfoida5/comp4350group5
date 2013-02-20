@@ -1,21 +1,17 @@
 import cherrypy
-import sys
-sys.path.append('..')
 from modules import database
-#~ from athletes import Athletes
 from model.athlete import Athlete
 from modules.template import env
 from modules.jsonable import make_jsonable
 from modules.transaction import commit_on_success
-import simplejson
+from model.achievement import Achievement, AthleteAchievements
 class Profiles:
-    #~ global athlete_id = 1
+    
     @cherrypy.expose
     def index(self):
         tmpl = env.get_template('profile.html')
-        return tmpl.render()
+        return tmpl.render(achievements=Athlete.query.get(1).achievements)
         
-    @cherrypy.tools.allow(methods=['GET'])
     @cherrypy.tools.json_out()
     @cherrypy.expose
     def athlete(self, **kwargs):
@@ -24,7 +20,6 @@ class Profiles:
         return make_jsonable(result)
     
     @cherrypy.tools.json_out()
-    @cherrypy.tools.allow(methods=['POST'])
     @cherrypy.expose
     @commit_on_success
     def update_about(self,id, about_msg):
@@ -35,7 +30,6 @@ class Profiles:
         
 
     @cherrypy.tools.json_out()
-    @cherrypy.tools.allow(methods=['POST'])
     @cherrypy.expose
     @commit_on_success
     def update_address(self, id, address):
@@ -45,7 +39,6 @@ class Profiles:
         return make_jsonable(result)
         
     @cherrypy.tools.json_out()
-    @cherrypy.tools.allow(methods=['POST'])
     @cherrypy.expose
     @commit_on_success
     def update_dob(sef, id, birth_date):
@@ -55,7 +48,6 @@ class Profiles:
         return make_jsonable(result)
 
     @cherrypy.tools.json_out()
-    @cherrypy.tools.allow(methods=['POST'])
     @cherrypy.expose
     @commit_on_success
     def update_email(self, id, email):
@@ -63,11 +55,3 @@ class Profiles:
         result = Athlete.query.get(1)
         result.email = email
         return make_jsonable(result)
-        
-if(__name__ == '__main__'):
-    
-    database.init()
-    prof = Profiles()
-    res = prof.getAthlete()
-    #~ print res.email
-    print(res)
