@@ -25,7 +25,7 @@ class Goal(Base):
     parent_id = Column(Integer) # for recurring goals ONLY; parent id is the original goal id
 
     def __init__(self, athlete_id, activity, operator, quantity, metric,
-        start_date, end_date, recurring, parent_id=None):
+        start_date, end_date, recurring=False, parent_id=None):
         self.athlete_id = athlete_id
         self.activity = activity
         self.operator = operator
