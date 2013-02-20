@@ -5,7 +5,6 @@
   <script src="../js/bootstrapPagination.js"></script>
   <script src="../js/holder.js"></script>
   <script>
-    //Updating the image of the achievements that were unlocked by the athlete
     $(document).ready(function(){
       $.getJSON('get_unlocked_achievements', function(unlocked_achievements){
         $.each(unlocked_achievements, function(index) {
@@ -30,12 +29,8 @@
       {% for achievement in achievements %}
         <li class="span2">
           <div id="{{ achievement.title }}" class="thumbnail" style="width:130px; height:180px;">
-            <a href="#">
               <img id="image" data-src="holder.js/130x130/text:Locked" alt="">
-            </a>
-            <a href="#">
               <p id="title" style="text-align:center;">{{ achievement.title }}</p>
-            </a>
             <p id="date" style="text-align:center;"></p>
           </div>
         </li> 
