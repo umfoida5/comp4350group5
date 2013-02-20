@@ -1,26 +1,73 @@
 {% extends "index.html" %}
 
 {% block script %}
+    <script type='text/javascript' src='../js/jquery.min.js'></script>
+    <script type='text/javascript' src='../js/bootstrap.js'></script>
+    <script type='text/javascript' src='../js/fullcalendar.min.js'></script>
     <link rel='stylesheet' type='text/css' href='../css/fullcalendar.css' />
     <link rel='stylesheet' type='text/css' href='../css/fullcalendar.print.css' media='print' />
-    <script type='text/javascript' src='../js/jquery.min.js'></script>
-    <script type='text/javascript' src='../js/jquery-ui-1.8.23.custom.min.js'></script>
-    <script type='text/javascript' src='../js/fullcalendar.min.js'></script>
 
     <script>
         $(document).ready(function() {
+            $('#closeButton').click(function() { 
+                $('#enter_activity_modal').modal('hide'); 
+            });
+
+            $('#closeButton_view').click(function() { 
+                $('#view_activity_modal').modal('hide'); 
+            });
+
+            $('form').submit(function() { 
+                $.post("create", $(this).serialize(), function() {
+                    $('#enter_activity_modal').modal('hide');
+                    $('#calendar').fullCalendar('refetchEvents');
+                });
+                return false;
+            });
+
             $('#calendar').fullCalendar({
                 header: {
         	        left:   'prev',
 			        center: 'title',
 				    right:  'today, next'
 		        },
+
                 weekMode:   'variable',
+
                 editable:   false,
+
                 eventColor: "#dd4814",
+
+                dayClick: function(date) {
+                    $('#enter_activity_modal').modal('show');
+                    $('#date').attr('value', date.getDate() + "-" + 
+                        (date.getMonth()+1) + "-" + 
+                        date.getFullYear());
+                    $('#modal_title').html("New Activity (" + 
+                        (date.getMonth()+1) + "/" + 
+                        date.getDate() + "/" + 
+                        date.getFullYear() + ")");
+
+                    $('#type').attr('value', '');
+                    $('#distance').attr('value', '');
+                    $('#duration').attr('value', '');
+                    $('#max_speed').attr('value', '');
+                },
+
+                eventClick: function(event) {
+                    $('#view_activity_modal').modal('show');
+
+                    $('#view_modal_title').html(event.type + " (" + 
+                        event.event_date + ")");
+
+                    $('#distance_view').html(event.distance);
+                    $('#duration_view').html(event.duration);
+                    $('#max_speed_view').html(event.max_speed);
+                },
+
                 events: function(start, end, callback) {
                     $.ajax({
-                        url:        'get',
+                        url:        'json',
                         dataType:   'json',
                         data: {
                             start_date: start.toJSON(),
@@ -30,11 +77,18 @@
                             var events = [];
                             $(doc.activities).each(function() {
                                 events.push({
-                                    title:  $(this).attr('type') + "\n" + 
-                                            $(this).attr('distance') + " km : " + 
-                                            $(this).attr('duration') + " mins",
-                                    start:  $(this).attr('date'),
-                                    end:    $(this).attr('date')
+                                    // Full Calendar Dependant JSON:  
+                                    title:      $(this).attr('type') + "\n" + 
+                                                    $(this).attr('distance') + " km : " + 
+                                                    $(this).attr('duration') + " mins",
+                                    start:      $(this).attr('date'),
+                                    end:        $(this).attr('date'),
+                                    // Event Information:                                    
+                                    type:       $(this).attr('type'),
+                                    event_date: $(this).attr('date'),
+                                    distance:   $(this).attr('distance'),
+                                    duration:   $(this).attr('duration'),
+                                    max_speed:  $(this).attr('max_speed')
                                 });
                             });
                             callback(events);
@@ -44,9 +98,54 @@
             })
         });
     </script>
-
 {% endblock script %}
 
 {% block body %}
     <div id='calendar'></div>
+    <div class="modal hide fade" id="enter_activity_modal" name="enter_activity_modal">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 id="modal_title">Enter an Activity:</h3>
+        </div>
+        <form id="newAcitivityForm">
+            <div class="modal-body">
+                <fieldset>
+                    <label for="name">Type:</label>
+                    <input type="text" name="type" id="type" class="text ui-widget-content ui-corner-all" />
+                    <label for="duration">Duration:</label>
+                    <input type="number" name="duration" id="duration" min="0" value="0" required />
+                    <label for="distance">Distance:</label>
+                    <input type="number" name="distance" id="distance" min="0" value="0" required />
+                    <label for="max_speed">Max Speed:</label>
+                    <input type="number" name="max_speed" id="max_speed" min="0" value="0" required />
+                    <input type="hidden" id="date" name="date" value="123" />
+                </fieldset>
+            </div>
+            <div class="modal-footer">
+                <a class="btn" id="closeButton">Close</a>
+                <input class="btn btn-primary" id="saveButton" type="submit" value="Add Activity" />
+            </div>
+        </form>
+    </div>
+    <div class="modal hide fade" id="view_activity_modal" name="enter_activity_modal">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 id="view_modal_title">View an Activity:</h3>
+        </div>
+        <form id="newAcitivityForm">
+            <div class="modal-body">
+                <fieldset>
+                    <label for="duration_view">Duration:</label>
+                    <p name="duration_view" id="duration_view"></p>
+                    <label for="distance_view">Distance:</label>
+                    <p name="distance_view" id="distance_view"></p>
+                    <label for="max_speed_view">Max Speed:</label>
+                    <p name="max_speed_view" id="max_speed_view"></p>
+                </fieldset>
+            </div>
+            <div class="modal-footer">
+                <a class="btn" id="closeButton_view">Close</a>
+            </div>
+        </form>
+    </div>
 {% endblock body %}
