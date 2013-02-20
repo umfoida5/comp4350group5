@@ -3,6 +3,7 @@ from modules import database
 from modules.transaction import commit_on_success
 from modules.jsonable import make_jsonable
 from modules.template import env
+from modules.datatables import send_datatable_response
 from model.athlete import Athlete
 from model.goal import Goal
 
@@ -18,7 +19,6 @@ class Goals:
         result = Goal.query.get(goal_id)
         return make_jsonable(result)
 
-    @commit_on_success
     @cherrypy.expose
     def create(self, activity, operator, quantity, metric, start_date, end_date, recurring, parent_id=None):
         db_session = database.session
@@ -35,6 +35,7 @@ class Goals:
             parent_id)
 
         db_session.add(new)
+        db_session.commit()
 
     @cherrypy.tools.json_out()
     @cherrypy.expose
