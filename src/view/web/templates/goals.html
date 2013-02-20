@@ -1,7 +1,5 @@
 {% extends "index.html" %}
 
-
-
 {% block script  %}
   <link rel="stylesheet" href="../css/datepicker.css">
   <link rel="stylesheet" href="../css/datatables.css">   
@@ -12,8 +10,7 @@
   <script>
     $(document).ready(function() {
 
-      /*
-      var currentGoalsTable = $('#currentGoalsTable').dataTable( {
+      var goalsTable = $('#goalsTable').dataTable( {
         "bProcessing": true,
         "bServerSide": true,
         //"bLengthChange": false,
@@ -21,41 +18,20 @@
         "sAjaxSource": "update_datatable",
         "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
         "aoColumns": [
-          { "mData": "activity" },
-          { "mData": "operator" },
-          { "mData": "quantity" },
-          { "mData": "metric" },
-          { "mData": "start" },
-          { "mData": "end" },
-          { "mData": "complete" }
+          { "mData": "activity", "bSearchable": false },
+          { "mData": "operator", "bSearchable": false },
+          { "mData": "quantity", "bSearchable": false },
+          { "mData": "metric", "bSearchable": false },
+          { "mData": "start_date", "bSearchable": false },
+          { "mData": "end_date", "bSearchable": false },
+          { "mData": "completed", "bSearchable": false }
         ]
       } );
-
-      var pastGoalsTable = $('#pastGoalsTable').dataTable( {
-        "bProcessing": true,
-        "bServerSide": true,
-        //"bLengthChange": false,
-        "sPaginationType": "bootstrap",
-        "sAjaxSource": "update_datatable",
-        "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
-        "aoColumns": [
-          { "mData": "activity" },
-          { "mData": "operator" },
-          { "mData": "quantity" },
-          { "mData": "metric" },
-          { "mData": "start" },
-          { "mData": "end" },
-          { "mData": "complete" }
-        ]
-      } );
-      */
 
       // for submitting the new goal
       $("form").submit(function() {
         $.post("create", $(this).serialize(), function() {
-          // TODO: actually make it grab stuff from the database.
-          //currentGoalsTable.fnDraw();
-          //pastGoalsTable.fnDraw();
+          goalsTable.fnDraw();
         } );
         return false;
       } );
@@ -77,26 +53,26 @@
   <form class="form-inline well" action="createGoal">
     <legend>Create Goal</legend>
 
-    <div class="control-group">  
+    <div class="control-group">
       <!-- TODO: fill with activity types from db in script-->
-      <select class="span2" id="activity">
+      <select class="span2" name="activity" id="activity">
         <option value="run">Run</option>
         <option value="bike">Bike</option>
         <option value="swim">Swim</option>
       </select>
 
       <!-- TODO: fill with operator types from db in script-->
-      <select class="span2" id="operator">
+      <select class="span2" name="operator" id="operator">
         <option value="total">Total</option>
         <option value="min">Min</option>
         <option value="max">Max</option>
         <option value="average">Average</option>
       </select>
 
-      <input class="span2" type="text" id="quantity" placeholder="Quantity">
+      <input class="span2" type="text" name="quantity" id="quantity" placeholder="Quantity" required >
       
       <!-- TODO: fill with metric types from db in script-->
-      <select class="span2" id="metric">
+      <select class="span2" name="metric" id="metric">
         <option value="km">Km</option>
         <option value="kmph">Kmph</option>
       </select>
@@ -104,24 +80,19 @@
 
     <div class="control-group">
       <!-- TODO: make default current date -->
-      <label>Start:
-        <div class="input-append date" id="startDate" data-date="26-02-2013" data-date-format="dd-mm-yyyy">
-          <input class="span2" name="startDate" size="16" type="text" value="26-02-2013">
-          <span class="add-on"><i class="icon-th"></i></span>
-        </div>
-      </label>
+      Start:
+      <div class="input-append date" id="start_date" data-date="26-02-2013" data-date-format="dd-mm-yyyy">
+        <input class="span2" name="start_date" size="16" type="text" value="26-02-2013">
+        <span class="add-on"><i class="icon-th"></i></span>
+      </div>
       
       <!-- TODO: make default current date +1 day-->
-      <label>End:
-        <div class="input-append date" id="endDate" data-date="27-02-2013" data-date-format="dd-mm-yyyy">
-          <input class="span2" name="endDate" size="16" type="text" value="27-02-2013">
-          <span class="add-on"><i class="icon-th"></i></span>
-        </div>
-      </label>
+      End:
+      <div class="input-append date" id="end_date" data-date="27-02-2013" data-date-format="dd-mm-yyyy">
+        <input class="span2" name="end_date" size="16" type="text" value="27-02-2013">
+        <span class="add-on"><i class="icon-th"></i></span>
+      </div>
 
-      <label>Recurring
-        <input type="checkbox">
-      </label>
     </div>
     
     <div class="control-group">
@@ -131,30 +102,9 @@
 
   <!-- CURRENT GOALS TABLE -->
   <form class="form-horizontal well">
-    <legend>Current Goals</legend>
+    <legend>Goals</legend>
 
-    <table class="table table-bordered table-striped table-hover" id="currentGoalsTable">
-      <thead>
-      <tr>
-        <th>Activity</th>
-        <th>Operator</th>
-        <th>Quantity</th>
-        <th>Metric</th>
-        <th>Start</th>
-        <th>End</th>
-        <th>Completed</th>
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
-    </table>
-  </form>
-
-  <!-- PAST GOALS TABLE -->
-  <form class="form-horizontal well">
-    <legend>Past Goals</legend>
-
-    <table class="table table-bordered table-striped table-hover" id="pastGoalsTable">
+    <table class="table table-bordered table-striped table-hover" id="goalsTable">
       <thead>
       <tr>
         <th>Activity</th>
