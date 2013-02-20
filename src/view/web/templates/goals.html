@@ -12,7 +12,6 @@
   <script>
     $(document).ready(function() {
 
-      /*
       var currentGoalsTable = $('#currentGoalsTable').dataTable( {
         "bProcessing": true,
         "bServerSide": true,
@@ -48,14 +47,12 @@
           { "mData": "complete" }
         ]
       } );
-      */
 
       // for submitting the new goal
       $("form").submit(function() {
         $.post("create", $(this).serialize(), function() {
-          // TODO: actually make it grab stuff from the database.
-          //currentGoalsTable.fnDraw();
-          //pastGoalsTable.fnDraw();
+          currentGoalsTable.fnDraw();
+          pastGoalsTable.fnDraw();
         } );
         return false;
       } );
