@@ -16,7 +16,7 @@ class Goals:
     @cherrypy.expose
     def get(self, goal_id=1):
         result = Goal.query.get(goal_id)
-        
+
         return make_jsonable(result)
 
     @commit_on_success
@@ -36,3 +36,8 @@ class Goals:
             parent_id)
 
         db_session.add(new)
+
+    @cherrypy.tools.json_out()
+    @cherrypy.expose
+    def update_datatable(self, **params):
+        return send_datatable_response(Goal, params)
