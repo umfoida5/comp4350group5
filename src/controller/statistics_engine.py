@@ -7,7 +7,7 @@ from sqlalchemy import func, Integer
 import datetime
 
 class StatisticsEngine:
-    	
+    
     """
     total()
     
