@@ -11,10 +11,11 @@ class Goal(Base):
     goal_id = Column(Integer, primary_key=True) # unqiue id
     athlete_id = Column(Integer, nullable=False) # owner athlete id
     
-    activity = Column(String(32), ForeignKey("activity_types.name")) # Eg. run, bike
-    operator = Column(String(32), ForeignKey("operator_types.name")) # Eg. average, total
+    # TODO: make foreign keys to appropriate type tables
+    activity = Column(String(32)) # Eg. run, bike
+    operator = Column(String(32)) # Eg. average, total
     quantity = Column(Float) # quantity of metric
-    metric = Column(String(32), ForeignKey("metric_types.name")) # Eg. km
+    metric = Column(String(32)) # Eg. km 
     
     start_date = Column(DateTime, default=datetime.now()) # start date of goal
     end_date = Column(DateTime, default=datetime.now()) # end date for goal (due date)

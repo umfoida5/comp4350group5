@@ -16,7 +16,6 @@ class Goals:
     @cherrypy.expose
     def get(self, goal_id=1):
         result = Goal.query.get(goal_id)
-
         return make_jsonable(result)
 
     @commit_on_success
