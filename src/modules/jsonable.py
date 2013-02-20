@@ -1,3 +1,4 @@
+from sqlalchemy.ext.associationproxy import _AssociationList
 import datetime
 import json
 
@@ -17,8 +18,8 @@ class Jsonable:
 
             for attribute in self.__class__._jsonFields:
                 value = getattr(self, attribute)
-
-                if isinstance(value, list):
+                
+                if isinstance(value, list) or isinstance(value, _AssociationList):
                     dict_representation[attribute] = []
                     for i in value:
                         if hasattr(i.__class__, '_jsonFields'):

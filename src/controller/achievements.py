@@ -13,7 +13,6 @@ class Achievements:
 
     @cherrypy.tools.json_out()
     @cherrypy.expose
-    @cherrypy.tools.allow(methods=['GET'])
     def get_unlocked_achievements(self):
         unlocked_achievements = UnlockedAchievement.query.filter_by(
             athlete_id=1
