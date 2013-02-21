@@ -44,7 +44,7 @@ def check_for_completetions(f, *args, **kw):
         for goal in completedGoals:
             g.mark_completed(goal)
 
-     except:
-         raise
+    except:
+        raise
 
-     return func
+    return func
