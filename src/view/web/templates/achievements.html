@@ -5,11 +5,14 @@
   <script src="../js/bootstrapPagination.js"></script>
   <script src="../js/holder.js"></script>
   <script>
-    //Updating the image of the achievements that were unlocked by the athlete
     $(document).ready(function(){
-      $.getJSON('get_athlete_achievements', function(athlete_achievements){
-        $.each(athlete_achievements, function(index) {
-          $("#" + athlete_achievements[index].title + " img#image").attr("src", athlete_achievements[index].image_url);
+      $.getJSON('get_unlocked_achievements', function(unlocked_achievements){
+        $.each(unlocked_achievements, function(index) {
+          var achievement = unlocked_achievements[index].achievement;
+          var unlocked_date = unlocked_achievements[index].unlocked_date;
+          $("#" + achievement.title + " img#image").attr("src", achievement.image_url);
+          $("#" + achievement.title + " p#date").text(unlocked_date);
+          $("#" + achievement.title + " a").attr("href", "#");
         });
       });
     });
@@ -26,11 +29,9 @@
       {% for achievement in achievements %}
         <li class="span2">
           <div id="{{ achievement.title }}" class="thumbnail" style="width:130px; height:180px;">
-            <a id="link" href="#">
               <img id="image" data-src="holder.js/130x130/text:Locked" alt="">
               <p id="title" style="text-align:center;">{{ achievement.title }}</p>
-            </a>
-            <p id="date" style="text-align:center;">February 15, 2013</p>
+            <p id="date" style="text-align:center;"></p>
           </div>
         </li> 
       {% endfor %}

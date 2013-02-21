@@ -5,24 +5,8 @@
   <script src="../js/jquery.dataTables.min.js"></script>
   <link rel="stylesheet" href="../css/datatables.css">
   <script src="../js/bootstrapPagination.js"></script>
-  <script>
-    $(document).ready(function() {
-      $('#athleteTable').dataTable( {
-        "bProcessing": true,
-        "bServerSide": true,
-        "sPaginationType": "bootstrap",
-        "sAjaxSource": "update_datatable",
-        "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
-        "aoColumns": [
-          { "mData": "first_name" },
-          { "mData": "last_name" },
-          { "mData": "email" },
-          { "mData": "about_me" }
-          //~ { "mData": "about_me" }
-        ]
-      } );
-    } );
-  </script>
+  <script src="../js/pages/athletes.js"></script>
+
 {% endblock script %}
 
 {% block body %}

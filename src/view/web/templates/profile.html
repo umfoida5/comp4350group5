@@ -6,92 +6,7 @@
   <link rel="stylesheet" href="../css/datatables.css">
   <script src="../js/bootstrapPagination.js"></script>
   <script src="../js/jquery.jeditable.js"></script>
-  <script>
-    $(document).ready(function(){
-      var athlete;
-      $.getJSON('athlete', athlete, function(athlete){
-        $("#profile_name").append(athlete['first_name'] + " " + athlete['last_name']);
-        $("#dob").html(athlete['birth_date']);
-        $("#address").html(athlete['address']);
-        $("#email").html(athlete['email']);
-        $("#about_me").html(athlete['about_me']);
-        var athlete_achievements = athlete['achievements'];
-        
-        $.each(athlete_achievements, function(index) {
-          //~ alert(athlete_achievements[index].image_url);
-          $("#" + athlete_achievements[index].title + " img#image").attr("src", athlete_achievements[index].image_url);
-        });
-      });
-      
-      $('#dob').editable('update_dob', {
-          indicator: 'Saving',
-          tooltip:  'Click to change',
-          onblur: 'cancel',
-          submit: 'OK',
-          cancel: 'Cancel',
-          name: 'birth_date',
-          //~ method: 'PUT',
-          type: 'text',
-          intercept: function (jsondata) {
-            obj = jQuery.parseJSON(jsondata);
-            // do something with obj.status and obj.other
-            return(obj.birth_date);
-          }        
-        });
-        
-      $('#address').editable('update_address', {
-          indicator: 'Saving',
-          tooltip:  'Click to change',
-          onblur: 'cancel',
-          submit: 'OK',
-          cancel: 'Cancel',
-          name: 'address',
-          //~ method: 'PUT',
-          type: 'text',
-          intercept: function (jsondata) {
-            obj = jQuery.parseJSON(jsondata);
-            // do something with obj.status and obj.other
-            return(obj.address);
-          }
-        });
-        
-        
-      $('#email').editable('update_email', {
-          indicator: 'Saving',
-          tooltip:  'Click to change',
-          onblur: 'cancel',
-          submit: 'OK',
-          cancel: 'Cancel',
-          name: 'email',
-          //~ method: 'PUT',
-          type: 'text',
-          intercept: function (jsondata) {
-            obj = jQuery.parseJSON(jsondata);
-            // do something with obj.status and obj.other
-            return(obj.email);
-          }
-        
-        });
-        
-        
-        $('#about_me').editable('update_about', {
-          indicator: 'Saving',
-          tooltip:  'Click to change',
-          onblur: 'cancel',
-          submit: 'OK',
-          cancel: 'Cancel',
-          name: 'about_msg',
-          //~ method: 'PUT',
-          type: 'text',
-          intercept: function (jsondata) {
-            obj = jQuery.parseJSON(jsondata);
-            // do something with obj.status and obj.other
-            return(obj.about_me);
-          }
-        });
-    });
-    //~ alert(window.location.href);
-  </script>
+  <script src="../js/pages/profile.js"></script>
 {% endblock script %}
 
 {% block body %}
@@ -124,6 +39,9 @@
         <li id="dob" class="edit" ></li>
         <li id="address" class="edit"></li>
         <li id="email" class="edit"></li>
+        <li id="email" class="edit">
+          <a href="../achievements/badges">View your badges</a>
+        </li>
       </ul>
     </div>
 

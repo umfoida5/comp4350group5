@@ -4,21 +4,28 @@ from model.athlete import Athlete
 from modules.template import env
 from modules.jsonable import make_jsonable
 from modules.transaction import commit_on_success
-from model.achievement import Achievement, AthleteAchievements
+from model.achievement import Achievement, UnlockedAchievement
 class Profiles:
     
     @cherrypy.expose
     def index(self):
         tmpl = env.get_template('profile.html')
-        return tmpl.render(achievements=Athlete.query.get(1).achievements)
+        return tmpl.render()
         
     @cherrypy.tools.json_out()
     @cherrypy.expose
     def athlete(self, **kwargs):
         result = Athlete.query.get(1)
-        
         return make_jsonable(result)
     
+    @cherrypy.tools.json_out()
+    @cherrypy.expose
+    def get_unlocked_achievements(self):
+        unlocked_achievements = UnlockedAchievement.query.filter_by(
+            athlete_id=1
+        ).all()
+        return make_jsonable(unlocked_achievements)
+
     @cherrypy.tools.json_out()
     @cherrypy.expose
     @commit_on_success
@@ -27,7 +34,7 @@ class Profiles:
         result = Athlete.query.get(1)
         result.about_me = about_msg
         return make_jsonable(result)
-        
+
     @cherrypy.tools.json_out()
     @cherrypy.expose
     @commit_on_success
