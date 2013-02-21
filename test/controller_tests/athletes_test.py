@@ -12,3 +12,4 @@ class AthletesTest(unittest.TestCase):
 		athlete = Athlete()
 		jathletes = athlete.json()
 		assert_not_nil(jathletes)
+		

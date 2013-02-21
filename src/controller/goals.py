@@ -59,7 +59,7 @@ class Goals:
         result = self.get(goal.goal_id)[0]
         result.completed = True
 
-        database.session.add(result)
+        #database.session.add(result)
         #return make_jsonable(result[0]) # for some reason this doesn't work
         
     @cherrypy.tools.json_out()
