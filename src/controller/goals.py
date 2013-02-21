@@ -56,11 +56,11 @@ class Goals:
     @cherrypy.expose
     @commit_on_success
     def mark_completed(self, goal):
-        result = self.get(goal.goal_id)[0]
+        result = Goal.query.get(goal.goal_id)
         result.completed = True
 
         #database.session.add(result)
-        #return make_jsonable(result[0]) # for some reason this doesn't work
+        return make_jsonable(result) # for some reason this doesn't work
         
     @cherrypy.tools.json_out()
     @cherrypy.expose
