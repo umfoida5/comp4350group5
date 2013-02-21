@@ -21,8 +21,7 @@ def check_for_completetions(f, *args, **kw):
 
         # 2. iterate through each to check if they are complete. (keep list of completed)
         for goal in goals:
-        	result = None
-
+            result = None
             # TODO: refactor so we don't need to elif this stuff
             operator = goal.operator
             if operator == "total":
