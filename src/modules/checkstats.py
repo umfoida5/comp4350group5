@@ -35,6 +35,8 @@ def check_for_completetions(f, *args, **kw):
                 if result[0].sum >= goal.quantity:
                     completedGoals.append(goal)
 
+                print "\nDEBUG:{} {} {} {}\n".format(result[0].sum, goal.quantity, goal.metric, goal.activity)
+
             elif operator == "max":
                 pass
             elif operator == "min":
