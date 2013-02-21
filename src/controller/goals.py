@@ -58,7 +58,7 @@ class Goals:
     def mark_completed(self, goal):
         result = self.get(goal.goal_id)
         result[0].completed = True
-        return make_jsonable(result[0])
+        #return make_jsonable(result[0]) # for some reason this doesn't work
         
     @cherrypy.tools.json_out()
     @cherrypy.expose
