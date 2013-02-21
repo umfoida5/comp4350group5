@@ -13,23 +13,14 @@ class Events:
         return tmpl.render()
 
     @cherrypy.expose
-    def create(self):
-        tmpl = env.get_template('events_create.html')
-        return tmpl.render()
+    def create(self, date, location, distance, description):
+        db_session = database.session
+
+        newEvent = Event(datetime.strptime(date, "%d-%m-%Y"), str(description), str(location), int(distance))
+        db_session.add(newEvent)
+        db_session.commit()
 
     @cherrypy.tools.json_out()
     @cherrypy.expose
     def update_datatable(self, **params):
         return send_datatable_response(Event, params)
-    
-    @cherrypy.expose
-    def createEvent(self, eventDate=None, eventLocation=None, eventDistance=None, eventDescription=None):
-        db_session = database.session
-
-        if eventDate is not None and eventLocation is not None and eventDistance is not None and eventDescription is not None:
-            newEvent = Event(datetime.strptime(eventDate, "%d-%m-%Y"), eventDescription, eventLocation, int(eventDistance))
-            db_session.add(newEvent)
-            db_session.commit()
-            
-        tmpl = env.get_template('events.html')
-        return tmpl.render() 

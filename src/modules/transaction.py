@@ -10,4 +10,5 @@ def commit_on_success(f, *args, **kw):
         database.session.rollback()
         raise
 
-    return func    
+    return func
+    
