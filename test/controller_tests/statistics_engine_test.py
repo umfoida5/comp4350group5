@@ -96,7 +96,7 @@ class StatisticsEngineTest(unittest.TestCase):
             None)
 
         self.assertTrue(len(result) == 1)
-        self.assertTrue(result[0].sum == 120)
+        self.assertTrue(result[0].value == 120)
 
     def test_total_duration(self):
         """
@@ -111,7 +111,7 @@ class StatisticsEngineTest(unittest.TestCase):
             None)
 
         self.assertTrue(len(result) == 1)
-        self.assertTrue(result[0].sum == 60)
+        self.assertTrue(result[0].value == 60)
 
     def test_total_ride(self):
         """
@@ -126,7 +126,7 @@ class StatisticsEngineTest(unittest.TestCase):
             None)
 
         self.assertTrue(len(result) == 1)
-        self.assertTrue(result[0].sum == 120)
+        self.assertTrue(result[0].value == 120)
 
     def test_total_run(self):
         """
@@ -141,7 +141,7 @@ class StatisticsEngineTest(unittest.TestCase):
             None)
 
         self.assertTrue(len(result) == 1)
-        self.assertTrue(result[0].sum == 120)
+        self.assertTrue(result[0].value == 120)
         
     def test_total_distance_groupbyyear(self):
         """
@@ -156,8 +156,8 @@ class StatisticsEngineTest(unittest.TestCase):
             "year")
 
         self.assertTrue(len(result) == 2)
-        self.assertTrue(result[0].sum == 60)
-        self.assertTrue(result[1].sum == 60)
+        self.assertTrue(result[0].value == 60)
+        self.assertTrue(result[1].value == 60)
 
 
     def test_total_distance_groupbymonth(self):
@@ -174,7 +174,7 @@ class StatisticsEngineTest(unittest.TestCase):
 
         self.assertTrue(len(result) == 6)
         for num in range(0,len(result)):        
-            self.assertTrue(result[num].sum == result[num].month * 10)
+            self.assertTrue(result[num].value == result[num].month * 10)
 
     def test_total_distance_groupbyday(self):
         """
@@ -190,7 +190,7 @@ class StatisticsEngineTest(unittest.TestCase):
 
         self.assertTrue(len(result) == 6)
         for num in range(0,len(result)):        
-            self.assertTrue(result[num].sum == result[num].day * 10)
+            self.assertTrue(result[num].value == result[num].day * 10)
 
     def test_avg_distance_groupbyyear(self):
         """
@@ -205,8 +205,8 @@ class StatisticsEngineTest(unittest.TestCase):
             "year")
 
         self.assertTrue(len(result) == 2)
-        self.assertTrue(result[0].avg == 20)
-        self.assertTrue(result[1].avg == 20)
+        self.assertTrue(result[0].value == 20)
+        self.assertTrue(result[1].value == 20)
 
     def test_avg_distance_groupbymonth(self):
         """
@@ -222,7 +222,7 @@ class StatisticsEngineTest(unittest.TestCase):
 
         self.assertTrue(len(result) == 6)
         for num in range(0,len(result)):        
-            self.assertTrue(result[num].avg == result[num].month * 10)
+            self.assertTrue(result[num].value == result[num].month * 10)
 
     def test_avg_distance_groupbyday(self):
         """
@@ -238,7 +238,7 @@ class StatisticsEngineTest(unittest.TestCase):
 
         self.assertTrue(len(result) == 6)
         for num in range(0,len(result)):        
-            self.assertTrue(result[num].avg == result[num].day * 10)
+            self.assertTrue(result[num].value == result[num].day * 10)
 
     def test_max_distance_groupbyyear(self):
         """
@@ -253,8 +253,8 @@ class StatisticsEngineTest(unittest.TestCase):
             "year")
 
         self.assertTrue(len(result) == 2)
-        self.assertTrue(result[0].max == 30)
-        self.assertTrue(result[1].max == 30)
+        self.assertTrue(result[0].value == 30)
+        self.assertTrue(result[1].value == 30)
 
     def test_max_distance_groupbymonth(self):
         """
@@ -270,7 +270,7 @@ class StatisticsEngineTest(unittest.TestCase):
 
         self.assertTrue(len(result) == 6)
         for num in range(0,len(result)):        
-            self.assertTrue(result[num].max == result[num].month * 10)
+            self.assertTrue(result[num].value == result[num].month * 10)
 
     def test_max_distance_groupbyday(self):
         """
@@ -286,7 +286,7 @@ class StatisticsEngineTest(unittest.TestCase):
 
         self.assertTrue(len(result) == 6)
         for num in range(0,len(result)):        
-            self.assertTrue(result[num].max == result[num].day * 10)
+            self.assertTrue(result[num].value == result[num].day * 10)
 
     def test_min_distance_groupbyyear(self):
         """
@@ -301,8 +301,8 @@ class StatisticsEngineTest(unittest.TestCase):
             "year")
 
         self.assertTrue(len(result) == 2)
-        self.assertTrue(result[0].min == 10)
-        self.assertTrue(result[1].min == 10)
+        self.assertTrue(result[0].value == 10)
+        self.assertTrue(result[1].value == 10)
 
     def test_min_distance_groupbymonth(self):
         """
@@ -318,7 +318,7 @@ class StatisticsEngineTest(unittest.TestCase):
 
         self.assertTrue(len(result) == 6)
         for num in range(0,len(result)):        
-            self.assertTrue(result[num].min == result[num].month * 10)
+            self.assertTrue(result[num].value == result[num].month * 10)
 
     def test_min_distance_groupbyday(self):
         """
@@ -334,7 +334,7 @@ class StatisticsEngineTest(unittest.TestCase):
 
         self.assertTrue(len(result) == 6)
         for num in range(0,len(result)):        
-            self.assertTrue(result[num].min == result[num].day * 10)
+            self.assertTrue(result[num].value == result[num].day * 10)
 
     def test_count_distance_groupbyyear(self):
         """

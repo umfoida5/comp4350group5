@@ -28,7 +28,6 @@ class Profiles:
         result.about_me = about_msg
         return make_jsonable(result)
         
-
     @cherrypy.tools.json_out()
     @cherrypy.expose
     @commit_on_success

@@ -20,9 +20,9 @@ def check_for_completetions(f, *args, **kw):
         completedGoals = []
 
         # 2. iterate through each to check if they are complete. (keep list of completed)
+        # TODO: refactor so we don't need to elif this stuff (Blake!)
         for goal in goals:
             result = None
-            # TODO: refactor so we don't need to elif this stuff
             operator = goal.operator
             if operator == "total":
                 result = engine.total(
@@ -32,17 +32,39 @@ def check_for_completetions(f, *args, **kw):
                     goal.start_date,
                     goal.end_date,
                     None)
-                if result[0].sum >= goal.quantity:
-                    completedGoals.append(goal)
-
-                print "\n\nDEBUG:", result[0].sum, goal.quantity, goal.metric, goal.activity, "\n\n"
 
             elif operator == "max":
-                pass
+                result = engine.max(
+                    goal.metric,
+                    goal.activity,
+                    goal.athlete_id,
+                    goal.start_date,
+                    goal.end_date,
+                    None)
+
             elif operator == "min":
-                pass
+                result = engine.min(
+                    goal.metric,
+                    goal.activity,
+                    goal.athlete_id,
+                    goal.start_date,
+                    goal.end_date,
+                    None)
+
             elif operator == "average":
-                pass
+                result = engine.average(
+                    goal.metric,
+                    goal.activity,
+                    goal.athlete_id,
+                    goal.start_date,
+                    goal.end_date,
+                    None)
+            else
+                raise
+
+            # did we complete the goal?
+            if result[0].value >= goal.quantity:
+                completedGoals.append(goal)
 
         # 3. update database with completed goals/achievements.
         for goal in completedGoals:
