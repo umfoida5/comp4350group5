@@ -6,9 +6,24 @@
   <script src="../js/jquery.min.js"></script>
   <script src="../js/jquery.dataTables.min.js"></script>
   <script src="../js/bootstrap-datepicker.js"></script>
+  <script type='text/javascript' src='../js/bootstrap.js'></script>
   <script src="../js/bootstrapPagination.js"></script>
   <script>
     $(document).ready(function() {
+
+      $('#enterButton').click(function() {
+        $('#enter_goal_modal').modal('show');
+        $('#activity').attr('value', '');
+        $('#operator').attr('value', 'total');
+        $('#quantity').attr('value', '');
+        $('#metric').attr('value', 'distance');
+        $('#start_date').attr('value', '');
+        $('#end_date').attr('value', '');
+      });
+
+      $('#closeButton').click(function() {
+        $('#enter_goal_modal').modal('hide');
+      });
 
       var goalsTable = $('#goalsTable').dataTable( {
         "bProcessing": true,
@@ -32,13 +47,14 @@
       $("form").submit(function() {
         $.post("create", $(this).serialize(), function() {
           goalsTable.fnDraw();
+          $('#enter_goal_modal').modal('hide');
         } );
         return false;
       } );
 
       // for the start and end date inputs
-      $('#startDate').datepicker();
-      $('#endDate').datepicker();
+      $('#start_date').datepicker();
+      $('#end_date').datepicker();
 
     } );
   </script>
@@ -50,75 +66,87 @@
 {% endblock script %}
 
 {% block body %}
-  <form class="form-inline well" action="createGoal">
-    <legend>Create Goal</legend>
 
-    <div class="control-group">
-      <!-- TODO: fill with activity types from db in script-->
-      <select class="span2" name="activity" id="activity">
-        <option value="run">Run</option>
-        <option value="bike">Bike</option>
-        <option value="swim">Swim</option>
-      </select>
+    <div class="modal hide fade" id="enter_goal_modal" name="enter_goal_modal">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 id="modal_title">Create Goal:</h3>
+        </div>
 
-      <!-- TODO: fill with operator types from db in script-->
-      <select class="span2" name="operator" id="operator">
-        <option value="total">Total</option>
-        <option value="min">Min</option>
-        <option value="max">Max</option>
-        <option value="average">Average</option>
-      </select>
+      <form class="form-inline well" action="createGoal">
 
-      <input class="span2" type="text" name="quantity" id="quantity" placeholder="Quantity" required >
-      
-      <!-- TODO: fill with metric types from db in script-->
-      <select class="span2" name="metric" id="metric">
-        <option value="km">Km</option>
-        <option value="kmph">Kmph</option>
-      </select>
-    </div>
+        <div class="modal-body">
+        <div class="control-group">
+          <!-- TODO: fill with activity types from db in script-->
+          <select class="span2" name="activity" id="activity">
+            <option value="run">Run</option>
+            <option value="bike">Bike</option>
+            <option value="swim">Swim</option>
+          </select>
 
-    <div class="control-group">
-      <!-- TODO: make default current date -->
-      Start:
-      <div class="input-append date" id="start_date" data-date="26-02-2013" data-date-format="dd-mm-yyyy">
-        <input class="span2" name="start_date" size="16" type="text" value="26-02-2013">
-        <span class="add-on"><i class="icon-th"></i></span>
+          <!-- TODO: fill with operator types from db in script-->
+          <select class="span2" name="operator" id="operator">
+            <option value="total">Total</option>
+            <option value="min">Min</option>
+            <option value="max">Max</option>
+            <option value="average">Average</option>
+          </select>
+
+          <input class="span2" type="text" name="quantity" id="quantity" placeholder="Quantity" required >
+          
+          <!-- TODO: fill with metric types from db in script-->
+          <select class="span2" name="metric" id="metric">
+            <option value="distance">Distance</option>
+            <option value="max_speed">Max Speed</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <!-- TODO: make default current date -->
+          Start:
+          <div class="input-append date" id="start_date" data-date="26-02-2013" data-date-format="dd-mm-yyyy">
+            <input class="span2" name="start_date" size="16" type="text" value="26-02-2013">
+            <span class="add-on"><i class="icon-th"></i></span>
+          </div>
+          
+          <!-- TODO: make default current date +1 day-->
+          End:
+          <div class="input-append date" id="end_date" data-date="27-02-2013" data-date-format="dd-mm-yyyy">
+            <input class="span2" name="end_date" size="16" type="text" value="27-02-2013">
+            <span class="add-on"><i class="icon-th"></i></span>
+          </div>
+
+        </div>
       </div>
-      
-      <!-- TODO: make default current date +1 day-->
-      End:
-      <div class="input-append date" id="end_date" data-date="27-02-2013" data-date-format="dd-mm-yyyy">
-        <input class="span2" name="end_date" size="16" type="text" value="27-02-2013">
-        <span class="add-on"><i class="icon-th"></i></span>
+
+      <div class="modal-footer">
+          <a class="btn" id="closeButton">Close</a>
+          <input class="btn btn-primary" id="saveButton" type="submit" value="Create" />
       </div>
 
-    </div>
-    
-    <div class="control-group">
-      <button type="submit" class="btn btn-primary">Create</button>
-    </div>
-  </form>
+    </form>
+</div>
 
   <!-- CURRENT GOALS TABLE -->
-  <form class="form-horizontal well">
-    <legend>Goals</legend>
+  <div align="right">
+      <button type="button" id="enterButton" class="btn">Enter a New Goal:</button>
+  </div>
 
-    <table class="table table-bordered table-striped table-hover" id="goalsTable">
-      <thead>
-      <tr>
-        <th>Activity</th>
-        <th>Operator</th>
-        <th>Quantity</th>
-        <th>Metric</th>
-        <th>Start</th>
-        <th>End</th>
-        <th>Completed</th>
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
-    </table>
-  </form>
+  <table class="table table-bordered table-striped table-hover" id="goalsTable">
+    <thead>
+    <tr>
+      <th>Activity</th>
+      <th>Operator</th>
+      <th>Quantity</th>
+      <th>Metric</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Completed</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+  </table>
+  <!-- END GOALS TABLE -->
 
 {% endblock body %}

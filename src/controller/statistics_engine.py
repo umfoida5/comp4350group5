@@ -27,7 +27,7 @@ class StatisticsEngine:
         search_col = getattr(Activity, column_name);
 
         # select columns for query
-        sum_col = func.sum(search_col).label('sum')
+        sum_col = func.sum(search_col).label('value')
 
         return self.run_query(sum_col, activity_name, athlete_id, start_date, end_date, group_by)
 
@@ -52,7 +52,7 @@ class StatisticsEngine:
         search_col = getattr(Activity, column_name);
 
         # select columns for query
-        sum_col = func.avg(search_col).label('avg')
+        sum_col = func.avg(search_col).label('value')
 
         return self.run_query(sum_col, activity_name, athlete_id, start_date, end_date, group_by)
         
@@ -75,7 +75,7 @@ class StatisticsEngine:
         search_col = getattr(Activity, column_name);
 
         # select columns for query
-        sum_col = func.min(search_col).label('min')
+        sum_col = func.min(search_col).label('value')
 
         return self.run_query(sum_col, activity_name, athlete_id, start_date, end_date, group_by)
     
@@ -98,7 +98,7 @@ class StatisticsEngine:
         search_col = getattr(Activity, column_name);
 
         # select columns for query
-        max_col = func.max(search_col).label('max')
+        max_col = func.max(search_col).label('value')
 
         return self.run_query(max_col, activity_name, athlete_id, start_date, end_date, group_by)
 
@@ -121,7 +121,7 @@ class StatisticsEngine:
         search_col = getattr(Activity, column_name);
 
         # select columns for query
-        sum_col = func.count(search_col).label('count')
+        sum_col = func.count(search_col).label('value')
 
         return self.run_query(sum_col, activity_name, athlete_id, start_date, end_date, group_by)
 
