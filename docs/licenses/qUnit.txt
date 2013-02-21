@@ -1,5 +1,5 @@
 MIT License
-jQuery
+qUnit
 Copyright 2013 jQuery Foundation and other contributors
 http://jquery.com/
 
