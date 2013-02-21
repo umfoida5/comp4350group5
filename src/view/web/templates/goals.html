@@ -24,7 +24,6 @@
         $('#enter_goal_modal').modal('hide');
       });
 
-
       var goalsTable = $('#goalsTable').dataTable( {
         "bProcessing": true,
         "bServerSide": true,
@@ -68,7 +67,7 @@
 
 {% block body %}
 
-    <div class="modal hide fade" id="enter_goal_modal" name="enter_activity_modal">
+    <div class="modal hide fade" id="enter_goal_modal" name="enter_goal_modal">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <h3 id="modal_title">Create Goal:</h3>
@@ -129,29 +128,25 @@
 </div>
 
   <!-- CURRENT GOALS TABLE -->
-
   <div align="left">
       <button type="button" id="enterButton" class="btn">Enter a New Goal:</button>
   </div>
 
-  <form class="form-horizontal well">
-    <legend>Goals</legend>
-
-    <table class="table table-bordered table-striped table-hover" id="goalsTable">
-      <thead>
-      <tr>
-        <th>Activity</th>
-        <th>Operator</th>
-        <th>Quantity</th>
-        <th>Metric</th>
-        <th>Start</th>
-        <th>End</th>
-        <th>Completed</th>
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
-    </table>
-  </form>
+  <table class="table table-bordered table-striped table-hover" id="goalsTable">
+    <thead>
+    <tr>
+      <th>Activity</th>
+      <th>Operator</th>
+      <th>Quantity</th>
+      <th>Metric</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Completed</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+  </table>
+  <!-- END GOALS TABLE -->
 
 {% endblock body %}
