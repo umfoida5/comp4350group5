@@ -34,7 +34,7 @@ def check_for_completetions(f, *args, **kw):
                     None)
 
             elif operator == "max":
-                result = engine.max(
+                result = engine.maximum(
                     goal.metric,
                     goal.activity,
                     goal.athlete_id,
@@ -43,7 +43,7 @@ def check_for_completetions(f, *args, **kw):
                     None)
 
             elif operator == "min":
-                result = engine.min(
+                result = engine.minimum(
                     goal.metric,
                     goal.activity,
                     goal.athlete_id,
