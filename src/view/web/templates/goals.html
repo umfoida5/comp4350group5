@@ -46,6 +46,7 @@
       $("form").submit(function() {
         $.post("create", $(this).serialize(), function() {
           goalsTable.fnDraw();
+          $('#enter_goal_modal').modal('hide');
         } );
         return false;
       } );
@@ -128,7 +129,7 @@
 </div>
 
   <!-- CURRENT GOALS TABLE -->
-  <div align="left">
+  <div align="right">
       <button type="button" id="enterButton" class="btn">Enter a New Goal:</button>
   </div>
 
