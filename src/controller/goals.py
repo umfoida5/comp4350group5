@@ -16,7 +16,7 @@ class Goals:
 
     def get(self, goal_id=None):
         result = database.session.query()
-        if goal is not None:
+        if goal_id is not None:
             result = result.filter(Goal.goal_id == goal_id)
 
         return result.all()
