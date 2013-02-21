@@ -15,14 +15,18 @@
         $("#address").html(athlete['address']);
         $("#email").html(athlete['email']);
         $("#about_me").html(athlete['about_me']);
-        var athlete_achievements = athlete['achievements'];
-        
-        $.each(athlete_achievements, function(index) {
-          //~ alert(athlete_achievements[index].image_url);
-          $("#" + athlete_achievements[index].title + " img#image").attr("src", athlete_achievements[index].image_url);
+      }); 
+      
+      $.getJSON('get_unlocked_achievements', function(unlocked_achievements){
+        $.each(unlocked_achievements, function(index) {
+          var achievement = unlocked_achievements[index].achievement;
+          var unlocked_date = unlocked_achievements[index].unlocked_date;
+          $("#" + achievement.title + " img#image").attr("src", achievement.image_url);
+          $("#" + achievement.title + " p#date").text(unlocked_date);
+          $("#" + achievement.title + " a").attr("href", "#");
         });
       });
-      
+
       $('#dob').editable('update_dob', {
           indicator: 'Saving',
           tooltip:  'Click to change',
@@ -124,6 +128,9 @@
         <li id="dob" class="edit" ></li>
         <li id="address" class="edit"></li>
         <li id="email" class="edit"></li>
+        <li id="email" class="edit">
+          <a href="../achievements/badges">View your badges</a>
+        </li>
       </ul>
     </div>
 
