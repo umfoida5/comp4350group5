@@ -15,7 +15,7 @@ class Goals:
         return tmpl.render()
 
     def get(self, goal_id=None):
-        result = database.session.query()
+        result = database.session.query(Goal.goal_id)
         if goal_id is not None:
             result = result.filter(Goal.goal_id == goal_id)
 
