@@ -10,6 +10,21 @@
   <script>
     $(document).ready(function() {
 
+      $('#enterButton').click(function() {
+        $('#enter_goal_modal').modal('show');
+        $('#activity').attr('value', '');
+        $('#operator').attr('value', 'total');
+        $('#quantity').attr('value', '');
+        $('#metric').attr('value', 'distance');
+        $('#start_date').attr('value', '');
+        $('#end_date').attr('value', '');
+      });
+
+      $('#closeButton').click(function() {
+        $('#enter_goal_modal').modal('hide');
+      });
+
+
       var goalsTable = $('#goalsTable').dataTable( {
         "bProcessing": true,
         "bServerSide": true,
@@ -53,7 +68,7 @@
 
 {% block body %}
 
-    <div class="modal hide fade" id="enter_activity_modal" name="enter_activity_modal">
+    <div class="modal hide fade" id="enter_goal_modal" name="enter_activity_modal">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <h3 id="modal_title">Create Goal:</h3>
@@ -113,6 +128,11 @@
   </form>
 
   <!-- CURRENT GOALS TABLE -->
+
+  <div align="left">
+      <button type="button" id="enterButton" class="btn">Enter a New Goal:</button>
+  </div>
+
   <form class="form-horizontal well">
     <legend>Goals</legend>
 
