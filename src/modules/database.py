@@ -12,9 +12,17 @@ def init(db_name = "tracker"):
     session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engine))
 
     Base.query = session.query_property()
-    Base.metadata.create_all(bind=engine)
+    Base.metadata.bind = engine
+
+def recreate_tables():
+    #Load all tables that are currently in the database
+    Base.metadata.reflect()
+
+    Base.metadata.drop_all()
+    Base.metadata.create_all()
 
 @commit_on_success
 def empty_database():
-	for table in reversed(Base.metadata.sorted_tables):
-		session.execute(table.delete())
+    for table in reversed(Base.metadata.sorted_tables):
+        session.execute(table.delete())
+
