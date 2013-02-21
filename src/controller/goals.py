@@ -18,6 +18,7 @@ class Goals:
         result = database.session.query(
             Goal.goal_id,
             Goal.athlete_id,
+            Goal.quantity,
             Goal.operator,
             Goal.metric,
             Goal.activity,
