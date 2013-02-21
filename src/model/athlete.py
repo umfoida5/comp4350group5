@@ -1,8 +1,7 @@
+from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy import Column, Integer, String, Date
-from sqlalchemy.orm import relationship
 from modules import database
 from modules.jsonable import Jsonable
-from achievement import AthleteAchievements
 
 @Jsonable('first_name', 'last_name', 'email', 'birth_date', 'about_me', 'address', 'avatar', 'achievements')
 class Athlete(database.Base):
@@ -16,8 +15,7 @@ class Athlete(database.Base):
     about_me = Column(String(200))
     address = Column(String(200))
     avatar = Column(String(200))
-    achievements = relationship("Achievement",
-                    secondary=AthleteAchievements)    
+    achievements = association_proxy('unlocked_achievements', 'achievement')
 
 	#initialise the Data model for the athlete
     def __init__(self, first_name, last_name, email, birth_date=None, about_me="", address="", avatar=""):
