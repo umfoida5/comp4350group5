@@ -17,6 +17,7 @@ class Goals:
     def get(self, goal_id=None):
         result = database.session.query(
             Goal.goal_id,
+            Goal.athlete_id,
             Goal.operator,
             Goal.metric,
             Goal.activity,

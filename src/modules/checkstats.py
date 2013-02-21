@@ -28,8 +28,10 @@ def check_for_completetions(f, *args, **kw):
                 result = engine.total(
                     goal.metric,
                     goal.activity,
+                    goal.athlete_id,
                     goal.start_date,
-                    goal.end_date)
+                    goal.end_date,
+                    None)
                 if result[0].sum >= goal.quantity:
                     completedGoals.append(goal)
 
