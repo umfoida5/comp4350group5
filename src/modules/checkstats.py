@@ -59,7 +59,7 @@ def check_for_completetions(f, *args, **kw):
                     goal.start_date,
                     goal.end_date,
                     None)
-            else
+            else:
                 raise
 
             # did we complete the goal?
