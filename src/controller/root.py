@@ -1,4 +1,5 @@
 import cherrypy, httplib
+from modules.template import env
 from athletes import Athletes
 from activities import Activities
 from events import Events
@@ -6,7 +7,6 @@ from stats import Stats
 from profiles import Profiles
 from achievements import Achievements
 from goals import Goals
-from modules.template import env
 from calendar import Calendar
 
 def http_methods_allowed(methods=['GET', 'HEAD']):
@@ -25,7 +25,7 @@ class Root:
     profiles = Profiles()
     achievements = Achievements()
     calendar = Calendar()
-    goals = Goals()
+    goals = Goals()    
 
     @cherrypy.expose
     def index(self):

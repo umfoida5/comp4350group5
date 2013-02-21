@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/events/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enterButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.icon-th</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=location</td>
+	<td>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt; &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;en&quot; lang=&quot;en&quot;&gt; &lt;head profile=&quot;http://selenium-ide.openqa.org/profiles/test-case&quot;&gt; &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt; &lt;link rel=&quot;selenium.base&quot; href=&quot;http://localhost:8080/&quot; /&gt; &lt;title&gt;New Test&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;table cellpadding=&quot;1&quot; cellspacing=&quot;1&quot; border=&quot;1&quot;&gt; &lt;thead&gt; &lt;tr&gt;&lt;td rowspan=&quot;1&quot; colspan=&quot;3&quot;&gt;New Test&lt;/td&gt;&lt;/tr&gt; &lt;/thead&gt;&lt;tbody&gt; &lt;tr&gt; 	&lt;td&gt;open&lt;/td&gt; 	&lt;td&gt;/events/&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;select&lt;/td&gt; 	&lt;td&gt;name=eventTable_length&lt;/td&gt; 	&lt;td&gt;label=25&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;select&lt;/td&gt; 	&lt;td&gt;name=eventTable_length&lt;/td&gt; 	&lt;td&gt;label=10&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;css=label &amp;gt; input[type=&amp;quot;text&amp;quot;]&lt;/td&gt; 	&lt;td&gt;burnaby&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=enterButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;css=i.icon-th&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;//div[@id='__sizzle__']/div/table/tbody/tr/td[6]&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=location&lt;/td&gt; 	&lt;td&gt;TestCity1&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=distance&lt;/td&gt; 	&lt;td&gt;1&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=description&lt;/td&gt; 	&lt;td&gt;Test1Description&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=saveButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=enterButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=closeButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=enterButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;css=i.icon-th&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;//div[@id='__sizzle__']/div/table/tbody/tr/td[7]&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=location&lt;/td&gt; 	&lt;td&gt;TestCity2&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=distance&lt;/td&gt; 	&lt;td&gt;2&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=description&lt;/td&gt; 	&lt;td&gt;Test2&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=saveButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=enterButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;css=i.icon-th&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;//div[@id='__sizzle__']/div/table/tbody/tr[2]/td&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=location&lt;/td&gt; 	&lt;td&gt;TestCity3&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=distance&lt;/td&gt; 	&lt;td&gt;3&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=description&lt;/td&gt; 	&lt;td&gt;Test3&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=saveButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=enterButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;css=i.icon-th&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;//div[@id='__sizzle__']/div/table/tbody/tr[2]/td[2]&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=distance&lt;/td&gt; 	&lt;td&gt;4&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=saveButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=enterButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;css=i.icon-th&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;//div[@id='__sizzle__']/div/table/tbody/tr[2]/td[3]&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=location&lt;/td&gt; 	&lt;td&gt;TestCity5&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=distance&lt;/td&gt; 	&lt;td&gt;5&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=saveButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=enterButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;css=i.icon-th&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;//div[@id='__sizzle__']/div/table/tbody/tr[2]/td[4]&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=distance&lt;/td&gt; 	&lt;td&gt;6&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=description&lt;/td&gt; 	&lt;td&gt;Test6&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=saveButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=enterButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;css=i.icon-th&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;//div[@id='__sizzle__']/div/table/tbody/tr[2]/td[5]&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=location&lt;/td&gt; 	&lt;td&gt;TestCity7&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=saveButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=distance&lt;/td&gt; 	&lt;td&gt;7&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=saveButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=enterButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=location&lt;/td&gt; 	&lt;td&gt;TestCity8&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=description&lt;/td&gt; 	&lt;td&gt;Test8&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=saveButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=distance&lt;/td&gt; 	&lt;td&gt;8&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=saveButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;css=i.icon-th&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;//div[@id='__sizzle__']/div/table/tbody/tr[2]/td[6]&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=saveButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;css=label &amp;gt; input[type=&amp;quot;text&amp;quot;]&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;select&lt;/td&gt; 	&lt;td&gt;name=eventTable_length&lt;/td&gt; 	&lt;td&gt;label=25&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;select&lt;/td&gt; 	&lt;td&gt;name=eventTable_length&lt;/td&gt; 	&lt;td&gt;label=10&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;link=Next →&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;select&lt;/td&gt; 	&lt;td&gt;name=eventTable_length&lt;/td&gt; 	&lt;td&gt;label=25&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=enterButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=date&lt;/td&gt; 	&lt;td&gt;Te&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;css=i.icon-th&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;css=i.icon-th&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;//div[@id='__sizzle__']/div/table/tbody/tr[2]/td[7]&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=description&lt;/td&gt; 	&lt;td&gt;TestCity1&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=saveButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=location&lt;/td&gt; 	&lt;td&gt;TestCity1&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=saveButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=distance&lt;/td&gt; 	&lt;td&gt;TestCity1&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=saveButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=distance&lt;/td&gt; 	&lt;td&gt;2&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=saveButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;css=th.sorting&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;css=th.sorting&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=enterButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=date&lt;/td&gt; 	&lt;td&gt;Test10&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=location&lt;/td&gt; 	&lt;td&gt;TestCity1&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=distance&lt;/td&gt; 	&lt;td&gt;10&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=description&lt;/td&gt; 	&lt;td&gt;TestCity10&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=location&lt;/td&gt; 	&lt;td&gt;TestCity10&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=saveButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;css=i.icon-th&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;//div[@id='__sizzle__']/div/table/tbody/tr[3]/td&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=saveButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=enterButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=date&lt;/td&gt; 	&lt;td&gt;q&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=location&lt;/td&gt; 	&lt;td&gt;q&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=distance&lt;/td&gt; 	&lt;td&gt;3&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=description&lt;/td&gt; 	&lt;td&gt;q&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=saveButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=description&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=location&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;css=span.add-on&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;//div[@id='__sizzle__']/div/table/tbody/tr[3]/td[2]&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=saveButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;select&lt;/td&gt; 	&lt;td&gt;name=eventTable_length&lt;/td&gt; 	&lt;td&gt;label=10&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=enterButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;css=span.add-on&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;//div[@id='__sizzle__']/div/table/tbody/tr[3]/td[3]&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=location&lt;/td&gt; 	&lt;td&gt;TestCity12&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=distance&lt;/td&gt; 	&lt;td&gt;12&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;type&lt;/td&gt; 	&lt;td&gt;id=description&lt;/td&gt; 	&lt;td&gt;TestCity12&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=saveButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=enterButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;id=closeButton&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;link=3&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;select&lt;/td&gt; 	&lt;td&gt;name=eventTable_length&lt;/td&gt; 	&lt;td&gt;label=100&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;//table[@id='eventTable']/thead/tr/th[4]&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;css=th.sorting_asc&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;//table[@id='eventTable']/thead/tr/th[3]&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;//table[@id='eventTable']/thead/tr/th[2]&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;select&lt;/td&gt; 	&lt;td&gt;name=eventTable_length&lt;/td&gt; 	&lt;td&gt;label=50&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;select&lt;/td&gt; 	&lt;td&gt;name=eventTable_length&lt;/td&gt; 	&lt;td&gt;label=25&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;select&lt;/td&gt; 	&lt;td&gt;name=eventTable_length&lt;/td&gt; 	&lt;td&gt;label=10&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;css=th.sorting&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;css=th.sorting&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;//table[@id='eventTable']/thead/tr/th[3]&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;//table[@id='eventTable']/thead/tr/th[4]&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; 	&lt;td&gt;click&lt;/td&gt; 	&lt;td&gt;css=th.sorting&lt;/td&gt; 	&lt;td&gt;&lt;/td&gt; &lt;/tr&gt;&nbsp;&nbsp;&lt;/tbody&gt;&lt;/table&gt; &lt;/body&gt; &lt;/html&gt;</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=location</td>
+	<td>Test1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=description</td>
+	<td>Test1</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enterButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.add-on</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.prev</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=location</td>
+	<td>Test2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=description</td>
+	<td>Test2</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enterButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.icon-th</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=location</td>
+	<td>Test3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=description</td>
+	<td>Test3</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enterButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.icon-th</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=location</td>
+	<td>Test4</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>4</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=description</td>
+	<td>Test4</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enterButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=date</td>
+	<td>26-02-2014</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=location</td>
+	<td>Wpg</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=description</td>
+	<td>Test5</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enterButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=closeButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enterButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.add-on</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.prev</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=location</td>
+	<td>Test6</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>6</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=description</td>
+	<td>Test6</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enterButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=location</td>
+	<td>Test7</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>7</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=description</td>
+	<td>Test7</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.icon-th</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.prev</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enterButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=date</td>
+	<td>Test8</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=location</td>
+	<td>Test8</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>Test8</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=description</td>
+	<td>Test8</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>8</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.add-on</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.prev</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enterButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.add-on</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.prev</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=location</td>
+	<td>Test9</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>9</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enterButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=closeButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enterButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.icon-th</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=description</td>
+	<td>Test10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=location</td>
+	<td>Wpg</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enterButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.icon-th</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=location</td>
+	<td>Test</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=description</td>
+	<td>Test</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=location</td>
+	<td>Test11</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=description</td>
+	<td>Test11</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>11</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Next →</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=← Previous</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enterButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.icon-th</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=location</td>
+	<td>Test12</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>12</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=description</td>
+	<td>TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest12121212121212</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enterButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.icon-th</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>13</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=eventTable_length</td>
+	<td>label=25</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=eventTable_length</td>
+	<td>label=50</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=eventTable_length</td>
+	<td>label=100</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=eventTable_length</td>
+	<td>label=10</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.sorting_asc</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.sorting_desc</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.sorting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.sorting_asc</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.sorting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//table[@id='eventTable']/thead/tr/th[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.sorting_asc</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//table[@id='eventTable']/thead/tr/th[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.sorting_asc</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enterButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=date</td>
+	<td>Test</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>Test</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>15</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.icon-th</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=th.next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

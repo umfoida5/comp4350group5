@@ -1,10 +1,12 @@
 import cherrypy
 import sys
-import statistics_engine
+import controller.statistics_engine
+from modules import database
 from modules.template import env
 from modules.jsonable import make_jsonable
 
 class Stats:
+
     @cherrypy.expose
     def index(self):
         tmpl = env.get_template('stats.html')
@@ -18,5 +20,5 @@ class Stats:
     @cherrypy.tools.json_out()
     @cherrypy.expose
     def get_total(self, **params):
-    	result = StatisticsEngine.total.get(1)
+    	result = StatisticsEngine.total(StatisticsEngine, params)
 	return make_jsonable(result)
