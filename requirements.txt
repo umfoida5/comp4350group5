@@ -3,4 +3,3 @@ Jinja2
 SQLAlchemy
 alembic
 decorator
-psycopg2
