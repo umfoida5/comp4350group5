@@ -1,5 +1,4 @@
-($function($){
-  $(document).ready(function() {
+($(document).ready(function() {
 
   $('#enterButton').click(function() {
     $('#enter_goal_modal').modal('show');
@@ -45,6 +44,5 @@
   // for the start and end date inputs
   $('#start_date').datepicker();
   $('#end_date').datepicker();
-  
-  }); 
-}) (jQuery);
+
+  })) (jQuery);
