@@ -14,7 +14,8 @@ class Achievements:
     @cherrypy.tools.json_out()
     @cherrypy.expose
     def get_unlocked_achievements(self):
+        athlete_id = Athlete.query.first().id
         unlocked_achievements = UnlockedAchievement.query.filter_by(
-            athlete_id=1
+            athlete_id=athlete_id
         ).all()
         return make_jsonable(unlocked_achievements)
