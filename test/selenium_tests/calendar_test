@@ -173,11 +173,6 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//body/div[2]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
 	<td>//div[@id='calendar']/div/div/table/tbody/tr/td/div</td>
 	<td></td>
 </tr>
@@ -468,11 +463,6 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//body/div[2]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
 	<td>//div[@id='calendar']/table/tbody/tr/td[3]/span/span/span[2]/span</td>
 	<td></td>
 </tr>
@@ -481,7 +471,6 @@
 	<td>link=CardioQuest</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>
