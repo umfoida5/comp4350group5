@@ -50,9 +50,9 @@ $(document).ready(function() {
                 $('#view_modal_title').html(event.type + " (" + 
                         event.event_date + ")");
 
-                $('#distance_view').html(event.distance);
-                $('#duration_view').html(event.duration);
-                $('#max_speed_view').html(event.max_speed);
+                $('#distance_view').html(event.distance + " km");
+                $('#duration_view').html(event.duration + " mins");
+                $('#max_speed_view').html(event.max_speed + " km/h");
             },
 
             events: function(start, end, callback) {
@@ -70,7 +70,7 @@ $(document).ready(function() {
                         events.push({
                             // Full Calendar Dependant JSON:  
                             title:      $(this).attr('type') + "\n" + 
-                                        $(this).attr('distance') + " km : " + 
+                                        $(this).attr('distance') + " km \n" + 
                                         $(this).attr('duration') + " mins",
                             start:      $(this).attr('date'),
                             end:        $(this).attr('date'),
