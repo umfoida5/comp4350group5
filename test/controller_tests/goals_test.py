@@ -6,6 +6,7 @@ from controller.goals import Goals
 class GoalsTest(unittest.TestCase):
 
 	test_goal = None
+    g = Goals() # TODO: make static
 
     @classmethod
     def setUpClass(cls):
@@ -27,19 +28,7 @@ class GoalsTest(unittest.TestCase):
                 "test street", 
                 "test avatar"))
 
-        da
-
         # intialize the Goal table with known values
-        database.session.add(
-            Goal(self.,
-                "run",
-                "total",
-                100,
-                "distance",
-                datetime.strptime("22-10-2012", "%d-%m-%Y"),
-                datetime.strptime("22-13-2012", "%d-%m-%Y"),
-                False,
-                None))
 
         database.session.commit()
         self.test_goal = Goal.query.filter_by(goal_id = 1).first()
@@ -87,12 +76,19 @@ class GoalsTest(unittest.TestCase):
 
 
     def test_goal_exists(self):
+
+        # insert goal into db
+
+        # probe db to make sure it exists
+
       	pass
 
 
+    # multiply; test with total, average, count, max, min
     def test_goal_completes(self):
 
         # add goal to goals using functions
+
 
         # call the activities table add goal function with some parameters
 
@@ -100,7 +96,7 @@ class GoalsTest(unittest.TestCase):
 
     	pass
 
-
+    # multiply; test with a few different metrics.
     def test_goal_does_not_complete(self):
 
         # similar to above, but make sure goal doesn't complete.

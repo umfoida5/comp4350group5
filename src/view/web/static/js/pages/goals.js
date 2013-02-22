@@ -1,4 +1,5 @@
-($(document).ready(function() {
+($function($){
+  $(document).ready(function() {
 
   $('#enterButton').click(function() {
     $('#enter_goal_modal').modal('show');
@@ -39,10 +40,11 @@
       $('#enter_goal_modal').modal('hide');
     } );
     return false;
-  } );
+  });
 
   // for the start and end date inputs
   $('#start_date').datepicker();
   $('#end_date').datepicker();
-
-} );)(jQuery);
+  
+  }); 
+}) (jQuery);
