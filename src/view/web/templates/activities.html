@@ -78,7 +78,14 @@
         </div>
         <form>
             <div class="modal-body">
-                Type <input type="text" name="type" id="type" style="width: 10em;" required /><br/>
+                Type 
+                <select class="span2" name="type" id="type">
+                    <option value="run">Run</option>
+                    <option value="bike">Bike</option>
+                    <option value="swim">Swim</option>
+                  </select>
+                <br/>
+                
                 Date <div class="input-append date" id="dateInput" data-date="26-02-2013" data-date-format="dd-mm-yyyy">
                         <input class="span2" name="date" id="date" size="16" type="text" >
                         <span class="add-on"><i class="icon-th"></i></span>
