@@ -16,27 +16,11 @@ $(document).ready(function() {
 		var statType = $("#select1").val();
 		var actType = $("#select0").val();
 
-		//find the correct startDate based on selection
-		if (timeType == "day"){
-			startDate = today.getFullYear() + "-" + (today.getMonth()+1) + "-" + today.getDate();
-		}
-
-		else if (timeType == "week"){
-			startDate = today.getFullYear() + "-" + (today.getMonth()+1) + "-" + (today.getDate()-today.getDay());
-		}
-		else if (timeType == "month"){
-			startDate = today.getFullYear() + "-" + (today.getMonth()+1) + "-1";
-		}
-		else if (timeType == "year"){
-			startDate = today.getFullYear() + "-1-1";
-		}
-
-		today = today.getFullYear() + "-" + (today.getMonth()+1) + "-" + today.getDate();
-
-		alert("start: " + startDate + ", end: " + today);
+		startDate = dateConversion(today,timeType);
+		today = dateConversion(today,"day");
 
 		//ask server for the data and dump it into the graphdata variable
-		if ($("#select1").val() == "Total"){
+		if (statType == "Total"){
 
 			$.getJSON("get_total",
 			{
@@ -45,55 +29,174 @@ $(document).ready(function() {
 				athlete_id: 1,
 				start_date: startDate,
         		end_date: today,
-        		group_by: timeType
+        		group_by: "day"
 			},
 				function(result)
 				{
-					alert(result);
+					drawGraph(result);
     			});
 		}
 
-		else if ($("#select1").val() == "Average"){
-			//$.get("statistics_engine.py",average(self,column_name,activity_name,athlete_id,startDate,today,group_by){
-		}
-		else if ($("#select1").val() == "Maximum"){
-			//$.get("statistics_engine.py",maximum(self,column_name,activity_name,athlete_id,startDate,today,group_by)
-		}
-		else if ($("#select1").val() == "Minimum"){
-			//$.get("statistics_engine.py",minimum(self,column_name,activity_name,athlete_id,startDate,today,group_by){
+		if (statType == "Average"){
+
+			$.getJSON("get_average",
+			{
+				column_name: measureType,
+				activity_name: actType,
+				athlete_id: 1,
+				start_date: startDate,
+				end_date: today,
+				group_by: "day"
+			},
+				function(result)
+				{
+					drawGraph(result);
+				});
 		}
 
+		if (statType == "Maximum"){
+
+		$.getJSON("get_maximum",
+		{
+			column_name: measureType,
+			activity_name: actType,
+			athlete_id: 1,
+			start_date: startDate,
+			end_date: today,
+			group_by: "day"
+		},
+			function(result)
+			{
+				drawGraph(result);
+			});
+		}
+
+		if (statType == "Minimum"){
+
+		$.getJSON("get_minimum",
+		{
+			column_name: measureType,
+			activity_name: actType,
+			athlete_id: 1,
+			start_date: startDate,
+			end_date: today,
+			group_by: "day"
+		},
+			function(result)
+			{
+				drawGraph(result);
+			});
+		}
 
 	});//button click function
 });//document ready
 
-$(document).ready(function() {
-    var chart1 = new Highcharts.Chart({
+
+//dateConversion function
+//-----------------------
+//takes the raw date given by new Date() and
+//converts it into the format used by our database
+// date - raw date to convert
+// timeframe - "day","week","month","year"
+
+function dateConversion(date,timeframe) {
+
+    var result;
+
+	//find the correct startDate based on selection
+	if (timeframe == "day"){
+		result = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate();
+	}
+
+	//TODO:fix this for when a week begins and ends in different months
+	else if (timeframe == "week"){
+		result = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + (date.getDate()-date.getDay());
+	}
+	else if (timeframe == "month"){
+		result = date.getFullYear() + "-" + (date.getMonth()+1) + "-1";
+	}
+	else if (timeframe == "year"){
+		result = date.getFullYear() + "-1-1";
+	}
+
+	return result;
+}
+
+
+//drawGraph function
+//------------------
+//takes the raw "data" returned from the server to create a line graph
+//	myData - the data sent back from the server after calling get_total, etc
+//	it is in the format (value,year,month,day,...), this will need to be converted
+
+function drawGraph(myData) {
+
+	var strData = [];
+	var splitStr = [];
+	var myValues = [];
+	var myDates = [];
+	var year;
+	var month;
+	var day;
+
+	//must convert data into a string format to manipulate it
+	for (var i=0;i<myData.length;i++) {
+		strData.push(String(myData[i]));
+	}
+
+	for (var i=0;i<strData.length;i++){
+
+		splitStr = strData[i].split(",");
+
+		for (var j=0;j<splitStr.length;j++){
+
+			if (j%4 == 0) {
+				myValues.push(parseInt(splitStr[j]));
+			}
+
+			else if (j%4 == 1){
+				year = splitStr[j];
+			}
+
+			else if (j%4 == 2){
+				month = splitStr[j]-1;
+			}
+
+			else if (j%4 == 3){
+				day = splitStr[j];
+				myDates.push(new Date(year,month,day));
+			}//else
+		}//for
+	}//for
+
+	//TODO: clean up hard-coded values in this function
+	//TODO: adjust for any missed values along x-axis (day/month/year with no activities)
+
+	var myChart = new Highcharts.Chart({
         chart: {
             renderTo: 'graphContainer',
-            type: 'bar'
+            type: 'line'
         },
         title: {
-            text: 'Fruit Consumption'
+            text: 'Activity'
         },
         xAxis: {
-            categories: ['Apples', 'Bananas', 'Oranges']
+            categories: myDates
         },
         yAxis: {
             title: {
-                text: 'Fruit eaten'
+                text: $("#select2").val()
             }
         },
         series: [{
-            name: 'Jane',
-            data: [1, 0, 4]
-        }, {
-            name: 'John',
-            data: [5, 7, 3]
+            name: 'Athlete Name',
+            data: myValues
         }]
-    });
-});
+    });//draw graph function
+}//drawgraph function
+
 </script>
+
 {% endblock script %}
 
 {% block body %}

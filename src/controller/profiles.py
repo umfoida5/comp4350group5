@@ -15,7 +15,7 @@ class Profiles:
     @cherrypy.tools.json_out()
     @cherrypy.expose
     def athlete(self, **kwargs):
-        result = Athlete.query.get(1)
+        result = Athlete.query.first()
         return make_jsonable(result)
     
     @cherrypy.tools.json_out()

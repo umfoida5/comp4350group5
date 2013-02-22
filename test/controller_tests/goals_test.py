@@ -2,20 +2,20 @@ import unittest
 from modules import database
 from model.goal import Goal
 from controller.goals import Goals
+from controller.activities import Activities
+from datetime import datetime
 
 class GoalsTest(unittest.TestCase):
 
-	test_goal = None
+    # TODO: make these static
+    G = Goals()
+    A = Activities()
 
     @classmethod
     def setUpClass(cls):
         database.init("tracker_test")
 
     def setUp(self):
-        """
-        This method is run before tests to provide setup
-        """
-
         # intialize the Athlete table with known values
         database.session.add(
             Athlete(
@@ -26,73 +26,74 @@ class GoalsTest(unittest.TestCase):
                 "I'm a Test", 
                 "test street", 
                 "test avatar"))
-
-        da
-
-        # intialize the Goal table with known values
-        database.session.add(
-            Goal(self.,
-                "run",
-                "total",
-                100,
-                "distance",
-                datetime.strptime("22-10-2012", "%d-%m-%Y"),
-                datetime.strptime("22-13-2012", "%d-%m-%Y"),
-                False,
-                None))
-
-        database.session.commit()
-        self.test_goal = Goal.query.filter_by(goal_id = 1).first()
-
-        # initialize the Activity table with known values
-        for num in range(1, 4):
-
-            database.session.add(            
-                Activity(
-                    self.test_athlete.id, 
-                    "run",
-                    datetime.date(1111, num, num),                    
-                    num * 10, 
-                    num * 5, 
-                    num * 10))
-
-            database.session.add(            
-                Activity(
-                    self.test_athlete.id, 
-                    "run",
-                    datetime.date(2222, num, num),                    
-                    num * 10, 
-                    num * 5, 
-                    num * 10))
-
-            database.session.add(
-                Activity(
-                    self.test_athlete.id, 
-                    "ride",
-                    datetime.date(1111, num, num),                    
-                    num * 10, 
-                    num * 5, 
-                    num * 10))
-
-            database.session.add(
-                Activity(
-                    self.test_athlete.id, 
-                    "ride",
-                    datetime.date(2222, num, num),                    
-                    num * 10, 
-                    num * 5, 
-                    num * 10))
-
         database.session.commit()
 
 
     def test_goal_exists(self):
-      	pass
+        # create new goal
+        G.create(
+            "run",
+            "total",
+            100,
+            "distance",
+            datetime.date(2012,10,10),
+            datetime.date(2012,10,12))
+
+        # grab newly created goal from db
+        goal = Goal.query.first()
+
+        # make sure it is the same
+        self.assertTrue(goal.metric == "distance")
+        self.assertTrue(goal.quantity == 100)
+        self.assertTrue(goal.activity == "run")
 
 
-    def test_goal_completes(self):
-    	pass
+    def test_goal_total_completes(self):
+        # create new goal
+        G.create(
+            "run",
+            "total",
+            100,
+            "distance",
+            datetime.date(2012,10,10),
+            datetime.date(2012,10,12))
+
+        A.create(
+            "run",
+            "11-10-2012",
+            101,
+            10,
+            25)
+
+        # see if goal was completed
+        goal = Goal.query.first()
+        self.assertTrue(goal.completed)
 
 
-    def test_goal_does_not_complete(self):
-    	pass
+    def test_goal_total_not_completes(self):
+        # create new goal
+        G.create(
+            "run",
+            "total",
+            100,
+            "distance",
+            datetime.date(2012,10,10),
+            datetime.date(2012,10,12))
+
+        A.create(
+            "run",
+            "11-10-2012",
+            50,
+            10,
+            25)
+
+        A.create(
+            "bike",
+            "11-10-2012",
+            70,
+            10,
+            25)
+
+        # see if goal was not completed
+        goal = Goal.query.first()
+        self.assertFalse(goal.completed)

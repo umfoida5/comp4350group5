@@ -8,6 +8,7 @@ from model.event import Event
 import datetime
 
 database.init()
+database.empty_database()
 db_session = database.session
 
 curr_time = datetime.datetime.now()
@@ -165,10 +166,7 @@ db_session.commit()
 
 athlete = Athlete.query.first()
 
-achievement_objs = []
-
-for i in range(1,7):
-	achievement_objs.append(Achievement.query.get(i))
+achievement_objs = Achievement.query.limit(7).all()
 
 for i in achievement_objs:
 	athlete.achievements.append(i)
