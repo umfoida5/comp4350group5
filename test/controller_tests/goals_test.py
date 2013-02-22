@@ -7,7 +7,7 @@ from datetime import datetime
 
 class GoalsTest(unittest.TestCase):
 
-	# TODO: make these static
+    # TODO: make these static
     G = Goals()
     A = Activities()
 
