@@ -68,7 +68,7 @@ class GoalsTest(unittest.TestCase):
             database.session.add(
                 Activity(
                     self.test_athlete.id, 
-                    "ride",
+                    "bike",
                     datetime.date(1111, num, num),                    
                     num * 10, 
                     num * 5, 
@@ -77,7 +77,7 @@ class GoalsTest(unittest.TestCase):
             database.session.add(
                 Activity(
                     self.test_athlete.id, 
-                    "ride",
+                    "bike",
                     datetime.date(2222, num, num),                    
                     num * 10, 
                     num * 5, 
@@ -91,8 +91,18 @@ class GoalsTest(unittest.TestCase):
 
 
     def test_goal_completes(self):
+
+        # add goal to goals using functions
+
+        # call the activities table add goal function with some parameters
+
+        # test to see if goal was completed
+
     	pass
 
 
     def test_goal_does_not_complete(self):
+
+        # similar to above, but make sure goal doesn't complete.
+
     	pass
