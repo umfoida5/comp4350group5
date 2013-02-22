@@ -2,11 +2,13 @@ import cherrypy
 import sys
 from controller.statistics_engine import StatisticsEngine
 from modules.datatables import send_datatable_response
+from model.athlete import Athlete
 from modules import database
 from modules.template import env
-from modules.jsonable import make_jsonable
 
 class Stats:
+
+    mySE = StatisticsEngine()
 
     @cherrypy.expose
     def index(self):
@@ -16,8 +18,23 @@ class Stats:
     @cherrypy.tools.json_out()
     @cherrypy.expose
     def get_total(self, **params):
-    	mySE = StatisticsEngine()
-    	result = StatisticsEngine.total(mySE, **params)
-    	print "the results of the call: ",
-    	print result
-	return make_jsonable(result)
+    	result = StatisticsEngine.total(Stats.mySE, **params)
+	return result
+	
+    @cherrypy.tools.json_out()
+    @cherrypy.expose
+    def get_average(self, **params):
+     	result = StatisticsEngine.average(Stats.mySE, **params)
+	return result
+	
+    @cherrypy.tools.json_out()
+    @cherrypy.expose
+    def get_minimum(self, **params):
+     	result = StatisticsEngine.minimum(Stats.mySE, **params)
+	return result
+	
+    @cherrypy.tools.json_out()
+    @cherrypy.expose
+    def get_maximum(self, **params):
+     	result = StatisticsEngine.maximum(Stats.mySE, **params)
+	return result

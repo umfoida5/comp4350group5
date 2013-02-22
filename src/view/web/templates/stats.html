@@ -33,10 +33,8 @@ $(document).ready(function() {
 
 		today = today.getFullYear() + "-" + (today.getMonth()+1) + "-" + today.getDate();
 
-		alert("start: " + startDate + ", end: " + today);
-
 		//ask server for the data and dump it into the graphdata variable
-		if ($("#select1").val() == "Total"){
+		if (statType == "Total"){
 
 			$.getJSON("get_total",
 			{
@@ -45,7 +43,7 @@ $(document).ready(function() {
 				athlete_id: 1,
 				start_date: startDate,
         		end_date: today,
-        		group_by: timeType
+        		group_by: "day"
 			},
 				function(result)
 				{
@@ -53,16 +51,56 @@ $(document).ready(function() {
     			});
 		}
 
-		else if ($("#select1").val() == "Average"){
-			//$.get("statistics_engine.py",average(self,column_name,activity_name,athlete_id,startDate,today,group_by){
-		}
-		else if ($("#select1").val() == "Maximum"){
-			//$.get("statistics_engine.py",maximum(self,column_name,activity_name,athlete_id,startDate,today,group_by)
-		}
-		else if ($("#select1").val() == "Minimum"){
-			//$.get("statistics_engine.py",minimum(self,column_name,activity_name,athlete_id,startDate,today,group_by){
+		if (statType == "Average"){
+
+			$.getJSON("get_average",
+			{
+				column_name: measureType,
+				activity_name: actType,
+				athlete_id: 1,
+				start_date: startDate,
+				end_date: today,
+				group_by: "day"
+			},
+				function(result)
+				{
+					alert(result);
+				});
 		}
 
+		if (statType == "Maximum"){
+
+		$.getJSON("get_maximum",
+		{
+			column_name: measureType,
+			activity_name: actType,
+			athlete_id: 1,
+			start_date: startDate,
+			end_date: today,
+			group_by: "day"
+		},
+			function(result)
+			{
+				alert(result);
+			});
+		}
+
+		if (statType == "Minimum"){
+
+		$.getJSON("get_minimum",
+		{
+			column_name: measureType,
+			activity_name: actType,
+			athlete_id: 1,
+			start_date: startDate,
+			end_date: today,
+			group_by: "day"
+		},
+			function(result)
+			{
+				alert(result);
+			});
+		}
 
 	});//button click function
 });//document ready
