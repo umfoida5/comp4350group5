@@ -1,40 +1,35 @@
 <!DOCTYPE html>
 {% extends "index.html" %}
 {% block script  %}
-  <script src="../js/bootstrapPagination.js"></script>
-  <script src="../js/holder.js"></script>
-  <script>
-    $(document).ready(function(){
-      $.getJSON('get_unlocked_achievements', function(unlocked_achievements){
-        $.each(unlocked_achievements, function(index) {
-          var achievement = unlocked_achievements[index].achievement;
-          var unlocked_date = unlocked_achievements[index].unlocked_date;
-          $("#" + achievement.title + " img#image").attr("src", achievement.image_url);
-          $("#" + achievement.title + " p#date").text(unlocked_date);
-          $("#" + achievement.title + " a").attr("href", "#");
-        });
-      });
-    });
-  </script>
+    <script src="../js/jquery.min.js"></script>
+    <script type='text/javascript' src='../js/bootstrap.js'></script>  
+    <script src="../js/bootstrapPagination.js"></script>
+    <script src="../js/pages/achievements.js"></script>
 {% endblock script %}
+
 {% block body %}
-  <div class="row">
-    <h1>Badges</h1>
-    <hr style="border-top:2px solid">
-  </div>
-  <div class="row">
-    <ul class="thumbnails">
+    <div class="row">
+        <h1>Badges</h1>
+        <hr style="border-top:2px solid">
+    </div>
+    <div id="badges" class="row">
+        <ul class="thumbnails">
+        </ul>
+    </div>
 
-      {% for achievement in achievements %}
-        <li class="span2">
-          <div id="{{ achievement.title }}" class="thumbnail" style="width:130px; height:180px;">
-              <img id="image" data-src="holder.js/130x130/text:Locked" alt="">
-              <p id="title" style="text-align:center;">{{ achievement.title }}</p>
-            <p id="date" style="text-align:center;"></p>
-          </div>
-        </li> 
-      {% endfor %}
+    <div class="modal hide fade" id="view_achievement_modal" name="enter_achievement_modal">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 id="view_modal_title">Achievement:</h3>
+        </div>
+        <div class="modal-body">
+            <div id="modal_body_div">             
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a class="btn" id="closeButton_view">Close</a>
+        </div>
+    </div>
 
-    </ul>
-  </div>
+
 {% endblock body %}

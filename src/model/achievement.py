@@ -39,7 +39,7 @@ class Achievement(Base):
     id = Column(Integer, primary_key=True)
     title = Column(String(128), unique=True, nullable=False)
     description = Column(String(500))
-    image_url = Column(String(256), nullable=False, default="holder.js/130x130/text:Locked")
+    image_url = Column(String(256), nullable=False)
 
     def __init__(self, title, description, image_url):
         self.title = title

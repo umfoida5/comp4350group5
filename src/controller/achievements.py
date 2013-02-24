@@ -9,7 +9,7 @@ class Achievements:
     @cherrypy.expose
     def badges(self):
         tmpl = env.get_template('achievements.html')
-        return tmpl.render(achievements=Achievement.query.all())
+        return tmpl.render()
 
     @cherrypy.tools.json_out()
     @cherrypy.expose
@@ -19,3 +19,9 @@ class Achievements:
             athlete_id=athlete_id
         ).all()
         return make_jsonable(unlocked_achievements)
+
+    @cherrypy.tools.json_out()
+    @cherrypy.expose
+    def get_achievements(self):
+        achievements = Achievement.query.all()
+        return make_jsonable(achievements)        
