@@ -15,7 +15,7 @@ class Profiles:
     @cherrypy.tools.json_out()
     @cherrypy.expose
     def athlete(self, **kwargs):
-        result = Athlete.query.first()
+        result = Athlete.query.get(1)
         return make_jsonable(result)
     
     @cherrypy.tools.json_out()
@@ -47,7 +47,7 @@ class Profiles:
     @cherrypy.tools.json_out()
     @cherrypy.expose
     @commit_on_success
-    def update_dob(sef, id, birth_date):
+    def update_dob(self, id, birth_date):
         """update the date of birth"""
         result = Athlete.query.get(1)
         result.birth_date = birth_date

@@ -36,6 +36,28 @@
         });
         
       $('#address').editable('update_address', {
+        
+           onsubmit: function(settings, td) {
+            var input = $(td).find('input');
+            $(this).validate({
+                rules: {
+                    'nameofinput': {
+                        number: true
+                    }
+                },
+                messages: {
+                    'actionItemEntity.name': {
+                        number: 'Only numbers are allowed'
+
+                    }
+
+                }
+            });
+
+            return ($(this).valid());
+        },
+        
+        
           indicator: 'Saving',
           tooltip:  'Click to change',
           onblur: 'cancel',
@@ -85,5 +107,11 @@
             return(obj.about_me);
           }
         });
+        
+        function isEmail(value){
+          var emailRegex =  new RegExp(" \b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b");
+          return (value == null|| !value.toString().match(emailRegex)
+            
+        }
     });
 }) (jQuery);

@@ -12,15 +12,25 @@
   <script src="../../src/view/web/static/js/jquery.min.js"></script>
   <script src="../../src/view/web/static/js/jquery.jeditable.js"></script>
   
-  <script src="../../src/view/web/static/js/pages/profile.js">
+  <script>
       asyncTest( "asynchronous test: one second later!", function() {
       expect( 1 );
-     
+        stop();
+        
+      profile();  
+      
+      
+        
       setTimeout(function() {
         ok( true, "Passed and ready to resume!" );
         start();
       }, 1000);
+      
     });
+    
   </script>
+  <div id="qunit-fixture">
+    <span></span>
+  </div>
 </body>
 </html>
