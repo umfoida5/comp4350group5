@@ -17,7 +17,6 @@ from model_tests.event_test import EventTests
 from modules_tests.jsonable_test import JsonableTests
 from modules_tests.transaction_test import TransactionTests
 
-database.init("tracker-test")
 database.init("tracker_test")
 database.recreate_tables()
 
