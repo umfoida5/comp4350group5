@@ -1,6 +1,40 @@
-(function($){
+(function Profile(){
+  
+     this.isEmail = function (value){
+
+        var valid = true;
+
+        if (value != null) { 
+          var str = value.toString();
+          var atpos = str.indexOf("@");
+          var dotpos = str.lastIndexOf(".");
+          if(atpos < 1 || dotpos <atpos+2 || dotpos+2>=str.length){
+            valid = false;
+          }
+        }else{
+          valid = false;
+        }
+        return valid;
+      }
+      
+      function isDate(value){
+        var valid = false;
+        try{
+          if(value != null){
+            var str = value.toString();
+            var dt = new Date(str);
+            valid = !(dt == "Invalid Date");
+          }
+        }catch(err){
+          valid = false;
+        }
+        
+        return valid;
+      }
+  
     $(document).ready(function(){
-      var athlete;
+      var athlete;     
+      
       $.getJSON('athlete', athlete, function(athlete){
         $("#profile_name").append(athlete['first_name'] + " " + athlete['last_name']);
         $("#dob").html(athlete['birth_date']);
@@ -20,6 +54,19 @@
       });
 
       $('#dob').editable('update_dob', {
+          onsubmit: function(settings, td){
+            
+            var input = $(td).find('input');
+            var original = input.val();
+            if (isDate(original)) {
+              console.log("Validation correct");
+              return true;
+            } else {
+              console.log("Validation failed. Ignoring");
+              input.css('background-color','#c00').css('color','#fff');
+            return false;
+            }
+          },
           indicator: 'Saving',
           tooltip:  'Click to change',
           onblur: 'cancel',
@@ -36,28 +83,7 @@
         });
         
       $('#address').editable('update_address', {
-        
-           onsubmit: function(settings, td) {
-            var input = $(td).find('input');
-            $(this).validate({
-                rules: {
-                    'nameofinput': {
-                        number: true
-                    }
-                },
-                messages: {
-                    'actionItemEntity.name': {
-                        number: 'Only numbers are allowed'
 
-                    }
-
-                }
-            });
-
-            return ($(this).valid());
-        },
-        
-        
           indicator: 'Saving',
           tooltip:  'Click to change',
           onblur: 'cancel',
@@ -75,6 +101,19 @@
         
         
       $('#email').editable('update_email', {
+          onsubmit: function(settings, td){
+            
+            var input = $(td).find('input');
+            var original = input.val();
+            if (isEmail(original)) {
+              console.log("Validation correct");
+              return true;
+            } else {
+              console.log("Validation failed. Ignoring");
+              input.css('background-color','#c00').css('color','#fff');
+            return false;
+            }
+          },
           indicator: 'Saving',
           tooltip:  'Click to change',
           onblur: 'cancel',
@@ -108,10 +147,6 @@
           }
         });
         
-        function isEmail(value){
-          var emailRegex =  new RegExp(" \b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b");
-          return (value == null|| !value.toString().match(emailRegex)
-            
-        }
+       
     });
 }) (jQuery);
