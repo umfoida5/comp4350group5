@@ -6,10 +6,8 @@ import unittest
 sys.path.append('../src')
 
 from modules import database
-from controller_tests.achievements_test import AchievementsTest
 from controller_tests.statistics_engine_test import StatisticsEngineTest
 from controller_tests.goals_test import GoalsTest
-#from controller_tests.profiles_test import Profiles
 from controller_tests.calendar_test import CalendarTest
 from model_tests.achievement_test import AchievementTests
 from model_tests.athlete_test import AthleteTests
