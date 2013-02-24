@@ -1,4 +1,4 @@
-(function Profile(){
+function Profile(url){
   
      this.isEmail = function (value){
 
@@ -17,10 +17,10 @@
         return valid;
       }
       
-      function isDate(value){
+      this.isDate = function(value){
         var valid = false;
         try{
-          if(value != null){
+          if(value != null && value.length > 7){
             var str = value.toString();
             var dt = new Date(str);
             valid = !(dt == "Invalid Date");
@@ -32,33 +32,43 @@
         return valid;
       }
   
-    $(document).ready(function(){
-      var athlete;     
-      
-      $.getJSON('athlete', athlete, function(athlete){
-        $("#profile_name").append(athlete['first_name'] + " " + athlete['last_name']);
-        $("#dob").html(athlete['birth_date']);
-        $("#address").html(athlete['address']);
-        $("#email").html(athlete['email']);
-        $("#about_me").html(athlete['about_me']);
-      }); 
-      
-      $.getJSON('get_unlocked_achievements', function(unlocked_achievements){
-        $.each(unlocked_achievements, function(index) {
-          var achievement = unlocked_achievements[index].achievement;
-          var unlocked_date = unlocked_achievements[index].unlocked_date;
-          $("#" + achievement.title + " img#image").attr("src", achievement.image_url);
-          $("#" + achievement.title + " p#date").text(unlocked_date);
-          $("#" + achievement.title + " a").attr("href", "#");
+
+       this.get_athleteAjax = function(){
+          
+        
+        var athlete = $.getJSON(url+'profiles/athlete', athlete, function(athlete){
+          dataType:"json"
+          url:"json"
+          Origin:url
+          $("#profile_name").append(athlete['first_name'] + " " + athlete['last_name']);
+          $("#dob").html(athlete['birth_date']);
+          $("#address").html(athlete['address']);
+          $("#email").html(athlete['email']);
+          $("#about_me").html(athlete['about_me']);
         });
-      });
+        
+        return athlete; 
+      }
+      this.get_achievesAjax = function(){
+        $.getJSON(url+'profiles/get_unlocked_achievements', function(unlocked_achievements){
+          $.each(unlocked_achievements, function(index) {
+            var achievement = unlocked_achievements[index].achievement;
+            var unlocked_date = unlocked_achievements[index].unlocked_date;
+            $("#" + achievement.title + " img#image").attr("src", achievement.image_url);
+            $("#" + achievement.title + " p#date").text(unlocked_date);
+            $("#" + achievement.title + " a").attr("href", "#");
+          });
+        });
+      }
+      
+      this.jeditableControl = function(){
 
       $('#dob').editable('update_dob', {
           onsubmit: function(settings, td){
-            
+            var profile = new Profile("");
             var input = $(td).find('input');
             var original = input.val();
-            if (isDate(original)) {
+            if (profile.isDate(original)) {
               console.log("Validation correct");
               return true;
             } else {
@@ -105,7 +115,9 @@
             
             var input = $(td).find('input');
             var original = input.val();
-            if (isEmail(original)) {
+            var profile = new Profile("");
+            
+            if (profile.isEmail(original)) {
               console.log("Validation correct");
               return true;
             } else {
@@ -147,6 +159,7 @@
           }
         });
         
-       
-    });
-}) (jQuery);
+  }
+}
+
+var prof = new Profile("http://localhost:8080/");

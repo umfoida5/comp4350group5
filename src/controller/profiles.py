@@ -15,6 +15,7 @@ class Profiles:
     @cherrypy.tools.json_out()
     @cherrypy.expose
     def athlete(self, **kwargs):
+        cherrypy.response.headers["Access-Control-Allow-Origin"] = "*"
         result = Athlete.query.get(1)
         return make_jsonable(result)
     

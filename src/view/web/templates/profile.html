@@ -3,6 +3,13 @@
 {% block script  %}
   <script src="../js/jquery.jeditable.js"></script>
   <script src="../js/pages/profile.js"></script>
+  <script>
+    $(document).ready(function(){
+      prof.get_athleteAjax($);
+      prof.get_achievesAjax($);
+      prof.jeditableControl($);
+    });
+    </script>
 {% endblock script %}
 
 {% block body %}
