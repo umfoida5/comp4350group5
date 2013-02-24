@@ -3,6 +3,7 @@ from modules import database
 from model.goal import Goal
 from controller.goals import Goals
 from controller.activities import Activities
+from model.athlete import Athlete
 from datetime import datetime
 
 class GoalsTest(unittest.TestCase):

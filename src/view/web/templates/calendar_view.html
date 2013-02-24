@@ -7,6 +7,14 @@
     <script type='text/javascript' src='../js/pages/calendar_view.js'></script>
     <link rel='stylesheet' type='text/css' href='../css/fullcalendar.css' />
     <link rel='stylesheet' type='text/css' href='../css/fullcalendar.print.css' media='print' />
+    <script> 
+
+        $(document).ready(function() {
+            calendar_view.view();
+            calendar_view.ajax_calendar();
+            calendar_view.ajax_submit();
+        });
+    </script>
 {% endblock script %}
 
 {% block body %}

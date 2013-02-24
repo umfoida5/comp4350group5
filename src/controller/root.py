@@ -1,6 +1,5 @@
 import cherrypy, httplib
 from modules.template import env
-from athletes import Athletes
 from activities import Activities
 from events import Events
 from stats import Stats
@@ -18,7 +17,6 @@ def http_methods_allowed(methods=['GET', 'HEAD']):
 cherrypy.tools.allow = cherrypy.Tool('on_start_resource', http_methods_allowed)
 
 class Root:
-    athletes = Athletes()
     activities = Activities()
     events = Events()
     stats = Stats()

@@ -1,4 +1,3 @@
-from root_test import RootTest
-from athletes_test import AthletesTest
 from achievements_test import AchievementsTest
 from statistics_engine_test import StatisticsEngineTest
+from calendar_test import CalendarTest

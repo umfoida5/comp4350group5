@@ -1,44 +1,49 @@
-$(document).ready(function() {
-    $('#closeButton').click(function() { 
-        $('#enter_activity_modal').modal('hide'); 
-    });
-
-    $('#closeButton_view').click(function() { 
-        $('#view_activity_modal').modal('hide'); 
-    });
-
-    $('form').submit(function() { 
-        $.post("create", $(this).serialize(), function() {
-            $('#enter_activity_modal').modal('hide');
-                $('#calendar').fullCalendar('refetchEvents');
+function Calendar_View () {
+    this.view = function(callbackTest) {
+        $('#closeButton').click(function() { 
+            $('#enter_activity_modal').modal('hide'); 
         });
-        return false;
-    });
 
-    $('#calendar').fullCalendar({
-        header: {
-            left:   'prev',
-			center: 'title',
-			right:  'today, next'
-		},
+        $('#closeButton_view').click(function() { 
+            $('#view_activity_modal').modal('hide'); 
+        });
+    }
 
-        weekMode:   'variable',
+    this.ajax_submit = function() {
+        $('form').submit(function() { 
+            $.post("create", $(this).serialize(), function() {
+                $('#enter_activity_modal').modal('hide');
+                    $('#calendar').fullCalendar('refetchEvents');
+            });
+            return false;
+        });
+    }
 
-        editable:   false,
+    this.ajax_calendar = function() {
+        $('#calendar').fullCalendar({
+            header: {
+                left:   'title',
+		        center: '',
+		        right:  'prev, next'
+	        },
 
-        eventColor: "#dd4814",
+            weekMode:   'variable',
 
-        dayClick: function(date) {
-            $('#enter_activity_modal').modal('show');
-            $('#date').attr('value', date.getDate() + "-" + 
-                (date.getMonth()+1) + "-" + 
-                date.getFullYear());
-            $('#modal_title').html("New Activity (" + 
-                (date.getMonth()+1) + "/" + 
-                date.getDate() + "/" + 
-                date.getFullYear() + ")");
+            editable:   false,
 
-            $('#type').attr('value', '');
+            eventColor: "#dd4814",
+
+            dayClick: function(date) {
+                $('#enter_activity_modal').modal('show');
+                $('#date').attr('value', date.getDate() + "-" + 
+                    (date.getMonth()+1) + "-" + 
+                    date.getFullYear());
+                $('#modal_title').html("New Activity (" + 
+                    (date.getMonth()+1) + "/" + 
+                    date.getDate() + "/" + 
+                    date.getFullYear() + ")");
+
+                $('#type').attr('value', '');
                 $('#distance').attr('value', '');
                 $('#duration').attr('value', '');
                 $('#max_speed').attr('value', '');
@@ -60,31 +65,34 @@ $(document).ready(function() {
                     url:        'json',
                     dataType:   'json',
                     data: {
-                    start_date: start.toJSON(),
-                    end_date:   end.toJSON()
-                },
+                        start_date: start.toJSON(),
+                        end_date:   end.toJSON()
+                    },
                 
-                success: function(doc) {
-                    var events = [];
-                    $(doc.activities).each(function() {
-                        events.push({
-                            // Full Calendar Dependant JSON:  
-                            title:      $(this).attr('type') + "\n" + 
-                                        $(this).attr('distance') + " km \n" + 
-                                        $(this).attr('duration') + " mins",
-                            start:      $(this).attr('date'),
-                            end:        $(this).attr('date'),
-                            // Event Information:                                    
-                            type:       $(this).attr('type'),
-                            event_date: $(this).attr('date'),
-                            distance:   $(this).attr('distance'),
-                            duration:   $(this).attr('duration'),
-                            max_speed:  $(this).attr('max_speed')
+                    success: function(doc) {
+                        var events = [];
+                        $(doc.activities).each(function() {
+                            events.push({
+                                // Full Calendar Dependant JSON:  
+                                title:      $(this).attr('type') + "\n" + 
+                                            $(this).attr('distance') + " km \n" + 
+                                            $(this).attr('duration') + " mins",
+                                start:      $(this).attr('date'),
+                                end:        $(this).attr('date'),
+                                // Event Information:                                    
+                                type:       $(this).attr('type'),
+                                event_date: $(this).attr('date'),
+                                distance:   $(this).attr('distance'),
+                                duration:   $(this).attr('duration'),
+                                max_speed:  $(this).attr('max_speed')
+                            });
                         });
-                    });
-                    callback(events);
-                }
-            });
-        }
-    })
-});
+                        callback(events);
+                    }
+                });
+            }
+        })
+    }
+}
+
+var calendar_view = new Calendar_View();
