@@ -1,4 +1,4 @@
-function Calendar_View () {
+function Calendar_View (url) {
     this.view = function(callbackTest) {
         $('#closeButton').click(function() { 
             $('#enter_activity_modal').modal('hide'); 
@@ -20,7 +20,7 @@ function Calendar_View () {
     }
 
     this.ajax_calendar = function() {
-        $('#calendar').fullCalendar({
+        var xhr = $('#calendar').fullCalendar({
             header: {
                 left:   'title',
 		        center: '',
@@ -62,7 +62,7 @@ function Calendar_View () {
 
             events: function(start, end, callback) {
                 $.ajax({
-                    url:        'json',
+                    url:        url+'calendar/json',
                     dataType:   'json',
                     data: {
                         start_date: start.toJSON(),
@@ -92,7 +92,8 @@ function Calendar_View () {
                 });
             }
         })
+        return xhr;
     }
 }
 
-var calendar_view = new Calendar_View();
+var calendar_view = new Calendar_View("http://localhost:8080/");
