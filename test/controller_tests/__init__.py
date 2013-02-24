@@ -1,3 +1,0 @@
-from achievements_test import AchievementsTest
-from statistics_engine_test import StatisticsEngineTest
-from calendar_test import CalendarTest
