@@ -12,6 +12,7 @@ class JsonableTests(unittest.TestCase):
 		athlete = Athlete("firstname", "lastname", "a@a.a")
 		data = make_jsonable(athlete)
 		expected = {
+			'achievements': [],
 			'first_name': 'firstname',
 			'last_name': 'lastname',
 			'about_me': '',
@@ -33,6 +34,7 @@ class JsonableTests(unittest.TestCase):
 		data = make_jsonable(athlete_list)
 		expected = [
 			{
+				'achievements': [],
 				'first_name': 'firstname1',
 				'last_name': 'lastname',
 				'about_me': '',
@@ -42,6 +44,7 @@ class JsonableTests(unittest.TestCase):
 				'email': 'a@a.a'
 			},
 			{
+				'achievements': [],
 				'first_name': 'firstname2',
 				'last_name': 'lastname',
 				'about_me': '',
@@ -51,6 +54,7 @@ class JsonableTests(unittest.TestCase):
 				'email': 'a@a.a'
 			},
 			{
+				'achievements': [],
 				'first_name': 'firstname3',
 				'last_name': 'lastname',
 				'about_me': '',
