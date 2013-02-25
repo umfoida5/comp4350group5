@@ -1,4 +1,4 @@
-function Profile(url){
+function Profile(){
   
      this.isEmail = function (value){
 
@@ -36,21 +36,23 @@ function Profile(url){
        this.get_athleteAjax = function(){
           
         
-        var athlete = $.getJSON(url+'profiles/athlete', athlete, function(athlete){
-          dataType:"json"
-          url:"json"
-          Origin:url
-          $("#profile_name").append(athlete['first_name'] + " " + athlete['last_name']);
-          $("#dob").html(athlete['birth_date']);
-          $("#address").html(athlete['address']);
-          $("#email").html(athlete['email']);
-          $("#about_me").html(athlete['about_me']);
+        var athlete = $.ajax({
+            url: '../profiles/athlete',
+            data: athlete,
+            success: function(athlete){
+           
+              $("#profile_name").append(athlete['first_name'] + " " + athlete['last_name']);
+              $("#dob").html(athlete['birth_date']);
+              $("#address").html(athlete['address']);
+              $("#email").html(athlete['email']);
+              $("#about_me").html(athlete['about_me']);
+            }
         });
         
         return athlete; 
       }
       this.get_achievesAjax = function(){
-        $.getJSON(url+'profiles/get_unlocked_achievements', function(unlocked_achievements){
+        $.getJSON('get_unlocked_achievements', function(unlocked_achievements){
           $.each(unlocked_achievements, function(index) {
             var achievement = unlocked_achievements[index].achievement;
             var unlocked_date = unlocked_achievements[index].unlocked_date;
@@ -162,4 +164,4 @@ function Profile(url){
   }
 }
 
-var prof = new Profile("http://localhost:8080/");
+var prof = new Profile();

@@ -15,14 +15,13 @@ class Profiles:
     @cherrypy.tools.json_out()
     @cherrypy.expose
     def athlete(self, **kwargs):
-        cherrypy.response.headers["Access-Control-Allow-Origin"] = "*"
         result = Athlete.query.first()
         return make_jsonable(result)
     
     @cherrypy.tools.json_out()
     @cherrypy.expose
     def get_unlocked_achievements(self):
-        unlocked_achievements = UnlockedAchievement.query.first().all()
+        unlocked_achievements = UnlockedAchievement.query.filter_by(athlete_id=1).all()
         return make_jsonable(unlocked_achievements)
 
     @cherrypy.tools.json_out()

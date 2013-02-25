@@ -1,4 +1,4 @@
-function Calendar_View (url) {
+function Calendar_View () {
     this.view = function(callbackTest) {
         $('#closeButton').click(function() { 
             $('#enter_activity_modal').modal('hide'); 
@@ -62,7 +62,7 @@ function Calendar_View (url) {
 
             events: function(start, end, callback) {
                 $.ajax({
-                    url:        url+'calendar/json',
+                    url:        '../calendar/json',
                     dataType:   'json',
                     data: {
                         start_date: start.toJSON(),
@@ -96,4 +96,4 @@ function Calendar_View (url) {
     }
 }
 
-var calendar_view = new Calendar_View("http://localhost:8080/");
+var calendar_view = new Calendar_View();

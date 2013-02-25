@@ -1,4 +1,4 @@
-function Activities(url){
+function Activities(){
     
     this.enter_btn = function(){
         $('#enterButton').click(function() {
@@ -31,23 +31,17 @@ function Activities(url){
           { "mData": "duration", "sWidth": '15%', "bSearchable": false },
           { "mData": "distance", "sWidth": '15%', "bSearchable": false },
           { "mData": "max_speed", "sWidth": '15%', "bSearchable": false }
-        ]
-      } );
-      
-      return athleteTable;
-    }
-
-    this.formSubmit = function(athleteTable){
+        ]} );
+        $('#dateInput').datepicker();
         $("form").submit(function() {
-        $.post("create", $(this).serialize(), function() {
-          athleteTable.fnDraw();
-          $('#enter_activity_modal').modal('hide');
+            $.post("create", $(this).serialize(), function() {
+                athleteTable.fnDraw();
+                $('#enter_activity_modal').modal('hide');
+            } );
+            return false;
         } );
-        return false;
-      } );
+      
     }
-    
-    this.datepicker = function(){ $('#dateInput').datepicker(); }
 }
 
-var activity = new Activities("http://localhost:8080/");
+var activity = new Activities();
