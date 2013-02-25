@@ -27,8 +27,6 @@ Then to kill it:
 pkill cherryd
 </pre>
 
-Tests
------
 To run the project development (foreground):
 <pre>
 cd src
@@ -39,6 +37,9 @@ Then to kill it:
 <pre>
 press ctrl c
 </pre>
+
+Tests
+-----
 
 To run the project's unittests:
 <pre>
