@@ -54,9 +54,6 @@ class CalendarTest(unittest.TestCase):
     def test_json_year(self):
         ''' Gets json for all activities for a year in the calendar '''
         json = self.C.json(datetime.date(1000, 01, 01), datetime.date(1000,12,31))
-        print "*********************************************************"
-        print json
-        print "*********************************************************"
         self.assertTrue(len(json["activities"]) == 1)
 
     def test_json_month(self):
