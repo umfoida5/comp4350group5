@@ -69,9 +69,8 @@ def check_for_completetions(f, *args, **kw):
                 completedGoals.append(goal)
 
         # 3. update database with completed goals/achievements.
-        G = Goals()        
         for goal in completedGoals:
-            G.mark_completed(goal)
+            g.mark_completed(goal)
 
     except:
         raise

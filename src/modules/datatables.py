@@ -4,6 +4,8 @@ from jsonable import make_jsonable
 def send_datatable_response(table, request_params):
     query = table.query
 
+    total_records = query.count()
+
     # Filtering
     search = '%%%s%%' % request_params.get('sSearch', "")
     search_cols = []
@@ -14,6 +16,8 @@ def send_datatable_response(table, request_params):
 
     if search_cols:
         query = query.filter(or_(*search_cols))
+
+    display_records = query.count()
 
     # Sorting
     sort_col = request_params.get(
@@ -26,17 +30,17 @@ def send_datatable_response(table, request_params):
         )
 
     # Pagination
-    rows = query.limit(
+    query = query.limit(
         request_params.get('iDisplayLength', 10)
     ).offset(
         request_params.get('iDisplayStart', 0)
-    ).all()
+    )
 
     response = {
         'sEcho': int(request_params.get('sEcho', 0)),
-        'iTotalRecords': query.count(),
-        'iTotalDisplayRecords': query.count(),
-        'aaData': make_jsonable(rows)
+        'iTotalRecords': total_records,
+        'iTotalDisplayRecords': display_records,
+        'aaData': make_jsonable(query.all())
     }
 
     return response
