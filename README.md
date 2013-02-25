@@ -1,22 +1,47 @@
+CardioQuest
+===========
+
+Setup
+-----
 To install/update all Python dependencies:
-  sudo pip install -U -r requirements.txt 
+<pre>
+sudo pip install -U -r requirements.txt
+</pre>
 
 To create/update the database schema:
-  cd src
-  alembic upgrade head
+<pre>
+cd src
+alembic upgrade head
+</pre>
 
-How to run the project production (background):
-  cd src
-  cherryd -d -i init
+Run the project
+---------------
+To run the project production (background):
+<pre>
+cd src
+cherryd -d -i init
+</pre>
 
-  To kill it:  pkill cherryd
+Then to kill it:
+<pre>
+pkill cherryd
+</pre>
 
-How to run the project development (foreground):
-  cd src
-  ./init.py
+Tests
+-----
+To run the project development (foreground):
+<pre>
+cd src
+./init.py
+</pre>
 
-  To kill it:  press ctrl c
+Then to kill it:
+<pre>
+press ctrl c
+</pre>
 
-How to run the project's unittests:
-  cd test
-  ./test.py
+To run the project's unittests:
+<pre>
+cd test
+./test.py
+</pre>
