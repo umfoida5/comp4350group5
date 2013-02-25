@@ -18,7 +18,7 @@
                 calendar_view.ajax_calendar();
                 setTimeout(
                     function() {
-                        ok( true, "Asynchronous Calendar Get Test passed!" );
+                        ok( calendar_view.ajax_calendar(), "Asynchronous Calendar Get Test passed!" );
                         start();
                     }, 1000);
 
@@ -37,5 +37,6 @@
       <div id="qunit-fixture">
           <span></span>
       </div>
+      <div id="calendar"></div>
     </body>
 </html>
