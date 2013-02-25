@@ -7,11 +7,12 @@ from modules import database
 
 database.init()
 
-cherrypy.tree.mount(Root(), '', 'config/app.conf')
+app = cherrypy.tree.mount(Root(), '', 'config/app.conf')
 
 if __name__ == '__main__':
-    cherrypy.config.update('config/dev_global.conf')
+    cherrypy.config.update('config/global_dev.conf')
+    app.merge('config/app_dev.conf')
     cherrypy.engine.start()
     cherrypy.engine.block()
 else:
-    cherrypy.config.update('config/prod_global.conf')
+    cherrypy.config.update('config/global_prod.conf')
