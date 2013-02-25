@@ -13,6 +13,7 @@ from controller_tests.profiles_test import Profiles
 from controller_tests.calendar_test import CalendarTest
 from model_tests.achievement_test import AchievementTests
 from model_tests.athlete_test import AthleteTests
+from model_tests.activity_test import ActivityTests
 from model_tests.event_test import EventTests
 from modules_tests.jsonable_test import JsonableTests
 from modules_tests.transaction_test import TransactionTests
