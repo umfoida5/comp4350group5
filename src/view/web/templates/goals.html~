@@ -41,10 +41,10 @@
 
           <input class="span2" type="text" name="quantity" id="quantity" placeholder="Quantity" required >
           
-          <!-- TODO: fill with metric types from db in script; change value names -->
+          <!-- TODO: fill with metric types from db in script-->
           <select class="span2" name="metric" id="metric">
-            <option value="distance">Distance</option>
-            <option value="max_speed">Max Speed</option>
+            <option value="Distance">Distance</option>
+            <option value="Max Speed">Max Speed</option>
           </select>
         </div>
 

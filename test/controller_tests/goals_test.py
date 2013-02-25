@@ -23,7 +23,7 @@ class GoalsTest(unittest.TestCase):
                 "Test", 
                 "Athlete", 
                 "test@test.com", 
-                datetime.date(1111,11,11), 
+                datetime.now(), 
                 "I'm a Test", 
                 "test street", 
                 "test avatar"))
@@ -32,13 +32,13 @@ class GoalsTest(unittest.TestCase):
 
     def test_goal_exists(self):
         # create new goal
-        G.create(
+        self.G.create(
             "run",
             "total",
             100,
             "distance",
-            datetime.date(2012,10,10),
-            datetime.date(2012,10,12))
+            "20-10-2012",
+            "21-10-2012")
 
         # grab newly created goal from db
         goal = Goal.query.first()
@@ -51,20 +51,29 @@ class GoalsTest(unittest.TestCase):
 
     def test_goal_total_completes(self):
         # create new goal
-        G.create(
+        self.G.create(
             "run",
             "total",
             100,
             "distance",
-            datetime.date(2012,10,10),
-            datetime.date(2012,10,12))
+            "20-10-2012",
+            "4-10-2012")
 
-        A.create(
+        self.A.create(
             "run",
             "11-10-2012",
             101,
             10,
             25)
+
+        self.A.create(
+            "run",
+            "11-10-2012",
+            101,
+            10,
+            25)
+
+        database.session.commit()
 
         # see if goal was completed
         goal = Goal.query.first()
@@ -73,24 +82,24 @@ class GoalsTest(unittest.TestCase):
 
     def test_goal_total_not_completes(self):
         # create new goal
-        G.create(
+        self.G.create(
             "run",
             "total",
             100,
             "distance",
-            datetime.date(2012,10,10),
-            datetime.date(2012,10,12))
+            "12-12-2013",
+            "30-12-2013")
 
-        A.create(
+        self.A.create(
             "run",
             "11-10-2012",
             50,
             10,
             25)
 
-        A.create(
+        self.A.create(
             "bike",
-            "11-10-2012",
+            "13-10-2012",
             70,
             10,
             25)
@@ -98,3 +107,4 @@ class GoalsTest(unittest.TestCase):
         # see if goal was not completed
         goal = Goal.query.first()
         self.assertFalse(goal.completed)
+

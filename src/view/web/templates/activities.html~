@@ -80,9 +80,9 @@
             <div class="modal-body">
                 Type 
                 <select class="span2" name="type" id="type" required>
-                    <option value="Run">Run</option>
-                    <option value="Bike">Bike</option>
-                    <option value="Swim">Swim</option>
+                    <option value="run">Run</option>
+                    <option value="bike">Bike</option>
+                    <option value="swim">Swim</option>
                   </select>
                 <br/>
 

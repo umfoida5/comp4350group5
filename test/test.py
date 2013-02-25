@@ -14,6 +14,7 @@ from controller_tests.calendar_test import CalendarTest
 from model_tests.achievement_test import AchievementTests
 from model_tests.athlete_test import AthleteTests
 from model_tests.event_test import EventTests
+from model_tests.goal_test import GoalTests
 from modules_tests.jsonable_test import JsonableTests
 from modules_tests.transaction_test import TransactionTests
 
