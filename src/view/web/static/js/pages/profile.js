@@ -1,4 +1,4 @@
-function Profile(url){
+(function Profile(){
   
      this.isEmail = function (value){
 
@@ -17,10 +17,10 @@ function Profile(url){
         return valid;
       }
       
-      this.isDate = function(value){
+      function isDate(value){
         var valid = false;
         try{
-          if(value != null && value.length > 7){
+          if(value != null){
             var str = value.toString();
             var dt = new Date(str);
             valid = !(dt == "Invalid Date");
@@ -32,43 +32,33 @@ function Profile(url){
         return valid;
       }
   
-
-       this.get_athleteAjax = function(){
-          
-        
-        var athlete = $.getJSON(url+'profiles/athlete', athlete, function(athlete){
-          dataType:"json"
-          url:"json"
-          Origin:url
-          $("#profile_name").append(athlete['first_name'] + " " + athlete['last_name']);
-          $("#dob").html(athlete['birth_date']);
-          $("#address").html(athlete['address']);
-          $("#email").html(athlete['email']);
-          $("#about_me").html(athlete['about_me']);
-        });
-        
-        return athlete; 
-      }
-      this.get_achievesAjax = function(){
-        $.getJSON(url+'profiles/get_unlocked_achievements', function(unlocked_achievements){
-          $.each(unlocked_achievements, function(index) {
-            var achievement = unlocked_achievements[index].achievement;
-            var unlocked_date = unlocked_achievements[index].unlocked_date;
-            $("#" + achievement.title + " img#image").attr("src", achievement.image_url);
-            $("#" + achievement.title + " p#date").text(unlocked_date);
-            $("#" + achievement.title + " a").attr("href", "#");
-          });
-        });
-      }
+    $(document).ready(function(){
+      var athlete;     
       
-      this.jeditableControl = function(){
+      $.getJSON('athlete', athlete, function(athlete){
+        $("#profile_name").append(athlete['first_name'] + " " + athlete['last_name']);
+        $("#dob").html(athlete['birth_date']);
+        $("#address").html(athlete['address']);
+        $("#email").html(athlete['email']);
+        $("#about_me").html(athlete['about_me']);
+      }); 
+      
+      $.getJSON('get_unlocked_achievements', function(unlocked_achievements){
+        $.each(unlocked_achievements, function(index) {
+          var achievement = unlocked_achievements[index].achievement;
+          var unlocked_date = unlocked_achievements[index].unlocked_date;
+          $("#" + achievement.title + " img#image").attr("src", achievement.image_url);
+          $("#" + achievement.title + " p#date").text(unlocked_date);
+          $("#" + achievement.title + " a").attr("href", "#");
+        });
+      });
 
       $('#dob').editable('update_dob', {
           onsubmit: function(settings, td){
-            var profile = new Profile("");
+            
             var input = $(td).find('input');
             var original = input.val();
-            if (profile.isDate(original)) {
+            if (isDate(original)) {
               console.log("Validation correct");
               return true;
             } else {
@@ -115,9 +105,7 @@ function Profile(url){
             
             var input = $(td).find('input');
             var original = input.val();
-            var profile = new Profile("");
-            
-            if (profile.isEmail(original)) {
+            if (isEmail(original)) {
               console.log("Validation correct");
               return true;
             } else {
@@ -159,7 +147,6 @@ function Profile(url){
           }
         });
         
-  }
-}
-
-var prof = new Profile("http://localhost:8080/");
+       
+    });
+}) (jQuery);
