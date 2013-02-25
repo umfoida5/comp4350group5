@@ -52,22 +52,22 @@ class GoalsTest(unittest.TestCase):
     def test_goal_total_completes(self):
         # create new goal
         self.G.create(
-            "run",
+            "testtest",
             "total",
             100,
             "distance",
-            "20-10-2012",
-            "4-10-2012")
+            "04-10-2012",
+            "20-10-2012")
 
         self.A.create(
-            "run",
+            "testtest",
             "11-10-2012",
             101,
             10,
             25)
 
         self.A.create(
-            "run",
+            "testtest",
             "11-10-2012",
             101,
             10,
@@ -76,7 +76,7 @@ class GoalsTest(unittest.TestCase):
         database.session.commit()
 
         # see if goal was completed
-        goal = Goal.query.first()
+        goal = Goal.query.filter(Goal.activity == "testtest").first()
         self.assertTrue(goal.completed)
 
 
