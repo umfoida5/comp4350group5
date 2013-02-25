@@ -16,14 +16,14 @@ class Calendar:
     @cherrypy.expose
     def json(self, start_date, end_date):
         activities = Activity.query.filter(Activity.date.between(start_date, end_date)).all()
-        cherrypy.response.headers["Access-Control-Allow-Origin"] = "*"
+
         json_data = {"activities":make_jsonable(activities)}      
         return json_data
 
     @cherrypy.expose
     def create(self, type, date, distance, duration, max_speed):
         db_session = database.session
-        cherrypy.response.headers["Access-Control-Allow-Origin"] = "*"
+
         athlete = Athlete.query.first()
         new = Activity(athlete.id, type, datetime.strptime(date, "%d-%m-%Y"), int(distance), int(duration), max_speed)
         db_session.add(new)
