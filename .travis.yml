@@ -1,0 +1,15 @@
+language: python
+python:
+  - "3.3"
+  - "2.7"
+  - "2.6"
+# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
+pip install -U -r requirements.txt
+cd src
+alembic upgrade head
+cd ..
+# # command to run tests, e.g. python setup.py test
+# script:  PLEASE CHANGE ME
+cd test
+./test.py
+cd ..
