@@ -5,8 +5,9 @@ from transaction import commit_on_success
 
 Base = declarative_base()
 
-def init(db_name = "tracker"):
-    engine = create_engine("postgresql+psycopg2://@/%s" % db_name)
+def init(db_name = "tracker", user="", socket=True):
+    host = "" if socket else "localhost"
+    engine = create_engine("postgresql+psycopg2://%s@%s/%s" % (user, host, db_name))
 
     global session
     session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engine))
@@ -24,5 +25,6 @@ def recreate_tables():
 @commit_on_success
 def empty_database():
     for table in reversed(Base.metadata.sorted_tables):
+        print table
         session.execute(table.delete())
 

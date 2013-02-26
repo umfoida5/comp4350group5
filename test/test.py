@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import sys
+import os, sys
 import unittest
 
 sys.path.append('../src')
@@ -20,7 +20,8 @@ from modules_tests.jsonable_test import JsonableTests
 from modules_tests.transaction_test import TransactionTests
 from modules_tests.datatables_test import DatatablesTests
 
-database.init("tracker_test")
+user = os.environ.get("psql_user", "")
+database.init("tracker_test", user, False)
 database.recreate_tables()
 
 if __name__ == '__main__':

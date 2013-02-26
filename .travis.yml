@@ -1,7 +1,10 @@
 language: python
-python:
-  - "2.6"
+python: "2.6"
+
+before_script: psql -c 'create database "tracker_test";' -U postgres
+
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install: pip install -U -r requirements.txt && cd src && alembic upgrade head && cd ..
+install: pip install -U -r requirements.txt psycopg2
 # # command to run tests, e.g. python setup.py test
-script: cd test && ./test.py && cd ..
+script: cd test && psql_user=postgres ./test.py
+
