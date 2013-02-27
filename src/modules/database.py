@@ -5,8 +5,8 @@ from transaction import commit_on_success
 
 Base = declarative_base()
 
-def init(db_name = "tracker", user="", socket=True):
-    host = "" if socket else "localhost"
+def init(db_name = "tracker", user=""):
+    host = "" if user == "" else "localhost"
     engine = create_engine("postgresql+psycopg2://%s@%s/%s" % (user, host, db_name))
 
     global session

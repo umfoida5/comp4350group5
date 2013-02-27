@@ -21,7 +21,7 @@ from modules_tests.transaction_test import TransactionTests
 from modules_tests.datatables_test import DatatablesTests
 
 user = os.environ.get("psql_user", "")
-database.init("tracker_test", user, False)
+database.init("tracker_test", user)
 database.recreate_tables()
 
 if __name__ == '__main__':
