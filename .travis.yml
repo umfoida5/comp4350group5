@@ -1,10 +1,13 @@
 language: python
 python: "2.6"
 
+# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
+install: sudo pip install -r requirements.txt psycopg2 --use-mirrors
+
 before_script: psql -c 'create database "tracker_test";' -U postgres
 
-# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install: pip install -r requirements.txt psycopg2 --use-mirrors
 # # command to run tests, e.g. python setup.py test
-script: cd test && psql_user=postgres ./test.py
+script:
+- cd test
+- psql_user=postgres ./test.py
 
