@@ -1,6 +1,8 @@
 CardioQuest
 ===========
 
+[![Build Status](https://travis-ci.org/umfoida5/comp4350group5.png?branch=master)](https://travis-ci.org/umfoida5/comp4350group5)
+
 Setup
 -----
 To install/update all Python dependencies:
