@@ -89,6 +89,10 @@ $(document).ready(function() {
 		}
 
 	});//button click function
+
+	//click the button to make a starting graph
+	$("button").click();
+
 });//document ready
 
 
@@ -178,7 +182,7 @@ function drawGraph(myData) {
             type: 'line'
         },
         title: {
-            text: 'Activity'
+            text: $("#select0").val()
         },
         xAxis: {
             categories: myDates
@@ -201,37 +205,35 @@ function drawGraph(myData) {
 
 {% block body %}
 
+<div id="graphContainer" style="width:100%; height:400px;"></div>
+
 <div id=search terms>
-<label>
 Activity:
-<select size="1" id="select0" aria-controls="graphContainer">
+<select size="1" id="select0">
 	<option value ="Run" selected="selected">Run</option>
-	<option value ="Walk" selected="selected">Walk</option>
-	<option value ="Bike" selected="selected">Bike</option>
+	<option value ="Walk">Walk</option>
+	<option value ="Bike">Bike</option>
 </select><br>
 Display my:
-<select size="1" id="select1" aria-controls="graphContainer">
+<select size="1" id="select1">
 	<option value ="Total" selected="selected">Total</option>
-	<option value ="Average" selected="selected">Average</option>
-	<option value ="Maximum" selected="selected">Maximum</option>
-	<option value ="Minimum" selected="selected">Minimum</option>
+	<option value ="Average">Average</option>
+	<option value ="Maximum">Maximum</option>
+	<option value ="Minimum">Minimum</option>
 </select>
-<select size="1" id="select2" aria-controls="graphContainer">
+<select size="1" id="select2">
 	<option value ="distance" selected="selected">Distance</option>
-	<option value ="duration" selected="selected">Duration</option>
-	<option value ="max_speed" selected="selected">Top Speed</option>
+	<option value ="duration">Duration</option>
+	<option value ="max_speed">Top Speed</option>
 </select>
- by 
-<select size="1" id="select3" aria-controls="graphContainer">
-	<option value ="day" selected="selected">Day</option>
+ by
+<select size="1" id="select3">
+	<option value ="day">Day</option>
 	<option value ="week" selected="selected">Week</option>
-	<option value ="month" selected="selected">Month</option>
-	<option value ="year" selected="selected">Year</option>
+	<option value ="month">Month</option>
+	<option value ="year">Year</option>
 </select>
-</label>form
 <button type="button" class="btn btn-primary" data-loading-text="Updating...">Update</button>
 </div>
-
-<div id="graphContainer" style="width:100%; height:400px;"></div>
 
 {% endblock body %}
