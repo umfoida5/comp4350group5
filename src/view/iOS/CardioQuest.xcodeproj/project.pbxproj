@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E4BEB5CD16E5361500DD4526 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BEB5CC16E5361500DD4526 /* UIKit.framework */; };
+		E4BEB5CF16E5361500DD4526 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BEB5CE16E5361500DD4526 /* Foundation.framework */; };
+		E4BEB5D116E5361500DD4526 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BEB5D016E5361500DD4526 /* CoreGraphics.framework */; };
+		E4BEB5D716E5361500DD4526 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4BEB5D516E5361500DD4526 /* InfoPlist.strings */; };
+		E4BEB5D916E5361500DD4526 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BEB5D816E5361500DD4526 /* main.m */; };
+		E4BEB5DD16E5361600DD4526 /* CDQAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BEB5DC16E5361600DD4526 /* CDQAppDelegate.m */; };
+		E4BEB5DF16E5361600DD4526 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BEB5DE16E5361600DD4526 /* Default.png */; };
+		E4BEB5E116E5361600DD4526 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BEB5E016E5361600DD4526 /* Default@2x.png */; };
+		E4BEB5E316E5361600DD4526 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BEB5E216E5361600DD4526 /* Default-568h@2x.png */; };
+		E4BEB5E616E5361600DD4526 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4BEB5E416E5361600DD4526 /* MainStoryboard_iPhone.storyboard */; };
+		E4BEB5E916E5361600DD4526 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4BEB5E716E5361600DD4526 /* MainStoryboard_iPad.storyboard */; };
+		E4BEB5EC16E5361600DD4526 /* CDQFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BEB5EB16E5361600DD4526 /* CDQFirstViewController.m */; };
+		E4BEB5EE16E5361600DD4526 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BEB5ED16E5361600DD4526 /* first.png */; };
+		E4BEB5F016E5361600DD4526 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BEB5EF16E5361600DD4526 /* first@2x.png */; };
+		E4BEB5F316E5361600DD4526 /* CDQSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BEB5F216E5361600DD4526 /* CDQSecondViewController.m */; };
+		E4BEB5F516E5361600DD4526 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BEB5F416E5361600DD4526 /* second.png */; };
+		E4BEB5F716E5361600DD4526 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BEB5F616E5361600DD4526 /* second@2x.png */; };
+		E4BEB5FF16E5361600DD4526 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BEB5FE16E5361600DD4526 /* SenTestingKit.framework */; };
+		E4BEB60016E5361600DD4526 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BEB5CC16E5361500DD4526 /* UIKit.framework */; };
+		E4BEB60116E5361600DD4526 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BEB5CE16E5361500DD4526 /* Foundation.framework */; };
+		E4BEB60916E5361600DD4526 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4BEB60716E5361600DD4526 /* InfoPlist.strings */; };
+		E4BEB60C16E5361700DD4526 /* CardioQuestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BEB60B16E5361700DD4526 /* CardioQuestTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E4BEB60216E5361600DD4526 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4BEB5C116E5361500DD4526 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4BEB5C816E5361500DD4526;
+			remoteInfo = CardioQuest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E4BEB5C916E5361500DD4526 /* CardioQuest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardioQuest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4BEB5CC16E5361500DD4526 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E4BEB5CE16E5361500DD4526 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E4BEB5D016E5361500DD4526 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E4BEB5D416E5361500DD4526 /* CardioQuest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CardioQuest-Info.plist"; sourceTree = "<group>"; };
+		E4BEB5D616E5361500DD4526 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E4BEB5D816E5361500DD4526 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E4BEB5DA16E5361500DD4526 /* CardioQuest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CardioQuest-Prefix.pch"; sourceTree = "<group>"; };
+		E4BEB5DB16E5361500DD4526 /* CDQAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDQAppDelegate.h; sourceTree = "<group>"; };
+		E4BEB5DC16E5361600DD4526 /* CDQAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDQAppDelegate.m; sourceTree = "<group>"; };
+		E4BEB5DE16E5361600DD4526 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		E4BEB5E016E5361600DD4526 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		E4BEB5E216E5361600DD4526 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		E4BEB5E516E5361600DD4526 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		E4BEB5E816E5361600DD4526 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		E4BEB5EA16E5361600DD4526 /* CDQFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDQFirstViewController.h; sourceTree = "<group>"; };
+		E4BEB5EB16E5361600DD4526 /* CDQFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDQFirstViewController.m; sourceTree = "<group>"; };
+		E4BEB5ED16E5361600DD4526 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		E4BEB5EF16E5361600DD4526 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		E4BEB5F116E5361600DD4526 /* CDQSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDQSecondViewController.h; sourceTree = "<group>"; };
+		E4BEB5F216E5361600DD4526 /* CDQSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDQSecondViewController.m; sourceTree = "<group>"; };
+		E4BEB5F416E5361600DD4526 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		E4BEB5F616E5361600DD4526 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		E4BEB5FD16E5361600DD4526 /* CardioQuestTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardioQuestTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4BEB5FE16E5361600DD4526 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		E4BEB60616E5361600DD4526 /* CardioQuestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CardioQuestTests-Info.plist"; sourceTree = "<group>"; };
+		E4BEB60816E5361600DD4526 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E4BEB60A16E5361700DD4526 /* CardioQuestTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardioQuestTests.h; sourceTree = "<group>"; };
+		E4BEB60B16E5361700DD4526 /* CardioQuestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardioQuestTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E4BEB5C616E5361500DD4526 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4BEB5CD16E5361500DD4526 /* UIKit.framework in Frameworks */,
+				E4BEB5CF16E5361500DD4526 /* Foundation.framework in Frameworks */,
+				E4BEB5D116E5361500DD4526 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4BEB5F916E5361600DD4526 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4BEB5FF16E5361600DD4526 /* SenTestingKit.framework in Frameworks */,
+				E4BEB60016E5361600DD4526 /* UIKit.framework in Frameworks */,
+				E4BEB60116E5361600DD4526 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E4BEB5C016E5361500DD4526 = {
+			isa = PBXGroup;
+			children = (
+				E4BEB5D216E5361500DD4526 /* CardioQuest */,
+				E4BEB60416E5361600DD4526 /* CardioQuestTests */,
+				E4BEB5CB16E5361500DD4526 /* Frameworks */,
+				E4BEB5CA16E5361500DD4526 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E4BEB5CA16E5361500DD4526 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4BEB5C916E5361500DD4526 /* CardioQuest.app */,
+				E4BEB5FD16E5361600DD4526 /* CardioQuestTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4BEB5CB16E5361500DD4526 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4BEB5CC16E5361500DD4526 /* UIKit.framework */,
+				E4BEB5CE16E5361500DD4526 /* Foundation.framework */,
+				E4BEB5D016E5361500DD4526 /* CoreGraphics.framework */,
+				E4BEB5FE16E5361600DD4526 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E4BEB5D216E5361500DD4526 /* CardioQuest */ = {
+			isa = PBXGroup;
+			children = (
+				E4BEB5DB16E5361500DD4526 /* CDQAppDelegate.h */,
+				E4BEB5DC16E5361600DD4526 /* CDQAppDelegate.m */,
+				E4BEB5E416E5361600DD4526 /* MainStoryboard_iPhone.storyboard */,
+				E4BEB5E716E5361600DD4526 /* MainStoryboard_iPad.storyboard */,
+				E4BEB5EA16E5361600DD4526 /* CDQFirstViewController.h */,
+				E4BEB5EB16E5361600DD4526 /* CDQFirstViewController.m */,
+				E4BEB5ED16E5361600DD4526 /* first.png */,
+				E4BEB5EF16E5361600DD4526 /* first@2x.png */,
+				E4BEB5F116E5361600DD4526 /* CDQSecondViewController.h */,
+				E4BEB5F216E5361600DD4526 /* CDQSecondViewController.m */,
+				E4BEB5F416E5361600DD4526 /* second.png */,
+				E4BEB5F616E5361600DD4526 /* second@2x.png */,
+				E4BEB5D316E5361500DD4526 /* Supporting Files */,
+			);
+			path = CardioQuest;
+			sourceTree = "<group>";
+		};
+		E4BEB5D316E5361500DD4526 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E4BEB5D416E5361500DD4526 /* CardioQuest-Info.plist */,
+				E4BEB5D516E5361500DD4526 /* InfoPlist.strings */,
+				E4BEB5D816E5361500DD4526 /* main.m */,
+				E4BEB5DA16E5361500DD4526 /* CardioQuest-Prefix.pch */,
+				E4BEB5DE16E5361600DD4526 /* Default.png */,
+				E4BEB5E016E5361600DD4526 /* Default@2x.png */,
+				E4BEB5E216E5361600DD4526 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E4BEB60416E5361600DD4526 /* CardioQuestTests */ = {
+			isa = PBXGroup;
+			children = (
+				E4BEB60A16E5361700DD4526 /* CardioQuestTests.h */,
+				E4BEB60B16E5361700DD4526 /* CardioQuestTests.m */,
+				E4BEB60516E5361600DD4526 /* Supporting Files */,
+			);
+			path = CardioQuestTests;
+			sourceTree = "<group>";
+		};
+		E4BEB60516E5361600DD4526 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E4BEB60616E5361600DD4526 /* CardioQuestTests-Info.plist */,
+				E4BEB60716E5361600DD4526 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E4BEB5C816E5361500DD4526 /* CardioQuest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4BEB60F16E5361700DD4526 /* Build configuration list for PBXNativeTarget "CardioQuest" */;
+			buildPhases = (
+				E4BEB5C516E5361500DD4526 /* Sources */,
+				E4BEB5C616E5361500DD4526 /* Frameworks */,
+				E4BEB5C716E5361500DD4526 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CardioQuest;
+			productName = CardioQuest;
+			productReference = E4BEB5C916E5361500DD4526 /* CardioQuest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E4BEB5FC16E5361600DD4526 /* CardioQuestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4BEB61216E5361700DD4526 /* Build configuration list for PBXNativeTarget "CardioQuestTests" */;
+			buildPhases = (
+				E4BEB5F816E5361600DD4526 /* Sources */,
+				E4BEB5F916E5361600DD4526 /* Frameworks */,
+				E4BEB5FA16E5361600DD4526 /* Resources */,
+				E4BEB5FB16E5361600DD4526 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4BEB60316E5361600DD4526 /* PBXTargetDependency */,
+			);
+			name = CardioQuestTests;
+			productName = CardioQuestTests;
+			productReference = E4BEB5FD16E5361600DD4526 /* CardioQuestTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E4BEB5C116E5361500DD4526 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CDQ;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = comp4350group5;
+			};
+			buildConfigurationList = E4BEB5C416E5361500DD4526 /* Build configuration list for PBXProject "CardioQuest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E4BEB5C016E5361500DD4526;
+			productRefGroup = E4BEB5CA16E5361500DD4526 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E4BEB5C816E5361500DD4526 /* CardioQuest */,
+				E4BEB5FC16E5361600DD4526 /* CardioQuestTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E4BEB5C716E5361500DD4526 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4BEB5D716E5361500DD4526 /* InfoPlist.strings in Resources */,
+				E4BEB5DF16E5361600DD4526 /* Default.png in Resources */,
+				E4BEB5E116E5361600DD4526 /* Default@2x.png in Resources */,
+				E4BEB5E316E5361600DD4526 /* Default-568h@2x.png in Resources */,
+				E4BEB5E616E5361600DD4526 /* MainStoryboard_iPhone.storyboard in Resources */,
+				E4BEB5E916E5361600DD4526 /* MainStoryboard_iPad.storyboard in Resources */,
+				E4BEB5EE16E5361600DD4526 /* first.png in Resources */,
+				E4BEB5F016E5361600DD4526 /* first@2x.png in Resources */,
+				E4BEB5F516E5361600DD4526 /* second.png in Resources */,
+				E4BEB5F716E5361600DD4526 /* second@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4BEB5FA16E5361600DD4526 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4BEB60916E5361600DD4526 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E4BEB5FB16E5361600DD4526 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E4BEB5C516E5361500DD4526 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4BEB5D916E5361500DD4526 /* main.m in Sources */,
+				E4BEB5DD16E5361600DD4526 /* CDQAppDelegate.m in Sources */,
+				E4BEB5EC16E5361600DD4526 /* CDQFirstViewController.m in Sources */,
+				E4BEB5F316E5361600DD4526 /* CDQSecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4BEB5F816E5361600DD4526 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4BEB60C16E5361700DD4526 /* CardioQuestTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E4BEB60316E5361600DD4526 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4BEB5C816E5361500DD4526 /* CardioQuest */;
+			targetProxy = E4BEB60216E5361600DD4526 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E4BEB5D516E5361500DD4526 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4BEB5D616E5361500DD4526 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E4BEB5E416E5361600DD4526 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4BEB5E516E5361600DD4526 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		E4BEB5E716E5361600DD4526 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4BEB5E816E5361600DD4526 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		E4BEB60716E5361600DD4526 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4BEB60816E5361600DD4526 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E4BEB60D16E5361700DD4526 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E4BEB60E16E5361700DD4526 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E4BEB61016E5361700DD4526 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CardioQuest/CardioQuest-Prefix.pch";
+				INFOPLIST_FILE = "CardioQuest/CardioQuest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E4BEB61116E5361700DD4526 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CardioQuest/CardioQuest-Prefix.pch";
+				INFOPLIST_FILE = "CardioQuest/CardioQuest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E4BEB61316E5361700DD4526 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CardioQuest.app/CardioQuest";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CardioQuest/CardioQuest-Prefix.pch";
+				INFOPLIST_FILE = "CardioQuestTests/CardioQuestTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		E4BEB61416E5361700DD4526 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CardioQuest.app/CardioQuest";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CardioQuest/CardioQuest-Prefix.pch";
+				INFOPLIST_FILE = "CardioQuestTests/CardioQuestTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E4BEB5C416E5361500DD4526 /* Build configuration list for PBXProject "CardioQuest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4BEB60D16E5361700DD4526 /* Debug */,
+				E4BEB60E16E5361700DD4526 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4BEB60F16E5361700DD4526 /* Build configuration list for PBXNativeTarget "CardioQuest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4BEB61016E5361700DD4526 /* Debug */,
+				E4BEB61116E5361700DD4526 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E4BEB61216E5361700DD4526 /* Build configuration list for PBXNativeTarget "CardioQuestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4BEB61316E5361700DD4526 /* Debug */,
+				E4BEB61416E5361700DD4526 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E4BEB5C116E5361500DD4526 /* Project object */;
+}
