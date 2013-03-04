@@ -1,0 +1,85 @@
+{% extends "index.html" %}
+
+{% block script  %}
+  <script src="../js/jquery.min.js"></script>
+  <script type='text/javascript' src='../js/bootstrap.js'></script>
+
+  <script>
+    $(document).ready(function() {
+      $("#loginForm").submit(function() {
+		formData = $(this).serialize();
+        $.post("do_login", formData, function(errorMsg) {
+          if (errorMsg == "") {
+            toIndex();
+          }
+          else {
+            $("#loginMessage").text(errorMsg);
+          }
+        } );
+        return false;
+      } );
+      
+      $("#signupForm").submit(function() {
+        $.post("signup", $(this).serialize(), function() {
+		  $("#signupMessage").text("Signup successful, redirecting!");
+		  toIndex();
+		} );
+        return false;
+      } );
+      
+      function toIndex()
+      {
+		
+		window.location.href = "../";
+	  }
+    } );
+  </script>
+{% endblock script %}
+
+{% block body %}
+<h1>Login</h1>
+<form id="loginForm">
+	<div class="control-group">
+		<label class="control-label" for="username">Username:&nbsp;</label>
+		<input type="text" name="username" maxLength=50 class="input-xlarge" id="username">
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="pw">Password:&nbsp;</label>
+		<input type="password" name="pw" maxLength=35 class="input-xlarge" id="pw">
+	</div>
+	<div class="control-group">
+		<input class="btn btn-primary" id="login" type="submit" value="Login" />
+	</div>
+	<div class="control-group error">
+		<span class="help-inline" id="loginMessage"></span>
+	</div>
+</form>
+
+<hr style="border-top:1px solid #dd4814">
+<h1>Sign Up, it's FREE!</h1>
+<form id="signupForm">
+	<div class="control-group">
+		<label class="control-label" for="username">Username:&nbsp;</label>
+		<input type="text" name="username" maxLength=50 class="input-xlarge" id="username">
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="pw">Password:&nbsp;</label>
+		<input type="password" name="pw" maxLength=35 class="input-xlarge" id="pw">
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="firstName">First Name:&nbsp;</label>
+		<input type="text" name="firstName" maxLength=50 class="input-xlarge" id="firstName">
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="lastName">Last Name:&nbsp;</label>
+		<input type="text" name="lastName" maxLength=50 class="input-xlarge" id="lastName">
+	</div>
+	<div class="control-group success">
+		<span class="help-inline" id="signupMessage"></span>
+	</div>
+	<div class="control-group">
+		<input class="btn btn-primary" id="login" type="submit" value="Sign Up" />
+	</div>
+</form>
+
+{% endblock body %}
