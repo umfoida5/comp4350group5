@@ -20,41 +20,9 @@ $(document).ready(function() {
 		today = dateConversion(today,"day");
 
 		//ask server for the data and dump it into the graphdata variable
-		if (statType == "Total"){
 
-			$.getJSON("get_total",
-			{
-				column_name: measureType,
-				activity_name: actType,
-				athlete_id: 1,
-				start_date: startDate,
-        		end_date: today,
-        		group_by: "day"
-			},
-				function(result)
-				{
-					drawGraph(result);
-    			});
-		}
-
-		if (statType == "Average"){
-
-			$.getJSON("get_average",
-			{
-				column_name: measureType,
-				activity_name: actType,
-				athlete_id: 1,
-				start_date: startDate,
-				end_date: today,
-				group_by: "day"
-			},
-				function(result)
-				{
-					drawGraph(result);
-				});
-		}
-
-		if (statType == "Maximum"){
+		//if the user wants max_speed, we look for a maximum
+		if (measureType == "max_speed"){
 
 		$.getJSON("get_maximum",
 		{
@@ -71,9 +39,10 @@ $(document).ready(function() {
 			});
 		}
 
-		if (statType == "Minimum"){
+		//if the user does not want max_speed, we find a total
+		else{
 
-		$.getJSON("get_minimum",
+		$.getJSON("get_total",
 		{
 			column_name: measureType,
 			activity_name: actType,
@@ -163,12 +132,12 @@ function drawGraph(myData) {
 			}
 
 			else if (j%4 == 2){
-				month = splitStr[j]-1;
+				month = splitStr[j];
 			}
 
 			else if (j%4 == 3){
 				day = splitStr[j];
-				myDates.push(new Date(year,month,day));
+				myDates.push(new String(day + "/" + month + "/" + year));
 			}//else
 		}//for
 	}//for
@@ -178,11 +147,11 @@ function drawGraph(myData) {
 
 	var myChart = new Highcharts.Chart({
         chart: {
-            renderTo: 'graphContainer',
-            type: 'line'
+            renderTo: "graphContainer",
+            type: "line"
         },
         title: {
-            text: $("#select0").val()
+            text: $("#select0").val()  + " / " + $("#select3").val()
         },
         xAxis: {
             categories: myDates
@@ -193,8 +162,9 @@ function drawGraph(myData) {
             }
         },
         series: [{
-            name: 'Athlete Name',
-            data: myValues
+        	showInLegend: false,
+            	name: "Athlete Name",
+            	data: myValues
         }]
     });//draw graph function
 }//drawgraph function
@@ -206,34 +176,29 @@ function drawGraph(myData) {
 {% block body %}
 
 <div id="graphContainer" style="width:100%; height:400px;"></div>
-
-<div id=search terms>
+<br><br>
+<div id=search terms align="center">
 Activity:
 <select size="1" id="select0">
-	<option value ="Run" selected="selected">Run</option>
+	<option value ="Run">Run</option>
 	<option value ="Walk">Walk</option>
-	<option value ="Bike">Bike</option>
-</select><br>
-Display my:
-<select size="1" id="select1">
-	<option value ="Total" selected="selected">Total</option>
-	<option value ="Average">Average</option>
-	<option value ="Maximum">Maximum</option>
-	<option value ="Minimum">Minimum</option>
+	<option value ="Bike" selected="selected">Bike</option>
 </select>
+Metric Used:
 <select size="1" id="select2">
 	<option value ="distance" selected="selected">Distance</option>
 	<option value ="duration">Duration</option>
 	<option value ="max_speed">Top Speed</option>
 </select>
- by
+Time Frame:
 <select size="1" id="select3">
 	<option value ="day">Day</option>
-	<option value ="week" selected="selected">Week</option>
+	<option value ="week">Week</option>
 	<option value ="month">Month</option>
-	<option value ="year">Year</option>
+	<option value ="year" selected="selected">Year</option>
 </select>
-<button type="button" class="btn btn-primary" data-loading-text="Updating...">Update</button>
+<button type="button" class="btn btn-primary">Update</button>
 </div>
+<br>
 
 {% endblock body %}
