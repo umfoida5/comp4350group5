@@ -11,6 +11,7 @@ from controller_tests.statistics_engine_test import StatisticsEngineTest
 from controller_tests.goals_test import GoalsTest
 from controller_tests.profiles_test import Profiles
 from controller_tests.calendar_test import CalendarTest
+from controller_tests.stats_test import StatsTest
 from model_tests.achievement_test import AchievementTests
 from model_tests.athlete_test import AthleteTests
 from model_tests.activity_test import ActivityTests
