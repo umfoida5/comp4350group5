@@ -12,7 +12,7 @@ class ActivityTests(unittest.TestCase):
 
     def setUp(self):
         database.empty_database()
-        database.session.add(Athlete("test_first", "test_last", "test@test.test", datetime.now()))
+        database.session.add(Athlete("username1", "password1", "test_first", "test_last", "test@test.test", datetime.now()))
         database.session.commit()
 
     def test_activity_object_creation(self):

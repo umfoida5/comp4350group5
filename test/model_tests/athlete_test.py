@@ -13,9 +13,9 @@ class AthleteTests(unittest.TestCase):
 		database.empty_database()
 
 	def test_athlete_object_creation(self):
-		athlete1 = Athlete("name1", "lastname1", "a@a.a.a", datetime.now())
-		athlete2 = Athlete("name2", "lastname2", "a@a.a.a", datetime.now())
-		athlete3 = Athlete("name3", "lastname3", "a@a.a.a", datetime.now())
+		athlete1 = Athlete("username1", "password1", "name1", "lastname1", "a@a.a.a", datetime.now())
+		athlete2 = Athlete("username2", "password2", "name2", "lastname2", "a@a.a.a", datetime.now())
+		athlete3 = Athlete("username3", "password3", "name3", "lastname3", "a@a.a.a", datetime.now())
 		database.session.add(athlete1)
 		database.session.add(athlete2)
 		database.session.add(athlete3)
