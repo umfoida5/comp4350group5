@@ -10,7 +10,7 @@
 		formData = $(this).serialize();
         $.post("do_login", formData, function(errorMsg) {
           if (errorMsg == "") {
-            toIndex();
+            window.location.href = "../";
           }
           else {
             $("#loginMessage").text(errorMsg);
@@ -20,18 +20,14 @@
       } );
       
       $("#signupForm").submit(function() {
-        $.post("signup", $(this).serialize(), function() {
+        $.post("signup", $(this).serialize(), function(name) {
 		  $("#signupMessage").text("Signup successful, redirecting!");
-		  toIndex();
+		  //DEBUG
+		  $("#signupMessage").text(name);
+		  window.location.href = "../";
 		} );
         return false;
       } );
-      
-      function toIndex()
-      {
-		
-		window.location.href = "../";
-	  }
     } );
   </script>
 {% endblock script %}

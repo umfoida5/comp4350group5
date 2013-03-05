@@ -12,6 +12,8 @@ def isloggedin():
 		db_session = database.session
 		athlete = Athlete(None, None, None, None)
 		db_session.add(athlete)
-		#TODO DO WHEN I GET BACK, Create DB Athlete, set session ID
+		#TODO, need a way to get the athlete that we just created
+		#to set the session ID. Don't think this works.
+		cherrypy.session['id'] = athlete.id
 	
 cherrypy.tools.isloggedin = cherrypy.Tool('before_handler', isloggedin)

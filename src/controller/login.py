@@ -39,17 +39,14 @@ class Login:
     @cherrypy.expose
     def signup(self, username, pw, firstName, lastName):
 		db_session = database.session
-		
-		#TODO, update the temp athlete information with
-		#cherrypy.session.get('id').
-		#Don't add a new athlete...
-		#db_session.query("athletes").filter_by(id = cherrypy.session.get('id')).\
-		#	update({"username":username, "password":pw, "first_name":firstName, last_name:"lastName"})
-		new_athlete = Athlete(username, pw, firstName, lastName)
-		db_session.add(new_athlete)
+		athlete = db_session.query("athletes").get(int(cherrypy.session.get('id')))
+		athlete.username = username
+		athlete.password = pw
+		athlete.first_name = firstName
+		athlete.last_name = lastName
 		database.session.commit()
-		
-		
-		
+		#DEBUG - Test, delete this line and the below line.
+		athlete = db_session.query("athletes").get(int(cherrypy.session.get('id')))
 		self.do_login(username, pw, True)
-	
+		#DEBUG - Test, delete this line and the below line.
+		return athlete.username	
