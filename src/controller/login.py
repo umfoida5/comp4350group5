@@ -46,7 +46,7 @@ class Login:
 	@cherrypy.expose
 	def do_logout(self):
 		db_session = database.session
-		athlete = Athlete(None, None, None, None)
+		athlete = Athlete(None, None, "FirstName", "LastName")
 		db_session.add(athlete)
 		db_session.commit()
 		cherrypy.session['id'] = athlete.id

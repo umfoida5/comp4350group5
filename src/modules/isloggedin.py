@@ -9,7 +9,7 @@ from model.athlete import Athlete
 def isloggedin():
 	if cherrypy.session.get('id') is None:
 		db_session = database.session
-		athlete = Athlete(None, None, None, None)
+		athlete = Athlete(None, None, "FirstName", "LastName")
 		db_session.add(athlete)
 		db_session.commit()
 		#TODO, need a way to get the athlete that we just created
