@@ -20,10 +20,8 @@
       } );
       
       $("#signupForm").submit(function() {
-        $.post("signup", $(this).serialize(), function(name) {
+        $.post("signup", $(this).serialize(), function() {
 		  $("#signupMessage").text("Signup successful, redirecting!");
-		  //DEBUG
-		  $("#signupMessage").text(name);
 		  window.location.href = "../";
 		} );
         return false;

@@ -4,20 +4,23 @@ from modules.template import env
 from modules.transaction import commit_on_success
 from modules import database
 from model.athlete import Athlete
+from model.achievement import UnlockedAchievement
+from model.activity import Activity
+from model.goal import Goal
 
 class Login:
-    @cherrypy.expose
-    def index(self):
-        tmpl = env.get_template('login.html')
-        return tmpl.render()
+	@cherrypy.expose
+	def index(self):
+		tmpl = env.get_template('login.html')
+		return tmpl.render()
     
-    @cherrypy.expose
-    def do_login(self, username, pw, just_created=False):
+	@cherrypy.expose
+	def do_login(self, username, pw, just_created=False):
 		#Verifies credentials for username and password.
 		#Returns None on success or a string describing the error on failure.
 		db_session = database.session
 		
-		athlete = Athlete.query.filter(Athlete.username == username).first()
+		athlete = Athlete.query.filter_by(username = username).first()
 		
 		if athlete is not None:
 			if(athlete.password == pw):
@@ -25,28 +28,54 @@ class Login:
 				cherrypy.session['id'] = athlete.id
 				cherrypy.session['tempUser'] = 'false'
 				
-				#if just_created == False:
-					#TODO - Go through every table that has an Athlete,
-					#       except the Athlete table.  Modify the athlete
-					#       id to be the logged in athete.id.  Then delete
-					#       the Athlete with the old_id.
+				if just_created == False:
+					self.__update_tables_athlete_id(old_id, athlete.id)
+					
 				return None
 			else:
+				#TODO - add raise.  Currently, prevents me from sending
+				#       an error response to client.
+				#raise cherrypy.HTTPError(400, "Incorrect password.")
 				return "Incorrect password."
 		else:
+			#TODO - add raise.  Currently, prevents me from sending
+			#       an error response to client.
+			#raise cherrypy.HTTPError(400, "Invalid username.")
 			return "Invalid username."
 
-    @cherrypy.expose
-    def signup(self, username, pw, firstName, lastName):
+	@cherrypy.expose
+	def do_logout(self):
 		db_session = database.session
-		athlete = db_session.query("athletes").get(int(cherrypy.session.get('id')))
+		athlete = Athlete(None, None, None, None)
+		db_session.add(athlete)
+		db_session.commit()
+		cherrypy.session['id'] = athlete.id
+
+	@cherrypy.expose
+	def signup(self, username, pw, firstName, lastName):
+		db_session = database.session
+		athlete = Athlete.query.filter_by(id = cherrypy.session.get('id'))
 		athlete.username = username
 		athlete.password = pw
 		athlete.first_name = firstName
 		athlete.last_name = lastName
-		database.session.commit()
-		#DEBUG - Test, delete this line and the below line.
-		athlete = db_session.query("athletes").get(int(cherrypy.session.get('id')))
+		db_session.commit()
 		self.do_login(username, pw, True)
-		#DEBUG - Test, delete this line and the below line.
-		return athlete.username	
+
+	def __update_tables_athlete_id(self, old_id, new_id):
+		db_session = database.session
+		
+		#unlocked_achievements table
+		achievements = UnlockedAchievement.query.filter_by(athlete_id = old_id)
+		for achievement in achievements:
+			achievement.athlete_id = new_id
+			
+		#activities table
+		activities = Activity.query.filter_by(athlete_id = old_id)
+		for activity in activities:
+			activity.athlete_id = new_id
+			
+		#goals table
+		goals = Goal.query.filter_by(athlete_id = old_id)
+		for goal in goals:
+			goal.athlete_id = new_id
