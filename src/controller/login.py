@@ -54,7 +54,7 @@ class Login:
 	@cherrypy.expose
 	def signup(self, username, pw, firstName, lastName):
 		db_session = database.session
-		athlete = Athlete.query.filter_by(id = cherrypy.session.get('id'))
+		athlete = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
 		athlete.username = username
 		athlete.password = pw
 		athlete.first_name = firstName
