@@ -2,7 +2,6 @@ import cherrypy
 import sys
 from controller.statistics_engine import StatisticsEngine
 from modules.datatables import send_datatable_response
-from model.athlete import Athlete
 from modules import database
 from modules.template import env
 

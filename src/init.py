@@ -4,6 +4,7 @@ import cherrypy
 import os.path
 from controller.root import Root
 from modules import database
+from modules import isloggedin
 
 database.init()
 
