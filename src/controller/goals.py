@@ -39,7 +39,7 @@ class Goals:
     def create(self, activity, operator, quantity, metric, start_date, end_date, recurring=False, parent_id=None):
         db_session = database.session
 
-        athlete = Athlete.query.first() # fix later
+        athlete = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
         new = Goal(athlete.id,
             str(activity),
             str(operator),

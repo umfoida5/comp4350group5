@@ -15,7 +15,7 @@ class Achievements:
     @cherrypy.expose
     def get_unlocked_achievements(self):
         unlocked_achievements = []
-        athlete = Athlete.query.first()
+        athlete = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
 
         if athlete is not None:
             unlocked_achievements = UnlockedAchievement.query.filter_by(
