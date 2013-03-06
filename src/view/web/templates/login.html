@@ -22,7 +22,7 @@
       $("#signupForm").submit(function() {
         $.post("signup", $(this).serialize(), function() {
 		  $("#signupMessage").text("Signup successful, redirecting!");
-		  window.location.href = "../";
+		  window.location.href = "../profiles";
 		} );
         return false;
       } );

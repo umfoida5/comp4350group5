@@ -15,7 +15,7 @@ class Profiles:
     @cherrypy.tools.json_out()
     @cherrypy.expose
     def athlete(self, **kwargs):
-        result = Athlete.query.first()
+        result = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
         return make_jsonable(result)
     
     @cherrypy.tools.json_out()
@@ -29,7 +29,7 @@ class Profiles:
     @commit_on_success
     def update_about(self,id, about_msg):
         """updates the profiles about"""
-        result = Athlete.query.first()
+        result = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
         result.about_me = about_msg
         return make_jsonable(result)
 
@@ -38,7 +38,7 @@ class Profiles:
     @commit_on_success
     def update_address(self, id, address):
         """update the address"""
-        result = Athlete.query.first()
+        result = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
         result.address = address
         return make_jsonable(result)
         
@@ -47,7 +47,7 @@ class Profiles:
     @commit_on_success
     def update_dob(self, id, birth_date):
         """update the date of birth"""
-        result = Athlete.query.first()
+        result = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
         result.birth_date = birth_date
         return make_jsonable(result)
 
@@ -56,6 +56,6 @@ class Profiles:
     @commit_on_success
     def update_email(self, id, email):
         """update the email adress"""
-        result = Athlete.query.first()
+        result = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
         result.email = email
         return make_jsonable(result)

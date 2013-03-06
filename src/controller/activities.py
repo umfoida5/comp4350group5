@@ -20,7 +20,7 @@ class Activities:
     @cherrypy.expose
     def create(self, type, date, distance, duration, max_speed):
         db_session = database.session
-        athlete = Athlete.query.first()
+        athlete = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
         new = Activity(athlete.id, type, datetime.strptime(date, "%d-%m-%Y"), int(distance), int(duration), max_speed)
         db_session.add(new)
 
