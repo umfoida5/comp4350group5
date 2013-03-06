@@ -47,37 +47,37 @@ db_session.add(Achievement(
 	"Newbie",
 	"Congratulations, this is the very first time you are running!",
 	"../img/achievements/unlocked_achievement2.jpeg",
-	"run",
+	"Run",
 	"total",
 	"10",
-	"km"
+	"distance"
 ))
 db_session.add(Achievement(
 	"Runner",
 	"Yay! You have achieved the title of runner",
 	"../img/achievements/unlocked_achievement4.jpeg",
-	"bike",
+	"Bike",
 	"average",
 	"100",
-	"km"
+	"distance"
 ))
 db_session.add(Achievement(
 	"Crazy",
 	"Yaaaahaaa, WOwhooo, beepee beepee",
 	"../img/achievements/unlocked_achievement3.jpeg",
-	"run",
+	"Run",
 	"total",
 	"100",
-	"km"
+	"distance"
 ))
 db_session.add(Achievement(
 	"Local",
 	"You must know all the locals by now - you are always running around!",
 	"../img/achievements/unlocked_achievement5.jpeg",
-	"run",
+	"Run",
 	"total",
 	"10",
-	"km"
+	"distance"
 ))
 # db_session.add(Achievement(
 # 	"Adventurer",

@@ -32,7 +32,6 @@ class Achievements:
         return make_jsonable(achievements)      
 
     @commit_on_success
-    def unlock(self, achievement):
-        athlete = Athlete.query.first()
+    def unlock(self, athlete, achievement):
         if athlete != None and achievement != None:
             athlete.achievements.append(achievement)

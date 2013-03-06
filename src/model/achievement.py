@@ -45,9 +45,9 @@ class Achievement(Base):
     activity = Column(String(32)) # Eg. run, bike
     operator = Column(String(32)) # Eg. average, total
     quantity = Column(Float) # quantity of metric
-    metric = Column(String(32)) # Eg. km 
-    start_date = Column(DateTime, default=datetime.now()) # start date of goal
-    end_date = Column(DateTime, default=datetime.now()) # end date for goal (due date)    
+    metric = Column(String(32)) # Eg. distance 
+    start_date = Column(DateTime, default=datetime.min) # start date of goal
+    end_date = Column(DateTime, default=datetime.max) # end date for goal (due date)    
 
     def __init__(
         self, 
