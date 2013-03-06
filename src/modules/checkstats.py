@@ -27,9 +27,6 @@ def check_for_completetions(f, *args, **kw):
         completedGoals = get_completed(goals, athlete.id)
         completedAchievements = get_completed(locked_achievements, athlete.id)
 
-        print "---------------------------------------------------------------------"
-        print completedAchievements
-
         # 3. update database with completed goals/achievements.
         G = Goals()        
         for goal in completedGoals:
@@ -101,11 +98,6 @@ def get_completed(the_list, athlete_id):
             )
         else:
             raise
-
-
-        print "---------------------------------------------------------------------"
-        print element
-        print result
 
         # did we complete the element?
         if result[0].value >= element.quantity:
