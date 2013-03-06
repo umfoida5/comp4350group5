@@ -1,3 +1,4 @@
+import cherrypy
 from decorator import decorator
 from model.goal import Goal
 from model.athlete import Athlete
@@ -18,8 +19,8 @@ def check_for_completetions(f, *args, **kw):
 
         # 1. get a list of all the goals/achievements
         # TODO: filter by athlete_id
-        athlete = Athlete.query.first()
-        goals = Goal.query.all()
+        athlete = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
+        goals = Goal.query.filter_by(athlete_id = cherrypy.session.get('id')).all()
         locked_achievements = get_list_of_locked_achievements(athlete)
 
         # 2. iterate through each to check if they are complete. (keep list of completed)
