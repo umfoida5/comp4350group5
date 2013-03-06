@@ -46,14 +46,26 @@ class Achievement(Base):
     operator = Column(String(32)) # Eg. average, total
     quantity = Column(Float) # quantity of metric
     metric = Column(String(32)) # Eg. km 
-
     start_date = Column(DateTime, default=datetime.now()) # start date of goal
     end_date = Column(DateTime, default=datetime.now()) # end date for goal (due date)    
 
-    def __init__(self, title, description, image_url):
+    def __init__(
+        self, 
+        title, 
+        description, 
+        image_url,
+        activity,
+        operator, 
+        quantity, 
+        metric        
+    ):
         self.title = title
         self.description = description
         self.image_url = image_url
+        self.activity = activity
+        self.operator = operator
+        self.quantity = quantity
+        self.metric = metric
 
     def __repr__(self):
         return '<Achievement %r %r %r>' % (

@@ -1,5 +1,6 @@
 from decorator import decorator
 from model.goal import Goal
+from model.athlete import Athlete
 from model.achievement import Achievement
 from controller.statistics_engine import StatisticsEngine
 from controller.goals import Goals
@@ -12,7 +13,7 @@ def check_for_completetions(f, *args, **kw):
     try:
         func = f(*args, **kw)
 
-        database.session.flush() # save any uncommited changes in the current session
+        database.session.commit() # save any uncommited changes in the current session
 
         # TODO: replace these with static method calls
         engine = StatisticsEngine()
