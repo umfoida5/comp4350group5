@@ -1,6 +1,7 @@
 from sqlalchemy.ext.associationproxy import _AssociationList
 import datetime
 import json
+import cgi
 
 """
     Decorator class that adds a to_dict() function to the decorated
@@ -18,7 +19,7 @@ class Jsonable:
 
             for attribute in self.__class__._jsonFields:
                 value = getattr(self, attribute)
-                
+                  
                 if isinstance(value, list) or isinstance(value, _AssociationList):
                     dict_representation[attribute] = []
                     for i in value:
@@ -35,7 +36,7 @@ class Jsonable:
                 elif hasattr(value.__class__, '_jsonFields'):
                     dict_representation[attribute] = value.to_dict()
                 else:
-                    dict_representation[attribute] = value
+                    dict_representation[attribute] = cgi.escape(value)
 
             return dict_representation
 
