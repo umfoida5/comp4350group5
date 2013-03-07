@@ -67,4 +67,4 @@ class Goals:
     @cherrypy.tools.json_out()
     @cherrypy.expose
     def update_datatable(self, **params):
-        return send_datatable_response(Goal, params)
+        return send_datatable_response(Goal, True, params)

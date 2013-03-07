@@ -23,4 +23,4 @@ class Events:
     @cherrypy.tools.json_out()
     @cherrypy.expose
     def update_datatable(self, **params):
-        return send_datatable_response(Event, params)
+        return send_datatable_response(Event, False, params)
