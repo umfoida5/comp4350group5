@@ -1,3 +1,4 @@
+import cherrypy
 from sqlalchemy import or_
 from jsonable import make_jsonable
 
