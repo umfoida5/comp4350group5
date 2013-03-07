@@ -24,6 +24,8 @@ class Goals:
             Goal.activity,
             Goal.start_date,
             Goal.end_date)
+            
+        result = result.filter(Goal.athlete_id == cherrypy.session.get('id'))
         if goal_id is not None:
             result = result.filter(Goal.goal_id == goal_id)
 
