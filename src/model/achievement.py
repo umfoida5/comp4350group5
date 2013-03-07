@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Table, ForeignKey, Integer, String, DateTime
+from sqlalchemy import Column, Table, ForeignKey, Integer, String, DateTime, Float
 from sqlalchemy.orm import relationship, backref
 from modules.database import Base
 from modules.jsonable import Jsonable
@@ -41,10 +41,31 @@ class Achievement(Base):
     description = Column(String(500))
     image_url = Column(String(256), nullable=False)
 
-    def __init__(self, title, description, image_url):
+    # TODO: make foreign keys to appropriate type tables
+    activity = Column(String(32)) # Eg. run, bike
+    operator = Column(String(32)) # Eg. average, total
+    quantity = Column(Float) # quantity of metric
+    metric = Column(String(32)) # Eg. distance 
+    start_date = Column(DateTime, default=datetime.min) # start date of goal
+    end_date = Column(DateTime, default=datetime.max) # end date for goal (due date)    
+
+    def __init__(
+        self, 
+        title, 
+        description, 
+        image_url,
+        activity,
+        operator, 
+        quantity, 
+        metric        
+    ):
         self.title = title
         self.description = description
         self.image_url = image_url
+        self.activity = activity
+        self.operator = operator
+        self.quantity = quantity
+        self.metric = metric
 
     def __repr__(self):
         return '<Achievement %r %r %r>' % (
