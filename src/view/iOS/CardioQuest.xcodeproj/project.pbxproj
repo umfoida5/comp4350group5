@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0C1EFE016EA977F00EB2E21 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C1EFDF16EA977F00EB2E21 /* AboutViewController.m */; };
+		D0C1EFE716EA984300EB2E21 /* Ubuntu Orange.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D0C1EFE616EA984300EB2E21 /* Ubuntu Orange.jpg */; };
 		E461B6DF16EA700F00C43D87 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E461B6DE16EA700F00C43D87 /* ProfileViewController.m */; };
 		E461B6E216EA70B500C43D87 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E461B6E116EA70B500C43D87 /* CalendarViewController.m */; };
 		E4BEB5CD16E5361500DD4526 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BEB5CC16E5361500DD4526 /* UIKit.framework */; };
@@ -45,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D0C1EFDE16EA977F00EB2E21 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		D0C1EFDF16EA977F00EB2E21 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		D0C1EFE616EA984300EB2E21 /* Ubuntu Orange.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ubuntu Orange.jpg"; sourceTree = "<group>"; };
 		E461B6DD16EA700F00C43D87 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		E461B6DE16EA700F00C43D87 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		E461B6E016EA70B500C43D87 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
@@ -139,6 +144,9 @@
 		E4BEB5D216E5361500DD4526 /* CardioQuest */ = {
 			isa = PBXGroup;
 			children = (
+				D0C1EFE616EA984300EB2E21 /* Ubuntu Orange.jpg */,
+				D0C1EFDE16EA977F00EB2E21 /* AboutViewController.h */,
+				D0C1EFDF16EA977F00EB2E21 /* AboutViewController.m */,
 				E4BEB5DB16E5361500DD4526 /* CDQAppDelegate.h */,
 				E4BEB5DC16E5361600DD4526 /* CDQAppDelegate.m */,
 				E4BEB5E416E5361600DD4526 /* MainStoryboard_iPhone.storyboard */,
@@ -277,6 +285,7 @@
 				E4BEB5F016E5361600DD4526 /* first@2x.png in Resources */,
 				E4BEB5F516E5361600DD4526 /* second.png in Resources */,
 				E4BEB5F716E5361600DD4526 /* second@2x.png in Resources */,
+				D0C1EFE716EA984300EB2E21 /* Ubuntu Orange.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +327,7 @@
 				E461B6DF16EA700F00C43D87 /* ProfileViewController.m in Sources */,
 				E461B6E216EA70B500C43D87 /* CalendarViewController.m in Sources */,
 				E4DAFD0F16EA819300258D78 /* ActivityViewController.m in Sources */,
+				D0C1EFE016EA977F00EB2E21 /* AboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
