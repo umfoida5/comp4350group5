@@ -7,9 +7,11 @@
 		<string>/home/student/umlatkap/comp4350group5</string>
 	</array>
 	<key>LastWorkingCopyScanDate</key>
-	<date>2013-03-08T19:21:18Z</date>
+	<date>2013-03-08T20:29:09Z</date>
 	<key>MissingFilePaths</key>
-	<array/>
+	<array>
+		<string>/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/ActivityViewController.h</string>
+	</array>
 	<key>Version</key>
 	<integer>4</integer>
 </dict>

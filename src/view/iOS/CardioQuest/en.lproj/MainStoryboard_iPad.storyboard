@@ -246,20 +246,54 @@
             </objects>
             <point key="canvasLocation" x="2218" y="1444"/>
         </scene>
-        <!--Calendar View Controller - Item-->
+        <!--Activity View Controller - Item-->
         <scene sceneID="s76-CC-oVt">
             <objects>
-                <viewController id="KjC-Dz-agP" customClass="CalendarViewController" sceneMemberID="viewController">
+                <viewController id="KjC-Dz-agP" userLabel="Activity View Controller - Item" customClass="ActivityViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YXX-SM-Kfh">
                         <rect key="frame" x="0.0" y="20" width="768" height="955"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="KmJ-Q6-DS8">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="1xi-Tk-5IW">
+                                        <rect key="frame" x="0.0" y="22" width="768" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="KjC-Dz-agP" id="Em8-CL-Bd9"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CNO-zT-npb">
+                                <color key="tintColor" red="0.83137261870000001" green="0.26666668059999998" blue="0.094117656349999995" alpha="1" colorSpace="deviceRGB"/>
+                                <items>
+                                    <navigationItem title="Activities" id="NFa-b5-ywW"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KmJ-Q6-DS8" firstAttribute="leading" secondItem="YXX-SM-Kfh" secondAttribute="leading" type="default" id="0g4-5x-YGh"/>
+                            <constraint firstItem="CNO-zT-npb" firstAttribute="leading" secondItem="YXX-SM-Kfh" secondAttribute="leading" type="default" id="Azy-gD-mA3"/>
+                            <constraint firstItem="KmJ-Q6-DS8" firstAttribute="top" secondItem="CNO-zT-npb" secondAttribute="bottom" type="default" id="QPM-Kb-Qja"/>
+                            <constraint firstItem="CNO-zT-npb" firstAttribute="top" secondItem="YXX-SM-Kfh" secondAttribute="top" type="default" id="SJo-Wi-zCS"/>
+                            <constraint firstItem="CNO-zT-npb" firstAttribute="trailing" secondItem="YXX-SM-Kfh" secondAttribute="trailing" type="default" id="cT4-n2-WNk"/>
+                            <constraint firstItem="KmJ-Q6-DS8" firstAttribute="bottom" secondItem="YXX-SM-Kfh" secondAttribute="bottom" type="default" id="dH1-9k-BAZ"/>
+                            <constraint firstItem="KmJ-Q6-DS8" firstAttribute="trailing" secondItem="YXX-SM-Kfh" secondAttribute="trailing" type="default" id="zwG-rE-DuI"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="x4l-m2-bAM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cxg-Jc-FKx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3839" y="1444"/>
+            <point key="canvasLocation" x="3847" y="1444"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -288,14 +322,14 @@
         <image name="second" width="16" height="16"/>
     </resources>
     <classes>
+        <class className="ActivityViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ActivityViewController.h"/>
+        </class>
         <class className="CDQFirstViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQFirstViewController.h"/>
         </class>
         <class className="CDQSecondViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQSecondViewController.h"/>
-        </class>
-        <class className="CalendarViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalendarViewController.h"/>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
@@ -311,6 +345,9 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
