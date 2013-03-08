@@ -43,13 +43,13 @@
                             <constraint firstItem="19" firstAttribute="top" secondItem="17" secondAttribute="top" constant="350" id="pKg-gt-hVJ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="7"/>
+                    <tabBarItem key="tabBarItem" title="First" image="first.png" id="7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-14" y="-268"/>
         </scene>
-        <!--Profile View Controller - Item-->
+        <!--Profile View Controller - Profile-->
         <scene sceneID="RKZ-aw-ufg">
             <objects>
                 <viewController id="MVd-IC-GDg" customClass="ProfileViewController" sceneMemberID="viewController">
@@ -192,7 +192,7 @@
                             <constraint firstItem="0ec-wn-2oj" firstAttribute="top" secondItem="TeR-Yy-i4r" secondAttribute="top" type="default" id="xUR-0l-u5N"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="kWU-wl-W89"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="first.png" id="kWU-wl-W89"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S8Y-6H-JS1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -240,7 +240,7 @@
                             <constraint firstAttribute="trailing" secondItem="21" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="v87-JO-j7C"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="6"/>
+                    <tabBarItem key="tabBarItem" title="Second" image="first.png" id="6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
             </objects>
@@ -289,13 +289,13 @@
                             <constraint firstItem="KmJ-Q6-DS8" firstAttribute="trailing" secondItem="YXX-SM-Kfh" secondAttribute="trailing" type="default" id="zwG-rE-DuI"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="x4l-m2-bAM"/>
+                    <tabBarItem key="tabBarItem" title="Activities" image="first.png" id="x4l-m2-bAM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cxg-Jc-FKx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2424" y="-268"/>
         </scene>
-        <!--About View Controller - Item-->
+        <!--About View Controller - About-->
         <scene sceneID="8zp-fI-v5r">
             <objects>
                 <viewController id="FY5-0r-oNa" customClass="AboutViewController" sceneMemberID="viewController">
@@ -410,7 +410,7 @@ Features
                             <constraint firstItem="v0l-Xg-S5i" firstAttribute="leading" secondItem="mzX-oc-DEr" secondAttribute="leading" type="default" id="uu3-01-Rad"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="nLe-bs-WBO"/>
+                    <tabBarItem key="tabBarItem" title="About" image="first.png" id="nLe-bs-WBO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8C-ia-LbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -440,8 +440,7 @@ Features
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="16" height="16"/>
-        <image name="second" width="16" height="16"/>
+        <image name="first.png" width="30" height="30"/>
     </resources>
     <classes>
         <class className="AboutViewController" superclassName="UIViewController">
@@ -470,6 +469,9 @@ Features
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
