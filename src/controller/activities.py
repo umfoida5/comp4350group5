@@ -27,4 +27,4 @@ class Activities:
     @cherrypy.tools.json_out()
     @cherrypy.expose
     def update_datatable(self, **params):
-        return send_datatable_response(Activity, params)
+        return send_datatable_response(Activity, True, params)

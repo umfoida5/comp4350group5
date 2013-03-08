@@ -1,8 +1,13 @@
+import cherrypy
 from sqlalchemy import or_
 from jsonable import make_jsonable
 
-def send_datatable_response(table, request_params):
-    query = table.query
+#Filter to only display the objects with the sp
+def send_datatable_response(table, filter_by_athlete, request_params):
+    if(filter_by_athlete == True):
+        query = table.query.filter_by(athlete_id = cherrypy.session.get('id'))
+    else:
+	    query = table.query
 
     total_records = query.count()
 

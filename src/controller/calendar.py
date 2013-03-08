@@ -15,7 +15,7 @@ class Calendar:
     @cherrypy.tools.json_out()
     @cherrypy.expose
     def json(self, start_date, end_date):
-        activities = Activity.query.filter(Activity.date.between(start_date, end_date)).all()
+        activities = Activity.query.filter(Activity.date.between(start_date, end_date), Activity.athlete_id == cherrypy.session.get('id')).all()
         json_data = {"activities":make_jsonable(activities)}      
         return json_data
 

@@ -24,6 +24,8 @@ class Goals:
             Goal.activity,
             Goal.start_date,
             Goal.end_date)
+            
+        result = result.filter(Goal.athlete_id == cherrypy.session.get('id'))
         if goal_id is not None:
             result = result.filter(Goal.goal_id == goal_id)
 
@@ -65,4 +67,4 @@ class Goals:
     @cherrypy.tools.json_out()
     @cherrypy.expose
     def update_datatable(self, **params):
-        return send_datatable_response(Goal, params)
+        return send_datatable_response(Goal, True, params)

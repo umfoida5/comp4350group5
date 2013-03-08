@@ -51,6 +51,7 @@ class Login:
 		db_session.commit()
 		cherrypy.session['id'] = athlete.id
 
+	@commit_on_success
 	@cherrypy.expose
 	def signup(self, username, pw, firstName, lastName):
 		db_session = database.session
@@ -59,7 +60,7 @@ class Login:
 		athlete.password = pw
 		athlete.first_name = firstName
 		athlete.last_name = lastName
-		db_session.commit()
+		db_session.flush()
 		self.do_login(username, pw, True)
 
 	def __update_tables_athlete_id(self, old_id, new_id):

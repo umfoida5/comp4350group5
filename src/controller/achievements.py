@@ -1,4 +1,5 @@
 import cherrypy, httplib
+from modules.transaction import commit_on_success
 from modules.jsonable import make_jsonable
 from modules.template import env
 from model.athlete import Athlete
@@ -28,4 +29,9 @@ class Achievements:
     @cherrypy.expose
     def get_achievements(self):
         achievements = Achievement.query.all()
-        return make_jsonable(achievements)        
+        return make_jsonable(achievements)      
+
+    @commit_on_success
+    def unlock(self, athlete, achievement):
+        if athlete != None and achievement != None:
+            athlete.achievements.append(achievement)
