@@ -1,4 +1,5 @@
 import cherrypy, httplib
+import Cookie
 from modules.jsonable import make_jsonable
 from modules.template import env
 from modules.transaction import commit_on_success
@@ -27,6 +28,10 @@ class Login:
 				old_id = cherrypy.session.get('id')
 				cherrypy.session['id'] = athlete.id
 				cherrypy.session['tempUser'] = 'false'
+				#myCookie = SimpleCookie()
+				#myCookie['id'] = athlete.id
+				#myCookie['name'] = athlete.firstName + " " + athlete.lastName
+				#print myCookie
 				
 				if just_created == False:
 					self.__update_tables_athlete_id(old_id, athlete.id)

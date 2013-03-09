@@ -1,0 +1,551 @@
+TCardioQuest
+v5
+r1
+cCheck dependencies
+cProcessInfoPlistFile /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/Info.plist CardioQuest/CardioQuest-Info.plist
+cProcessPCH /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/PrecompiledHeaders/CardioQuest-Prefix-dwfdggtuotlpqecrbssdrbotsuay/CardioQuest-Prefix.pch.pth CardioQuest/CardioQuest-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CalendarViewController.o /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CalendarViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/ActivityViewController.o /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/ActivityViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/ProfileViewController.o /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/ProfileViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CDQSecondViewController.o /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQSecondViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/main.o /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CDQAppDelegate.o /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQAppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CDQFirstViewController.o /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQFirstViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLd /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/CardioQuest normal i386
+cGenerateDSYMFile /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app.dSYM /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/CardioQuest
+cCopyStringsFile /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/en.lproj/InfoPlist.strings CardioQuest/en.lproj/InfoPlist.strings
+cCpResource CardioQuest/Default@2x.png DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/Default@2x.png
+cCpResource CardioQuest/Default.png DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/Default.png
+cCpResource CardioQuest/Default-568h@2x.png DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/Default-568h@2x.png
+cCompileStoryboard /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPhone.storyboard
+cCpResource CardioQuest/first.png DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/first.png
+cCpResource CardioQuest/first@2x.png DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/first@2x.png
+cCompileStoryboard /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPad.storyboard
+cCpResource CardioQuest/second.png DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/second.png
+cCpResource CardioQuest/second@2x.png DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/second@2x.png
+cTouch /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk
+c0000000050EDEAFB0000000000000110
+t1357769467
+s272
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000005134063D0000000000228FE0
+t1362363965
+s2265056
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000005134063E00000000003DDFA0
+t1362363966
+s4054944
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000005134063E00000000000015F7
+t1362363966
+s5623
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c00000000513406400000000000000E8D
+t1362363968
+s3725
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c00000000513406420000000000AB6230
+t1362363970
+s11231792
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/include/Availability.h
+c000000005134064A0000000000001B73
+t1362363978
+s7027
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/ActivityViewController.h
+c00000000513A5540000000000000011F
+t1362777408
+s287
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/ActivityViewController.m
+c00000000513A57B90000000000000737
+t1362778041
+s1847
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQAppDelegate.h
+c000000005137E7200000000000000126
+t1362618144
+s294
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQAppDelegate.m
+c000000005137E72000000000000007EB
+t1362618144
+s2027
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQFirstViewController.h
+c00000000513A368F00000000000000F2
+t1362769551
+s242
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQFirstViewController.m
+c00000000513A368F0000000000000218
+t1362769551
+s536
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQSecondViewController.h
+c000000005137E72000000000000000F4
+t1362618144
+s244
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQSecondViewController.m
+c000000005137E720000000000000021C
+t1362618144
+s540
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CalendarViewController.h
+c00000000513A4DBB00000000000000F2
+t1362775483
+s242
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CalendarViewController.m
+c00000000513A393500000000000002E7
+t1362770229
+s743
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CardioQuest-Prefix.pch
+c000000005137E7200000000000000145
+t1362618144
+s325
+i<Availability.h>
+i<UIKit/UIKit.h>
+i<Foundation/Foundation.h>
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/Default-568h@2x.png
+c000000005137E72000000000000048A2
+t1362618144
+s18594
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/Default.png
+c000000005137E720000000000000198C
+t1362618144
+s6540
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/Default@2x.png
+c000000005137E7200000000000003EEB
+t1362618144
+s16107
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/ProfileViewController.h
+c00000000513A388F00000000000000F0
+t1362770063
+s240
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/ProfileViewController.m
+c00000000513A388F00000000000002E3
+t1362770063
+s739
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/InfoPlist.strings
+c000000005137E720000000000000002D
+t1362618144
+s45
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPad.storyboard
+c00000000513A57A50000000000008266
+t1362778021
+s33382
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPhone.storyboard
+c00000000513A368F000000000000260C
+t1362769551
+s9740
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/first.png
+c000000005137E72000000000000000FD
+t1362618144
+s253
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/first@2x.png
+c000000005137E7200000000000000192
+t1362618144
+s402
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/main.m
+c000000005137E7200000000000000161
+t1362618144
+s353
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/second.png
+c000000005137E7200000000000000080
+t1362618144
+s128
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/second@2x.png
+c000000005137E7200000000000000082
+t1362618144
+s130
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/ActivityViewController.o
+t1362778041
+s83924
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CDQAppDelegate.o
+t1362771285
+s86636
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CDQFirstViewController.o
+t1362771285
+s67700
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CDQSecondViewController.o
+t1362771285
+s67716
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CalendarViewController.o
+t1362775484
+s68760
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CardioQuest.LinkFileList
+c00000000513A4A440000000000000550
+t1362774596
+s1360
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/ProfileViewController.o
+t1362771285
+s68744
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/main.o
+t1362771285
+s3324
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/PrecompiledHeaders/CardioQuest-Prefix-dwfdggtuotlpqecrbssdrbotsuay/CardioQuest-Prefix.pch.pth
+t1362771285
+s4678572
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app
+t1362778042
+s4096
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app.dSYM
+t1362778041
+s4096
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/CardioQuest
+t1362778041
+s30624
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/Default-568h@2x.png
+t1362771285
+s18594
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/Default.png
+t1362771285
+s6540
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/Default@2x.png
+t1362771285
+s16107
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/Info.plist
+t1362771285
+s1121
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/PkgInfo
+t1362771285
+s8
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/en.lproj/InfoPlist.strings
+t1362771285
+s42
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/en.lproj/MainStoryboard_iPad.storyboardc
+t1362778042
+s4096
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/en.lproj/MainStoryboard_iPhone.storyboardc
+t1362771286
+s4096
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/first.png
+t1362771285
+s253
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/first@2x.png
+t1362771285
+s402
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/second.png
+t1362771285
+s128
+
+N/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/second@2x.png
+t1362771285
+s130
+
+NCardioQuest/CardioQuest-Info.plist
+c000000005137E7200000000000000706
+t1362618144
+s1798
+
+CBuild AST from /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/ActivityViewController.m
+r0
+
+CBuild AST from /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQAppDelegate.m
+r0
+
+CBuild AST from /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQFirstViewController.m
+r0
+
+CBuild AST from /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQSecondViewController.m
+r0
+
+CBuild AST from /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CalendarViewController.m
+r0
+
+CBuild AST from /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/ProfileViewController.m
+r0
+
+CBuild AST from /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/main.m
+r0
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies9e29bc8298eab641^bfbbd58298eab641^---0#1#0#--18"Check dependencies36"3222BE1C-14FB-4D84-9D99-55B3CAC1BADD-
+
+CCompileC DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/ActivityViewController.o /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/ActivityViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s384470841.364108
+e384470841.467287
+r1
+xCompileC
+xDerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/ActivityViewController.o
+x/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/ActivityViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"Compile /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/ActivityViewController.mf04f5d398feab641^569f77398feab641^---0#0#0#-19%DVTDocumentLocation2@103"file://localhost/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/ActivityViewController.m0000000000000000^4233"CompileC DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/ActivityViewController.o CardioQuest/ActivityViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /home/student/umlatkap/comp4350group5/src/view/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-generated-files.hmap -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-own-target-headers.hmap -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-all-target-headers.hmap -iquote /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-project-headers.hmap -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/DerivedSources/i386 -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/DerivedSources -F/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator -include /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/PrecompiledHeaders/CardioQuest-Prefix-dwfdggtuotlpqecrbssdrbotsuay/CardioQuest-Prefix.pch -MMD -MT dependencies -MF /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/ActivityViewController.d --serialize-diagnostics /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/ActivityViewController.dia -c /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/ActivityViewController.m -o /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/ActivityViewController.o36"2B8EFED9-4915-4B3E-8F1E-605270BEDF65-
+
+CCompileC DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CDQAppDelegate.o /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQAppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s384464085.449658
+e384464085.589479
+r1
+xCompileC
+xDerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CDQAppDelegate.o
+x/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Compile /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQAppDelegate.mdd7a75d574eab641^c5e796d574eab641^---0#0#0#-19%DVTDocumentLocation2@95"file://localhost/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQAppDelegate.m0000000000000000^4185"CompileC DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CDQAppDelegate.o CardioQuest/CDQAppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /home/student/umlatkap/comp4350group5/src/view/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-generated-files.hmap -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-own-target-headers.hmap -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-all-target-headers.hmap -iquote /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-project-headers.hmap -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/DerivedSources/i386 -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/DerivedSources -F/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator -include /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/PrecompiledHeaders/CardioQuest-Prefix-dwfdggtuotlpqecrbssdrbotsuay/CardioQuest-Prefix.pch -MMD -MT dependencies -MF /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CDQAppDelegate.d --serialize-diagnostics /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CDQAppDelegate.dia -c /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQAppDelegate.m -o /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CDQAppDelegate.o36"1C6B11E3-B069-436F-A3AE-6A8BFC6C67D2-
+
+CCompileC DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CDQFirstViewController.o /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQFirstViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s384464085.454537
+e384464085.581728
+r1
+xCompileC
+xDerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CDQFirstViewController.o
+x/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQFirstViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"Compile /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQFirstViewController.md28c75d574eab641^bceb94d574eab641^---0#0#0#-19%DVTDocumentLocation2@103"file://localhost/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQFirstViewController.m0000000000000000^4233"CompileC DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CDQFirstViewController.o CardioQuest/CDQFirstViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /home/student/umlatkap/comp4350group5/src/view/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-generated-files.hmap -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-own-target-headers.hmap -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-all-target-headers.hmap -iquote /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-project-headers.hmap -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/DerivedSources/i386 -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/DerivedSources -F/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator -include /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/PrecompiledHeaders/CardioQuest-Prefix-dwfdggtuotlpqecrbssdrbotsuay/CardioQuest-Prefix.pch -MMD -MT dependencies -MF /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CDQFirstViewController.d --serialize-diagnostics /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CDQFirstViewController.dia -c /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQFirstViewController.m -o /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CDQFirstViewController.o36"69A21E66-17E0-48DC-9629-DA62C91F0220-
+
+CCompileC DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CDQSecondViewController.o /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQSecondViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s384464085.456900
+e384464085.577279
+r1
+xCompileC
+xDerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CDQSecondViewController.o
+x/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQSecondViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection96"Compile /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQSecondViewController.m217775d574eab641^2ac893d574eab641^---0#0#0#-19%DVTDocumentLocation2@104"file://localhost/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQSecondViewController.m0000000000000000^4239"CompileC DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CDQSecondViewController.o CardioQuest/CDQSecondViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /home/student/umlatkap/comp4350group5/src/view/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-generated-files.hmap -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-own-target-headers.hmap -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-all-target-headers.hmap -iquote /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-project-headers.hmap -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/DerivedSources/i386 -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/DerivedSources -F/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator -include /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/PrecompiledHeaders/CardioQuest-Prefix-dwfdggtuotlpqecrbssdrbotsuay/CardioQuest-Prefix.pch -MMD -MT dependencies -MF /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CDQSecondViewController.d --serialize-diagnostics /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CDQSecondViewController.dia -c /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQSecondViewController.m -o /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CDQSecondViewController.o36"AC3A043D-0668-45C5-958C-4CBDE867AC45-
+
+CCompileC DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CalendarViewController.o /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CalendarViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s384468284.374493
+e384468284.489070
+r1
+xCompileC
+xDerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CalendarViewController.o
+x/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CalendarViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"Compile /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CalendarViewController.m4c89603c85eab641^7863853c85eab641^---0#0#0#-19%DVTDocumentLocation2@103"file://localhost/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CalendarViewController.m0000000000000000^4233"CompileC DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CalendarViewController.o CardioQuest/CalendarViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /home/student/umlatkap/comp4350group5/src/view/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-generated-files.hmap -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-own-target-headers.hmap -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-all-target-headers.hmap -iquote /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-project-headers.hmap -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/DerivedSources/i386 -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/DerivedSources -F/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator -include /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/PrecompiledHeaders/CardioQuest-Prefix-dwfdggtuotlpqecrbssdrbotsuay/CardioQuest-Prefix.pch -MMD -MT dependencies -MF /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CalendarViewController.d --serialize-diagnostics /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CalendarViewController.dia -c /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CalendarViewController.m -o /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CalendarViewController.o36"44B1D22A-D709-4428-899F-4FA69D18C33B-
+
+CCompileC DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/ProfileViewController.o /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/ProfileViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s384464085.526520
+e384464085.630522
+r1
+xCompileC
+xDerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/ProfileViewController.o
+x/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/ProfileViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"Compile /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/ProfileViewController.m21e686d574eab641^5e69a1d574eab641^---0#0#0#-19%DVTDocumentLocation2@102"file://localhost/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/ProfileViewController.m0000000000000000^4227"CompileC DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/ProfileViewController.o CardioQuest/ProfileViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /home/student/umlatkap/comp4350group5/src/view/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-generated-files.hmap -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-own-target-headers.hmap -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-all-target-headers.hmap -iquote /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-project-headers.hmap -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/DerivedSources/i386 -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/DerivedSources -F/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator -include /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/PrecompiledHeaders/CardioQuest-Prefix-dwfdggtuotlpqecrbssdrbotsuay/CardioQuest-Prefix.pch -MMD -MT dependencies -MF /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/ProfileViewController.d --serialize-diagnostics /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/ProfileViewController.dia -c /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/ProfileViewController.m -o /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/ProfileViewController.o36"CD037903-D7FB-4016-AA67-5ED2D6659099-
+
+CCompileC DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/main.o /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s384464085.449631
+e384464085.525207
+r1
+xCompileC
+xDerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/main.o
+x/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection77"Compile /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/main.m3c6975d574eab641^797586d574eab641^---0#0#0#-19%DVTDocumentLocation2@85"file://localhost/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/main.m0000000000000000^4125"CompileC DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/main.o CardioQuest/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /home/student/umlatkap/comp4350group5/src/view/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-generated-files.hmap -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-own-target-headers.hmap -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-all-target-headers.hmap -iquote /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-project-headers.hmap -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/DerivedSources/i386 -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/DerivedSources -F/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator -include /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/PrecompiledHeaders/CardioQuest-Prefix-dwfdggtuotlpqecrbssdrbotsuay/CardioQuest-Prefix.pch -MMD -MT dependencies -MF /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/main.d --serialize-diagnostics /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/main.dia -c /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/main.m -o /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/main.o36"B8A0CB70-5EC3-4A5C-A5A8-4ADB59243161-
+
+CCompileStoryboard /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPad.storyboard
+s384470841.749202
+e384470842.224381
+r1
+xCompileStoryboard
+x/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPad.storyboard
+o/* com.apple.ibtool.document.warnings */
+o/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPad.storyboard:Rz6-uf-M34: warning: Prototype table cells must have reuse identifiers [9]
+o/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPad.storyboard:aPH-r9-TGv: warning: Prototype collection view cells must have reuse identifiers [9]
+o/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPad.storyboard:hBd-Ye-pm5: warning: Prototype table cells must have reuse identifiers [9]
+o/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPad.storyboard:KvZ-C8-8bQ: warning: Prototype table cells must have reuse identifiers [9]
+o/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPad.storyboard:1xi-Tk-5IW: warning: Prototype table cells must have reuse identifiers [9]
+o/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPad.storyboard:KzN-MM-gcu: warning: Prototype table cells must have reuse identifiers [9]
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection69"CompileStoryboard CardioQuest/en.lproj/MainStoryboard_iPad.storyboard9cdcbf398feab641^1b80393a8feab641^-1088"/* com.apple.ibtool.document.warnings *//home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPad.storyboard:Rz6-uf-M34: warning: Prototype table cells must have reuse identifiers/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPad.storyboard:aPH-r9-TGv: warning: Prototype collection view cells must have reuse identifiers/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPad.storyboard:hBd-Ye-pm5: warning: Prototype table cells must have reuse identifiers/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPad.storyboard:KvZ-C8-8bQ: warning: Prototype table cells must have reuse identifiers/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPad.storyboard:1xi-Tk-5IW: warning: Prototype table cells must have reuse identifiers/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPad.storyboard:KzN-MM-gcu: warning: Prototype table cells must have reuse identifiers6(21%IDEActivityLogMessage2@49"Prototype table cells must have reuse identifiers-384470842#18446744073709551615#0#-1#-23%DVTTextDocumentLocation3@118"file://localhost/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPad.storyboard0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#25"Unsupported Configuration--2@59"Prototype collection view cells must have reuse identifiers-384470842#18446744073709551615#0#-1#-3@118"file://localhost/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPad.storyboard0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#25"Unsupported Configuration--2@49"Prototype table cells must have reuse identifiers-384470842#18446744073709551615#0#-1#-3@118"file://localhost/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPad.storyboard0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#25"Unsupported Configuration--2@49"Prototype table cells must have reuse identifiers-384470842#18446744073709551615#0#-1#-3@118"file://localhost/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPad.storyboard0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#25"Unsupported Configuration--2@49"Prototype table cells must have reuse identifiers-384470842#18446744073709551615#0#-1#-3@118"file://localhost/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPad.storyboard0000000000000000^0#18446744073709551615#0#18446744073709551615#18446744073709551615#0#25"Unsupported Configuration--2@49"Prototype table cells must have reuse identifiers-384470842#18446744073709551615#0#-1#-3@118"file://localhost/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPad.storyboard0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#25"Unsupported Configuration--0#0#0#-19%DVTDocumentLocation4@118"file://localhost/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPad.storyboard0000000000000000^1040"CompileStoryboard CardioQuest/en.lproj/MainStoryboard_iPad.storyboard    cd /home/student/umlatkap/comp4350group5/src/view/iOS    setenv IBSC_MINIMUM_COMPATIBILITY_VERSION 6.1    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/en.lproj/MainStoryboard_iPad.storyboardc /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPad.storyboard --sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk36"1A541541-3C84-4322-9219-60FA8051CDEA-
+
+CCompileStoryboard /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPhone.storyboard
+s384464085.915196
+e384464086.474810
+r1
+xCompileStoryboard
+x/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPhone.storyboard
+o2013-03-08 13:34:46.079 Interface Builder Cocoa Touch Tool[60808:f07] CFPreferences: user home directory at file://localhost/home/student/umlatkap/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection71"CompileStoryboard CardioQuest/en.lproj/MainStoryboard_iPhone.storyboard2d5cead574eab641^f69779d674eab641^-248"2013-03-08 13:34:46.079 Interface Builder Cocoa Touch Tool[60808:f07] CFPreferences: user home directory at file://localhost/home/student/umlatkap/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.-0#0#0#-19%DVTDocumentLocation2@120"file://localhost/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPhone.storyboard0000000000000000^1046"CompileStoryboard CardioQuest/en.lproj/MainStoryboard_iPhone.storyboard    cd /home/student/umlatkap/comp4350group5/src/view/iOS    setenv IBSC_MINIMUM_COMPATIBILITY_VERSION 6.1    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/en.lproj/MainStoryboard_iPhone.storyboardc /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/MainStoryboard_iPhone.storyboard --sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk36"220EE55E-D994-4F8E-B71C-D0F620DE1F6B-
+
+CCopyStringsFile /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/en.lproj/InfoPlist.strings CardioQuest/en.lproj/InfoPlist.strings
+s384464085.898709
+e384464085.913918
+r1
+xCopyStringsFile
+x/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/en.lproj/InfoPlist.strings
+xCardioQuest/en.lproj/InfoPlist.strings
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection43"Copy CardioQuest/en.lproj/InfoPlist.stringsba2ce6d574eab641^ecf6e9d574eab641^---0#0#0#-19%DVTDocumentLocation2@105"file://localhost/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/en.lproj/InfoPlist.strings0000000000000000^681"CopyStringsFile DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/en.lproj/InfoPlist.strings CardioQuest/en.lproj/InfoPlist.strings    cd /home/student/umlatkap/comp4350group5/src/view/iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/en.lproj -- CardioQuest/en.lproj/InfoPlist.strings36"EC3246A3-75B5-4A63-85E7-7BA377576314-
+
+CCpResource CardioQuest/Default-568h@2x.png DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/Default-568h@2x.png
+s384464085.899149
+e384464085.923500
+r1
+xCpResource
+xCardioQuest/Default-568h@2x.png
+xDerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/Default-568h@2x.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection101"Copy DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/Default-568h@2x.pngf73de6d574eab641^7f6aecd574eab641^---0#0#0#-19%DVTDocumentLocation2@163"file://localhost/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/Default-568h@2x.png000000000080d041^722"CpResource "CardioQuest/Default-568h@2x.png" "DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/Default-568h@2x.png"    cd /home/student/umlatkap/comp4350group5/src/view/iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/Default-568h@2x.png" /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app36"89DF4B72-87E8-42EF-8371-B4F1334D747D-
+
+CCpResource CardioQuest/Default.png DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/Default.png
+s384464085.898761
+e384464085.919827
+r1
+xCpResource
+xCardioQuest/Default.png
+xDerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/Default.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Copy DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/Default.png172be6d574eab641^bb7cebd574eab641^---0#0#0#-19%DVTDocumentLocation2@155"file://localhost/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/Default.png000000000080d041^692"CpResource CardioQuest/Default.png DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/Default.png    cd /home/student/umlatkap/comp4350group5/src/view/iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/Default.png /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app36"ABB9BE90-DEAE-47E5-A228-A2A86291C9B0-
+
+CCpResource CardioQuest/Default@2x.png DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/Default@2x.png
+s384464085.898798
+e384464085.919845
+r1
+xCpResource
+xCardioQuest/Default@2x.png
+xDerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/Default@2x.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection96"Copy DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/Default@2x.png282be6d574eab641^a27eebd574eab641^---0#0#0#-19%DVTDocumentLocation2@158"file://localhost/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/Default@2x.png000000000080d041^707"CpResource "CardioQuest/Default@2x.png" "DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/Default@2x.png"    cd /home/student/umlatkap/comp4350group5/src/view/iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/Default@2x.png" /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app36"DB13622E-1DF5-48A0-BD7C-27F62EFC22AE-
+
+CCpResource CardioQuest/first.png DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/first.png
+s384464085.921369
+e384464085.930353
+r1
+xCpResource
+xCardioQuest/first.png
+xDerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/first.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Copy DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/first.png63edebd574eab641^bf2beed574eab641^---0#0#0#-19%DVTDocumentLocation2@153"file://localhost/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/first.png000000000080d041^686"CpResource CardioQuest/first.png DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/first.png    cd /home/student/umlatkap/comp4350group5/src/view/iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/first.png /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app36"DE5E307A-5757-41F4-9133-0A69F77748C8-
+
+CCpResource CardioQuest/first@2x.png DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/first@2x.png
+s384464085.924734
+e384464085.941522
+r1
+xCpResource
+xCardioQuest/first@2x.png
+xDerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/first@2x.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"Copy DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/first@2x.png2dceecd574eab641^f0bff1d574eab641^---0#0#0#-19%DVTDocumentLocation2@156"file://localhost/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/first@2x.png000000000080d041^701"CpResource "CardioQuest/first@2x.png" "DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/first@2x.png"    cd /home/student/umlatkap/comp4350group5/src/view/iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/first@2x.png" /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app36"507C402E-D5CA-4EB4-A362-A5D5FDF2EC76-
+
+CCpResource CardioQuest/second.png DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/second.png
+s384464085.931621
+e384464085.944890
+r1
+xCpResource
+xCardioQuest/second.png
+xDerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/second.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection92"Copy DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/second.png4b8feed574eab641^9819f2d574eab641^---0#0#0#-19%DVTDocumentLocation2@154"file://localhost/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/second.png000000000080d041^689"CpResource CardioQuest/second.png DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/second.png    cd /home/student/umlatkap/comp4350group5/src/view/iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/second.png /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app36"0920F0E3-2753-4AC6-825F-8FBF3907E0E9-
+
+CCpResource CardioQuest/second@2x.png DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/second@2x.png
+s384464085.945896
+e384464085.965546
+r1
+xCpResource
+xCardioQuest/second@2x.png
+xDerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/second@2x.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"Copy DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/second@2x.png8b37f2d574eab641^6a2ef7d574eab641^---0#0#0#-19%DVTDocumentLocation2@157"file://localhost/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/second@2x.png000000000080d041^704"CpResource "CardioQuest/second@2x.png" "DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/second@2x.png"    cd /home/student/umlatkap/comp4350group5/src/view/iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/second@2x.png" /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app36"AAFE72D8-B7D4-4AB9-AB28-0A1313D22EDC-
+
+CGenerateDSYMFile /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app.dSYM /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/CardioQuest
+s384470841.529689
+e384470841.739800
+r1
+xGenerateDSYMFile
+x/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app.dSYM
+x/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/CardioQuest
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection141"Generate /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app.dSYMa8ab87398feab641^3563bd398feab641^---0#0#0#-19%DVTDocumentLocation2@149"file://localhost/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app.dSYM/0000000000000000^817"GenerateDSYMFile DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app.dSYM DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/CardioQuest    cd /home/student/umlatkap/comp4350group5/src/view/iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/CardioQuest -o /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app.dSYM36"20E73733-7E90-49EE-96CD-4B7C5609AF3C-
+
+CLd /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/CardioQuest normal i386
+s384470841.473614
+e384470841.517880
+r1
+xLd
+x/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/CardioQuest
+xnormal
+xi386
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection144"Link /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/CardioQuestdb5079398feab641^fd8289398feab641^---0#0#0#--1405"Ld DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/CardioQuest normal i386    cd /home/student/umlatkap/comp4350group5/src/view/iOS    setenv IPHONEOS_DEPLOYMENT_TARGET 6.1    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -L/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator -F/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator -filelist /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/Objects-normal/i386/CardioQuest.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -fobjc-arc -fobjc-link-runtime -Xlinker -no_implicit_dylibs -mios-simulator-version-min=6.1 -framework UIKit -framework Foundation -framework CoreGraphics -o /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/CardioQuest36"F3A53824-8652-4C8D-A726-7F5FA4A6CB1C-
+
+CProcessInfoPlistFile /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/Info.plist CardioQuest/CardioQuest-Info.plist
+s384464085.067075
+e384464085.091347
+r1
+xProcessInfoPlistFile
+x/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/Info.plist
+xCardioQuest/CardioQuest-Info.plist
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection42"Process CardioQuest/CardioQuest-Info.plist244411d574eab641^7eac18d574eab641^---0#0#0#-19%DVTDocumentLocation2@101"file://localhost/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CardioQuest-Info.plist0000000000000000^813"ProcessInfoPlistFile DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/Info.plist CardioQuest/CardioQuest-Info.plist    cd /home/student/umlatkap/comp4350group5/src/view/iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility CardioQuest/CardioQuest-Info.plist -genpkginfo /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app/Info.plist36"C2728242-B3F5-489B-822F-C3180E233101-
+
+CProcessPCH /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/PrecompiledHeaders/CardioQuest-Prefix-dwfdggtuotlpqecrbssdrbotsuay/CardioQuest-Prefix.pch.pth CardioQuest/CardioQuest-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s384464085.099077
+e384464085.442659
+r1
+xProcessPCH
+x/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/PrecompiledHeaders/CardioQuest-Prefix-dwfdggtuotlpqecrbssdrbotsuay/CardioQuest-Prefix.pch.pth
+xCardioQuest/CardioQuest-Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection45"Precompile CardioQuest/CardioQuest-Prefix.pch288119d574eab641^615171d574eab641^---0#0#0#-19%DVTDocumentLocation2@101"file://localhost/home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CardioQuest-Prefix.pch0000000000000000^4004"ProcessPCH DerivedData/CardioQuest/Build/Intermediates/PrecompiledHeaders/CardioQuest-Prefix-dwfdggtuotlpqecrbssdrbotsuay/CardioQuest-Prefix.pch.pth CardioQuest/CardioQuest-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /home/student/umlatkap/comp4350group5/src/view/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-generated-files.hmap -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-own-target-headers.hmap -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-all-target-headers.hmap -iquote /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/CardioQuest-project-headers.hmap -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/DerivedSources/i386 -I/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/CardioQuest.build/Debug-iphonesimulator/CardioQuest.build/DerivedSources -F/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator --serialize-diagnostics /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/PrecompiledHeaders/CardioQuest-Prefix-dwfdggtuotlpqecrbssdrbotsuay/CardioQuest-Prefix.pch.dia -c /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CardioQuest-Prefix.pch -o /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/PrecompiledHeaders/CardioQuest-Prefix-dwfdggtuotlpqecrbssdrbotsuay/CardioQuest-Prefix.pch.pth -MMD -MT dependencies -MF /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Intermediates/PrecompiledHeaders/CardioQuest-Prefix-dwfdggtuotlpqecrbssdrbotsuay/CardioQuest-Prefix.pch.d36"BD6C5354-BBA2-4CE8-A4B0-71E552951707-
+
+CProcessPCH /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Index/PrecompiledHeaders/CardioQuest-Prefix-capajoqkcbyaitbhjhtytggqlcgx_ast/CardioQuest-Prefix.pch.pth CardioQuest/CardioQuest-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+
+CTouch /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app
+s384470842.232155
+e384470842.239360
+r1
+xTouch
+x/home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection133"Touch /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app207d3b3a8feab641^a2463d3a8feab641^---0#0#0#--486"Touch DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app    cd /home/student/umlatkap/comp4350group5/src/view/iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /home/student/umlatkap/comp4350group5/src/view/iOS/DerivedData/CardioQuest/Build/Products/Debug-iphonesimulator/CardioQuest.app36"A3ACF370-7986-4E46-ACA4-364EAB94B758-
+
