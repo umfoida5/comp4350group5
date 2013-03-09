@@ -10,6 +10,8 @@
 		D0C1EFE016EA977F00EB2E21 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C1EFDF16EA977F00EB2E21 /* AboutViewController.m */; };
 		D0C1EFE716EA984300EB2E21 /* Ubuntu Orange.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D0C1EFE616EA984300EB2E21 /* Ubuntu Orange.jpg */; };
 		D0C1EFEA16EAA30600EB2E21 /* CDQHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C1EFE916EAA30600EB2E21 /* CDQHomeController.m */; };
+		D0C1F02C16EAB96900EB2E21 /* CardioQuestMain.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D0C1F02A16EAB96900EB2E21 /* CardioQuestMain.jpeg */; };
+		D0C1F02D16EAB96900EB2E21 /* CardioQuestMain.acorn in Resources */ = {isa = PBXBuildFile; fileRef = D0C1F02B16EAB96900EB2E21 /* CardioQuestMain.acorn */; };
 		E461B6DF16EA700F00C43D87 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E461B6DE16EA700F00C43D87 /* ProfileViewController.m */; };
 		E461B6E216EA70B500C43D87 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E461B6E116EA70B500C43D87 /* CalendarViewController.m */; };
 		E4BEB5CD16E5361500DD4526 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BEB5CC16E5361500DD4526 /* UIKit.framework */; };
@@ -52,6 +54,8 @@
 		D0C1EFE616EA984300EB2E21 /* Ubuntu Orange.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ubuntu Orange.jpg"; sourceTree = "<group>"; };
 		D0C1EFE816EAA30600EB2E21 /* CDQHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQHomeController.h; sourceTree = "<group>"; };
 		D0C1EFE916EAA30600EB2E21 /* CDQHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQHomeController.m; sourceTree = "<group>"; };
+		D0C1F02A16EAB96900EB2E21 /* CardioQuestMain.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CardioQuestMain.jpeg; sourceTree = "<group>"; };
+		D0C1F02B16EAB96900EB2E21 /* CardioQuestMain.acorn */ = {isa = PBXFileReference; lastKnownFileType = file; path = CardioQuestMain.acorn; sourceTree = "<group>"; };
 		E461B6DD16EA700F00C43D87 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		E461B6DE16EA700F00C43D87 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		E461B6E016EA70B500C43D87 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
@@ -111,6 +115,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D0C1F02916EAB96800EB2E21 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				D0C1F02A16EAB96900EB2E21 /* CardioQuestMain.jpeg */,
+				D0C1F02B16EAB96900EB2E21 /* CardioQuestMain.acorn */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		E4BEB5C016E5361500DD4526 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +157,7 @@
 		E4BEB5D216E5361500DD4526 /* CardioQuest */ = {
 			isa = PBXGroup;
 			children = (
+				D0C1F02916EAB96800EB2E21 /* images */,
 				D0C1EFE816EAA30600EB2E21 /* CDQHomeController.h */,
 				D0C1EFE916EAA30600EB2E21 /* CDQHomeController.m */,
 				D0C1EFE616EA984300EB2E21 /* Ubuntu Orange.jpg */,
@@ -286,6 +300,8 @@
 				E4BEB5F516E5361600DD4526 /* second.png in Resources */,
 				E4BEB5F716E5361600DD4526 /* second@2x.png in Resources */,
 				D0C1EFE716EA984300EB2E21 /* Ubuntu Orange.jpg in Resources */,
+				D0C1F02C16EAB96900EB2E21 /* CardioQuestMain.jpeg in Resources */,
+				D0C1F02D16EAB96900EB2E21 /* CardioQuestMain.acorn in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

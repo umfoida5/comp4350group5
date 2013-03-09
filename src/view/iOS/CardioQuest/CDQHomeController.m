@@ -10,11 +10,29 @@
 
 @interface CDQHomeController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+@property (weak, nonatomic) IBOutlet UIButton *signupBtn;
 @property (weak, nonatomic) IBOutlet UIButton *logoutBtn;
+@property (weak, nonatomic) IBOutlet UITextField *loginUsername;
+@property (weak, nonatomic) IBOutlet UITextField *loginPassword;
+@property (weak, nonatomic) IBOutlet UITextField *signupUsername;
+@property (weak, nonatomic) IBOutlet UITextField *signupPassword;
+@property (weak, nonatomic) IBOutlet UITextField *signupFirstName;
+@property (weak, nonatomic) IBOutlet UITextField *signupLastName;
 
 @end
 
 @implementation CDQHomeController
+
+- (IBAction)login:(id)sender
+{
+    //Add login code.
+}
+
+- (IBAction)signup:(id)sender
+{
+    //Add signup code.
+}
 
 - (IBAction)changeUser:(id)sender
 {
@@ -35,6 +53,8 @@
     [super viewDidLoad];
     
 	[self.logoutBtn setHidden:YES];
+    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"CardioQuestMain.jpeg"]];
+    
 }
 
 - (void)didReceiveMemoryWarning
