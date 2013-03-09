@@ -23,7 +23,6 @@
 @end
 
 @implementation CDQHomeController
-
 - (IBAction)login:(id)sender
 {
     //Add login code.
