@@ -39,7 +39,7 @@ db_session.commit()
 
 db_session.add(Event(curr_time, "Join us at the Manitoba Marathon on Fathers Day.  More details at http://www.manitobamarathon.mb.ca/", "winnipeg", 2))
 db_session.add(Event(curr_time, "Come join one of the largest marathons in the world, the Boston marathon. Find out how to qualify at http://www.baa.org/races/boston-marathon.aspx", "boston", 3))
-db_session.add(Event(curr_time, "Do not miss La Tour De France in Paris. Find out more details at http://www.letour.fr/paris-nice/2013/us", "paris", 10))
+db_session.add(Event(curr_time, "Do not miss La Tour De France! Find out more details at http://www.letour.fr/paris-nice/2013/us", "paris", 10))
 
 db_session.commit()
 

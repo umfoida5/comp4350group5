@@ -37,14 +37,8 @@ class Login:
 					
 				return None
 			else:
-				#TODO - add raise.  Currently, prevents me from sending
-				#       an error response to client.
-				#raise cherrypy.HTTPError(400, "Incorrect password.")
 				return "Incorrect password."
 		else:
-			#TODO - add raise.  Currently, prevents me from sending
-			#       an error response to client.
-			#raise cherrypy.HTTPError(400, "Invalid username.")
 			return "Invalid username."
 
 	@cherrypy.expose
