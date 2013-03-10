@@ -30,13 +30,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *loginLabel;
 @property (weak, nonatomic) IBOutlet UILabel *signupLabel;
 @property (weak, nonatomic) IBOutlet UIButton *changeUserButton;
+@property (weak, nonatomic) IBOutlet UILabel *loginResponseLabel;
 
 @end
 
 @implementation CDQHomeController
 - (IBAction)login:(id)sender
 {
-    //Add login code.
     NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/login/do_login"];
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request addPostValue:_loginUsername.text forKey:@"username"];
@@ -58,7 +58,7 @@
     NSString *responseString = [request responseString];
     
     if ([responseString isEqual: @"Incorrect password."] || [responseString isEqual: @"Invalid username."]) {
-        
+        self.loginResponseLabel.text = responseString;
     }
     else {
         [self.loginBtn setHidden:YES];
@@ -79,20 +79,27 @@
         [self.signupLastNameLabel setHidden:YES];
         [self.loginLabel setHidden:YES];
         [self.signupLabel setHidden:YES];
+        [self.loginResponseLabel setHidden:YES];
         
         [self.changeUserButton setHidden:NO];
     }
 }
-//
-//- (void)requestFailed:(ASIHTTPRequest *)request
-//{
-//    NSError *error = [request error];
-//}
+
+- (void)requestFailed:(ASIHTTPRequest *)request
+{
+    NSError *error = [request error];
+}
 
 - (IBAction)signup:(id)sender
 {
-    //Add signup code.
-
+    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/login/do_login"];
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    [request addPostValue:_signupUsername.text forKey:@"username"];
+    [request addPostValue:_signupPassword.text forKey:@"pw"];
+    [request addPostValue:_signupFirstName.text forKey:@"firstName"];
+    [request addPostValue:_signupLastName.text forKey:@"lastName"];
+    [request setDelegate:self];
+    [request startAsynchronous];
 }
 
 - (IBAction)changeUser:(id)sender
