@@ -9,7 +9,7 @@
       $("#loginForm").submit(function() {
 		formData = $(this).serialize();
         $.post("do_login", formData, function(errorMsg) {
-          if (errorMsg == "") {
+          if (errorMsg == "Login was successfull.") {
             window.location.href = "../";
           }
           else {
