@@ -1,5 +1,4 @@
 import cherrypy, httplib
-import Cookie
 from modules.jsonable import make_jsonable
 from modules.template import env
 from modules.transaction import commit_on_success
@@ -8,6 +7,7 @@ from model.athlete import Athlete
 from model.achievement import UnlockedAchievement
 from model.activity import Activity
 from model.goal import Goal
+from Cookie import SimpleCookie
 
 class Login:
 	@cherrypy.expose
@@ -28,24 +28,17 @@ class Login:
 				old_id = cherrypy.session.get('id')
 				cherrypy.session['id'] = athlete.id
 				cherrypy.session['tempUser'] = 'false'
-				#myCookie = SimpleCookie()
-				#myCookie['id'] = athlete.id
-				#myCookie['name'] = athlete.firstName + " " + athlete.lastName
-				#print myCookie
+				myCookie = cherrypy.response.cookie
+				myCookie['name'] = username
+				myCookie['name']['path'] = '/'
 				
 				if just_created == False:
 					self.__update_tables_athlete_id(old_id, athlete.id)
 					
 				return None
 			else:
-				#TODO - add raise.  Currently, prevents me from sending
-				#       an error response to client.
-				#raise cherrypy.HTTPError(400, "Incorrect password.")
 				return "Incorrect password."
 		else:
-			#TODO - add raise.  Currently, prevents me from sending
-			#       an error response to client.
-			#raise cherrypy.HTTPError(400, "Invalid username.")
 			return "Invalid username."
 
 	@cherrypy.expose
@@ -54,6 +47,7 @@ class Login:
 		athlete = Athlete(None, None, "FirstName", "LastName")
 		db_session.add(athlete)
 		db_session.commit()
+		cherrypy.response.cookie['name']['expires'] = 0
 		cherrypy.session['id'] = athlete.id
 
 	@commit_on_success

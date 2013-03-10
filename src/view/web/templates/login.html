@@ -18,7 +18,7 @@
         } );
         return false;
       } );
-      
+
       $("#signupForm").submit(function() {
         $.post("signup", $(this).serialize(), function() {
 		  $("#signupMessage").text("Signup successful, redirecting!");
