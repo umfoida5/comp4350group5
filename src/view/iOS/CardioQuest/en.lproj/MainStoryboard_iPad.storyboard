@@ -635,6 +635,9 @@ Features
         <class className="CDQHomeController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQHomeController.h"/>
             <relationships>
+                <relationship kind="action" name="changeUser:"/>
+                <relationship kind="action" name="login:"/>
+                <relationship kind="action" name="signup:"/>
                 <relationship kind="outlet" name="loginBtn" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="loginPassword" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="loginUsername" candidateClass="UITextField"/>
