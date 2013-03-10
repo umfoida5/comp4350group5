@@ -10,7 +10,7 @@
 		formData = $(this).serialize();
         $.post("do_login", formData, function(errorMsg) {
           if (errorMsg == "Login was successfull.") {
-            window.location.href = "../";
+            window.location.href = "../profiles";
           }
           else {
             $("#loginMessage").text(errorMsg);
