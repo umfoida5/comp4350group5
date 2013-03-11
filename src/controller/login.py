@@ -61,7 +61,7 @@ class Login:
 		athlete.first_name = firstName
 		athlete.last_name = lastName
 		db_session.flush()
-		self.do_login(username, pw, True)
+		return self.do_login(username, pw, True)
 
 	def __update_tables_athlete_id(self, old_id, new_id):
 		db_session = database.session
