@@ -7,7 +7,7 @@ function Activities(){
             $('#distance').attr('value', '');
             $('#duration').attr('value', '');
             $('#max_speed').attr('value', '');
-            $('#date').attr('value', '');
+            $('#dateInput').datepicker('setValue', new Date());
         });
     }
     
