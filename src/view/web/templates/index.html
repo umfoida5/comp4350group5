@@ -12,7 +12,21 @@
 
     {% endblock head %}
     {% block script %}
+
     {% endblock script %}
+  <script src="../js/jquery.cookie.js"></script>
+  <script>
+    $(document).ready(function() {
+    var username = $.cookie("name");
+    if (username != undefined)
+    {
+    	$("#logged-in-username").text("Logged in as " + username);
+    	$("#login-button").text("Logout");
+    }
+
+    } );
+  	</script>
+
   </head>
 
   <!-- Modified from Bootstrap United Sample Code-->
@@ -44,7 +58,8 @@
                 <li><a href="../about">About</a></li>
               </ul>
               <ul class="nav pull-right">
-                <li><a href="../login">Login</a></li>
+              	<li><a id="logged-in-username"></a></li>
+                <li><a id="login-button" href="../login">Login</a></li>
               </ul>
             </div>
           </div>

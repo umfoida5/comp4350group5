@@ -50,8 +50,7 @@ class Login:
 		cherrypy.response.cookie['name'] = ''
 		cherrypy.response.cookie['name']['expires'] = 0
 		cherrypy.session['id'] = athlete.id
-    
-        return "Logout was successful."
+    		return "Logout was successful."
 
 	@commit_on_success 
 	@cherrypy.expose
