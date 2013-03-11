@@ -8,7 +8,7 @@
 
 #import "ProfileViewController.h"
 #import "ASIHTTPRequest.h"
-
+#import "Classes/SBJson.h"
 @interface ProfileViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -21,8 +21,11 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/profile/athlete"];
+    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/profiles/athlete"];
+    
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    [request addRequestHeader:@"Accept" value:@"application/json"];
+    [request addRequestHeader:@"Content-Type" value:@"application/json"];
     [request setDelegate:self];
     [request startAsynchronous];
 }
@@ -30,9 +33,11 @@
 - (void)requestFinished:(ASIHTTPRequest *)request
 {
     // Use when fetching text data
-    NSString *responseData = [request responseString];
-    
-    
+    NSString *responseString = [request responseString];
+    NSLog(@"%@",responseString);
+    SBJsonParser *parser = [[SBJsonParser alloc]init];
+    NSMutableDictionary* jsonDictionary = [parser objectWithString:responseString error:nil];
+    BOOL stop = YES;
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request
