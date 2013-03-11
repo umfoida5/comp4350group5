@@ -8,6 +8,7 @@ from achievements import Achievements
 from goals import Goals
 from calendar import Calendar
 from login import Login
+from health import HealthController
 
 def http_methods_allowed(methods=['GET', 'HEAD']):
     method = cherrypy.request.method.upper()
@@ -26,6 +27,7 @@ class Root:
     calendar = Calendar()
     goals = Goals()
     login = Login()
+    health = HealthController()
 
     @cherrypy.expose
     def index(self):
