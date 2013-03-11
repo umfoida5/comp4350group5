@@ -51,7 +51,7 @@ class Login:
 		cherrypy.response.cookie['name']['expires'] = 0
 		cherrypy.session['id'] = athlete.id
 
-	@commit_on_success
+	@commit_on_success 
 	@cherrypy.expose
 	def signup(self, username, pw, firstName, lastName):
 		db_session = database.session
