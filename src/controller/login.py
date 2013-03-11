@@ -47,6 +47,7 @@ class Login:
 		athlete = Athlete(None, None, "FirstName", "LastName")
 		db_session.add(athlete)
 		db_session.commit()
+		cherrypy.response.cookie['name'] = ''
 		cherrypy.response.cookie['name']['expires'] = 0
 		cherrypy.session['id'] = athlete.id
 
