@@ -14,6 +14,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 
+@property (weak, nonatomic) IBOutlet UITextField *dobField;
+@property (weak, nonatomic) IBOutlet UITextField *addressField;
+@property (weak, nonatomic) IBOutlet UITextField *emailField;
+@property (weak, nonatomic) IBOutlet UITextView *aboutTextView;
+
+
 @end
 
 @implementation ProfileViewController
@@ -36,8 +42,15 @@
     NSString *responseString = [request responseString];
     NSLog(@"%@",responseString);
     SBJsonParser *parser = [[SBJsonParser alloc]init];
-    NSMutableDictionary* jsonDictionary = [parser objectWithString:responseString error:nil];
-    BOOL stop = YES;
+    NSMutableDictionary* jsonDictionary = [parser objectWithString:responseString];
+    NSMutableString* name = [[NSMutableString alloc]init];
+    [name appendFormat:@"%@ %@",jsonDictionary[@"first_name"],jsonDictionary[@"last_name"]];
+    self.nameLabel.text = name;
+    self.dobField.text = jsonDictionary[@"birth_date"];
+    self.addressField.text = jsonDictionary[@"address"];
+    self.emailField.text = jsonDictionary[@"email"];
+    self.aboutTextView.text = jsonDictionary[@"about_me"];
+    //BOOL stop = YES;
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request
