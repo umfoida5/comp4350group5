@@ -38,19 +38,15 @@
 - (IBAction)login:(id)sender
 {
     NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/login/do_login"];
+    
+    [ASIHTTPRequest setSessionCookies:nil];
+    
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request addPostValue:_loginUsername.text forKey:@"username"];
     [request addPostValue:_loginPassword.text forKey:@"pw"];
     [request setDelegate:self];
     [request startAsynchronous];
 }
-
-//GET CODE:
-//NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/login/do_login?username=testme&pw=testme"];
-//ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
-//[request setDelegate:self];
-//[request startAsynchronous];
-
 
 - (void)requestFinished:(ASIHTTPRequest *)request
 {
@@ -60,7 +56,7 @@
     if ([responseString isEqual: @"Incorrect password."] || [responseString isEqual: @"Invalid username."]) {
         self.loginResponseLabel.text = responseString;
     }
-    else {
+    else if([responseString isEqual: @"Login was successful."]) {
         [self.loginBtn setHidden:YES];
         [self.signupBtn setHidden:YES];
         [self.logoutBtn setHidden:YES];
@@ -92,7 +88,7 @@
 
 - (IBAction)signup:(id)sender
 {
-    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/login/do_login"];
+    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/login/signup"];
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request addPostValue:_signupUsername.text forKey:@"username"];
     [request addPostValue:_signupPassword.text forKey:@"pw"];
