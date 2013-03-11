@@ -1,0 +1,174 @@
+{% extends "index.html" %}
+
+{% block script  %}
+  <script src="../js/jquery.min.js"></script>
+  <script type='text/javascript' src='../js/bootstrap.js'></script>
+  <script src="../js/bootstrap-datepicker.js"></script>
+  <script src="../js/jquery.dataTables.min.js"></script>
+  <script src="../js/bootstrapPagination.js"></script>
+  <script src="../js/highcharts.js"></script>
+  <link href="../css/datepicker.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/datatables.css">
+  <script>
+    $(document).ready(function() {
+      $('#enterButton').click(function() {
+        $('#enter_health_modal').modal('show');
+      });
+      
+      $('#closeButton').click(function() {
+        $('#enter_health_modal').modal('hide');
+      });
+      
+      var healthTable = $('#healthTable').dataTable( {
+        "bProcessing": true,
+        "bServerSide": true,
+        "sAjaxSource": "update_datatable",
+        "sPaginationType": "bootstrap",
+        "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
+        "aoColumns": [
+          { "mData": "health_date", "sWidth": '15%', "bSearchable": false },
+          { "mData": "weight", "sWidth": '15%',"bSearchable": false },
+          { "mData": "resting_heart_rate", "sWidth": '15%', "bSearchable": false },
+          { "mData": "comments", "sWidth": '55%', "bSearchable": false }
+        ],
+        "fnServerData": function ( sSource, aoData, fnCallback, oSettings ) {
+            oSettings.jqXHR = $.ajax( {
+            "dataType": 'json',
+            "type": "GET",
+            "url": sSource,
+            "data": aoData,
+            "success": [fnCallback, drawGraph]
+            } );
+        }
+      });
+      
+      $('#date_wrapper_start').datepicker();
+      $('#date_wrapper_end').datepicker();
+      $('#date_wrapper_form').datepicker();
+      
+      $('form').submit(function() { 
+            $.post("create", $(this).serialize(), function() {
+                $('#enter_health_modal').modal('hide');
+                healthTable.fnDraw();
+            });
+            return false;
+        });
+    });
+
+    function drawGraph(json) 
+    {
+        var graphData = new Array();
+        
+        $.each(json.aaData, function() {
+            var d = new Date(this.health_date);
+            graphData.push([Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()), this.weight]);
+        });
+
+        chart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'graphContainer',
+                type: 'spline'
+            },            
+            title: {
+                text: 'Weight:'
+            },
+            xAxis: {
+                type: 'datetime'
+            },
+            yAxis: {
+                title: {
+                    text: 'Weight (lbs)'
+                },
+                min: 0
+            },
+            tooltip: {
+                formatter: function() {
+                        return '<b>'+ this.series.name +'</b><br/>'+
+                        Highcharts.dateFormat('%e. %b', this.x) +': '+ this.y +' m';
+                }
+            },
+            
+            series: [{
+                name: 'Weight',
+                data: graphData
+            }]
+        });
+
+    }
+  </script>
+{% endblock script %}
+
+{% block body %}
+    <!-- Tab header -->
+    <ul class="nav nav-tabs">
+      <li class="active">
+        <a href="#graph_tab" data-toggle="tab">Graph</a>
+      </li>
+      <li><a href="#table_tab" data-toggle="tab">Table</a></li>
+    </ul>
+    
+    <!-- New health record button -->
+    <div align="right">
+        <button type="button" id="enterButton" class="btn">Log a Health Record</button>
+    </div>
+
+    <!-- tab content -->
+    <div class="tab-content">
+        <div class="tab-pane active" id="graph_tab">
+            <!-- graph pane and filters -->
+
+            <div id="graphContainer" style="width:100%; height:400px;"></div>
+        </div>
+        <div class="tab-pane" id="table_tab">
+            <!-- TABLE ======================================= -->
+            <table class="table table-bordered table-striped table-hover" id="healthTable">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Weight</th>
+                        <th>Resting HR</th>
+                        <th>Comments</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal Form -->
+    <div class="modal hide fade" id="enter_health_modal" name="enter_health_modal">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 id="modal_title">Enter a Health Record:</h3>
+        </div>
+        <form>
+            <div class="modal-body">
+                <div class="control-group">
+                    <label class="control-label" for="date_wrapper_form">Date:&nbsp;</label>
+                    <div class="input-append date" id="date_wrapper_form" data-date="26-02-2013" data-date-format="dd-mm-yyyy">
+                      <input class="span2" id="health_date" name="health_date" size="16" type="text">
+                      <span class="add-on"><i class="icon-th"></i></span>
+                    </div>
+                </div>
+              <div class="control-group">
+                  <label class="control-label" for="weight">Weight:&nbsp;</label>
+                  <input type="number" name="weight" class="input-xlarge" id="weight">
+              </div>
+              <div class="control-group">
+                  <label class="control-label" for="resting_heart_rate">Resting Heart Rate:&nbsp;</label>
+                  <input type="number"  name="resting_heart_rate" class="input-xlarge" id="resting_heart_rate">
+              </div>
+              <div class="control-group">
+                  <label class="control-label" for="comment">Comments:&nbsp;</label>
+                  <textarea class="input-xlarge" name="comment" id="comment" rows="7"></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+                <a class="btn" id="closeButton">Close</a>
+                <input class="btn btn-primary" id="saveButton" type="submit" value="Save Health Record" />
+            </div>
+            
+        </form>
+    </div>
+{% endblock body %}
