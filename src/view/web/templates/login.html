@@ -9,8 +9,8 @@
       $("#loginForm").submit(function() {
 		formData = $(this).serialize();
         $.post("do_login", formData, function(errorMsg) {
-          if (errorMsg == "") {
-            window.location.href = "../";
+          if (errorMsg == "Login was successful.") {
+            window.location.href = "../profiles";
           }
           else {
             $("#loginMessage").text(errorMsg);

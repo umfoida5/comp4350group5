@@ -35,7 +35,7 @@ class Login:
 				if just_created == False:
 					self.__update_tables_athlete_id(old_id, athlete.id)
 					
-				return None
+				return "Login was successful." 
 			else:
 				return "Incorrect password."
 		else:
