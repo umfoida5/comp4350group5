@@ -32,7 +32,9 @@ function Activities(){
           { "mData": "distance", "sWidth": '15%', "bSearchable": false },
           { "mData": "max_speed", "sWidth": '15%', "bSearchable": false }
         ]} );
-        $('#dateInput').datepicker();
+      $('#dateInput').datepicker().on('changeDate', function(){
+          $(this).datepicker('hide');
+      });
         $("form").submit(function() {
             $.post("create", $(this).serialize(), function() {
                 athleteTable.fnDraw();

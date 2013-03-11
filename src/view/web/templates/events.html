@@ -36,7 +36,9 @@
         ]
       } );
       
-      $('#date_wrapper').datepicker();
+      $('#date_wrapper').datepicker().on('changeDate', function(){
+          $(this).datepicker('hide');
+      });
       
       $("form").submit(function() {
         $.post("create", $(this).serialize(), function() {

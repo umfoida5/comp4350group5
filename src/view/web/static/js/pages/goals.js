@@ -54,7 +54,11 @@
   });
 
   // for the start and end date inputs
-  $('#start_date').datepicker();
-  $('#end_date').datepicker();
+  $('#start_date').datepicker().on('changeDate', function(){
+      $(this).datepicker('hide');
+  });
+  $('#end_date').datepicker().on('changeDate', function(){
+      $(this).datepicker('hide');
+  });
 
   })) (jQuery);
