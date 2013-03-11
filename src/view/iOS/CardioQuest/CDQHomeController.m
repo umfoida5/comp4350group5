@@ -25,11 +25,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *loginPasswordLabel;
 @property (weak, nonatomic) IBOutlet UILabel *signupUsernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *signupPasswordLabel;
-@property (weak, nonatomic) IBOutlet UILabel *signupFitsNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *signupFirstNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *signupLastNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *loginLabel;
 @property (weak, nonatomic) IBOutlet UILabel *signupLabel;
-@property (weak, nonatomic) IBOutlet UIButton *changeUserButton;
 @property (weak, nonatomic) IBOutlet UILabel *loginResponseLabel;
 
 @end
@@ -38,8 +37,6 @@
 - (IBAction)login:(id)sender
 {
     NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/login/do_login"];
-    
-    [ASIHTTPRequest setSessionCookies:nil];
     
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request addPostValue:_loginUsername.text forKey:@"username"];
@@ -53,36 +50,38 @@
     // Use when fetching text data
     NSString *responseString = [request responseString];
     
-    if ([responseString isEqual: @"Incorrect password."] || [responseString isEqual: @"Invalid username."]) {
-        self.loginResponseLabel.text = responseString;
-    }
-    else if([responseString isEqual: @"Login was successful."]) {
-        [self.loginBtn setHidden:YES];
-        [self.signupBtn setHidden:YES];
-        [self.logoutBtn setHidden:YES];
-        [self.loginUsername setHidden:YES];
-        [self.loginPassword setHidden:YES];
-        [self.signupFirstName setHidden:YES];
-        [self.signupLastName setHidden:YES];
-        [self.signupUsername setHidden:YES];
-        [self.signupPassword setHidden:YES];
+    // Display server response about login/logout validity
+    self.loginResponseLabel.text = responseString;
+    
+    // Toggle visibility for all UI elements for login/logout if successful
+    if([responseString isEqual: @"Login was successful."] || [responseString isEqualToString:@"Logout was successful."]) {
         
-        [self.loginUsernameLabel setHidden:YES];
-        [self.loginPasswordLabel setHidden:YES];
-        [self.signupUsernameLabel setHidden:YES];
-        [self.signupPasswordLabel setHidden:YES];
-        [self.signupFitsNameLabel setHidden:YES];
-        [self.signupLastNameLabel setHidden:YES];
-        [self.loginLabel setHidden:YES];
-        [self.signupLabel setHidden:YES];
-        [self.loginResponseLabel setHidden:YES];
+        [self.loginBtn setHidden:![self.loginBtn isHidden]];
+        [self.signupBtn setHidden:![self.signupBtn isHidden]];
+        [self.logoutBtn setHidden:![self.logoutBtn isHidden]];
+        [self.loginUsername setHidden:![self.loginUsername isHidden]];
+        [self.loginPassword setHidden:![self.loginPassword isHidden]];
+        [self.signupFirstName setHidden:![self.signupFirstName isHidden]];
+        [self.signupLastName setHidden:![self.signupLastName isHidden]];
+        [self.signupUsername setHidden:![self.signupUsername isHidden]];
+        [self.signupPassword setHidden:![self.signupPassword isHidden]];
         
-        [self.changeUserButton setHidden:NO];
+        [self.loginUsernameLabel setHidden:![self.loginUsernameLabel isHidden]];
+        [self.loginPasswordLabel setHidden:![self.loginPasswordLabel isHidden]];
+        [self.signupUsernameLabel setHidden:![self.signupUsernameLabel isHidden]];
+        [self.signupPasswordLabel setHidden:![self.signupPasswordLabel isHidden]];
+        [self.signupFirstNameLabel setHidden:![self.signupFirstNameLabel isHidden]];
+        [self.signupLastNameLabel setHidden:![self.signupLastNameLabel isHidden]];
+        [self.loginLabel setHidden:![self.loginLabel isHidden]];
+        [self.signupLabel setHidden:![self.signupLabel isHidden]];
+        //[self.loginResponseLabel setHidden:![self.loginResponseLabel isHidden]];
     }
+    
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
+    // TODO: handle error
     NSError *error = [request error];
 }
 
@@ -98,9 +97,15 @@
     [request startAsynchronous];
 }
 
-- (IBAction)changeUser:(id)sender
+- (IBAction)logout:(id)sender
 {
-    // Add logout code.
+    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/login/do_logout"];
+    
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    [request setDelegate:self];
+    [request startAsynchronous];
+    
+    // TODO: remove login cookies on iOS side?
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

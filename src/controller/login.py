@@ -32,7 +32,7 @@ class Login:
 				myCookie['name'] = username
 				myCookie['name']['path'] = '/'
 				
-				if just_created == False:
+				if not just_created:
 					self.__update_tables_athlete_id(old_id, athlete.id)
 					
 				return "Login was successful." 
@@ -50,6 +50,8 @@ class Login:
 		cherrypy.response.cookie['name'] = ''
 		cherrypy.response.cookie['name']['expires'] = 0
 		cherrypy.session['id'] = athlete.id
+    
+        return "Logout was successful."
 
 	@commit_on_success 
 	@cherrypy.expose
@@ -61,7 +63,7 @@ class Login:
 		athlete.first_name = firstName
 		athlete.last_name = lastName
 		db_session.flush()
-		return self.do_login(username, pw, True)
+		return self.do_login(username, pw, True)    
 
 	def __update_tables_athlete_id(self, old_id, new_id):
 		db_session = database.session
