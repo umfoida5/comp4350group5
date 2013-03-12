@@ -1,3 +1,3 @@
 dependencies: \
-  /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQSecondViewController.m \
-  /home/student/umlatkap/comp4350group5/src/view/iOS/CardioQuest/CDQSecondViewController.h
+  /home/student/umlatkap/Desktop/comp4350group5/src/view/iOS/CardioQuest/CDQSecondViewController.m \
+  /home/student/umlatkap/Desktop/comp4350group5/src/view/iOS/CardioQuest/CDQSecondViewController.h

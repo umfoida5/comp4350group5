@@ -8,11 +8,17 @@
 
 #import "ProfileViewController.h"
 #import "ASIHTTPRequest.h"
-
+#import "Classes/SBJson.h"
 @interface ProfileViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+
+@property (weak, nonatomic) IBOutlet UITextField *dobField;
+@property (weak, nonatomic) IBOutlet UITextField *addressField;
+@property (weak, nonatomic) IBOutlet UITextField *emailField;
+@property (weak, nonatomic) IBOutlet UITextView *aboutTextView;
+
 
 @end
 
@@ -21,8 +27,11 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/profile/athlete"];
+    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/profiles/athlete"];
+    
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    [request addRequestHeader:@"Accept" value:@"application/json"];
+    [request addRequestHeader:@"Content-Type" value:@"application/json"];
     [request setDelegate:self];
     [request startAsynchronous];
 }
@@ -30,9 +39,18 @@
 - (void)requestFinished:(ASIHTTPRequest *)request
 {
     // Use when fetching text data
-    NSString *responseData = [request responseString];
-    
-    
+    NSString *responseString = [request responseString];
+    NSLog(@"%@",responseString);
+    SBJsonParser *parser = [[SBJsonParser alloc]init];
+    NSMutableDictionary* jsonDictionary = [parser objectWithString:responseString];
+    NSMutableString* name = [[NSMutableString alloc]init];
+    [name appendFormat:@"%@ %@",jsonDictionary[@"first_name"],jsonDictionary[@"last_name"]];
+    self.nameLabel.text = name;
+    self.dobField.text = jsonDictionary[@"birth_date"];
+    self.addressField.text = jsonDictionary[@"address"];
+    self.emailField.text = jsonDictionary[@"email"];
+    self.aboutTextView.text = jsonDictionary[@"about_me"];
+    //BOOL stop = YES;
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request
