@@ -181,8 +181,18 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Press the Login button to Login :)" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSQ-I1-m7i">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="320" id="dWt-YA-AKn"/>
+                                    <constraint firstAttribute="width" constant="728" id="gWh-G5-toi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Signed in as TODO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfe-mH-4XW">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="CZX-gt-QTA"/>
+                                    <constraint firstAttribute="width" constant="302" id="RdA-vK-E1I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -196,48 +206,50 @@
                             <constraint firstItem="hZG-qb-asA" firstAttribute="leading" secondItem="yfs-qa-0d9" secondAttribute="leading" type="default" id="FGP-V3-p7V"/>
                             <constraint firstItem="G6c-Sn-Wlb" firstAttribute="trailing" secondItem="BLo-J1-bSi" secondAttribute="trailing" type="default" id="FWd-Hj-DE5"/>
                             <constraint firstItem="9ic-Jw-ItZ" firstAttribute="trailing" secondItem="f0j-1r-j1u" secondAttribute="trailing" type="default" id="G3K-53-ofh"/>
-                            <constraint firstItem="W8l-Vd-Uu7" firstAttribute="bottom" secondItem="Dtf-K7-ZaB" secondAttribute="bottom" type="default" id="HmX-Zc-Lsx"/>
+                            <constraint firstItem="aa3-Hc-x2D" firstAttribute="top" secondItem="17" secondAttribute="top" constant="369" id="IjK-5J-nAa"/>
                             <constraint firstItem="G6c-Sn-Wlb" firstAttribute="top" secondItem="vUy-dC-bTZ" secondAttribute="top" type="default" id="Iug-2R-n3F"/>
                             <constraint firstAttribute="bottom" secondItem="vQp-4d-OGI" secondAttribute="bottom" constant="288" id="Jqy-Es-Snd"/>
+                            <constraint firstItem="Dtf-K7-ZaB" firstAttribute="bottom" secondItem="W8l-Vd-Uu7" secondAttribute="bottom" type="default" id="LzS-NA-8Wn"/>
                             <constraint firstItem="9ic-Jw-ItZ" firstAttribute="leading" secondItem="f0j-1r-j1u" secondAttribute="leading" type="default" id="ME3-ly-BeD"/>
                             <constraint firstItem="g1j-Nb-aB1" firstAttribute="leading" secondItem="17" secondAttribute="leading" type="default" id="MIl-dp-FSV"/>
                             <constraint firstAttribute="bottom" secondItem="ntv-VZ-B7y" secondAttribute="bottom" constant="283" id="Nbr-TK-0Ke"/>
                             <constraint firstItem="vUy-dC-bTZ" firstAttribute="trailing" secondItem="yfs-qa-0d9" secondAttribute="trailing" type="default" id="QAm-7T-b7T"/>
                             <constraint firstAttribute="bottom" secondItem="9ic-Jw-ItZ" secondAttribute="bottom" constant="155" id="QPb-4Q-ecr"/>
                             <constraint firstAttribute="bottom" secondItem="vUy-dC-bTZ" secondAttribute="bottom" constant="218" id="QSp-AS-Jac"/>
-                            <constraint firstItem="Lr4-K7-Ze9" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="312" id="Qtz-Wd-4ti"/>
                             <constraint firstItem="aa3-Hc-x2D" firstAttribute="baseline" secondItem="a9H-Ti-8vm" secondAttribute="baseline" type="default" id="QwC-2W-xvE"/>
                             <constraint firstItem="aa3-Hc-x2D" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="194" id="REj-bB-QPr"/>
                             <constraint firstItem="dWz-QH-lgt" firstAttribute="top" secondItem="17" secondAttribute="top" constant="361" id="SwO-Ol-toW"/>
                             <constraint firstItem="f0j-1r-j1u" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="323" id="TX8-63-rs0"/>
-                            <constraint firstItem="aa3-Hc-x2D" firstAttribute="top" secondItem="17" secondAttribute="top" constant="369" id="Tzb-gP-eTS"/>
                             <constraint firstItem="hZG-qb-asA" firstAttribute="leading" secondItem="G6c-Sn-Wlb" secondAttribute="leading" type="default" id="UaZ-yc-rsU"/>
                             <constraint firstAttribute="bottom" secondItem="Lr4-K7-Ze9" secondAttribute="bottom" constant="410" id="Z3K-dN-8aY"/>
-                            <constraint firstItem="ZSQ-I1-m7i" firstAttribute="top" secondItem="a9H-Ti-8vm" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Zdb-uc-Nfv"/>
                             <constraint firstItem="G6c-Sn-Wlb" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="218" id="bCA-46-T3i"/>
                             <constraint firstAttribute="bottom" secondItem="f0j-1r-j1u" secondAttribute="bottom" constant="350" id="bjO-d3-NRa"/>
-                            <constraint firstItem="ZSQ-I1-m7i" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="cIJ-hM-a4I"/>
+                            <constraint firstItem="Pfe-mH-4XW" firstAttribute="centerX" secondItem="Lr4-K7-Ze9" secondAttribute="centerX" type="default" id="cyK-Er-r0T"/>
                             <constraint firstItem="BLo-J1-bSi" firstAttribute="top" secondItem="f0j-1r-j1u" secondAttribute="top" type="default" id="dFy-fN-y72"/>
                             <constraint firstItem="c8G-Cz-QLB" firstAttribute="top" secondItem="17" secondAttribute="top" constant="357" id="dvw-FG-Wnb"/>
                             <constraint firstItem="G6c-Sn-Wlb" firstAttribute="baseline" secondItem="vUy-dC-bTZ" secondAttribute="baseline" type="default" id="fG8-ae-QEo"/>
                             <constraint firstItem="W8l-Vd-Uu7" firstAttribute="centerX" secondItem="dWz-QH-lgt" secondAttribute="centerX" type="default" id="gFW-sK-mam"/>
                             <constraint firstItem="BLo-J1-bSi" firstAttribute="leading" secondItem="vQp-4d-OGI" secondAttribute="leading" type="default" id="iH6-cW-sU9"/>
                             <constraint firstItem="vUy-dC-bTZ" firstAttribute="leading" secondItem="ntv-VZ-B7y" secondAttribute="leading" type="default" id="jJi-Qa-e7n"/>
+                            <constraint firstItem="Pfe-mH-4XW" firstAttribute="top" secondItem="W8l-Vd-Uu7" secondAttribute="top" type="default" id="jLm-Uh-pAC"/>
                             <constraint firstItem="g1j-Nb-aB1" firstAttribute="top" secondItem="17" secondAttribute="top" type="default" id="k7G-p6-Qf7"/>
                             <constraint firstItem="c8G-Cz-QLB" firstAttribute="centerX" secondItem="ntv-VZ-B7y" secondAttribute="centerX" type="default" id="kBd-4k-pQa"/>
                             <constraint firstItem="c8G-Cz-QLB" firstAttribute="trailing" secondItem="a9H-Ti-8vm" secondAttribute="trailing" type="default" id="kQx-jo-tAp"/>
                             <constraint firstItem="a9H-Ti-8vm" firstAttribute="leading" secondItem="W8l-Vd-Uu7" secondAttribute="leading" type="default" id="oAK-dJ-fpq"/>
+                            <constraint firstItem="ZSQ-I1-m7i" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="298" id="osB-EL-BGR"/>
                             <constraint firstItem="vUy-dC-bTZ" firstAttribute="trailing" secondItem="ntv-VZ-B7y" secondAttribute="trailing" type="default" id="pag-fG-W26"/>
-                            <constraint firstAttribute="trailing" secondItem="ZSQ-I1-m7i" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="qUf-u6-PvL"/>
+                            <constraint firstItem="ZSQ-I1-m7i" firstAttribute="top" secondItem="17" secondAttribute="top" constant="318" id="qRb-28-bif"/>
                             <constraint firstItem="vQp-4d-OGI" firstAttribute="baseline" secondItem="ntv-VZ-B7y" secondAttribute="baseline" type="default" id="qxn-6k-dtW"/>
                             <constraint firstItem="cC4-At-2dk" firstAttribute="leading" secondItem="Dtf-K7-ZaB" secondAttribute="leading" type="default" id="tqf-J1-WIa"/>
                             <constraint firstAttribute="bottom" secondItem="yfs-qa-0d9" secondAttribute="bottom" constant="84" id="vzM-7M-beg"/>
                             <constraint firstItem="hZG-qb-asA" firstAttribute="top" secondItem="9ic-Jw-ItZ" secondAttribute="top" type="default" id="w50-TN-Wxq"/>
+                            <constraint firstItem="Pfe-mH-4XW" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="250" id="wjA-R8-lth"/>
                             <constraint firstItem="g1j-Nb-aB1" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" type="default" id="yZ3-ij-vgJ"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="first.png" id="7"/>
                     <connections>
+                        <outlet property="loggedInUsernameLabel" destination="Pfe-mH-4XW" id="vfd-QT-dud"/>
                         <outlet property="loginBtn" destination="a9H-Ti-8vm" id="0X1-g0-a3B"/>
                         <outlet property="loginLabel" destination="cC4-At-2dk" id="K50-Eb-Adu"/>
                         <outlet property="loginPassword" destination="c8G-Cz-QLB" id="IgY-8i-Lgp"/>
@@ -549,7 +561,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKP-PR-hyJ">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="246" id="BCw-cR-oMv"/>
+                                    <constraint firstAttribute="height" constant="260" id="3MH-zv-hUC"/>
                                     <constraint firstAttribute="width" constant="734" id="KpM-LI-GPa"/>
                                 </constraints>
                                 <string key="text">Are you frustrated with your current cycling or running routine? Do you find it difficult to keep track of your progress? If so, you're in luck! CardioQuest lets amateur athletes track their workouts effortlessly.
@@ -567,7 +579,7 @@ Features
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMD-Sx-2qd">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="199" id="bke-ec-uji"/>
+                                    <constraint firstAttribute="height" constant="214" id="EeP-Rc-Wh2"/>
                                 </constraints>
                                 <string key="text">CardioQuest is developed by a team of students at the University of Manitoba:
 
@@ -603,13 +615,13 @@ Features
                             <constraint firstAttribute="trailing" secondItem="cMD-Sx-2qd" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="39c-kC-zOk"/>
                             <constraint firstItem="LaR-Xv-JFL" firstAttribute="leading" secondItem="mzX-oc-DEr" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="4uR-0S-QN9"/>
                             <constraint firstItem="v0l-Xg-S5i" firstAttribute="top" secondItem="mzX-oc-DEr" secondAttribute="top" type="default" id="KBf-Zq-m7S"/>
-                            <constraint firstItem="cMD-Sx-2qd" firstAttribute="centerY" secondItem="mzX-oc-DEr" secondAttribute="centerY" type="default" id="MiU-3P-ghZ"/>
                             <constraint firstItem="v0l-Xg-S5i" firstAttribute="trailing" secondItem="mzX-oc-DEr" secondAttribute="trailing" type="default" id="RMY-XN-Cnw"/>
-                            <constraint firstItem="1cA-gz-vwb" firstAttribute="top" secondItem="kZz-rn-wOX" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Wcn-HK-hYg"/>
+                            <constraint firstItem="1cA-gz-vwb" firstAttribute="top" secondItem="kZz-rn-wOX" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="RTP-8V-qRl"/>
+                            <constraint firstAttribute="bottom" secondItem="1cA-gz-vwb" secondAttribute="bottom" constant="46" id="W0m-vS-ppA"/>
                             <constraint firstAttribute="trailing" secondItem="LKP-PR-hyJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="YB2-Ol-QHQ"/>
                             <constraint firstItem="1cA-gz-vwb" firstAttribute="leading" secondItem="cMD-Sx-2qd" secondAttribute="leading" type="default" id="aVx-xP-rTK"/>
                             <constraint firstItem="LKP-PR-hyJ" firstAttribute="top" secondItem="LaR-Xv-JFL" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="bN5-tc-CPK"/>
-                            <constraint firstAttribute="bottom" secondItem="1cA-gz-vwb" secondAttribute="bottom" constant="67" id="hFP-BG-Dm5"/>
+                            <constraint firstItem="1xs-Qq-nVJ" firstAttribute="top" secondItem="mzX-oc-DEr" secondAttribute="top" constant="349" id="gxb-iq-gjp"/>
                             <constraint firstItem="cMD-Sx-2qd" firstAttribute="leading" secondItem="LKP-PR-hyJ" secondAttribute="leading" type="default" id="k5N-ra-603"/>
                             <constraint firstItem="LaR-Xv-JFL" firstAttribute="top" secondItem="mzX-oc-DEr" secondAttribute="top" constant="61" id="lrC-Rh-fwY"/>
                             <constraint firstItem="1xs-Qq-nVJ" firstAttribute="leading" secondItem="mzX-oc-DEr" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="oPs-cA-efK"/>
@@ -660,6 +672,10 @@ Features
         <class className="CDQHomeController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQHomeController.h"/>
             <relationships>
+                <relationship kind="action" name="login:"/>
+                <relationship kind="action" name="logout:"/>
+                <relationship kind="action" name="signup:"/>
+                <relationship kind="outlet" name="loggedInUsernameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="loginBtn" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="loginLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="loginPassword" candidateClass="UITextField"/>
@@ -701,6 +717,9 @@ Features
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -30,6 +30,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *loginLabel;
 @property (weak, nonatomic) IBOutlet UILabel *signupLabel;
 @property (weak, nonatomic) IBOutlet UILabel *loginResponseLabel;
+@property (weak, nonatomic) IBOutlet UILabel *loggedInUsernameLabel;
 
 @end
 
@@ -74,7 +75,8 @@
         [self.signupLastNameLabel setHidden:![self.signupLastNameLabel isHidden]];
         [self.loginLabel setHidden:![self.loginLabel isHidden]];
         [self.signupLabel setHidden:![self.signupLabel isHidden]];
-        //[self.loginResponseLabel setHidden:![self.loginResponseLabel isHidden]];
+        [self.loginResponseLabel setHidden:![self.loginResponseLabel isHidden]];
+        [self.loggedInUsernameLabel setHidden:![self.loggedInUsernameLabel isHidden]];
     }
     
 }
@@ -121,6 +123,7 @@
 {
     [super viewDidLoad];
     
+    [self.loggedInUsernameLabel setHidden:YES];
 	[self.logoutBtn setHidden:YES];
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"CardioQuestMain.jpeg"]];
     
