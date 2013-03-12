@@ -18,9 +18,12 @@ class AchievementsTest(unittest.TestCase):
 		achievement1 = Achievement("Title1", "desc1", "/images/a1.jpeg")
 		achievement2 = Achievement("Title2", "desc2", "/images/a2.jpeg")
 		achievement3 = Achievement("Title3", "desc3", "/images/a3.jpeg")	
+
 		athlete1 = Athlete(
-			"Joe",
-			"Smith",
+            "username",
+            "password",			
+            "Joe",
+			"Smith", 
 			"email@email.com",
 			"1980-11-23",
 			"desc1",
@@ -28,6 +31,8 @@ class AchievementsTest(unittest.TestCase):
 			"/pic.png"
 		)	
 		athlete2 = Athlete(
+            "username",
+            "password",		
 			"Joe",
 			"Smith",
 			"email@email.com",

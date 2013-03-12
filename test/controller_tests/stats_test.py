@@ -25,6 +25,8 @@ class StatsTest(unittest.TestCase):
 	# intialize the Athlete table with known values
 	database.session.add(
 	Athlete(
+        "username",
+        "password",
 	    "Test", 
 	    "Athlete", 
 	    "test@test.com", 

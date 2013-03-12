@@ -2,6 +2,7 @@ import unittest
 from modules import database
 from modules.transaction import commit_on_success
 from model.athlete import Athlete
+import datetime 
 
 class TransactionTests(unittest.TestCase):	
 
@@ -20,7 +21,7 @@ class TransactionTests(unittest.TestCase):
 			raise Exception()
 
 	def test_commit_on_success_commits_changes(self):
-		athlete = Athlete("firstname", "lastname", "a@a.a")
+		athlete = Athlete("username", "password", "firstname", "lastname", "a@a.a", "2012-11-11", "about_me", "address", "avatar")
 		self.commit_changes_unless_specified(athlete, True)
 
 		self.assertTrue(len(Athlete.query.all()) == 1)
@@ -30,7 +31,7 @@ class TransactionTests(unittest.TestCase):
 	def test_commit_on_success_rollbacks_changes(self):
 		with self.assertRaises(Exception):
 			self.commit_changes_unless_specified(
-				Athlete("firstname", "lastname", "a@a.a"),
+				Athlete("username", "password", "firstname", "lastname", "a@a.a", "2012-11-11", "about_me", "address", "avatar"),
 				False
 			)
 
