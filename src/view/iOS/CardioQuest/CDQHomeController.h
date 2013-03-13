@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CDQHomeController : UIViewController
+@interface CDQHomeController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end

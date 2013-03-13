@@ -27,6 +27,7 @@
 		D0C1EFEA16EAA30600EB2E21 /* CDQHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C1EFE916EAA30600EB2E21 /* CDQHomeController.m */; };
 		D0C1F02C16EAB96900EB2E21 /* CardioQuestMain.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D0C1F02A16EAB96900EB2E21 /* CardioQuestMain.jpeg */; };
 		D0C1F02D16EAB96900EB2E21 /* CardioQuestMain.acorn in Resources */ = {isa = PBXBuildFile; fileRef = D0C1F02B16EAB96900EB2E21 /* CardioQuestMain.acorn */; };
+		D0CC697516F105230016C12B /* CDQEventsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CC697416F105230016C12B /* CDQEventsController.m */; };
 		E461B6DF16EA700F00C43D87 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E461B6DE16EA700F00C43D87 /* ProfileViewController.m */; };
 		E461B6E216EA70B500C43D87 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E461B6E116EA70B500C43D87 /* CalendarViewController.m */; };
 		E4BEB5CD16E5361500DD4526 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BEB5CC16E5361500DD4526 /* UIKit.framework */; };
@@ -110,6 +111,8 @@
 		D0C1EFE916EAA30600EB2E21 /* CDQHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQHomeController.m; sourceTree = "<group>"; };
 		D0C1F02A16EAB96900EB2E21 /* CardioQuestMain.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CardioQuestMain.jpeg; sourceTree = "<group>"; };
 		D0C1F02B16EAB96900EB2E21 /* CardioQuestMain.acorn */ = {isa = PBXFileReference; lastKnownFileType = file; path = CardioQuestMain.acorn; sourceTree = "<group>"; };
+		D0CC697316F105230016C12B /* CDQEventsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQEventsController.h; sourceTree = "<group>"; };
+		D0CC697416F105230016C12B /* CDQEventsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQEventsController.m; sourceTree = "<group>"; };
 		E461B6DD16EA700F00C43D87 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		E461B6DE16EA700F00C43D87 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		E461B6E016EA70B500C43D87 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
@@ -294,6 +297,8 @@
 		E4BEB5D216E5361500DD4526 /* CardioQuest */ = {
 			isa = PBXGroup;
 			children = (
+				D0CC697316F105230016C12B /* CDQEventsController.h */,
+				D0CC697416F105230016C12B /* CDQEventsController.m */,
 				E4C8799D16EE615400C95D99 /* Classes */,
 				D0C1F02916EAB96800EB2E21 /* images */,
 				D0C1EFE816EAA30600EB2E21 /* CDQHomeController.h */,
@@ -530,6 +535,7 @@
 				E4C879C116EE615400C95D99 /* SBJsonParser.m in Sources */,
 				E4C879C216EE615400C95D99 /* SBJsonStreamWriterAccumulator.m in Sources */,
 				B196AF1A16F000AD00276B98 /* CDQGoalsViewController.m in Sources */,
+				D0CC697516F105230016C12B /* CDQEventsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
