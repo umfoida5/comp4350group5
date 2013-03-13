@@ -7,6 +7,8 @@
 //
 
 #import "ActivityViewController.h"
+#import "ASIHTTPRequest.h"
+#import "Classes/SBJson.h"
 
 @interface ActivityViewController ()
 
@@ -34,7 +36,7 @@
 	// Do any additional setup after loading the view.
     
     // Initialize table data
-    tableData = [NSArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
+    tableData = [NSArray arrayWithObjects:@"NO RECORDS", nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,7 +64,46 @@
     return cell;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/activities/update_datatable"];
+    
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    [request addRequestHeader:@"Accept" value:@"application/json"];
+    [request addRequestHeader:@"Content-Type" value:@"application/json"];
+    [request setDelegate:self];
+    [request startAsynchronous];
+}
 
+- (void)requestFinished:(ASIHTTPRequest *)request
+{
+    // Use when fetching text data
+    NSString *responseString = [request responseString];
+    NSLog(@"%@",responseString);
+    SBJsonParser *parser = [[SBJsonParser alloc]init];
+    NSMutableDictionary* jsonDictionary = [parser objectWithString:responseString];
+    NSMutableDictionary *dictionary = jsonDictionary[@"aaData"];
+    NSMutableArray *the_array = [NSMutableArray array];
+    
+    for (NSMutableDictionary *activity in dictionary)
+    {
+        NSMutableString* the_string = [[NSMutableString alloc]init];
+        [the_string appendFormat:@"(%@) %@: %@ km in %@ mins (Max Speed: %@ km/h)",
+            activity[@"date"],
+            activity[@"type"],
+            activity[@"distance"],
+            activity[@"duration"],
+            activity[@"max_speed"]];
+        [the_array addObject:the_string];
+    }
+    tableData = the_array;
+    
+    [self.activityTable reloadData];
+}
 
+- (void)requestFailed:(ASIHTTPRequest *)request
+{
+    NSError *error = [request error];
+}
 
 @end

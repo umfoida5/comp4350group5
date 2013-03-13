@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ActivityViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *activityTable;
 
 @end

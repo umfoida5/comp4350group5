@@ -1,8 +1,8 @@
 dependencies: \
-  /home/student/umlatkap/Desktop/comp4350group5/src/view/iOS/CardioQuest/ASIHTTPRequest/ASIDataCompressor.m \
-  /home/student/umlatkap/Desktop/comp4350group5/src/view/iOS/CardioQuest/ASIHTTPRequest/ASIDataCompressor.h \
-  /home/student/umlatkap/Desktop/comp4350group5/src/view/iOS/CardioQuest/ASIHTTPRequest/ASIHTTPRequest.h \
-  /home/student/umlatkap/Desktop/comp4350group5/src/view/iOS/CardioQuest/ASIHTTPRequest/ASIHTTPRequestConfig.h \
-  /home/student/umlatkap/Desktop/comp4350group5/src/view/iOS/CardioQuest/ASIHTTPRequest/ASIHTTPRequestDelegate.h \
-  /home/student/umlatkap/Desktop/comp4350group5/src/view/iOS/CardioQuest/ASIHTTPRequest/ASIProgressDelegate.h \
-  /home/student/umlatkap/Desktop/comp4350group5/src/view/iOS/CardioQuest/ASIHTTPRequest/ASICacheDelegate.h
+  /home/student/umbeatty/4350/comp4350group5/src/view/iOS/CardioQuest/ASIHTTPRequest/ASIDataCompressor.m \
+  /home/student/umbeatty/4350/comp4350group5/src/view/iOS/CardioQuest/ASIHTTPRequest/ASIDataCompressor.h \
+  /home/student/umbeatty/4350/comp4350group5/src/view/iOS/CardioQuest/ASIHTTPRequest/ASIHTTPRequest.h \
+  /home/student/umbeatty/4350/comp4350group5/src/view/iOS/CardioQuest/ASIHTTPRequest/ASIHTTPRequestConfig.h \
+  /home/student/umbeatty/4350/comp4350group5/src/view/iOS/CardioQuest/ASIHTTPRequest/ASIHTTPRequestDelegate.h \
+  /home/student/umbeatty/4350/comp4350group5/src/view/iOS/CardioQuest/ASIHTTPRequest/ASIProgressDelegate.h \
+  /home/student/umbeatty/4350/comp4350group5/src/view/iOS/CardioQuest/ASIHTTPRequest/ASICacheDelegate.h

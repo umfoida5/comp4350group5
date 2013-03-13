@@ -20,6 +20,7 @@
 		72975A8516ED1DBB00FC7DB8 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 72975A7816ED1DBB00FC7DB8 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		72975A8616ED1DBB00FC7DB8 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 72975A7A16ED1DBB00FC7DB8 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		72975A8B16ED1DC600FC7DB8 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 72975A8A16ED1DC600FC7DB8 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B196AF1A16F000AD00276B98 /* CDQGoalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B196AF1916F000AC00276B98 /* CDQGoalsViewController.m */; };
 		D0C1EFE016EA977F00EB2E21 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C1EFDF16EA977F00EB2E21 /* AboutViewController.m */; };
 		D0C1EFE716EA984300EB2E21 /* Ubuntu Orange.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D0C1EFE616EA984300EB2E21 /* Ubuntu Orange.jpg */; };
 		D0C1EFEA16EAA30600EB2E21 /* CDQHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C1EFE916EAA30600EB2E21 /* CDQHomeController.m */; };
@@ -40,7 +41,6 @@
 		E4BEB5E916E5361600DD4526 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4BEB5E716E5361600DD4526 /* MainStoryboard_iPad.storyboard */; };
 		E4BEB5EE16E5361600DD4526 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BEB5ED16E5361600DD4526 /* first.png */; };
 		E4BEB5F016E5361600DD4526 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BEB5EF16E5361600DD4526 /* first@2x.png */; };
-		E4BEB5F316E5361600DD4526 /* CDQSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BEB5F216E5361600DD4526 /* CDQSecondViewController.m */; };
 		E4BEB5F516E5361600DD4526 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BEB5F416E5361600DD4526 /* second.png */; };
 		E4BEB5F716E5361600DD4526 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BEB5F616E5361600DD4526 /* second@2x.png */; };
 		E4BEB5FF16E5361600DD4526 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BEB5FE16E5361600DD4526 /* SenTestingKit.framework */; };
@@ -100,6 +100,8 @@
 		72975A7E16ED1DBB00FC7DB8 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
 		72975A8916ED1DC600FC7DB8 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		72975A8A16ED1DC600FC7DB8 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		B196AF1816F000AC00276B98 /* CDQGoalsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQGoalsViewController.h; sourceTree = "<group>"; };
+		B196AF1916F000AC00276B98 /* CDQGoalsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQGoalsViewController.m; sourceTree = "<group>"; };
 		D0C1EFDE16EA977F00EB2E21 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		D0C1EFDF16EA977F00EB2E21 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		D0C1EFE616EA984300EB2E21 /* Ubuntu Orange.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Ubuntu Orange.jpg"; path = "../Ubuntu Orange.jpg"; sourceTree = "<group>"; };
@@ -128,8 +130,6 @@
 		E4BEB5E816E5361600DD4526 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		E4BEB5ED16E5361600DD4526 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = first.png; path = ../first.png; sourceTree = "<group>"; };
 		E4BEB5EF16E5361600DD4526 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "first@2x.png"; path = "../first@2x.png"; sourceTree = "<group>"; };
-		E4BEB5F116E5361600DD4526 /* CDQSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDQSecondViewController.h; sourceTree = "<group>"; };
-		E4BEB5F216E5361600DD4526 /* CDQSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDQSecondViewController.m; sourceTree = "<group>"; };
 		E4BEB5F416E5361600DD4526 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = second.png; path = ../second.png; sourceTree = "<group>"; };
 		E4BEB5F616E5361600DD4526 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "second@2x.png"; path = "../second@2x.png"; sourceTree = "<group>"; };
 		E4BEB5FD16E5361600DD4526 /* CardioQuestTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardioQuestTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -304,12 +304,12 @@
 				E4BEB5DC16E5361600DD4526 /* CDQAppDelegate.m */,
 				E4BEB5E416E5361600DD4526 /* MainStoryboard_iPhone.storyboard */,
 				E4BEB5E716E5361600DD4526 /* MainStoryboard_iPad.storyboard */,
+				B196AF1816F000AC00276B98 /* CDQGoalsViewController.h */,
+				B196AF1916F000AC00276B98 /* CDQGoalsViewController.m */,
 				E461B6E016EA70B500C43D87 /* CalendarViewController.h */,
 				E461B6E116EA70B500C43D87 /* CalendarViewController.m */,
 				E461B6DD16EA700F00C43D87 /* ProfileViewController.h */,
 				E461B6DE16EA700F00C43D87 /* ProfileViewController.m */,
-				E4BEB5F116E5361600DD4526 /* CDQSecondViewController.h */,
-				E4BEB5F216E5361600DD4526 /* CDQSecondViewController.m */,
 				E4DAFD0D16EA819300258D78 /* ActivityViewController.h */,
 				E4DAFD0E16EA819300258D78 /* ActivityViewController.m */,
 				E4BEB5D316E5361500DD4526 /* Supporting Files */,
@@ -503,7 +503,6 @@
 			files = (
 				E4BEB5D916E5361500DD4526 /* main.m in Sources */,
 				E4BEB5DD16E5361600DD4526 /* CDQAppDelegate.m in Sources */,
-				E4BEB5F316E5361600DD4526 /* CDQSecondViewController.m in Sources */,
 				E461B6DF16EA700F00C43D87 /* ProfileViewController.m in Sources */,
 				E461B6E216EA70B500C43D87 /* CalendarViewController.m in Sources */,
 				E4DAFD0F16EA819300258D78 /* ActivityViewController.m in Sources */,
@@ -530,6 +529,7 @@
 				E4C879C016EE615400C95D99 /* SBJsonStreamWriter.m in Sources */,
 				E4C879C116EE615400C95D99 /* SBJsonParser.m in Sources */,
 				E4C879C216EE615400C95D99 /* SBJsonStreamWriterAccumulator.m in Sources */,
+				B196AF1A16F000AD00276B98 /* CDQGoalsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

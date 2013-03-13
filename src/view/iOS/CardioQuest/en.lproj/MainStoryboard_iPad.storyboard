@@ -311,37 +311,37 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="Rz6-uf-M34">
-                                        <rect key="frame" x="0.0" y="22" width="301" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="301" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="hBd-Ye-pm5">
-                                        <rect key="frame" x="0.0" y="66" width="301" height="44"/>
+                                        <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="301" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="KzN-MM-gcu">
-                                        <rect key="frame" x="0.0" y="110" width="301" height="44"/>
+                                        <rect key="frame" x="0.0" y="110" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="301" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="KvZ-C8-8bQ">
-                                        <rect key="frame" x="0.0" y="154" width="301" height="44"/>
+                                        <rect key="frame" x="0.0" y="154" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="301" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -458,14 +458,34 @@
             </objects>
             <point key="canvasLocation" x="1616" y="-268"/>
         </scene>
-        <!--Second View Controller - Goals-->
+        <!--Goals View Controller - Goals-->
         <scene sceneID="13">
             <objects>
-                <viewController id="3" customClass="CDQSecondViewController" sceneMemberID="viewController">
+                <viewController id="3" customClass="CDQGoalsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="16">
                         <rect key="frame" x="0.0" y="20" width="768" height="955"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="nVP-T8-TA2">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="768" id="3dG-6M-fDz"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="Slf-ro-W53">
+                                        <rect key="frame" x="0.0" y="22" width="768" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="3" id="9E6-mf-fxg"/>
+                                </connections>
+                            </tableView>
                             <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23">
                                 <color key="tintColor" red="0.83137261870000001" green="0.26666668059999998" blue="0.094117656349999995" alpha="1" colorSpace="deviceRGB"/>
                                 <items>
@@ -475,13 +495,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="nVP-T8-TA2" firstAttribute="bottom" secondItem="16" secondAttribute="bottom" type="default" id="Jmg-Ed-dg5"/>
                             <constraint firstItem="23" firstAttribute="top" secondItem="16" secondAttribute="top" type="default" id="YQd-P8-ET5"/>
                             <constraint firstItem="23" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="eH6-Me-VTD"/>
                             <constraint firstItem="23" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="kTD-uS-vbp"/>
+                            <constraint firstItem="nVP-T8-TA2" firstAttribute="top" secondItem="23" secondAttribute="bottom" type="default" id="vJm-c4-532"/>
+                            <constraint firstItem="nVP-T8-TA2" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="-7" id="zTt-o8-GJY"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Goals" image="first.png" id="6"/>
                     <connections>
+                        <outlet property="goalsTable" destination="nVP-T8-TA2" id="O55-kH-kg1"/>
                         <outlet property="searchDisplayController" destination="J5c-Wo-dc2" id="GoE-f0-86b"/>
                     </connections>
                 </viewController>
@@ -495,7 +519,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="795" y="-268"/>
+            <point key="canvasLocation" x="803" y="-275"/>
         </scene>
         <!--Activity View Controller - Item-->
         <scene sceneID="s76-CC-oVt">
@@ -541,6 +565,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Activities" image="first.png" id="x4l-m2-bAM"/>
+                    <connections>
+                        <outlet property="activityTable" destination="KmJ-Q6-DS8" id="bRO-YG-4lc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cxg-Jc-FKx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -693,70 +720,6 @@ Features
     <resources>
         <image name="first.png" width="30" height="30"/>
     </resources>
-    <classes>
-        <class className="AboutViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
-        </class>
-        <class className="ActivityViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ActivityViewController.h"/>
-        </class>
-        <class className="CDQHomeController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQHomeController.h"/>
-            <relationships>
-                <relationship kind="action" name="login:"/>
-                <relationship kind="action" name="logout:"/>
-                <relationship kind="action" name="signup:"/>
-                <relationship kind="outlet" name="loggedInUsernameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="loginBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="loginLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="loginPassword" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="loginPasswordLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="loginResponseLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="loginUsername" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="loginUsernameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="logoutBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="signupBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="signupFirstName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="signupFirstNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="signupLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="signupLastName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="signupLastNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="signupPassword" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="signupPasswordLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="signupUsername" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="signupUsernameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="CDQSecondViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQSecondViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ProfileViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="aboutTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="addressField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="dobField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="emailField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="profileImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
