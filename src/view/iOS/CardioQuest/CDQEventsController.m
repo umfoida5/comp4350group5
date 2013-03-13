@@ -86,10 +86,10 @@
     for (NSMutableDictionary *event in dictionary)
     {
         NSMutableString* the_string = [[NSMutableString alloc]init];
-        [the_string appendFormat:@"(%@) %@ (%@) (%@km)",
-         event[@"date"],
-         event[@"description"],
-         event[@"city"],
+        [the_string appendFormat:@"(%@) %@... (%@) (%@km)",
+         event[@"event_date"],
+         [event[@"description"] substringWithRange:NSMakeRange(0, MIN([event[@"description"] length] , 35))],
+         event[@"location"],
          event[@"distance"]];
         [the_array addObject:the_string];
     }
