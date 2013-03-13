@@ -2,3 +2,8 @@
 *.swp
 *~
 *.DS_Store
+src/view/iOS/DerivedData/
+src/view/iOS/CardioQuest.xcodeproj/project.xcworkspace/xcuserdata/
+src/view/iOS/CardioQuest.xcodeproj/xcuserdata/
+._*
+
