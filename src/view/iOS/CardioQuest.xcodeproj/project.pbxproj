@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37A20CC216F0DDFE0011F30D /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37A20CC016F0DDFE0011F30D /* MainStoryboard_iPhone.storyboard */; };
 		72975A0016ED16C900FC7DB8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 729759FF16ED16C900FC7DB8 /* CFNetwork.framework */; };
 		72975A0216ED16D900FC7DB8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72975A0116ED16D900FC7DB8 /* SystemConfiguration.framework */; };
 		72975A0416ED16E300FC7DB8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72975A0316ED16E300FC7DB8 /* MobileCoreServices.framework */; };
@@ -37,7 +38,6 @@
 		E4BEB5DF16E5361600DD4526 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BEB5DE16E5361600DD4526 /* Default.png */; };
 		E4BEB5E116E5361600DD4526 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BEB5E016E5361600DD4526 /* Default@2x.png */; };
 		E4BEB5E316E5361600DD4526 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BEB5E216E5361600DD4526 /* Default-568h@2x.png */; };
-		E4BEB5E616E5361600DD4526 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4BEB5E416E5361600DD4526 /* MainStoryboard_iPhone.storyboard */; };
 		E4BEB5E916E5361600DD4526 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4BEB5E716E5361600DD4526 /* MainStoryboard_iPad.storyboard */; };
 		E4BEB5EE16E5361600DD4526 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BEB5ED16E5361600DD4526 /* first.png */; };
 		E4BEB5F016E5361600DD4526 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BEB5EF16E5361600DD4526 /* first@2x.png */; };
@@ -74,6 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37A20CC116F0DDFE0011F30D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = CardioQuest/en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		729759FF16ED16C900FC7DB8 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		72975A0116ED16D900FC7DB8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		72975A0316ED16E300FC7DB8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -126,7 +127,6 @@
 		E4BEB5DE16E5361600DD4526 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		E4BEB5E016E5361600DD4526 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		E4BEB5E216E5361600DD4526 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		E4BEB5E516E5361600DD4526 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		E4BEB5E816E5361600DD4526 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		E4BEB5ED16E5361600DD4526 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = first.png; path = ../first.png; sourceTree = "<group>"; };
 		E4BEB5EF16E5361600DD4526 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "first@2x.png"; path = "../first@2x.png"; sourceTree = "<group>"; };
@@ -299,10 +299,10 @@
 				D0C1EFE816EAA30600EB2E21 /* CDQHomeController.h */,
 				D0C1EFE916EAA30600EB2E21 /* CDQHomeController.m */,
 				D0C1EFDE16EA977F00EB2E21 /* AboutViewController.h */,
+				37A20CC016F0DDFE0011F30D /* MainStoryboard_iPhone.storyboard */,
 				D0C1EFDF16EA977F00EB2E21 /* AboutViewController.m */,
 				E4BEB5DB16E5361500DD4526 /* CDQAppDelegate.h */,
 				E4BEB5DC16E5361600DD4526 /* CDQAppDelegate.m */,
-				E4BEB5E416E5361600DD4526 /* MainStoryboard_iPhone.storyboard */,
 				E4BEB5E716E5361600DD4526 /* MainStoryboard_iPad.storyboard */,
 				B196AF1816F000AC00276B98 /* CDQGoalsViewController.h */,
 				B196AF1916F000AC00276B98 /* CDQGoalsViewController.m */,
@@ -458,7 +458,6 @@
 				E4BEB5DF16E5361600DD4526 /* Default.png in Resources */,
 				E4BEB5E116E5361600DD4526 /* Default@2x.png in Resources */,
 				E4BEB5E316E5361600DD4526 /* Default-568h@2x.png in Resources */,
-				E4BEB5E616E5361600DD4526 /* MainStoryboard_iPhone.storyboard in Resources */,
 				E4BEB5E916E5361600DD4526 /* MainStoryboard_iPad.storyboard in Resources */,
 				E4BEB5EE16E5361600DD4526 /* first.png in Resources */,
 				E4BEB5F016E5361600DD4526 /* first@2x.png in Resources */,
@@ -467,6 +466,7 @@
 				D0C1EFE716EA984300EB2E21 /* Ubuntu Orange.jpg in Resources */,
 				D0C1F02C16EAB96900EB2E21 /* CardioQuestMain.jpeg in Resources */,
 				D0C1F02D16EAB96900EB2E21 /* CardioQuestMain.acorn in Resources */,
+				37A20CC216F0DDFE0011F30D /* MainStoryboard_iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,20 +552,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		37A20CC016F0DDFE0011F30D /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37A20CC116F0DDFE0011F30D /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		E4BEB5D516E5361500DD4526 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E4BEB5D616E5361500DD4526 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		E4BEB5E416E5361600DD4526 /* MainStoryboard_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E4BEB5E516E5361600DD4526 /* en */,
-			);
-			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
 		E4BEB5E716E5361600DD4526 /* MainStoryboard_iPad.storyboard */ = {
@@ -651,6 +652,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CardioQuest/CardioQuest-Prefix.pch";
 				INFOPLIST_FILE = "CardioQuest/CardioQuest-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRANK_LIBRARY_SEARCH_PATHS)",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"$(FRANK_LDFLAGS)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
