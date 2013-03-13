@@ -47,7 +47,7 @@
 		E4BEB60016E5361600DD4526 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BEB5CC16E5361500DD4526 /* UIKit.framework */; };
 		E4BEB60116E5361600DD4526 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BEB5CE16E5361500DD4526 /* Foundation.framework */; };
 		E4BEB60916E5361600DD4526 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4BEB60716E5361600DD4526 /* InfoPlist.strings */; };
-		E4BEB60C16E5361700DD4526 /* CardioQuestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BEB60B16E5361700DD4526 /* CardioQuestTests.m */; };
+		E4BEB60C16E5361700DD4526 /* CDQHomeController_test.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BEB60B16E5361700DD4526 /* CDQHomeController_test.m */; };
 		E4C879B716EE615400C95D99 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C879A016EE615400C95D99 /* SBJsonTokeniser.m */; };
 		E4C879B816EE615400C95D99 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C879A116EE615400C95D99 /* SBJsonUTF8Stream.m */; };
 		E4C879B916EE615400C95D99 /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C879A216EE615400C95D99 /* SBJsonStreamParserAccumulator.m */; };
@@ -136,8 +136,8 @@
 		E4BEB5FE16E5361600DD4526 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		E4BEB60616E5361600DD4526 /* CardioQuestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CardioQuestTests-Info.plist"; sourceTree = "<group>"; };
 		E4BEB60816E5361600DD4526 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E4BEB60A16E5361700DD4526 /* CardioQuestTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardioQuestTests.h; sourceTree = "<group>"; };
-		E4BEB60B16E5361700DD4526 /* CardioQuestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardioQuestTests.m; sourceTree = "<group>"; };
+		E4BEB60A16E5361700DD4526 /* CDQHomeController_test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDQHomeController_test.h; sourceTree = "<group>"; };
+		E4BEB60B16E5361700DD4526 /* CDQHomeController_test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDQHomeController_test.m; sourceTree = "<group>"; };
 		E4C8799E16EE615400C95D99 /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
 		E4C8799F16EE615400C95D99 /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterState.h; sourceTree = "<group>"; };
 		E4C879A016EE615400C95D99 /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
@@ -334,8 +334,8 @@
 		E4BEB60416E5361600DD4526 /* CardioQuestTests */ = {
 			isa = PBXGroup;
 			children = (
-				E4BEB60A16E5361700DD4526 /* CardioQuestTests.h */,
-				E4BEB60B16E5361700DD4526 /* CardioQuestTests.m */,
+				E4BEB60A16E5361700DD4526 /* CDQHomeController_test.h */,
+				E4BEB60B16E5361700DD4526 /* CDQHomeController_test.m */,
 				E4BEB60516E5361600DD4526 /* Supporting Files */,
 			);
 			path = CardioQuestTests;
@@ -537,7 +537,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4BEB60C16E5361700DD4526 /* CardioQuestTests.m in Sources */,
+				E4BEB60C16E5361700DD4526 /* CDQHomeController_test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

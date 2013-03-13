@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 comp4350group5. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import "CDQHomeController.h"
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
@@ -35,15 +36,22 @@
 @end
 
 @implementation CDQHomeController
-- (IBAction)login:(id)sender
+
+- (void)loginRequest:(NSString*)username password:(NSString*)password
 {
     NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/login/do_login"];
     
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
-    [request addPostValue:_loginUsername.text forKey:@"username"];
-    [request addPostValue:_loginPassword.text forKey:@"pw"];
+    [request addPostValue:username forKey:@"username"];
+    [request addPostValue:password forKey:@"pw"];
     [request setDelegate:self];
     [request startAsynchronous];
+}
+
+
+- (IBAction)login:(id)sender
+{
+    [self loginRequest:_loginUsername.text password:_loginPassword.text];
 }
 
 - (void)requestFinished:(ASIHTTPRequest *)request

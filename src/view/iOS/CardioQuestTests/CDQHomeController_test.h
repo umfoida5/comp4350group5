@@ -8,6 +8,6 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface CardioQuestTests : SenTestCase
+@interface CDQHomeController_test : SenTestCase
 
 @end
