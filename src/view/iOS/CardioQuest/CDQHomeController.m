@@ -85,6 +85,7 @@
 {
     // TODO: handle error
     NSError *error = [request error];
+    self.loginResponseLabel.text = [error localizedDescription];
 }
 
 - (IBAction)signup:(id)sender
