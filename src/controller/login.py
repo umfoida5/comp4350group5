@@ -31,6 +31,7 @@ class Login:
 				myCookie = cherrypy.response.cookie
 				myCookie['name'] = username
 				myCookie['name']['path'] = '/'
+				myCookie['name']['max-age'] = 3600
 				
 				if not just_created:
 					self.__update_tables_athlete_id(old_id, athlete.id)
@@ -47,9 +48,15 @@ class Login:
 		athlete = Athlete(None, None, "FirstName", "LastName")
 		db_session.add(athlete)
 		db_session.commit()
-		cherrypy.response.cookie['name'] = ''
-		cherrypy.response.cookie['name']['expires'] = 0
 		cherrypy.session['id'] = athlete.id
+		oldCookie = cherrypy.request.cookie
+		myCookie = cherrypy.response.cookie
+		
+		for name in oldCookie.keys():
+			myCookie[name] = name
+			myCookie[name]['path'] = '/'
+      			myCookie[name]['max-age'] = 0
+		
 		return "Logout was successful."
 
 	@commit_on_success 

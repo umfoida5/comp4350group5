@@ -17,12 +17,22 @@
   <script src="../js/jquery.cookie.js"></script>
   <script>
     $(document).ready(function() {
-    var username = $.cookie("name");
-    if (username != undefined)
-    {
-    	$("#logged-in-username").text("Logged in as " + username);
-    	$("#login-button").text("Logout");
-    }
+    	var username = $.cookie("name");
+    	if (username != undefined)
+    	{
+    		$("#logged-in-username").text("Logged in as " + username);
+    		$("#login-button").hide();
+    	}
+    	else
+    	{
+    		$("#logout-button").hide();
+    		$("#logged-in-username").hide();
+    	}
+
+    	$("#logout-button").click(function() {
+        	$.post("login/do_logout");
+        	//alert("Done logout");
+        } );
 
     } );
   	</script>
@@ -61,6 +71,7 @@
               <ul class="nav pull-right">
               	<li><a id="logged-in-username"></a></li>
                 <li><a id="login-button" href="../login">Login</a></li>
+                <li><a id="logout-button" href="../">Logout</a></li>
               </ul>
             </div>
           </div>
