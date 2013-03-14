@@ -37,11 +37,17 @@
 @implementation CDQHomeController
 - (IBAction)login:(id)sender
 {
-    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/login/do_login"];
+    //ec2-107-21-196-190.compute-1.amazonaws.com:8000
+    NSURL *url = [NSURL URLWithString:@"http://localhost:8080/login/do_login"];
     
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
-    [request addPostValue:_loginUsername.text forKey:@"username"];
-    [request addPostValue:_loginPassword.text forKey:@"pw"];
+    [request addPostValue:self.loginUsername.text forKey:@"username"];
+    [request addPostValue:self.loginPassword.text forKey:@"pw"];
+    [request setUseKeychainPersistence:YES];
+    [request setUsername:self.loginUsername.text];
+    [request setPassword:self.loginPassword.text];
+    [request setUseSessionPersistence:YES];
+    
     [request setDelegate:self];
     [request startAsynchronous];
 }
@@ -78,7 +84,6 @@
         [self.loginResponseLabel setHidden:![self.loginResponseLabel isHidden]];
         [self.loggedInUsernameLabel setHidden:![self.loggedInUsernameLabel isHidden]];
     }
-    
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request
