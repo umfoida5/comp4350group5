@@ -2,6 +2,7 @@ import unittest, datetime
 from modules import database
 from controller.login import Login
 from model.athlete import Athlete
+from Cookie import SimpleCookie
 
 class LoginTest(unittest.TestCase):
 	login_controller = Login()
@@ -101,11 +102,28 @@ class LoginTest(unittest.TestCase):
 		self.assertEqual("justin", athlete.first_name)
 		self.assertEqual("fdart", athlete.last_name)
 
-
-
-
-
-
-
-
-
+	def test_logout_success(self):
+		old_id = cherrypy.session.get('id')
+	
+		self.populate_database_with_test_data()
+		
+		#test that cookie is created correctly
+		self.login_controller.do_login("ben", "anypassword")
+		oldCookie = cherrypy.request.cookie
+		
+		for name in oldCookie.keys():
+			i=i+1
+		
+		self.assertEqual(2,i)
+		
+		#test that cookie is deleted correctly
+		self.login_controller.do_logout()
+		
+		for name in oldCookie.keys():
+			i=i+1
+				
+		self.assertEqual(1,i)
+		
+		#test that session id is the same and session variable(s) are set back to default 
+		self.assertEqual(old_id, cherrypy.session.get('id'))
+		self.assertEqual("true", cherrypy.session['tempUser'])
