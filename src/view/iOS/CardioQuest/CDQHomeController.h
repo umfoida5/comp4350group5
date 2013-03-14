@@ -11,4 +11,5 @@
 @interface CDQHomeController : UIViewController
     - (IBAction)login:(id)sender;
     - (void)loginRequest:(NSString*)username password:(NSString*)password;
+    - (NSString *) getLoginLabelText;
 @end

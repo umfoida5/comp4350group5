@@ -48,6 +48,10 @@
     [request startAsynchronous];
 }
 
+- (NSString *) getLoginLabelText
+{
+    return _loginResponseLabel.text;
+}
 
 - (IBAction)login:(id)sender
 {
