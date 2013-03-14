@@ -30,8 +30,10 @@
     	}
 
     	$("#logout-button").click(function() {
-        	$.post("login/do_logout");
-        	//alert("Done logout");
+  			$.post("../login/do_logout", function() {
+  				location.reload();
+
+  			} );
         } );
 
     } );
@@ -71,7 +73,7 @@
               <ul class="nav pull-right">
               	<li><a id="logged-in-username"></a></li>
                 <li><a id="login-button" href="../login">Login</a></li>
-                <li><a id="logout-button" href="../">Logout</a></li>
+                <li><a id="logout-button" style="cursor: pointer">Logout</a></li>
               </ul>
             </div>
           </div>
