@@ -27,8 +27,15 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    [self.profileImage setImage:[UIImage imageNamed:@"default_profile_pic.png"]];
     NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/profiles/athlete"];
-    
+    [self sendRequest:url];
+    url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/achievements/get_unlocked_achievements"];
+    //[self sendRequest:url];
+}
+
+- (void)sendRequest:(NSURL *)url
+{
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request addRequestHeader:@"Accept" value:@"application/json"];
     [request addRequestHeader:@"Content-Type" value:@"application/json"];
@@ -44,12 +51,20 @@
     SBJsonParser *parser = [[SBJsonParser alloc]init];
     NSMutableDictionary* jsonDictionary = [parser objectWithString:responseString];
     NSMutableString* name = [[NSMutableString alloc]init];
-    [name appendFormat:@"%@ %@",jsonDictionary[@"first_name"],jsonDictionary[@"last_name"]];
-    self.nameLabel.text = name;
-    self.dobField.text = jsonDictionary[@"birth_date"];
-    self.addressField.text = jsonDictionary[@"address"];
-    self.emailField.text = jsonDictionary[@"email"];
-    self.aboutTextView.text = jsonDictionary[@"about_me"];
+    
+    if ([jsonDictionary objectForKey:@"first_name"]) {
+        [name appendFormat:@"%@ %@",jsonDictionary[@"first_name"],jsonDictionary[@"last_name"]];
+        self.nameLabel.text = name;
+        self.dobField.text = jsonDictionary[@"birth_date"];
+        self.addressField.text = jsonDictionary[@"address"];
+        self.emailField.text = jsonDictionary[@"email"];
+        self.aboutTextView.text = jsonDictionary[@"about_me"];
+    }
+    else if([jsonDictionary objectForKey:@"title"]){
+        
+        
+    }
+    
     //BOOL stop = YES;
 }
 

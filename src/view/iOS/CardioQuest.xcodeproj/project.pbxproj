@@ -61,6 +61,7 @@
 		E4C879C016EE615400C95D99 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C879B316EE615400C95D99 /* SBJsonStreamWriter.m */; };
 		E4C879C116EE615400C95D99 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C879B416EE615400C95D99 /* SBJsonParser.m */; };
 		E4C879C216EE615400C95D99 /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C879B616EE615400C95D99 /* SBJsonStreamWriterAccumulator.m */; };
+		E4D8688D16F2725900C16ED7 /* default_profile_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = E4D8688C16F2725900C16ED7 /* default_profile_pic.png */; };
 		E4DAFD0F16EA819300258D78 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DAFD0E16EA819300258D78 /* ActivityViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -166,6 +167,7 @@
 		E4C879B416EE615400C95D99 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		E4C879B516EE615400C95D99 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
 		E4C879B616EE615400C95D99 /* SBJsonStreamWriterAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterAccumulator.m; sourceTree = "<group>"; };
+		E4D8688C16F2725900C16ED7 /* default_profile_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_profile_pic.png; sourceTree = "<group>"; };
 		E4DAFD0D16EA819300258D78 /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
 		E4DAFD0E16EA819300258D78 /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -247,6 +249,7 @@
 		D0C1F02916EAB96800EB2E21 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				E4D8688C16F2725900C16ED7 /* default_profile_pic.png */,
 				E4BEB5F416E5361600DD4526 /* second.png */,
 				E4BEB5F616E5361600DD4526 /* second@2x.png */,
 				E4BEB5ED16E5361600DD4526 /* first.png */,
@@ -472,6 +475,7 @@
 				D0C1F02C16EAB96900EB2E21 /* CardioQuestMain.jpeg in Resources */,
 				D0C1F02D16EAB96900EB2E21 /* CardioQuestMain.acorn in Resources */,
 				37A20CC216F0DDFE0011F30D /* MainStoryboard_iPhone.storyboard in Resources */,
+				E4D8688D16F2725900C16ED7 /* default_profile_pic.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
