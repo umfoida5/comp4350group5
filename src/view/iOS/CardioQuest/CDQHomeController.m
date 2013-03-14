@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 comp4350group5. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import "CDQHomeController.h"
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
@@ -35,20 +36,30 @@
 @end
 
 @implementation CDQHomeController
-- (IBAction)login:(id)sender
+
+- (void)loginRequest:(NSString*)username password:(NSString*)password
 {
     NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/login/do_login"];
     
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
-    [request addPostValue:self.loginUsername.text forKey:@"username"];
-    [request addPostValue:self.loginPassword.text forKey:@"pw"];
+    [request addPostValue:username forKey:@"username"];
+    [request addPostValue:password forKey:@"pw"];
     [request setUseKeychainPersistence:YES];
-    [request setUsername:self.loginUsername.text];
-    [request setPassword:self.loginPassword.text];
+    [request setUsername:username];
+    [request setPassword:password];
     [request setUseSessionPersistence:YES];
-    
     [request setDelegate:self];
     [request startAsynchronous];
+}
+
+- (NSString *) getLoginLabelText
+{
+    return _loginResponseLabel.text;
+}
+
+- (IBAction)login:(id)sender
+{
+    [self loginRequest:_loginUsername.text password:_loginPassword.text];
 }
 
 - (void)requestFinished:(ASIHTTPRequest *)request

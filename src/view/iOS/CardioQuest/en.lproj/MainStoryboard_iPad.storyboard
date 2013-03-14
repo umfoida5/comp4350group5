@@ -7,7 +7,7 @@
         <!--Home Controller - Home-->
         <scene sceneID="11">
             <objects>
-                <viewController id="2" customClass="CDQHomeController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" id="2" customClass="CDQHomeController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="17">
                         <rect key="frame" x="0.0" y="20" width="768" height="955"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
