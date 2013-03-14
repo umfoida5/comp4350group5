@@ -6,6 +6,8 @@ from model.achievement import Achievement
 from model.achievement import UnlockedAchievement
 from model.activity import Activity
 from model.event import Event
+from model.health import Health
+from model.goal import Goal
 import datetime
 
 database.init()
