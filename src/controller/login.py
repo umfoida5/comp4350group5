@@ -63,13 +63,18 @@ class Login:
 	@cherrypy.expose
 	def signup(self, username, pw, firstName, lastName):
 		db_session = database.session
-		athlete = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
-		athlete.username = username
-		athlete.password = pw
-		athlete.first_name = firstName
-		athlete.last_name = lastName
-		db_session.flush()
-		return self.do_login(username, pw, True)    
+		return_message = "Username already exists. Please enter a new username."
+		
+		if Athlete.query.filter_by(username=username).all() == []:
+			athlete = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
+			athlete.username = username
+			athlete.password = pw
+			athlete.first_name = firstName
+			athlete.last_name = lastName
+			db_session.flush()
+			return_message = self.do_login(username, pw, True)    
+		
+		return return_message
 
 	def __update_tables_athlete_id(self, old_id, new_id):
 		db_session = database.session

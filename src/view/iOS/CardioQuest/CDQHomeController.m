@@ -32,14 +32,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *signupLabel;
 @property (weak, nonatomic) IBOutlet UILabel *loginResponseLabel;
 @property (weak, nonatomic) IBOutlet UILabel *loggedInUsernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *signupResponseLabel;
 
 @end
 
 @implementation CDQHomeController
 
 - (void)loginRequest:(NSString*)username password:(NSString*)password
-{
-    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/login/do_login"];
+{//ec2-107-21-196-190.compute-1.amazonaws.com:8000
+    NSURL *url = [NSURL URLWithString:@"http://localhost:8080/login/do_login"];
     
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request addPostValue:username forKey:@"username"];
@@ -67,8 +68,15 @@
     // Use when fetching text data
     NSString *responseString = [request responseString];
     
-    // Display server response about login/logout validity
-    self.loginResponseLabel.text = responseString;
+    if([responseString isEqual: @"Username already exists. Please enter a new username."])
+    {        
+        self.signupResponseLabel.text = responseString;
+    }
+    else
+    {
+        self.signupResponseLabel.text = @"Press the Sign Up button to Sign Up :)";
+        self.loginResponseLabel.text = responseString;
+    }
     
     // Toggle visibility for all UI elements for login/logout if successful
     if([responseString isEqual: @"Login was successful."] || [responseString isEqualToString:@"Logout was successful."]) {
@@ -104,8 +112,8 @@
 }
 
 - (IBAction)signup:(id)sender
-{
-    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/login/signup"];
+{//ec2-107-21-196-190.compute-1.amazonaws.com
+    NSURL *url = [NSURL URLWithString:@"http://localhost:8080/login/signup"];
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request addPostValue:_signupUsername.text forKey:@"username"];
     [request addPostValue:_signupPassword.text forKey:@"pw"];
