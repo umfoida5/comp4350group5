@@ -2,7 +2,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from transaction import commit_on_success
-import sqlalchemy
 
 Base = declarative_base()
 
@@ -25,9 +24,6 @@ def recreate_tables():
 
 @commit_on_success
 def empty_database():
-    #Drop the alembic version table
-    sqlalchemy.schema.DropTable("alembic_version")
-    #Drop the rest of the tables
     for table in reversed(Base.metadata.sorted_tables):
         session.execute(table.delete())
 
