@@ -7,6 +7,7 @@ from model.athlete import Athlete
 from model.achievement import UnlockedAchievement
 from model.activity import Activity
 from model.goal import Goal
+from model.health import Health
 from Cookie import SimpleCookie
 
 class Login:
@@ -93,3 +94,8 @@ class Login:
 		goals = Goal.query.filter_by(athlete_id = old_id)
 		for goal in goals:
 			goal.athlete_id = new_id
+			
+		#health table
+		healthRecords = Health.query.filter_by(athlete_id = old_id)
+		for health in healthRecords:
+			health.athlete_id = new_id
