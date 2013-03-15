@@ -39,8 +39,8 @@
 @implementation CDQHomeController
 
 - (void)loginRequest:(NSString*)username password:(NSString*)password
-{//ec2-107-21-196-190.compute-1.amazonaws.com:8000
-    NSURL *url = [NSURL URLWithString:@"http://localhost:8080/login/do_login"];
+{
+    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/login/do_login"];
     
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request addPostValue:username forKey:@"username"];
@@ -112,8 +112,8 @@
 }
 
 - (IBAction)signup:(id)sender
-{//ec2-107-21-196-190.compute-1.amazonaws.com
-    NSURL *url = [NSURL URLWithString:@"http://localhost:8080/login/signup"];
+{
+    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/login/signup"];
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request addPostValue:_signupUsername.text forKey:@"username"];
     [request addPostValue:_signupPassword.text forKey:@"pw"];
