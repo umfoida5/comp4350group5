@@ -9,7 +9,10 @@
 #import "ProfileViewController.h"
 #import "ASIHTTPRequest.h"
 #import "Classes/SBJson.h"
-@interface ProfileViewController ()
+#import "ASINetworkQueue.h"
+@interface ProfileViewController (){
+    ASINetworkQueue *networkQueue;
+}
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
@@ -18,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *addressField;
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 @property (weak, nonatomic) IBOutlet UITextView *aboutTextView;
-
+@property (retain) ASINetworkQueue *networkQueue;
 
 @end
 
@@ -28,19 +31,23 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [self.profileImage setImage:[UIImage imageNamed:@"default_profile_pic.png"]];
+    
     NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/profiles/athlete"];
-    [self sendRequest:url];
-    url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/achievements/get_unlocked_achievements"];
-    //[self sendRequest:url];
+    [self sendRequest:url:@"start"];
+   
+    //[[self networkQueue]go];
 }
 
-- (void)sendRequest:(NSURL *)url
+- (void)sendRequest:(NSURL *)url : (NSString *) userInfo
 {
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    //[[self networkQueue] addOperation:request];
     [request addRequestHeader:@"Accept" value:@"application/json"];
     [request addRequestHeader:@"Content-Type" value:@"application/json"];
+    [request setUserInfo:[NSDictionary dictionaryWithObject:@"next" forKey:@"type"]];
     [request setDelegate:self];
     [request startAsynchronous];
+    
 }
 
 - (void)requestFinished:(ASIHTTPRequest *)request
@@ -51,20 +58,26 @@
     SBJsonParser *parser = [[SBJsonParser alloc]init];
     NSMutableDictionary* jsonDictionary = [parser objectWithString:responseString];
     NSMutableString* name = [[NSMutableString alloc]init];
+    if (jsonDictionary != nil) {
+        
     
-    if ([jsonDictionary objectForKey:@"first_name"]) {
+        
         [name appendFormat:@"%@ %@",jsonDictionary[@"first_name"],jsonDictionary[@"last_name"]];
         self.nameLabel.text = name;
         self.dobField.text = jsonDictionary[@"birth_date"];
         self.addressField.text = jsonDictionary[@"address"];
         self.emailField.text = jsonDictionary[@"email"];
         self.aboutTextView.text = jsonDictionary[@"about_me"];
-    }
-    else if([jsonDictionary objectForKey:@"title"]){
+       
+        for (NSMutableDictionary *achieves in jsonDictionary[@"achievements"]) {
+            NSLog(@"%@", achieves[@"image_url"]);
+        }
+
+            
+            
         
         
     }
-    
     //BOOL stop = YES;
 }
 
@@ -98,5 +111,7 @@
 {
     [self.view endEditing:YES];
 }
+
+
 
 @end
