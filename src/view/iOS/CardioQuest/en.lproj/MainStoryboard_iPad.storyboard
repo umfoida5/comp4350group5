@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -41,7 +41,7 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ntv-VZ-B7y">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="206" id="vdx-i0-JKD"/>
+                                    <constraint firstAttribute="height" constant="30" id="Azj-cA-9Uc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
@@ -52,7 +52,6 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vUy-dC-bTZ">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="206" id="GHX-Iz-b39"/>
-                                    <constraint firstAttribute="height" constant="30" id="Q0s-sf-Hlz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -61,9 +60,6 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ic-Jw-ItZ">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="206" id="91U-mu-KWW"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
@@ -89,14 +85,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQp-4d-OGI">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="eoX-kO-veS"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="First Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6c-Sn-Wlb">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="YG6-nZ-UqI"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -183,8 +179,8 @@
                             </navigationBar>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Press the Login button to Login :)" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSQ-I1-m7i">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="320" id="dWt-YA-AKn"/>
-                                    <constraint firstAttribute="width" constant="728" id="gWh-G5-toi"/>
+                                    <constraint firstAttribute="height" constant="54" id="Eis-cZ-smr"/>
+                                    <constraint firstAttribute="width" constant="353" id="tUD-5b-pKl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -199,53 +195,67 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Press the Sign up button to Sign Up :)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aw2-5A-N3z">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="oSQ-Tk-um5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="9ic-Jw-ItZ" secondAttribute="trailing" constant="48" id="01P-jJ-7F1"/>
+                            <constraint firstItem="vQp-4d-OGI" firstAttribute="top" secondItem="ntv-VZ-B7y" secondAttribute="top" type="default" id="07Z-73-H72"/>
+                            <constraint firstItem="9ic-Jw-ItZ" firstAttribute="baseline" secondItem="ntv-VZ-B7y" secondAttribute="baseline" type="default" id="0Qr-lo-aSH"/>
                             <constraint firstItem="Dtf-K7-ZaB" firstAttribute="top" secondItem="17" secondAttribute="top" constant="295" id="0Th-qT-Swr"/>
-                            <constraint firstItem="ntv-VZ-B7y" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="169" id="3O9-93-Pkw"/>
-                            <constraint firstItem="yfs-qa-0d9" firstAttribute="centerX" secondItem="aa3-Hc-x2D" secondAttribute="centerX" type="default" id="6kl-jj-iGq"/>
-                            <constraint firstAttribute="bottom" secondItem="vUy-dC-bTZ" secondAttribute="bottom" constant="347" id="7RY-eN-ZnV"/>
+                            <constraint firstItem="9ic-Jw-ItZ" firstAttribute="trailing" secondItem="vUy-dC-bTZ" secondAttribute="trailing" type="default" id="3ir-9y-lJt"/>
                             <constraint firstItem="c8G-Cz-QLB" firstAttribute="leading" secondItem="Dtf-K7-ZaB" secondAttribute="leading" type="default" id="7pJ-mv-9HH"/>
+                            <constraint firstItem="9ic-Jw-ItZ" firstAttribute="leading" secondItem="vUy-dC-bTZ" secondAttribute="leading" type="default" id="8M6-h3-uxX"/>
+                            <constraint firstItem="yfs-qa-0d9" firstAttribute="leading" secondItem="aw2-5A-N3z" secondAttribute="leading" type="default" id="9eI-Ft-Dbm"/>
+                            <constraint firstItem="aa3-Hc-x2D" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="194" id="AIv-5k-NgI"/>
                             <constraint firstItem="cC4-At-2dk" firstAttribute="top" secondItem="17" secondAttribute="top" constant="217" id="Ahh-ib-Cpi"/>
+                            <constraint firstAttribute="bottom" secondItem="yfs-qa-0d9" secondAttribute="bottom" constant="237" id="Aoy-dx-7bD"/>
                             <constraint firstItem="Dtf-K7-ZaB" firstAttribute="trailing" secondItem="c8G-Cz-QLB" secondAttribute="trailing" type="default" id="C1p-cz-nVV"/>
-                            <constraint firstItem="yfs-qa-0d9" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="238" id="IIy-el-mUW"/>
-                            <constraint firstItem="aa3-Hc-x2D" firstAttribute="top" secondItem="17" secondAttribute="top" constant="369" id="IjK-5J-nAa"/>
-                            <constraint firstItem="G6c-Sn-Wlb" firstAttribute="top" secondItem="vUy-dC-bTZ" secondAttribute="top" type="default" id="Iug-2R-n3F"/>
-                            <constraint firstAttribute="bottom" secondItem="vQp-4d-OGI" secondAttribute="bottom" constant="288" id="Jqy-Es-Snd"/>
+                            <constraint firstItem="ZSQ-I1-m7i" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="290" id="DnJ-ow-YTH"/>
+                            <constraint firstItem="ntv-VZ-B7y" firstAttribute="leading" secondItem="f0j-1r-j1u" secondAttribute="leading" type="default" id="GoB-Xg-UGd"/>
                             <constraint firstItem="Dtf-K7-ZaB" firstAttribute="bottom" secondItem="W8l-Vd-Uu7" secondAttribute="bottom" type="default" id="LzS-NA-8Wn"/>
                             <constraint firstItem="g1j-Nb-aB1" firstAttribute="leading" secondItem="17" secondAttribute="leading" type="default" id="MIl-dp-FSV"/>
-                            <constraint firstAttribute="bottom" secondItem="ntv-VZ-B7y" secondAttribute="bottom" constant="283" id="Nbr-TK-0Ke"/>
+                            <constraint firstItem="BLo-J1-bSi" firstAttribute="leading" secondItem="vQp-4d-OGI" secondAttribute="leading" type="default" id="Mxh-U7-Mxz"/>
                             <constraint firstItem="aa3-Hc-x2D" firstAttribute="baseline" secondItem="a9H-Ti-8vm" secondAttribute="baseline" type="default" id="QwC-2W-xvE"/>
+                            <constraint firstAttribute="bottom" secondItem="ntv-VZ-B7y" secondAttribute="bottom" constant="303" id="Rt2-7W-s7O"/>
                             <constraint firstItem="dWz-QH-lgt" firstAttribute="top" secondItem="17" secondAttribute="top" constant="361" id="SwO-Ol-toW"/>
+                            <constraint firstAttribute="bottom" secondItem="f0j-1r-j1u" secondAttribute="bottom" constant="350" id="TQf-dv-QZ2"/>
                             <constraint firstItem="G6c-Sn-Wlb" firstAttribute="baseline" secondItem="f0j-1r-j1u" secondAttribute="baseline" type="default" id="UIs-Ky-iRG"/>
-                            <constraint firstItem="f0j-1r-j1u" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="170" id="UYL-if-Z2Y"/>
-                            <constraint firstAttribute="bottom" secondItem="Lr4-K7-Ze9" secondAttribute="bottom" constant="410" id="Z3K-dN-8aY"/>
+                            <constraint firstAttribute="bottom" secondItem="Lr4-K7-Ze9" secondAttribute="bottom" constant="410" id="W6j-3O-VPr"/>
+                            <constraint firstItem="9ic-Jw-ItZ" firstAttribute="bottom" secondItem="ntv-VZ-B7y" secondAttribute="bottom" type="default" id="ZWt-no-Se9"/>
                             <constraint firstItem="G6c-Sn-Wlb" firstAttribute="leading" secondItem="hZG-qb-asA" secondAttribute="leading" type="default" id="ZgZ-mL-eMZ"/>
-                            <constraint firstAttribute="bottom" secondItem="yfs-qa-0d9" secondAttribute="bottom" constant="220" id="azY-fs-BV7"/>
+                            <constraint firstItem="f0j-1r-j1u" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="170" id="a4t-rA-CJt"/>
+                            <constraint firstItem="BLo-J1-bSi" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="70" id="bWB-vu-5hM"/>
                             <constraint firstItem="Pfe-mH-4XW" firstAttribute="centerX" secondItem="Lr4-K7-Ze9" secondAttribute="centerX" type="default" id="cyK-Er-r0T"/>
                             <constraint firstItem="BLo-J1-bSi" firstAttribute="top" secondItem="f0j-1r-j1u" secondAttribute="top" type="default" id="dFy-fN-y72"/>
                             <constraint firstItem="c8G-Cz-QLB" firstAttribute="top" secondItem="17" secondAttribute="top" constant="357" id="dvw-FG-Wnb"/>
-                            <constraint firstAttribute="bottom" secondItem="9ic-Jw-ItZ" secondAttribute="bottom" constant="289" id="eML-Rh-3GJ"/>
                             <constraint firstAttribute="trailing" secondItem="G6c-Sn-Wlb" secondAttribute="trailing" constant="275" id="edK-CI-jk5"/>
                             <constraint firstItem="G6c-Sn-Wlb" firstAttribute="baseline" secondItem="vUy-dC-bTZ" secondAttribute="baseline" type="default" id="fG8-ae-QEo"/>
                             <constraint firstItem="W8l-Vd-Uu7" firstAttribute="centerX" secondItem="dWz-QH-lgt" secondAttribute="centerX" type="default" id="gFW-sK-mam"/>
-                            <constraint firstItem="BLo-J1-bSi" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="70" id="hKu-zg-Qr1"/>
-                            <constraint firstItem="BLo-J1-bSi" firstAttribute="leading" secondItem="vQp-4d-OGI" secondAttribute="leading" type="default" id="iH6-cW-sU9"/>
+                            <constraint firstItem="aa3-Hc-x2D" firstAttribute="top" secondItem="17" secondAttribute="top" constant="369" id="gc5-E8-tmc"/>
                             <constraint firstItem="Pfe-mH-4XW" firstAttribute="top" secondItem="W8l-Vd-Uu7" secondAttribute="top" type="default" id="jLm-Uh-pAC"/>
                             <constraint firstAttribute="trailing" secondItem="vUy-dC-bTZ" secondAttribute="trailing" constant="49" id="jQT-no-crO"/>
                             <constraint firstItem="g1j-Nb-aB1" firstAttribute="top" secondItem="17" secondAttribute="top" type="default" id="k7G-p6-Qf7"/>
                             <constraint firstItem="c8G-Cz-QLB" firstAttribute="trailing" secondItem="a9H-Ti-8vm" secondAttribute="trailing" type="default" id="kQx-jo-tAp"/>
+                            <constraint firstItem="aw2-5A-N3z" firstAttribute="trailing" secondItem="yfs-qa-0d9" secondAttribute="trailing" type="default" id="keA-lI-bHk"/>
+                            <constraint firstAttribute="bottom" secondItem="aw2-5A-N3z" secondAttribute="bottom" constant="200" id="lQn-49-RXf"/>
+                            <constraint firstItem="hZG-qb-asA" firstAttribute="top" secondItem="9ic-Jw-ItZ" secondAttribute="top" type="default" id="mAU-qo-YWe"/>
                             <constraint firstItem="a9H-Ti-8vm" firstAttribute="leading" secondItem="W8l-Vd-Uu7" secondAttribute="leading" type="default" id="oAK-dJ-fpq"/>
-                            <constraint firstItem="ZSQ-I1-m7i" firstAttribute="top" secondItem="17" secondAttribute="top" constant="318" id="qRb-28-bif"/>
+                            <constraint firstItem="dWz-QH-lgt" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="224" id="oj8-rf-SXB"/>
+                            <constraint firstItem="yfs-qa-0d9" firstAttribute="centerX" secondItem="g1j-Nb-aB1" secondAttribute="centerX" type="default" id="pWf-wI-5Gb"/>
                             <constraint firstItem="vQp-4d-OGI" firstAttribute="baseline" secondItem="ntv-VZ-B7y" secondAttribute="baseline" type="default" id="qxn-6k-dtW"/>
-                            <constraint firstItem="dWz-QH-lgt" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="224" id="sLM-Sq-j11"/>
+                            <constraint firstItem="ntv-VZ-B7y" firstAttribute="trailing" secondItem="f0j-1r-j1u" secondAttribute="trailing" type="default" id="rQY-ke-dTw"/>
                             <constraint firstItem="cC4-At-2dk" firstAttribute="leading" secondItem="Dtf-K7-ZaB" secondAttribute="leading" type="default" id="tqf-J1-WIa"/>
-                            <constraint firstItem="ZSQ-I1-m7i" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="145" id="uvk-wt-7CC"/>
-                            <constraint firstItem="hZG-qb-asA" firstAttribute="top" secondItem="9ic-Jw-ItZ" secondAttribute="top" type="default" id="w50-TN-Wxq"/>
                             <constraint firstItem="Pfe-mH-4XW" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="250" id="wjA-R8-lth"/>
                             <constraint firstItem="g1j-Nb-aB1" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" type="default" id="yZ3-ij-vgJ"/>
+                            <constraint firstItem="ZSQ-I1-m7i" firstAttribute="bottom" secondItem="aa3-Hc-x2D" secondAttribute="bottom" type="default" id="ynV-c9-ey5"/>
+                            <constraint firstItem="hZG-qb-asA" firstAttribute="top" secondItem="ntv-VZ-B7y" secondAttribute="top" type="default" id="zFS-bH-xQa"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="first.png" id="7"/>
@@ -262,11 +272,12 @@
                         <outlet property="signupBtn" destination="yfs-qa-0d9" id="VUN-IP-s52"/>
                         <outlet property="signupFirstName" destination="vUy-dC-bTZ" id="NGZ-X6-Ub9"/>
                         <outlet property="signupFirstNameLabel" destination="G6c-Sn-Wlb" id="3hT-QW-emX"/>
-                        <outlet property="signupLabel" destination="Lr4-K7-Ze9" id="N3Y-lW-uIp"/>
+                        <outlet property="signupLabel" destination="aw2-5A-N3z" id="Bqd-LF-0Go"/>
                         <outlet property="signupLastName" destination="9ic-Jw-ItZ" id="hgx-KB-7qm"/>
                         <outlet property="signupLastNameLabel" destination="hZG-qb-asA" id="nu6-Ex-yIV"/>
                         <outlet property="signupPassword" destination="ntv-VZ-B7y" id="J2P-ts-nXV"/>
                         <outlet property="signupPasswordLabel" destination="vQp-4d-OGI" id="xks-NJ-xq3"/>
+                        <outlet property="signupResponseLabel" destination="aw2-5A-N3z" id="hRA-cR-6LL"/>
                         <outlet property="signupUsername" destination="f0j-1r-j1u" id="Pik-VG-chP"/>
                         <outlet property="signupUsernameLabel" destination="BLo-J1-bSi" id="z40-5y-Uo1"/>
                     </connections>
@@ -763,76 +774,6 @@ Features
     <resources>
         <image name="first.png" width="30" height="30"/>
     </resources>
-    <classes>
-        <class className="AboutViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
-        </class>
-        <class className="ActivityViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ActivityViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="activityTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="CDQEventsController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQEventsController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="eventsTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="CDQGoalsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQGoalsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="goalsTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="CDQHomeController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQHomeController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="loggedInUsernameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="loginBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="loginLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="loginPassword" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="loginPasswordLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="loginResponseLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="loginUsername" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="loginUsernameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="logoutBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="signupBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="signupFirstName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="signupFirstNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="signupLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="signupLastName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="signupLastNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="signupPassword" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="signupPasswordLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="signupUsername" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="signupUsernameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ProfileViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="aboutTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="addressField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="dobField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="emailField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="profileImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

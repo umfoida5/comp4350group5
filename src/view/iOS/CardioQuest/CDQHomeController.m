@@ -32,6 +32,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *signupLabel;
 @property (weak, nonatomic) IBOutlet UILabel *loginResponseLabel;
 @property (weak, nonatomic) IBOutlet UILabel *loggedInUsernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *signupResponseLabel;
 
 @end
 
@@ -67,8 +68,15 @@
     // Use when fetching text data
     NSString *responseString = [request responseString];
     
-    // Display server response about login/logout validity
-    self.loginResponseLabel.text = responseString;
+    if([responseString isEqual: @"Username already exists. Please enter a new username."])
+    {        
+        self.signupResponseLabel.text = responseString;
+    }
+    else
+    {
+        self.signupResponseLabel.text = @"Press the Sign Up button to Sign Up :)";
+        self.loginResponseLabel.text = responseString;
+    }
     
     // Toggle visibility for all UI elements for login/logout if successful
     if([responseString isEqual: @"Login was successful."] || [responseString isEqualToString:@"Logout was successful."]) {
@@ -123,7 +131,7 @@
     [request setDelegate:self];
     [request startAsynchronous];
     
-    // TODO: remove login cookies on iOS side?
+    [ASIHTTPRequest setSessionCookies:nil];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
