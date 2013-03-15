@@ -112,8 +112,8 @@
 }
 
 - (IBAction)signup:(id)sender
-{
-    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/login/signup"];
+{   //ec2-107-21-196-190.compute-1.amazonaws.com:8000
+    NSURL *url = [NSURL URLWithString:@"http://localhost:8080/login/signup"];
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request addPostValue:_signupUsername.text forKey:@"username"];
     [request addPostValue:_signupPassword.text forKey:@"pw"];
@@ -125,13 +125,13 @@
 
 - (IBAction)logout:(id)sender
 {
-    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/login/do_logout"];
+    NSURL *url = [NSURL URLWithString:@"http://localhost:8080/login/do_logout"];
     
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request setDelegate:self];
     [request startAsynchronous];
     
-    // TODO: remove login cookies on iOS side?
+    [ASIHTTPRequest setSessionCookies:nil];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
