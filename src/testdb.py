@@ -30,6 +30,7 @@ db_session.commit()
 
 athletes = Athlete.query.all()
 
+testAthlete1 = athletes[0]
 testAthleteID1 = athletes[0].id
 
 #Create Activities
@@ -282,8 +283,15 @@ db_session.add(Achievement(
 ))
 db_session.commit()
 
-#Create Goals
+#Unlock some activities
+achievementList = Achievement.query.all()
 
+for x in range(0, 9):
+	testAthlete1.achievements.append(achievementList[x])
+
+db_session.commit()
+
+#Create Goals
 db_session.add(Goal(
 	testAthleteID1,
 	"Run",
@@ -317,7 +325,6 @@ db_session.add(Goal(
 db_session.commit()
 
 #Create Health Records
-
 db_session.add(Health(
 	testAthleteID1,
 	curr_time,
