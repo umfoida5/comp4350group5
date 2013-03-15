@@ -14,5 +14,6 @@ def createTemporaryUser():
 		db_session.add(athlete)
 		db_session.flush()
 		cherrypy.session['id'] = athlete.id
+		cherrypy.session['username'] = ""
 	
 cherrypy.tools.createTemporaryUser = cherrypy.Tool('before_handler', createTemporaryUser)

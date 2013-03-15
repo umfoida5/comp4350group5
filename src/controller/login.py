@@ -8,7 +8,6 @@ from model.achievement import UnlockedAchievement
 from model.activity import Activity
 from model.goal import Goal
 from model.health import Health
-from Cookie import SimpleCookie
 
 class Login:
 	@cherrypy.expose
@@ -25,16 +24,11 @@ class Login:
 		athlete = Athlete.query.filter_by(username = username).first()
 		
 		if athlete is not None:
-			if(athlete.password == pw):
-				old_id = cherrypy.session.get('id')
-				cherrypy.session['id'] = athlete.id
-				cherrypy.session['tempUser'] = 'false'
-				myCookie = cherrypy.response.cookie
-				myCookie['name'] = username
-				myCookie['name']['path'] = '/'
-				myCookie['name']['max-age'] = 3600
-				
+			if(athlete.password == pw):				
 				if not just_created:
+					old_id = cherrypy.session.get('id')
+					cherrypy.session['id'] = athlete.id
+					cherrypy.session['username'] = athlete.username
 					self.__update_tables_athlete_id(old_id, athlete.id)
 					
 				return "Login was successful." 
@@ -50,13 +44,7 @@ class Login:
 		db_session.add(athlete)
 		db_session.commit()
 		cherrypy.session['id'] = athlete.id
-		oldCookie = cherrypy.request.cookie
-		myCookie = cherrypy.response.cookie
-		
-		for name in oldCookie.keys():
-			myCookie[name] = name
-			myCookie[name]['path'] = '/'
-      			myCookie[name]['max-age'] = 0
+		cherrypy.session['username'] = ""
 		
 		return "Logout was successful."
 
@@ -67,6 +55,8 @@ class Login:
 		return_message = "Username already exists. Please enter a new username."
 		
 		if Athlete.query.filter_by(username=username).all() == []:
+			cherrypy.session['username'] = username
+			
 			athlete = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
 			athlete.username = username
 			athlete.password = pw
