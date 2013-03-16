@@ -6,10 +6,6 @@ from model.athlete import Athlete
 
 class ActivityTests(unittest.TestCase):	
 
-    @classmethod
-    def setUpClass(cls):
-        database.init("tracker_test")
-
     def setUp(self):
         database.empty_database()
         database.session.add(Athlete("username1", "password1", "test_first", "test_last", "test@test.test", datetime.now()))
@@ -17,7 +13,7 @@ class ActivityTests(unittest.TestCase):
 
     def test_activity_object_creation(self):
         test_athlete = Athlete.query.filter(Athlete.first_name == "test_first").first()
-        self.assertIsNotNone(test_athlete)
+        self.assertFalse(test_athlete is None)
 
         activity1 = Activity(test_athlete.id, "test1", datetime.now(), 111, 111, 111)
         activity2 = Activity(test_athlete.id, "test2", datetime.now(), 222, 222, 222)
@@ -31,16 +27,13 @@ class ActivityTests(unittest.TestCase):
         queried_activity2 = Activity.query.filter_by(type = "test2").first()
         queried_activity3 = Activity.query.filter_by(type = "test3").first()
 
-        self.assertIsNotNone(queried_activity1)
-        self.assertIsNotNone(queried_activity2)
-        self.assertIsNotNone(queried_activity3)
+        self.assertFalse(queried_activity1 is None)
+        self.assertFalse(queried_activity2 is None)
+        self.assertFalse(queried_activity3 is None)
 
         self.assertEqual(queried_activity1, activity1)
         self.assertEqual(queried_activity2, activity2)
         self.assertEqual(queried_activity3, activity3)
 
         self.assertTrue(len(Activity.query.all()) == 3)
-
-if(__name__ == '__main__'):
-    unittest.main()
 

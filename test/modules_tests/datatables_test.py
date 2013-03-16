@@ -1,4 +1,5 @@
 import unittest
+import cherrypy
 from datetime import date
 from model.athlete import Athlete
 from model.activity import Activity
@@ -11,9 +12,10 @@ class DatatablesTests(unittest.TestCase):
         database.empty_database()
         session = database.session
 
-        session.add(Athlete('John', 'Doe', 'email@gmail.com'))
+        session.add(Athlete('john', 'password', 'John', 'Doe', 'email@gmail.com'))
         session.commit()
         athlete_id = Athlete.query.first().id
+        cherrypy.session['id'] = athlete_id
 
         session.add(Activity(athlete_id, "Bike", date(2013, 2, 8), 25, 50, 25))
         session.add(Activity(athlete_id, "Run", date(2013, 2, 9), 35, 20, 40))
@@ -44,7 +46,7 @@ class DatatablesTests(unittest.TestCase):
             'iDisplayStart': "1"
         }
 
-        data = send_datatable_response(Activity, request_params)
+        data = send_datatable_response(Activity, True, request_params)
 
         expected = {
             'sEcho': 0,
