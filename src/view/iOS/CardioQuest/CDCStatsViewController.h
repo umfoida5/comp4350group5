@@ -13,5 +13,6 @@
     NSArray *dateTypes;
 }
 @property (weak, nonatomic) IBOutlet UIPickerView *activitySelector;
+@property (weak, nonatomic) IBOutlet UIPickerView *dateSelector;
 
 @end
