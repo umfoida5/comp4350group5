@@ -57,8 +57,9 @@
   $('#start_date').datepicker().on('changeDate', function(){
       $(this).datepicker('hide');
   });
-  $('#end_date').datepicker().on('changeDate', function(){
+  
+$('#end_date').datepicker().on('changeDate', function(){
       $(this).datepicker('hide');
   });
 
-  })) (jQuery);
+  }));
