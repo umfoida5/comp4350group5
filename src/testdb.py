@@ -303,7 +303,7 @@ for athlete in athletes:
 		"Run",
 		"total",
 		"500",
-		"km",
+		"distance",
 		curr_time,
 		curr_time + timedelta(days=10)
 	))
@@ -313,7 +313,7 @@ for athlete in athletes:
 		"Bike",
 		"total",
 		"1000",
-		"km",
+		"distance",
 		curr_time + timedelta(days=11),
 		curr_time + timedelta(days=21)
 	))
@@ -323,7 +323,7 @@ for athlete in athletes:
 		"Walk",
 		"total",
 		"100",
-		"km",
+		"distance",
 		curr_time + timedelta(days=25),
 		curr_time + timedelta(days=50)
 	))
