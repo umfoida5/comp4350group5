@@ -7,7 +7,7 @@ class Activity(database.Base):
     __tablename__ = 'activities'
 
     id = Column(Integer, primary_key=True)
-    athlete_id = Column(Integer, ForeignKey("athletes.id"), nullable=False)
+    athlete_id = Column(Integer, ForeignKey("athletes.id", ondelete='CASCADE'), nullable=False)
     type = Column(String(100))
     date = Column(Date())
     distance = Column(Integer)

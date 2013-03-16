@@ -3,10 +3,10 @@
 import cherrypy
 import os.path
 from controller.root import Root
-from modules import database
-from modules import createTemporaryUser
+from modules import database, temporaryUser, CQRamSession
 
 database.init()
+temporaryUser.expireAll()
 
 app = cherrypy.tree.mount(Root(), '', 'config/app.conf')
 
