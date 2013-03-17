@@ -7,7 +7,10 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import "ActivityViewController.h"
+#import "CDQHomeController.h"
 
 @interface CDQActivityViewController_test : SenTestCase
-
+@property (strong, nonatomic) ActivityViewController  *activitiesController;
+@property (strong, nonatomic) CDQHomeController       *homeController;
 @end

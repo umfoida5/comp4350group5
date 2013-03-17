@@ -56,6 +56,7 @@
     return YES;
 }
 
+// -- ASYNCHRONOUS TEST --
 //
 // testEventsBeforeLogin()
 //
@@ -66,9 +67,10 @@
     // Tests goals page to see that no records are populated when no user is logged in
     [self.eventsController populateTable];
     STAssertTrue([self waitForCompletion:3.0], @"Login timed out");
-    STAssertTrue([[self.eventsController eventsTable]numberOfRowsInSection:0] > 0, @"ERROR: No records retrieved from goals events before login");
+    STAssertTrue([[self.eventsController eventsTable]numberOfRowsInSection:0] > 0, @"ERROR: No records retrieved from events events before login");
 }
 
+// -- ASYNCHRONOUS TEST --
 //
 // testEventsAfterLogin()
 //

@@ -48,7 +48,6 @@
     NSDate *timeoutDate = [NSDate dateWithTimeIntervalSinceNow:timeoutSecs];
     
     while ([[self.goalsController goalsTable]numberOfRowsInSection:0] <= 0) {
-        NSLog(@"%i",[[self.goalsController goalsTable]numberOfRowsInSection:0]);
         [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:timeoutDate];
         if([timeoutDate timeIntervalSinceNow] < 0.0)
             return NO;
@@ -57,6 +56,7 @@
     return YES;
 }
 
+// -- ASYNCHRONOUS TEST --
 //
 // testGoalsEmpty()
 //
@@ -70,6 +70,7 @@
     STAssertTrue([[self.goalsController goalsTable]numberOfRowsInSection:0] <= 0, @"ERROR: Records retrieved from goals database without login");
 }
 
+// -- ASYNCHRONOUS TEST --
 //
 // testGoalsPopulated()
 //
