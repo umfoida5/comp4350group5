@@ -4,7 +4,7 @@ end
 
 Given /^I launch the app$/ do
   # latest sdk and iphone by default
-  launch_app app_path
+  launch_app app_path, ipad
 end
 
 Given /^I launch the app using iOS (\d\.\d)$/ do |sdk|
@@ -15,6 +15,91 @@ Given /^I launch the app using iOS (\d\.\d)$/ do |sdk|
   launch_app app_path, sdk
 end
 
+###
+#
+# Launches IPAD application with ios 6.1
+###
 Given /^I launch the app using iOS (\d\.\d) and the (iphone|ipad) simulator$/ do |sdk, version|
   launch_app app_path, sdk, version
+end
+
+###
+#
+# Changes views using the navigation bar buttons
+###
+When(/^I navigate to "(.*?)"$/) do |tab_button|
+    check_element_exists "view:'UITabBar'"
+    check_element_exists "view:'UITabBarButton' marked:'#{tab_button}'"
+    touch "view:'UITabBar' view:'UITabBarButton' marked:'#{tab_button}'"
+    sleep 2
+end
+
+
+When(/^I enter login credentials$/) do
+    text_field_selector = "view:'UITextField' marked:'userNameLogin'"
+    check_element_exists(text_field_selector);
+    touch text_field_selector
+    frankly_map text_field_selector, "setText:", "justin"
+    frankly_map text_field_selector, "endEditing:", true
+    
+    text_field_selector = "view:'UITextField' marked:'passwordLogin'"
+    check_element_exists(text_field_selector);
+    touch text_field_selector
+    frankly_map text_field_selector, "setText:", "justin"
+    frankly_map text_field_selector, "endEditing:", true
+end
+
+###
+#
+# Tests to see that we are on the proper screen view
+#
+###
+Then (/^I should be on the Home screen$/) do
+    check_element_exists "view:'UITextField' marked:'passwordLogin'"
+    check_element_exists "view:'UINavigationItemView' marked:'Home'"
+end
+
+Then (/^I should be on the Profile screen$/) do
+    check_element_exists "view:'UINavigationItemView' marked:'Profile'"
+end
+
+Then (/^I should be on the Activities screen$/) do
+    check_element_exists "view:'UINavigationItemView' marked:'Activities'"
+end
+
+Then (/^I should be on the Goals screen$/) do
+    check_element_exists "view:'UINavigationItemView' marked:'Goals'"
+end
+
+Then (/^I should be on the Events screen$/) do
+    check_element_exists "view:'UINavigationItemView' marked:'Events'"
+end
+
+Then (/^I should be on the About screen$/) do
+    check_element_exists "view:'UINavigationItemView' marked:'About'"
+end
+
+###
+#
+#
+#
+###
+Then (/^I should see a valid goal$/) do
+    check_element_exists "view:'UILabel' marked:'COMPLETED! Walk 100 (Between: 04/10/2013 01:02:22 and 05/05/2013 01:02:22)'"
+end
+
+Then (/^I should see a valid activity$/) do
+    check_element_exists "view:'UILabel' marked:'(2013-04-03) Walk: 3 km in 40 mins (Max Speed: 10 km/h)'"
+end
+
+Then (/^I should see a valid event$/) do
+    check_element_exists "view:'UILabel' marked:'(2013-03-16) Do not miss La Tour De France! Find... (paris) (10km)'"
+end
+
+Then (/^I should see a valid profile$/) do
+    check_element_exists "view:'UILabel' marked:'Justin Fdart'"
+end
+
+Then (/^I should see a valid about$/) do
+    check_element_exists "view:'UILabel' marked:'CardioQuest'"
 end

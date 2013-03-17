@@ -29,7 +29,7 @@
 	<key>DTPlatformName</key>
 	<string>iphonesimulator</string>
 	<key>DTSDKName</key>
-	<string>iphonesimulator6.0</string>
+	<string>iphonesimulator6.1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIDeviceFamily</key>
