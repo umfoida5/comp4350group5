@@ -538,7 +538,7 @@
         <!--Activity View Controller - Item-->
         <scene sceneID="s76-CC-oVt">
             <objects>
-                <viewController title="Activity" id="KjC-Dz-agP" userLabel="Activity View Controller - Item" customClass="ActivityViewController" sceneMemberID="viewController">
+                <viewController id="KjC-Dz-agP" userLabel="Activity View Controller - Item" customClass="ActivityViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YXX-SM-Kfh">
                         <rect key="frame" x="0.0" y="20" width="768" height="955"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -773,10 +773,10 @@ Features
             </objects>
             <point key="canvasLocation" x="1098" y="-1708"/>
         </scene>
-        <!--Stats View Controller - Stats-->
+        <!--Stats View Controller - Item-->
         <scene sceneID="pqD-Xo-Dq7">
             <objects>
-                <viewController title="Stats" id="3ce-q3-zVA" customClass="CDCStatsViewController" sceneMemberID="viewController">
+                <viewController id="3ce-q3-zVA" customClass="CDCStatsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tyc-fj-aq3">
                         <rect key="frame" x="0.0" y="20" width="768" height="955"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -799,25 +799,16 @@ Features
                                     <outlet property="delegate" destination="3ce-q3-zVA" id="8Rl-Da-o0Q"/>
                                 </connections>
                             </pickerView>
-                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="zp9-zj-inL">
-                                <color key="tintColor" red="0.83137261870000001" green="0.26666668059999998" blue="0.094117656349999995" alpha="1" colorSpace="deviceRGB"/>
-                                <items>
-                                    <navigationItem title="Stats" id="4gD-rG-xBh"/>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="B5X-4w-r6Q" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="6mV-1H-SWu"/>
-                            <constraint firstItem="zp9-zj-inL" firstAttribute="leading" secondItem="Tyc-fj-aq3" secondAttribute="leading" type="default" id="D7Z-79-fa3"/>
                             <constraint firstItem="B5X-4w-r6Q" firstAttribute="leading" secondItem="ej2-vt-JVw" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Ko7-6P-yZ5"/>
                             <constraint firstItem="ej2-vt-JVw" firstAttribute="leading" secondItem="Tyc-fj-aq3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="PmO-gn-md2"/>
                             <constraint firstAttribute="bottom" secondItem="ej2-vt-JVw" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="jyj-o8-Kd6"/>
-                            <constraint firstItem="zp9-zj-inL" firstAttribute="trailing" secondItem="Tyc-fj-aq3" secondAttribute="trailing" type="default" id="x4r-6T-HMn"/>
-                            <constraint firstItem="zp9-zj-inL" firstAttribute="top" secondItem="Tyc-fj-aq3" secondAttribute="top" type="default" id="ycJ-VQ-YP6"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Stats" image="first.png" id="Ag8-ZS-8nW"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="Ag8-ZS-8nW"/>
                     <connections>
                         <outlet property="activitySelector" destination="ej2-vt-JVw" id="Df6-Op-Ma7"/>
                         <outlet property="dateSelector" destination="B5X-4w-r6Q" id="f0k-hs-TAQ"/>
