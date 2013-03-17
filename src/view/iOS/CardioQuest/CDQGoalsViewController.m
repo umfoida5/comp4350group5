@@ -18,6 +18,12 @@
 
 NSArray *tableData;
 
+- (bool) tableLoaded
+{
+    NSLog(@"%i",(_goalsTable.indexPathsForVisibleRows.count));
+    return YES;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -62,6 +68,11 @@ NSArray *tableData;
 }
 
 -(void)viewWillAppear:(BOOL)animated
+{
+    [self populateTable];
+}
+
+-(void) populateTable
 {
     NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/goals/update_datatable"];
     

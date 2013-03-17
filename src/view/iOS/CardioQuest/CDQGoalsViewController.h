@@ -10,4 +10,6 @@
 
 @interface CDQGoalsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *goalsTable;
+
+-(void)populateTable;
 @end

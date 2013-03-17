@@ -64,6 +64,11 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    [self populateTable];
+}
+
+-(void) populateTable
+{
     NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/events/update_datatable"];
     
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];

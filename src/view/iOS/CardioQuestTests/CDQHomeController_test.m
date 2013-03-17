@@ -60,6 +60,7 @@ BOOL done;
     
     STAssertTrue([self waitForCompletion:3.0], @"Login timed out");
     
+    
     STAssertFalse([[self.homeController getLoginLabelText] isEqualToString:@"Invalid username."], @"Login failed");
 }
 
