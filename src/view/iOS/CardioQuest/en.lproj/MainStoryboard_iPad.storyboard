@@ -464,7 +464,7 @@
         <!--Goals View Controller - Goals-->
         <scene sceneID="13">
             <objects>
-                <viewController id="3" customClass="CDQGoalsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Goals" id="3" customClass="CDQGoalsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="16">
                         <rect key="frame" x="0.0" y="20" width="768" height="955"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -527,7 +527,7 @@
         <!--Activity View Controller - Item-->
         <scene sceneID="s76-CC-oVt">
             <objects>
-                <viewController id="KjC-Dz-agP" userLabel="Activity View Controller - Item" customClass="ActivityViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Activities" id="KjC-Dz-agP" userLabel="Activity View Controller - Item" customClass="ActivityViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YXX-SM-Kfh">
                         <rect key="frame" x="0.0" y="20" width="768" height="955"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -700,7 +700,7 @@ Features
         <!--Events Controller - Events-->
         <scene sceneID="P4m-V4-DjK">
             <objects>
-                <viewController id="nYr-WX-APg" customClass="CDQEventsController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Events" id="nYr-WX-APg" customClass="CDQEventsController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2E8-GT-HMU">
                         <rect key="frame" x="0.0" y="20" width="768" height="955"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

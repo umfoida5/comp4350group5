@@ -10,5 +10,5 @@
 
 @interface ActivityViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *activityTable;
-
+-(void) populateTable;
 @end

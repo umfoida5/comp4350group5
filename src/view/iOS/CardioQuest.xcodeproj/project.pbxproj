@@ -21,6 +21,10 @@
 		72975A8516ED1DBB00FC7DB8 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 72975A7816ED1DBB00FC7DB8 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		72975A8616ED1DBB00FC7DB8 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 72975A7A16ED1DBB00FC7DB8 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		72975A8B16ED1DC600FC7DB8 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 72975A8A16ED1DC600FC7DB8 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B18F780216F6390300024405 /* CDQGoalsViewController_test.m in Sources */ = {isa = PBXBuildFile; fileRef = B18F780116F6390300024405 /* CDQGoalsViewController_test.m */; };
+		B18F780516F6396A00024405 /* CDQEventsViewController_test.m in Sources */ = {isa = PBXBuildFile; fileRef = B18F780416F6396A00024405 /* CDQEventsViewController_test.m */; };
+		B18F780816F6398C00024405 /* CDQProfileViewController_test.m in Sources */ = {isa = PBXBuildFile; fileRef = B18F780716F6398C00024405 /* CDQProfileViewController_test.m */; };
+		B18F780B16F6399B00024405 /* CDQActivityViewController_test.m in Sources */ = {isa = PBXBuildFile; fileRef = B18F780A16F6399B00024405 /* CDQActivityViewController_test.m */; };
 		B196AF1A16F000AD00276B98 /* CDQGoalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B196AF1916F000AC00276B98 /* CDQGoalsViewController.m */; };
 		D0C1EFE016EA977F00EB2E21 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C1EFDF16EA977F00EB2E21 /* AboutViewController.m */; };
 		D0C1EFE716EA984300EB2E21 /* Ubuntu Orange.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D0C1EFE616EA984300EB2E21 /* Ubuntu Orange.jpg */; };
@@ -103,6 +107,14 @@
 		72975A7E16ED1DBB00FC7DB8 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
 		72975A8916ED1DC600FC7DB8 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		72975A8A16ED1DC600FC7DB8 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		B18F780016F6390300024405 /* CDQGoalsViewController_test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQGoalsViewController_test.h; sourceTree = "<group>"; };
+		B18F780116F6390300024405 /* CDQGoalsViewController_test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQGoalsViewController_test.m; sourceTree = "<group>"; };
+		B18F780316F6396A00024405 /* CDQEventsViewController_test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQEventsViewController_test.h; sourceTree = "<group>"; };
+		B18F780416F6396A00024405 /* CDQEventsViewController_test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQEventsViewController_test.m; sourceTree = "<group>"; };
+		B18F780616F6398C00024405 /* CDQProfileViewController_test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQProfileViewController_test.h; sourceTree = "<group>"; };
+		B18F780716F6398C00024405 /* CDQProfileViewController_test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQProfileViewController_test.m; sourceTree = "<group>"; };
+		B18F780916F6399B00024405 /* CDQActivityViewController_test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQActivityViewController_test.h; sourceTree = "<group>"; };
+		B18F780A16F6399B00024405 /* CDQActivityViewController_test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQActivityViewController_test.m; sourceTree = "<group>"; };
 		B196AF1816F000AC00276B98 /* CDQGoalsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQGoalsViewController.h; sourceTree = "<group>"; };
 		B196AF1916F000AC00276B98 /* CDQGoalsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQGoalsViewController.m; sourceTree = "<group>"; };
 		D0C1EFDE16EA977F00EB2E21 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
@@ -345,6 +357,14 @@
 				E4BEB60A16E5361700DD4526 /* CDQHomeController_test.h */,
 				E4BEB60B16E5361700DD4526 /* CDQHomeController_test.m */,
 				E4BEB60516E5361600DD4526 /* Supporting Files */,
+				B18F780016F6390300024405 /* CDQGoalsViewController_test.h */,
+				B18F780116F6390300024405 /* CDQGoalsViewController_test.m */,
+				B18F780316F6396A00024405 /* CDQEventsViewController_test.h */,
+				B18F780416F6396A00024405 /* CDQEventsViewController_test.m */,
+				B18F780616F6398C00024405 /* CDQProfileViewController_test.h */,
+				B18F780716F6398C00024405 /* CDQProfileViewController_test.m */,
+				B18F780916F6399B00024405 /* CDQActivityViewController_test.h */,
+				B18F780A16F6399B00024405 /* CDQActivityViewController_test.m */,
 			);
 			path = CardioQuestTests;
 			sourceTree = "<group>";
@@ -548,6 +568,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4BEB60C16E5361700DD4526 /* CDQHomeController_test.m in Sources */,
+				B18F780216F6390300024405 /* CDQGoalsViewController_test.m in Sources */,
+				B18F780516F6396A00024405 /* CDQEventsViewController_test.m in Sources */,
+				B18F780816F6398C00024405 /* CDQProfileViewController_test.m in Sources */,
+				B18F780B16F6399B00024405 /* CDQActivityViewController_test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

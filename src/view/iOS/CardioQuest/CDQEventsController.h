@@ -10,5 +10,5 @@
 
 @interface CDQEventsController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *eventsTable;
-
+-(void) populateTable;
 @end
