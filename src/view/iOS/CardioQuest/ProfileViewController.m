@@ -75,13 +75,12 @@
     NSMutableString* name = [[NSMutableString alloc]init];
     if (jsonDictionary != nil) {
         
-    
-        
         [name appendFormat:@"%@ %@",jsonDictionary[@"first_name"],jsonDictionary[@"last_name"]];
         self.nameLabel.text = name;
-        self.dobField.text = jsonDictionary[@"birth_date"];
+        NSLog(@"%c", [jsonDictionary[@"birth_date"] isEqual:@"<null>"]);
+        self.dobField.text = [jsonDictionary[@"birth_date"] isKindOfClass:[NSNull class]]? @"Enter Birth Day" : jsonDictionary[@"birth_date"];
         self.addressField.text = jsonDictionary[@"address"];
-        self.emailField.text = jsonDictionary[@"email"];
+        self.emailField.text = [jsonDictionary[@"email"] isKindOfClass:[NSNull class]]? @"Enter Birth Day" : jsonDictionary[@"email"];
         self.aboutTextView.text = jsonDictionary[@"about_me"];
        
         for (NSMutableDictionary *achieves in jsonDictionary[@"achievements"]) {
@@ -91,16 +90,11 @@
             [url replaceCharactersInRange:[url rangeOfString:@".."] withString:@""];
             
             __strong ASIHTTPRequest *newRequest = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
-            //[newRequest setDelegate:self];
-            //[newRequest setDidFinishSelector:@selector(requestDone:)];
-            
-            //[newRequest setDidFailSelector:@selector(requestWentWrong:)];
             [self.queue addOperation:newRequest];
             [[self queue] go];
             
         } 
     }
-    //BOOL stop = YES;
 }
 
 - (void)queueFinished:(ASINetworkQueue *)queue
@@ -125,6 +119,7 @@
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
     NSError *error = [request error];
+    NSLog(@"%@",error);
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -152,7 +147,5 @@
 {
     [self.view endEditing:YES];
 }
-
-
 
 @end
