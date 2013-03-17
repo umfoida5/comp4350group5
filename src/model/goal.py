@@ -9,7 +9,7 @@ from datetime import datetime
 class Goal(Base):
     __tablename__ = 'goals'
     goal_id = Column(Integer, primary_key=True) # unqiue id
-    athlete_id = Column(Integer, ForeignKey("athletes.id"), nullable=False) # owner athlete id
+    athlete_id = Column(Integer, ForeignKey("athletes.id", ondelete='CASCADE'), nullable=False) # owner athlete id
     
     # TODO: make foreign keys to appropriate type tables
     activity = Column(String(32)) # Eg. run, bike

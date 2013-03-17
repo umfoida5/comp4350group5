@@ -6,6 +6,9 @@ from model.achievement import Achievement
 from model.achievement import UnlockedAchievement
 from model.activity import Activity
 from model.event import Event
+from model.health import Health
+from model.goal import Goal
+from datetime import datetime, timedelta
 import datetime
 
 database.init()
@@ -14,35 +17,14 @@ db_session = database.session
 
 curr_time = datetime.datetime.now()
 
-db_session.add(Athlete("justin", "sha256andsalted", "Joe", "Smith", "email@email.com", "1980-11-23", "All work and no play makes Joe a dull boy", "123 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
-db_session.add(Athlete("ben", "sha256andsalted", "Bob", "Brown", "email@email.com", "1980-11-23", "All work and no play makes Joe a dull boy", "123 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
-db_session.add(Athlete("sammy", "sha256andsalted", "Frank", "Reese", "email@email.com", "1980-11-23", "All work and no play makes Joe a dull boy", "123 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
-db_session.add(Athlete("blake", "sha256andsalted", "Joe", "Smith", "email@email.com", "1980-11-23", "All work and no play makes Joe a dull boy", "123 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
-db_session.add(Athlete("phil", "sha256andsalted", "Bob", "Brown", "email@email.com", "1980-11-23", "All work and no play makes Joe a dull boy", "123 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
-db_session.add(Athlete("alex", "sha256andsalted", "Frank", "Reese", "email@email.com", "1980-11-23", "All work and no play makes Joe a dull boy", "123 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
-db_session.add(Athlete("andrew", "sha256andsalted", "Joe", "Smith", "email@email.com", "1980-11-23", "All work and no play makes Joe a dull boy", "123 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
-db_session.add(Athlete("justinmulti1", "sha256andsalted", "Bob", "Brown", "email@email.com", "1980-11-23", "All work and no play makes Joe a dull boy", "123 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
-db_session.add(Athlete("justinmulti2", "sha256andsalted", "Frank", "Reese", "email@email.com", "1980-11-23", "All work and no play makes Joe a dull boy", "123 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
-db_session.add(Athlete("justinmulti3", "sha256andsalted", "Joe", "Smith", "email@email.com", "1980-11-23", "All work and no play makes Joe a dull boy", "123 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
-db_session.add(Athlete("justinmulti4", "sha256andsalted", "Bob", "Brown", "email@email.com", "1980-11-23", "All work and no play makes Joe a dull boy", "123 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
-db_session.add(Athlete("justinmulti5", "sha256andsalted", "Frank", "Reese", "email@email.com", "1980-11-23", "All work and no play makes Joe a dull boy", "123 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
-
-db_session.commit()
-
-athletes = Athlete.query.all()
-
-db_session.add(Activity(athletes[0].id, "Run", curr_time, 25, 50, 25))
-db_session.add(Activity(athletes[1].id, "Walk", curr_time, 72, 40, 10))
-db_session.add(Activity(athletes[2].id, "Bike", curr_time, 65, 70, 52))
-
-db_session.commit()
-
+#Create Events
 db_session.add(Event(curr_time, "Join us at the Manitoba Marathon on Fathers Day.  More details at http://www.manitobamarathon.mb.ca/", "winnipeg", 2))
 db_session.add(Event(curr_time, "Come join one of the largest marathons in the world, the Boston marathon. Find out how to qualify at http://www.baa.org/races/boston-marathon.aspx", "boston", 3))
 db_session.add(Event(curr_time, "Do not miss La Tour De France! Find out more details at http://www.letour.fr/paris-nice/2013/us", "paris", 10))
 
 db_session.commit()
 
+#Create Achivements
 db_session.add(Achievement(
 	"Newbie",
 	"Congratulations, this is the very first time you are running!",
@@ -261,3 +243,195 @@ db_session.add(Achievement(
 ))
 db_session.commit()
 
+#Create Athletes
+db_session.add(Athlete("justin", "justin", "Justin", "Fdart", "awesome@cc.umanitoba.ca", "1980-11-23", "Here's where I'm supposed to tell you my lifestory.  But I won't.  Hit me up to play some DotA 2?", "123 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
+db_session.add(Athlete("ben", "ben", "Ben", "Zeghers", "ben@email.com", "1980-11-24", "Here's where I'm supposed to tell you my lifestory.  But I won't.  Really. I like fishing though.", "321 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
+db_session.add(Athlete("sammy", "sammy", "Sammy", "Creed", "sammy@email.com", "1980-11-23", "Here's where I'm supposed to tell you my lifestory.  But I won't.  Really.  I'm very good at solving problems and puzzles.", "123 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
+db_session.add(Athlete("blake", "blake", "Blake", "Beatty", "blake@email.com", "1980-11-23", "Here's where I'm supposed to tell you my lifestory.  But I won't.  Really.  I'm a scary vikings fan.", "123 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
+db_session.add(Athlete("phil", "phil", "Phil", "Latka", "phil@email.com", "1980-11-23", "Here's where I'm supposed to tell you my lifestory.  But I won't.  Really.  Those names, I remember them.", "123 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
+db_session.add(Athlete("alex", "alex", "Alex", "Salomon", "alex@email.com", "1980-11-23", "Here's where I'm supposed to tell you my lifestory.  But I won't.  Really.  I make some unreal food.", "123 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
+db_session.add(Athlete("andrew", "andrew", "Andrew", "Konkin", "andrew@email.com", "1980-11-23", "Here's where I'm supposed to tell you my lifestory.  But I won't.  Really.  I put up with these other 6 idiots in the group, that's a strong character trait.", "123 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
+db_session.commit()
+
+#####################################################################
+#																	#
+# For each Athlete, we now go and add data such as which achivements#
+# are unlocked, activies, goals and health records.					#
+#																	#
+#####################################################################
+
+athletes = Athlete.query.all()
+
+for athlete in athletes:
+	athleteID = athlete.id
+
+	#Create Activities
+	db_session.add(Activity(athleteID, "Run", curr_time, 10, 50, 25))
+	db_session.add(Activity(athleteID, "Run", curr_time-timedelta(days=2), 12, 60, 25))
+	db_session.add(Activity(athleteID, "Walk", curr_time-timedelta(days=4), 3, 40, 10))
+	db_session.add(Activity(athleteID, "Walk", curr_time-timedelta(days=6), 4, 52, 10))
+	db_session.add(Activity(athleteID, "Bike", curr_time-timedelta(days=8), 30, 60, 52))
+	db_session.add(Activity(athleteID, "Bike", curr_time-timedelta(days=12), 35, 60, 55))
+
+	db_session.add(Activity(athleteID, "Run", curr_time-timedelta(days=14), 10, 50, 25))
+	db_session.add(Activity(athleteID, "Run", curr_time-timedelta(days=16), 12, 60, 25))
+	db_session.add(Activity(athleteID, "Walk", curr_time-timedelta(days=18), 3, 40, 10))
+	db_session.add(Activity(athleteID, "Walk", curr_time-timedelta(days=20), 4, 52, 10))
+	db_session.add(Activity(athleteID, "Bike", curr_time-timedelta(days=22), 30, 60, 52))
+	db_session.add(Activity(athleteID, "Bike", curr_time-timedelta(days=24), 35, 60, 55))
+
+	db_session.add(Activity(athleteID, "Run", curr_time-timedelta(days=26), 10, 50, 25))
+	db_session.add(Activity(athleteID, "Run", curr_time-timedelta(days=28), 12, 60, 25))
+	db_session.add(Activity(athleteID, "Walk", curr_time-timedelta(days=30), 3, 40, 10))
+	db_session.add(Activity(athleteID, "Walk", curr_time-timedelta(days=32), 4, 52, 10))
+	db_session.add(Activity(athleteID, "Bike", curr_time-timedelta(days=34), 30, 60, 52))
+	db_session.add(Activity(athleteID, "Bike", curr_time-timedelta(days=36), 35, 60, 55))
+
+	db_session.commit()
+
+	#Unlock some activities
+	achievementList = Achievement.query.all()
+
+	for j in range(0, 9):
+		athlete.achievements.append(achievementList[j])
+
+	db_session.commit()
+
+	#Create Goals
+	db_session.add(Goal(
+		athleteID,
+		"Run",
+		"total",
+		"500",
+		"distance",
+		curr_time,
+		curr_time + timedelta(days=10)
+	))
+
+	db_session.add(Goal(
+		athleteID,
+		"Bike",
+		"total",
+		"1000",
+		"distance",
+		curr_time + timedelta(days=11),
+		curr_time + timedelta(days=21)
+	))
+
+	db_session.add(Goal(
+		athleteID,
+		"Walk",
+		"total",
+		"100",
+		"distance",
+		curr_time + timedelta(days=25),
+		curr_time + timedelta(days=50)
+	))
+
+	db_session.commit()
+
+	#Create Health Records
+	db_session.add(Health(
+		athleteID,
+		curr_time,
+		185,
+		73,
+		"Here we go! First log!"
+	))
+
+	db_session.add(Health(
+		athleteID,
+		curr_time + timedelta(days=1),
+		185,
+		73,
+		"Day 2, nothing yet."
+	))
+
+	db_session.add(Health(
+		athleteID,
+		curr_time + timedelta(days=2),
+		185,
+		73,
+		"Day 3, nothing yet."
+	))
+
+	db_session.add(Health(
+		athleteID,
+		curr_time + timedelta(days=3),
+		185,
+		73,
+		"Day 4, nothing yet."
+	))
+
+	db_session.add(Health(
+		athleteID,
+		curr_time + timedelta(days=4),
+		184,
+		73,
+		"Day 5, first pound gone!"
+	))
+
+	db_session.add(Health(
+		athleteID,
+		curr_time + timedelta(days=5),
+		184,
+		72,
+		""
+	))
+
+	db_session.add(Health(
+		athleteID,
+		curr_time + timedelta(days=6),
+		187,
+		74,
+		"Day 6, shouldn't have eaten 7 McDoubles FML!"
+	))
+
+	db_session.add(Health(
+		athleteID,
+		curr_time + timedelta(days=16),
+		180,
+		72,
+		"Day 16, ROCKING IT!"
+	))
+
+	db_session.add(Health(
+		athleteID,
+		curr_time + timedelta(days=26),
+		177,
+		74,
+		"Day 26, I'm too sexy for my shirt!"
+	))
+
+	db_session.add(Health(
+		athleteID,
+		curr_time + timedelta(days=36),
+		175,
+		74,
+		""
+	))
+
+	db_session.add(Health(
+		athleteID,
+		curr_time + timedelta(days=41),
+		173,
+		74,
+		""
+	))
+
+	db_session.add(Health(
+		athleteID,
+		curr_time + timedelta(days=45),
+		170,
+		74,
+		""
+	))
+
+	db_session.add(Health(
+		athleteID,
+		curr_time + timedelta(days=80),
+		190,
+		74,
+		"Those double cheese"
+	))
+	db_session.commit()

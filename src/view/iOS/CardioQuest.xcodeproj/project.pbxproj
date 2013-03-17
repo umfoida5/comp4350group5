@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		143A2A4716F5337C00B85BA1 /* CDCStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 143A2A4616F5337C00B85BA1 /* CDCStatsViewController.m */; };
 		37A20CC216F0DDFE0011F30D /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37A20CC016F0DDFE0011F30D /* MainStoryboard_iPhone.storyboard */; };
 		72975A0016ED16C900FC7DB8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 729759FF16ED16C900FC7DB8 /* CFNetwork.framework */; };
 		72975A0216ED16D900FC7DB8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72975A0116ED16D900FC7DB8 /* SystemConfiguration.framework */; };
@@ -76,6 +77,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		143A2A4516F5337C00B85BA1 /* CDCStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDCStatsViewController.h; sourceTree = "<group>"; };
+		143A2A4616F5337C00B85BA1 /* CDCStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDCStatsViewController.m; sourceTree = "<group>"; };
 		37A20CC116F0DDFE0011F30D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = CardioQuest/en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		729759FF16ED16C900FC7DB8 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		72975A0116ED16D900FC7DB8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -320,6 +323,8 @@
 				E461B6DE16EA700F00C43D87 /* ProfileViewController.m */,
 				E4DAFD0D16EA819300258D78 /* ActivityViewController.h */,
 				E4DAFD0E16EA819300258D78 /* ActivityViewController.m */,
+				143A2A4516F5337C00B85BA1 /* CDCStatsViewController.h */,
+				143A2A4616F5337C00B85BA1 /* CDCStatsViewController.m */,
 				E4BEB5D316E5361500DD4526 /* Supporting Files */,
 			);
 			path = CardioQuest;
@@ -540,6 +545,7 @@
 				E4C879C216EE615400C95D99 /* SBJsonStreamWriterAccumulator.m in Sources */,
 				B196AF1A16F000AD00276B98 /* CDQGoalsViewController.m in Sources */,
 				D0CC697516F105230016C12B /* CDQEventsController.m in Sources */,
+				143A2A4716F5337C00B85BA1 /* CDCStatsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,7 @@ from model.athlete import Athlete
 from model.achievement import UnlockedAchievement
 from model.activity import Activity
 from model.goal import Goal
-from Cookie import SimpleCookie
+from model.health import Health
 
 class Login:
 	@cherrypy.expose
@@ -24,16 +24,11 @@ class Login:
 		athlete = Athlete.query.filter_by(username = username).first()
 		
 		if athlete is not None:
-			if(athlete.password == pw):
-				old_id = cherrypy.session.get('id')
-				cherrypy.session['id'] = athlete.id
-				cherrypy.session['tempUser'] = 'false'
-				myCookie = cherrypy.response.cookie
-				myCookie['name'] = username
-				myCookie['name']['path'] = '/'
-				myCookie['name']['max-age'] = 3600
-				
+			if(athlete.password == pw):				
 				if not just_created:
+					old_id = cherrypy.session.get('id')
+					cherrypy.session['id'] = athlete.id
+					cherrypy.session['username'] = athlete.username
 					self.__update_tables_athlete_id(old_id, athlete.id)
 					
 				return "Login was successful." 
@@ -49,13 +44,7 @@ class Login:
 		db_session.add(athlete)
 		db_session.commit()
 		cherrypy.session['id'] = athlete.id
-		oldCookie = cherrypy.request.cookie
-		myCookie = cherrypy.response.cookie
-		
-		for name in oldCookie.keys():
-			myCookie[name] = name
-			myCookie[name]['path'] = '/'
-      			myCookie[name]['max-age'] = 0
+		cherrypy.session['username'] = ""
 		
 		return "Logout was successful."
 
@@ -63,13 +52,20 @@ class Login:
 	@cherrypy.expose
 	def signup(self, username, pw, firstName, lastName):
 		db_session = database.session
-		athlete = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
-		athlete.username = username
-		athlete.password = pw
-		athlete.first_name = firstName
-		athlete.last_name = lastName
-		db_session.flush()
-		return self.do_login(username, pw, True)    
+		return_message = "Username already exists. Please enter a new username."
+		
+		if Athlete.query.filter_by(username=username).all() == []:
+			cherrypy.session['username'] = username
+			
+			athlete = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
+			athlete.username = username
+			athlete.password = pw
+			athlete.first_name = firstName
+			athlete.last_name = lastName
+			db_session.flush()
+			return_message = self.do_login(username, pw, True)    
+		
+		return return_message
 
 	def __update_tables_athlete_id(self, old_id, new_id):
 		db_session = database.session
@@ -88,3 +84,8 @@ class Login:
 		goals = Goal.query.filter_by(athlete_id = old_id)
 		for goal in goals:
 			goal.athlete_id = new_id
+			
+		#health table
+		healthRecords = Health.query.filter_by(athlete_id = old_id)
+		for health in healthRecords:
+			health.athlete_id = new_id

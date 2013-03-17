@@ -24,20 +24,20 @@ class StatisticsEngineTest(unittest.TestCase):
         database.empty_database()
 
         # intialize the Athlete table with known values
-        database.session.add(
-            Athlete(
+        athlete = Athlete(
                 "username",
                 "password",
                 "Test", 
                 "Athlete", 
                 "test@test.com", 
-                datetime.date(1111,11,11), 
+                datetime.datetime.now(), 
                 "I'm a Test", 
                 "test street", 
-                "test avatar"))
-
+                "test avatar")
+        database.session.add(athlete)
         database.session.commit()
-        self.test_athlete = Athlete.query.filter_by(first_name = "Test").first()
+
+        self.test_athlete = athlete
 
         # initialize the Activity table with known values
         for num in range(1, 4):

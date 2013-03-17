@@ -5,11 +5,10 @@ from modules.jsonable import Jsonable, make_jsonable
 class JsonableTests(unittest.TestCase):	
 
 	def test_make_jsonable_with_non_object_as_value(self):
-		with self.assertRaises(AttributeError):
-			make_jsonable("athlete")
+		self.assertRaises(AttributeError, make_jsonable, "athlete")
 
 	def test_make_jsonable_with_single_object_as_value(self):
-		athlete = Athlete("firstname", "lastname", "a@a.a")
+		athlete = Athlete("user", "pass", "firstname", "lastname", "a@a.a")
 		data = make_jsonable(athlete)
 		expected = {
 			'achievements': [],
@@ -26,9 +25,9 @@ class JsonableTests(unittest.TestCase):
 		self.assertEqual(data, athlete.to_dict())
 
 	def test_make_jsonable_with_list_of_objects_as_value(self):
-		athlete1 = Athlete("firstname1", "lastname", "a@a.a")
-		athlete2 = Athlete("firstname2", "lastname", "a@a.a")
-		athlete3 = Athlete("firstname3", "lastname", "a@a.a")
+		athlete1 = Athlete("user1", "pass", "firstname1", "lastname", "a@a.a")
+		athlete2 = Athlete("user2", "pass", "firstname2", "lastname", "a@a.a")
+		athlete3 = Athlete("user3", "pass", "firstname3", "lastname", "a@a.a")
 		athlete_list = [athlete1, athlete2, athlete3]
 
 		data = make_jsonable(athlete_list)
@@ -73,5 +72,3 @@ class JsonableTests(unittest.TestCase):
 		expected.append(athlete3.to_dict())
 		self.assertEqual(data, expected)
 
-if(__name__ == '__main__'):
-	unittest.main()

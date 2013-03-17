@@ -5,17 +5,13 @@ from model.athlete import Athlete
 
 class AchievementTests(unittest.TestCase):	
 
-	@classmethod
-	def setUpClass(cls):
-		database.init("tracker_test")
-
 	def setUp(self):
 		database.empty_database()
 
 	def test_achievement_object_creation(self):
-		achievement1 = Achievement("Title1", "desc1", "/images/a1.jpeg")
-		achievement2 = Achievement("Title2", "desc2", "/images/a2.jpeg")
-		achievement3 = Achievement("Title3", "desc3", "/images/a3.jpeg")
+		achievement1 = Achievement("Title1", "desc1", "/images/a1.jpeg", "run", "average", 100, "distance")
+		achievement2 = Achievement("Title2", "desc2", "/images/a2.jpeg", "bike", "total", 200, "duration")
+		achievement3 = Achievement("Title3", "desc3", "/images/a3.jpeg", "walk", "average", 300, "duration")
 		database.session.add(achievement1)
 		database.session.add(achievement2)
 		database.session.add(achievement3)
@@ -31,9 +27,9 @@ class AchievementTests(unittest.TestCase):
 			title = "Title3"
 		).first()
 
-		self.assertIsNotNone(queried_achivement1)
-		self.assertIsNotNone(queried_achivement2)
-		self.assertIsNotNone(queried_achivement3)
+		self.assertTrue(queried_achivement1 is not None)
+		self.assertTrue(queried_achivement2 is not None)
+		self.assertTrue(queried_achivement3 is not None)
 
 		self.assertEqual(queried_achivement1, achievement1)
 		self.assertEqual(queried_achivement2, achievement2)
@@ -42,10 +38,12 @@ class AchievementTests(unittest.TestCase):
 		self.assertTrue(len(Achievement.query.all()) == 3)
 
 	def test_athlete_and_achievement_association(self):
-		achievement1 = Achievement("Title1", "desc1", "/images/a1.jpeg")
-		achievement2 = Achievement("Title2", "desc2", "/images/a2.jpeg")
-		achievement3 = Achievement("Title3", "desc3", "/images/a3.jpeg")	
+		achievement1 = Achievement("Title1", "desc1", "/images/a1.jpeg", "run", "average", 100, "distance")
+		achievement2 = Achievement("Title2", "desc2", "/images/a2.jpeg", "bike", "total", 200, "duration")
+		achievement3 = Achievement("Title3", "desc3", "/images/a3.jpeg", "walk", "average", 300, "duration")
 		athlete1 = Athlete(
+                        "joe1",
+                        "password",
 			"Joe",
 			"Smith",
 			"email@email.com",
@@ -55,6 +53,8 @@ class AchievementTests(unittest.TestCase):
 			"/pic.png"
 		)	
 		athlete2 = Athlete(
+                        "joe2",
+                        "password",
 			"Joe",
 			"Smith",
 			"email@email.com",
@@ -75,14 +75,12 @@ class AchievementTests(unittest.TestCase):
 
 		database.session.commit()
 
-		self.assertIn(achievement1, athlete1.achievements)
-		self.assertIn(achievement2, athlete1.achievements)
-		self.assertNotIn(achievement3, athlete1.achievements)
+		self.assertTrue(achievement1 in athlete1.achievements)
+		self.assertTrue(achievement2 in athlete1.achievements)
+		self.assertFalse(achievement3 in athlete1.achievements)
 
-		self.assertNotIn(achievement1, athlete2.achievements)
-		self.assertNotIn(achievement2, athlete2.achievements)
-		self.assertNotIn(achievement3, athlete2.achievements)		
+		self.assertFalse(achievement1 in athlete2.achievements)
+		self.assertFalse(achievement2 in athlete2.achievements)
+		self.assertFalse(achievement3 in athlete2.achievements)		
 
-if(__name__ == '__main__'):
-	unittest.main()
 

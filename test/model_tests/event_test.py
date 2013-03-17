@@ -5,10 +5,6 @@ from model.event import Event
 
 class EventTests(unittest.TestCase):	
 
-	@classmethod
-	def setUpClass(cls):
-		database.init("tracker_test")
-
 	def setUp(self):
 		database.empty_database()
 
@@ -25,16 +21,13 @@ class EventTests(unittest.TestCase):
 		queried_event2 = Event.query.filter_by(location = "location2").first()
 		queried_event3 = Event.query.filter_by(location = "location3").first()
 
-		self.assertIsNotNone(queried_event1)
-		self.assertIsNotNone(queried_event2)
-		self.assertIsNotNone(queried_event3)
+		self.assertFalse(queried_event1 is None)
+		self.assertFalse(queried_event2 is None)
+		self.assertFalse(queried_event3 is None)
 
 		self.assertEqual(queried_event1, event1)
 		self.assertEqual(queried_event2, event2)
 		self.assertEqual(queried_event3, event3)
 
 		self.assertTrue(len(Event.query.all()) == 3)
-
-if(__name__ == '__main__'):
-	unittest.main()
 

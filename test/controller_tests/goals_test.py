@@ -1,4 +1,5 @@
 import unittest
+import cherrypy
 from modules import database
 from model.goal import Goal
 from controller.goals import Goals
@@ -12,14 +13,10 @@ class GoalsTest(unittest.TestCase):
     G = Goals()
     A = Activities()
 
-    @classmethod
-    def setUpClass(cls):
-        database.init("tracker_test")
-
     def setUp(self):
+        database.empty_database()
         # intialize the Athlete table with known values
-        database.session.add(
-            Athlete(
+        athlete = Athlete(
                 "username",
                 "password",
                 "Test", 
@@ -28,9 +25,11 @@ class GoalsTest(unittest.TestCase):
                 datetime.now(), 
                 "I'm a Test", 
                 "test street", 
-                "test avatar"))
+                "test avatar")
+        database.session.add(athlete)
         database.session.commit()
 
+        cherrypy.session['id'] = athlete.id
 
     def test_goal_exists(self):
         # create new goal

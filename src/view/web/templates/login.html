@@ -20,9 +20,14 @@
       } );
 
       $("#signupForm").submit(function() {
-        $.post("signup", $(this).serialize(), function() {
-		  $("#signupMessage").text("Signup successful, redirecting!");
-		  window.location.href = "../profiles";
+        $.post("signup", $(this).serialize(), function(errorMsg) {
+		  if(errorMsg == "Username already exists. Please enter a new username.") {
+		  	$("#signupMessage").text(errorMsg);
+		  }
+		  else {
+		    $("#signupMessage").text("Signup successful, redirecting!");
+		    window.location.href = "../profiles";
+		  }
 		} );
         return false;
       } );

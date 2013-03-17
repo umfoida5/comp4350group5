@@ -6,10 +6,6 @@ from model.goal import Goal
 
 class GoalTests(unittest.TestCase):	
 
-    @classmethod
-    def setUpClass(cls):
-        database.init("tracker_test")
-
     def setUp(self):
         database.empty_database()
 
@@ -18,8 +14,6 @@ class GoalTests(unittest.TestCase):
         database.session.add(athlete1)
         database.session.commit()        
 
-        athlete1 = Athlete.query.filter_by(first_name = "name1").first()
-        
         goal1 = Goal(athlete1.id, "run", "total", 100, "distance",
             datetime.now(), datetime.now())
         goal2 = Goal(athlete1.id, "run", "average", 10, "max_speed",
@@ -36,12 +30,9 @@ class GoalTests(unittest.TestCase):
         queried_goal1 = goals[0]
         queried_goal2 = goals[1]
 
-        self.assertIsNotNone(queried_goal1)
-        self.assertIsNotNone(queried_goal2)
+        self.assertFalse(queried_goal1 is None)
+        self.assertFalse(queried_goal2 is None)
 
         self.assertEqual(queried_goal1, goal1)
         self.assertEqual(queried_goal2, goal2)
-
-if(__name__ == '__main__'):
-    unittest.main()
 

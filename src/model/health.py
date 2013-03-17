@@ -7,7 +7,7 @@ class Health(database.Base):
     __tablename__ = 'health'
 
     id                 = Column(Integer, primary_key=True)
-    athlete_id         = Column(Integer, ForeignKey("athletes.id"), nullable=False)
+    athlete_id         = Column(Integer, ForeignKey("athletes.id", ondelete='CASCADE'), nullable=False)
     health_date        = Column(Date(), nullable=False)
     weight             = Column(Integer)
     resting_heart_rate = Column(Integer)

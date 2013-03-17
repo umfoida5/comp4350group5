@@ -25,6 +25,5 @@ def recreate_tables():
 @commit_on_success
 def empty_database():
     for table in reversed(Base.metadata.sorted_tables):
-        print table
         session.execute(table.delete())
 

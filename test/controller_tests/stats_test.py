@@ -1,6 +1,4 @@
 import unittest
-import sys
-sys.path.append('../../src')
 from modules import database
 from model.activity import Activity
 from model.athlete import Athlete
@@ -15,27 +13,23 @@ class StatsTest(unittest.TestCase):
 
     mySE = StatisticsEngine()
 
-    @classmethod
-    def setUpClass(cls):
-        database.init("tracker_test")
-	
     def setUp(self):
 	database.empty_database()
 	    
 	# intialize the Athlete table with known values
-	database.session.add(
-	Athlete(
-        "username",
-        "password",
-	    "Test", 
-	    "Athlete", 
-	    "test@test.com", 
-	    "1111-11-11", 
-	    "I'm a Test", 
-	    "test street", 
-	    "test avatar"))
+        database.session.add(
+            Athlete(
+                "username",
+                "password",
+                "Test", 
+                "Athlete", 
+                "test@test.com", 
+                "1111-11-11", 
+                "I'm a Test", 
+                "test street", 
+                "test avatar"))
 
-	database.session.commit()
+        database.session.commit()
         self.test_athlete = Athlete.query.filter_by(first_name = "Test").first()
         
         # initialize the Activity table with known values

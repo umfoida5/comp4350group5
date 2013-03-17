@@ -1,4 +1,5 @@
 import unittest, datetime
+import cherrypy
 from modules import database
 from controller.login import Login
 from model.athlete import Athlete
@@ -6,10 +7,6 @@ from Cookie import SimpleCookie
 
 class LoginTest(unittest.TestCase):
 	login_controller = Login()
-
-	@classmethod
-	def setUpClass(cls):
-		database.init("tracker_test")
 
 	def setUp(self):
 		database.empty_database()
@@ -88,42 +85,30 @@ class LoginTest(unittest.TestCase):
 		self.assertNotEqual(temp_athlete_id, cherrypy.session.get('id'))
 	
 	def test_signup_success(self):
+		self.populate_database_with_test_data()
+
 		#initialize temporary session id
-		self.login_controller.do_login("justin", "BADPASSWORD")
+		self.login_controller.do_login("justin", "sha256andsalted")
 		temp_athlete_id = cherrypy.session.get('id')
 		
 		#Ensure signup succeeds with proper credentials
 		#On successful signup, the temp ID becomes the permanent id
 		self.login_controller.signup("fdart", "worstfdartpw", "justin", "fdart")
-		athlete = Athlete.query.filter_by(id = cherrypy.session.get('id'))
+		athlete = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
 		
 		self.assertEqual("fdart", athlete.username)
 		self.assertEqual("worstfdartpw", athlete.password)
 		self.assertEqual("justin", athlete.first_name)
 		self.assertEqual("fdart", athlete.last_name)
 
+		self.assertEqual("fdart", cherrypy.session['username'])
+
 	def test_logout_success(self):
-		old_id = cherrypy.session.get('id')
-	
 		self.populate_database_with_test_data()
-		
-		#test that cookie is created correctly
 		self.login_controller.do_login("ben", "anypassword")
-		oldCookie = cherrypy.request.cookie
-		
-		for name in oldCookie.keys():
-			i=i+1
-		
-		self.assertEqual(2,i)
-		
-		#test that cookie is deleted correctly
+		old_id = cherrypy.session.get('id')
 		self.login_controller.do_logout()
 		
-		for name in oldCookie.keys():
-			i=i+1
-				
-		self.assertEqual(1,i)
-		
 		#test that session id is the same and session variable(s) are set back to default 
-		self.assertEqual(old_id, cherrypy.session.get('id'))
-		self.assertEqual("true", cherrypy.session['tempUser'])
+		self.assertNotEqual(old_id, cherrypy.session.get('id'))
+		self.assertEqual("", cherrypy.session['username'])

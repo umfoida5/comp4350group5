@@ -38,3 +38,7 @@ class Root:
     def about(self):
         tmpl = env.get_template('about.html')
         return tmpl.render()
+    
+    @cherrypy.expose
+    def get_current_username(self):
+		return cherrypy.session.get('username')

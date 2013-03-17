@@ -10,8 +10,8 @@ class UnlockedAchievement(Base):
     __tablename__ = 'unlocked_achievements'
 
     id = Column(Integer, primary_key=True)
-    athlete_id = Column(Integer, ForeignKey('athletes.id'), primary_key=True)
-    achievement_id = Column(Integer, ForeignKey('achievements.id'), primary_key=True)
+    athlete_id = Column(Integer, ForeignKey('athletes.id', ondelete='CASCADE'), primary_key=True)
+    achievement_id = Column(Integer, ForeignKey('achievements.id', ondelete='CASCADE'), primary_key=True)
     unlocked_date = Column(DateTime, nullable=False, default=datetime.now())
     
     achievement = relationship("Achievement")

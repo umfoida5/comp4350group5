@@ -5,10 +5,6 @@ from model.athlete import Athlete
 
 class AthleteTests(unittest.TestCase):	
 
-	@classmethod
-	def setUpClass(cls):
-		database.init("tracker_test")
-
 	def setUp(self):
 		database.empty_database()
 
@@ -25,16 +21,13 @@ class AthleteTests(unittest.TestCase):
 		queried_athlete2 = Athlete.query.filter_by(first_name = "name2").first()
 		queried_athlete3 = Athlete.query.filter_by(first_name = "name3").first()
 
-		self.assertIsNotNone(queried_athlete1)
-		self.assertIsNotNone(queried_athlete2)
-		self.assertIsNotNone(queried_athlete3)
+		self.assertFalse(queried_athlete1 is None)
+		self.assertFalse(queried_athlete2 is None)
+		self.assertFalse(queried_athlete3 is None)
 
 		self.assertEqual(queried_athlete1, athlete1)
 		self.assertEqual(queried_athlete2, athlete2)
 		self.assertEqual(queried_athlete3, athlete3)
 
 		self.assertTrue(len(Athlete.query.all()) == 3)
-
-if(__name__ == '__main__'):
-	unittest.main()
 

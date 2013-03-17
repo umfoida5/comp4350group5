@@ -1,0 +1,18 @@
+//
+//  CDCStatsViewController.h
+//  CardioQuest
+//
+//  Created by Andrew Konkin on 3/16/13.
+//  Copyright (c) 2013 comp4350group5. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface CDCStatsViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate> {
+    NSArray *activityTypes;
+    NSArray *dateTypes;
+}
+@property (weak, nonatomic) IBOutlet UIPickerView *activitySelector;
+@property (weak, nonatomic) IBOutlet UIPickerView *dateSelector;
+
+@end
