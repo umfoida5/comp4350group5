@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Rack::Request#reject_trusted_ip_addresses
+is_singleton: false
+name: reject_trusted_ip_addresses
+params: (ip_addresses)
+visibility: protected

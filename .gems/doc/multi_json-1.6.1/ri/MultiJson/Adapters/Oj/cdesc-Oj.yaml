@@ -1,0 +1,24 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Use the Oj library to dump/load.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DEFAULT_OPTIONS
+  value: "{:mode => :compat, :time_format => :ruby}.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ParseError
+  value: if defined?(::Oj::ParseError)
+full_name: MultiJson::Adapters::Oj
+includes: []
+
+instance_methods: []
+
+name: Oj
+superclass: 

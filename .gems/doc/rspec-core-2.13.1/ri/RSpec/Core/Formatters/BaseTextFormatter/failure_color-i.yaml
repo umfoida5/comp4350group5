@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Core::Formatters::BaseTextFormatter#failure_color
+is_singleton: false
+name: failure_color
+params: (text)
+visibility: protected

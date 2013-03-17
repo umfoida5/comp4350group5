@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Used internally by the constant stubbing to raise a helpful error when a constant like &quot;A::B::C&quot; is stubbed and A::B is not a module (and thus, it's impossible to define &quot;A::B::C&quot; since only modules can have nested constants).
+- !ruby/struct:SM::Flow::P 
+  body: "@api private"
+full_name: RSpec::Mocks::ConstantMutator::raise_on_invalid_const
+is_singleton: true
+name: raise_on_invalid_const
+params: ()
+visibility: public

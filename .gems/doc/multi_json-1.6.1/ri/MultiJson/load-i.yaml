@@ -1,0 +1,24 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: decode
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Decode a JSON string into Ruby.
+- !ruby/struct:SM::Flow::P 
+  body: <b>Options</b>
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "<tt>:symbolize_keys</tt> :"
+    body: If true, will use symbols instead of strings for the keys.
+  - !ruby/struct:SM::Flow::LI 
+    label: "<tt>:adapter</tt> :"
+    body: If set, the selected engine will be used just for the call.
+  type: :NOTE
+full_name: MultiJson#load
+is_singleton: false
+name: load
+params: (string, options={})
+visibility: public

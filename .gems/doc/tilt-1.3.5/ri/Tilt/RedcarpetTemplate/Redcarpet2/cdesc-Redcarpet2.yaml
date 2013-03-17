@@ -1,0 +1,26 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: engine_initialized?
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Future proof mode for Redcarpet 2.x (not yet released)
+constants: []
+
+full_name: Tilt::RedcarpetTemplate::Redcarpet2
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: "::Redcarpet::Render::SmartyPants"
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: allows_script?
+- !ruby/object:RI::MethodSummary 
+  name: evaluate
+- !ruby/object:RI::MethodSummary 
+  name: generate_renderer
+- !ruby/object:RI::MethodSummary 
+  name: prepare
+name: Redcarpet2
+superclass: Template

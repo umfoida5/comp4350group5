@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Tilt::RDiscountTemplate#allows_script?
+is_singleton: false
+name: allows_script?
+params: ()
+visibility: public

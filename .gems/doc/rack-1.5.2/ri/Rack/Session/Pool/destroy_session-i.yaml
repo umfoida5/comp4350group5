@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Rack::Session::Pool#destroy_session
+is_singleton: false
+name: destroy_session
+params: (env, session_id, options)
+visibility: public

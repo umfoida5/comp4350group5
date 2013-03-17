@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Mocks::AnyInstance::ExpectationChain#expectation_fulfilled?
+is_singleton: false
+name: expectation_fulfilled?
+params: ()
+visibility: public

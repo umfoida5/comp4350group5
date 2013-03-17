@@ -1,0 +1,21 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: filter_run
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Adds key/value pairs to the `inclusion_filter`. If the `treat_symbols_as_metadata_keys_with_true_values` config option is set to true and `args` includes any symbols that are not part of a hash, each symbol is treated as a key in the hash with the value `true`.
+- !ruby/struct:SM::Flow::P 
+  body: "### Note"
+- !ruby/struct:SM::Flow::P 
+  body: Filters set using this method can be overridden from the command line or config files (e.g. `.rspec`).
+- !ruby/struct:SM::Flow::P 
+  body: "@example"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    # given this declaration\n    describe &quot;something&quot;, :foo =&gt; 'bar' do\n      # ...\n    end\n\n    # any of the following will include that group\n    config.filter_run_including :foo =&gt; 'bar'\n    config.filter_run_including :foo =&gt; /^ba/\n    config.filter_run_including :foo =&gt; lambda {|v| v == 'bar'}\n    config.filter_run_including :foo =&gt; lambda {|v,m| m[:foo] == 'bar'}\n\n    # given a proc with an arity of 1, the lambda is passed the value related to the key, e.g.\n    config.filter_run_including :foo =&gt; lambda {|v| v == 'bar'}\n\n    # given a proc with an arity of 2, the lambda is passed the value related to the key,\n    # and the metadata itself e.g.\n    config.filter_run_including :foo =&gt; lambda {|v,m| m[:foo] == 'bar'}\n\n    # with treat_symbols_as_metadata_keys_with_true_values = true\n    filter_run_including :foo # same as filter_run_including :foo =&gt; true\n"
+full_name: RSpec::Core::Configuration#filter_run_including
+is_singleton: false
+name: filter_run_including
+params: (*args)
+visibility: public

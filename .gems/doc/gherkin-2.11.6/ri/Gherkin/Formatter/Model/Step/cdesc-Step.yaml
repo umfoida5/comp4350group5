@@ -1,0 +1,28 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: doc_string
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: rows
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: Gherkin::Formatter::Model::Step
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: line_range
+- !ruby/object:RI::MethodSummary 
+  name: outline_args
+- !ruby/object:RI::MethodSummary 
+  name: replay
+name: Step
+superclass: BasicStatement

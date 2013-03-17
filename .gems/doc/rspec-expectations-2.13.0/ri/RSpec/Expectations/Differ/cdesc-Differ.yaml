@@ -1,0 +1,34 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: RSpec::Expectations::Differ
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: blue
+- !ruby/object:RI::MethodSummary 
+  name: color
+- !ruby/object:RI::MethodSummary 
+  name: color_diff
+- !ruby/object:RI::MethodSummary 
+  name: context_lines
+- !ruby/object:RI::MethodSummary 
+  name: diff_as_object
+- !ruby/object:RI::MethodSummary 
+  name: diff_as_string
+- !ruby/object:RI::MethodSummary 
+  name: format
+- !ruby/object:RI::MethodSummary 
+  name: green
+- !ruby/object:RI::MethodSummary 
+  name: object_to_string
+- !ruby/object:RI::MethodSummary 
+  name: red
+name: Differ
+superclass: Object

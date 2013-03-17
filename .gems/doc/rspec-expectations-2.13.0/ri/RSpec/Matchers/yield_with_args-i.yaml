@@ -1,0 +1,28 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Given no arguments, matches if the method called in the expect block yields with arguments (regardless of what they are or how many there are).
+- !ruby/struct:SM::Flow::P 
+  body: Given arguments, matches if the method called in the expect block yields with arguments that match the given arguments.
+- !ruby/struct:SM::Flow::P 
+  body: Argument matching is done using `===` (the case match operator) and `==`. If the expected and actual arguments match with either operator, the matcher will pass.
+- !ruby/struct:SM::Flow::P 
+  body: "@example"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  expect { |b| 5.tap(&amp;b) }.to yield_with_args # because #tap yields an arg\n  expect { |b| 5.tap(&amp;b) }.to yield_with_args(5) # because 5 == 5\n  expect { |b| 5.tap(&amp;b) }.to yield_with_args(Fixnum) # because Fixnum === 5\n  expect { |b| File.open(&quot;f.txt&quot;, &amp;b) }.to yield_with_args(/txt/) # because /txt/ === &quot;f.txt&quot;\n\n  expect { |b| User.transaction(&amp;b) }.not_to yield_with_args # because it yields no args\n  expect { |b| 5.tap(&amp;b) }.not_to yield_with_args(1, 2, 3)\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@note Your expect block must accept a parameter and pass it on to"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  the method-under-test as a block.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@note This matcher is not designed for use with methods that yield"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  multiple times.\n"
+full_name: RSpec::Matchers#yield_with_args
+is_singleton: false
+name: yield_with_args
+params: (*args)
+visibility: public

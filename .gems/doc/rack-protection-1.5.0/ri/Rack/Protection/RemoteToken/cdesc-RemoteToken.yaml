@@ -1,0 +1,32 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "Prevented attack:"
+    body: CSRF
+  - !ruby/struct:SM::Flow::LI 
+    label: "Supported browsers:"
+    body: all
+  - !ruby/struct:SM::Flow::LI 
+    label: "More infos:"
+    body: http://en.wikipedia.org/wiki/Cross-site_request_forgery
+  type: :NOTE
+- !ruby/struct:SM::Flow::P 
+  body: Only accepts unsafe HTTP requests if a given access token matches the token included in the session <b>or</b> the request comes from the same origin.
+- !ruby/struct:SM::Flow::P 
+  body: Compatible with Rails and rack-csrf.
+constants: []
+
+full_name: Rack::Protection::RemoteToken
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: accepts?
+name: RemoteToken
+superclass: AuthenticityToken

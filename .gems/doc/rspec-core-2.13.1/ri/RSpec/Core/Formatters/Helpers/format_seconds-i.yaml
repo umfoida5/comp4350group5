@@ -1,0 +1,24 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@api private"
+- !ruby/struct:SM::Flow::P 
+  body: Formats seconds to have 5 digits of precision with trailing zeros removed if the number if less than 1 or with 2 digits of precision if the number is greater than zero.
+- !ruby/struct:SM::Flow::P 
+  body: "@param [Float] float @return [String] formatted float"
+- !ruby/struct:SM::Flow::P 
+  body: "@example"
+- !ruby/struct:SM::Flow::VERB 
+  body: "   format_seconds(0.000006) #=&gt; &quot;0.00001&quot;\n   format_seconds(0.020000) #=&gt; &quot;0.02&quot;\n   format_seconds(1.00000000001) #=&gt; &quot;1&quot;\n"
+- !ruby/struct:SM::Flow::P 
+  body: The precision used is set in {Helpers::SUB_SECOND_PRECISION} and {Helpers::DEFAULT_PRECISION}.
+- !ruby/struct:SM::Flow::P 
+  body: "@see #strip_trailing_zeroes"
+full_name: RSpec::Core::Formatters::Helpers#format_seconds
+is_singleton: false
+name: format_seconds
+params: (float)
+visibility: public

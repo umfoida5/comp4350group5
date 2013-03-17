@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Cucumber::Ast::MultilineArgument::from
+is_singleton: true
+name: from
+params: (argument)
+visibility: public

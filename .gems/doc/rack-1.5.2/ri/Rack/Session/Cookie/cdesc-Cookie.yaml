@@ -1,0 +1,35 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: coder
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Rack::Session::Cookie provides simple cookie based session management. By default, the session is a Ruby Hash stored as base64 encoded marshalled data set to :key (default: rack.session). The object that encodes the session data is configurable and must respond to <tt>encode</tt> and <tt>decode</tt>. Both methods must take a string and return a string."
+- !ruby/struct:SM::Flow::P 
+  body: When the secret key is set, cookie data is checked for data integrity. The old secret key is also accepted and allows graceful secret rotation.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    use Rack::Session::Cookie, :key =&gt; 'rack.session',\n                               :domain =&gt; 'foo.com',\n                               :path =&gt; '/',\n                               :expire_after =&gt; 2592000,\n                               :secret =&gt; 'change_me',\n                               :old_secret =&gt; 'also_change_me'\n\n    All parameters are optional.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Example of a cookie with no encoding:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Rack::Session::Cookie.new(application, {\n    :coder =&gt; Rack::Session::Cookie::Identity.new\n  })\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Example of a cookie with custom encoding:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Rack::Session::Cookie.new(application, {\n    :coder =&gt; Class.new {\n      def encode(str); str.reverse; end\n      def decode(str); str.reverse; end\n    }.new\n  })\n"
+constants: []
+
+full_name: Rack::Session::Cookie
+includes: []
+
+instance_methods: []
+
+name: Cookie
+superclass: Abstract::ID

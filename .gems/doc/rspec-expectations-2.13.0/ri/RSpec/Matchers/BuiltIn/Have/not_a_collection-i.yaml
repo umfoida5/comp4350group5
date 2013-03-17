@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Matchers::BuiltIn::Have#not_a_collection
+is_singleton: false
+name: not_a_collection
+params: ()
+visibility: public

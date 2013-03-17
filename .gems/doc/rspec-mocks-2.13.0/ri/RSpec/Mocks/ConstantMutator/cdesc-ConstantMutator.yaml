@@ -1,0 +1,34 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: ensure_registered_with_mocks_space
+- !ruby/object:RI::MethodSummary 
+  name: find
+- !ruby/object:RI::MethodSummary 
+  name: hide
+- !ruby/object:RI::MethodSummary 
+  name: mutate
+- !ruby/object:RI::MethodSummary 
+  name: mutators
+- !ruby/object:RI::MethodSummary 
+  name: raise_on_invalid_const
+- !ruby/object:RI::MethodSummary 
+  name: register_mutator
+- !ruby/object:RI::MethodSummary 
+  name: rspec_reset
+- !ruby/object:RI::MethodSummary 
+  name: stub
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Provides a means to stub constants.
+constants: []
+
+full_name: RSpec::Mocks::ConstantMutator
+includes: []
+
+instance_methods: []
+
+name: ConstantMutator
+superclass: Object

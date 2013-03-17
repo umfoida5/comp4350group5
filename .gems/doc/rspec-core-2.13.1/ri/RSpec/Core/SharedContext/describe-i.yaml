@@ -1,0 +1,11 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: context
+block_params: 
+comment: 
+full_name: RSpec::Core::SharedContext#describe
+is_singleton: false
+name: describe
+params: (name, *args, &block)
+visibility: public

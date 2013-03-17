@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: .sub(DOCUMENT_HEADER, "") }
+comment: 
+full_name: Tilt::NokogiriTemplate#evaluate
+is_singleton: false
+name: evaluate
+params: (scope, locals) {|.sub(DOCUMENT_HEADER, "") }| ...}
+visibility: public

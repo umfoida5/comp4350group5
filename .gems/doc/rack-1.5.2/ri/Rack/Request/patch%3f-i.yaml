@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Checks the HTTP request method (or verb) to see if it was of type PATCH
+full_name: Rack::Request#patch?
+is_singleton: false
+name: patch?
+params: ()
+visibility: public

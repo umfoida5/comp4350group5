@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Core::FilterManager#exclude_with_low_priority
+is_singleton: false
+name: exclude_with_low_priority
+params: (*args)
+visibility: public

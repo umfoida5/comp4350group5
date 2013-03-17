@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Matchers::BuiltIn::Change#by
+is_singleton: false
+name: by
+params: (expected_delta)
+visibility: public

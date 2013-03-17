@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Decodes a json document in string s and returns the corresponding ruby value. String s must be valid UTF-8. If you have a string in some other encoding, convert it first.
+- !ruby/struct:SM::Flow::P 
+  body: String values in the resulting structure will be UTF-8.
+full_name: Rack::Utils::OkJson#decode
+is_singleton: false
+name: decode
+params: (s)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/10655
+full_name: Cucumber::Formatter::Console#linebreaks
+is_singleton: false
+name: linebreaks
+params: (s, max)
+visibility: public

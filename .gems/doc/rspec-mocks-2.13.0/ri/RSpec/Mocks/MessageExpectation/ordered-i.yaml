@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Expect messages to be received in a specific order.
+- !ruby/struct:SM::Flow::P 
+  body: "@example"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  api.should_receive(:prepare).ordered\n  api.should_receive(:run).ordered\n  api.should_receive(:finish).ordered\n"
+full_name: RSpec::Mocks::MessageExpectation#ordered
+is_singleton: false
+name: ordered
+params: (&block)
+visibility: public

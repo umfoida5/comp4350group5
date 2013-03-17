@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@api private"
+full_name: RSpec::Core::Example::Procsy#with
+is_singleton: false
+name: with
+params: (metadata)
+visibility: public

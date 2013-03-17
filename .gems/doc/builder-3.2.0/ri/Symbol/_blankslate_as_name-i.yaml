@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Symbol#_blankslate_as_name
+is_singleton: false
+name: _blankslate_as_name
+params: ()
+visibility: public

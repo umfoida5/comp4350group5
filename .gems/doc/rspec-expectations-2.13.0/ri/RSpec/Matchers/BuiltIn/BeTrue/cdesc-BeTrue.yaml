@@ -1,0 +1,20 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: RSpec::Matchers::BuiltIn::BeTrue
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: failure_message_for_should
+- !ruby/object:RI::MethodSummary 
+  name: failure_message_for_should_not
+- !ruby/object:RI::MethodSummary 
+  name: match
+name: BeTrue
+superclass: BaseMatcher

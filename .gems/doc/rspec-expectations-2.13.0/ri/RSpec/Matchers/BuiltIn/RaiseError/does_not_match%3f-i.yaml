@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Matchers::BuiltIn::RaiseError#does_not_match?
+is_singleton: false
+name: does_not_match?
+params: (given_proc)
+visibility: public

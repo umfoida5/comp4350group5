@@ -1,0 +1,24 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Passes if the method called in the expect block yields, regardless of whether or not arguments are yielded.
+- !ruby/struct:SM::Flow::P 
+  body: "@example"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  expect { |b| 5.tap(&amp;b) }.to yield_control\n  expect { |b| &quot;a&quot;.to_sym(&amp;b) }.not_to yield_control\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@note Your expect block must accept a parameter and pass it on to"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  the method-under-test as a block.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@note This matcher is not designed for use with methods that yield"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  multiple times.\n"
+full_name: RSpec::Matchers#yield_control
+is_singleton: false
+name: yield_control
+params: ()
+visibility: public

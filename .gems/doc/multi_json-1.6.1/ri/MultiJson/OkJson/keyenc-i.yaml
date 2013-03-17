@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: MultiJson::OkJson#keyenc
+is_singleton: false
+name: keyenc
+params: (k)
+visibility: public

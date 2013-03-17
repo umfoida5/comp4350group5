@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Adds `block` to the front of the list of `before` blocks in the same scope (`:each`, `:all`, or `:suite`).
+- !ruby/struct:SM::Flow::P 
+  body: "See #before for scoping semantics."
+full_name: RSpec::Core::Hooks#prepend_before
+is_singleton: false
+name: prepend_before
+params: (*args, &block)
+visibility: public

@@ -1,0 +1,21 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Mixed in to Metadata for an Example (extends MetadataHash) to support lazy evaluation of some values.
+constants: []
+
+full_name: RSpec::Core::Metadata::ExampleMetadataHash
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: MetadataHash
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: described_class
+- !ruby/object:RI::MethodSummary 
+  name: full_description
+name: ExampleMetadataHash
+superclass: 

@@ -1,0 +1,16 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: configure
+comment: 
+constants: []
+
+full_name: RSpec::Runner
+includes: []
+
+instance_methods: []
+
+name: Runner
+superclass: 

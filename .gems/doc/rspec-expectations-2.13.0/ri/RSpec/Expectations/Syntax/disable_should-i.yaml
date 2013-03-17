@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@api private Disables the `should` syntax."
+full_name: RSpec::Expectations::Syntax#disable_should
+is_singleton: false
+name: disable_should
+params: (syntax_host = default_should_host)
+visibility: public

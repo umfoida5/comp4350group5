@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Matchers::BuiltIn::Change#actual_delta
+is_singleton: false
+name: actual_delta
+params: ()
+visibility: public

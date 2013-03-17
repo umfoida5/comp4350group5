@@ -1,0 +1,32 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "Prevented attack:"
+    body: Session Hijacking
+  - !ruby/struct:SM::Flow::LI 
+    label: "Supported browsers:"
+    body: all
+  - !ruby/struct:SM::Flow::LI 
+    label: "More infos:"
+    body: http://en.wikipedia.org/wiki/Session_hijacking
+  type: :NOTE
+- !ruby/struct:SM::Flow::P 
+  body: Tracks request properties like the user agent in the session and empties the session if those properties change. This essentially prevents attacks from Firesheep. Since all headers taken into consideration might be spoofed, too, this will not prevent all hijacking attempts.
+constants: []
+
+full_name: Rack::Protection::SessionHijacking
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: accepts?
+- !ruby/object:RI::MethodSummary 
+  name: encrypt
+name: SessionHijacking
+superclass: Base

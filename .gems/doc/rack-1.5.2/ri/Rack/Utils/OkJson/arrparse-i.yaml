@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Parses an &quot;array&quot; in the sense of RFC 4627. Returns the parsed value and any trailing tokens.
+full_name: Rack::Utils::OkJson#arrparse
+is_singleton: false
+name: arrparse
+params: (ts)
+visibility: public

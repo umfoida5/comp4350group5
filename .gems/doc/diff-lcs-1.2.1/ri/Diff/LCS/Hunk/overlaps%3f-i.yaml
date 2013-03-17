@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Determines whether there is an overlap between this hunk and the provided hunk. This will be true if the difference between the two hunks start or end positions is within one position of each other.
+full_name: Diff::LCS::Hunk#overlaps?
+is_singleton: false
+name: overlaps?
+params: (hunk)
+visibility: public

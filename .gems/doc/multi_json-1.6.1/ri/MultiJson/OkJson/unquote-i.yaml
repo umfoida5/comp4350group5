@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Converts a quoted json string literal q into a UTF-8-encoded string. The rules are different than for Ruby, so we cannot use eval. Unquote will raise an error if q contains control characters.
+full_name: MultiJson::OkJson#unquote
+is_singleton: false
+name: unquote
+params: (q)
+visibility: public

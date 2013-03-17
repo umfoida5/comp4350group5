@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Passes if actual is falsy (false or nil)
+full_name: RSpec::Matchers#be_false
+is_singleton: false
+name: be_false
+params: ()
+visibility: public

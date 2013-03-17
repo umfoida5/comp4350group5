@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Matchers::BuiltIn::NegativeOperatorMatcher#__delegate_operator
+is_singleton: false
+name: __delegate_operator
+params: (actual, operator, expected)
+visibility: public

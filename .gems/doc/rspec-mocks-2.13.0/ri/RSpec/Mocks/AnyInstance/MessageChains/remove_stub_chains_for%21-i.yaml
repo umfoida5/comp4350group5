@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@private"
+full_name: RSpec::Mocks::AnyInstance::MessageChains#remove_stub_chains_for!
+is_singleton: false
+name: remove_stub_chains_for!
+params: (method_name)
+visibility: public

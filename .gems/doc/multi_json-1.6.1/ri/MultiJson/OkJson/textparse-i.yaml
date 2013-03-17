@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Parses a &quot;json text&quot; in the sense of RFC 4627. Returns the parsed value and any trailing tokens. Note: this is almost the same as valparse, except that it does not accept atomic values."
+full_name: MultiJson::OkJson#textparse
+is_singleton: false
+name: textparse
+params: (ts)
+visibility: public

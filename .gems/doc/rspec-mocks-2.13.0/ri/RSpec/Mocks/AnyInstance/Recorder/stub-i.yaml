@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Initializes the recording a stub to be played back against any instance of this object that invokes the submitted method.
+- !ruby/struct:SM::Flow::P 
+  body: "@see Methods#stub"
+full_name: RSpec::Mocks::AnyInstance::Recorder#stub
+is_singleton: false
+name: stub
+params: (method_name_or_method_map, &block)
+visibility: public

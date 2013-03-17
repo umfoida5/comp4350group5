@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Rack::Protection::JsonCsrf#has_vector?
+is_singleton: false
+name: has_vector?
+params: (request, headers)
+visibility: public

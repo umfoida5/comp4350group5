@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Works like `alias_method :name, :example` with the added benefit of assigning default metadata to the generated example.
+- !ruby/struct:SM::Flow::P 
+  body: "@note Use with caution. This extends the language used in your"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  specs, but does not add any additional documentation.  We use this\n  in rspec to define methods like `focus` and `xit`, but we also add\n  docs for those methods.\n"
+full_name: RSpec::Core::ExampleGroup::alias_example_to
+is_singleton: true
+name: alias_example_to
+params: (name, extra={})
+visibility: public

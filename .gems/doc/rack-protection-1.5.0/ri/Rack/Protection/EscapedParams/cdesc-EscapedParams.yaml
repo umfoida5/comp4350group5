@@ -1,0 +1,47 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "Prevented attack:"
+    body: XSS
+  - !ruby/struct:SM::Flow::LI 
+    label: "Supported browsers:"
+    body: all
+  - !ruby/struct:SM::Flow::LI 
+    label: "More infos:"
+    body: http://en.wikipedia.org/wiki/Cross-site_scripting
+  type: :NOTE
+- !ruby/struct:SM::Flow::P 
+  body: Automatically escapes Rack::Request#params so they can be embedded in HTML or JavaScript without any further issues. Calls <tt>html_safe</tt> on the escaped strings if defined, to avoid double-escaping in Rails.
+- !ruby/struct:SM::Flow::P 
+  body: "Options:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "escape:"
+    body: "What escaping modes to use, should be Symbol or Array of Symbols. Available: :html (default), :javascript, :url"
+  type: :NOTE
+constants: []
+
+full_name: Rack::Protection::EscapedParams
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: call
+- !ruby/object:RI::MethodSummary 
+  name: escape
+- !ruby/object:RI::MethodSummary 
+  name: escape_hash
+- !ruby/object:RI::MethodSummary 
+  name: escape_string
+- !ruby/object:RI::MethodSummary 
+  name: handle
+name: EscapedParams
+superclass: Base

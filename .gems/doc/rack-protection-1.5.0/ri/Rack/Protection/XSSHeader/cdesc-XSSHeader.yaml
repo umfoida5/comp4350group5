@@ -1,0 +1,38 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "Prevented attack:"
+    body: Non-permanent XSS
+  - !ruby/struct:SM::Flow::LI 
+    label: "Supported browsers:"
+    body: Internet Explorer 8 and later
+  - !ruby/struct:SM::Flow::LI 
+    label: "More infos:"
+    body: http://blogs.msdn.com/b/ie/archive/2008/07/01/ie8-security-part-iv-the-xss-filter.aspx
+  type: :NOTE
+- !ruby/struct:SM::Flow::P 
+  body: Sets X-XSS-Protection header to tell the browser to block attacks.
+- !ruby/struct:SM::Flow::P 
+  body: "Options:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "xss_mode:"
+    body: "How the browser should prevent the attack (default: :block)"
+  type: :NOTE
+constants: []
+
+full_name: Rack::Protection::XSSHeader
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: call
+name: XSSHeader
+superclass: Base

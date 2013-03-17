@@ -1,0 +1,17 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: an_instance_of
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Matches if `arg.instance_of?(klass)`
+- !ruby/struct:SM::Flow::P 
+  body: "@example"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  object.should_receive(:message).with(instance_of(Thing))\n"
+full_name: RSpec::Mocks::ArgumentMatchers#instance_of
+is_singleton: false
+name: instance_of
+params: (klass)
+visibility: public

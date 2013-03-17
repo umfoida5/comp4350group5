@@ -1,0 +1,60 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: default_options
+  rw: RW
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Some parts adapted from http://golang.org/src/pkg/json/decode.go and http://golang.org/src/pkg/utf8/utf8.go
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VERSION
+  value: "\"1.6.1\" unless defined?(MultiJson::VERSION)"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DecodeError
+  value: "LoadError # Legacy support"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: REQUIREMENT_MAP
+  value: "[     ['oj',        :oj],     ['yajl',      :yajl],     ['json',      :json_gem],     ['gson',      :gson],     ['json/pure', :json_pure]"
+full_name: MultiJson
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: adapter
+- !ruby/object:RI::MethodSummary 
+  name: adapter=
+- !ruby/object:RI::MethodSummary 
+  name: current_adapter
+- !ruby/object:RI::MethodSummary 
+  name: decode
+- !ruby/object:RI::MethodSummary 
+  name: default_adapter
+- !ruby/object:RI::MethodSummary 
+  name: default_engine
+- !ruby/object:RI::MethodSummary 
+  name: dump
+- !ruby/object:RI::MethodSummary 
+  name: encode
+- !ruby/object:RI::MethodSummary 
+  name: engine
+- !ruby/object:RI::MethodSummary 
+  name: engine=
+- !ruby/object:RI::MethodSummary 
+  name: load
+- !ruby/object:RI::MethodSummary 
+  name: load_adapter
+- !ruby/object:RI::MethodSummary 
+  name: use
+- !ruby/object:RI::MethodSummary 
+  name: with_adapter
+- !ruby/object:RI::MethodSummary 
+  name: with_engine
+name: MultiJson
+superclass: 

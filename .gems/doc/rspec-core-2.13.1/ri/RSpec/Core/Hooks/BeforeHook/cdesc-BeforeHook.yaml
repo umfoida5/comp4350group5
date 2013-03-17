@@ -1,0 +1,18 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: RSpec::Core::Hooks::BeforeHook
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: display_name
+- !ruby/object:RI::MethodSummary 
+  name: run
+name: BeforeHook
+superclass: Hook

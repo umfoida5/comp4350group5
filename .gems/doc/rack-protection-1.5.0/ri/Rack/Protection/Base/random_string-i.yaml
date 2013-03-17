@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Rack::Protection::Base#random_string
+is_singleton: false
+name: random_string
+params: (secure = defined? SecureRandom)
+visibility: public

@@ -1,0 +1,28 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: RSpec::Core::MemoizedHelpers::ClassMethods
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: its
+- !ruby/object:RI::MethodSummary 
+  name: let
+- !ruby/object:RI::MethodSummary 
+  name: let!
+- !ruby/object:RI::MethodSummary 
+  name: should
+- !ruby/object:RI::MethodSummary 
+  name: should_not
+- !ruby/object:RI::MethodSummary 
+  name: subject
+- !ruby/object:RI::MethodSummary 
+  name: subject!
+name: ClassMethods
+superclass: 

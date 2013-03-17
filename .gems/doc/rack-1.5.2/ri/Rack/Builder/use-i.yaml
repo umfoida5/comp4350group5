@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Specifies middleware to use in a stack.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  class Middleware\n    def initialize(app)\n      @app = app\n    end\n\n    def call(env)\n      env[&quot;rack.some_header&quot;] = &quot;setting an example&quot;\n      @app.call(env)\n    end\n  end\n\n  use Middleware\n  run lambda { |env| [200, { &quot;Content-Type =&gt; &quot;text/plain&quot; }, [&quot;OK&quot;]] }\n"
+- !ruby/struct:SM::Flow::P 
+  body: All requests through to this application will first be processed by the middleware class. The <tt>call</tt> method in this example sets an additional environment key which then can be referenced in the application if required.
+full_name: Rack::Builder#use
+is_singleton: false
+name: use
+params: (middleware, *args, &block)
+visibility: public

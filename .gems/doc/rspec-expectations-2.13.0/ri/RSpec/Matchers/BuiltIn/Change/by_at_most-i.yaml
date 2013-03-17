@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Matchers::BuiltIn::Change#by_at_most
+is_singleton: false
+name: by_at_most
+params: (maximum)
+visibility: public

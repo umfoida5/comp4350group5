@@ -1,0 +1,28 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: engine_initialized?
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Kramdown Markdown implementation. See: http://kramdown.rubyforge.org/"
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DUMB_QUOTES
+  value: "[39, 39, 34, 34]"
+full_name: Tilt::KramdownTemplate
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: allows_script?
+- !ruby/object:RI::MethodSummary 
+  name: evaluate
+- !ruby/object:RI::MethodSummary 
+  name: initialize_engine
+- !ruby/object:RI::MethodSummary 
+  name: prepare
+name: KramdownTemplate
+superclass: Template

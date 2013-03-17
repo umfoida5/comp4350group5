@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Alias for #dump"
+full_name: MultiJson#encode
+is_singleton: false
+name: encode
+params: (object, options={})
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Supports +none?+ on early patch levels of Ruby 1.8.6
+full_name: Array#none?
+is_singleton: false
+name: none?
+params: (&block)
+visibility: public

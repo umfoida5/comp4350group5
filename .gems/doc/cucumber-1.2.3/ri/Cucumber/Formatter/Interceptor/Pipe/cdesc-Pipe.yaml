@@ -1,0 +1,34 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: buffer
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: pipe
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: unwrap!
+- !ruby/object:RI::MethodSummary 
+  name: validate_pipe
+- !ruby/object:RI::MethodSummary 
+  name: wrap
+comment: 
+constants: []
+
+full_name: Cucumber::Formatter::Interceptor::Pipe
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: method_missing
+- !ruby/object:RI::MethodSummary 
+  name: unwrap!
+- !ruby/object:RI::MethodSummary 
+  name: write
+name: Pipe
+superclass: Object

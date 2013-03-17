@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: self
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@api @overload report(count, &amp;block) @overload report(count, seed, &amp;block) @param [Integer] count the number of examples being run @param [Integer] seed the seed used to randomize the spec run @param [Block] block yields itself for further reporting."
+- !ruby/struct:SM::Flow::P 
+  body: Initializes the report run and yields itself for further reporting. The block is required, so that the reporter can manage cleaning up after the run.
+- !ruby/struct:SM::Flow::P 
+  body: "### Warning:"
+- !ruby/struct:SM::Flow::P 
+  body: The `seed` argument is an internal API and is not guaranteed to be supported in the future.
+- !ruby/struct:SM::Flow::P 
+  body: "@example"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    reporter.report(group.examples.size) do |r|\n      example_groups.map {|g| g.run(r) }\n    end\n"
+full_name: RSpec::Core::Reporter#report
+is_singleton: false
+name: report
+params: (expected_example_count, seed=nil) {|self| ...}
+visibility: public

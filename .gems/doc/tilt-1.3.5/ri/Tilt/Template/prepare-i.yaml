@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Do whatever preparation is necessary to setup the underlying template engine. Called immediately after template data is loaded. Instance variables set in this method are available when #evaluate is called."
+- !ruby/struct:SM::Flow::P 
+  body: Subclasses must provide an implementation of this method.
+full_name: Tilt::Template#prepare
+is_singleton: false
+name: prepare
+params: ()
+visibility: protected

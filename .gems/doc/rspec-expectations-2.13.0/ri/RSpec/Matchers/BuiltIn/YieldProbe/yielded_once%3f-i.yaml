@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Matchers::BuiltIn::YieldProbe#yielded_once?
+is_singleton: false
+name: yielded_once?
+params: (matcher_name)
+visibility: public

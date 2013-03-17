@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Rack::Request#trusted_proxy?
+is_singleton: false
+name: trusted_proxy?
+params: (ip)
+visibility: public

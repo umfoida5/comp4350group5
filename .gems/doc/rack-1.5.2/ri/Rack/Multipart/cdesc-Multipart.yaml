@@ -1,0 +1,69 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: build_multipart
+- !ruby/object:RI::MethodSummary 
+  name: parse_multipart
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: A multipart form data parser, adapted from IOWA.
+- !ruby/struct:SM::Flow::P 
+  body: Usually, Rack::Request#POST takes care of calling this.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: EOL
+  value: "\"\\r\\n\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MULTIPART_BOUNDARY
+  value: "\"AaB03x\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MULTIPART
+  value: "%r|\\Amultipart/.*boundary=\\\"?([^\\\";,]+)\\\"?|n"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TOKEN
+  value: /[^\s()<>,;:\\"\/\[\]?=]+/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CONDISP
+  value: /Content-Disposition:\s*#{TOKEN}\s*/i
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DISPPARM
+  value: /;\s*(#{TOKEN})=("(?:\\"|[^"])*"|#{TOKEN})/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: RFC2183
+  value: /^#{CONDISP}(#{DISPPARM})+$/i
+- !ruby/object:RI::Constant 
+  comment: 
+  name: BROKEN_QUOTED
+  value: /^#{CONDISP}.*;\sfilename="(.*?)"(?:\s*$|\s*;\s*#{TOKEN}=)/i
+- !ruby/object:RI::Constant 
+  comment: 
+  name: BROKEN_UNQUOTED
+  value: /^#{CONDISP}.*;\sfilename=(#{TOKEN})/i
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MULTIPART_CONTENT_TYPE
+  value: "/Content-Type: (.*)#{EOL}/ni"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MULTIPART_CONTENT_DISPOSITION
+  value: /Content-Disposition:.*\s+name="?([^\";]*)"?/ni
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MULTIPART_CONTENT_ID
+  value: /Content-ID:\s*([^#{EOL}]*)/ni
+full_name: Rack::Multipart
+includes: []
+
+instance_methods: []
+
+name: Multipart
+superclass: 

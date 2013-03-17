@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Like Kernel#require but issues a warning urging a manual require when running under a threaded environment.
+full_name: Tilt::Template#require_template_library
+is_singleton: false
+name: require_template_library
+params: (name)
+visibility: protected

@@ -1,0 +1,24 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: modules.first.configuration
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sets the expectation framework module(s) to be included in each example group.
+- !ruby/struct:SM::Flow::P 
+  body: "`frameworks` can be `:rspec`, `:stdlib`, a custom module, or any combination thereof:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    config.expect_with :rspec\n    config.expect_with :stdlib\n    config.expect_with :rspec, :stdlib\n    config.expect_with OtherExpectationFramework\n"
+- !ruby/struct:SM::Flow::P 
+  body: RSpec will translate `:rspec` and `:stdlib` into the appropriate modules.
+- !ruby/struct:SM::Flow::P 
+  body: "## Configuration"
+- !ruby/struct:SM::Flow::P 
+  body: "If the module responds to `configuration`, `expect_with` will yield the `configuration` object if given a block:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    config.expect_with OtherExpectationFramework do |custom_config|\n      custom_config.custom_setting = true\n    end\n"
+full_name: RSpec::Core::Configuration#expect_with
+is_singleton: false
+name: expect_with
+params: (*frameworks) {|modules.first.configuration| ...}
+visibility: public

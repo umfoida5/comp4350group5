@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sets and expectation that this object should receive a message before the end of the example.
+- !ruby/struct:SM::Flow::P 
+  body: "@example"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    logger = double('logger')\n    thing_that_logs = ThingThatLogs.new(logger)\n    logger.should_receive(:log)\n    thing_that_logs.do_something_that_logs_a_message\n"
+full_name: RSpec::Mocks::Methods#should_receive
+is_singleton: false
+name: should_receive
+params: (message, opts={}, &block)
+visibility: public

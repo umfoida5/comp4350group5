@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Expectations::Syntax::ShouldExpressionGenerator::positive_expression
+is_singleton: true
+name: positive_expression
+params: (target_expression, matcher_expression)
+visibility: public

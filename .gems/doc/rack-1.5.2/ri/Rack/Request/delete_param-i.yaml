@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Destructively delete a parameter, whether it's in GET or POST. Returns the value of the deleted parameter.
+- !ruby/struct:SM::Flow::P 
+  body: "If the parameter is in both GET and POST, the POST value takes precedence since that's how #params works."
+- !ruby/struct:SM::Flow::P 
+  body: env['rack.input'] is not touched.
+full_name: Rack::Request#delete_param
+is_singleton: false
+name: delete_param
+params: (k)
+visibility: public

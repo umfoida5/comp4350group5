@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Expectations::ExpectationHandler::message_must_be_string
+is_singleton: true
+name: message_must_be_string
+params: (msg)
+visibility: public

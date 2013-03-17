@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Matches if the actual argument responds to the specified messages.
+- !ruby/struct:SM::Flow::P 
+  body: "@example"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  object.should_receive(:message).with(duck_type(:hello))\n  object.should_receive(:message).with(duck_type(:hello, :goodbye))\n"
+full_name: RSpec::Mocks::ArgumentMatchers#duck_type
+is_singleton: false
+name: duck_type
+params: (*args)
+visibility: public

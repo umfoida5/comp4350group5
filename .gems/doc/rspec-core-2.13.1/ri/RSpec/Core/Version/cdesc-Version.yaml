@@ -1,0 +1,18 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: STRING
+  value: "'2.13.1'"
+full_name: RSpec::Core::Version
+includes: []
+
+instance_methods: []
+
+name: Version
+superclass: 

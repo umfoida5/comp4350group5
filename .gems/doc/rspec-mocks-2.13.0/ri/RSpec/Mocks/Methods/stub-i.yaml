@@ -1,0 +1,17 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: stub!
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Tells the object to respond to the message with the specified value.
+- !ruby/struct:SM::Flow::P 
+  body: "@example"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    counter.stub(:count).and_return(37)\n    counter.stub(:count =&gt; 37)\n    counter.stub(:count) { 37 }\n"
+full_name: RSpec::Mocks::Methods#stub
+is_singleton: false
+name: stub
+params: (message_or_hash, opts={}, &block)
+visibility: public

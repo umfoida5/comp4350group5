@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@api private"
+- !ruby/struct:SM::Flow::P 
+  body: Extract lines of code centered around a particular line within a source file.
+- !ruby/struct:SM::Flow::P 
+  body: "@param [String] file filename @param [Fixnum] line line number @return [String] lines around the target line within the file (2 above and 1 below)."
+full_name: RSpec::Core::Formatters::SnippetExtractor#lines_around
+is_singleton: false
+name: lines_around
+params: (file, line)
+visibility: public

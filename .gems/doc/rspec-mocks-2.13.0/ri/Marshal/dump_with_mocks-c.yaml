@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Marshal::dump_with_mocks
+is_singleton: true
+name: dump_with_mocks
+params: (*args)
+visibility: public

@@ -1,0 +1,21 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: not_to
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Runs the given expectation, passing if `matcher` returns false. @example
+- !ruby/struct:SM::Flow::VERB 
+  body: "  expect(value).to_not eq(5)\n  expect(value).not_to eq(5)\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@param [Matcher]"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  matcher\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@param [String] message optional message to display when the expectation fails @return [Boolean] false if the negative expectation succeeds (else raises) @see RSpec::Matchers"
+full_name: RSpec::Expectations::ExpectationTarget#to_not
+is_singleton: false
+name: to_not
+params: (matcher=nil, message=nil, &block)
+visibility: public

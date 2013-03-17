@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@api private Enables the `expect` syntax."
+full_name: RSpec::Expectations::Syntax#enable_expect
+is_singleton: false
+name: enable_expect
+params: (syntax_host = ::RSpec::Matchers)
+visibility: public

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Cucumber::RbSupport::RbLanguage#find_best_assertions_module
+is_singleton: false
+name: find_best_assertions_module
+params: ()
+visibility: public

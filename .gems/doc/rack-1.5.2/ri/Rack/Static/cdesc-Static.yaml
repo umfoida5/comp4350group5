@@ -1,0 +1,53 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The Rack::Static middleware intercepts requests for static files (javascript files, images, stylesheets, etc) based on the url prefixes or route mappings passed in the options, and serves them using a Rack::File object. This allows a Rack stack to serve both static and dynamic content.
+- !ruby/struct:SM::Flow::P 
+  body: "Examples:"
+- !ruby/struct:SM::Flow::P 
+  body: "Serve all requests beginning with /media from the &quot;media&quot; folder located in the current directory (ie media/*):"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    use Rack::Static, :urls =&gt; [&quot;/media&quot;]\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Serve all requests beginning with /css or /images from the folder &quot;public&quot; in the current directory (ie public/css/* and public/images/*):"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    use Rack::Static, :urls =&gt; [&quot;/css&quot;, &quot;/images&quot;], :root =&gt; &quot;public&quot;\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Serve all requests to / with &quot;index.html&quot; from the folder &quot;public&quot; in the current directory (ie public/index.html):"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    use Rack::Static, :urls =&gt; {&quot;/&quot; =&gt; 'index.html'}, :root =&gt; 'public'\n"
+- !ruby/struct:SM::Flow::P 
+  body: Serve all requests normally from the folder &quot;public&quot; in the current directory but uses index.html as default route for &quot;/&quot;
+- !ruby/struct:SM::Flow::VERB 
+  body: "    use Rack::Static, :urls =&gt; [&quot;&quot;], :root =&gt; 'public', :index =&gt;\n    'index.html'\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Set custom HTTP Headers for based on rules:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    use Rack::Static, :root =&gt; 'public',\n        :header_rules =&gt; [\n          [rule, {header_field =&gt; content, header_field =&gt; content}],\n          [rule, {header_field =&gt; content}]\n        ]\n\n Rules for selecting files:\n\n 1) All files\n    Provide the :all symbol\n    :all =&gt; Matches every file\n\n 2) Folders\n    Provide the folder path as a string\n    '/folder' or '/folder/subfolder' =&gt; Matches files in a certain folder\n\n 3) File Extensions\n    Provide the file extensions as an array\n    ['css', 'js'] or %w(css js) =&gt; Matches files ending in .css or .js\n\n 4) Regular Expressions / Regexp\n    Provide a regular expression\n    %r{\\.(?:css|js)\\z} =&gt; Matches files ending in .css or .js\n    /\\.(?:eot|ttf|otf|woff|svg)\\z/ =&gt; Matches files ending in\n      the most common web font formats (.eot, .ttf, .otf, .woff, .svg)\n      Note: This Regexp is available as a shortcut, using the :fonts rule\n\n 5) Font Shortcut\n    Provide the :fonts symbol\n    :fonts =&gt; Uses the Regexp rule stated right above to match all common web font endings\n\n Rule Ordering:\n   Rules are applied in the order that they are provided.\n   List rather general rules above special ones.\n\n Complete example use case including HTTP header rules:\n\n    use Rack::Static, :root =&gt; 'public',\n        :header_rules =&gt; [\n          # Cache all static files in public caches (e.g. Rack::Cache)\n          #  as well as in the browser\n          [:all, {'Cache-Control' =&gt; 'public, max-age=31536000'}],\n\n          # Provide web fonts with cross-origin access-control-headers\n          #  Firefox requires this when serving assets using a Content Delivery Network\n          [:fonts, {'Access-Control-Allow-Origin' =&gt; '*'}]\n        ]\n"
+constants: []
+
+full_name: Rack::Static
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: apply_header_rules
+- !ruby/object:RI::MethodSummary 
+  name: apply_rule
+- !ruby/object:RI::MethodSummary 
+  name: call
+- !ruby/object:RI::MethodSummary 
+  name: can_serve
+- !ruby/object:RI::MethodSummary 
+  name: overwrite_file_path
+- !ruby/object:RI::MethodSummary 
+  name: route_file
+- !ruby/object:RI::MethodSummary 
+  name: set_headers
+name: Static
+superclass: Object

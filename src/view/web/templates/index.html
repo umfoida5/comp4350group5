@@ -30,7 +30,7 @@
 
     	$("#logout-button").click(function() {
   			$.post("../login/do_logout", function() {
-  				window.location.href = "../";
+  				location.reload();
   			} );
         } );
 

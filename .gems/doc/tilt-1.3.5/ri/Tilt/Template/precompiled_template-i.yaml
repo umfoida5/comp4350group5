@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "A string containing the (Ruby) source code for the template. The default Template#evaluate implementation requires either this method or the #precompiled method be overridden. When defined, the base Template guarantees correct file/line handling, locals support, custom scopes, and support for template compilation when the scope object allows it."
+full_name: Tilt::Template#precompiled_template
+is_singleton: false
+name: precompiled_template
+params: (locals)
+visibility: protected

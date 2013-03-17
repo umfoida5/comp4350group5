@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@api private Indicates whether or not the `should` syntax is enabled."
+full_name: RSpec::Expectations::Syntax#should_enabled?
+is_singleton: false
+name: should_enabled?
+params: (syntax_host = default_should_host)
+visibility: public

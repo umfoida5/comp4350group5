@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Core::Metadata::MetadataHash#fetch
+is_singleton: false
+name: fetch
+params: (key, *args)
+visibility: public

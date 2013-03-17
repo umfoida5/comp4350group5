@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Cucumber::Formatter::Interceptor::Pipe::validate_pipe
+is_singleton: true
+name: validate_pipe
+params: (pipe)
+visibility: public

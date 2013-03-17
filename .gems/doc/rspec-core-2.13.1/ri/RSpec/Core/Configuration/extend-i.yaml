@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Tells RSpec to extend example groups with `mod`. Methods defined in `mod` are exposed to example groups (not examples). Use `filters` to constrain the groups to extend.
+- !ruby/struct:SM::Flow::P 
+  body: Similar to `include`, but behavior is added to example groups, which are classes, rather than the examples, which are instances of those classes.
+- !ruby/struct:SM::Flow::P 
+  body: "@example"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    module UiHelpers\n      def run_in_browser\n        # ...\n      end\n    end\n\n    RSpec.configure do |config|\n      config.extend(UiHelpers, :type =&gt; :request)\n    end\n\n    describe &quot;edit profile&quot;, :type =&gt; :request do\n      run_in_browser\n\n      it &quot;does stuff in the client&quot; do\n        # ...\n      end\n    end\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@see #include"
+full_name: RSpec::Core::Configuration#extend
+is_singleton: false
+name: extend
+params: (mod, *filters)
+visibility: public

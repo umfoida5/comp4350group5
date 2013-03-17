@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Hides the named constant with the given value. The constant will be undefined for the duration of the test.
+- !ruby/struct:SM::Flow::P 
+  body: Like method stubs, the constant will be restored to its original value when the example completes.
+- !ruby/struct:SM::Flow::P 
+  body: "@param constant_name [String] The fully qualified name of the constant."
+- !ruby/struct:SM::Flow::VERB 
+  body: "  The current constant scoping at the point of call is not considered.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@example"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  hide_const(&quot;MyClass&quot;) # =&gt; MyClass is now an undefined constant\n"
+full_name: RSpec::Mocks::ExampleMethods#hide_const
+is_singleton: false
+name: hide_const
+params: (constant_name)
+visibility: public

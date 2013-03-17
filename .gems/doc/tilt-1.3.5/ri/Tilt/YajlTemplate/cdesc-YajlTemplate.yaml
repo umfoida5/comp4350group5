@@ -1,0 +1,40 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: engine_initialized?
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Yajl Template implementation
+- !ruby/struct:SM::Flow::P 
+  body: Yajl is a fast JSON parsing and encoding library for Ruby See https://github.com/brianmario/yajl-ruby
+- !ruby/struct:SM::Flow::P 
+  body: "The template source is evaluated as a Ruby string, and the result is converted #to_json."
+- !ruby/struct:SM::Flow::H 
+  level: 2
+  text: Example
+- !ruby/struct:SM::Flow::VERB 
+  body: "   # This is a template example.\n   # The template can contain any Ruby statement.\n   tpl &lt;&lt;-EOS\n     @counter = 0\n\n     # The json variable represents the buffer\n     # and holds the data to be serialized into json.\n     # It defaults to an empty hash, but you can override it at any time.\n     json = {\n       :&quot;user#{@counter += 1}&quot; =&gt; { :name =&gt; &quot;Joshua Peek&quot;, :id =&gt; @counter },\n       :&quot;user#{@counter += 1}&quot; =&gt; { :name =&gt; &quot;Ryan Tomayko&quot;, :id =&gt; @counter },\n       :&quot;user#{@counter += 1}&quot; =&gt; { :name =&gt; &quot;Simone Carletti&quot;, :id =&gt; @counter },\n     }\n\n     # Since the json variable is a Hash,\n     # you can use conditional statements or any other Ruby statement\n     # to populate it.\n     json[:&quot;user#{@counter += 1}&quot;] = { :name =&gt; &quot;Unknown&quot; } if 1 == 2\n\n     # The last line doesn't affect the returned value.\n     nil\n   EOS\n\n   template = Tilt::YajlTemplate.new { tpl }\n   template.render(self)\n"
+constants: []
+
+full_name: Tilt::YajlTemplate
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: decorate
+- !ruby/object:RI::MethodSummary 
+  name: evaluate
+- !ruby/object:RI::MethodSummary 
+  name: initialize_engine
+- !ruby/object:RI::MethodSummary 
+  name: precompiled_postamble
+- !ruby/object:RI::MethodSummary 
+  name: precompiled_preamble
+- !ruby/object:RI::MethodSummary 
+  name: precompiled_template
+- !ruby/object:RI::MethodSummary 
+  name: prepare
+name: YajlTemplate
+superclass: Template

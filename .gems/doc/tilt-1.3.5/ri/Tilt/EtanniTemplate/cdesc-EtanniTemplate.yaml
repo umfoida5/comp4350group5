@@ -1,0 +1,20 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Tilt::EtanniTemplate
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: precompiled
+- !ruby/object:RI::MethodSummary 
+  name: precompiled_template
+- !ruby/object:RI::MethodSummary 
+  name: prepare
+name: EtanniTemplate
+superclass: Template

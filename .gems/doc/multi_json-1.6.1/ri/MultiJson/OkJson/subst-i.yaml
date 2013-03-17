@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: MultiJson::OkJson#subst
+is_singleton: false
+name: subst
+params: (u1, u2)
+visibility: public

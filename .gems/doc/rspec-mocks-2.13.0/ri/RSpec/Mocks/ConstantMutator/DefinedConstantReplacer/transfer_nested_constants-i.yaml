@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Mocks::ConstantMutator::DefinedConstantReplacer#transfer_nested_constants
+is_singleton: false
+name: transfer_nested_constants
+params: (constants)
+visibility: public

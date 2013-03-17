@@ -1,0 +1,11 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: ==
+block_params: 
+comment: 
+full_name: RSpec::Matchers::BuiltIn::RespondTo#matches?
+is_singleton: false
+name: matches?
+params: (actual)
+visibility: public

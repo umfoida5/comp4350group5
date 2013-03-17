@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Whether or not this template engine allows executing Ruby script within the template. If this is false, <tt>scope</tt> and <tt>locals</tt> will generally not be used, nor will the provided block be avaiable via <tt>yield</tt>. This should be overridden by template subclasses.
+full_name: Tilt::Template#allows_script?
+is_singleton: false
+name: allows_script?
+params: ()
+visibility: public

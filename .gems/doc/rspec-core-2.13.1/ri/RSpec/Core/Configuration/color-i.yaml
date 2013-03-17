@@ -1,0 +1,11 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: color_enabled
+block_params: 
+comment: 
+full_name: RSpec::Core::Configuration#color
+is_singleton: false
+name: color
+params: (output=output_stream)
+visibility: public

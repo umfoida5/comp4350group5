@@ -1,0 +1,31 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@private"
+constants: []
+
+full_name: RSpec::Mocks::AnyInstance::MessageChains
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: add
+- !ruby/object:RI::MethodSummary 
+  name: all_expectations_fulfilled?
+- !ruby/object:RI::MethodSummary 
+  name: has_expectation?
+- !ruby/object:RI::MethodSummary 
+  name: playback!
+- !ruby/object:RI::MethodSummary 
+  name: received_expected_message!
+- !ruby/object:RI::MethodSummary 
+  name: remove_stub_chains_for!
+- !ruby/object:RI::MethodSummary 
+  name: unfulfilled_expectations
+name: MessageChains
+superclass: Hash

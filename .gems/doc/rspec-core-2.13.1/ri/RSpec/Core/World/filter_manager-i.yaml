@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Core::World#filter_manager
+is_singleton: false
+name: filter_manager
+params: ()
+visibility: public

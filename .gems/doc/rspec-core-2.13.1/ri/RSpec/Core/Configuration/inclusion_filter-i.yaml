@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: filter
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the `inclusion_filter`. If none has been set, returns an empty hash.
+full_name: RSpec::Core::Configuration#inclusion_filter
+is_singleton: false
+name: inclusion_filter
+params: ()
+visibility: public

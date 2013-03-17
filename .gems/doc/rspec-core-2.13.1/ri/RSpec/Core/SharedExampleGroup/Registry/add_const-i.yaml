@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Core::SharedExampleGroup::Registry#add_const
+is_singleton: false
+name: add_const
+params: (name, &block)
+visibility: public

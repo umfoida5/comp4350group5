@@ -1,0 +1,30 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "Prevented attack:"
+    body: CSRF
+  - !ruby/struct:SM::Flow::LI 
+    label: "Supported browsers:"
+    body: all
+  - !ruby/struct:SM::Flow::LI 
+    label: "More infos:"
+    body: http://en.wikipedia.org/wiki/Cross-site_request_forgery
+  type: :NOTE
+- !ruby/struct:SM::Flow::P 
+  body: Does not accept unsafe HTTP requests if the Referer [sic] header is set to a different host.
+constants: []
+
+full_name: Rack::Protection::RemoteReferrer
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: accepts?
+name: RemoteReferrer
+superclass: Base

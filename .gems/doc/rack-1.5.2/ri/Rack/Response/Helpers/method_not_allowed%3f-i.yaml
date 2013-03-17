@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Rack::Response::Helpers#method_not_allowed?
+is_singleton: false
+name: method_not_allowed?
+params: ()
+visibility: public

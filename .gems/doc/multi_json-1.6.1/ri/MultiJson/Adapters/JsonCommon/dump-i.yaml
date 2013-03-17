@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: MultiJson::Adapters::JsonCommon#dump
+is_singleton: false
+name: dump
+params: (object, options={})
+visibility: public

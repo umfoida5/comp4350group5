@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Adds conventional spec-to-file mappings to Autotest configuation.
+full_name: Autotest::Rspec2#setup_rspec_project_mappings
+is_singleton: false
+name: setup_rspec_project_mappings
+params: ()
+visibility: public

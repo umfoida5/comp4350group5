@@ -1,0 +1,30 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "Prevented attack:"
+    body: IP spoofing
+  - !ruby/struct:SM::Flow::LI 
+    label: "Supported browsers:"
+    body: all
+  - !ruby/struct:SM::Flow::LI 
+    label: "More infos:"
+    body: http://blog.c22.cc/2011/04/22/surveymonkey-ip-spoofing/
+  type: :NOTE
+- !ruby/struct:SM::Flow::P 
+  body: Detect (some) IP spoofing attacks.
+constants: []
+
+full_name: Rack::Protection::IPSpoofing
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: accepts?
+name: IPSpoofing
+superclass: Base

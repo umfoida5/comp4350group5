@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Precompiled Haml source. Taken from the precompiled_with_ambles method in Haml::Precompiler: http://github.com/nex3/haml/blob/master/lib/haml/precompiler.rb#L111-126"
+full_name: Tilt::HamlTemplate#precompiled_template
+is_singleton: false
+name: precompiled_template
+params: (locals)
+visibility: public

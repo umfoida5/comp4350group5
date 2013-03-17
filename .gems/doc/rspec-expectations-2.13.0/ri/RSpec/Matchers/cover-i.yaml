@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Passes if actual covers expected. This works for Ranges. You can also pass in multiple args and it will only pass if all args are found in Range.
+- !ruby/struct:SM::Flow::P 
+  body: "@example"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  (1..10).should cover(5)\n  (1..10).should cover(4, 6)\n  (1..10).should cover(4, 6, 11) # will fail\n  (1..10).should_not cover(11)\n  (1..10).should_not cover(5)    # will fail\n"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "### Warning:"
+    body: Ruby &gt;= 1.9 only
+  type: :NOTE
+full_name: RSpec::Matchers#cover
+is_singleton: false
+name: cover
+params: (*values)
+visibility: public

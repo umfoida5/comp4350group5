@@ -1,0 +1,30 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Rack::CommonLogger forwards every request to the given <tt>app</tt>, and logs a line in the {Apache common log format}[http://httpd.apache.org/docs/1.3/logs.html#common] to the <tt>logger</tt>.
+- !ruby/struct:SM::Flow::P 
+  body: If <tt>logger</tt> is nil, CommonLogger will fall back +rack.errors+, which is an instance of Rack::NullLogger.
+- !ruby/struct:SM::Flow::P 
+  body: <tt>logger</tt> can be any class, including the standard library Logger, and is expected to have a <tt>write</tt> method, which accepts the CommonLogger::FORMAT. According to the SPEC, the error stream must also respond to <tt>puts</tt> (which takes a single argument that responds to <tt>to_s</tt>), and <tt>flush</tt> (which is called without arguments in order to make the error appear for sure)
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Common Log Format: http://httpd.apache.org/docs/1.3/logs.html#common"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  lilith.local - - [07/Aug/2006 23:58:02] &quot;GET / HTTP/1.1&quot; 500 -\n\n  %{%s - %s [%s] &quot;%s %s%s %s&quot; %d %s\\n} %\n"
+  name: FORMAT
+  value: "%{%s - %s [%s] \"%s %s%s %s\" %d %s %0.4f\\n}"
+full_name: Rack::CommonLogger
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: call
+name: CommonLogger
+superclass: Object

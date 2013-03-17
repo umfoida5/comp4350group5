@@ -1,0 +1,49 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: cache_control
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: path
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: root
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Rack::File serves files below the <tt>root</tt> directory given, according to the path info of the Rack request. e.g. when Rack::File.new(&quot;/etc&quot;) is used, you can access 'passwd' file as http://localhost:9292/passwd
+- !ruby/struct:SM::Flow::P 
+  body: Handlers can detect if bodies are a Rack::File, and use mechanisms like sendfile on the <tt>path</tt>.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SEPS
+  value: Regexp.union(*[::File::SEPARATOR, ::File::ALT_SEPARATOR].compact)
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ALLOWED_VERBS
+  value: "%w[GET HEAD]"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: F
+  value: "::File"
+full_name: Rack::File
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: _call
+- !ruby/object:RI::MethodSummary 
+  name: call
+- !ruby/object:RI::MethodSummary 
+  name: each
+- !ruby/object:RI::MethodSummary 
+  name: serving
+name: File
+superclass: Object

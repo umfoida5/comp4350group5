@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This will be called when there is a line in A that isn't in B
+full_name: Diff::LCS::HTMLDiff::Callbacks#discard_a
+is_singleton: false
+name: discard_a
+params: (event)
+visibility: public

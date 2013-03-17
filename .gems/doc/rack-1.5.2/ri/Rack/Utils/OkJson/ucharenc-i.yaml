@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Encodes unicode character u as UTF-8 bytes in string a at position i. Returns the number of bytes written.
+full_name: Rack::Utils::OkJson#ucharenc
+is_singleton: false
+name: ucharenc
+params: (a, i, u)
+visibility: public

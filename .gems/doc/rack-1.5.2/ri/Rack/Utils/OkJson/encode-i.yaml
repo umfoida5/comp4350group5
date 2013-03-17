@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Encodes x into a json text. It may contain only Array, Hash, String, Numeric, true, false, nil. (Note, this list excludes Symbol.) X itself must be an Array or a Hash. No other value can be encoded, and an error will be raised if x contains any other value, such as Nan, Infinity, Symbol, and Proc, or if a Hash key is not a String. Strings contained in x must be valid UTF-8.
+full_name: Rack::Utils::OkJson#encode
+is_singleton: false
+name: encode
+params: (x)
+visibility: public

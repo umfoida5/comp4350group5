@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@api private Indicates whether or not the `expect` syntax is enabled."
+full_name: RSpec::Expectations::Syntax#expect_enabled?
+is_singleton: false
+name: expect_enabled?
+params: (syntax_host = ::RSpec::Matchers)
+visibility: public

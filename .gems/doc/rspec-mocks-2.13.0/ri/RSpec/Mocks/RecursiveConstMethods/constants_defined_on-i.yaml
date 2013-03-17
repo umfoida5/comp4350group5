@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Mocks::RecursiveConstMethods#constants_defined_on
+is_singleton: false
+name: constants_defined_on
+params: (mod)
+visibility: public

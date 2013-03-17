@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Core::Parser#convert_deprecated_args
+is_singleton: false
+name: convert_deprecated_args
+params: (args)
+visibility: public

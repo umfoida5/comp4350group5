@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Core::Configuration#safe_extend
+is_singleton: false
+name: safe_extend
+params: (mod, host)
+visibility: public

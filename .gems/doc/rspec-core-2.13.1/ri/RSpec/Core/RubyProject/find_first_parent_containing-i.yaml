@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Core::RubyProject#find_first_parent_containing
+is_singleton: false
+name: find_first_parent_containing
+params: (dir)
+visibility: public

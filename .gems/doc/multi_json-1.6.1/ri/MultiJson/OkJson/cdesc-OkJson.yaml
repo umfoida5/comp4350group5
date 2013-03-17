@@ -1,0 +1,151 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Utagx
+  value: "0x80"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Utag2
+  value: "0xc0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Utag3
+  value: "0xe0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Utag4
+  value: "0xf0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Utag5
+  value: "0xF8"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Umaskx
+  value: "0x3f"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Umask2
+  value: "0x1f"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Umask3
+  value: "0x0f"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Umask4
+  value: "0x07"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Uchar1max
+  value: (1<<7) - 1
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Uchar2max
+  value: (1<<11) - 1
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Uchar3max
+  value: (1<<16) - 1
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Ucharerr
+  value: "0xFFFD"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Ustrerr
+  value: "\"\\xef\\xbf\\xbd\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Usurrself
+  value: "0x10000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Usurr1
+  value: "0xd800"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Usurr2
+  value: "0xdc00"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Usurr3
+  value: "0xe000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Spc
+  value: "' '[0]"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Unesc
+  value: "{?b=>?\\b, ?f=>?\\f, ?n=>?\\n, ?r=>?\\r, ?t=>?\\t}"
+full_name: MultiJson::OkJson
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: abbrev
+- !ruby/object:RI::MethodSummary 
+  name: arrenc
+- !ruby/object:RI::MethodSummary 
+  name: arrparse
+- !ruby/object:RI::MethodSummary 
+  name: decode
+- !ruby/object:RI::MethodSummary 
+  name: eat
+- !ruby/object:RI::MethodSummary 
+  name: encode
+- !ruby/object:RI::MethodSummary 
+  name: falsetok
+- !ruby/object:RI::MethodSummary 
+  name: hexdec4
+- !ruby/object:RI::MethodSummary 
+  name: keyenc
+- !ruby/object:RI::MethodSummary 
+  name: lex
+- !ruby/object:RI::MethodSummary 
+  name: nibble
+- !ruby/object:RI::MethodSummary 
+  name: nulltok
+- !ruby/object:RI::MethodSummary 
+  name: numenc
+- !ruby/object:RI::MethodSummary 
+  name: numtok
+- !ruby/object:RI::MethodSummary 
+  name: objenc
+- !ruby/object:RI::MethodSummary 
+  name: objparse
+- !ruby/object:RI::MethodSummary 
+  name: pairparse
+- !ruby/object:RI::MethodSummary 
+  name: strenc
+- !ruby/object:RI::MethodSummary 
+  name: strtok
+- !ruby/object:RI::MethodSummary 
+  name: subst
+- !ruby/object:RI::MethodSummary 
+  name: surrogate?
+- !ruby/object:RI::MethodSummary 
+  name: textparse
+- !ruby/object:RI::MethodSummary 
+  name: tok
+- !ruby/object:RI::MethodSummary 
+  name: truetok
+- !ruby/object:RI::MethodSummary 
+  name: ucharcopy
+- !ruby/object:RI::MethodSummary 
+  name: ucharenc
+- !ruby/object:RI::MethodSummary 
+  name: unquote
+- !ruby/object:RI::MethodSummary 
+  name: valenc
+- !ruby/object:RI::MethodSummary 
+  name: valparse
+name: OkJson
+superclass: 

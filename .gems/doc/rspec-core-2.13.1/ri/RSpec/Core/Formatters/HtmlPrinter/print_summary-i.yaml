@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Core::Formatters::HtmlPrinter#print_summary
+is_singleton: false
+name: print_summary
+params: ( was_dry_run, duration, example_count, failure_count, pending_count )
+visibility: public

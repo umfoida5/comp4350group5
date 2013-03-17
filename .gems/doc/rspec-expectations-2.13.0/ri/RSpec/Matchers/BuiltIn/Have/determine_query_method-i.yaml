@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Matchers::BuiltIn::Have#determine_query_method
+is_singleton: false
+name: determine_query_method
+params: (collection)
+visibility: public

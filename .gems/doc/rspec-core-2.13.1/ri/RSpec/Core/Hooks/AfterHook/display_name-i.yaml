@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Core::Hooks::AfterHook#display_name
+is_singleton: false
+name: display_name
+params: ()
+visibility: public

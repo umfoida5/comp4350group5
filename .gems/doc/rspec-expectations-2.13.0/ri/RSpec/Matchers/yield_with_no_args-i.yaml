@@ -1,0 +1,24 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Passes if the method called in the expect block yields with no arguments. Fails if it does not yield, or yields with arguments.
+- !ruby/struct:SM::Flow::P 
+  body: "@example"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  expect { |b| User.transaction(&amp;b) }.to yield_with_no_args\n  expect { |b| 5.tap(&amp;b) }.not_to yield_with_no_args # because it yields with `5`\n  expect { |b| &quot;a&quot;.to_sym(&amp;b) }.not_to yield_with_no_args # because it does not yield\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@note Your expect block must accept a parameter and pass it on to"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  the method-under-test as a block.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@note This matcher is not designed for use with methods that yield"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  multiple times.\n"
+full_name: RSpec::Matchers#yield_with_no_args
+is_singleton: false
+name: yield_with_no_args
+params: ()
+visibility: public

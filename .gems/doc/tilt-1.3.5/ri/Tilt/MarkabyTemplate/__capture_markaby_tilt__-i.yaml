@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Tilt::MarkabyTemplate#__capture_markaby_tilt__
+is_singleton: false
+name: __capture_markaby_tilt__
+params: (&block)
+visibility: public

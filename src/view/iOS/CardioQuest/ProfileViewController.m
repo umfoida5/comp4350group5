@@ -10,8 +10,10 @@
 #import "ASIHTTPRequest.h"
 #import "Classes/SBJson.h"
 #import "ASINetworkQueue.h"
+@class ASINetworkQueue;
 @interface ProfileViewController (){
-    ASINetworkQueue *networkQueue;
+	ASINetworkQueue *queue;
+	
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -21,7 +23,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *addressField;
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 @property (weak, nonatomic) IBOutlet UITextView *aboutTextView;
-@property (retain) ASINetworkQueue *networkQueue;
+@property (weak, nonatomic) IBOutlet UICollectionView *Achievements;
+@property (retain) ASINetworkQueue *queue;
 
 @end
 
@@ -30,7 +33,17 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    if(!self.queue)
+        self.queue = [[ASINetworkQueue alloc] init];
+    
     [self.profileImage setImage:[UIImage imageNamed:@"default_profile_pic.png"]];
+    
+    [self setQueue:[ASINetworkQueue queue]];
+    
+	[[self queue] setDelegate:self];
+	[[self queue] setRequestDidFinishSelector:@selector(requestDone:)];
+	[[self queue] setRequestDidFailSelector:@selector(requestFailed:)];
+	[[self queue] setQueueDidFinishSelector:@selector(queueFinished:)];
     
     NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/profiles/athlete"];
     [self sendRequest:url:@"start"];
@@ -41,6 +54,8 @@
 - (void)sendRequest:(NSURL *)url : (NSString *) userInfo
 {
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    
+    
     //[[self networkQueue] addOperation:request];
     [request addRequestHeader:@"Accept" value:@"application/json"];
     [request addRequestHeader:@"Content-Type" value:@"application/json"];
@@ -70,16 +85,42 @@
         self.aboutTextView.text = jsonDictionary[@"about_me"];
        
         for (NSMutableDictionary *achieves in jsonDictionary[@"achievements"]) {
-            NSLog(@"%@", achieves[@"image_url"]);
-        }
-
             
+            NSMutableString *url = [[NSMutableString alloc]init];
+            [url appendFormat:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000%@",achieves[@"image_url"]];
+            [url replaceCharactersInRange:[url rangeOfString:@".."] withString:@""];
             
-        
-        
+            __strong ASIHTTPRequest *newRequest = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
+            //[newRequest setDelegate:self];
+            //[newRequest setDidFinishSelector:@selector(requestDone:)];
+            
+            //[newRequest setDidFailSelector:@selector(requestWentWrong:)];
+            [self.queue addOperation:newRequest];
+            [[self queue] go];
+            
+        } 
     }
     //BOOL stop = YES;
 }
+
+- (void)queueFinished:(ASINetworkQueue *)queue
+{
+	// You could release the queue here if you wanted
+	if ([[self queue] requestsCount] == 0) {
+		self.queue = nil;
+	}
+	NSLog(@"Queue finished");
+}
+
+- (void)requestDone:(ASIHTTPRequest*)req
+{
+    UIImage* image = [UIImage imageWithData:[req responseData]];
+    UIImageView *temp = [[UIImageView alloc]init];
+    [temp setImage: image];
+    [self.profileImage setImage:image];
+    [[self Achievements] addSubview:temp];
+}
+
 
 - (void)requestFailed:(ASIHTTPRequest *)request
 {

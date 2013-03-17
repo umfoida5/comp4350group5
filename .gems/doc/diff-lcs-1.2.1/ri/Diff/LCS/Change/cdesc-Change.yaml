@@ -1,0 +1,64 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Returns the action this Change represents.
+  name: action
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Returns the sequence element of the Change.
+  name: element
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Returns the position of the Change.
+  name: position
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: from_a
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: valid_action?
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Represents a simplistic (non-contextual) change. Represents the removal or addition of an element from either the old or the new sequenced enumerable.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The only actions valid for changes are '+' (add), '-' (delete), '=' (no change), '!' (changed), '&lt;' (tail changes from first sequence), or '&gt;' (tail changes from second sequence). The last two ('&lt;&gt;') are only found with Diff::LCS::diff and Diff::LCS::sdiff.
+  name: VALID_ACTIONS
+  value: "%W(+ - = ! > <)"
+full_name: Diff::LCS::Change
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Comparable
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: <=>
+- !ruby/object:RI::MethodSummary 
+  name: ==
+- !ruby/object:RI::MethodSummary 
+  name: adding?
+- !ruby/object:RI::MethodSummary 
+  name: changed?
+- !ruby/object:RI::MethodSummary 
+  name: deleting?
+- !ruby/object:RI::MethodSummary 
+  name: finished_a?
+- !ruby/object:RI::MethodSummary 
+  name: finished_b?
+- !ruby/object:RI::MethodSummary 
+  name: inspect
+- !ruby/object:RI::MethodSummary 
+  name: to_a
+- !ruby/object:RI::MethodSummary 
+  name: unchanged?
+name: Change
+superclass: Object

@@ -1,0 +1,30 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Stubs the named constant with the given value. Like method stubs, the constant will be restored to its original value (or lack of one, if it was undefined) when the example completes.
+- !ruby/struct:SM::Flow::P 
+  body: "@param constant_name [String] The fully qualified name of the constant. The current"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  constant scoping at the point of call is not considered.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@param value [Object] The value to make the constant refer to. When the"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  example completes, the constant will be restored to its prior state.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@param options [Hash] Stubbing options. @option options :transfer_nested_constants [Boolean, Array&lt;Symbol&gt;] Determines"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  what nested constants, if any, will be transferred from the original value\n  of the constant to the new value of the constant. This only works if both\n  the original and new values are modules (or classes).\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@return [Object] the stubbed value of the constant"
+- !ruby/struct:SM::Flow::P 
+  body: "@example"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  stub_const(&quot;MyClass&quot;, Class.new) # =&gt; Replaces (or defines) MyClass with a new class object.\n  stub_const(&quot;SomeModel::PER_PAGE&quot;, 5) # =&gt; Sets SomeModel::PER_PAGE to 5.\n\n  class CardDeck\n    SUITS = [:Spades, :Diamonds, :Clubs, :Hearts]\n    NUM_CARDS = 52\n  end\n\n  stub_const(&quot;CardDeck&quot;, Class.new)\n  CardDeck::SUITS # =&gt; uninitialized constant error\n  CardDeck::NUM_CARDS # =&gt; uninitialized constant error\n\n  stub_const(&quot;CardDeck&quot;, Class.new, :transfer_nested_constants =&gt; true)\n  CardDeck::SUITS # =&gt; our suits array\n  CardDeck::NUM_CARDS # =&gt; 52\n\n  stub_const(&quot;CardDeck&quot;, Class.new, :transfer_nested_constants =&gt; [:SUITS])\n  CardDeck::SUITS # =&gt; our suits array\n  CardDeck::NUM_CARDS # =&gt; uninitialized constant error\n"
+full_name: RSpec::Mocks::ExampleMethods#stub_const
+is_singleton: false
+name: stub_const
+params: (constant_name, value, options = {})
+visibility: public

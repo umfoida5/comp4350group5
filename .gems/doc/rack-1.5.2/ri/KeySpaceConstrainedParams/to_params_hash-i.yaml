@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: KeySpaceConstrainedParams#to_params_hash
+is_singleton: false
+name: to_params_hash
+params: ()
+visibility: public

@@ -1,0 +1,20 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: negative_expression
+- !ruby/object:RI::MethodSummary 
+  name: positive_expression
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@api private Generates expectation expressions for the `should` syntax."
+constants: []
+
+full_name: RSpec::Expectations::Syntax::ShouldExpressionGenerator
+includes: []
+
+instance_methods: []
+
+name: ShouldExpressionGenerator
+superclass: 

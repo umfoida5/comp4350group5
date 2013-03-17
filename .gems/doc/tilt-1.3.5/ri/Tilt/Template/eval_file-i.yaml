@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The filename used in backtraces to describe the template.
+full_name: Tilt::Template#eval_file
+is_singleton: false
+name: eval_file
+params: ()
+visibility: public

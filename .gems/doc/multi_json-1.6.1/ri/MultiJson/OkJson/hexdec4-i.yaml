@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: MultiJson::OkJson#hexdec4
+is_singleton: false
+name: hexdec4
+params: (s)
+visibility: public

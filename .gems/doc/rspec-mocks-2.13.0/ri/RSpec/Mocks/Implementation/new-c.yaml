@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Mocks::Implementation::new
+is_singleton: true
+name: new
+params: (values_to_return, args_to_yield, eval_context, error_generator)
+visibility: public

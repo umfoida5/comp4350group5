@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Checks the HTTP request method (or verb) to see if it was of type TRACE
+full_name: Rack::Request#trace?
+is_singleton: false
+name: trace?
+params: ()
+visibility: public

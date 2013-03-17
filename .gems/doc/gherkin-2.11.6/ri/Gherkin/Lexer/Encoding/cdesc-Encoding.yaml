@@ -1,0 +1,23 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: COMMENT_OR_EMPTY_LINE_PATTERN
+  value: /^\s*#|^\s*$/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DEFAULT_ENCODING
+  value: "'UTF-8'"
+full_name: Gherkin::Lexer::Encoding
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: read_file
+name: Encoding
+superclass: Object

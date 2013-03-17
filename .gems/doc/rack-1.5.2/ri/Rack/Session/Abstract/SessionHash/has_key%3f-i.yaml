@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: key?
+- !ruby/object:RI::AliasName 
+  name: include?
+block_params: 
+comment: 
+full_name: Rack::Session::Abstract::SessionHash#has_key?
+is_singleton: false
+name: has_key?
+params: (key)
+visibility: public

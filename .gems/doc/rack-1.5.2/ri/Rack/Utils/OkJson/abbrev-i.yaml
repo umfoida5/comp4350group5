@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Rack::Utils::OkJson#abbrev
+is_singleton: false
+name: abbrev
+params: (s)
+visibility: public

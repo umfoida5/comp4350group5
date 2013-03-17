@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Create a new template for the given file using the file's extension to determine the the template mapping.
+full_name: Tilt::new
+is_singleton: true
+name: new
+params: (file, line=nil, options={}, &block)
+visibility: public

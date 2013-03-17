@@ -1,0 +1,31 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: engine_initialized?
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Erubis template implementation. See: http://www.kuwata-lab.com/erubis/"
+- !ruby/struct:SM::Flow::P 
+  body: "ErubisTemplate supports the following additional options, which are not passed down to the Erubis engine:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  :engine_class   allows you to specify a custom engine class to use\n                  instead of the default (which is ::Erubis::Eruby).\n\n  :escape_html    when true, ::Erubis::EscapedEruby will be used as\n                  the engine class instead of the default. All content\n                  within &lt;%= %&gt; blocks will be automatically html escaped.\n"
+constants: []
+
+full_name: Tilt::ErubisTemplate
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: initialize_engine
+- !ruby/object:RI::MethodSummary 
+  name: precompiled
+- !ruby/object:RI::MethodSummary 
+  name: precompiled_postamble
+- !ruby/object:RI::MethodSummary 
+  name: precompiled_preamble
+- !ruby/object:RI::MethodSummary 
+  name: prepare
+name: ErubisTemplate
+superclass: ERBTemplate

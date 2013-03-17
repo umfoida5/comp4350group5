@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: used for capturing duration
+full_name: Cucumber::Formatter::GherkinFormatterAdapter#after_step
+is_singleton: false
+name: after_step
+params: (step)
+visibility: public

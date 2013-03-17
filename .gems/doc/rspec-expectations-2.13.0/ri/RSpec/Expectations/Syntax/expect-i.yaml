@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Expectations::Syntax#expect
+is_singleton: false
+name: expect
+params: (*target, &target_block)
+visibility: public

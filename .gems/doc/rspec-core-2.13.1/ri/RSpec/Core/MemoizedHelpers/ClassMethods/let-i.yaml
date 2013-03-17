@@ -1,0 +1,24 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Generates a method whose return value is memoized after the first call. Useful for reducing duplication between examples that assign values to the same local variable.
+- !ruby/struct:SM::Flow::P 
+  body: "@note `let` <em>can</em> enhance readability when used sparingly (1,2, or"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  maybe 3 declarations) in any given example group, but that can\n  quickly degrade with overuse. YMMV.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@note `let` uses an `||=` conditional that has the potential to"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  behave in surprising ways in examples that spawn separate threads,\n  though we have yet to see this in practice. You've been warned.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@example"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  describe Thing do\n    let(:thing) { Thing.new }\n\n    it &quot;does something&quot; do\n      # first invocation, executes block, memoizes and returns result\n      thing.do_something\n\n      # second invocation, returns the memoized value\n      thing.should be_something\n    end\n  end\n"
+full_name: RSpec::Core::MemoizedHelpers::ClassMethods#let
+is_singleton: false
+name: let
+params: (name, &block)
+visibility: public

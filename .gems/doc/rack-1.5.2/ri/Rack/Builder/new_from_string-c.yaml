@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Rack::Builder::new_from_string
+is_singleton: true
+name: new_from_string
+params: (builder_script, file="(rackup)")
+visibility: public

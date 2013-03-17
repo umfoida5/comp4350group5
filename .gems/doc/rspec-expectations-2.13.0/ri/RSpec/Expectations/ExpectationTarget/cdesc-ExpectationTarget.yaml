@@ -1,0 +1,36 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: deprecated_should_enabled
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: disable_deprecated_should
+- !ruby/object:RI::MethodSummary 
+  name: enable_deprecated_should
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Wraps the target of an expectation. @example
+- !ruby/struct:SM::Flow::VERB 
+  body: "  expect(something) # =&gt; ExpectationTarget wrapping something\n\n  # used with `to`\n  expect(actual).to eq(3)\n\n  # with `to_not`\n  expect(actual).to_not eq(3)\n"
+constants: []
+
+full_name: RSpec::Expectations::ExpectationTarget
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: not_to
+- !ruby/object:RI::MethodSummary 
+  name: should
+- !ruby/object:RI::MethodSummary 
+  name: should_not
+- !ruby/object:RI::MethodSummary 
+  name: to
+- !ruby/object:RI::MethodSummary 
+  name: to_not
+name: ExpectationTarget
+superclass: Object

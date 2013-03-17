@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Copies the valid UTF-8 bytes of a single character from string s at position i to I/O object t, and returns the number of bytes copied. If no valid UTF-8 char exists at position i, ucharcopy writes Ustrerr and returns 1.
+full_name: Rack::Utils::OkJson#ucharcopy
+is_singleton: false
+name: ucharcopy
+params: (t, s, i)
+visibility: public

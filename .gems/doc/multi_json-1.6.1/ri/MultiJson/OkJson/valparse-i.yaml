@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Parses a &quot;value&quot; in the sense of RFC 4627. Returns the parsed value and any trailing tokens.
+full_name: MultiJson::OkJson#valparse
+is_singleton: false
+name: valparse
+params: (ts)
+visibility: public

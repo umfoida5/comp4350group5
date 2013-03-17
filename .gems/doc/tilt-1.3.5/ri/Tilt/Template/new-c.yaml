@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Create a new template with the file, line, and options specified. By default, template data is read from the file. When a block is given, it should read template data and return as a String. When file is nil, a block is required.
+- !ruby/struct:SM::Flow::P 
+  body: All arguments are optional.
+full_name: Tilt::Template::new
+is_singleton: true
+name: new
+params: (file=nil, line=1, options={}, &block)
+visibility: public

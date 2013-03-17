@@ -1,0 +1,20 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: N.B. Unlike other encoding methods, the contained objects must be a valid JSON composite type, either a Hash or an Array.
+constants: []
+
+full_name: Rack::Session::Cookie::Base64::JSON
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: decode
+- !ruby/object:RI::MethodSummary 
+  name: encode
+name: JSON
+superclass: Base64

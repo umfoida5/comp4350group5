@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@private"
+- !ruby/struct:SM::Flow::P 
+  body: Used internally to print deprecation warnings
+full_name: RSpec::deprecate
+is_singleton: true
+name: deprecate
+params: (method, alternate_method=nil, version=nil)
+visibility: public

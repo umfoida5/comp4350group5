@@ -1,0 +1,91 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: exclusions
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: inclusions
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Manages the filtering of examples and groups by matching tags declared on the command line or options files, or filters declared via `RSpec.configure`, with hash key/values submitted within example group and/or example declarations. For example, given this declaration:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    describe Thing, :awesome =&gt; true do\n      it &quot;does something&quot; do\n        # ...\n      end\n    end\n"
+- !ruby/struct:SM::Flow::P 
+  body: "That group (or any other with `:awesome =&gt; true`) would be filtered in with any of the following commands:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    rspec --tag awesome:true\n    rspec --tag awesome\n    rspec -t awesome:true\n    rspec -t awesome\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Prefixing the tag names with `~` negates the tags, thus excluding this group with any of:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    rspec --tag ~awesome:true\n    rspec --tag ~awesome\n    rspec -t ~awesome:true\n    rspec -t ~awesome\n"
+- !ruby/struct:SM::Flow::P 
+  body: "## Options files and command line overrides"
+- !ruby/struct:SM::Flow::P 
+  body: "Tag declarations can be stored in `.rspec`, `~/.rspec`, or a custom options file. This is useful for storing defaults. For example, let's say you've got some slow specs that you want to suppress most of the time. You can tag them like this:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    describe Something, :slow =&gt; true do\n"
+- !ruby/struct:SM::Flow::P 
+  body: "And then store this in `.rspec`:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    --tag ~slow:true\n"
+- !ruby/struct:SM::Flow::P 
+  body: Now when you run `rspec`, that group will be excluded.
+- !ruby/struct:SM::Flow::P 
+  body: "## Overriding"
+- !ruby/struct:SM::Flow::P 
+  body: "Of course, you probably want to run them sometimes, so you can override this tag on the command line like this:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    rspec --tag slow:true\n"
+- !ruby/struct:SM::Flow::P 
+  body: "## RSpec.configure"
+- !ruby/struct:SM::Flow::P 
+  body: "You can also store default tags with `RSpec.configure`. We use `tag` on the command line (and in options files like `.rspec`), but for historical reasons we use the term `filter` in `RSpec.configure:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    RSpec.configure do |c|\n      c.filter_run_including :foo =&gt; :bar\n      c.filter_run_excluding :foo =&gt; :bar\n    end\n"
+- !ruby/struct:SM::Flow::P 
+  body: These declarations can also be overridden from the command line.
+- !ruby/struct:SM::Flow::P 
+  body: "@see RSpec.configure @see Configuration#filter_run_including @see Configuration#filter_run_excluding"
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DEFAULT_EXCLUSIONS
+  value: "{         :if     => lambda { |value| !value },         :unless => lambda { |value| value }"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: STANDALONE_FILTERS
+  value: "[:locations, :line_numbers, :full_description]"
+full_name: RSpec::Core::FilterManager
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: add_location
+- !ruby/object:RI::MethodSummary 
+  name: empty?
+- !ruby/object:RI::MethodSummary 
+  name: exclude
+- !ruby/object:RI::MethodSummary 
+  name: exclude!
+- !ruby/object:RI::MethodSummary 
+  name: exclude?
+- !ruby/object:RI::MethodSummary 
+  name: exclude_with_low_priority
+- !ruby/object:RI::MethodSummary 
+  name: include
+- !ruby/object:RI::MethodSummary 
+  name: include!
+- !ruby/object:RI::MethodSummary 
+  name: include?
+- !ruby/object:RI::MethodSummary 
+  name: include_with_low_priority
+- !ruby/object:RI::MethodSummary 
+  name: prune
+name: FilterManager
+superclass: Object

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The list of configured syntaxes. @return [Array&lt;Symbol&gt;] the list of configured syntaxes.
+full_name: RSpec::Matchers::Configuration#syntax
+is_singleton: false
+name: syntax
+params: ()
+visibility: public

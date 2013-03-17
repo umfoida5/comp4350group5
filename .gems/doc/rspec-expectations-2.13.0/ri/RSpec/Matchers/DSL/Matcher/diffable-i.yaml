@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Tells the matcher to diff the actual and expected values in the failure message.
+full_name: RSpec::Matchers::DSL::Matcher#diffable
+is_singleton: false
+name: diffable
+params: ()
+visibility: public

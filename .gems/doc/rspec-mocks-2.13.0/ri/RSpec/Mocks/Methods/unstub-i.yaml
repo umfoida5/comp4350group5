@@ -1,0 +1,15 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: unstub!
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Removes a stub. On a double, the object will no longer respond to `message`. On a real object, the original method (if it exists) is restored.
+- !ruby/struct:SM::Flow::P 
+  body: This is rarely used, but can be useful when a stub is set up during a shared `before` hook for the common case, but you want to replace it for a special case.
+full_name: RSpec::Mocks::Methods#unstub
+is_singleton: false
+name: unstub
+params: (message)
+visibility: public

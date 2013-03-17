@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@api private"
+- !ruby/struct:SM::Flow::P 
+  body: Defaults `profile_examples` to 10 examples when `@profile_examples` is `true`.
+full_name: RSpec::Core::Configuration#profile_examples
+is_singleton: false
+name: profile_examples
+params: ()
+visibility: public

@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Formats the docstring output using the block provided.
+- !ruby/struct:SM::Flow::P 
+  body: "@example"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  # This will strip the descriptions of both examples and example groups.\n  RSpec.configure do |config|\n    config.format_docstrings { |s| s.strip }\n  end\n"
+full_name: RSpec::Core::Configuration#format_docstrings
+is_singleton: false
+name: format_docstrings
+params: (&block)
+visibility: public

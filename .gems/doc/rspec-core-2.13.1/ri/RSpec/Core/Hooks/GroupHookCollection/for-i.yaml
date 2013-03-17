@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Core::Hooks::GroupHookCollection#for
+is_singleton: false
+name: for
+params: (group)
+visibility: public

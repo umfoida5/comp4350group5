@@ -1,0 +1,21 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Represents a configured implementation. Takes into account `and_return` and `and_yield` instructions. @private
+constants: []
+
+full_name: RSpec::Mocks::Implementation
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: call
+- !ruby/object:RI::MethodSummary 
+  name: perform_yield
+name: Implementation
+superclass: Object

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Expectations::ExpectationTarget::enable_deprecated_should
+is_singleton: true
+name: enable_deprecated_should
+params: ()
+visibility: public

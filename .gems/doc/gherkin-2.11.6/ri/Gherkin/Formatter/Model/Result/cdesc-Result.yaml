@@ -1,0 +1,28 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: duration
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: error_message
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: status
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: Gherkin::Formatter::Model::Result
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: replay
+name: Result
+superclass: Hashable

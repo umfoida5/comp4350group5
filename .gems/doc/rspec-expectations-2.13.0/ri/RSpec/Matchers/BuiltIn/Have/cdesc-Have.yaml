@@ -1,0 +1,35 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: RSpec::Matchers::BuiltIn::Have
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: ==
+- !ruby/object:RI::MethodSummary 
+  name: description
+- !ruby/object:RI::MethodSummary 
+  name: determine_collection
+- !ruby/object:RI::MethodSummary 
+  name: determine_query_method
+- !ruby/object:RI::MethodSummary 
+  name: failure_message_for_should
+- !ruby/object:RI::MethodSummary 
+  name: failure_message_for_should_not
+- !ruby/object:RI::MethodSummary 
+  name: matches?
+- !ruby/object:RI::MethodSummary 
+  name: not_a_collection
+- !ruby/object:RI::MethodSummary 
+  name: relativities
+- !ruby/object:RI::MethodSummary 
+  name: respond_to?
+name: Have
+superclass: Object

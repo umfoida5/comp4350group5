@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Psych::dump_with_mocks
+is_singleton: true
+name: dump_with_mocks
+params: (object, *args)
+visibility: public

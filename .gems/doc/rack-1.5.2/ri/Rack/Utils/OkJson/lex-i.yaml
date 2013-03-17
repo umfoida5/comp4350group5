@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Scans s and returns a list of json tokens, excluding white space (as defined in RFC 4627).
+full_name: Rack::Utils::OkJson#lex
+is_singleton: false
+name: lex
+params: (s)
+visibility: public

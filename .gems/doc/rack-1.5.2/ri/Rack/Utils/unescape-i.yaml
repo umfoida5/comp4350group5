@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Rack::Utils#unescape
+is_singleton: false
+name: unescape
+params: (s, encoding = Encoding::UTF_8)
+visibility: public

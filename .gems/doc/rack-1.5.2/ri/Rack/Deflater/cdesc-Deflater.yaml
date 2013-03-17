@@ -1,0 +1,25 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This middleware enables compression of http responses.
+- !ruby/struct:SM::Flow::P 
+  body: "Currently supported compression algorithms:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  * gzip\n  * deflate\n  * identity (no transformation)\n"
+- !ruby/struct:SM::Flow::P 
+  body: The middleware automatically detects when compression is supported and allowed. For example no transformation is made when a cache directive of 'no-transform' is present, or when the response status code is one that doesn't allow an entity body.
+constants: []
+
+full_name: Rack::Deflater
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: call
+name: Deflater
+superclass: Object

@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Queries rspec-mocks to find out information about the named constant.
+- !ruby/struct:SM::Flow::P 
+  body: "@param [String] name the name of the constant @return [Constant] an object contaning information about the named"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  constant.\n"
+full_name: RSpec::Mocks::Constant::original
+is_singleton: true
+name: original
+params: (name)
+visibility: public

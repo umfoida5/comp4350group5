@@ -1,0 +1,25 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: version
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SIGNATURE
+  value: "[1, 5, 0]"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VERSION
+  value: SIGNATURE.join('.')
+full_name: Rack::Protection
+includes: []
+
+instance_methods: []
+
+name: Protection
+superclass: 

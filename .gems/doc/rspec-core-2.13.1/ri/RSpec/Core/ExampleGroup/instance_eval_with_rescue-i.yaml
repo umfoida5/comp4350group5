@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@private instance_evals the block, capturing and reporting an exception if raised"
+full_name: RSpec::Core::ExampleGroup#instance_eval_with_rescue
+is_singleton: false
+name: instance_eval_with_rescue
+params: (context = nil, &hook)
+visibility: public

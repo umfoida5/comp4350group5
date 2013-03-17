@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Tilt::ERBTemplate::engine_initialized?
+is_singleton: true
+name: engine_initialized?
+params: ()
+visibility: public

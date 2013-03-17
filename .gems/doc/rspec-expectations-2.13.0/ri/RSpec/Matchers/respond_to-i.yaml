@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Matches if the target object responds to all of the names provided. Names can be Strings or Symbols.
+- !ruby/struct:SM::Flow::P 
+  body: "@example"
+full_name: RSpec::Matchers#respond_to
+is_singleton: false
+name: respond_to
+params: (*names)
+visibility: public

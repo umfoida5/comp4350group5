@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: (full_name, name)
+comment: 
+full_name: RSpec::Mocks::RecursiveConstMethods#recursive_const_defined?
+is_singleton: false
+name: recursive_const_defined?
+params: (const_name) {|full_name, name| ...}
+visibility: public

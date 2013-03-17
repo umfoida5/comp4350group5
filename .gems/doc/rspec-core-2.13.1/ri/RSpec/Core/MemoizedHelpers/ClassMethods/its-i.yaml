@@ -1,0 +1,34 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Creates a nested example group named by the submitted `attribute`, and then generates an example using the submitted block.
+- !ruby/struct:SM::Flow::P 
+  body: "@example"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  # This ...\n  describe Array do\n    its(:size) { should eq(0) }\n  end\n\n  # ... generates the same runtime structure as this:\n  describe Array do\n    describe &quot;size&quot; do\n      it &quot;should eq(0)&quot; do\n        subject.size.should eq(0)\n      end\n    end\n  end\n"
+- !ruby/struct:SM::Flow::P 
+  body: The attribute can be a `Symbol` or a `String`. Given a `String` with dots, the result is as though you concatenated that `String` onto the subject in an expression.
+- !ruby/struct:SM::Flow::P 
+  body: "@example"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  describe Person do\n    subject do\n      Person.new.tap do |person|\n        person.phone_numbers &lt;&lt; &quot;555-1212&quot;\n      end\n    end\n\n    its(&quot;phone_numbers.first&quot;) { should eq(&quot;555-1212&quot;) }\n  end\n"
+- !ruby/struct:SM::Flow::P 
+  body: When the subject is a `Hash`, you can refer to the Hash keys by specifying a `Symbol` or `String` in an array.
+- !ruby/struct:SM::Flow::P 
+  body: "@example"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  describe &quot;a configuration Hash&quot; do\n    subject do\n      { :max_users =&gt; 3,\n        'admin' =&gt; :all_permissions }\n    end\n\n    its([:max_users]) { should eq(3) }\n    its(['admin']) { should eq(:all_permissions) }\n\n    # You can still access to its regular methods this way:\n    its(:keys) { should include(:max_users) }\n    its(:count) { should eq(2) }\n  end\n"
+- !ruby/struct:SM::Flow::P 
+  body: Note that this method does not modify `subject` in any way, so if you refer to `subject` in `let` or `before` blocks, you're still referring to the outer subject.
+- !ruby/struct:SM::Flow::P 
+  body: "@example"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  describe Person do\n    subject { Person.new }\n    before { subject.age = 25 }\n    its(:age) { should eq(25) }\n  end\n"
+full_name: RSpec::Core::MemoizedHelpers::ClassMethods#its
+is_singleton: false
+name: its
+params: (attribute, &block)
+visibility: public

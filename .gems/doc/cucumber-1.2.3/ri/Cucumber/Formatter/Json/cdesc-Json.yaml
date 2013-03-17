@@ -1,0 +1,19 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The formatter used for <tt>--format json</tt>
+constants: []
+
+full_name: Cucumber::Formatter::Json
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Io
+instance_methods: []
+
+name: Json
+superclass: GherkinFormatterAdapter

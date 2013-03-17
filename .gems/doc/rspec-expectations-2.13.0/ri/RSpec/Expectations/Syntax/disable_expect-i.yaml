@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@api private Disables the `expect` syntax."
+full_name: RSpec::Expectations::Syntax#disable_expect
+is_singleton: false
+name: disable_expect
+params: (syntax_host = ::RSpec::Matchers)
+visibility: public

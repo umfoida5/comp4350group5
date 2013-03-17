@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Rack::Session::Cookie::Base64::Marshal#encode
+is_singleton: false
+name: encode
+params: (str)
+visibility: public

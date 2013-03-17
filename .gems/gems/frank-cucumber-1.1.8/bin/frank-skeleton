@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+
+######################## ######################## ######################## 
+#
+#                             IMPORTANT NOTE
+#
+#     This script is deprecated. it's just here for backwards compatibility.
+#
+#     Users should be using the Frank::CLI-backed `frank` executable
+#
+######################## ######################## ######################## 
+
+require 'frank-cucumber/cli'
+
+Frank::CLI.start
+
+
+command = ARGV[0]
+
+unless ["update-server",nil].include? command
+  puts "unrecognized command #{command}"
+  puts "the only valid command at the moment is update-server"
+  exit 10
+end
+
+update_mode = ARGV[0] == 'update-server'
+
+cli = Frank::CLI.new
+if update_mode
+  cli.update
+else
+  cli.skeleton
+end

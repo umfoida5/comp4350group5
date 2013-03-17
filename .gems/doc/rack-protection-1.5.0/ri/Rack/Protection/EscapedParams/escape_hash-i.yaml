@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Rack::Protection::EscapedParams#escape_hash
+is_singleton: false
+name: escape_hash
+params: (hash)
+visibility: public

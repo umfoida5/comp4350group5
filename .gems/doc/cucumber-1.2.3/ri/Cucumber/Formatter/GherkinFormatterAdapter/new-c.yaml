@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Cucumber::Formatter::GherkinFormatterAdapter::new
+is_singleton: true
+name: new
+params: (gherkin_formatter, print_emtpy_match)
+visibility: public

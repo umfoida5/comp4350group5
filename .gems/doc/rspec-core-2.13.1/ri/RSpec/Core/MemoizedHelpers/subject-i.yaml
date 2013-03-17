@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@note `subject` was contributed by Joe Ferris to support the one-liner"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  syntax embraced by shoulda matchers:\n\n      describe Widget do\n        it { should validate_presence_of(:name) }\n      end\n\n  While the examples below demonstrate how to use `subject`\n  explicitly in examples, we recommend that you define a method with\n  an intention revealing name instead.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@example"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  # explicit declaration of subject\n  describe Person do\n    subject { Person.new(:birthdate =&gt; 19.years.ago) }\n    it &quot;should be eligible to vote&quot; do\n      subject.should be_eligible_to_vote\n      # ^ ^ explicit reference to subject not recommended\n    end\n  end\n\n  # implicit subject =&gt; { Person.new }\n  describe Person do\n    it &quot;should be eligible to vote&quot; do\n      subject.should be_eligible_to_vote\n      # ^ ^ explicit reference to subject not recommended\n    end\n  end\n\n  # one-liner syntax - should is invoked on subject\n  describe Person do\n    it { should be_eligible_to_vote }\n  end\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@see #should"
+full_name: RSpec::Core::MemoizedHelpers#subject
+is_singleton: false
+name: subject
+params: ()
+visibility: public

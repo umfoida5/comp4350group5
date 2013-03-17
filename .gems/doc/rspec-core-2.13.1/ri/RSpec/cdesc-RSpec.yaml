@@ -1,0 +1,39 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: clear_remaining_example_groups
+- !ruby/object:RI::MethodSummary 
+  name: configuration
+- !ruby/object:RI::MethodSummary 
+  name: configure
+- !ruby/object:RI::MethodSummary 
+  name: const_missing
+- !ruby/object:RI::MethodSummary 
+  name: deprecate
+- !ruby/object:RI::MethodSummary 
+  name: reset
+- !ruby/object:RI::MethodSummary 
+  name: wants_to_quit
+- !ruby/object:RI::MethodSummary 
+  name: wants_to_quit=
+- !ruby/object:RI::MethodSummary 
+  name: warn_deprecation
+- !ruby/object:RI::MethodSummary 
+  name: windows_os?
+- !ruby/object:RI::MethodSummary 
+  name: world
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SharedContext
+  value: Core::SharedContext
+full_name: RSpec
+includes: []
+
+instance_methods: []
+
+name: RSpec
+superclass: 

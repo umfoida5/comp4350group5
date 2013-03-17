@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Mocks::ConstantMutator::UndefinedConstantSetter#rspec_reset
+is_singleton: false
+name: rspec_reset
+params: ()
+visibility: public

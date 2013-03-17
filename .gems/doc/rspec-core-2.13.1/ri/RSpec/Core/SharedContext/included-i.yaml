@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Core::SharedContext#included
+is_singleton: false
+name: included
+params: (group)
+visibility: public

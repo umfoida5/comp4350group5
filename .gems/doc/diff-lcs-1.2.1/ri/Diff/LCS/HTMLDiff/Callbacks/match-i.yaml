@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This will be called with both lines are the same
+full_name: Diff::LCS::HTMLDiff::Callbacks#match
+is_singleton: false
+name: match
+params: (event)
+visibility: public

@@ -1,0 +1,170 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "@private"
+  name: filter_manager
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: add_setting
+- !ruby/object:RI::MethodSummary 
+  name: define_aliases
+- !ruby/object:RI::MethodSummary 
+  name: define_predicate_for
+- !ruby/object:RI::MethodSummary 
+  name: define_reader
+- !ruby/object:RI::MethodSummary 
+  name: deprecate_alias_key
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Stores runtime configuration information.
+- !ruby/struct:SM::Flow::P 
+  body: Configuration options are loaded from `~/.rspec`, `.rspec`, `.rspec-local`, command line switches, and the `SPEC_OPTS` environment variable (listed in lowest to highest precedence; for example, an option in `~/.rspec` can be overridden by an option in `.rspec-local`).
+- !ruby/struct:SM::Flow::P 
+  body: "@example Standard settings"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    RSpec.configure do |c|\n      c.drb          = true\n      c.drb_port     = 1234\n      c.default_path = 'behavior'\n    end\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@example Hooks"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    RSpec.configure do |c|\n      c.before(:suite) { establish_connection }\n      c.before(:each)  { log_in_as :authorized }\n      c.around(:each)  { |ex| Database.transaction(&amp;ex) }\n    end\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@see RSpec.configure @see Hooks"
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DEFAULT_BACKTRACE_PATTERNS
+  value: "[         /\\/lib\\d*\\/ruby\\//,         /org\\/jruby\\//,         /bin\\//,         %r|/gems/|,         /spec\\/spec_helper\\.rb/,         /lib\\/rspec\\/(core|expectations|matchers|mocks)/"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "@private"
+  name: DEFAULT_FORMATTER
+  value: lambda { |string| string }
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "@private"
+  name: DEFAULT_ORDERING
+  value: lambda { |list| list }
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "@private"
+  name: RANDOM_ORDERING
+  value: lambda do |list|         Kernel.srand RSpec.configuration.seed
+full_name: RSpec::Core::Configuration
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: RSpec::Core::Hooks
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: add_formatter
+- !ruby/object:RI::MethodSummary 
+  name: add_setting
+- !ruby/object:RI::MethodSummary 
+  name: alias_example_to
+- !ruby/object:RI::MethodSummary 
+  name: alias_it_behaves_like_to
+- !ruby/object:RI::MethodSummary 
+  name: alias_it_should_behave_like_to
+- !ruby/object:RI::MethodSummary 
+  name: cleaned_from_backtrace?
+- !ruby/object:RI::MethodSummary 
+  name: color
+- !ruby/object:RI::MethodSummary 
+  name: color=
+- !ruby/object:RI::MethodSummary 
+  name: color_enabled
+- !ruby/object:RI::MethodSummary 
+  name: color_enabled=
+- !ruby/object:RI::MethodSummary 
+  name: configure_expectation_framework
+- !ruby/object:RI::MethodSummary 
+  name: configure_group
+- !ruby/object:RI::MethodSummary 
+  name: configure_mock_framework
+- !ruby/object:RI::MethodSummary 
+  name: debug=
+- !ruby/object:RI::MethodSummary 
+  name: exclusion_filter
+- !ruby/object:RI::MethodSummary 
+  name: exclusion_filter=
+- !ruby/object:RI::MethodSummary 
+  name: expect_with
+- !ruby/object:RI::MethodSummary 
+  name: expectation_framework=
+- !ruby/object:RI::MethodSummary 
+  name: expectation_frameworks
+- !ruby/object:RI::MethodSummary 
+  name: extend
+- !ruby/object:RI::MethodSummary 
+  name: files_or_directories_to_run=
+- !ruby/object:RI::MethodSummary 
+  name: filter
+- !ruby/object:RI::MethodSummary 
+  name: filter=
+- !ruby/object:RI::MethodSummary 
+  name: filter_run
+- !ruby/object:RI::MethodSummary 
+  name: filter_run_excluding
+- !ruby/object:RI::MethodSummary 
+  name: filter_run_including
+- !ruby/object:RI::MethodSummary 
+  name: force
+- !ruby/object:RI::MethodSummary 
+  name: format_docstrings
+- !ruby/object:RI::MethodSummary 
+  name: format_docstrings_block
+- !ruby/object:RI::MethodSummary 
+  name: formatter=
+- !ruby/object:RI::MethodSummary 
+  name: formatters
+- !ruby/object:RI::MethodSummary 
+  name: full_backtrace=
+- !ruby/object:RI::MethodSummary 
+  name: full_description=
+- !ruby/object:RI::MethodSummary 
+  name: include
+- !ruby/object:RI::MethodSummary 
+  name: inclusion_filter
+- !ruby/object:RI::MethodSummary 
+  name: inclusion_filter=
+- !ruby/object:RI::MethodSummary 
+  name: libs=
+- !ruby/object:RI::MethodSummary 
+  name: line_numbers=
+- !ruby/object:RI::MethodSummary 
+  name: load_spec_files
+- !ruby/object:RI::MethodSummary 
+  name: mock_framework
+- !ruby/object:RI::MethodSummary 
+  name: mock_framework=
+- !ruby/object:RI::MethodSummary 
+  name: mock_with
+- !ruby/object:RI::MethodSummary 
+  name: order=
+- !ruby/object:RI::MethodSummary 
+  name: profile_examples
+- !ruby/object:RI::MethodSummary 
+  name: randomize?
+- !ruby/object:RI::MethodSummary 
+  name: reporter
+- !ruby/object:RI::MethodSummary 
+  name: requires=
+- !ruby/object:RI::MethodSummary 
+  name: reset
+- !ruby/object:RI::MethodSummary 
+  name: safe_extend
+- !ruby/object:RI::MethodSummary 
+  name: safe_extend
+- !ruby/object:RI::MethodSummary 
+  name: safe_include
+- !ruby/object:RI::MethodSummary 
+  name: seed=
+name: Configuration
+superclass: Object

@@ -1,0 +1,34 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "Prevented attack:"
+    body: CSRF
+  - !ruby/struct:SM::Flow::LI 
+    label: "Supported browsers:"
+    body: all
+  - !ruby/struct:SM::Flow::LI 
+    label: "More infos:"
+    body: http://en.wikipedia.org/wiki/Cross-site_request_forgery
+  type: :NOTE
+- !ruby/struct:SM::Flow::P 
+  body: Only accepts submitted forms if a given access token matches the token included in the session. Does not expect such a token from Ajax request.
+- !ruby/struct:SM::Flow::P 
+  body: This middleware is not used when using the Rack::Protection collection, since it might be a security issue, depending on your application
+- !ruby/struct:SM::Flow::P 
+  body: Compatible with Rails and rack-csrf.
+constants: []
+
+full_name: Rack::Protection::FormToken
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: accepts?
+name: FormToken
+superclass: AuthenticityToken

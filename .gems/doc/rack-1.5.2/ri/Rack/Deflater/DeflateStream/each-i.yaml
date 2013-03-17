@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: deflater.deflate(part, Zlib::SYNC_FLUSH) }
+comment: 
+full_name: Rack::Deflater::DeflateStream#each
+is_singleton: false
+name: each
+params: () {|deflater.deflate(part, Zlib::SYNC_FLUSH) }| ...}
+visibility: public

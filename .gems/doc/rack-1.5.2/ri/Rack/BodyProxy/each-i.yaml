@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "N.B. This method is a special case to address the bug described by #434. We are applying this special case for #each only. Future bugs of this class will be handled by requesting users to patch their ruby implementation, to save adding too many methods in this class."
+full_name: Rack::BodyProxy#each
+is_singleton: false
+name: each
+params: (*args, &block)
+visibility: public

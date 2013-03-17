@@ -1,0 +1,30 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@overload add_setting(name) @overload add_setting(name, opts) @option opts [Symbol] :default"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  set a default value for the generated getter and predicate methods:\n\n      add_setting(:foo, :default =&gt; &quot;default value&quot;)\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@option opts [Symbol] :alias_with"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Use `:alias_with` to alias the setter, getter, and predicate to another\n  name, or names:\n\n      add_setting(:foo, :alias_with =&gt; :bar)\n      add_setting(:foo, :alias_with =&gt; [:bar, :baz])\n"
+- !ruby/struct:SM::Flow::P 
+  body: Adds a custom setting to the RSpec.configuration object.
+- !ruby/struct:SM::Flow::VERB 
+  body: "    RSpec.configuration.add_setting :foo\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Used internally and by extension frameworks like rspec-rails, so they can add config settings that are domain specific. For example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    RSpec.configure do |c|\n      c.add_setting :use_transactional_fixtures,\n        :default =&gt; true,\n        :alias_with =&gt; :use_transactional_examples\n    end\n"
+- !ruby/struct:SM::Flow::P 
+  body: "`add_setting` creates three methods on the configuration object, a setter, a getter, and a predicate:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    RSpec.configuration.foo=(value)\n    RSpec.configuration.foo\n    RSpec.configuration.foo? # returns true if foo returns anything but nil or false\n"
+full_name: RSpec::Core::Configuration#add_setting
+is_singleton: false
+name: add_setting
+params: (name, opts={})
+visibility: public

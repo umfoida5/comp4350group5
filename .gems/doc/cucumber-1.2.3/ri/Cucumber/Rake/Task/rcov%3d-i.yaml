@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Cucumber::Rake::Task#rcov=
+is_singleton: false
+name: rcov=
+params: (flag)
+visibility: public

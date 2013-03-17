@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RSpec::Core::MetadataHashBuilder::Common#build_metadata_hash_from
+is_singleton: false
+name: build_metadata_hash_from
+params: (args)
+visibility: public

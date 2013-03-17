@@ -1,0 +1,27 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: engine_initialized?
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Lessscss template implementation. See: http://lesscss.org/"
+- !ruby/struct:SM::Flow::P 
+  body: Less templates do not support object scopes, locals, or yield.
+constants: []
+
+full_name: Tilt::LessTemplate
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: allows_script?
+- !ruby/object:RI::MethodSummary 
+  name: evaluate
+- !ruby/object:RI::MethodSummary 
+  name: initialize_engine
+- !ruby/object:RI::MethodSummary 
+  name: prepare
+name: LessTemplate
+superclass: Template

@@ -1,0 +1,20 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: RSpec::Mocks::AnyInstance::Chain
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: constrained_to_any_of?
+- !ruby/object:RI::MethodSummary 
+  name: expectation_fulfilled!
+- !ruby/object:RI::MethodSummary 
+  name: playback!
+name: Chain
+superclass: Object

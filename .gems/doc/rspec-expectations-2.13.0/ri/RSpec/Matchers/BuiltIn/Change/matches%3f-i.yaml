@@ -1,0 +1,11 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: ==
+block_params: 
+comment: 
+full_name: RSpec::Matchers::BuiltIn::Change#matches?
+is_singleton: false
+name: matches?
+params: (event_proc)
+visibility: public

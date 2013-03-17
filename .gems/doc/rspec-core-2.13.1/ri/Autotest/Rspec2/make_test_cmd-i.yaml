@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Overrides Autotest's implementation to generate the rspec command to run
+full_name: Autotest::Rspec2#make_test_cmd
+is_singleton: false
+name: make_test_cmd
+params: (files_to_test)
+visibility: public

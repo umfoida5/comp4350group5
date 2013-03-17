@@ -1,0 +1,40 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: comments
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: ids
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: tags
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: Gherkin::Listener::FormatterListener::Stash
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: basic_statement
+- !ruby/object:RI::MethodSummary 
+  name: comment
+- !ruby/object:RI::MethodSummary 
+  name: examples
+- !ruby/object:RI::MethodSummary 
+  name: feature
+- !ruby/object:RI::MethodSummary 
+  name: feature_element
+- !ruby/object:RI::MethodSummary 
+  name: id
+- !ruby/object:RI::MethodSummary 
+  name: tag
+name: Stash
+superclass: Object

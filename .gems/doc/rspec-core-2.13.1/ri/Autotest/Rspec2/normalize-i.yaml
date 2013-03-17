@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Generates a map of filenames to Arrays for Autotest
+full_name: Autotest::Rspec2#normalize
+is_singleton: false
+name: normalize
+params: (files_to_test)
+visibility: public

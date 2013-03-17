@@ -1,0 +1,25 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: engine_initialized?
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Maruku markdown implementation. See: http://maruku.rubyforge.org/"
+constants: []
+
+full_name: Tilt::MarukuTemplate
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: allows_script?
+- !ruby/object:RI::MethodSummary 
+  name: evaluate
+- !ruby/object:RI::MethodSummary 
+  name: initialize_engine
+- !ruby/object:RI::MethodSummary 
+  name: prepare
+name: MarukuTemplate
+superclass: Template

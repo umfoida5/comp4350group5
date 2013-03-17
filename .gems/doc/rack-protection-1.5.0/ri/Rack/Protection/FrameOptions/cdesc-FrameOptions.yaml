@@ -1,0 +1,40 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "Prevented attack:"
+    body: Clickjacking
+  - !ruby/struct:SM::Flow::LI 
+    label: "Supported browsers:"
+    body: Internet Explorer 8, Firefox 3.6.9, Opera 10.50, Safari 4.0, Chrome 4.1.249.1042 and later
+  - !ruby/struct:SM::Flow::LI 
+    label: "More infos:"
+    body: https://developer.mozilla.org/en/The_X-FRAME-OPTIONS_response_header
+  type: :NOTE
+- !ruby/struct:SM::Flow::P 
+  body: Sets X-Frame-Options header to tell the browser avoid embedding the page in a frame.
+- !ruby/struct:SM::Flow::P 
+  body: "Options:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "frame_options:"
+    body: Defines who should be allowed to embed the page in a frame. Use :deny to forbid any embedding, :sameorigin to allow embedding from the same origin (default).
+  type: :NOTE
+constants: []
+
+full_name: Rack::Protection::FrameOptions
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: call
+- !ruby/object:RI::MethodSummary 
+  name: frame_options
+name: FrameOptions
+superclass: Base

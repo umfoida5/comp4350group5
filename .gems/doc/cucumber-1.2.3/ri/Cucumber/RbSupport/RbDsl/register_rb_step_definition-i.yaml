@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Registers a new Ruby StepDefinition. This method is aliased to <tt>Given</tt>, <tt>When</tt> and <tt>Then</tt>, and also to the i18n translations whenever a feature of a new language is loaded.
+- !ruby/struct:SM::Flow::P 
+  body: "If provided, the <tt>symbol</tt> is sent to the <tt>World</tt> object as defined by #World. A new <tt>World</tt> object is created for each scenario and is shared across step definitions within that scenario. If the <tt>options</tt> hash contains an <tt>:on</tt> key, the value for this is assumed to be a proc. This proc will be executed in the context of the <tt>World</tt> object and then sent the <tt>symbol</tt>."
+- !ruby/struct:SM::Flow::P 
+  body: If no <tt>symbol</tt> if provided then the +&amp;proc+ gets executed in the context of the <tt>World</tt> object.
+full_name: Cucumber::RbSupport::RbDsl#register_rb_step_definition
+is_singleton: false
+name: register_rb_step_definition
+params: (regexp, symbol = nil, options = {}, &proc)
+visibility: public

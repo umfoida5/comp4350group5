@@ -1,0 +1,35 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: host
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: port
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: unix
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: from_file
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DEFAULT_TIMEOUTS
+  value: "{         'connect' => 11,         'invoke' => 120,         'begin_scenario' => 120,         'end_scenario' => 120"
+full_name: Cucumber::WireSupport::Configuration
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: timeout
+- !ruby/object:RI::MethodSummary 
+  name: to_s
+name: Configuration
+superclass: Object

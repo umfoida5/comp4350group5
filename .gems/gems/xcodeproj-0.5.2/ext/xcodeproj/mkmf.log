@@ -1,0 +1,61 @@
+checking for -std=c99 option to compiler... -------------------- yes
+
+"xcrun cc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -arch i386 -arch x86_64 -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -std=c99 -c conftest.c"
+checked program was:
+/* begin */
+/* end */
+
+--------------------
+
+have_framework: checking for CoreFoundation... -------------------- yes
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -arch i386 -arch x86_64 -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common   -std=c99 conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L. -arch i386 -arch x86_64      -lruby -ObjC -framework CoreFoundation -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: #include <CoreFoundation/CoreFoundation.h>
+2: 
+3: int main(void){return 0;}
+/* end */
+
+--------------------
+
+have_header: checking for CoreFoundation/CoreFoundation.h... -------------------- yes
+
+"xcrun cc -E -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE     -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common   -std=c99  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <CoreFoundation/CoreFoundation.h>
+/* end */
+
+--------------------
+
+have_header: checking for CoreFoundation/CFStream.h... -------------------- yes
+
+"xcrun cc -E -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE     -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common   -std=c99  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <CoreFoundation/CFStream.h>
+/* end */
+
+--------------------
+
+have_header: checking for CoreFoundation/CFPropertyList.h... -------------------- yes
+
+"xcrun cc -E -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE     -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common   -std=c99  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <CoreFoundation/CFPropertyList.h>
+/* end */
+
+--------------------
+
+have_header: checking for ruby/st.h... -------------------- yes
+
+"xcrun cc -E -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE     -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common   -std=c99  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <ruby/st.h>
+/* end */
+
+--------------------
+

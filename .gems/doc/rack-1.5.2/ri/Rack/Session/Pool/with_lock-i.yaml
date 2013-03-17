@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+full_name: Rack::Session::Pool#with_lock
+is_singleton: false
+name: with_lock
+params: (env, default=nil) {|| ...}
+visibility: public

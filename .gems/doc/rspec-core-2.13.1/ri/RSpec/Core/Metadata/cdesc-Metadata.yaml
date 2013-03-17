@@ -1,0 +1,50 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: relative_path
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Each ExampleGroup class and Example instance owns an instance of Metadata, which is Hash extended to support lazy evaluation of values associated with keys that may or may not be used by any example or group.
+- !ruby/struct:SM::Flow::P 
+  body: In addition to metadata that is used internally, this also stores user-supplied metadata, e.g.
+- !ruby/struct:SM::Flow::VERB 
+  body: "    describe Something, :type =&gt; :ui do\n      it &quot;does something&quot;, :slow =&gt; true do\n        # ...\n      end\n    end\n"
+- !ruby/struct:SM::Flow::P 
+  body: `:type =&gt; :ui` is stored in the Metadata owned by the example group, and `:slow =&gt; true` is stored in the Metadata owned by the example. These can then be used to select which examples are run using the `--tag` option on the command line, or several methods on `Configuration` used to filter a run (e.g. `filter_run_including`, `filter_run_excluding`, etc).
+- !ruby/struct:SM::Flow::P 
+  body: "@see Example#metadata @see ExampleGroup.metadata @see FilterManager @see Configuration#filter_run_including @see Configuration#filter_run_excluding"
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: RESERVED_KEYS
+  value: "[         :description,         :example_group,         :execution_result,         :file_path,         :full_description,         :line_number,         :location"
+full_name: RSpec::Core::Metadata
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: all_apply?
+- !ruby/object:RI::MethodSummary 
+  name: any_apply?
+- !ruby/object:RI::MethodSummary 
+  name: configure_for_example
+- !ruby/object:RI::MethodSummary 
+  name: filter_applies?
+- !ruby/object:RI::MethodSummary 
+  name: filter_applies_to_any_value?
+- !ruby/object:RI::MethodSummary 
+  name: filters_apply?
+- !ruby/object:RI::MethodSummary 
+  name: for_example
+- !ruby/object:RI::MethodSummary 
+  name: line_number_filter_applies?
+- !ruby/object:RI::MethodSummary 
+  name: location_filter_applies?
+- !ruby/object:RI::MethodSummary 
+  name: process
+name: Metadata
+superclass: Hash

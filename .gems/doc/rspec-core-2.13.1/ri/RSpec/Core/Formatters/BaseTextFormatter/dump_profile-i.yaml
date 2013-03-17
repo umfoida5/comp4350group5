@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@api public"
+- !ruby/struct:SM::Flow::P 
+  body: Outputs the slowest examples in a report when using `--profile COUNT` (default 10).
+full_name: RSpec::Core::Formatters::BaseTextFormatter#dump_profile
+is_singleton: false
+name: dump_profile
+params: ()
+visibility: public

@@ -1,0 +1,18 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Passes if <tt>actual.equal?(expected)</tt> (object identity).
+- !ruby/struct:SM::Flow::P 
+  body: See http://www.ruby-doc.org/core/classes/Object.html#M001057 for more information about equality in Ruby.
+- !ruby/struct:SM::Flow::P 
+  body: "@example"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  5.should equal(5) # Fixnums are equal\n  &quot;5&quot;.should_not equal(&quot;5&quot;) # Strings that look the same are not the same object\n"
+full_name: RSpec::Matchers#equal
+is_singleton: false
+name: equal
+params: (expected)
+visibility: public

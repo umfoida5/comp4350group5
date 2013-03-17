@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Use this to define the block for a negative expectation (`should_not`) when the positive and negative forms require different handling. This is rarely necessary, but can be helpful, for example, when specifying asynchronous processes that require different timeouts.
+- !ruby/struct:SM::Flow::P 
+  body: "@yield [Object] actual the actual value (or receiver of should)"
+full_name: RSpec::Matchers::DSL::Matcher#match_for_should_not
+is_singleton: false
+name: match_for_should_not
+params: (&block)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Rack::Head returns an empty body for all HEAD requests. It leaves all other requests unchanged.
+full_name: Rack::Head::new
+is_singleton: true
+name: new
+params: (app)
+visibility: public

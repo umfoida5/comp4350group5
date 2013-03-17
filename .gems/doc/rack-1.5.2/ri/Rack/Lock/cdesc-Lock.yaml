@@ -1,0 +1,22 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Rack::Lock locks every request inside a mutex, so that every request will effectively be executed synchronously.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FLAG
+  value: "'rack.multithread'.freeze"
+full_name: Rack::Lock
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: call
+name: Lock
+superclass: Object
