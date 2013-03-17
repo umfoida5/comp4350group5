@@ -13,7 +13,7 @@
 @class ASINetworkQueue;
 @interface ProfileViewController (){
 	ASINetworkQueue *queue;
-	
+	NSArray *tableData;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -23,12 +23,14 @@
 @property (weak, nonatomic) IBOutlet UITextField *addressField;
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 @property (weak, nonatomic) IBOutlet UITextView *aboutTextView;
-@property (weak, nonatomic) IBOutlet UICollectionView *Achievements;
+@property (weak, nonatomic) IBOutlet UITableView *achievementTable;
 @property (retain) ASINetworkQueue *queue;
+@property NSMutableArray *imgCollection;
 
 @end
 
 @implementation ProfileViewController
+
 
 
 -(void)viewWillAppear:(BOOL)animated
@@ -37,7 +39,7 @@
         self.queue = [[ASINetworkQueue alloc] init];
     
     [self.profileImage setImage:[UIImage imageNamed:@"default_profile_pic.png"]];
-    
+    self.imgCollection = [NSMutableArray array];
     [self setQueue:[ASINetworkQueue queue]];
     
 	[[self queue] setDelegate:self];
@@ -77,10 +79,9 @@
         
         [name appendFormat:@"%@ %@",jsonDictionary[@"first_name"],jsonDictionary[@"last_name"]];
         self.nameLabel.text = name;
-        NSLog(@"%c", [jsonDictionary[@"birth_date"] isEqual:@"<null>"]);
         self.dobField.text = [jsonDictionary[@"birth_date"] isKindOfClass:[NSNull class]]? @"Enter Birth Day" : jsonDictionary[@"birth_date"];
         self.addressField.text = jsonDictionary[@"address"];
-        self.emailField.text = [jsonDictionary[@"email"] isKindOfClass:[NSNull class]]? @"Enter Birth Day" : jsonDictionary[@"email"];
+        self.emailField.text = [jsonDictionary[@"email"] isKindOfClass:[NSNull class]]? @"Enter Email" : jsonDictionary[@"email"];
         self.aboutTextView.text = jsonDictionary[@"about_me"];
        
         for (NSMutableDictionary *achieves in jsonDictionary[@"achievements"]) {
@@ -110,9 +111,27 @@
 {
     UIImage* image = [UIImage imageWithData:[req responseData]];
     UIImageView *temp = [[UIImageView alloc]init];
-    [temp setImage: image];
-    [self.profileImage setImage:image];
-    [[self Achievements] addSubview:temp];
+    [[self imgCollection] addObject:image];
+        //[self.profileImage setImage:image];
+    tableData = self.imgCollection;
+    [self.achievementTable reloadData];
+    //[[self achievementTable] insert]
+    //[[self Achievements] addSubview:temp];
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [tableData count];
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyIdentifier"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"MyIdentifier"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+
+    cell.imageView.image = [tableData objectAtIndex:indexPath.row];
+    return cell;
 }
 
 

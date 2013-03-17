@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -370,30 +370,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ske-Yb-fxb">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="384" id="Ih1-1n-Slz"/>
-                                    <constraint firstAttribute="height" constant="706" id="WCl-SI-JvG"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="f73-iO-5Yx">
-                                    <size key="itemSize" width="80" height="75"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aPH-r9-TGv">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="75"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="80" height="75"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4M-Qo-hzY">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="l66-pc-XKr"/>
@@ -431,32 +407,40 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="l5o-QM-btQ">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="719" id="06T-fC-onh"/>
+                                </constraints>
+                                <sections/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="j9G-fR-DkD" firstAttribute="top" secondItem="TeR-Yy-i4r" secondAttribute="top" constant="54" id="1Fn-ql-zgY"/>
                             <constraint firstAttribute="bottom" secondItem="Mfz-wA-Ds3" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="40H-av-pRo"/>
                             <constraint firstItem="rLx-Nx-EZN" firstAttribute="top" secondItem="cyj-xS-Ecg" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="43E-to-qPa"/>
+                            <constraint firstItem="l5o-QM-btQ" firstAttribute="leading" secondItem="rLx-Nx-EZN" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="4Ar-j0-gHh"/>
                             <constraint firstItem="0ec-wn-2oj" firstAttribute="leading" secondItem="TeR-Yy-i4r" secondAttribute="leading" type="default" id="4qZ-gK-hto"/>
                             <constraint firstItem="C5E-eC-x5D" firstAttribute="leading" secondItem="TeR-Yy-i4r" secondAttribute="leading" type="default" id="5vv-oG-arc"/>
-                            <constraint firstItem="Ske-Yb-fxb" firstAttribute="top" secondItem="c4M-Qo-hzY" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="BRt-eJ-OsG"/>
+                            <constraint firstItem="l5o-QM-btQ" firstAttribute="leading" secondItem="cyj-xS-Ecg" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="AsF-dc-oHN"/>
                             <constraint firstItem="UQ9-v3-mJe" firstAttribute="top" secondItem="rLx-Nx-EZN" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Cjh-O5-bbk"/>
                             <constraint firstItem="XtS-t4-5pP" firstAttribute="top" secondItem="TeR-Yy-i4r" secondAttribute="top" constant="72" id="FDH-f5-rYc"/>
                             <constraint firstItem="rLx-Nx-EZN" firstAttribute="leading" secondItem="TeR-Yy-i4r" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="IpN-9Z-xF6"/>
-                            <constraint firstItem="UQ9-v3-mJe" firstAttribute="trailing" secondItem="Mfz-wA-Ds3" secondAttribute="trailing" type="default" id="Jxe-cn-eVC"/>
-                            <constraint firstItem="Ske-Yb-fxb" firstAttribute="leading" secondItem="TeR-Yy-i4r" secondAttribute="leading" constant="338" id="MSt-WW-6AQ"/>
-                            <constraint firstItem="UQ9-v3-mJe" firstAttribute="trailing" secondItem="rLx-Nx-EZN" secondAttribute="trailing" type="default" id="NgF-8Q-HtG"/>
+                            <constraint firstItem="l5o-QM-btQ" firstAttribute="leading" secondItem="UQ9-v3-mJe" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="LaS-AZ-GvI"/>
+                            <constraint firstItem="l5o-QM-btQ" firstAttribute="leading" secondItem="Mfz-wA-Ds3" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="OBu-Pu-dNE"/>
                             <constraint firstItem="j9G-fR-DkD" firstAttribute="leading" secondItem="TeR-Yy-i4r" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="STl-mu-aS3"/>
                             <constraint firstItem="cyj-xS-Ecg" firstAttribute="top" secondItem="TeR-Yy-i4r" secondAttribute="top" constant="387" id="TGI-o6-Dyh"/>
                             <constraint firstItem="0ec-wn-2oj" firstAttribute="leading" secondItem="C5E-eC-x5D" secondAttribute="trailing" type="default" id="VTs-m9-Ebe"/>
                             <constraint firstItem="0ec-wn-2oj" firstAttribute="trailing" secondItem="TeR-Yy-i4r" secondAttribute="trailing" type="default" id="a9N-B9-0cB"/>
                             <constraint firstItem="c4M-Qo-hzY" firstAttribute="leading" secondItem="j9G-fR-DkD" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="aAl-aK-bJg"/>
+                            <constraint firstItem="l5o-QM-btQ" firstAttribute="leading" secondItem="j9G-fR-DkD" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="bUG-ha-PRY"/>
                             <constraint firstItem="XtS-t4-5pP" firstAttribute="leading" secondItem="j9G-fR-DkD" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="bUd-M6-YBX"/>
                             <constraint firstItem="C5E-eC-x5D" firstAttribute="top" secondItem="TeR-Yy-i4r" secondAttribute="top" constant="-96" id="e5q-ON-1Ly"/>
                             <constraint firstItem="UQ9-v3-mJe" firstAttribute="leading" secondItem="TeR-Yy-i4r" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="emp-Gy-nJw"/>
+                            <constraint firstAttribute="trailing" secondItem="l5o-QM-btQ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="gxW-z8-NVF"/>
                             <constraint firstItem="Mfz-wA-Ds3" firstAttribute="leading" secondItem="TeR-Yy-i4r" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="kTv-Zn-3db"/>
-                            <constraint firstItem="rLx-Nx-EZN" firstAttribute="trailing" secondItem="cyj-xS-Ecg" secondAttribute="trailing" type="default" id="mjj-d8-LmV"/>
-                            <constraint firstItem="cyj-xS-Ecg" firstAttribute="trailing" secondItem="j9G-fR-DkD" secondAttribute="trailing" type="default" id="nQh-oV-Qey"/>
+                            <constraint firstItem="l5o-QM-btQ" firstAttribute="top" secondItem="c4M-Qo-hzY" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="rlv-M0-GTl"/>
                             <constraint firstItem="cyj-xS-Ecg" firstAttribute="leading" secondItem="TeR-Yy-i4r" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="sbD-so-xDm"/>
                             <constraint firstItem="c4M-Qo-hzY" firstAttribute="top" secondItem="TeR-Yy-i4r" secondAttribute="top" constant="150" id="tLm-eb-gmL"/>
                             <constraint firstItem="0ec-wn-2oj" firstAttribute="top" secondItem="TeR-Yy-i4r" secondAttribute="top" type="default" id="xUR-0l-u5N"/>
@@ -464,8 +448,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="first.png" id="kWU-wl-W89"/>
                     <connections>
-                        <outlet property="Achievements" destination="Ske-Yb-fxb" id="QEz-Gn-94N"/>
                         <outlet property="aboutTextView" destination="Mfz-wA-Ds3" id="uco-Bi-UxY"/>
+                        <outlet property="achievementTable" destination="l5o-QM-btQ" id="QwS-Lt-dqk"/>
                         <outlet property="addressField" destination="rLx-Nx-EZN" id="b1H-dR-rLn"/>
                         <outlet property="dobField" destination="cyj-xS-Ecg" id="QBN-kG-ghD"/>
                         <outlet property="emailField" destination="UQ9-v3-mJe" id="QSw-no-9ud"/>
@@ -791,13 +775,6 @@ Features
                 <relationship kind="outlet" name="activityTable" candidateClass="UITableView"/>
             </relationships>
         </class>
-        <class className="CDCStatsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDCStatsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="activitySelector" candidateClass="UIPickerView"/>
-                <relationship kind="outlet" name="dateSelector" candidateClass="UIPickerView"/>
-            </relationships>
-        </class>
         <class className="CDQEventsController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQEventsController.h"/>
             <relationships>
@@ -842,23 +819,14 @@ Features
         <class className="ProfileViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="Achievements" candidateClass="UICollectionView"/>
                 <relationship kind="outlet" name="aboutTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="achievementTable" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="addressField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="dobField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="emailField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="profileImage" candidateClass="UIImageView"/>
             </relationships>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
