@@ -85,15 +85,15 @@ end
 #
 ###
 Then (/^I should see a valid goal$/) do
-    check_element_exists "view:'UILabel' marked:'COMPLETED! Walk 100 (Between: 04/10/2013 01:02:22 and 05/05/2013 01:02:22)'"
+    check_element_exists "view:'UILabel' marked:'COMPLETED! Walk 100 (Between: 04/11/2013 21:54:55 and 05/06/2013 21:54:55)'"
 end
 
 Then (/^I should see a valid activity$/) do
-    check_element_exists "view:'UILabel' marked:'(2013-04-03) Walk: 3 km in 40 mins (Max Speed: 10 km/h)'"
+    check_element_exists "view:'UILabel' marked:'(2013-03-05) Bike: 35 km in 60 mins (Max Speed: 55 km/h)'"
 end
 
 Then (/^I should see a valid event$/) do
-    check_element_exists "view:'UILabel' marked:'(2013-03-16) Do not miss La Tour De France! Find... (paris) (10km)'"
+    check_element_exists "view:'UILabel' marked:'(2013-03-17) Do not miss La Tour De France! Find... (paris) (10km)'"
 end
 
 Then (/^I should see a valid profile$/) do

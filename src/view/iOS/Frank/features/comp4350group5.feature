@@ -22,7 +22,7 @@ Given I launch the app using iOS 6.1 and the ipad simulator
 
 When I navigate to "Home"
 When I enter login credentials
-When I touch the button marked "Login"
+#When I touch the button marked "Login"
 
 When I navigate to "Activities"
 Then I should be on the Activities screen

@@ -1,6 +1,0 @@
-#!/usr/bin/env ruby
-
-require 'frank-cucumber/cli'
-
-Frank::CLI.start
-

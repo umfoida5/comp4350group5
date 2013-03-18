@@ -54,23 +54,63 @@ BOOL done;
     return YES;
 }
 
-- (void)testLoginSuccess
+//
+// testBlankLoginFailure
+//
+// tests to ensure that an blank login results in "Invalid username."
+//
+- (void)testBlankLoginFailure
 {   
     [self.homeController loginRequest:@"" password:@""];
     
     STAssertTrue([self waitForCompletion:3.0], @"Login timed out");
     
     NSLog(@"%@", [self.homeController getLoginLabelText]);
-    STAssertTrue([[self.homeController getLoginLabelText] isEqualToString:@"Invalid username."], @"Login failed");
+    STAssertTrue([[self.homeController getLoginLabelText] isEqualToString:@"Invalid username."], @"Login succeded but it shouldn't have");
 }
 
-- (void)testLoginFail
+//
+// testLoginInvalidUserFail
+//
+// tests to ensure that a login as an invalid user fails
+//
+- (void)testLoginInvalidUserFail
 {
     [self.homeController loginRequest:@"ThisUserShouldNeverExist" password:@"password"];
     
     STAssertTrue([self waitForCompletion:3.0], @"Login timed out");
     
     STAssertTrue([[self.homeController getLoginLabelText] isEqualToString:@"Invalid username."], @"Login succeded but it shouldn't have");
+}
+
+//
+// testValidSuccess
+//
+// tests to ensure that a login as an valid user succeeds
+//
+- (void)testLoginSuccess
+{
+    [self.homeController loginRequest:@"justin" password:@"justin"];
+    
+    STAssertTrue([self waitForCompletion:3.0], @"Login timed out");
+    
+    STAssertTrue([[self.homeController getLoginLabelText] isEqualToString:@"Login was successful."], @"Login should have succeeded");
+}
+
+//
+// testDoLogout
+//
+// Tests to ensure that a logout was successful
+//
+- (void)testDoLogout
+{
+    [self.homeController loginRequest:@"justin" password:@"justin"];
+    
+    [self.homeController doLogout];
+    STAssertTrue([self waitForCompletion:3.0], @"Logout timed out");
+    
+    NSLog(@"%@", [self.homeController getLoginLabelText]);
+    STAssertTrue([[self.homeController getLoginLabelText] isEqualToString:@"Logout was successful."], @"Logout failed");
 }
 
 @end
