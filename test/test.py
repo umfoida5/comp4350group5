@@ -26,7 +26,7 @@ from modules_tests.transaction_test import TransactionTests
 from modules_tests.datatables_test import DatatablesTests
 
 # hack to be able to use sessions in the tests
-cherrypy.session = {}
+cherrypy.session = cherrypy.lib.sessions.RamSession()
 
 user = os.environ.get("psql_user", "")
 database.init("tracker_test", user)

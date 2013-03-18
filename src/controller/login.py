@@ -27,7 +27,7 @@ class Login:
 			if(athlete.password == pw):				
 				if not just_created:
 					old_id = cherrypy.session.get('id')
-                                        if cherrypy.session['username'] == '':
+                                        if cherrypy.session.has_key('username'):
 					    self.__update_tables_athlete_id(old_id, athlete.id)
 					cherrypy.session['id'] = athlete.id
 					cherrypy.session['username'] = athlete.username
@@ -45,7 +45,7 @@ class Login:
 		db_session.add(athlete)
 		db_session.commit()
 		cherrypy.session['id'] = athlete.id
-		cherrypy.session['username'] = ""
+		cherrypy.session.pop('username')
 		
 		return "Logout was successful."
 

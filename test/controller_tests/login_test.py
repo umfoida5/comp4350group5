@@ -111,4 +111,4 @@ class LoginTest(unittest.TestCase):
 		
 		#test that session id is the same and session variable(s) are set back to default 
 		self.assertNotEqual(old_id, cherrypy.session.get('id'))
-		self.assertEqual("", cherrypy.session['username'])
+		self.assertFalse(cherrypy.session.has_key('username'))
