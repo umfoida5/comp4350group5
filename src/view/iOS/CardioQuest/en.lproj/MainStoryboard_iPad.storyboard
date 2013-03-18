@@ -392,6 +392,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="enterDOB:" destination="MVd-IC-GDg" eventType="editingDidEnd" id="nlY-bT-HlO"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rLx-Nx-EZN">
                                 <constraints>
@@ -399,6 +402,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="enterAddress:" destination="MVd-IC-GDg" eventType="editingDidEnd" id="wz8-l4-gAB"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UQ9-v3-mJe">
                                 <constraints>
@@ -406,6 +412,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="enterEmail:" destination="MVd-IC-GDg" eventType="editingDidEnd" id="y6f-TX-gMz"/>
+                                </connections>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="l5o-QM-btQ">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -768,70 +777,6 @@ Features
     <resources>
         <image name="first.png" width="30" height="30"/>
     </resources>
-    <classes>
-        <class className="AboutViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
-        </class>
-        <class className="ActivityViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ActivityViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="activityTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="CDQEventsController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQEventsController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="eventsTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="CDQGoalsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQGoalsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="goalsTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="CDQHomeController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQHomeController.h"/>
-            <relationships>
-                <relationship kind="action" name="login:"/>
-                <relationship kind="outlet" name="loggedInUsernameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="loginBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="loginLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="loginPassword" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="loginPasswordLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="loginResponseLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="loginUsername" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="loginUsernameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="logoutBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="signupBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="signupFirstName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="signupFirstNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="signupLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="signupLastName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="signupLastNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="signupPassword" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="signupPasswordLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="signupResponseLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="signupUsername" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="signupUsernameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ProfileViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="aboutTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="achievementTable" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="addressField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="dobField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="emailField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="profileImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

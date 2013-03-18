@@ -11,6 +11,7 @@
 #import "Classes/SBJson.h"
 #import "ASINetworkQueue.h"
 #import "CDQAchievement.h"
+#import "ASIFormDataRequest.h"
 @class ASINetworkQueue;
 @interface ProfileViewController (){
 	ASINetworkQueue *queue;
@@ -38,7 +39,8 @@
 {
     if(!self.queue)
         self.queue = [[ASINetworkQueue alloc] init];
-    
+    self.aboutTextView.delegate = self;
+    //self.aboutTextView.delegate = t;
     [self.profileImage setImage:[UIImage imageNamed:@"default_profile_pic.png"]];
     self.imgCollection = [NSMutableArray array];
     [self setQueue:[ASINetworkQueue queue]];
@@ -99,6 +101,41 @@
         } 
     }
 }
+- (IBAction)enterDOB:(id)sender {
+    
+    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/profiles/update_dob"];
+    
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    [request addPostValue:@"" forKey:@"id"];
+    [request addPostValue:self.dobField.text forKey:@"birth_date"];
+    [request setUseKeychainPersistence:YES];
+
+    [request setDelegate:self];
+    [request startAsynchronous];
+}
+- (IBAction)enterAddress:(id)sender {
+    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/profiles/update_address"];
+    
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    [request addPostValue:@"" forKey:@"id"];
+    [request addPostValue:self.addressField.text forKey:@"address"];
+    [request setUseKeychainPersistence:YES];
+    
+    [request setDelegate:self];
+    [request startAsynchronous];
+}
+- (IBAction)enterEmail:(id)sender {
+    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/profiles/update_email"];
+    
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    [request addPostValue:@"" forKey:@"id"];
+    [request addPostValue:self.emailField.text forKey:@"email"];
+    [request setUseKeychainPersistence:YES];
+    
+    [request setDelegate:self];
+    [request startAsynchronous];
+}
+
 
 - (void)queueFinished:(ASINetworkQueue *)queue
 {
@@ -156,6 +193,19 @@
         // Custom initialization
     }
     return self;
+}
+
+- (BOOL)textViewShouldEndEditing:(UITextView *)aboutTextView{
+    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/profiles/update_about"];
+    aboutTextView.editable = YES;
+    NSLog(@"%@", aboutTextView.text);
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    [request addPostValue:@"" forKey:@"id"];
+    [request addPostValue: aboutTextView.text forKey:@"about_msg"];
+    [request setUseKeychainPersistence:YES];
+    
+    [request setDelegate:self];
+    [request startAsynchronous];
 }
 
 - (void)viewDidLoad
