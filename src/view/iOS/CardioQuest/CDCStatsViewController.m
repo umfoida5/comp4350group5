@@ -1,18 +1,18 @@
 //
-//  CDQStatsViewController.m
+//  CDCStatsViewController.m
 //  CardioQuest
 //
 //  Created by Andrew Konkin on 3/16/13.
 //  Copyright (c) 2013 comp4350group5. All rights reserved.
 //
 
-#import "CDQStatsViewController.h"
+#import "CDCStatsViewController.h"
 
-@interface CDQStatsViewController ()
+@interface CDCStatsViewController ()
 
 @end
 
-@implementation CDQStatsViewController
+@implementation CDCStatsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
