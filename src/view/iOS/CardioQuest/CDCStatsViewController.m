@@ -31,6 +31,11 @@
     dateTypes = [[NSArray alloc] initWithObjects:@"Day", @"Week", @"Month", @"Year", nil];
 }
 
+//TODO: force interface orientation to landscape (this code does nothing)
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return (self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft);
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -69,6 +74,27 @@
     {
         return [dateTypes objectAtIndex:row];
     }
+}
+
+#pragma mark - CPTPlotDataSource methods
+-(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plot {
+    return 0;
+}
+
+-(NSNumber *)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index {
+    return 0;
+}
+
+-(CPTLayer *)dataLabelForPlot:(CPTPlot *)plot recordIndex:(NSUInteger)index {
+    return nil;
+}
+
+-(NSString *)legendTitleForPieChart:(CPTPieChart *)pieChart recordIndex:(NSUInteger)index {
+    return @"";
+}
+
+#pragma mark - UIActionSheetDelegate methods
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 }
 
 @end
