@@ -10,6 +10,8 @@
 #import "ASIHTTPRequest.h"
 #import "Classes/SBJson.h"
 #import "ASINetworkQueue.h"
+#import "CDQAchievement.h"
+#import "ASIFormDataRequest.h"
 @class ASINetworkQueue;
 @interface ProfileViewController (){
 	ASINetworkQueue *queue;
@@ -37,7 +39,8 @@
 {
     if(!self.queue)
         self.queue = [[ASINetworkQueue alloc] init];
-    
+    self.aboutTextView.delegate = self;
+    //self.aboutTextView.delegate = t;
     [self.profileImage setImage:[UIImage imageNamed:@"default_profile_pic.png"]];
     self.imgCollection = [NSMutableArray array];
     [self setQueue:[ASINetworkQueue queue]];
@@ -92,11 +95,47 @@
             
             __strong ASIHTTPRequest *newRequest = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
             [self.queue addOperation:newRequest];
+            newRequest.userInfo = achieves;
             [[self queue] go];
             
         } 
     }
 }
+- (IBAction)enterDOB:(id)sender {
+    
+    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/profiles/update_dob"];
+    
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    [request addPostValue:@"" forKey:@"id"];
+    [request addPostValue:self.dobField.text forKey:@"birth_date"];
+    [request setUseKeychainPersistence:YES];
+
+    [request setDelegate:self];
+    [request startAsynchronous];
+}
+- (IBAction)enterAddress:(id)sender {
+    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/profiles/update_address"];
+    
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    [request addPostValue:@"" forKey:@"id"];
+    [request addPostValue:self.addressField.text forKey:@"address"];
+    [request setUseKeychainPersistence:YES];
+    
+    [request setDelegate:self];
+    [request startAsynchronous];
+}
+- (IBAction)enterEmail:(id)sender {
+    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/profiles/update_email"];
+    
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    [request addPostValue:@"" forKey:@"id"];
+    [request addPostValue:self.emailField.text forKey:@"email"];
+    [request setUseKeychainPersistence:YES];
+    
+    [request setDelegate:self];
+    [request startAsynchronous];
+}
+
 
 - (void)queueFinished:(ASINetworkQueue *)queue
 {
@@ -111,7 +150,11 @@
 {
     UIImage* image = [UIImage imageWithData:[req responseData]];
     UIImageView *temp = [[UIImageView alloc]init];
-    [[self imgCollection] addObject:image];
+    CDQAchievement *achievement = [[CDQAchievement alloc]init];
+    achievement.image = image;
+    achievement.title = req.userInfo[@"title"];
+    achievement.desc = req.userInfo[@"description"];
+    [[self imgCollection] addObject:achievement];
         //[self.profileImage setImage:image];
     tableData = self.imgCollection;
     [self.achievementTable reloadData];
@@ -129,8 +172,10 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"MyIdentifier"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-
-    cell.imageView.image = [tableData objectAtIndex:indexPath.row];
+    CDQAchievement *achievement = (CDQAchievement*)[tableData objectAtIndex:indexPath.row];
+    cell.imageView.image = achievement.image;
+    cell.textLabel.text = achievement.title;
+    
     return cell;
 }
 
@@ -148,6 +193,19 @@
         // Custom initialization
     }
     return self;
+}
+
+- (BOOL)textViewShouldEndEditing:(UITextView *)aboutTextView{
+    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/profiles/update_about"];
+    aboutTextView.editable = YES;
+    NSLog(@"%@", aboutTextView.text);
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    [request addPostValue:@"" forKey:@"id"];
+    [request addPostValue: aboutTextView.text forKey:@"about_msg"];
+    [request setUseKeychainPersistence:YES];
+    
+    [request setDelegate:self];
+    [request startAsynchronous];
 }
 
 - (void)viewDidLoad
