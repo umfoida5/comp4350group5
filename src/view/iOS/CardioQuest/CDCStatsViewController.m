@@ -26,13 +26,48 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    activityTypes = [[NSArray alloc] initWithObjects:@"Bike", @"Run", @"Walk", nil];
+    dateTypes = [[NSArray alloc] initWithObjects:@"Day", @"Week", @"Month", @"Year", nil];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//set the number of columns
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+//set the number of rows
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    if ([pickerView tag] == 1)
+    {
+        return activityTypes.count;
+    }
+    
+    else //if ([pickerView tag] == 2)
+    {
+        return dateTypes.count;
+    }
+}
+
+//set items in the rows
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    if ([pickerView tag] == 1)
+    {
+        return [activityTypes objectAtIndex:row];
+    }
+    
+    else //if ([pickerView tag] == 2)
+    {
+        return [dateTypes objectAtIndex:row];
+    }
 }
 
 @end
