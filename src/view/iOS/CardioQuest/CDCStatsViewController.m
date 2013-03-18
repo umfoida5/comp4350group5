@@ -7,6 +7,7 @@
 //
 
 #import "CDCStatsViewController.h"
+#import "CorePlot-CocoaTouch.h"
 
 @interface CDCStatsViewController ()
 
