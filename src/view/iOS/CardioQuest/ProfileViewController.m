@@ -10,6 +10,7 @@
 #import "ASIHTTPRequest.h"
 #import "Classes/SBJson.h"
 #import "ASINetworkQueue.h"
+#import "CDQAchievement.h"
 @class ASINetworkQueue;
 @interface ProfileViewController (){
 	ASINetworkQueue *queue;
@@ -92,6 +93,7 @@
             
             __strong ASIHTTPRequest *newRequest = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
             [self.queue addOperation:newRequest];
+            newRequest.userInfo = achieves;
             [[self queue] go];
             
         } 
@@ -111,7 +113,11 @@
 {
     UIImage* image = [UIImage imageWithData:[req responseData]];
     UIImageView *temp = [[UIImageView alloc]init];
-    [[self imgCollection] addObject:image];
+    CDQAchievement *achievement = [[CDQAchievement alloc]init];
+    achievement.image = image;
+    achievement.title = req.userInfo[@"title"];
+    achievement.desc = req.userInfo[@"description"];
+    [[self imgCollection] addObject:achievement];
         //[self.profileImage setImage:image];
     tableData = self.imgCollection;
     [self.achievementTable reloadData];
@@ -129,8 +135,10 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"MyIdentifier"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-
-    cell.imageView.image = [tableData objectAtIndex:indexPath.row];
+    CDQAchievement *achievement = (CDQAchievement*)[tableData objectAtIndex:indexPath.row];
+    cell.imageView.image = achievement.image;
+    cell.textLabel.text = achievement.title;
+    
     return cell;
 }
 
