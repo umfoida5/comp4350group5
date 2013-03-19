@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -541,7 +541,7 @@
             <objects>
                 <viewController storyboardIdentifier="Activities" id="KjC-Dz-agP" userLabel="Activity View Controller - Item" customClass="ActivityViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YXX-SM-Kfh">
-                        <rect key="frame" x="0.0" y="20" width="768" height="955"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="KmJ-Q6-DS8">
@@ -561,98 +561,83 @@
                                     <outlet property="dataSource" destination="KjC-Dz-agP" id="Em8-CL-Bd9"/>
                                 </connections>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CNO-zT-npb">
-                                <color key="tintColor" red="0.83137261870000001" green="0.26666668059999998" blue="0.094117656349999995" alpha="1" colorSpace="deviceRGB"/>
-                                <items>
-                                    <navigationItem title="Activities" id="NFa-b5-ywW">
-                                        <barButtonItem key="rightBarButtonItem" title="New Activity" id="u4S-7g-BWD">
-                                            <connections>
-                                                <segue destination="HuJ-ji-KQg" kind="modal" id="fBT-4m-1MF"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="KmJ-Q6-DS8" firstAttribute="leading" secondItem="YXX-SM-Kfh" secondAttribute="leading" type="default" id="0g4-5x-YGh"/>
-                            <constraint firstItem="CNO-zT-npb" firstAttribute="leading" secondItem="YXX-SM-Kfh" secondAttribute="leading" type="default" id="Azy-gD-mA3"/>
-                            <constraint firstItem="CNO-zT-npb" firstAttribute="top" secondItem="YXX-SM-Kfh" secondAttribute="top" type="default" id="SJo-Wi-zCS"/>
-                            <constraint firstItem="CNO-zT-npb" firstAttribute="trailing" secondItem="YXX-SM-Kfh" secondAttribute="trailing" type="default" id="cT4-n2-WNk"/>
+                            <constraint firstItem="KmJ-Q6-DS8" firstAttribute="top" secondItem="YXX-SM-Kfh" secondAttribute="top" type="default" id="RKb-xf-vUS"/>
                             <constraint firstItem="KmJ-Q6-DS8" firstAttribute="bottom" secondItem="YXX-SM-Kfh" secondAttribute="bottom" type="default" id="dH1-9k-BAZ"/>
-                            <constraint firstItem="KmJ-Q6-DS8" firstAttribute="top" secondItem="CNO-zT-npb" secondAttribute="bottom" type="default" id="mVt-Q2-6jD"/>
                             <constraint firstItem="KmJ-Q6-DS8" firstAttribute="trailing" secondItem="YXX-SM-Kfh" secondAttribute="trailing" type="default" id="zwG-rE-DuI"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Activities" image="first.png" id="x4l-m2-bAM"/>
+                    <navigationItem key="navigationItem" title="Activities" id="A2H-Ig-veS">
+                        <barButtonItem key="rightBarButtonItem" title="+" id="W2i-ax-qOp">
+                            <connections>
+                                <segue destination="i92-bS-jce" kind="push" id="lar-tY-sYB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityTable" destination="KmJ-Q6-DS8" id="bRO-YG-4lc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cxg-Jc-FKx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-282" y="536"/>
+            <point key="canvasLocation" x="638" y="881"/>
         </scene>
-        <!--View Controller - Title-->
-        <scene sceneID="xFl-5E-eBZ">
+        <!--View Controller - New Activity Classic Mode-->
+        <scene sceneID="YIS-Cl-CiF">
             <objects>
-                <viewController id="HuJ-ji-KQg" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="iYA-SS-73I">
-                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                <viewController id="kYn-xJ-Yw6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n6W-9L-oWm">
+                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fLs-yd-sxe">
-                                <items>
-                                    <navigationItem title="New Activity GPS Mode" id="sR0-ig-NYh">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="uQP-P8-Dmo"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Classic" id="Gal-x3-RBa">
-                                            <connections>
-                                                <segue destination="efe-dQ-8z9" kind="modal" id="lNR-vf-tc8"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="fLs-yd-sxe" firstAttribute="trailing" secondItem="iYA-SS-73I" secondAttribute="trailing" type="default" id="4gW-8c-OnO"/>
-                            <constraint firstItem="fLs-yd-sxe" firstAttribute="leading" secondItem="iYA-SS-73I" secondAttribute="leading" type="default" id="Cz8-7T-m3K"/>
-                            <constraint firstItem="fLs-yd-sxe" firstAttribute="top" secondItem="iYA-SS-73I" secondAttribute="top" type="default" id="KcH-H2-mpb"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="5SW-nC-Xwb"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="ebc-VP-uWB"/>
+                    <navigationItem key="navigationItem" title="New Activity Classic Mode" id="EAE-P0-as9"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0D3-B1-bhn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Boy-Kc-FWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="624" y="536"/>
+            <point key="canvasLocation" x="2325" y="895"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="B0N-po-GUp">
+        <!--View Controller - New Activity GPS Mode-->
+        <scene sceneID="XF1-L2-cSZ">
             <objects>
-                <viewController id="efe-dQ-8z9" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mO8-4s-nGd">
-                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                <viewController id="i92-bS-jce" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hhb-Ty-UkT">
+                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IGm-Me-kO8">
-                                <items>
-                                    <navigationItem title="New Activity Classic Mode" id="fnq-D7-5a2"/>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="IGm-Me-kO8" firstAttribute="leading" secondItem="mO8-4s-nGd" secondAttribute="leading" type="default" id="94n-gW-8KS"/>
-                            <constraint firstItem="IGm-Me-kO8" firstAttribute="top" secondItem="mO8-4s-nGd" secondAttribute="top" type="default" id="Hco-SC-e0a"/>
-                            <constraint firstItem="IGm-Me-kO8" firstAttribute="trailing" secondItem="mO8-4s-nGd" secondAttribute="trailing" type="default" id="yaV-y3-Dvu"/>
-                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="New Activity GPS Mode" id="Nhk-o4-trD">
+                        <barButtonItem key="rightBarButtonItem" title="New Activity Classic" id="OBf-V7-9gh">
+                            <connections>
+                                <segue destination="kYn-xJ-Yw6" kind="push" id="ktb-uz-Lt3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cja-VC-8fU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N6O-uY-ZoH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1655" y="535"/>
+            <point key="canvasLocation" x="1477" y="881"/>
+        </scene>
+        <!--Navigation Controller - Item-->
+        <scene sceneID="gHE-94-dca">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="dQ1-jz-lbT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="f7x-Jk-qe9"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gBm-q8-TsG">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="KjC-Dz-agP" kind="relationship" relationship="rootViewController" id="f5S-33-plb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u7A-t1-7a1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-205" y="873"/>
         </scene>
         <!--About View Controller - About-->
         <scene sceneID="8zp-fI-v5r">
@@ -829,10 +814,10 @@ Features
                     <connections>
                         <segue destination="2" kind="relationship" relationship="viewControllers" id="27"/>
                         <segue destination="MVd-IC-GDg" kind="relationship" relationship="viewControllers" id="Qr0-GA-xG2"/>
-                        <segue destination="KjC-Dz-agP" kind="relationship" relationship="viewControllers" id="15q-3Q-HPE"/>
                         <segue destination="3" kind="relationship" relationship="viewControllers" id="28"/>
                         <segue destination="nYr-WX-APg" kind="relationship" relationship="viewControllers" id="XTI-7r-5Jd"/>
                         <segue destination="FY5-0r-oNa" kind="relationship" relationship="viewControllers" id="w2X-d1-DOy"/>
+                        <segue destination="dQ1-jz-lbT" kind="relationship" relationship="viewControllers" id="GtW-nT-gai"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
