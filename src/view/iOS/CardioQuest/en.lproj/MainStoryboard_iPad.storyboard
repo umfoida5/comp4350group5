@@ -286,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-14" y="-268"/>
+            <point key="canvasLocation" x="-1370" y="-1696"/>
         </scene>
         <!--Profile View Controller - Profile-->
         <scene sceneID="RKZ-aw-ufg">
@@ -325,7 +325,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="Rz6-uf-M34">
-                                        <rect key="frame" x="0.0" y="22" width="0.0" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -334,7 +334,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="hBd-Ye-pm5">
-                                        <rect key="frame" x="0.0" y="66" width="0.0" height="44"/>
+                                        <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -343,7 +343,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="KzN-MM-gcu">
-                                        <rect key="frame" x="0.0" y="110" width="0.0" height="44"/>
+                                        <rect key="frame" x="0.0" y="110" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -352,7 +352,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="KvZ-C8-8bQ">
-                                        <rect key="frame" x="0.0" y="154" width="0.0" height="44"/>
+                                        <rect key="frame" x="0.0" y="154" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -471,7 +471,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S8Y-6H-JS1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1616" y="-268"/>
+            <point key="canvasLocation" x="-1477" y="868"/>
         </scene>
         <!--Goals View Controller - Goals-->
         <scene sceneID="13">
@@ -534,7 +534,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="803" y="-275"/>
+            <point key="canvasLocation" x="-1370" y="-363"/>
         </scene>
         <!--Activity View Controller - Item-->
         <scene sceneID="s76-CC-oVt">
@@ -564,7 +564,13 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CNO-zT-npb">
                                 <color key="tintColor" red="0.83137261870000001" green="0.26666668059999998" blue="0.094117656349999995" alpha="1" colorSpace="deviceRGB"/>
                                 <items>
-                                    <navigationItem title="Activities" id="NFa-b5-ywW"/>
+                                    <navigationItem title="Activities" id="NFa-b5-ywW">
+                                        <barButtonItem key="rightBarButtonItem" title="New Activity" id="u4S-7g-BWD">
+                                            <connections>
+                                                <segue destination="HuJ-ji-KQg" kind="modal" id="fBT-4m-1MF"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -572,10 +578,10 @@
                         <constraints>
                             <constraint firstItem="KmJ-Q6-DS8" firstAttribute="leading" secondItem="YXX-SM-Kfh" secondAttribute="leading" type="default" id="0g4-5x-YGh"/>
                             <constraint firstItem="CNO-zT-npb" firstAttribute="leading" secondItem="YXX-SM-Kfh" secondAttribute="leading" type="default" id="Azy-gD-mA3"/>
-                            <constraint firstItem="KmJ-Q6-DS8" firstAttribute="top" secondItem="CNO-zT-npb" secondAttribute="bottom" type="default" id="QPM-Kb-Qja"/>
                             <constraint firstItem="CNO-zT-npb" firstAttribute="top" secondItem="YXX-SM-Kfh" secondAttribute="top" type="default" id="SJo-Wi-zCS"/>
                             <constraint firstItem="CNO-zT-npb" firstAttribute="trailing" secondItem="YXX-SM-Kfh" secondAttribute="trailing" type="default" id="cT4-n2-WNk"/>
                             <constraint firstItem="KmJ-Q6-DS8" firstAttribute="bottom" secondItem="YXX-SM-Kfh" secondAttribute="bottom" type="default" id="dH1-9k-BAZ"/>
+                            <constraint firstItem="KmJ-Q6-DS8" firstAttribute="top" secondItem="CNO-zT-npb" secondAttribute="bottom" type="default" id="mVt-Q2-6jD"/>
                             <constraint firstItem="KmJ-Q6-DS8" firstAttribute="trailing" secondItem="YXX-SM-Kfh" secondAttribute="trailing" type="default" id="zwG-rE-DuI"/>
                         </constraints>
                     </view>
@@ -586,7 +592,67 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cxg-Jc-FKx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2424" y="-268"/>
+            <point key="canvasLocation" x="-282" y="536"/>
+        </scene>
+        <!--View Controller - Title-->
+        <scene sceneID="xFl-5E-eBZ">
+            <objects>
+                <viewController id="HuJ-ji-KQg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iYA-SS-73I">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fLs-yd-sxe">
+                                <items>
+                                    <navigationItem title="New Activity GPS Mode" id="sR0-ig-NYh">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="uQP-P8-Dmo"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Classic" id="Gal-x3-RBa">
+                                            <connections>
+                                                <segue destination="efe-dQ-8z9" kind="modal" id="lNR-vf-tc8"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fLs-yd-sxe" firstAttribute="trailing" secondItem="iYA-SS-73I" secondAttribute="trailing" type="default" id="4gW-8c-OnO"/>
+                            <constraint firstItem="fLs-yd-sxe" firstAttribute="leading" secondItem="iYA-SS-73I" secondAttribute="leading" type="default" id="Cz8-7T-m3K"/>
+                            <constraint firstItem="fLs-yd-sxe" firstAttribute="top" secondItem="iYA-SS-73I" secondAttribute="top" type="default" id="KcH-H2-mpb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="5SW-nC-Xwb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0D3-B1-bhn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="624" y="536"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="B0N-po-GUp">
+            <objects>
+                <viewController id="efe-dQ-8z9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mO8-4s-nGd">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IGm-Me-kO8">
+                                <items>
+                                    <navigationItem title="New Activity Classic Mode" id="fnq-D7-5a2"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IGm-Me-kO8" firstAttribute="leading" secondItem="mO8-4s-nGd" secondAttribute="leading" type="default" id="94n-gW-8KS"/>
+                            <constraint firstItem="IGm-Me-kO8" firstAttribute="top" secondItem="mO8-4s-nGd" secondAttribute="top" type="default" id="Hco-SC-e0a"/>
+                            <constraint firstItem="IGm-Me-kO8" firstAttribute="trailing" secondItem="mO8-4s-nGd" secondAttribute="trailing" type="default" id="yaV-y3-Dvu"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cja-VC-8fU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1655" y="535"/>
         </scene>
         <!--About View Controller - About-->
         <scene sceneID="8zp-fI-v5r">
@@ -832,24 +898,13 @@ Features
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="aboutTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="achievementTable" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="addressField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="dobField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="emailField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="profileImage" candidateClass="UIImageView"/>
             </relationships>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
