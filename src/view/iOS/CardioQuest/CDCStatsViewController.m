@@ -7,10 +7,9 @@
 //
 
 #import "CDCStatsViewController.h"
-#import "CorePlot-CocoaTouch.h"
+#import "ECGraph.h"
 
 @interface CDCStatsViewController ()
-
 @end
 
 @implementation CDCStatsViewController
@@ -29,6 +28,9 @@
     [super viewDidLoad];
     activityTypes = [[NSArray alloc] initWithObjects:@"Bike", @"Run", @"Walk", nil];
     dateTypes = [[NSArray alloc] initWithObjects:@"Day", @"Week", @"Month", @"Year", nil];
+    
+    //CGContextRef _context = UIGraphicsGetCurrentContext();
+    
 }
 
 //TODO: force interface orientation to landscape (this code does nothing)
@@ -76,25 +78,53 @@
     }
 }
 
-#pragma mark - CPTPlotDataSource methods
--(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plot {
-    return 0;
+-(void)createHistograph{
+    //ECGraph *graph = [[ECGraph alloc] initWithFrame:CGRectMake(10,10, 480, 320) withContext:_context];
+    //[self.view addSubview:graph];
+    
+    ECGraph *graph = [[ECGraph alloc] initWithFrame:CGRectMake(10,10, 480, 320)
+                                        withContext:UIGraphicsGetCurrentContext() isPortrait:NO];
+    
+    ECGraphPoint *point1 = [[ECGraphPoint alloc] init];
+    point1.yValue = 3;
+    point1.xValue = 3;
+    
+    ECGraphPoint *point2 = [[ECGraphPoint alloc] init];
+    point2.yValue = 5;
+    point2.xValue = 6;
+    
+    ECGraphPoint *point3 = [[ECGraphPoint alloc] init];
+    point3.yValue = 3;
+    point3.xValue = 9;
+    
+    ECGraphPoint *point4 = [[ECGraphPoint alloc] init];
+    point4.yValue = 9;
+    point4.xValue = 12;
+    
+    ECGraphPoint *point5 = [[ECGraphPoint alloc] init];
+    point5.yValue = 3;
+    point5.xValue = 15;
+    
+    ECGraphPoint *point6 = [[ECGraphPoint alloc] init];
+    point6.yValue = 12;
+    point6.xValue = 18;
+    
+    NSArray *points1 = [[NSArray alloc] initWithObjects:point1,point2,point3,point4,point5,point6,nil];
+    ECGraphLine *line1 = [[ECGraphLine alloc] init];
+    line1.isXDate = YES;
+    line1.points = points1;
+    line1.color = [UIColor blackColor];
+    
+    NSArray *lines = [[NSArray alloc] initWithObjects:line1,nil];
+    [graph setXaxisTitle:@"Date"];
+    [graph setYaxisTitle:@"cummulative no of skills"];
+    [graph setGraphicTitle:@"Cummulative Number of imitations acquired"];
+    [graph setXaxisDateFormat:@"MM/dd/YY"];
+    [graph setDelegate:self];
+    [graph setBackgroundColor:[UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:1]];
+    [graph setPointType:ECGraphPointTypeSquare];
+    [graph drawCurveWithLines:lines lineWidth:2 color:[UIColor blackColor]];
 }
 
--(NSNumber *)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index {
-    return 0;
-}
-
--(CPTLayer *)dataLabelForPlot:(CPTPlot *)plot recordIndex:(NSUInteger)index {
-    return nil;
-}
-
--(NSString *)legendTitleForPieChart:(CPTPieChart *)pieChart recordIndex:(NSUInteger)index {
-    return @"";
-}
-
-#pragma mark - UIActionSheetDelegate methods
--(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-}
 
 @end
