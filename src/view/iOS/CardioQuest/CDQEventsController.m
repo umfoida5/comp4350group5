@@ -19,6 +19,16 @@
     NSArray *tableData;
 }
 
+- (IBAction)postEvent:(id)sender
+{
+    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/events/create];
+    
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    [request addRequestHeader:@"Accept" value:@"application/json"];
+    [request addRequestHeader:@"Content-Type" value:@"application/json"];
+    [request setDelegate:self];
+    [request startAsynchronous];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
