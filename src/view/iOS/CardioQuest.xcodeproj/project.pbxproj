@@ -859,6 +859,7 @@
 				GCC_PREFIX_HEADER = "CardioQuest/CardioQuest-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "CardioQuest/CardioQuest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRANK_LIBRARY_SEARCH_PATHS)",
@@ -883,6 +884,7 @@
 				GCC_PREFIX_HEADER = "CardioQuest/CardioQuest-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "CardioQuest/CardioQuest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				"OTHER_LDFLAGS[arch=*]" = (
 					"-ObjC",
 					"-all_load",
