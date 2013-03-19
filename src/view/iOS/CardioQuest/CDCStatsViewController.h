@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ECGraph.h"
 
-@interface CDCStatsViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate> {
+@interface CDCStatsViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate, ECGraphDelegate> {
     NSArray *activityTypes;
     NSArray *dateTypes;
 }

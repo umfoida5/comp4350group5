@@ -28,8 +28,8 @@
     [super viewDidLoad];
     activityTypes = [[NSArray alloc] initWithObjects:@"Bike", @"Run", @"Walk", nil];
     dateTypes = [[NSArray alloc] initWithObjects:@"Day", @"Week", @"Month", @"Year", nil];
-    
     //CGContextRef _context = UIGraphicsGetCurrentContext();
+    [self createHistograph];
     
 }
 
@@ -79,35 +79,41 @@
 }
 
 -(void)createHistograph{
-    //ECGraph *graph = [[ECGraph alloc] initWithFrame:CGRectMake(10,10, 480, 320) withContext:_context];
-    //[self.view addSubview:graph];
+    //TODO: Current context is nil, must receive one to draw graph
+    CGContextRef _context = UIGraphicsGetCurrentContext();
     
     ECGraph *graph = [[ECGraph alloc] initWithFrame:CGRectMake(10,10, 480, 320)
-                                        withContext:UIGraphicsGetCurrentContext() isPortrait:NO];
+                                        withContext:_context isPortrait:NO];
     
     ECGraphPoint *point1 = [[ECGraphPoint alloc] init];
     point1.yValue = 3;
-    point1.xValue = 3;
+    point1.xDateValue = [ECCommon dOfS:@"2010-4-23 12:00:00"
+                            withFormat:kDEFAULT_DATE_TIME_FORMAT];
     
     ECGraphPoint *point2 = [[ECGraphPoint alloc] init];
     point2.yValue = 5;
-    point2.xValue = 6;
+    point2.xDateValue = [ECCommon dOfS:@"2010-4-25 12:00:00"
+                            withFormat:kDEFAULT_DATE_TIME_FORMAT];
     
     ECGraphPoint *point3 = [[ECGraphPoint alloc] init];
     point3.yValue = 3;
-    point3.xValue = 9;
+    point3.xDateValue = [ECCommon dOfS:@"2010-4-28 12:00:00"
+                            withFormat:kDEFAULT_DATE_TIME_FORMAT];
     
     ECGraphPoint *point4 = [[ECGraphPoint alloc] init];
     point4.yValue = 9;
-    point4.xValue = 12;
+    point4.xDateValue = [ECCommon dOfS:@"2010-4-29 12:00:00"
+                            withFormat:kDEFAULT_DATE_TIME_FORMAT];
     
     ECGraphPoint *point5 = [[ECGraphPoint alloc] init];
     point5.yValue = 3;
-    point5.xValue = 15;
+    point5.xDateValue = [ECCommon dOfS:@"2010-4-30 12:00:00"
+                            withFormat:kDEFAULT_DATE_TIME_FORMAT];
     
     ECGraphPoint *point6 = [[ECGraphPoint alloc] init];
     point6.yValue = 12;
-    point6.xValue = 18;
+    point6.xDateValue = [ECCommon dOfS:@"2010-5-29 12:00:00"
+                            withFormat:kDEFAULT_DATE_TIME_FORMAT];
     
     NSArray *points1 = [[NSArray alloc] initWithObjects:point1,point2,point3,point4,point5,point6,nil];
     ECGraphLine *line1 = [[ECGraphLine alloc] init];
