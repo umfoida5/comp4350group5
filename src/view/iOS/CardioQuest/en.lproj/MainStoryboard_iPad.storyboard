@@ -609,7 +609,46 @@
                     <view key="view" contentMode="scaleToFill" id="Hhb-Ty-UkT">
                         <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="m4c-fj-pnG">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="606" id="y9b-Cz-0fQ"/>
+                                </constraints>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="O38-3P-B64">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="215" id="3rH-mM-osc"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Start"/>
+                                    <segment title="Stop"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0LK-ig-wad">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="198" id="sPd-iX-SBP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="m4c-fj-pnG" firstAttribute="top" secondItem="Hhb-Ty-UkT" secondAttribute="top" constant="230" id="1bB-NR-vI5"/>
+                            <constraint firstAttribute="bottom" secondItem="O38-3P-B64" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="8zk-fq-rM7"/>
+                            <constraint firstItem="m4c-fj-pnG" firstAttribute="leading" secondItem="Hhb-Ty-UkT" secondAttribute="leading" type="default" id="9Ap-RT-ZyS"/>
+                            <constraint firstItem="m4c-fj-pnG" firstAttribute="trailing" secondItem="Hhb-Ty-UkT" secondAttribute="trailing" type="default" id="XYe-M6-KAo"/>
+                            <constraint firstItem="O38-3P-B64" firstAttribute="leading" secondItem="Hhb-Ty-UkT" secondAttribute="leading" constant="14" id="hY1-SA-lQk"/>
+                            <constraint firstAttribute="bottom" secondItem="0LK-ig-wad" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="hxG-mO-8np"/>
+                            <constraint firstAttribute="trailing" secondItem="0LK-ig-wad" secondAttribute="trailing" constant="25" id="wGX-Wq-4KS"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Activity GPS Mode" id="Nhk-o4-trD">
                         <barButtonItem key="rightBarButtonItem" title="New Activity Classic" id="OBf-V7-9gh">
@@ -854,6 +893,8 @@ Features
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQHomeController.h"/>
             <relationships>
                 <relationship kind="action" name="login:"/>
+                <relationship kind="action" name="logout:"/>
+                <relationship kind="action" name="signup:"/>
                 <relationship kind="outlet" name="loggedInUsernameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="loginBtn" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="loginLabel" candidateClass="UILabel"/>
@@ -882,6 +923,9 @@ Features
         <class className="ProfileViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
             <relationships>
+                <relationship kind="action" name="enterAddress:"/>
+                <relationship kind="action" name="enterDOB:"/>
+                <relationship kind="action" name="enterEmail:"/>
                 <relationship kind="outlet" name="aboutTextView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="achievementTable" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="addressField" candidateClass="UITextField"/>
