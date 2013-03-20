@@ -21,6 +21,7 @@
 		72975A8516ED1DBB00FC7DB8 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 72975A7816ED1DBB00FC7DB8 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		72975A8616ED1DBB00FC7DB8 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 72975A7A16ED1DBB00FC7DB8 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		72975A8B16ED1DC600FC7DB8 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 72975A8A16ED1DC600FC7DB8 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		72EAEDB816FA49CE0022F3C7 /* CDQEventsInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72EAEDB716FA49CE0022F3C7 /* CDQEventsInputController.m */; };
 		B18F780216F6390300024405 /* CDQGoalsViewController_test.m in Sources */ = {isa = PBXBuildFile; fileRef = B18F780116F6390300024405 /* CDQGoalsViewController_test.m */; };
 		B18F780516F6396A00024405 /* CDQEventsViewController_test.m in Sources */ = {isa = PBXBuildFile; fileRef = B18F780416F6396A00024405 /* CDQEventsViewController_test.m */; };
 		B18F780816F6398C00024405 /* CDQProfileViewController_test.m in Sources */ = {isa = PBXBuildFile; fileRef = B18F780716F6398C00024405 /* CDQProfileViewController_test.m */; };
@@ -108,6 +109,8 @@
 		72975A7E16ED1DBB00FC7DB8 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
 		72975A8916ED1DC600FC7DB8 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		72975A8A16ED1DC600FC7DB8 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		72EAEDB616FA49CE0022F3C7 /* CDQEventsInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQEventsInputController.h; sourceTree = "<group>"; };
+		72EAEDB716FA49CE0022F3C7 /* CDQEventsInputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQEventsInputController.m; sourceTree = "<group>"; };
 		B18F780016F6390300024405 /* CDQGoalsViewController_test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQGoalsViewController_test.h; sourceTree = "<group>"; };
 		B18F780116F6390300024405 /* CDQGoalsViewController_test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQGoalsViewController_test.m; sourceTree = "<group>"; };
 		B18F780316F6396A00024405 /* CDQEventsViewController_test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQEventsViewController_test.h; sourceTree = "<group>"; };
@@ -315,12 +318,14 @@
 		E4BEB5D216E5361500DD4526 /* CardioQuest */ = {
 			isa = PBXGroup;
 			children = (
-				D0CC697316F105230016C12B /* CDQEventsController.h */,
-				D0CC697416F105230016C12B /* CDQEventsController.m */,
 				E4C8799D16EE615400C95D99 /* Classes */,
 				D0C1F02916EAB96800EB2E21 /* images */,
 				D0C1EFE816EAA30600EB2E21 /* CDQHomeController.h */,
 				D0C1EFE916EAA30600EB2E21 /* CDQHomeController.m */,
+				D0CC697316F105230016C12B /* CDQEventsController.h */,
+				D0CC697416F105230016C12B /* CDQEventsController.m */,
+				72EAEDB616FA49CE0022F3C7 /* CDQEventsInputController.h */,
+				72EAEDB716FA49CE0022F3C7 /* CDQEventsInputController.m */,
 				D0C1EFDE16EA977F00EB2E21 /* AboutViewController.h */,
 				37A20CC016F0DDFE0011F30D /* MainStoryboard_iPhone.storyboard */,
 				D0C1EFDF16EA977F00EB2E21 /* AboutViewController.m */,
@@ -566,6 +571,7 @@
 				B196AF1A16F000AD00276B98 /* CDQGoalsViewController.m in Sources */,
 				D0CC697516F105230016C12B /* CDQEventsController.m in Sources */,
 				E4D4DE4D16F69723003752B6 /* CDQAchievement.m in Sources */,
+				72EAEDB816FA49CE0022F3C7 /* CDQEventsInputController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

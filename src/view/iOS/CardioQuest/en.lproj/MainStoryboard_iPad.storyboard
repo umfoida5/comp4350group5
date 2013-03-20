@@ -793,12 +793,28 @@ Features
             </objects>
             <point key="canvasLocation" x="4030" y="-275"/>
         </scene>
+        <!--Navigation Controller - Item-->
+        <scene sceneID="MzI-LE-3Xw">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="Nim-bR-L6c" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="GQt-Ix-JyF"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="p3F-C3-ZxP">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="nYr-WX-APg" kind="relationship" relationship="rootViewController" id="lBW-rF-hXn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AbX-6P-yvy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2287" y="-1863"/>
+        </scene>
         <!--Events Controller - Events-->
         <scene sceneID="P4m-V4-DjK">
             <objects>
                 <viewController storyboardIdentifier="Events" id="nYr-WX-APg" customClass="CDQEventsController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2E8-GT-HMU">
-                        <rect key="frame" x="0.0" y="20" width="768" height="955"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6PP-HA-zV8">
@@ -807,32 +823,124 @@ Features
                                     <outlet property="dataSource" destination="nYr-WX-APg" id="RTc-82-hyu"/>
                                 </connections>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="uyV-Yd-bm4">
-                                <color key="tintColor" red="0.83137261867523193" green="0.26666668057441711" blue="0.094117656350135803" alpha="1" colorSpace="deviceRGB"/>
-                                <items>
-                                    <navigationItem title="Events" id="aff-AU-mYD"/>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6PP-HA-zV8" firstAttribute="top" secondItem="uyV-Yd-bm4" secondAttribute="bottom" type="default" id="5lP-L7-R19"/>
                             <constraint firstItem="6PP-HA-zV8" firstAttribute="trailing" secondItem="2E8-GT-HMU" secondAttribute="trailing" type="default" id="b8Z-27-BhG"/>
-                            <constraint firstItem="uyV-Yd-bm4" firstAttribute="top" secondItem="2E8-GT-HMU" secondAttribute="top" type="default" id="hgt-Bj-mFU"/>
-                            <constraint firstItem="uyV-Yd-bm4" firstAttribute="leading" secondItem="2E8-GT-HMU" secondAttribute="leading" type="default" id="nGY-HS-oIT"/>
-                            <constraint firstItem="uyV-Yd-bm4" firstAttribute="trailing" secondItem="2E8-GT-HMU" secondAttribute="trailing" type="default" id="oHJ-Zp-HcF"/>
+                            <constraint firstItem="6PP-HA-zV8" firstAttribute="top" secondItem="2E8-GT-HMU" secondAttribute="top" type="default" id="cY1-aK-MuD"/>
                             <constraint firstItem="6PP-HA-zV8" firstAttribute="bottom" secondItem="2E8-GT-HMU" secondAttribute="bottom" type="default" id="qtj-pd-os2"/>
                             <constraint firstItem="6PP-HA-zV8" firstAttribute="leading" secondItem="2E8-GT-HMU" secondAttribute="leading" type="default" id="wha-N5-tZ6"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Events" image="first.png" id="FaS-rx-bCc"/>
+                    <navigationItem key="navigationItem" title="Events" id="zjd-CX-ukl">
+                        <barButtonItem key="rightBarButtonItem" title="Post an Event" id="3qH-Gc-Fkx">
+                            <connections>
+                                <segue destination="OGF-ES-Qup" kind="push" id="AGY-m0-EIL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="eventsTable" destination="6PP-HA-zV8" id="YNP-AJ-vdA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="48j-FF-QX8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3227" y="-268"/>
+            <point key="canvasLocation" x="3119" y="-1856"/>
+        </scene>
+        <!--Events Input Controller - Post an Event-->
+        <scene sceneID="4IN-fX-365">
+            <objects>
+                <viewController id="OGF-ES-Qup" customClass="CDQEventsInputController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dSx-OM-xH6">
+                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="Event Description..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ZPN-uA-wLQ">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="219" id="Bm2-Wk-cdE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="vVF-Zb-sbN">
+                                <date key="date" timeIntervalSinceReferenceDate="385501458.240152">
+                                    <!--2013-03-20 19:44:18 +0000-->
+                                </date>
+                                <timeZone key="timeZone" name="America/Los_Angeles">
+                                    <mutableData key="data">
+VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
+y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
+5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
+8n/BkPNvwKD0X6OQ9U+ioPY/hZD3L4Sg+CiiEPkPZqD6CIQQ+viDIPvoZhD82GUg/chIEP64RyD/qCoQ
+AJgpIAGIDBACeAsgA3EokARhJ6AFUQqQBkEJoAcw7JAHjUOgCRDOkAmtvyAK8LCQC+CvoAzZzRANwJGg
+DrmvEA+priAQmZEQEYmQIBJ5cxATaXIgFFlVEBVJVCAWOTcQFyk2IBgiU5AZCRggGgI1kBryNKAb4heQ
+HNIWoB3B+ZAesfigH6HbkCB2KyAhgb2QIlYNICNq2hAkNe8gJUq8ECYV0SAnKp4QJ/7toCkKgBAp3s+g
+KupiECu+saAs036QLZ6ToC6zYJAvfnWgMJNCkDFnkiAycySQM0d0IDRTBpA1J1YgNjLokDcHOCA4HAUQ
+OOcaIDn75xA6xvwgO9vJEDywGKA9u6sQPo/6oD+bjRBAb9ygQYSpkEJPvqBDZIuQRC+goEVEbZBF89Mg
+Ry2KEEfTtSBJDWwQSbOXIErtThBLnLOgTNZqkE18laBOtkyQT1x3oFCWLpBRPFmgUnYQkFMcO6BUVfKQ
+VPwdoFY11JBW5TogWB7xEFjFHCBZ/tMQWqT+IFvetRBchOAgXb6XEF5kwiBfnnkQYE3eoGGHlZBiLcCg
+Y2d3kGQNoqBlR1mQZe2EoGcnO5BnzWagaQcdkGmtSKBq5v+Qa5ZlIGzQHBBtdkcgbq/+EG9WKSBwj+AQ
+cTYLIHJvwhBzFe0gdE+kEHT/CaB2OMCQdt7roHgYopB4vs2gefiEkHqer6B72GaQfH6RoH24SJB+XnOg
+f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
+</mutableData>
+                                </timeZone>
+                            </datePicker>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVB-jc-qpC">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="289" id="ZdM-z4-jdY"/>
+                                </constraints>
+                            </pickerView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="City" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vpP-2i-WAY">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="327" id="Pcm-LW-blO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Distance(KM):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZq-0r-HnD">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZPN-uA-wLQ" firstAttribute="top" secondItem="dSx-OM-xH6" secondAttribute="top" constant="20" symbolic="YES" type="default" id="92Y-WZ-BfL"/>
+                            <constraint firstItem="vpP-2i-WAY" firstAttribute="centerX" secondItem="vVF-Zb-sbN" secondAttribute="centerX" type="default" id="9Am-aS-tTb"/>
+                            <constraint firstAttribute="bottom" secondItem="qZq-0r-HnD" secondAttribute="bottom" constant="149" id="9gs-SL-Aka"/>
+                            <constraint firstItem="fVB-jc-qpC" firstAttribute="leading" secondItem="dSx-OM-xH6" secondAttribute="leading" constant="254" id="Bx1-df-vpj"/>
+                            <constraint firstItem="qZq-0r-HnD" firstAttribute="leading" secondItem="dSx-OM-xH6" secondAttribute="leading" constant="67" id="H9d-BU-4VS"/>
+                            <constraint firstItem="ZPN-uA-wLQ" firstAttribute="trailing" secondItem="dSx-OM-xH6" secondAttribute="trailing" type="default" id="Ifu-xj-Lk3"/>
+                            <constraint firstItem="vVF-Zb-sbN" firstAttribute="trailing" secondItem="dSx-OM-xH6" secondAttribute="trailing" type="default" id="Ih4-05-ujt"/>
+                            <constraint firstItem="ZPN-uA-wLQ" firstAttribute="leading" secondItem="dSx-OM-xH6" secondAttribute="leading" type="default" id="Jyw-c4-MjF"/>
+                            <constraint firstItem="vpP-2i-WAY" firstAttribute="top" secondItem="dSx-OM-xH6" secondAttribute="top" constant="288" id="anb-W7-VDH"/>
+                            <constraint firstItem="vVF-Zb-sbN" firstAttribute="top" secondItem="dSx-OM-xH6" secondAttribute="top" constant="384" id="eT7-Lx-bg3"/>
+                            <constraint firstItem="vVF-Zb-sbN" firstAttribute="leading" secondItem="dSx-OM-xH6" secondAttribute="leading" type="default" id="uXJ-wW-VdL"/>
+                            <constraint firstAttribute="bottom" secondItem="fVB-jc-qpC" secondAttribute="bottom" constant="51" id="v4q-1g-Nuc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Post an Event" id="JGs-2G-Dx0">
+                        <barButtonItem key="rightBarButtonItem" title="Post Event" id="M4g-jW-dg1">
+                            <connections>
+                                <action selector="postEvent:" destination="OGF-ES-Qup" id="NQH-Dd-h4V"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cityInput" destination="vpP-2i-WAY" id="itR-5C-JIs"/>
+                        <outlet property="dateInput" destination="vVF-Zb-sbN" id="lX3-My-Jh8"/>
+                        <outlet property="descriptionInput" destination="ZPN-uA-wLQ" id="rNr-ng-1YN"/>
+                        <outlet property="distanceInput" destination="fVB-jc-qpC" id="OxW-cH-H45"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VEk-Qu-uhA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3951" y="-1863"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -848,9 +956,9 @@ Features
                         <segue destination="2" kind="relationship" relationship="viewControllers" id="27"/>
                         <segue destination="MVd-IC-GDg" kind="relationship" relationship="viewControllers" id="Qr0-GA-xG2"/>
                         <segue destination="3" kind="relationship" relationship="viewControllers" id="28"/>
-                        <segue destination="nYr-WX-APg" kind="relationship" relationship="viewControllers" id="XTI-7r-5Jd"/>
                         <segue destination="FY5-0r-oNa" kind="relationship" relationship="viewControllers" id="w2X-d1-DOy"/>
                         <segue destination="dQ1-jz-lbT" kind="relationship" relationship="viewControllers" id="GtW-nT-gai"/>
+                        <segue destination="Nim-bR-L6c" kind="relationship" relationship="viewControllers" id="Wj1-7G-Uat"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
@@ -861,73 +969,6 @@ Features
     <resources>
         <image name="first.png" width="30" height="30"/>
     </resources>
-    <classes>
-        <class className="AboutViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
-        </class>
-        <class className="ActivityViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ActivityViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="activityTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="CDQEventsController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQEventsController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="eventsTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="CDQGPSViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQGPSViewController.h"/>
-        </class>
-        <class className="CDQGoalsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQGoalsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="goalsTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="CDQHomeController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQHomeController.h"/>
-            <relationships>
-                <relationship kind="action" name="login:"/>
-                <relationship kind="outlet" name="loggedInUsernameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="loginBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="loginLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="loginPassword" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="loginPasswordLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="loginResponseLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="loginUsername" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="loginUsernameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="logoutBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="signupBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="signupFirstName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="signupFirstNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="signupLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="signupLastName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="signupLastNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="signupPassword" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="signupPasswordLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="signupResponseLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="signupUsername" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="signupUsernameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ProfileViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="aboutTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="achievementTable" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="addressField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="dobField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="emailField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="profileImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
