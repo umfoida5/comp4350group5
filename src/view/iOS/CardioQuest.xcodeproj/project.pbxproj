@@ -28,6 +28,7 @@
 		B18F780816F6398C00024405 /* CDQProfileViewController_test.m in Sources */ = {isa = PBXBuildFile; fileRef = B18F780716F6398C00024405 /* CDQProfileViewController_test.m */; };
 		B18F780B16F6399B00024405 /* CDQActivityViewController_test.m in Sources */ = {isa = PBXBuildFile; fileRef = B18F780A16F6399B00024405 /* CDQActivityViewController_test.m */; };
 		B196AF1A16F000AD00276B98 /* CDQGoalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B196AF1916F000AC00276B98 /* CDQGoalsViewController.m */; };
+		D09C411316FA73BF009B248F /* CDQGoalInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = D09C411216FA73BF009B248F /* CDQGoalInputController.m */; };
 		D0C1EFE016EA977F00EB2E21 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C1EFDF16EA977F00EB2E21 /* AboutViewController.m */; };
 		D0C1EFE716EA984300EB2E21 /* Ubuntu Orange.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D0C1EFE616EA984300EB2E21 /* Ubuntu Orange.jpg */; };
 		D0C1EFEA16EAA30600EB2E21 /* CDQHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C1EFE916EAA30600EB2E21 /* CDQHomeController.m */; };
@@ -124,6 +125,8 @@
 		B18F780A16F6399B00024405 /* CDQActivityViewController_test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQActivityViewController_test.m; sourceTree = "<group>"; };
 		B196AF1816F000AC00276B98 /* CDQGoalsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQGoalsViewController.h; sourceTree = "<group>"; };
 		B196AF1916F000AC00276B98 /* CDQGoalsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQGoalsViewController.m; sourceTree = "<group>"; };
+		D09C411116FA73BF009B248F /* CDQGoalInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQGoalInputController.h; sourceTree = "<group>"; };
+		D09C411216FA73BF009B248F /* CDQGoalInputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQGoalInputController.m; sourceTree = "<group>"; };
 		D0C1EFDE16EA977F00EB2E21 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		D0C1EFDF16EA977F00EB2E21 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		D0C1EFE616EA984300EB2E21 /* Ubuntu Orange.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Ubuntu Orange.jpg"; path = "../Ubuntu Orange.jpg"; sourceTree = "<group>"; };
@@ -344,6 +347,8 @@
 				E4D4DE4C16F69723003752B6 /* CDQAchievement.m */,
 				72EAEDB916FA5F0F0022F3C7 /* CDQActivityInputController.h */,
 				72EAEDBA16FA5F0F0022F3C7 /* CDQActivityInputController.m */,
+				D09C411116FA73BF009B248F /* CDQGoalInputController.h */,
+				D09C411216FA73BF009B248F /* CDQGoalInputController.m */,
 				E461B6DE16EA700F00C43D87 /* ProfileViewController.m */,
 				E4DAFD0D16EA819300258D78 /* ActivityViewController.h */,
 				E4DAFD0E16EA819300258D78 /* ActivityViewController.m */,
@@ -578,6 +583,7 @@
 				E4D4DE4D16F69723003752B6 /* CDQAchievement.m in Sources */,
 				72EAEDB816FA49CE0022F3C7 /* CDQEventsInputController.m in Sources */,
 				72EAEDBB16FA5F0F0022F3C7 /* CDQActivityInputController.m in Sources */,
+				D09C411316FA73BF009B248F /* CDQGoalInputController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
