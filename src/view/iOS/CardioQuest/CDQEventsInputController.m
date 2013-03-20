@@ -9,12 +9,13 @@
 #import "CDQEventsInputController.h"
 #import "ASIFormDataRequest.h"
 #import "Classes/SBJson.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface CDQEventsInputController ()
 @property (weak, nonatomic) IBOutlet UITextView *descriptionInput;
 @property (weak, nonatomic) IBOutlet UITextField *cityInput;
 @property (weak, nonatomic) IBOutlet UIDatePicker *dateInput;
-@property (weak, nonatomic) IBOutlet UIPickerView *distanceInput;
+@property (weak, nonatomic) IBOutlet UITextField *distanceInput;
 
 @end
 
@@ -22,12 +23,16 @@
 
 - (IBAction)postEvent:(id)sender
 {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+    NSString *date = [dateFormatter stringFromDate:self.dateInput.date];    
+    
     NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/events/create"];
     
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
-    [request addPostValue: @"25-03-2013" forKey:@"date"];
+    [request addPostValue: date forKey:@"date"];
     [request addPostValue: self.cityInput.text forKey:@"location"];
-    [request addPostValue: @"25" forKey:@"distance"];
+    [request addPostValue: self.distanceInput.text forKey:@"distance"];
     [request addPostValue: self.descriptionInput.text forKey:@"description"];
     
     [request setDelegate:self];
@@ -37,7 +42,7 @@
 
 - (void)requestFinished:(ASIHTTPRequest *)request
 {
-    self.cityInput.text = @"YAY WORKED";
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
     
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -52,7 +57,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+    self.descriptionInput.layer.borderWidth = 1;
+    //self.descriptionInput.layer.borderWidth= 5.0f;
 }
 
 - (void)didReceiveMemoryWarning

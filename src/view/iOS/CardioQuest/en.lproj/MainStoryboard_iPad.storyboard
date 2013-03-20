@@ -863,6 +863,7 @@ Features
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="vVF-Zb-sbN">
                                 <date key="date" timeIntervalSinceReferenceDate="385501458.240152">
@@ -890,11 +891,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
 </mutableData>
                                 </timeZone>
                             </datePicker>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVB-jc-qpC">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="289" id="ZdM-z4-jdY"/>
-                                </constraints>
-                            </pickerView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="City" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vpP-2i-WAY">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="327" id="Pcm-LW-blO"/>
@@ -907,21 +903,28 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dse-I4-FCq">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="AAd-Fv-kGY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZPN-uA-wLQ" firstAttribute="top" secondItem="dSx-OM-xH6" secondAttribute="top" constant="20" symbolic="YES" type="default" id="92Y-WZ-BfL"/>
-                            <constraint firstItem="vpP-2i-WAY" firstAttribute="centerX" secondItem="vVF-Zb-sbN" secondAttribute="centerX" type="default" id="9Am-aS-tTb"/>
-                            <constraint firstAttribute="bottom" secondItem="qZq-0r-HnD" secondAttribute="bottom" constant="149" id="9gs-SL-Aka"/>
-                            <constraint firstItem="fVB-jc-qpC" firstAttribute="leading" secondItem="dSx-OM-xH6" secondAttribute="leading" constant="254" id="Bx1-df-vpj"/>
-                            <constraint firstItem="qZq-0r-HnD" firstAttribute="leading" secondItem="dSx-OM-xH6" secondAttribute="leading" constant="67" id="H9d-BU-4VS"/>
+                            <constraint firstItem="Dse-I4-FCq" firstAttribute="baseline" secondItem="qZq-0r-HnD" secondAttribute="baseline" type="user" id="Hby-ch-59d"/>
                             <constraint firstItem="ZPN-uA-wLQ" firstAttribute="trailing" secondItem="dSx-OM-xH6" secondAttribute="trailing" type="default" id="Ifu-xj-Lk3"/>
                             <constraint firstItem="vVF-Zb-sbN" firstAttribute="trailing" secondItem="dSx-OM-xH6" secondAttribute="trailing" type="default" id="Ih4-05-ujt"/>
                             <constraint firstItem="ZPN-uA-wLQ" firstAttribute="leading" secondItem="dSx-OM-xH6" secondAttribute="leading" type="default" id="Jyw-c4-MjF"/>
-                            <constraint firstItem="vpP-2i-WAY" firstAttribute="top" secondItem="dSx-OM-xH6" secondAttribute="top" constant="288" id="anb-W7-VDH"/>
-                            <constraint firstItem="vVF-Zb-sbN" firstAttribute="top" secondItem="dSx-OM-xH6" secondAttribute="top" constant="384" id="eT7-Lx-bg3"/>
+                            <constraint firstItem="vVF-Zb-sbN" firstAttribute="top" secondItem="dSx-OM-xH6" secondAttribute="top" constant="303" id="Kq6-l1-xyc"/>
+                            <constraint firstItem="Dse-I4-FCq" firstAttribute="leading" secondItem="vpP-2i-WAY" secondAttribute="leading" type="default" id="LtH-dw-9nV"/>
+                            <constraint firstItem="qZq-0r-HnD" firstAttribute="leading" secondItem="dSx-OM-xH6" secondAttribute="leading" constant="92" id="ShI-Zy-h33"/>
+                            <constraint firstItem="vpP-2i-WAY" firstAttribute="top" secondItem="dSx-OM-xH6" secondAttribute="top" constant="256" id="cmd-ac-ax9"/>
+                            <constraint firstItem="vVF-Zb-sbN" firstAttribute="centerX" secondItem="vpP-2i-WAY" secondAttribute="centerX" type="default" id="eMS-4a-KXP"/>
+                            <constraint firstAttribute="bottom" secondItem="Dse-I4-FCq" secondAttribute="bottom" constant="309" id="eoe-zX-LT9"/>
                             <constraint firstItem="vVF-Zb-sbN" firstAttribute="leading" secondItem="dSx-OM-xH6" secondAttribute="leading" type="default" id="uXJ-wW-VdL"/>
-                            <constraint firstAttribute="bottom" secondItem="fVB-jc-qpC" secondAttribute="bottom" constant="51" id="v4q-1g-Nuc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Post an Event" id="JGs-2G-Dx0">
@@ -935,7 +938,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="cityInput" destination="vpP-2i-WAY" id="itR-5C-JIs"/>
                         <outlet property="dateInput" destination="vVF-Zb-sbN" id="lX3-My-Jh8"/>
                         <outlet property="descriptionInput" destination="ZPN-uA-wLQ" id="rNr-ng-1YN"/>
-                        <outlet property="distanceInput" destination="fVB-jc-qpC" id="OxW-cH-H45"/>
+                        <outlet property="distanceInput" destination="Dse-I4-FCq" id="vsb-Sj-3ZA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VEk-Qu-uhA" userLabel="First Responder" sceneMemberID="firstResponder"/>
