@@ -21,13 +21,11 @@
 
       $("#signupForm").submit(function() {
         $.post("signup", $(this).serialize(), function(errorMsg) {
-		  if(errorMsg == "Username already exists. Please enter a new username.") {
-		  	$("#signupMessage").text(errorMsg);
-		  }
-		  else {
-		    $("#signupMessage").text("Signup successful, redirecting!");
+		  if(errorMsg == "Login was successful.") {
 		    window.location.href = "../profiles";
-		  }
+                  } else {
+		    $("#signupMessage").text(errorMsg);
+                  }
 		} );
         return false;
       } );
@@ -73,7 +71,7 @@
 		<label class="control-label" for="lastName">Last Name:&nbsp;</label>
 		<input type="text" name="lastName" maxLength=50 class="input-xlarge" id="lastName">
 	</div>
-	<div class="control-group success">
+	<div class="control-group error">
 		<span class="help-inline" id="signupMessage"></span>
 	</div>
 	<div class="control-group">

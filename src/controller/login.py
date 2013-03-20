@@ -15,6 +15,7 @@ class Login:
 		tmpl = env.get_template('login.html')
 		return tmpl.render()
     
+        @commit_on_success
 	@cherrypy.expose
 	def do_login(self, username, pw, just_created=False):
 		#Verifies credentials for username and password.
@@ -27,7 +28,7 @@ class Login:
 			if(athlete.password == pw):				
 				if not just_created:
 					old_id = cherrypy.session.get('id')
-                                        if cherrypy.session.has_key('username'):
+                                        if not cherrypy.session.has_key('username'):
 					    self.__update_tables_athlete_id(old_id, athlete.id)
 					cherrypy.session['id'] = athlete.id
 					cherrypy.session['username'] = athlete.username
@@ -38,12 +39,13 @@ class Login:
 		else:
 			return "Invalid username."
 
+	@commit_on_success 
 	@cherrypy.expose
 	def do_logout(self):
 		db_session = database.session
 		athlete = Athlete(None, None, "FirstName", "LastName")
 		db_session.add(athlete)
-		db_session.commit()
+		db_session.flush()
 		cherrypy.session['id'] = athlete.id
 		cherrypy.session.pop('username')
 		
@@ -54,6 +56,11 @@ class Login:
 	def signup(self, username, pw, firstName, lastName):
 		db_session = database.session
 		return_message = "Username already exists. Please enter a new username."
+
+                if len(username) <= 3:
+                    return "Username must be longer than 3 characters"
+                elif len(pw) <= 3:
+                    return "Password must be longer than 3 characters"
 		
 		if Athlete.query.filter_by(username=username).all() == []:
 			cherrypy.session['username'] = username
