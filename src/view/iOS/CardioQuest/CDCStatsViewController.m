@@ -12,8 +12,8 @@
 
 @interface CDCStatsViewController ()
 @property (weak) IBOutlet CDCgraph *graph;
-@property (weak) CGRect *dimensions;
 @end
+
 
 @implementation CDCStatsViewController
 
@@ -21,8 +21,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
         // Custom initialization
+        [self.view addSubview:_graph];
     }
     return self;
 }
@@ -82,9 +82,15 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
+    CGRect screenBound = [[UIScreen mainScreen] bounds];
+    CGSize screenSize = screenBound.size; 
+    CGFloat screenWidth = screenSize.width;
+    CGFloat screenHeight = screenSize.height;
+    
     if ([pickerView tag] == 1)
     {
-        [self.graph drawRect:dimensions];
+        printf("DEBUG 1");
+        [self.graph drawRect:CGRectMake(0,0,screenWidth,screenHeight)];
     }
     
     else //if ([pickerView tag] == 2)

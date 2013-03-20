@@ -19,7 +19,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        //[self setNeedsDisplay:YES];
     }
     return self;
 }
@@ -31,8 +31,7 @@
 {
     CGContextRef _context = UIGraphicsGetCurrentContext();
     
-    ECGraph *graph = [[ECGraph alloc] initWithFrame:CGRectMake(10,10, 480, 320)
-                                        withContext:_context isPortrait:NO];
+    ECGraph *graph = [[ECGraph alloc] initWithFrame:rect withContext:_context isPortrait:NO];
     
     ECGraphPoint *point1 = [[ECGraphPoint alloc] init];
     point1.yValue = 3;
