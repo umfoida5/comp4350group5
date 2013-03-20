@@ -106,11 +106,12 @@ function drawGraph(myData) {
 
 	var strData = [];
 	var splitStr = [];
-	var myValues = [];
+	var myValues = new Array();
 	var myDates = [];
 	var year;
 	var month;
 	var day;
+	var myValue;
 
 	//must convert data into a string format to manipulate it
 	for (var i=0;i<myData.length;i++) {
@@ -124,7 +125,7 @@ function drawGraph(myData) {
 		for (var j=0;j<splitStr.length;j++){
 
 			if (j%4 == 0) {
-				myValues.push(parseInt(splitStr[j]));
+				myValue = parseInt(splitStr[j]);
 			}
 
 			else if (j%4 == 1){
@@ -137,33 +138,43 @@ function drawGraph(myData) {
 
 			else if (j%4 == 3){
 				day = splitStr[j];
-				myDates.push(new String(day + "/" + month + "/" + year));
+				myValues.push([Date.UTC(year, month, day), myValue]);
 			}//else
 		}//for
 	}//for
 
+
+	myValues.sort();
+
 	//TODO: clean up hard-coded values in this function
-	//TODO: adjust for any missed values along x-axis (day/month/year with no activities)
 
 	var myChart = new Highcharts.Chart({
         chart: {
             renderTo: "graphContainer",
-            type: "line"
+            type: "spline"
         },
         title: {
             text: $("#select0").val()  + " / " + $("#select3").val()
         },
         xAxis: {
-            categories: myDates
+            type: 'datetime'
         },
         yAxis: {
             title: {
                 text: $("#select2").val()
-            }
+            },
+            min: 0
         },
+        tooltip: {
+		    formatter: function() {
+		        return '<b>'+ this.series.name +'</b><br/>'+
+		        Highcharts.dateFormat('%e. %b', this.x) +': '+ this.y +' m';
+		     }
+        },
+
         series: [{
         	showInLegend: false,
-            	name: "Athlete Name",
+            	name: "Item",
             	data: myValues
         }]
     });//draw graph function
