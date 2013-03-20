@@ -1,4 +1,5 @@
 import cherrypy, httplib
+from sqlalchemy import and_
 from modules.jsonable import make_jsonable
 from modules.template import env
 from modules.transaction import commit_on_success
@@ -28,8 +29,14 @@ class Login:
 			if(athlete.password == pw):				
 				if not just_created:
 					old_id = cherrypy.session.get('id')
+
                                         if not cherrypy.session.has_key('username'):
 					    self.__update_tables_athlete_id(old_id, athlete.id)
+                                            Athlete.query.filter(and_(
+                                                Athlete.id == old_id,
+                                                Athlete.username == None)
+                                            ).delete()
+
 					cherrypy.session['id'] = athlete.id
 					cherrypy.session['username'] = athlete.username
 					
@@ -97,3 +104,6 @@ class Login:
 		healthRecords = Health.query.filter_by(athlete_id = old_id)
 		for health in healthRecords:
 			health.athlete_id = new_id
+
+                db_session.flush()
+
