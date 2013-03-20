@@ -33,7 +33,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
     
     // Initialize table data
     tableData = [NSArray arrayWithObjects:@"NO RECORDS", nil];
