@@ -34,8 +34,8 @@ class Login:
 					    self.__update_tables_athlete_id(old_id, athlete.id)
                                             Athlete.query.filter(and_(
                                                 Athlete.id == old_id,
-                                                Athlete.username == None)
-                                            ).delete()
+                                                Athlete.username == None
+                                            )).delete(False)
 
 					cherrypy.session['id'] = athlete.id
 					cherrypy.session['username'] = athlete.username
