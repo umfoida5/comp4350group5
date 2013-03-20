@@ -108,7 +108,6 @@
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request addPostValue:@"" forKey:@"id"];
     [request addPostValue:self.dobField.text forKey:@"birth_date"];
-    [request setUseKeychainPersistence:YES];
 
     [request setDelegate:self];
     [request startAsynchronous];
@@ -119,7 +118,6 @@
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request addPostValue:@"" forKey:@"id"];
     [request addPostValue:self.addressField.text forKey:@"address"];
-    [request setUseKeychainPersistence:YES];
     
     [request setDelegate:self];
     [request startAsynchronous];
@@ -130,7 +128,6 @@
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request addPostValue:@"" forKey:@"id"];
     [request addPostValue:self.emailField.text forKey:@"email"];
-    [request setUseKeychainPersistence:YES];
     
     [request setDelegate:self];
     [request startAsynchronous];
@@ -202,7 +199,6 @@
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request addPostValue:@"" forKey:@"id"];
     [request addPostValue: aboutTextView.text forKey:@"about_msg"];
-    [request setUseKeychainPersistence:YES];
     
     [request setDelegate:self];
     [request startAsynchronous];
