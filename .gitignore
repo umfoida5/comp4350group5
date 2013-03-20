@@ -1,7 +1,7 @@
 *.pyc
 *.swp
 *~
-*._
+._*
 
 # Xcode
 *.DS_Store
