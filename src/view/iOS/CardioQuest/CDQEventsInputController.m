@@ -56,6 +56,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Ubuntu Orange.jpg"]];
 	
     self.descriptionInput.layer.borderWidth = 1;
     //self.descriptionInput.layer.borderWidth= 5.0f;

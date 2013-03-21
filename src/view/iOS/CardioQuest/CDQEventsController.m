@@ -35,6 +35,8 @@
 	
     // Initialize table data
     tableData = [NSArray arrayWithObjects:@"No events have been posted, or you aren't connected to the internet.", nil];
+    
+    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Ubuntu Orange.jpg"]];
 }
 
 - (void)didReceiveMemoryWarning

@@ -77,6 +77,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Ubuntu Orange.jpg"]];
 	
     self.typeContentArray = [[NSMutableArray alloc] init];
     [self.typeContentArray addObject:@"Run"];
