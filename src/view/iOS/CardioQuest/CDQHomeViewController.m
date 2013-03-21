@@ -19,15 +19,6 @@
 
 @implementation CDQHomeViewController
 
-- (IBAction)doLogout:(id)sender
-{
-    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/login/do_logout"];
-    
-    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
-    [request setDelegate:self];
-    [request startAsynchronous];
-}
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -40,6 +31,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"CardioQuestMain.jpeg"]];
+    self.navigationController.navigationBar.tintColor = [UIColor orangeColor];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -56,6 +50,11 @@
 {
     NSString *username = [request responseString];
 
+    [self toggleNavBarButtons: username];
+}
+
+- (void)toggleNavBarButtons:(NSString *)username
+{
     //If we are already logged in, we want to toggle to logout.
     if(![username isEqualToString:@""])
     {
@@ -69,7 +68,15 @@
     }
 }
 
-
+- (IBAction)doLogout:(id)sender
+{
+    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/login/do_logout"];
+    
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    [request setDelegate:self];
+    [request startAsynchronous];
+    [request setDidFinishSelector:@selector(get_username:)];    
+}
 
 - (void)didReceiveMemoryWarning
 {

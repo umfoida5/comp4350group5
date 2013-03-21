@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -168,25 +168,6 @@
                                 <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aa3-Hc-x2D">
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="398" id="UTx-ZC-ylG"/>
-                                    <constraint firstAttribute="height" constant="130" id="z5J-ds-w8x"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Change User">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="logout:" destination="2" eventType="touchUpInside" id="edM-3Q-ODu"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9H-Ti-8vm">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="HxC-HH-nAa"/>
@@ -229,15 +210,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Signed in!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfe-mH-4XW">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="CZX-gt-QTA"/>
-                                    <constraint firstAttribute="width" constant="302" id="RdA-vK-E1I"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Press the Sign up button to Sign Up :)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aw2-5A-N3z">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="oSQ-Tk-um5"/>
@@ -250,77 +222,71 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vQp-4d-OGI" firstAttribute="top" secondItem="ntv-VZ-B7y" secondAttribute="top" type="default" id="07Z-73-H72"/>
+                            <constraint firstAttribute="bottom" secondItem="ntv-VZ-B7y" secondAttribute="bottom" constant="334" id="0GR-Nc-ujf"/>
                             <constraint firstItem="9ic-Jw-ItZ" firstAttribute="baseline" secondItem="ntv-VZ-B7y" secondAttribute="baseline" type="default" id="0Qr-lo-aSH"/>
-                            <constraint firstItem="Dtf-K7-ZaB" firstAttribute="top" secondItem="17" secondAttribute="top" constant="295" id="0Th-qT-Swr"/>
-                            <constraint firstItem="yfs-qa-0d9" firstAttribute="centerX" secondItem="17" secondAttribute="centerX" type="default" id="3TH-oV-qJ4"/>
                             <constraint firstItem="9ic-Jw-ItZ" firstAttribute="trailing" secondItem="vUy-dC-bTZ" secondAttribute="trailing" type="default" id="3ir-9y-lJt"/>
+                            <constraint firstItem="c8G-Cz-QLB" firstAttribute="top" secondItem="17" secondAttribute="top" constant="253" id="48e-NN-4Yq"/>
+                            <constraint firstAttribute="bottom" secondItem="aw2-5A-N3z" secondAttribute="bottom" constant="231" id="7PU-VM-ICs"/>
                             <constraint firstItem="c8G-Cz-QLB" firstAttribute="leading" secondItem="Dtf-K7-ZaB" secondAttribute="leading" type="default" id="7pJ-mv-9HH"/>
                             <constraint firstItem="9ic-Jw-ItZ" firstAttribute="leading" secondItem="vUy-dC-bTZ" secondAttribute="leading" type="default" id="8M6-h3-uxX"/>
                             <constraint firstItem="yfs-qa-0d9" firstAttribute="leading" secondItem="aw2-5A-N3z" secondAttribute="leading" type="default" id="9eI-Ft-Dbm"/>
-                            <constraint firstItem="aa3-Hc-x2D" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="194" id="AIv-5k-NgI"/>
-                            <constraint firstItem="cC4-At-2dk" firstAttribute="top" secondItem="17" secondAttribute="top" constant="217" id="Ahh-ib-Cpi"/>
-                            <constraint firstAttribute="bottom" secondItem="yfs-qa-0d9" secondAttribute="bottom" constant="237" id="Aoy-dx-7bD"/>
                             <constraint firstItem="Dtf-K7-ZaB" firstAttribute="trailing" secondItem="c8G-Cz-QLB" secondAttribute="trailing" type="default" id="C1p-cz-nVV"/>
-                            <constraint firstItem="ZSQ-I1-m7i" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="290" id="DnJ-ow-YTH"/>
+                            <constraint firstAttribute="bottom" secondItem="f0j-1r-j1u" secondAttribute="bottom" constant="381" id="CMh-sP-QsS"/>
                             <constraint firstItem="ntv-VZ-B7y" firstAttribute="leading" secondItem="f0j-1r-j1u" secondAttribute="leading" type="default" id="GoB-Xg-UGd"/>
+                            <constraint firstItem="ZSQ-I1-m7i" firstAttribute="top" secondItem="17" secondAttribute="top" constant="343" id="KI1-NS-Vd0"/>
                             <constraint firstItem="Dtf-K7-ZaB" firstAttribute="bottom" secondItem="W8l-Vd-Uu7" secondAttribute="bottom" type="default" id="LzS-NA-8Wn"/>
                             <constraint firstItem="BLo-J1-bSi" firstAttribute="leading" secondItem="vQp-4d-OGI" secondAttribute="leading" type="default" id="Mxh-U7-Mxz"/>
-                            <constraint firstItem="aa3-Hc-x2D" firstAttribute="baseline" secondItem="a9H-Ti-8vm" secondAttribute="baseline" type="default" id="QwC-2W-xvE"/>
-                            <constraint firstAttribute="bottom" secondItem="ntv-VZ-B7y" secondAttribute="bottom" constant="303" id="Rt2-7W-s7O"/>
-                            <constraint firstItem="dWz-QH-lgt" firstAttribute="top" secondItem="17" secondAttribute="top" constant="361" id="SwO-Ol-toW"/>
-                            <constraint firstAttribute="bottom" secondItem="f0j-1r-j1u" secondAttribute="bottom" constant="350" id="TQf-dv-QZ2"/>
+                            <constraint firstItem="cC4-At-2dk" firstAttribute="top" secondItem="17" secondAttribute="top" constant="113" id="NyJ-vY-xPh"/>
                             <constraint firstItem="G6c-Sn-Wlb" firstAttribute="baseline" secondItem="f0j-1r-j1u" secondAttribute="baseline" type="default" id="UIs-Ky-iRG"/>
-                            <constraint firstAttribute="bottom" secondItem="Lr4-K7-Ze9" secondAttribute="bottom" constant="410" id="W6j-3O-VPr"/>
+                            <constraint firstItem="ZSQ-I1-m7i" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="287" id="VFe-5h-Jbz"/>
+                            <constraint firstItem="yfs-qa-0d9" firstAttribute="centerX" secondItem="17" secondAttribute="centerX" type="default" id="Vz5-nj-w0G"/>
+                            <constraint firstItem="Dtf-K7-ZaB" firstAttribute="top" secondItem="17" secondAttribute="top" constant="191" id="X9X-1q-Kz6"/>
                             <constraint firstItem="9ic-Jw-ItZ" firstAttribute="bottom" secondItem="ntv-VZ-B7y" secondAttribute="bottom" type="default" id="ZWt-no-Se9"/>
                             <constraint firstItem="G6c-Sn-Wlb" firstAttribute="leading" secondItem="hZG-qb-asA" secondAttribute="leading" type="default" id="ZgZ-mL-eMZ"/>
                             <constraint firstItem="f0j-1r-j1u" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="170" id="a4t-rA-CJt"/>
                             <constraint firstItem="BLo-J1-bSi" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="70" id="bWB-vu-5hM"/>
-                            <constraint firstItem="Pfe-mH-4XW" firstAttribute="centerX" secondItem="Lr4-K7-Ze9" secondAttribute="centerX" type="default" id="cyK-Er-r0T"/>
                             <constraint firstItem="BLo-J1-bSi" firstAttribute="top" secondItem="f0j-1r-j1u" secondAttribute="top" type="default" id="dFy-fN-y72"/>
-                            <constraint firstItem="c8G-Cz-QLB" firstAttribute="top" secondItem="17" secondAttribute="top" constant="357" id="dvw-FG-Wnb"/>
+                            <constraint firstAttribute="bottom" secondItem="yfs-qa-0d9" secondAttribute="bottom" constant="268" id="eXs-cy-M5a"/>
                             <constraint firstAttribute="trailing" secondItem="G6c-Sn-Wlb" secondAttribute="trailing" constant="275" id="edK-CI-jk5"/>
                             <constraint firstItem="G6c-Sn-Wlb" firstAttribute="baseline" secondItem="vUy-dC-bTZ" secondAttribute="baseline" type="default" id="fG8-ae-QEo"/>
                             <constraint firstItem="W8l-Vd-Uu7" firstAttribute="centerX" secondItem="dWz-QH-lgt" secondAttribute="centerX" type="default" id="gFW-sK-mam"/>
-                            <constraint firstItem="aa3-Hc-x2D" firstAttribute="top" secondItem="17" secondAttribute="top" constant="369" id="gc5-E8-tmc"/>
-                            <constraint firstItem="Pfe-mH-4XW" firstAttribute="top" secondItem="W8l-Vd-Uu7" secondAttribute="top" type="default" id="jLm-Uh-pAC"/>
+                            <constraint firstItem="Lr4-K7-Ze9" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="312" id="i3a-5z-gM5"/>
                             <constraint firstAttribute="trailing" secondItem="vUy-dC-bTZ" secondAttribute="trailing" constant="49" id="jQT-no-crO"/>
                             <constraint firstItem="c8G-Cz-QLB" firstAttribute="trailing" secondItem="a9H-Ti-8vm" secondAttribute="trailing" type="default" id="kQx-jo-tAp"/>
                             <constraint firstItem="aw2-5A-N3z" firstAttribute="trailing" secondItem="yfs-qa-0d9" secondAttribute="trailing" type="default" id="keA-lI-bHk"/>
-                            <constraint firstAttribute="bottom" secondItem="aw2-5A-N3z" secondAttribute="bottom" constant="200" id="lQn-49-RXf"/>
                             <constraint firstItem="hZG-qb-asA" firstAttribute="top" secondItem="9ic-Jw-ItZ" secondAttribute="top" type="default" id="mAU-qo-YWe"/>
+                            <constraint firstItem="dWz-QH-lgt" firstAttribute="top" secondItem="17" secondAttribute="top" constant="257" id="ndx-CC-HmO"/>
                             <constraint firstItem="a9H-Ti-8vm" firstAttribute="leading" secondItem="W8l-Vd-Uu7" secondAttribute="leading" type="default" id="oAK-dJ-fpq"/>
                             <constraint firstItem="dWz-QH-lgt" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="224" id="oj8-rf-SXB"/>
                             <constraint firstItem="vQp-4d-OGI" firstAttribute="baseline" secondItem="ntv-VZ-B7y" secondAttribute="baseline" type="default" id="qxn-6k-dtW"/>
                             <constraint firstItem="ntv-VZ-B7y" firstAttribute="trailing" secondItem="f0j-1r-j1u" secondAttribute="trailing" type="default" id="rQY-ke-dTw"/>
                             <constraint firstItem="cC4-At-2dk" firstAttribute="leading" secondItem="Dtf-K7-ZaB" secondAttribute="leading" type="default" id="tqf-J1-WIa"/>
-                            <constraint firstItem="Pfe-mH-4XW" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="250" id="wjA-R8-lth"/>
-                            <constraint firstItem="ZSQ-I1-m7i" firstAttribute="bottom" secondItem="aa3-Hc-x2D" secondAttribute="bottom" type="default" id="ynV-c9-ey5"/>
+                            <constraint firstItem="a9H-Ti-8vm" firstAttribute="top" secondItem="17" secondAttribute="top" constant="309" id="v68-UR-B0d"/>
+                            <constraint firstItem="Lr4-K7-Ze9" firstAttribute="top" secondItem="17" secondAttribute="top" constant="423" id="xlm-gv-cHY"/>
                             <constraint firstItem="hZG-qb-asA" firstAttribute="top" secondItem="ntv-VZ-B7y" secondAttribute="top" type="default" id="zFS-bH-xQa"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="first.png" id="7"/>
                     <navigationItem key="navigationItem" title="Authentication" id="0Vs-je-nmy"/>
                     <connections>
-                        <outlet property="loggedInUsernameLabel" destination="Pfe-mH-4XW" id="vfd-QT-dud"/>
-                        <outlet property="loginBtn" destination="a9H-Ti-8vm" id="0X1-g0-a3B"/>
-                        <outlet property="loginLabel" destination="cC4-At-2dk" id="K50-Eb-Adu"/>
-                        <outlet property="loginMessage" destination="ZSQ-I1-m7i" id="I8q-hH-dbA"/>
-                        <outlet property="loginPassword" destination="c8G-Cz-QLB" id="IgY-8i-Lgp"/>
-                        <outlet property="loginPasswordLabel" destination="dWz-QH-lgt" id="gHx-w5-QUg"/>
-                        <outlet property="loginResponseLabel" destination="Lr4-K7-Ze9" id="oC8-wV-mUX"/>
-                        <outlet property="loginUsername" destination="Dtf-K7-ZaB" id="boN-Cu-5rU"/>
-                        <outlet property="loginUsernameLabel" destination="W8l-Vd-Uu7" id="1kv-pq-1ov"/>
-                        <outlet property="logoutBtn" destination="aa3-Hc-x2D" id="lE2-T4-7zY"/>
-                        <outlet property="signupBtn" destination="yfs-qa-0d9" id="VUN-IP-s52"/>
-                        <outlet property="signupFirstName" destination="vUy-dC-bTZ" id="NGZ-X6-Ub9"/>
-                        <outlet property="signupFirstNameLabel" destination="G6c-Sn-Wlb" id="3hT-QW-emX"/>
-                        <outlet property="signupLastName" destination="9ic-Jw-ItZ" id="hgx-KB-7qm"/>
-                        <outlet property="signupLastNameLabel" destination="hZG-qb-asA" id="nu6-Ex-yIV"/>
-                        <outlet property="signupPassword" destination="ntv-VZ-B7y" id="J2P-ts-nXV"/>
-                        <outlet property="signupPasswordLabel" destination="vQp-4d-OGI" id="xks-NJ-xq3"/>
-                        <outlet property="signupResponseLabel" destination="aw2-5A-N3z" id="hRA-cR-6LL"/>
-                        <outlet property="signupUsername" destination="f0j-1r-j1u" id="Pik-VG-chP"/>
-                        <outlet property="signupUsernameLabel" destination="BLo-J1-bSi" id="z40-5y-Uo1"/>
+                        <outlet property="loginButton" destination="a9H-Ti-8vm" id="1Vf-E6-yUB"/>
+                        <outlet property="loginPasswordField" destination="c8G-Cz-QLB" id="n4H-tG-Z0v"/>
+                        <outlet property="loginPasswordLabel" destination="dWz-QH-lgt" id="ed3-OG-xaV"/>
+                        <outlet property="loginResponseLabel" destination="ZSQ-I1-m7i" id="GRh-Mo-auk"/>
+                        <outlet property="loginTitle" destination="cC4-At-2dk" id="pGI-q4-0MS"/>
+                        <outlet property="loginUsernameField" destination="Dtf-K7-ZaB" id="EcA-Dp-dSl"/>
+                        <outlet property="loginUsernameLabel" destination="W8l-Vd-Uu7" id="33Z-Ix-j9B"/>
+                        <outlet property="signupButton" destination="yfs-qa-0d9" id="oGN-L2-DQF"/>
+                        <outlet property="signupFirstnameField" destination="vUy-dC-bTZ" id="HR7-7I-5iD"/>
+                        <outlet property="signupFirstnameLabel" destination="G6c-Sn-Wlb" id="i31-Tl-cJ8"/>
+                        <outlet property="signupLastnameField" destination="9ic-Jw-ItZ" id="ATa-lR-sla"/>
+                        <outlet property="signupLastnameLabel" destination="9ic-Jw-ItZ" id="ckK-L4-MCf"/>
+                        <outlet property="signupPasswordField" destination="ntv-VZ-B7y" id="Tgn-t3-gCF"/>
+                        <outlet property="signupPasswordLabel" destination="vQp-4d-OGI" id="qyf-kT-2Ha"/>
+                        <outlet property="signupResponseLabel" destination="aw2-5A-N3z" id="3QX-f1-t6w"/>
+                        <outlet property="signupTitle" destination="Lr4-K7-Ze9" id="CBX-oK-hfb"/>
+                        <outlet property="signupUsernameField" destination="f0j-1r-j1u" id="gb2-dY-4xC"/>
+                        <outlet property="signupUsernameLabel" destination="BLo-J1-bSi" id="kCx-UN-UPp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
@@ -1219,6 +1185,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="CDQActivityInputController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQActivityInputController.h"/>
             <relationships>
+                <relationship kind="action" name="createActivity:"/>
                 <relationship kind="outlet" name="dateInput" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="distanceInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="durationInput" candidateClass="UITextField"/>
@@ -1235,6 +1202,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="CDQEventsInputController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQEventsInputController.h"/>
             <relationships>
+                <relationship kind="action" name="postEvent:"/>
                 <relationship kind="outlet" name="cityInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="dateInput" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="descriptionInput" candidateClass="UITextView"/>
@@ -1244,6 +1212,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="CDQGoalInputController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQGoalInputController.h"/>
             <relationships>
+                <relationship kind="action" name="createGoal:"/>
                 <relationship kind="outlet" name="endDateInput" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="quantityInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="startDateInput" candidateClass="UIDatePicker"/>
@@ -1269,26 +1238,25 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQLoginController.h"/>
             <relationships>
                 <relationship kind="action" name="login:"/>
-                <relationship kind="outlet" name="loggedInUsernameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="loginBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="loginLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="loginMessage" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="loginPassword" candidateClass="UITextField"/>
+                <relationship kind="action" name="logout:"/>
+                <relationship kind="action" name="signup:"/>
+                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="loginPasswordField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="loginPasswordLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="loginResponseLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="loginUsername" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="loginTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="loginUsernameField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="loginUsernameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="logoutBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="signupBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="signupFirstName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="signupFirstNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="signupLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="signupLastName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="signupLastNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="signupPassword" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="signupButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="signupFirstnameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="signupFirstnameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="signupLastnameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="signupLastnameLabel" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="signupPasswordField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="signupPasswordLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="signupResponseLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="signupUsername" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="signupTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="signupUsernameField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="signupUsernameLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
@@ -1298,6 +1266,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="ProfileViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
             <relationships>
+                <relationship kind="action" name="enterAddress:"/>
+                <relationship kind="action" name="enterDOB:"/>
+                <relationship kind="action" name="enterEmail:"/>
                 <relationship kind="outlet" name="aboutTextView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="achievementTable" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="addressField" candidateClass="UITextField"/>
