@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -269,6 +269,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="first.png" id="7"/>
                     <navigationItem key="navigationItem" title="Authentication" id="0Vs-je-nmy"/>
                     <connections>
+<<<<<<< Updated upstream
                         <outlet property="loginButton" destination="a9H-Ti-8vm" id="1Vf-E6-yUB"/>
                         <outlet property="loginPasswordField" destination="c8G-Cz-QLB" id="n4H-tG-Z0v"/>
                         <outlet property="loginPasswordLabel" destination="dWz-QH-lgt" id="ed3-OG-xaV"/>
@@ -287,6 +288,29 @@
                         <outlet property="signupTitle" destination="Lr4-K7-Ze9" id="CBX-oK-hfb"/>
                         <outlet property="signupUsernameField" destination="f0j-1r-j1u" id="gb2-dY-4xC"/>
                         <outlet property="signupUsernameLabel" destination="BLo-J1-bSi" id="kCx-UN-UPp"/>
+=======
+                        <outlet property="HomeTabBarItem" destination="7" id="e9r-QT-E3x"/>
+                        <outlet property="loggedInUsernameLabel" destination="Pfe-mH-4XW" id="vfd-QT-dud"/>
+                        <outlet property="loginBtn" destination="a9H-Ti-8vm" id="0X1-g0-a3B"/>
+                        <outlet property="loginLabel" destination="cC4-At-2dk" id="K50-Eb-Adu"/>
+                        <outlet property="loginPassword" destination="c8G-Cz-QLB" id="IgY-8i-Lgp"/>
+                        <outlet property="loginPasswordLabel" destination="dWz-QH-lgt" id="gHx-w5-QUg"/>
+                        <outlet property="loginResponseLabel" destination="ZSQ-I1-m7i" id="ccm-cx-HGT"/>
+                        <outlet property="loginUsername" destination="Dtf-K7-ZaB" id="boN-Cu-5rU"/>
+                        <outlet property="loginUsernameLabel" destination="W8l-Vd-Uu7" id="1kv-pq-1ov"/>
+                        <outlet property="logoutBtn" destination="aa3-Hc-x2D" id="lE2-T4-7zY"/>
+                        <outlet property="signupBtn" destination="yfs-qa-0d9" id="VUN-IP-s52"/>
+                        <outlet property="signupFirstName" destination="vUy-dC-bTZ" id="NGZ-X6-Ub9"/>
+                        <outlet property="signupFirstNameLabel" destination="G6c-Sn-Wlb" id="3hT-QW-emX"/>
+                        <outlet property="signupLabel" destination="aw2-5A-N3z" id="Bqd-LF-0Go"/>
+                        <outlet property="signupLastName" destination="9ic-Jw-ItZ" id="hgx-KB-7qm"/>
+                        <outlet property="signupLastNameLabel" destination="hZG-qb-asA" id="nu6-Ex-yIV"/>
+                        <outlet property="signupPassword" destination="ntv-VZ-B7y" id="J2P-ts-nXV"/>
+                        <outlet property="signupPasswordLabel" destination="vQp-4d-OGI" id="xks-NJ-xq3"/>
+                        <outlet property="signupResponseLabel" destination="aw2-5A-N3z" id="hRA-cR-6LL"/>
+                        <outlet property="signupUsername" destination="f0j-1r-j1u" id="Pik-VG-chP"/>
+                        <outlet property="signupUsernameLabel" destination="BLo-J1-bSi" id="z40-5y-Uo1"/>
+>>>>>>> Stashed changes
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
@@ -1182,6 +1206,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="activityTable" candidateClass="UITableView"/>
             </relationships>
         </class>
+<<<<<<< Updated upstream
         <class className="CDQActivityInputController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQActivityInputController.h"/>
             <relationships>
@@ -1193,12 +1218,15 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="typeInput" candidateClass="UIPickerView"/>
             </relationships>
         </class>
+=======
+>>>>>>> Stashed changes
         <class className="CDQEventsController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQEventsController.h"/>
             <relationships>
                 <relationship kind="outlet" name="eventsTable" candidateClass="UITableView"/>
             </relationships>
         </class>
+<<<<<<< Updated upstream
         <class className="CDQEventsInputController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQEventsInputController.h"/>
             <relationships>
@@ -1219,12 +1247,15 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="typeOperatorMetricInput" candidateClass="UIPickerView"/>
             </relationships>
         </class>
+=======
+>>>>>>> Stashed changes
         <class className="CDQGoalsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQGoalsViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="goalsTable" candidateClass="UITableView"/>
             </relationships>
         </class>
+<<<<<<< Updated upstream
         <class className="CDQHomeViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQHomeViewController.h"/>
             <relationships>
@@ -1236,10 +1267,15 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </class>
         <class className="CDQLoginController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQLoginController.h"/>
+=======
+        <class className="CDQHomeController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQHomeController.h"/>
+>>>>>>> Stashed changes
             <relationships>
                 <relationship kind="action" name="login:"/>
                 <relationship kind="action" name="logout:"/>
                 <relationship kind="action" name="signup:"/>
+<<<<<<< Updated upstream
                 <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="loginPasswordField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="loginPasswordLabel" candidateClass="UILabel"/>
@@ -1257,6 +1293,27 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="signupResponseLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="signupTitle" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="signupUsernameField" candidateClass="UITextField"/>
+=======
+                <relationship kind="outlet" name="loggedInUsernameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="loginBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="loginLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="loginPassword" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="loginPasswordLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="loginResponseLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="loginUsername" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="loginUsernameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="logoutBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="signupBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="signupFirstName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="signupFirstNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="signupLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="signupLastName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="signupLastNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="signupPassword" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="signupPasswordLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="signupResponseLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="signupUsername" candidateClass="UITextField"/>
+>>>>>>> Stashed changes
                 <relationship kind="outlet" name="signupUsernameLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
@@ -1266,11 +1323,15 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="ProfileViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
             <relationships>
+<<<<<<< Updated upstream
                 <relationship kind="action" name="enterAddress:"/>
                 <relationship kind="action" name="enterDOB:"/>
                 <relationship kind="action" name="enterEmail:"/>
                 <relationship kind="outlet" name="aboutTextView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="achievementTable" candidateClass="UITableView"/>
+=======
+                <relationship kind="outlet" name="aboutTextView" candidateClass="UITextView"/>
+>>>>>>> Stashed changes
                 <relationship kind="outlet" name="addressField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="dobField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="emailField" candidateClass="UITextField"/>
@@ -1278,6 +1339,18 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="profileImage" candidateClass="UIImageView"/>
             </relationships>
         </class>
+<<<<<<< Updated upstream
+=======
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+>>>>>>> Stashed changes
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>

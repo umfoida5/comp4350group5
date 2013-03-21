@@ -32,7 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
+    	
     // Initialize table data
     tableData = [NSArray arrayWithObjects:@"No events have been posted, or you aren't connected to the internet.", nil];
     
