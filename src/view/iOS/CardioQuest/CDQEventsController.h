@@ -10,8 +10,5 @@
 
 @interface CDQEventsController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *eventsTable;
-<<<<<<< Updated upstream
 -(void) populateTable;
-=======
->>>>>>> Stashed changes
 @end

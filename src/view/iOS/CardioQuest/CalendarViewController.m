@@ -7,10 +7,8 @@
 //
 
 #import "CalendarViewController.h"
-#import "src/Kal.h"
 
 @interface CalendarViewController ()
-
 
 @end
 
@@ -30,13 +28,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-<<<<<<< Updated upstream
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Ubuntu Orange.jpg"]];
-=======
-    KalViewController *calendar = [[[KalViewController alloc] init] autorelease];
-    [self.navigationController pushViewController:calendar animated:YES];
-
->>>>>>> Stashed changes
 }
 
 - (void)didReceiveMemoryWarning
