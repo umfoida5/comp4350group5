@@ -67,14 +67,8 @@ function Activities(){
 
             dayClick: function(date) {
                 $('#enter_activity_modal').modal('show');
-                $('#date').attr('value', date.getDate() + "-" + 
-                    (date.getMonth()+1) + "-" + 
-                    date.getFullYear());
-                $('#modal_title').html("New Activity (" + 
-                    (date.getMonth()+1) + "/" + 
-                    date.getDate() + "/" + 
-                    date.getFullYear() + ")");
-
+                $('#dateInput').datepicker('setValue', new Date(date.getFullYear(), date.getMonth() + 1, date.getDate()));
+                $('#modal_title').html("New Activity");
                 $('#type').attr('value', '');
                 $('#distance').attr('value', '');
                 $('#duration').attr('value', '');
