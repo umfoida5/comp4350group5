@@ -39,7 +39,7 @@ NSArray *tableData;
 	// Do any additional setup after loading the view.
     
     // Initialize table data
-    tableData = [NSArray arrayWithObjects:@"NO RECORDS", nil];
+    tableData = [NSArray arrayWithObjects:@"You have not inserted any records yet, or you aren't connected to the internet.", nil];
 }
 
 - (void)didReceiveMemoryWarning
