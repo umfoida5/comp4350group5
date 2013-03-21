@@ -146,7 +146,6 @@
 - (void)requestDone:(ASIHTTPRequest*)req
 {
     UIImage* image = [UIImage imageWithData:[req responseData]];
-    UIImageView *temp = [[UIImageView alloc]init];
     CDQAchievement *achievement = [[CDQAchievement alloc]init];
     achievement.image = image;
     achievement.title = req.userInfo[@"title"];
@@ -202,6 +201,8 @@
     
     [request setDelegate:self];
     [request startAsynchronous];
+    
+    return YES;
 }
 
 - (void)viewDidLoad
