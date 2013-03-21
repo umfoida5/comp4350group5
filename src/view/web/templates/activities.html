@@ -8,65 +8,111 @@
   <link rel="stylesheet" href="../css/datatables.css">	 
   <script src="../js/bootstrapPagination.js"></script>
   <script src="../js/pages/activities.js"></script>
+
+  <!-- Calendar Javascript Imports -->
+  <script type='text/javascript' src='../js/fullcalendar.min.js'></script>
+  <link rel='stylesheet' type='text/css' href='../css/fullcalendar.css' />
+  <link rel='stylesheet' type='text/css' href='../css/fullcalendar.print.css' media='print' />
   <script>
     $(document).ready(function() {
-        activity.enter_btn();
-        activity.close_btn();
-        activity.athleteTable();
-;
+        activity.athleteTable();        
+        activity.ajax_calendar();
+        activity.controls();
     } );
   </script>
 {% endblock script %}
 
 {% block body %}
-
-    <div align="right">
-        <button type="button" id="enterButton" class="btn">Create New Activity</button>
-    </div>
     <!-- TABLE ======================================= -->
-    <table class="table table-bordered table-striped table-hover" id="athleteTable">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Date</th>
-        <th>Duration</th>
-        <th>Distance</th>
-        <th>Max speed</th>
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
-  </table>
- <!-- end table ======================================= -->
+    <!-- Tab header -->
+    <ul class="nav nav-tabs">
+      <li class="active">
+        <a href="#calendar_tab" data-toggle="tab">Calendar</a>
+      </li>
+      <li><a href="#table_tab" data-toggle="tab">Table</a></li>
+    </ul>
+    <!-- tab content -->
+    <div class="tab-content">
+        <div class="tab-pane active" id="calendar_tab">
+            <div id='calendar'></div>
+        </div>
+        <div class="tab-pane" id="table_tab">
+            <div align="right">
+                <button type="button" id="enterButton" class="btn">Create New Activity</button>
+            </div>
+            <table class="table table-bordered table-striped table-hover" id="athleteTable">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Date</th>
+                        <th>Duration</th>
+                        <th>Distance</th>
+                        <th>Max speed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Enter New Activity Modal Dialog -->
     <div class="modal hide fade" id="enter_activity_modal" name="enter_activity_modal">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <h3 id="modal_title">Enter an Activity:</h3>
         </div>
-        <form>
+        <form id="newAcitivityForm">
             <div class="modal-body">
-                Type 
-                <select class="span2" name="type" id="type" required>
-                    <option value="Run">Run</option>
-                    <option value="Bike">Bike</option>
-                    <option value="Swim">Swim</option>
-                  </select>
-                <br/>
-
-                Date <div class="input-append date" id="dateInput" data-date="26-02-2013" data-date-format="dd-mm-yyyy" style="display: inline;">
+                <fieldset>
+                    <label for="date">Date:</label>
+                    <div class="input-append date" id="dateInput" data-date="26-02-2013" data-date-format="dd-mm-yyyy" style="display: inline;">
                         <input class="span2" name="date" id="date" size="16" type="text" >
                         <span class="add-on"><i class="icon-th"></i></span>
                      </div>
                     <br/>
-                Duration <input type="number" name="duration" id="duration" style="width: 4em;" min="0" required />
-                Distance <input type="number" name="distance" id="distance" style="width: 4em;" min="0" required />
-                Max Speed <input type="number" name="max_speed" id="max_speed" style="width: 4em;" min="0" required />
+                    <label for="name">Type:</label>
+                    <select class="span2" name="type" id="type" required>
+                        <option value="Run">Run</option>
+                        <option value="Bike">Bike</option>
+                        <option value="Swim">Swim</option>
+                    </select>
+                    <label for="duration">Duration (minutes):</label>
+                    <input type="number" name="duration" id="duration" min="0" value="0" required />
+                    <label for="distance">Distance (km):</label>
+                    <input type="number" name="distance" id="distance" min="0" value="0" required />
+                    <label for="max_speed">Max Speed (km/h):</label>
+                    <input type="number" name="max_speed" id="max_speed" min="0" value="0" required />
+                </fieldset>
             </div>
             <div class="modal-footer">
                 <a class="btn" id="closeButton">Close</a>
                 <input class="btn btn-primary" id="saveButton" type="submit" value="Add Activity" />
             </div>
         </form>
-    </div>  
+    </div>
+    
+    <!-- View activity modal dialog -->
+    <div class="modal hide fade" id="view_activity_modal" name="enter_activity_modal">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 id="view_modal_title">View an Activity:</h3>
+        </div>
+        <form id="newAcitivityForm">
+            <div class="modal-body">
+                <fieldset>
+                    <label for="duration_view">Duration:</label>
+                    <p name="duration_view" id="duration_view"></p>
+                    <label for="distance_view">Distance:</label>
+                    <p name="distance_view" id="distance_view"></p>
+                    <label for="max_speed_view">Max Speed:</label>
+                    <p name="max_speed_view" id="max_speed_view"></p>
+                </fieldset>
+            </div>
+            <div class="modal-footer">
+                <a class="btn" id="closeButton_view">Close</a>
+            </div>
+        </form>
+    </div>
  
 {% endblock body %}

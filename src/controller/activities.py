@@ -8,6 +8,7 @@ from modules.template import env
 from modules.datatables import send_datatable_response
 from modules.checkstats import check_for_completetions
 from datetime import datetime
+from modules.jsonable import make_jsonable
 
 class Activities:
     @cherrypy.expose
@@ -28,3 +29,10 @@ class Activities:
     @cherrypy.expose
     def update_datatable(self, **params):
         return send_datatable_response(Activity, True, params)
+
+    @cherrypy.tools.json_out()
+    @cherrypy.expose
+    def json(self, start_date, end_date):
+        activities = Activity.query.filter(Activity.date.between(start_date, end_date), Activity.athlete_id == cherrypy.session.get('id')).all()
+        json_data = {"activities":make_jsonable(activities)}      
+        return json_data

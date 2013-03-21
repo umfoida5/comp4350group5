@@ -6,7 +6,6 @@ from stats import Stats
 from profiles import Profiles
 from achievements import Achievements
 from goals import Goals
-from calendar import Calendar
 from login import Login
 from health import HealthController
 
@@ -24,7 +23,6 @@ class Root:
     stats = Stats()
     profiles = Profiles()
     achievements = Achievements()
-    calendar = Calendar()
     goals = Goals()
     login = Login()
     health = HealthController()
