@@ -58,7 +58,6 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Ubuntu Orange.jpg"]];
-    self.navigationController.navigationBar.tintColor = [UIColor orangeColor];
 	
     self.descriptionInput.layer.borderWidth = 1;
     //self.descriptionInput.layer.borderWidth= 5.0f;

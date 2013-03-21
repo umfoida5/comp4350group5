@@ -4,11 +4,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Home-->
         <scene sceneID="bXd-G1-HRP">
             <objects>
                 <navigationController definesPresentationContext="YES" id="8Dq-Rl-4jx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="nUX-1f-g3w"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="first.png" id="nUX-1f-g3w"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bxr-cT-609">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1156,12 +1156,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="8Dq-Rl-4jx" kind="relationship" relationship="viewControllers" id="BCL-SM-8u7"/>
                         <segue destination="MVd-IC-GDg" kind="relationship" relationship="viewControllers" id="Qr0-GA-xG2"/>
                         <segue destination="dQ1-jz-lbT" kind="relationship" relationship="viewControllers" id="GtW-nT-gai"/>
                         <segue destination="IPR-o0-Vs1" kind="relationship" relationship="viewControllers" id="N8X-cf-UEd"/>
                         <segue destination="Nim-bR-L6c" kind="relationship" relationship="viewControllers" id="Wj1-7G-Uat"/>
                         <segue destination="FY5-0r-oNa" kind="relationship" relationship="viewControllers" id="w2X-d1-DOy"/>
-                        <segue destination="8Dq-Rl-4jx" kind="relationship" relationship="viewControllers" id="BCL-SM-8u7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>

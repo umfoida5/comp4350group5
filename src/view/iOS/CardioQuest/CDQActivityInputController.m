@@ -79,7 +79,6 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Ubuntu Orange.jpg"]];
-    self.navigationController.navigationBar.tintColor = [UIColor orangeColor];
 	
     self.typeContentArray = [[NSMutableArray alloc] init];
     [self.typeContentArray addObject:@"Run"];

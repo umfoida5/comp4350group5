@@ -128,8 +128,7 @@
     [request startAsynchronous];
     [request setDidFinishSelector:@selector(get_username:)];
     
-    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Ubuntu Orange.jpg"]];
-    self.navigationController.navigationBar.tintColor = [UIColor orangeColor];    
+    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Ubuntu Orange.jpg"]];  
 }
 
 - (void)get_username:(ASIHTTPRequest *)request

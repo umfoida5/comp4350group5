@@ -32,8 +32,11 @@
 {
     [super viewDidLoad];
     
+    //By default, show login and hide logout buttons
+    self.navBar.leftBarButtonItem = nil;
+    self.navBar.rightBarButtonItem = self.loginButton;
+    
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"CardioQuestMain.jpeg"]];
-    self.navigationController.navigationBar.tintColor = [UIColor orangeColor];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -75,7 +78,7 @@
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request setDelegate:self];
     [request startAsynchronous];
-    [request setDidFinishSelector:@selector(get_username:)];    
+    [request setDidFinishSelector:@selector(get_username:)];
 }
 
 - (void)didReceiveMemoryWarning
