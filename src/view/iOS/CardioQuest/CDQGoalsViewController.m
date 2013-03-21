@@ -114,7 +114,7 @@ NSArray *tableData;
 
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
-    NSError *error = [request error];
+    NSLog(@"ERROR: %@", [request responseString]);
 }
 
 // hides keyboard
