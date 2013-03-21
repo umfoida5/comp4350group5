@@ -52,23 +52,14 @@
 - (void)get_username:(ASIHTTPRequest *)request
 {
     NSString *username = [request responseString];
-
-    [self toggleNavBarButtons: username];
-}
-
-- (void)toggleNavBarButtons:(NSString *)username
-{
-    //If we are already logged in, we want to toggle to logout.
+    BOOL isLoggedIn = NO;
+    
     if(![username isEqualToString:@""])
     {
-        self.navBar.leftBarButtonItem = self.logoutButton;
-        self.navBar.rightBarButtonItem = nil;
+        isLoggedIn = YES;
     }
-    else
-    {
-        self.navBar.leftBarButtonItem = nil;
-        self.navBar.rightBarButtonItem = self.loginButton;
-    }
+    
+    [self toggleNavBarButtons: isLoggedIn];
 }
 
 - (IBAction)doLogout:(id)sender
@@ -78,7 +69,26 @@
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request setDelegate:self];
     [request startAsynchronous];
-    [request setDidFinishSelector:@selector(get_username:)];
+    [request setDidFinishSelector:@selector(hideLogoutAndShowLogin:)];
+}
+
+- (void)hideLogoutAndShowLogin:(ASIHTTPRequest *)request
+{
+    [self toggleNavBarButtons: NO];
+}
+
+- (void)toggleNavBarButtons:(BOOL)isLoggedIn
+{
+    if(isLoggedIn)
+    {
+        self.navBar.leftBarButtonItem = self.logoutButton;
+        self.navBar.rightBarButtonItem = nil;
+    }
+    else
+    {
+        self.navBar.leftBarButtonItem = nil;
+        self.navBar.rightBarButtonItem = self.loginButton;
+    }
 }
 
 - (void)didReceiveMemoryWarning
