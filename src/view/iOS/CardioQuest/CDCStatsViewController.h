@@ -16,5 +16,6 @@
 }
 @property (weak, nonatomic) IBOutlet UIPickerView *activitySelector;
 @property (weak, nonatomic) IBOutlet UIPickerView *dateSelector;
+@property (weak, nonatomic) IBOutlet UIPickerView *mesurementSelector;
 
 @end

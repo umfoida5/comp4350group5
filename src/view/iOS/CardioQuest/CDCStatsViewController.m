@@ -131,6 +131,7 @@ NSString *measurementType;
     
     //TODO: get the athlete_id. Currently it is hard coded as "1"
     [graph drawRect:[[UIScreen mainScreen] bounds] :@"1" :activity :dateType :measurementType];
+    
 }
 
 
