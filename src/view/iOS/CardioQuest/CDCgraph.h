@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CDCgraph : UIView
-
+- (void)drawGraph;
+- (void)drawRect:(CGRect)rect: (NSString*)athlete_id: (NSString*)activity: (NSString*)dateType: (NSString*)measurementType;
 @end

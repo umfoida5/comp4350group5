@@ -12,6 +12,7 @@
 @interface CDCStatsViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate, ECGraphDelegate> {
     NSArray *activityTypes;
     NSArray *dateTypes;
+    NSArray *mesurementTypes;
 }
 @property (weak, nonatomic) IBOutlet UIPickerView *activitySelector;
 @property (weak, nonatomic) IBOutlet UIPickerView *dateSelector;

@@ -11,18 +11,21 @@
 #import "CDCgraph.h"
 
 @interface CDCStatsViewController ()
-@property (weak) IBOutlet CDCgraph *graph;
 @end
 
 
 @implementation CDCStatsViewController
+
+CDCgraph *graph;
+NSString *activity;
+NSString *dateType;
+NSString *measurementType;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        [self.view addSubview:_graph];
     }
     return self;
 }
@@ -30,9 +33,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    graph = [CDCgraph alloc];
     activityTypes = [[NSArray alloc] initWithObjects:@"Bike", @"Run", @"Walk", nil];
     dateTypes = [[NSArray alloc] initWithObjects:@"Day", @"Week", @"Month", @"Year", nil];
+    mesurementTypes = [[NSArray alloc] initWithObjects:@"Distance", @"Duration", @"Top Speed", nil];
     
+    activity = @"Bike";
+    dateType = @"Day";
+    measurementType = @"Distance";
+    
+    /*
+    CGRect viewBound = [[UIScreen mainScreen] bounds];
+    CGSize viewSize = viewBound.size;
+    CGFloat viewWidth = viewSize.width;
+    CGFloat viewHeight = viewSize.height;
+    
+    printf("DEBUG 0\n");
+    graph = [[CDCgraph alloc] initWithFrame: CGRectMake(0, 0, viewWidth, viewHeight)];
+     */
 }
 
 //TODO: force interface orientation to landscape (this code does nothing)
@@ -60,9 +78,14 @@
         return activityTypes.count;
     }
     
-    else //if ([pickerView tag] == 2)
+    else if ([pickerView tag] == 2)
     {
         return dateTypes.count;
+    }
+    
+    else //if ([pickerView tag] == 3)
+    {
+        return mesurementTypes.count;
     }
 }
 
@@ -74,29 +97,40 @@
         return [activityTypes objectAtIndex:row];
     }
     
-    else //if ([pickerView tag] == 2)
+    else if ([pickerView tag] == 2)
     {
         return [dateTypes objectAtIndex:row];
+    }
+    
+    else //if ([pickerView tag] == 3)
+    {
+        return [mesurementTypes objectAtIndex:row];
     }
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    CGRect screenBound = [[UIScreen mainScreen] bounds];
-    CGSize screenSize = screenBound.size; 
-    CGFloat screenWidth = screenSize.width;
-    CGFloat screenHeight = screenSize.height;
     
     if ([pickerView tag] == 1)
     {
-        printf("DEBUG 1");
-        [self.graph drawRect:CGRectMake(0,0,screenWidth,screenHeight)];
+        activity = (NSString*)[activityTypes objectAtIndex:row];
+        printf("%s,%s,%s\n",[activity UTF8String],[dateType UTF8String],[measurementType UTF8String]);
     }
     
-    else //if ([pickerView tag] == 2)
+    else if ([pickerView tag] == 2)
     {
-        
+        dateType = (NSString*)[dateTypes objectAtIndex:row];
+        printf("%s,%s,%s\n",[activity UTF8String],[dateType UTF8String],[measurementType UTF8String]);
     }
+               
+    else //if ([pickerView tag] == 3)
+    {
+        measurementType = (NSString*)[mesurementTypes objectAtIndex:row];
+        printf("%s,%s,%s\n",[activity UTF8String],[dateType UTF8String],[measurementType UTF8String]);
+    }
+    
+    //TODO: get the athlete_id. Currently it is hard coded as "1"
+    [graph drawRect:[[UIScreen mainScreen] bounds] :@"1" :activity :dateType :measurementType];
 }
 
 
