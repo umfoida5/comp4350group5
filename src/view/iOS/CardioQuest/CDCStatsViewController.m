@@ -33,7 +33,7 @@ NSString *measurementType;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    graph = [CDCgraph alloc];
+    graph = [[CDCgraph alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     activityTypes = [[NSArray alloc] initWithObjects:@"Bike", @"Run", @"Walk", nil];
     dateTypes = [[NSArray alloc] initWithObjects:@"Day", @"Week", @"Month", @"Year", nil];
     mesurementTypes = [[NSArray alloc] initWithObjects:@"Distance", @"Duration", @"Top Speed", nil];
@@ -114,24 +114,22 @@ NSString *measurementType;
     if ([pickerView tag] == 1)
     {
         activity = (NSString*)[activityTypes objectAtIndex:row];
-        printf("%s,%s,%s\n",[activity UTF8String],[dateType UTF8String],[measurementType UTF8String]);
     }
     
     else if ([pickerView tag] == 2)
     {
         dateType = (NSString*)[dateTypes objectAtIndex:row];
-        printf("%s,%s,%s\n",[activity UTF8String],[dateType UTF8String],[measurementType UTF8String]);
     }
                
     else //if ([pickerView tag] == 3)
     {
         measurementType = (NSString*)[mesurementTypes objectAtIndex:row];
-        printf("%s,%s,%s\n",[activity UTF8String],[dateType UTF8String],[measurementType UTF8String]);
     }
     
-    //TODO: get the athlete_id. Currently it is hard coded as "1"
-    [graph drawRect:[[UIScreen mainScreen] bounds] :@"1" :activity :dateType :measurementType];
-    
+    //[graph drawRect:[[UIScreen mainScreen] bounds] :@"1" :activity :dateType :measurementType];
+    //[graph drawRect:[[UIScreen mainScreen] bounds]];
+    //[graph setGraph:activity: dateType: measurementType];
+    [self.view setNeedsDisplay];
 }
 
 
