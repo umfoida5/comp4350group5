@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CDQHomeController.h"
+#import "CDQLoginController.h"
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
-@interface CDQHomeController ()
+@interface CDQLoginController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 @property (weak, nonatomic) IBOutlet UIButton *signupBtn;
@@ -37,7 +37,7 @@
 
 @end
 
-@implementation CDQHomeController
+@implementation CDQLoginController
 
 - (void)loginRequest:(NSString*)username password:(NSString*)password
 {

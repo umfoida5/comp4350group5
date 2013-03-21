@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CDQHomeController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface CDQLoginController : UIViewController <UITableViewDelegate, UITableViewDataSource>
     - (IBAction)login:(id)sender;
     - (void)loginRequest:(NSString*)username password:(NSString*)password;
     - (NSString *) getLoginLabelText;

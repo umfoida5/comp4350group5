@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		37A20CC216F0DDFE0011F30D /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37A20CC016F0DDFE0011F30D /* MainStoryboard_iPhone.storyboard */; };
+		7282B83116FB79CF003F2F30 /* CDQHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7282B83016FB79CF003F2F30 /* CDQHomeViewController.m */; };
 		72975A0016ED16C900FC7DB8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 729759FF16ED16C900FC7DB8 /* CFNetwork.framework */; };
 		72975A0216ED16D900FC7DB8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72975A0116ED16D900FC7DB8 /* SystemConfiguration.framework */; };
 		72975A0416ED16E300FC7DB8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72975A0316ED16E300FC7DB8 /* MobileCoreServices.framework */; };
@@ -31,7 +32,7 @@
 		D09C411316FA73BF009B248F /* CDQGoalInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = D09C411216FA73BF009B248F /* CDQGoalInputController.m */; };
 		D0C1EFE016EA977F00EB2E21 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C1EFDF16EA977F00EB2E21 /* AboutViewController.m */; };
 		D0C1EFE716EA984300EB2E21 /* Ubuntu Orange.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D0C1EFE616EA984300EB2E21 /* Ubuntu Orange.jpg */; };
-		D0C1EFEA16EAA30600EB2E21 /* CDQHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C1EFE916EAA30600EB2E21 /* CDQHomeController.m */; };
+		D0C1EFEA16EAA30600EB2E21 /* CDQLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C1EFE916EAA30600EB2E21 /* CDQLoginController.m */; };
 		D0C1F02C16EAB96900EB2E21 /* CardioQuestMain.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D0C1F02A16EAB96900EB2E21 /* CardioQuestMain.jpeg */; };
 		D0C1F02D16EAB96900EB2E21 /* CardioQuestMain.acorn in Resources */ = {isa = PBXBuildFile; fileRef = D0C1F02B16EAB96900EB2E21 /* CardioQuestMain.acorn */; };
 		D0CC697516F105230016C12B /* CDQEventsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CC697416F105230016C12B /* CDQEventsController.m */; };
@@ -85,6 +86,8 @@
 
 /* Begin PBXFileReference section */
 		37A20CC116F0DDFE0011F30D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = CardioQuest/en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		7282B82F16FB79CF003F2F30 /* CDQHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQHomeViewController.h; sourceTree = "<group>"; };
+		7282B83016FB79CF003F2F30 /* CDQHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQHomeViewController.m; sourceTree = "<group>"; };
 		729759FF16ED16C900FC7DB8 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		72975A0116ED16D900FC7DB8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		72975A0316ED16E300FC7DB8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -130,8 +133,8 @@
 		D0C1EFDE16EA977F00EB2E21 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		D0C1EFDF16EA977F00EB2E21 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		D0C1EFE616EA984300EB2E21 /* Ubuntu Orange.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Ubuntu Orange.jpg"; path = "../Ubuntu Orange.jpg"; sourceTree = "<group>"; };
-		D0C1EFE816EAA30600EB2E21 /* CDQHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQHomeController.h; sourceTree = "<group>"; };
-		D0C1EFE916EAA30600EB2E21 /* CDQHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQHomeController.m; sourceTree = "<group>"; };
+		D0C1EFE816EAA30600EB2E21 /* CDQLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQLoginController.h; sourceTree = "<group>"; };
+		D0C1EFE916EAA30600EB2E21 /* CDQLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQLoginController.m; sourceTree = "<group>"; };
 		D0C1F02A16EAB96900EB2E21 /* CardioQuestMain.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CardioQuestMain.jpeg; sourceTree = "<group>"; };
 		D0C1F02B16EAB96900EB2E21 /* CardioQuestMain.acorn */ = {isa = PBXFileReference; lastKnownFileType = file; path = CardioQuestMain.acorn; sourceTree = "<group>"; };
 		D0CC697316F105230016C12B /* CDQEventsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQEventsController.h; sourceTree = "<group>"; };
@@ -326,8 +329,10 @@
 			children = (
 				E4C8799D16EE615400C95D99 /* Classes */,
 				D0C1F02916EAB96800EB2E21 /* images */,
-				D0C1EFE816EAA30600EB2E21 /* CDQHomeController.h */,
-				D0C1EFE916EAA30600EB2E21 /* CDQHomeController.m */,
+				D0C1EFE816EAA30600EB2E21 /* CDQLoginController.h */,
+				D0C1EFE916EAA30600EB2E21 /* CDQLoginController.m */,
+				7282B82F16FB79CF003F2F30 /* CDQHomeViewController.h */,
+				7282B83016FB79CF003F2F30 /* CDQHomeViewController.m */,
 				D0CC697316F105230016C12B /* CDQEventsController.h */,
 				D0CC697416F105230016C12B /* CDQEventsController.m */,
 				72EAEDB616FA49CE0022F3C7 /* CDQEventsInputController.h */,
@@ -556,7 +561,7 @@
 				E461B6E216EA70B500C43D87 /* CalendarViewController.m in Sources */,
 				E4DAFD0F16EA819300258D78 /* ActivityViewController.m in Sources */,
 				D0C1EFE016EA977F00EB2E21 /* AboutViewController.m in Sources */,
-				D0C1EFEA16EAA30600EB2E21 /* CDQHomeController.m in Sources */,
+				D0C1EFEA16EAA30600EB2E21 /* CDQLoginController.m in Sources */,
 				72975A7F16ED1DBB00FC7DB8 /* ASIFormDataRequest.m in Sources */,
 				72975A8016ED1DBB00FC7DB8 /* ASIInputStream.m in Sources */,
 				72975A8116ED1DBB00FC7DB8 /* ASIHTTPRequest.m in Sources */,
@@ -584,6 +589,7 @@
 				72EAEDB816FA49CE0022F3C7 /* CDQEventsInputController.m in Sources */,
 				72EAEDBB16FA5F0F0022F3C7 /* CDQActivityInputController.m in Sources */,
 				D09C411316FA73BF009B248F /* CDQGoalInputController.m in Sources */,
+				7282B83116FB79CF003F2F30 /* CDQHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
