@@ -11,6 +11,4 @@
 @interface CDQLoginController : UIViewController <UITableViewDelegate, UITableViewDataSource>
     - (IBAction)login:(id)sender;
     - (void)loginRequest:(NSString*)username password:(NSString*)password;
-    - (NSString *) getLoginLabelText;
-    - (void) doLogout;
 @end

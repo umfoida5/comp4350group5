@@ -39,6 +39,11 @@
 
 @implementation CDQLoginController
 
+- (IBAction)login:(id)sender
+{
+    [self loginRequest:_loginUsername.text password:_loginPassword.text];
+}
+
 - (void)loginRequest:(NSString*)username password:(NSString*)password
 {
     NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/login/do_login"];
@@ -52,16 +57,6 @@
     [request setUseSessionPersistence:YES];
     [request setDelegate:self];
     [request startAsynchronous];
-}
-
-- (NSString *) getLoginLabelText
-{
-    return _loginResponseLabel.text;
-}
-
-- (IBAction)login:(id)sender
-{
-    [self loginRequest:_loginUsername.text password:_loginPassword.text];
 }
 
 - (void)requestFinished:(ASIHTTPRequest *)request
@@ -86,31 +81,31 @@
     }
 }
 
-- (void)toggleLoginLogout
-{
-    [self.loginBtn setHidden:![self.loginBtn isHidden]];
-    [self.signupBtn setHidden:![self.signupBtn isHidden]];
-    [self.logoutBtn setHidden:![self.logoutBtn isHidden]];
-    [self.loginUsername setHidden:![self.loginUsername isHidden]];
-    [self.loginPassword setHidden:![self.loginPassword isHidden]];
-    [self.signupFirstName setHidden:![self.signupFirstName isHidden]];
-    [self.signupLastName setHidden:![self.signupLastName isHidden]];
-    [self.signupUsername setHidden:![self.signupUsername isHidden]];
-    [self.signupPassword setHidden:![self.signupPassword isHidden]];
-    
-    [self.loginUsernameLabel setHidden:![self.loginUsernameLabel isHidden]];
-    [self.loginPasswordLabel setHidden:![self.loginPasswordLabel isHidden]];
-    [self.signupUsernameLabel setHidden:![self.signupUsernameLabel isHidden]];
-    [self.signupPasswordLabel setHidden:![self.signupPasswordLabel isHidden]];
-    [self.signupFirstNameLabel setHidden:![self.signupFirstNameLabel isHidden]];
-    [self.signupLastNameLabel setHidden:![self.signupLastNameLabel isHidden]];
-    [self.loginLabel setHidden:![self.loginLabel isHidden]];
-    [self.signupResponseLabel setHidden:![self.signupResponseLabel isHidden]];
-    [self.loginResponseLabel setHidden:![self.loginResponseLabel isHidden]];
-    [self.loggedInUsernameLabel setHidden:![self.loggedInUsernameLabel isHidden]];
-    [self.signupLabel setHidden:![self.signupLabel isHidden]];
-    [self.loginMessage setHidden:![self.loginMessage isHidden]];
-}
+//- (void)toggleLoginLogout
+//{
+//    [self.loginBtn setHidden:![self.loginBtn isHidden]];
+//    [self.signupBtn setHidden:![self.signupBtn isHidden]];
+//    [self.logoutBtn setHidden:![self.logoutBtn isHidden]];
+//    [self.loginUsername setHidden:![self.loginUsername isHidden]];
+//    [self.loginPassword setHidden:![self.loginPassword isHidden]];
+//    [self.signupFirstName setHidden:![self.signupFirstName isHidden]];
+//    [self.signupLastName setHidden:![self.signupLastName isHidden]];
+//    [self.signupUsername setHidden:![self.signupUsername isHidden]];
+//    [self.signupPassword setHidden:![self.signupPassword isHidden]];
+//    
+//    [self.loginUsernameLabel setHidden:![self.loginUsernameLabel isHidden]];
+//    [self.loginPasswordLabel setHidden:![self.loginPasswordLabel isHidden]];
+//    [self.signupUsernameLabel setHidden:![self.signupUsernameLabel isHidden]];
+//    [self.signupPasswordLabel setHidden:![self.signupPasswordLabel isHidden]];
+//    [self.signupFirstNameLabel setHidden:![self.signupFirstNameLabel isHidden]];
+//    [self.signupLastNameLabel setHidden:![self.signupLastNameLabel isHidden]];
+//    [self.loginLabel setHidden:![self.loginLabel isHidden]];
+//    [self.signupResponseLabel setHidden:![self.signupResponseLabel isHidden]];
+//    [self.loginResponseLabel setHidden:![self.loginResponseLabel isHidden]];
+//    [self.loggedInUsernameLabel setHidden:![self.loggedInUsernameLabel isHidden]];
+//    [self.signupLabel setHidden:![self.signupLabel isHidden]];
+//    [self.loginMessage setHidden:![self.loginMessage isHidden]];
+//}
 
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
@@ -132,11 +127,6 @@
 }
 
 - (IBAction)logout:(id)sender
-{
-    [self doLogout];
-}
-
--(void) doLogout
 {
     NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/login/do_logout"];
     
