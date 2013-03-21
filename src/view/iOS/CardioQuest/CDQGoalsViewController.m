@@ -42,6 +42,7 @@ NSArray *tableData;
     tableData = [NSArray arrayWithObjects:@"You have not inserted any records yet, or you aren't connected to the internet.", nil];
     
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Ubuntu Orange.jpg"]];
+    self.navigationController.navigationBar.tintColor = [UIColor orangeColor];
 }
 
 - (void)didReceiveMemoryWarning

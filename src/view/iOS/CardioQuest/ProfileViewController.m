@@ -202,6 +202,8 @@
     
     [request setDelegate:self];
     [request startAsynchronous];
+    
+    return YES;
 }
 
 - (void)viewDidLoad
