@@ -216,7 +216,8 @@
     [self.addressField setValue:[UIColor darkGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
     [self.emailField setValue:[UIColor darkGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
     
-    //Insert border to text view
+    //Insert border to text view and image view
+    self.profileImage.layer.borderWidth = 1;
     self.aboutTextView.layer.borderWidth = 1;
     
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Ubuntu Orange.jpg"]];
