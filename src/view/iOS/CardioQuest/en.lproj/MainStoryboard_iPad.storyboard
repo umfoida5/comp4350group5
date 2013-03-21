@@ -265,16 +265,16 @@
                         <outlet property="loggedInUsernameLabel" destination="Pfe-mH-4XW" id="vfd-QT-dud"/>
                         <outlet property="loginBtn" destination="a9H-Ti-8vm" id="0X1-g0-a3B"/>
                         <outlet property="loginLabel" destination="cC4-At-2dk" id="K50-Eb-Adu"/>
+                        <outlet property="loginMessage" destination="ZSQ-I1-m7i" id="I8q-hH-dbA"/>
                         <outlet property="loginPassword" destination="c8G-Cz-QLB" id="IgY-8i-Lgp"/>
                         <outlet property="loginPasswordLabel" destination="dWz-QH-lgt" id="gHx-w5-QUg"/>
-                        <outlet property="loginResponseLabel" destination="ZSQ-I1-m7i" id="ccm-cx-HGT"/>
+                        <outlet property="loginResponseLabel" destination="Lr4-K7-Ze9" id="oC8-wV-mUX"/>
                         <outlet property="loginUsername" destination="Dtf-K7-ZaB" id="boN-Cu-5rU"/>
                         <outlet property="loginUsernameLabel" destination="W8l-Vd-Uu7" id="1kv-pq-1ov"/>
                         <outlet property="logoutBtn" destination="aa3-Hc-x2D" id="lE2-T4-7zY"/>
                         <outlet property="signupBtn" destination="yfs-qa-0d9" id="VUN-IP-s52"/>
                         <outlet property="signupFirstName" destination="vUy-dC-bTZ" id="NGZ-X6-Ub9"/>
                         <outlet property="signupFirstNameLabel" destination="G6c-Sn-Wlb" id="3hT-QW-emX"/>
-                        <outlet property="signupLabel" destination="aw2-5A-N3z" id="Bqd-LF-0Go"/>
                         <outlet property="signupLastName" destination="9ic-Jw-ItZ" id="hgx-KB-7qm"/>
                         <outlet property="signupLastNameLabel" destination="hZG-qb-asA" id="nu6-Ex-yIV"/>
                         <outlet property="signupPassword" destination="ntv-VZ-B7y" id="J2P-ts-nXV"/>
@@ -1221,9 +1221,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQHomeController.h"/>
             <relationships>
                 <relationship kind="action" name="login:"/>
+                <relationship kind="action" name="logout:"/>
+                <relationship kind="action" name="signup:"/>
                 <relationship kind="outlet" name="loggedInUsernameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="loginBtn" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="loginLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="loginMessage" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="loginPassword" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="loginPasswordLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="loginResponseLabel" candidateClass="UILabel"/>

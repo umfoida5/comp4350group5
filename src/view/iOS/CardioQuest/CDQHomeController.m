@@ -29,10 +29,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *signupFirstNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *signupLastNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *loginLabel;
-@property (weak, nonatomic) IBOutlet UILabel *signupLabel;
+@property (weak, nonatomic) IBOutlet UILabel *signupResponseLabel;
 @property (weak, nonatomic) IBOutlet UILabel *loginResponseLabel;
 @property (weak, nonatomic) IBOutlet UILabel *loggedInUsernameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *signupResponseLabel;
+@property (weak, nonatomic) IBOutlet UILabel *signupLabel;
+@property (weak, nonatomic) IBOutlet UILabel *loginMessage;
 
 @end
 
@@ -79,29 +80,36 @@
     }
     
     // Toggle visibility for all UI elements for login/logout if successful
-    if([responseString isEqual: @"Login was successful."] || [responseString isEqualToString:@"Logout was successful."]) {
-        
-        [self.loginBtn setHidden:![self.loginBtn isHidden]];
-        [self.signupBtn setHidden:![self.signupBtn isHidden]];
-        [self.logoutBtn setHidden:![self.logoutBtn isHidden]];
-        [self.loginUsername setHidden:![self.loginUsername isHidden]];
-        [self.loginPassword setHidden:![self.loginPassword isHidden]];
-        [self.signupFirstName setHidden:![self.signupFirstName isHidden]];
-        [self.signupLastName setHidden:![self.signupLastName isHidden]];
-        [self.signupUsername setHidden:![self.signupUsername isHidden]];
-        [self.signupPassword setHidden:![self.signupPassword isHidden]];
-        
-        [self.loginUsernameLabel setHidden:![self.loginUsernameLabel isHidden]];
-        [self.loginPasswordLabel setHidden:![self.loginPasswordLabel isHidden]];
-        [self.signupUsernameLabel setHidden:![self.signupUsernameLabel isHidden]];
-        [self.signupPasswordLabel setHidden:![self.signupPasswordLabel isHidden]];
-        [self.signupFirstNameLabel setHidden:![self.signupFirstNameLabel isHidden]];
-        [self.signupLastNameLabel setHidden:![self.signupLastNameLabel isHidden]];
-        [self.loginLabel setHidden:![self.loginLabel isHidden]];
-        [self.signupLabel setHidden:![self.signupLabel isHidden]];
-        [self.loginResponseLabel setHidden:![self.loginResponseLabel isHidden]];
-        [self.loggedInUsernameLabel setHidden:![self.loggedInUsernameLabel isHidden]];
+    if([responseString isEqual: @"Login was successful."] || [responseString isEqualToString:@"Logout was successful."])
+    {
+        [self toggleLoginLogout];
     }
+}
+
+- (void)toggleLoginLogout
+{
+    [self.loginBtn setHidden:![self.loginBtn isHidden]];
+    [self.signupBtn setHidden:![self.signupBtn isHidden]];
+    [self.logoutBtn setHidden:![self.logoutBtn isHidden]];
+    [self.loginUsername setHidden:![self.loginUsername isHidden]];
+    [self.loginPassword setHidden:![self.loginPassword isHidden]];
+    [self.signupFirstName setHidden:![self.signupFirstName isHidden]];
+    [self.signupLastName setHidden:![self.signupLastName isHidden]];
+    [self.signupUsername setHidden:![self.signupUsername isHidden]];
+    [self.signupPassword setHidden:![self.signupPassword isHidden]];
+    
+    [self.loginUsernameLabel setHidden:![self.loginUsernameLabel isHidden]];
+    [self.loginPasswordLabel setHidden:![self.loginPasswordLabel isHidden]];
+    [self.signupUsernameLabel setHidden:![self.signupUsernameLabel isHidden]];
+    [self.signupPasswordLabel setHidden:![self.signupPasswordLabel isHidden]];
+    [self.signupFirstNameLabel setHidden:![self.signupFirstNameLabel isHidden]];
+    [self.signupLastNameLabel setHidden:![self.signupLastNameLabel isHidden]];
+    [self.loginLabel setHidden:![self.loginLabel isHidden]];
+    [self.signupResponseLabel setHidden:![self.signupResponseLabel isHidden]];
+    [self.loginResponseLabel setHidden:![self.loginResponseLabel isHidden]];
+    [self.loggedInUsernameLabel setHidden:![self.loggedInUsernameLabel isHidden]];
+    [self.signupLabel setHidden:![self.signupLabel isHidden]];
+    [self.loginMessage setHidden:![self.loginMessage isHidden]];
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request
@@ -135,8 +143,6 @@
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request setDelegate:self];
     [request startAsynchronous];
-    
-    [ASIHTTPRequest setSessionCookies:nil];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -154,8 +160,27 @@
     
     [self.loggedInUsernameLabel setHidden:YES];
 	[self.logoutBtn setHidden:YES];
+    
+    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/get_current_username"];
+    
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    [request setDelegate:self];
+    [request startAsynchronous];
+    [request setDidFinishSelector:@selector(get_username:)];
+    
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"CardioQuestMain.jpeg"]];
     
+}
+
+- (void)get_username:(ASIHTTPRequest *)request
+{
+    NSString *username = [request responseString];
+    
+    //If we are already logged in, we want to toggle to logout.
+    if(![username isEqualToString:@""])
+    {
+        [self toggleLoginLogout];
+    }
 }
 
 - (void)didReceiveMemoryWarning
