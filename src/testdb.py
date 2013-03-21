@@ -251,6 +251,7 @@ db_session.add(Athlete("blake", "blake", "Blake", "Beatty", "blake@email.com", "
 db_session.add(Athlete("phil", "phil", "Phil", "Latka", "phil@email.com", "1980-11-23", "Here's where I'm supposed to tell you my lifestory.  But I won't.  Really.  Those names, I remember them.", "123 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
 db_session.add(Athlete("alex", "alex", "Alex", "Salomon", "alex@email.com", "1980-11-23", "Here's where I'm supposed to tell you my lifestory.  But I won't.  Really.  I make some unreal food.", "123 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
 db_session.add(Athlete("andrew", "andrew", "Andrew", "Konkin", "andrew@email.com", "1980-11-23", "Here's where I'm supposed to tell you my lifestory.  But I won't.  Really.  I put up with these other 6 idiots in the group, that's a strong character trait.", "123 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
+db_session.add(Athlete("zapp", "zapp", "Michael", "Zapp", "fakeemail@email.com", "1980-11-23", "Professor at the University of Manitoba in Computer Science.", "123 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
 db_session.commit()
 
 #####################################################################
