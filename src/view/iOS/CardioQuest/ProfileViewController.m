@@ -12,6 +12,8 @@
 #import "ASINetworkQueue.h"
 #import "CDQAchievement.h"
 #import "ASIFormDataRequest.h"
+#import <QuartzCore/QuartzCore.h>
+
 @class ASINetworkQueue;
 @interface ProfileViewController (){
 	ASINetworkQueue *queue;
@@ -208,6 +210,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //change color of text field placeholder to black
+    [self.dobField setValue:[UIColor darkGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [self.addressField setValue:[UIColor darkGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [self.emailField setValue:[UIColor darkGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
+    
+    //Insert border to text view
+    self.aboutTextView.layer.borderWidth = 1;
     
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Ubuntu Orange.jpg"]];
 }
