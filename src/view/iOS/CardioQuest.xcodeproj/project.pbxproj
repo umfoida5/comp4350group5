@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3788153C16FB945200E56CE3 /* libKal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3788153916FB913900E56CE3 /* libKal.a */; };
+		3788153E16FB947C00E56CE3 /* Kal.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3788153D16FB947C00E56CE3 /* Kal.bundle */; };
 		37A20CC216F0DDFE0011F30D /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37A20CC016F0DDFE0011F30D /* MainStoryboard_iPhone.storyboard */; };
 		7282B83116FB79CF003F2F30 /* CDQHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7282B83016FB79CF003F2F30 /* CDQHomeViewController.m */; };
 		72975A0016ED16C900FC7DB8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 729759FF16ED16C900FC7DB8 /* CFNetwork.framework */; };
@@ -75,6 +77,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3788153816FB913900E56CE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3788153416FB913800E56CE3 /* Kal.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = Kal;
+		};
+		3788153A16FB942300E56CE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3788153416FB913800E56CE3 /* Kal.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = Kal;
+		};
 		E4BEB60216E5361600DD4526 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E4BEB5C116E5361500DD4526 /* Project object */;
@@ -85,6 +101,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3788153416FB913800E56CE3 /* Kal.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kal.xcodeproj; path = Kal/src/Kal.xcodeproj; sourceTree = "<group>"; };
+		3788153D16FB947C00E56CE3 /* Kal.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Kal.bundle; path = Kal/src/Kal.bundle; sourceTree = "<group>"; };
 		37A20CC116F0DDFE0011F30D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = CardioQuest/en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		7282B82F16FB79CF003F2F30 /* CDQHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQHomeViewController.h; sourceTree = "<group>"; };
 		7282B83016FB79CF003F2F30 /* CDQHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQHomeViewController.m; sourceTree = "<group>"; };
@@ -218,6 +236,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3788153C16FB945200E56CE3 /* libKal.a in Frameworks */,
 				E4BEB5FF16E5361600DD4526 /* SenTestingKit.framework in Frameworks */,
 				E4BEB60016E5361600DD4526 /* UIKit.framework in Frameworks */,
 				E4BEB60116E5361600DD4526 /* Foundation.framework in Frameworks */,
@@ -227,6 +246,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3788153516FB913800E56CE3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3788153916FB913900E56CE3 /* libKal.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		72975A6A16ED1DBB00FC7DB8 /* ASIHTTPRequest */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +318,8 @@
 		E4BEB5C016E5361500DD4526 = {
 			isa = PBXGroup;
 			children = (
+				3788153D16FB947C00E56CE3 /* Kal.bundle */,
+				3788153416FB913800E56CE3 /* Kal.xcodeproj */,
 				72975A8716ED1DC600FC7DB8 /* External */,
 				72975A6A16ED1DBB00FC7DB8 /* ASIHTTPRequest */,
 				72975A0516ED16F900FC7DB8 /* libz.dylib */,
@@ -467,6 +496,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				3788153B16FB942300E56CE3 /* PBXTargetDependency */,
 				E4BEB60316E5361600DD4526 /* PBXTargetDependency */,
 			);
 			name = CardioQuestTests;
@@ -494,6 +524,12 @@
 			mainGroup = E4BEB5C016E5361500DD4526;
 			productRefGroup = E4BEB5CA16E5361500DD4526 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3788153516FB913800E56CE3 /* Products */;
+					ProjectRef = 3788153416FB913800E56CE3 /* Kal.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				E4BEB5C816E5361500DD4526 /* CardioQuest */,
@@ -501,6 +537,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3788153916FB913900E56CE3 /* libKal.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libKal.a;
+			remoteRef = 3788153816FB913900E56CE3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E4BEB5C716E5361500DD4526 /* Resources */ = {
@@ -528,6 +574,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3788153E16FB947C00E56CE3 /* Kal.bundle in Resources */,
 				E4BEB60916E5361600DD4526 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -608,6 +655,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3788153B16FB942300E56CE3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Kal;
+			targetProxy = 3788153A16FB942300E56CE3 /* PBXContainerItemProxy */;
+		};
 		E4BEB60316E5361600DD4526 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E4BEB5C816E5361500DD4526 /* CardioQuest */;
@@ -744,14 +796,26 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CardioQuest.app/CardioQuest";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CardioQuest/CardioQuest-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					.,
+					./Kal/src,
+				);
 				INFOPLIST_FILE = "CardioQuestTests/CardioQuestTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = Users/blakebeatty/Desktop/comp4350/comp4350group5/src/view/iOS/Kal/src;
+				OTHER_LDFLAGS = (
+					"-Objc",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -761,14 +825,27 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CardioQuest.app/CardioQuest";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CardioQuest/CardioQuest-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					.,
+					./Kal/src,
+				);
 				INFOPLIST_FILE = "CardioQuestTests/CardioQuestTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = Users/blakebeatty/Desktop/comp4350/comp4350group5/src/view/iOS/Kal/src;
+				OTHER_LDFLAGS = (
+					"-Objc",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphonesimulator*]" = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
