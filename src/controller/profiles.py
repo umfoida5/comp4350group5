@@ -1,4 +1,4 @@
-import cherrypy
+import cherrypy, time, re
 from modules import database
 from model.athlete import Athlete
 from modules.template import env
@@ -47,6 +47,11 @@ class Profiles:
     @commit_on_success
     def update_dob(self, id, birth_date):
         """update the date of birth"""
+        try:
+            time.strptime(birth_date, '%m-%d-%Y')
+        except ValueError:
+            return "Invalid birth date (format: MM-DD-YYYY)"
+
         result = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
         result.birth_date = birth_date
         return make_jsonable(result)
@@ -56,6 +61,12 @@ class Profiles:
     @commit_on_success
     def update_email(self, id, email):
         """update the email adress"""
-        result = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
-        result.email = email
-        return make_jsonable(result)
+
+        if re.match(r"[^@]+@[^@]+\.[^@]+", email):
+            result = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
+            result.email = email
+            response = make_jsonable(result)
+        else:
+            response = "Invalid email address"
+
+        return response
