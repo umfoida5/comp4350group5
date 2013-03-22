@@ -20,14 +20,17 @@
 	NSArray *tableData;
 }
 
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @property (weak, nonatomic) IBOutlet UITextField *dobField;
 @property (weak, nonatomic) IBOutlet UITextField *addressField;
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 @property (weak, nonatomic) IBOutlet UITextView *aboutTextView;
 @property (weak, nonatomic) IBOutlet UITableView *achievementTable;
+@property (weak, nonatomic) IBOutlet UILabel *validationLabel;
+
 @property (retain) ASINetworkQueue *queue;
 @property NSMutableArray *imgCollection;
 
@@ -35,10 +38,11 @@
 
 @implementation ProfileViewController
 
-
-
 -(void)viewWillAppear:(BOOL)animated
 {
+    //hide validation label by default
+    self.validationLabel.hidden = YES;
+    
     if(!self.queue)
         self.queue = [[ASINetworkQueue alloc] init];
     self.aboutTextView.delegate = self;
@@ -76,31 +80,42 @@
 {
     // Use when fetching text data
     NSString *responseString = [request responseString];
-    NSLog(@"%@",responseString);
-    SBJsonParser *parser = [[SBJsonParser alloc]init];
-    NSMutableDictionary* jsonDictionary = [parser objectWithString:responseString];
-    NSMutableString* name = [[NSMutableString alloc]init];
-    if (jsonDictionary != nil) {
+    NSLog(@"%@", responseString);
+    
+    if (![responseString hasPrefix:@"{"]) {
+        NSString *responseWithoutQuotations = [responseString stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+        self.validationLabel.hidden = NO;
+        self.validationLabel.text = responseWithoutQuotations;
+    }
+    else
+    {
+        self.validationLabel.hidden = YES;
         
-        [name appendFormat:@"%@ %@",jsonDictionary[@"first_name"],jsonDictionary[@"last_name"]];
-        self.nameLabel.text = name;
-        self.dobField.text = [jsonDictionary[@"birth_date"] isKindOfClass:[NSNull class]]? @"Enter Birth Day" : jsonDictionary[@"birth_date"];
-        self.addressField.text = jsonDictionary[@"address"];
-        self.emailField.text = [jsonDictionary[@"email"] isKindOfClass:[NSNull class]]? @"Enter Email" : jsonDictionary[@"email"];
-        self.aboutTextView.text = jsonDictionary[@"about_me"];
-       
-        for (NSMutableDictionary *achieves in jsonDictionary[@"achievements"]) {
+        SBJsonParser *parser = [[SBJsonParser alloc]init];
+        NSMutableDictionary* jsonDictionary = [parser objectWithString:responseString];
+        NSMutableString* name = [[NSMutableString alloc]init];
+        if (jsonDictionary != nil) {
             
-            NSMutableString *url = [[NSMutableString alloc]init];
-            [url appendFormat:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000%@",achieves[@"image_url"]];
-            [url replaceCharactersInRange:[url rangeOfString:@".."] withString:@""];
+            [name appendFormat:@"%@ %@",jsonDictionary[@"first_name"],jsonDictionary[@"last_name"]];
+            self.nameLabel.text = name;
+            self.dobField.text = [jsonDictionary[@"birth_date"] isKindOfClass:[NSNull class]]? @"" : jsonDictionary[@"birth_date"];
+            self.addressField.text = jsonDictionary[@"address"];
+            self.emailField.text = [jsonDictionary[@"email"] isKindOfClass:[NSNull class]]? @"" : jsonDictionary[@"email"];
+            self.aboutTextView.text = jsonDictionary[@"about_me"];
             
-            __strong ASIHTTPRequest *newRequest = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
-            [self.queue addOperation:newRequest];
-            newRequest.userInfo = achieves;
-            [[self queue] go];
-            
-        } 
+            for (NSMutableDictionary *achieves in jsonDictionary[@"achievements"]) {
+                
+                NSMutableString *url = [[NSMutableString alloc]init];
+                [url appendFormat:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000%@",achieves[@"image_url"]];
+                [url replaceCharactersInRange:[url rangeOfString:@".."] withString:@""];
+                
+                __strong ASIHTTPRequest *newRequest = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
+                [self.queue addOperation:newRequest];
+                newRequest.userInfo = achieves;
+                [[self queue] go];
+                
+            } 
+        }
     }
 }
 - (IBAction)enterDOB:(id)sender {
@@ -210,6 +225,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //hide validation label by default
+    self.validationLabel.hidden = YES;
     
     //change color of text field placeholder to black
     [self.dobField setValue:[UIColor darkGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
