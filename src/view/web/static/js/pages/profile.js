@@ -42,15 +42,16 @@ function Profile(){
             success: function(athlete){
            
               $("#profile_name").append(athlete['first_name'] + " " + athlete['last_name']);
-              $("#dob").html(athlete['birth_date']);
-              $("#address").html(athlete['address']);
-              $("#email").html(athlete['email']);
-              $("#about_me").html(athlete['about_me']);
+              setValueIfEmptyString("#dob", athlete['birth_date'], "Click to add your birth date");
+              setValueIfEmptyString("#address", athlete['address'], "Click to add your address");
+              setValueIfEmptyString("#email", athlete['email'], "Click to add your email");
+              setValueIfEmptyString("#about_me", athlete['about_me'], "Click to add your biography");
             }
         });
         
         return athlete; 
       }
+
       this.get_achievesAjax = function(){
         $.getJSON('get_unlocked_achievements', function(unlocked_achievements){
           $.each(unlocked_achievements, function(index) {
@@ -160,7 +161,18 @@ function Profile(){
             return(obj.about_me);
           }
         });
-        
+  }
+}
+
+function setValueIfEmptyString(field, json_data, default_value)
+{
+  if( json_data == null || json_data == "")
+  {
+    $(field).html(default_value); 
+  }
+  else
+  {
+    $(field).html(json_data);
   }
 }
 
