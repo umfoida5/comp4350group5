@@ -149,18 +149,54 @@ NSArray* graphPoints;
     //graphPoints = [[NSArray alloc] initWithObjects:point1,point2,point3,point4,point5,point6,nil];
 }
 
-- (void)getTotal
+- (void)triggerServerCall
 {
-    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/stats/get_total"];
+    NSURL *url;
+    
+    //production server
+    if ([measurementType isEqual:@"Top Speed"])
+    {
+        url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/stats/get_maximum"];
+    }
+    else
+    {
+        url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/stats/get_total"];
+    }
     
     NSString *measureLower = [measurementType lowercaseString];
     NSString *activityLower = [activity lowercaseString];
-    NSDate *startDate = [NSDate distantPast];
-    //NSInteger year = [startDate ];
-    //NSDateComponents *startDate1 = [[NSDateComponents alloc] init];
-    //[startDate1 setYear :2012];
-    //startDate = (NSDate*) startDate1;
-    NSDate *endDate = [NSDate date];
+    
+    if ([measureLower isEqual:@"top speed"])
+    {
+        measureLower = @"max_speed";
+    }
+    
+    NSDateComponents *start = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:[NSDate date]];
+    NSDateComponents *end = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:[NSDate date]];
+    
+    if ([dateType isEqual:@"Year"])
+    {
+        [start setYear:[end year]-1];
+    }
+    
+    else if ([dateType isEqual:@"Month"])
+    {
+        [start setMonth:[end month]-1];
+    }
+    
+    else if ([dateType isEqual:@"Week"])
+    {
+        [start setDay:[end day]-7];
+    }
+    
+    else //if ([dateType isEqual:@"Day"])
+    {
+        [start setDay:[end day]-1];
+    }
+    
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    NSDate *startDate = [cal dateFromComponents:start];
+    NSDate *endDate = [cal dateFromComponents:end];
     
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request addPostValue:measureLower forKey:@"column_name"];
@@ -173,12 +209,11 @@ NSArray* graphPoints;
     [request startAsynchronous];
 }
 
-
 - (void)requestFinished:(ASIHTTPRequest *)request
 {
     // Use when fetching text data
     NSString *responseString = [request responseString];
-    NSLog(@"%@",responseString);
+    NSLog(@"Info back from the server: %@",responseString);
     
     SBJsonParser *parser = [[SBJsonParser alloc]init];
     NSMutableDictionary* jsonDictionary = [parser objectWithString:responseString];
@@ -193,6 +228,8 @@ NSArray* graphPoints;
 //        }
     }
      */
+    
+    [self setNeedsDisplay];
 }
 
 @end

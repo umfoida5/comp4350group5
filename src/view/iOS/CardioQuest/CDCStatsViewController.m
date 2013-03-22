@@ -121,15 +121,15 @@ NSString *measurementType;
     else //if ([pickerView tag] == 3)
     {
         measurementType = (NSString*)[mesurementTypes objectAtIndex:row];
-        //check what the type is, make ifs
-        [graph getTotal];
-        
     }
     
-    //[graph drawRect:[[UIScreen mainScreen] bounds] :@"1" :activity :dateType :measurementType];
-    //[graph drawRect:[[UIScreen mainScreen] bounds]];
+    //update labels for the graph
     [graph setGraph:activity:dateType:measurementType];
     
+    //make the graph update points by calling the server
+    [graph triggerServerCall];
+    
+    //refresh the graph display
     [self.view setNeedsDisplay];
 }
 
