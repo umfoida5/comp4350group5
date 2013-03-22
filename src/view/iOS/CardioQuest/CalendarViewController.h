@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Kal.h"
 
-@interface CalendarViewController : UIViewController
+@interface CalendarViewController : UIViewController <UIApplicationDelegate, UITableViewDelegate>
+{
+    UIWindow *window;
+    UINavigationController *navController;
+    KalViewController *kal;
+    id dataSource;
+}
+
+@property (nonatomic, retain) IBOutlet UIWindow *window;
 
 @end
