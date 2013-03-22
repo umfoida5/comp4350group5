@@ -1219,6 +1219,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Invalid distance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRD-zs-WP3">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.82630018248175185" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -1229,15 +1234,17 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstItem="ZPN-uA-wLQ" firstAttribute="leading" secondItem="dSx-OM-xH6" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Jrn-mu-6Pg"/>
                             <constraint firstItem="Dse-I4-FCq" firstAttribute="leading" secondItem="qZq-0r-HnD" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="KoD-uj-FfK"/>
                             <constraint firstItem="qZq-0r-HnD" firstAttribute="leading" secondItem="C4j-gf-HZa" secondAttribute="leading" type="default" id="LcZ-9X-dBM"/>
-                            <constraint firstItem="vVF-Zb-sbN" firstAttribute="centerY" secondItem="dSx-OM-xH6" secondAttribute="centerY" type="default" id="Lgv-eq-gyX"/>
-                            <constraint firstItem="vpP-2i-WAY" firstAttribute="top" secondItem="dSx-OM-xH6" secondAttribute="top" constant="293" id="NlT-Bx-QqV"/>
-                            <constraint firstAttribute="bottom" secondItem="Dse-I4-FCq" secondAttribute="bottom" constant="289" id="TPI-ri-K74"/>
+                            <constraint firstAttribute="bottom" secondItem="rRD-zs-WP3" secondAttribute="bottom" constant="310" id="aMA-Bs-pYp"/>
                             <constraint firstItem="RLQ-7X-66Y" firstAttribute="leading" secondItem="dSx-OM-xH6" secondAttribute="leading" constant="329" id="bxi-Bf-g6d"/>
                             <constraint firstAttribute="trailing" secondItem="ZPN-uA-wLQ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="cks-q1-uZi"/>
+                            <constraint firstItem="vVF-Zb-sbN" firstAttribute="top" secondItem="dSx-OM-xH6" secondAttribute="top" constant="358" id="ecY-Rg-VQj"/>
+                            <constraint firstAttribute="bottom" secondItem="Dse-I4-FCq" secondAttribute="bottom" constant="274" id="hyO-xa-isc"/>
                             <constraint firstItem="C4j-gf-HZa" firstAttribute="leading" secondItem="dSx-OM-xH6" secondAttribute="leading" constant="241" id="ini-kd-dok"/>
+                            <constraint firstItem="vpP-2i-WAY" firstAttribute="top" secondItem="dSx-OM-xH6" secondAttribute="top" constant="298" id="jVB-FN-dfo"/>
                             <constraint firstItem="ZPN-uA-wLQ" firstAttribute="top" secondItem="dSx-OM-xH6" secondAttribute="top" constant="50" id="l14-qK-sIa"/>
                             <constraint firstItem="vpP-2i-WAY" firstAttribute="leading" secondItem="C4j-gf-HZa" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="oDX-74-LWU"/>
                             <constraint firstItem="vVF-Zb-sbN" firstAttribute="leading" secondItem="dSx-OM-xH6" secondAttribute="leading" type="default" id="uXJ-wW-VdL"/>
+                            <constraint firstItem="rRD-zs-WP3" firstAttribute="centerX" secondItem="vVF-Zb-sbN" secondAttribute="centerX" type="default" id="ygV-85-gpz"/>
                             <constraint firstItem="Dse-I4-FCq" firstAttribute="trailing" secondItem="vpP-2i-WAY" secondAttribute="trailing" type="default" id="zGT-NU-66a"/>
                         </constraints>
                     </view>
@@ -1253,6 +1260,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="dateInput" destination="vVF-Zb-sbN" id="lX3-My-Jh8"/>
                         <outlet property="descriptionInput" destination="ZPN-uA-wLQ" id="rNr-ng-1YN"/>
                         <outlet property="distanceInput" destination="Dse-I4-FCq" id="vsb-Sj-3ZA"/>
+                        <outlet property="validationLabel" destination="rRD-zs-WP3" id="gpx-vZ-8aH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VEk-Qu-uhA" userLabel="First Responder" sceneMemberID="firstResponder"/>

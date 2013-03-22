@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *cityInput;
 @property (weak, nonatomic) IBOutlet UIDatePicker *dateInput;
 @property (weak, nonatomic) IBOutlet UITextField *distanceInput;
+@property (weak, nonatomic) IBOutlet UILabel *validationLabel;
 
 @end
 
@@ -22,20 +23,33 @@
 
 - (IBAction)postEvent:(id)sender
 {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
-    NSString *date = [dateFormatter stringFromDate:self.dateInput.date];    
+    //Checking if distance is a number
+    NSRegularExpression *isDigitRegex = [NSRegularExpression regularExpressionWithPattern:@"^[0-9]+$" options:0 error:NULL];
+    NSTextCheckingResult *match = [isDigitRegex firstMatchInString:self.distanceInput.text options:0 range:NSMakeRange(0, [self.distanceInput.text length])];
     
-    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/events/create"];
-    
-    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
-    [request addPostValue: date forKey:@"date"];
-    [request addPostValue: self.cityInput.text forKey:@"location"];
-    [request addPostValue: self.distanceInput.text forKey:@"distance"];
-    [request addPostValue: self.descriptionInput.text forKey:@"description"];
-    
-    [request setDelegate:self];
-    [request startAsynchronous];
+    if ( match )
+    {
+        self.validationLabel.hidden = YES;        
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+        NSString *date = [dateFormatter stringFromDate:self.dateInput.date];
+        
+        NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/events/create"];
+        
+        ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+        [request addPostValue: date forKey:@"date"];
+        [request addPostValue: self.cityInput.text forKey:@"location"];
+        [request addPostValue: self.distanceInput.text forKey:@"distance"];
+        [request addPostValue: self.descriptionInput.text forKey:@"description"];
+        
+        [request setDelegate:self];
+        [request startAsynchronous];
+    }
+    else
+    {
+        self.validationLabel.hidden = NO;
+    }
 }
 
 
@@ -57,8 +71,9 @@
 {
     [super viewDidLoad];
     
+    self.validationLabel.hidden = YES;  
+    
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Ubuntu Orange.jpg"]];
-	
     self.descriptionInput.layer.borderWidth = 1;
 }
 
