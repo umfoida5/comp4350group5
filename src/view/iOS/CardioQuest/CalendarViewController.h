@@ -11,11 +11,11 @@
 
 @interface CalendarViewController : TKCalendarMonthTableViewController
 
-
+@property (strong,nonatomic) NSMutableArray *activitiesArray;
 @property (strong,nonatomic) NSMutableArray *dataArray;
 @property (strong,nonatomic) NSMutableDictionary *dataDictionary;
 
-- (void) generateRandomDataForStartDate:(NSDate*)start endDate:(NSDate*)end;
+- (void) getActivitiesData:(NSDate*)start endDate:(NSDate*)end;
 
 @end
 
