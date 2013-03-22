@@ -1071,6 +1071,7 @@ Features
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="Event Description..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ZPN-uA-wLQ">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" label="newEventDescription"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="219" id="Bm2-Wk-cdE"/>
                                 </constraints>
@@ -1105,6 +1106,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </timeZone>
                             </datePicker>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="City" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vpP-2i-WAY">
+                                <accessibility key="accessibilityConfiguration" label="newEventCity"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="327" id="Pcm-LW-blO"/>
                                 </constraints>
@@ -1117,6 +1119,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dse-I4-FCq">
+                                <accessibility key="accessibilityConfiguration" label="newEventDistance"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="AAd-Fv-kGY"/>
                                 </constraints>
@@ -1279,9 +1282,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="ProfileViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
             <relationships>
-                <relationship kind="action" name="enterAddress:"/>
-                <relationship kind="action" name="enterDOB:"/>
-                <relationship kind="action" name="enterEmail:"/>
                 <relationship kind="outlet" name="aboutTextView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="achievementTable" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="addressField" candidateClass="UITextField"/>
