@@ -64,14 +64,16 @@
     // Use when fetching text data
     NSString *responseString = [request responseString];
     
-    if([responseString isEqual: @"Username already exists. Please enter a new username."])
+    if([responseString isEqual: @"Incorrect password."]
+       || [responseString isEqual: @"Invalid username."])
     {        
-        self.signupResponseLabel.text = responseString;
+        self.signupResponseLabel.text = @"Press the Sign Up button to Sign Up :)";
+        self.loginResponseLabel.text = responseString;
     }
     else
     {
-        self.signupResponseLabel.text = @"Press the Sign Up button to Sign Up :)";
-        self.loginResponseLabel.text = responseString;
+        self.loginResponseLabel.text = @"Press the Login button to Login :)";     
+        self.signupResponseLabel.text = responseString;
     }
     
     //Navigate back to Home if login is successful

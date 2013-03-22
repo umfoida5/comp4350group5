@@ -20,58 +20,57 @@
             <h3 id="modal_title">Create Goal:</h3>
         </div>
 
-      <form class="form-inline well" action="createGoal">
+      <form action="createGoal">
 
         <div class="modal-body">
-        <div class="control-group">
-          <select class="span2" name="activity" id="activity">
-            <option value="Run">Run</option>
-            <option value="Bike">Bike</option>
-            <option value="Swim">Swim</option>
-          </select>
+            <label for="activity">Activity:</label>
+            <select class="span2" name="activity" id="activity">
+                <option value="Run">Run</option>
+                <option value="Bike">Bike</option>
+                <option value="Swim">Swim</option>
+            </select>
 
-          <select class="span2" name="operator" id="operator">
-            <option value="Total">Total</option>
-            <option value="Min">Min</option>
-            <option value="Max">Max</option>
-            <option value="Average">Average</option>
-          </select>
+            <label for="Operator">Operator:</label>
+            <select class="span2" name="operator" id="operator">
+                <option value="Total">Total</option>
+                <option value="Min">Min</option>
+                <option value="Max">Max</option>
+                <option value="Average">Average</option>
+            </select>
 
-          <input class="span2" type="text" name="quantity" id="quantity" placeholder="Quantity" required >
-          
-          <select class="span2" name="metric" id="metric">
-            <option value="distance">Distance</option>
-            <option value="max_speed">Max Speed</option>
-          </select>
+            <label for="quantity">Quantity:</label>
+            <input class="span2" type="text" name="quantity" id="quantity" placeholder="Quantity" required ><br/>
+
+            <label for="metric">Metric:</label>
+            <select class="span2" name="metric" id="metric">
+                <option value="distance">Distance</option>
+                <option value="max_speed">Max Speed</option>
+            </select>
+       
+            <label for="start_date">Start Date:</label>
+            <div class="input-append date" id="start_date" data-date="26-02-2013" data-date-format="dd-mm-yyyy">
+                <input class="span2" name="start_date" size="16" type="text" value="26-02-2013">
+                <span class="add-on"><i class="icon-th"></i></span>
+            </div>
+
+            <label for="end_date">End Date:</label>
+            <div class="input-append date" id="end_date" data-date="27-02-2013" data-date-format="dd-mm-yyyy">
+                <input class="span2" name="end_date" size="16" type="text" value="27-02-2013">
+                <span class="add-on"><i class="icon-th"></i></span>
+            </div>
         </div>
 
-        <div class="control-group">
-          Start:
-          <div class="input-append date" id="start_date" data-date="26-02-2013" data-date-format="dd-mm-yyyy">
-            <input class="span2" name="start_date" size="16" type="text" value="26-02-2013">
-            <span class="add-on"><i class="icon-th"></i></span>
-          </div>
-          
-          End:
-          <div class="input-append date" id="end_date" data-date="27-02-2013" data-date-format="dd-mm-yyyy">
-            <input class="span2" name="end_date" size="16" type="text" value="27-02-2013">
-            <span class="add-on"><i class="icon-th"></i></span>
-          </div>
-
+        <div class="modal-footer">
+        <a class="btn" id="closeButton">Close</a>
+        <input class="btn btn-primary" id="saveButton" type="submit" value="Create" />
         </div>
-      </div>
-
-      <div class="modal-footer">
-          <a class="btn" id="closeButton">Close</a>
-          <input class="btn btn-primary" id="saveButton" type="submit" value="Create" />
-      </div>
 
     </form>
 </div>
 
   <!-- CURRENT GOALS TABLE -->
   <div align="right">
-      <button type="button" id="enterButton" class="btn">Create New Goal</button>
+      <button type="button" id="enterButton" class="btn">Create New Goal</button><br/><br/>
   </div>
 
   <table class="table table-bordered table-striped table-hover" id="goalsTable">
