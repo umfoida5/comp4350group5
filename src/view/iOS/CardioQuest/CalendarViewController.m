@@ -35,42 +35,15 @@
     
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Ubuntu Orange.jpg"]];
     
-    if (kal == nil) {
-        kal = [[KalViewController alloc] init];
-        kal.navigationItem.title = NSLocalizedString(@"Timetable",@"");
-        kal.delegate = self;
-        //self.dataSource = [[[MyDataSource alloc] init] autorelease];
-        //kal.dataSource = dataSource;
-    }
+    kal = [[KalViewController alloc] init];
+    kal.navigationItem.title = NSLocalizedString(@"Calendar",@"");
+    kal.delegate = self;
+    //self.dataSource = [[[MyDataSource alloc] init] autorelease];
+    //kal.dataSource = dataSource;
+    
     [[self navigationController] pushViewController:kal animated:YES];
     
-    
-    
-    //KalViewController *calendar = [[KalViewController alloc] init];
-    //calendar.title = @"Calendar";
-    
-    //[self.view addSubview:calendar.view];
-    //[self addChildViewController:calendar];
-    //[[self navigationController] initWithRootViewController:calendar];
-    
-    //calendar.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Today" style:UIBarButtonItemStyleBordered target:self action:@selector(showAndSelectToday)];
-    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 - (void)didReceiveMemoryWarning
