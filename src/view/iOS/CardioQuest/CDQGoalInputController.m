@@ -10,6 +10,7 @@
 #import "ASIFormDataRequest.h"
 
 @interface CDQGoalInputController ()
+@property (weak, nonatomic) IBOutlet UILabel *validationLabel;
 
 @end
 
@@ -17,27 +18,40 @@
 
 - (IBAction)createGoal:(id)sender
 {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
-    NSString *startDate = [dateFormatter stringFromDate:self.startDateInput.date];
-    NSString *endDate = [dateFormatter stringFromDate:self.endDateInput.date];
+    //Checking if quantity is a number
+    NSRegularExpression *isDigitRegex = [NSRegularExpression regularExpressionWithPattern:@"^[0-9]+$" options:0 error:NULL];
+    NSTextCheckingResult *match = [isDigitRegex firstMatchInString:self.quantityInput.text options:0 range:NSMakeRange(0, [self.quantityInput.text length])];
     
-    NSString *activityType = [self.typeContentArray objectAtIndex:[self.typeOperatorMetricInput selectedRowInComponent:0]];
-    NSString *goalOperator = [self.operatorContentArray objectAtIndex:[self.typeOperatorMetricInput selectedRowInComponent:1]];
-    NSString *goalMetric = [self.metricContentArray objectAtIndex:[self.typeOperatorMetricInput selectedRowInComponent:2]];
-    
-    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/goals/create"];
-    
-    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
-    [request addPostValue: activityType forKey:@"activity"];
-    [request addPostValue: goalOperator forKey:@"operator"];
-    [request addPostValue: self.quantityInput.text forKey:@"quantity"];
-    [request addPostValue: goalMetric forKey:@"metric"];
-    [request addPostValue: startDate forKey:@"start_date"];
-    [request addPostValue: endDate forKey:@"end_date"];
-    
-    [request setDelegate:self];
-    [request startAsynchronous];
+    if ( match )
+    {
+        self.validationLabel.hidden = YES;
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+        NSString *startDate = [dateFormatter stringFromDate:self.startDateInput.date];
+        NSString *endDate = [dateFormatter stringFromDate:self.endDateInput.date];
+        
+        NSString *activityType = [self.typeContentArray objectAtIndex:[self.typeOperatorMetricInput selectedRowInComponent:0]];
+        NSString *goalOperator = [ [self.operatorContentArray objectAtIndex:[self.typeOperatorMetricInput selectedRowInComponent:1]] lowercaseString];
+        NSString *goalMetric = [ [self.metricContentArray objectAtIndex:[self.typeOperatorMetricInput selectedRowInComponent:2]] lowercaseString];
+        
+        NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/goals/create"];
+        
+        ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+        [request addPostValue: activityType forKey:@"activity"];
+        [request addPostValue: goalOperator forKey:@"operator"];
+        [request addPostValue: self.quantityInput.text forKey:@"quantity"];
+        [request addPostValue: goalMetric forKey:@"metric"];
+        [request addPostValue: startDate forKey:@"start_date"];
+        [request addPostValue: endDate forKey:@"end_date"];
+        
+        [request setDelegate:self];
+        [request startAsynchronous];
+    }
+    else
+    {
+        self.validationLabel.hidden = NO;
+    }
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView
@@ -102,6 +116,8 @@
     
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Ubuntu Orange.jpg"]];
 	
+    self.validationLabel.hidden = YES;    
+    
     self.typeContentArray = [[NSMutableArray alloc] init];
     [self.typeContentArray addObject:@"Run"];
     [self.typeContentArray addObject:@"Walk"];
@@ -118,10 +134,23 @@
     [self.metricContentArray addObject:@"Max Speed"];
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:(BOOL)animated];
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+// hides keyboard
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
 }
 
 @end

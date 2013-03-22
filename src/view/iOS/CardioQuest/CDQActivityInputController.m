@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *durationInput;
 @property (weak, nonatomic) IBOutlet UITextField *distanceInput;
 @property (weak, nonatomic) IBOutlet UITextField *maxSpeedInput;
+@property (weak, nonatomic) IBOutlet UILabel *validationLabel;
 
 @end
 
@@ -21,23 +22,49 @@
 
 - (IBAction)createActivity:(id)sender
 {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
-    NSString *date = [dateFormatter stringFromDate:self.dateInput.date];
+    //Checking if distance, duration andmax speed are a number
+    NSRegularExpression *isDigitRegex = [NSRegularExpression regularExpressionWithPattern:@"^[0-9]+$" options:0 error:NULL];
+    NSTextCheckingResult *matchDistance = [isDigitRegex firstMatchInString:self.distanceInput.text options:0 range:NSMakeRange(0, [self.distanceInput.text length])];
+    NSTextCheckingResult *matchDuration = [isDigitRegex firstMatchInString:self.durationInput.text options:0 range:NSMakeRange(0, [self.durationInput.text length])];
+    NSTextCheckingResult *matchMaxSpeedInput = [isDigitRegex firstMatchInString:self.maxSpeedInput.text options:0 range:NSMakeRange(0, [self.maxSpeedInput.text length])];
     
-    NSString *activityType = [self.typeContentArray objectAtIndex:[self.typeInput selectedRowInComponent:0]];
-    
-    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/activities/create"];
-    
-    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
-    [request addPostValue: activityType forKey:@"type"];
-    [request addPostValue: date forKey:@"date"];
-    [request addPostValue: self.distanceInput.text forKey:@"distance"];
-    [request addPostValue: self.durationInput.text forKey:@"duration"];
-    [request addPostValue: self.maxSpeedInput.text forKey:@"max_speed"];
-    
-    [request setDelegate:self];
-    [request startAsynchronous];
+    if ( matchDistance && matchDuration && matchMaxSpeedInput )
+    {
+        self.validationLabel.hidden = YES;
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+        NSString *date = [dateFormatter stringFromDate:self.dateInput.date];
+        
+        NSString *activityType = [self.typeContentArray objectAtIndex:[self.typeInput selectedRowInComponent:0]];
+        
+        NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/activities/create"];
+        
+        ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+        [request addPostValue: activityType forKey:@"type"];
+        [request addPostValue: date forKey:@"date"];
+        [request addPostValue: self.distanceInput.text forKey:@"distance"];
+        [request addPostValue: self.durationInput.text forKey:@"duration"];
+        [request addPostValue: self.maxSpeedInput.text forKey:@"max_speed"];
+        
+        [request setDelegate:self];
+        [request startAsynchronous];
+    }
+    else if(!matchDuration)
+    {
+        self.validationLabel.text = @"Invalid duration";
+        self.validationLabel.hidden = NO;
+    }
+    else if(!matchDistance)
+    {
+        self.validationLabel.text = @"Invalid distance";        
+        self.validationLabel.hidden = NO;
+    }
+    else if(!matchMaxSpeedInput)
+    {
+        self.validationLabel.text = @"Invalid maximum speed";        
+        self.validationLabel.hidden = NO;
+    }
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView
@@ -78,6 +105,8 @@
 {
     [super viewDidLoad];
     
+    self.validationLabel.hidden = YES;
+    
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Ubuntu Orange.jpg"]];
 	
     self.typeContentArray = [[NSMutableArray alloc] init];
@@ -87,10 +116,23 @@
     
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:(BOOL)animated];
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+// hides keyboard
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
 }
 
 @end
