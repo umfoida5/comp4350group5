@@ -905,6 +905,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstItem="n5M-ig-6Lu" firstAttribute="top" secondItem="eME-sr-EpY" secondAttribute="top" constant="51" id="LrH-4m-zBF"/>
                             <constraint firstItem="OGk-9q-l2N" firstAttribute="top" secondItem="rKU-ZC-MOp" secondAttribute="top" type="default" id="OJN-pm-OHT"/>
                             <constraint firstItem="ckl-aK-pvX" firstAttribute="baseline" secondItem="uFM-6z-OIy" secondAttribute="baseline" type="default" id="Rse-eO-3vm"/>
+                            <constraint firstItem="ckl-aK-pvX" firstAttribute="top" secondItem="eME-sr-EpY" secondAttribute="top" constant="314" id="Y91-TO-JbZ"/>
                             <constraint firstAttribute="trailing" secondItem="uFM-6z-OIy" secondAttribute="trailing" constant="147" id="YBU-j1-KKf"/>
                             <constraint firstItem="Cfu-BB-TMR" firstAttribute="top" secondItem="eME-sr-EpY" secondAttribute="top" constant="17" id="d3Q-hm-4nz"/>
                             <constraint firstItem="OGk-9q-l2N" firstAttribute="leading" secondItem="eME-sr-EpY" secondAttribute="leading" constant="40" id="ilI-cW-RBX"/>
@@ -913,9 +914,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstItem="D9k-Uh-XYl" firstAttribute="baseline" secondItem="Cfu-BB-TMR" secondAttribute="baseline" type="default" id="pax-9j-s1P"/>
                             <constraint firstAttribute="trailing" secondItem="rKU-ZC-MOp" secondAttribute="trailing" constant="40" id="qDn-Si-mcM"/>
                             <constraint firstItem="Jbz-JI-ttB" firstAttribute="leading" secondItem="eME-sr-EpY" secondAttribute="leading" constant="271" id="uan-MO-UhO"/>
-                            <constraint firstItem="rKU-ZC-MOp" firstAttribute="centerY" secondItem="eME-sr-EpY" secondAttribute="centerY" type="default" id="uzE-5a-OUL"/>
-                            <constraint firstItem="ckl-aK-pvX" firstAttribute="top" secondItem="eME-sr-EpY" secondAttribute="top" constant="311" id="vf7-Uz-eXX"/>
                             <constraint firstAttribute="bottom" secondItem="1Fg-RM-rtE" secondAttribute="bottom" constant="249" id="wE4-bc-ERw"/>
+                            <constraint firstItem="OGk-9q-l2N" firstAttribute="top" secondItem="eME-sr-EpY" secondAttribute="top" constant="351" id="xlb-1h-cYV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add a Goal" id="PIa-wh-zgG">
