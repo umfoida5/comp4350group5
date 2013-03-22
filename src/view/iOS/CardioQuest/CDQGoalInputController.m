@@ -32,8 +32,8 @@
         NSString *endDate = [dateFormatter stringFromDate:self.endDateInput.date];
         
         NSString *activityType = [self.typeContentArray objectAtIndex:[self.typeOperatorMetricInput selectedRowInComponent:0]];
-        NSString *goalOperator = [self.operatorContentArray objectAtIndex:[self.typeOperatorMetricInput selectedRowInComponent:1]];
-        NSString *goalMetric = [self.metricContentArray objectAtIndex:[self.typeOperatorMetricInput selectedRowInComponent:2]];
+        NSString *goalOperator = [ [self.operatorContentArray objectAtIndex:[self.typeOperatorMetricInput selectedRowInComponent:1]] lowercaseString];
+        NSString *goalMetric = [ [self.metricContentArray objectAtIndex:[self.typeOperatorMetricInput selectedRowInComponent:2]] lowercaseString];
         
         NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/goals/create"];
         
