@@ -7,16 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Kal.h"
+#import <TapkuLibrary.h>
 
-@interface CalendarViewController : UIViewController <UIApplicationDelegate, UITableViewDelegate>
-{
-    UIWindow *window;
-    UINavigationController *navController;
-    KalViewController *kal;
-    id dataSource;
-}
+@interface CalendarViewController : TKCalendarMonthTableViewController
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
+
+@property (strong,nonatomic) NSMutableArray *dataArray;
+@property (strong,nonatomic) NSMutableDictionary *dataDictionary;
+
+- (void) generateRandomDataForStartDate:(NSDate*)start endDate:(NSDate*)end;
 
 @end
+
