@@ -68,16 +68,7 @@
 
 - (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    if ([[UIDevice currentDevice] userInterfaceIdiom]==UIUserInterfaceIdiomPad)
-    {
-        NSArray *views =[[NSBundle mainBundle] loadNibNamed:@"CalendarTableHeader" owner:nil options:nil];
-        UIView *headerView=[views objectAtIndex:0];
-        return headerView;
-    }
-    else
-    {
-        return nil;
-    }
+    return nil;
 }
 
 - (CGFloat) tableView:(UITableView *) tableView heightForHeaderInSection:(NSInteger) section {
