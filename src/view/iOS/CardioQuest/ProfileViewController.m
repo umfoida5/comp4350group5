@@ -20,7 +20,6 @@
 	NSArray *tableData;
 }
 
-
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
@@ -37,16 +36,21 @@
 @end
 
 @implementation ProfileViewController
+@synthesize queue;
 
 -(void)viewWillAppear:(BOOL)animated
 {
     //hide validation label by default
     self.validationLabel.hidden = YES;
     
+    //clear achievements table
+    [self.imgCollection removeAllObjects];
+    [self.achievementTable reloadData];
+    
     if(!self.queue)
         self.queue = [[ASINetworkQueue alloc] init];
+    
     self.aboutTextView.delegate = self;
-    //self.aboutTextView.delegate = t;
     [self.profileImage setImage:[UIImage imageNamed:@"default_profile_pic.png"]];
     self.imgCollection = [NSMutableArray array];
     [self setQueue:[ASINetworkQueue queue]];
@@ -58,22 +62,17 @@
     
     NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/profiles/athlete"];
     [self sendRequest:url:@"start"];
-   
-    //[[self networkQueue]go];
 }
 
 - (void)sendRequest:(NSURL *)url : (NSString *) userInfo
 {
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     
-    
-    //[[self networkQueue] addOperation:request];
     [request addRequestHeader:@"Accept" value:@"application/json"];
     [request addRequestHeader:@"Content-Type" value:@"application/json"];
     [request setUserInfo:[NSDictionary dictionaryWithObject:@"next" forKey:@"type"]];
     [request setDelegate:self];
     [request startAsynchronous];
-    
 }
 
 - (void)requestFinished:(ASIHTTPRequest *)request
@@ -118,8 +117,9 @@
         }
     }
 }
-- (IBAction)enterDOB:(id)sender {
-    
+
+- (IBAction)enterDOB:(id)sender
+{
     NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/profiles/update_dob"];
     
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
@@ -129,7 +129,9 @@
     [request setDelegate:self];
     [request startAsynchronous];
 }
-- (IBAction)enterAddress:(id)sender {
+
+- (IBAction)enterAddress:(id)sender
+{
     NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/profiles/update_address"];
     
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
@@ -139,7 +141,9 @@
     [request setDelegate:self];
     [request startAsynchronous];
 }
-- (IBAction)enterEmail:(id)sender {
+
+- (IBAction)enterEmail:(id)sender
+{
     NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/profiles/update_email"];
     
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
@@ -168,16 +172,16 @@
     achievement.title = req.userInfo[@"title"];
     achievement.desc = req.userInfo[@"description"];
     [[self imgCollection] addObject:achievement];
-        //[self.profileImage setImage:image];
+    
     tableData = self.imgCollection;
     [self.achievementTable reloadData];
-    //[[self achievementTable] insert]
-    //[[self Achievements] addSubview:temp];
 }
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [tableData count];
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyIdentifier"];
@@ -191,7 +195,6 @@
     
     return cell;
 }
-
 
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
@@ -208,7 +211,8 @@
     return self;
 }
 
-- (BOOL)textViewShouldEndEditing:(UITextView *)aboutTextView{
+- (BOOL)textViewShouldEndEditing:(UITextView *)aboutTextView
+{
     NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/profiles/update_about"];
     aboutTextView.editable = YES;
     NSLog(@"%@", aboutTextView.text);
