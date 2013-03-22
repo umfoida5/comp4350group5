@@ -33,7 +33,13 @@ NSString *measurementType;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    graph = [[CDCgraph alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    CGRect viewBound = [[UIScreen mainScreen] bounds];
+    CGSize viewSize = viewBound.size;
+    CGFloat viewWidth = viewSize.width;
+    CGFloat viewHeight = viewSize.height;
+    
+    graph = [[CDCgraph alloc] initWithFrame: CGRectMake(0, 0, viewWidth, viewHeight)];
     activityTypes = [[NSArray alloc] initWithObjects:@"Bike", @"Run", @"Walk", nil];
     dateTypes = [[NSArray alloc] initWithObjects:@"Day", @"Week", @"Month", @"Year", nil];
     mesurementTypes = [[NSArray alloc] initWithObjects:@"Distance", @"Duration", @"Top Speed", nil];
@@ -42,15 +48,6 @@ NSString *measurementType;
     dateType = @"Day";
     measurementType = @"Distance";
     
-    /*
-    CGRect viewBound = [[UIScreen mainScreen] bounds];
-    CGSize viewSize = viewBound.size;
-    CGFloat viewWidth = viewSize.width;
-    CGFloat viewHeight = viewSize.height;
-    
-    printf("DEBUG 0\n");
-    graph = [[CDCgraph alloc] initWithFrame: CGRectMake(0, 0, viewWidth, viewHeight)];
-     */
 }
 
 //TODO: force interface orientation to landscape (this code does nothing)
@@ -128,7 +125,7 @@ NSString *measurementType;
     
     //[graph drawRect:[[UIScreen mainScreen] bounds] :@"1" :activity :dateType :measurementType];
     //[graph drawRect:[[UIScreen mainScreen] bounds]];
-    //[graph setGraph:activity: dateType: measurementType];
+    [graph setGraph:activity:dateType:measurementType];
     [self.view setNeedsDisplay];
 }
 

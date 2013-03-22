@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface CDCgraph : UIView
--(void)SetGraph:(NSString*)newActivity: (NSString*)newDateType: (NSString*)newMeasurementType;
+-(void)setGraph:(NSString*)newActivity: (NSString*)newDateType: (NSString*)newMeasurementType;
 @end

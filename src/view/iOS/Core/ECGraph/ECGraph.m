@@ -207,7 +207,7 @@ static inline double radians(double degrees){
 	NSCalendar *dateCalendar = [NSCalendar currentCalendar];
 	
 	unsigned int unitFlags = NSDayCalendarUnit;
-	
+	//TODO: CODE FAILS ON THIS LINE!!! (Not always, but here is where it fails)
 	NSDateComponents *comps = [dateCalendar components:unitFlags fromDate:fromDate toDate:toDate options:0];
 	
 	int days = [comps day] + 1;
@@ -280,6 +280,7 @@ static inline double radians(double degrees){
 		}
 	}
 	int durationDays = [self getDaysFrom:min To:max];
+    //TODO: This code may not work properly 
 	*minDate = [min retain];
 	return durationDays;
 }
@@ -573,6 +574,7 @@ static inline double radians(double degrees){
 	for (int i = 0; i < [points count] - 1; ++i) 
 	{
 		durationDays1 = [self getDaysFrom:_minDate To:ECCAST(ECGraphPoint,[points objectAtIndex:i]).xDateValue];
+        //TODO: This following call almost always causes an error
 		durationDays2 = [self getDaysFrom:_minDate To:ECCAST(ECGraphPoint,[points objectAtIndex:i+1]).xDateValue];
 		
 		
