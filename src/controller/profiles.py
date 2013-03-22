@@ -48,7 +48,7 @@ class Profiles:
     def update_dob(self, id, birth_date):
         """update the date of birth"""
         try:
-            time.strptime(birth_date, '%m-%d-%Y')
+            time.strptime(birth_date, '%Y-%m-%d')
         except ValueError:
             return "Invalid birth date (format: MM-DD-YYYY)"
 
