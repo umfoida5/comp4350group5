@@ -11,7 +11,7 @@ from sqlalchemy import and_
 def createTemporaryUser():
 	if cherrypy.session.get('id') is None:
 		db_session = database.session
-		athlete = Athlete(None, None, "FirstName", "LastName", "Click to Edit Email", "1980-03-25", "Click to Edit", "Click to Edit Address")
+		athlete = Athlete(None, None, "FirstName", "LastName", "", None, "", "")
 		db_session.add(athlete)
 		db_session.flush()
 		cherrypy.session['id'] = athlete.id
