@@ -208,7 +208,7 @@ end
 
 ###
 #
-# Signs up with a valid id
+# Creates a new goal
 ###
 When(/^I enter a new goal$/) do
     
@@ -223,6 +223,34 @@ When(/^I enter a new goal$/) do
     sleep 2
 end
 
+###
+#
+# creates a new event
+###
+When(/^I enter a new event$/) do
+    
+    text_field_selector = "view:'UITextView' marked:'newEventDescription'"
+    check_element_exists(text_field_selector);
+    touch text_field_selector
+    frankly_map text_field_selector, "setText:", "CardioQuestMarathon"
+    frankly_map text_field_selector, "endEditing:", true
+    
+    text_field_selector = "view:'UITextField' marked:'newEventDistance'"
+    check_element_exists(text_field_selector);
+    touch text_field_selector
+    frankly_map text_field_selector, "setText:", "4"
+    frankly_map text_field_selector, "endEditing:", true
+    
+    text_field_selector = "view:'UITextField' marked:'newEventCity'"
+    check_element_exists(text_field_selector);
+    touch text_field_selector
+    frankly_map text_field_selector, "setText:", "Winnipeg"
+    frankly_map text_field_selector, "endEditing:", true
+    
+    sleep 2
+    touch "view:'UINavigationButton' marked:'Post Event'"
+    sleep 2
+end
 
 ###
 #
@@ -274,7 +302,13 @@ Then (/^I should see the new activity$/) do
 end
 
 Then (/^I should see a valid event$/) do
-    check_element_exists "view:'UILabel' marked:'(2013-03-17) Do not miss La Tour De France! Find... (paris) (10km)'"
+    check_element_exists "view:'UILabel' marked:'(2013-03-21) Do not miss La Tour De France! Find... (paris) (10km)'"
+    check_element_exists "view:'UILabel' marked:'(2013-03-21) Come join one of the largest marath... (boston) (3km)'"
+    check_element_exists "view:'UILabel' marked:'(2013-03-21) Join us at the Manitoba Marathon on... (winnipeg) (2km)'"
+end
+
+Then (/^I should see the new event$/) do
+    check_element_exists "view:'UILabel' marked:'COMPLETED! Run 12 (Between: #{Time.now.strftime('%m/%d/%Y')} 00:00:00 and #{Time.now.strftime('%m/%d/%Y')} 00:00:00)"
 end
 
 Then (/^I should see a valid profile$/) do
