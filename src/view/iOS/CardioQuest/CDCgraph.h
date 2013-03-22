@@ -10,4 +10,5 @@
 
 @interface CDCgraph : UIView
 -(void)setGraph:(NSString*)newActivity: (NSString*)newDateType: (NSString*)newMeasurementType;
+- (void)getTotal;
 @end
