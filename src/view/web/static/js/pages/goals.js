@@ -2,8 +2,8 @@
 
   $('#enterButton').click(function() {
     $('#enter_goal_modal').modal('show');
-    $('#activity').attr('value', '');
-    $('#operator').attr('value', 'total');
+    $('#activity').attr('value', 'Run');
+    $('#operator').attr('value', 'Total');
     $('#quantity').attr('value', '');
     $('#metric').attr('value', 'distance');
     $('#start_date').attr('value', '');

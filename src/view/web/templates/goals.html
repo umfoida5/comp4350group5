@@ -24,15 +24,15 @@
 
         <div class="modal-body">
             <label for="activity">Activity:</label>
-            <select class="span2" name="activity" id="activity">
-                <option value="Run">Run</option>
+            <select class="span2" name="activity" id="activity" required>
+                <option value="Run" selected="selected">Run</option>
                 <option value="Bike">Bike</option>
                 <option value="Swim">Swim</option>
             </select>
 
             <label for="Operator">Operator:</label>
-            <select class="span2" name="operator" id="operator">
-                <option value="Total">Total</option>
+            <select class="span2" name="operator" id="operator" required>
+                <option value="Total" selected="selected">Total</option>
                 <option value="Min">Min</option>
                 <option value="Max">Max</option>
                 <option value="Average">Average</option>
@@ -42,8 +42,8 @@
             <input class="span2" type="text" name="quantity" id="quantity" required ><br/>
 
             <label for="metric">Metric:</label>
-            <select class="span2" name="metric" id="metric">
-                <option value="distance">Distance</option>
+            <select class="span2" name="metric" id="metric" required>
+                <option value="distance" selected="selected">Distance</option>
                 <option value="max_speed">Max Speed</option>
             </select>
        

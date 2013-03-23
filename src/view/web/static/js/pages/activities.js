@@ -4,7 +4,7 @@ function Activities(){
         
         $('#enterButton').click(function() {
             $('#enter_activity_modal').modal('show');
-            $('#type').attr('value', '');
+            $('#type').attr('value', 'Run');
             $('#distance').attr('value', '');
             $('#duration').attr('value', '');
             $('#max_speed').attr('value', '');
@@ -69,7 +69,7 @@ function Activities(){
                 $('#enter_activity_modal').modal('show');
                 $('#dateInput').datepicker('setValue', new Date(date.getFullYear(), date.getMonth(), date.getDate()));
                 $('#modal_title').html("New Activity");
-                $('#type').attr('value', '');
+                $('#type').attr('value', 'Run');
                 $('#distance').attr('value', '');
                 $('#duration').attr('value', '');
                 $('#max_speed').attr('value', '');
