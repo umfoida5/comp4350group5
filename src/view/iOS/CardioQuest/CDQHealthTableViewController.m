@@ -93,7 +93,7 @@
     for (NSMutableDictionary *health_record in dictionary)
     {
         NSMutableString* the_string = [[NSMutableString alloc]init];
-        [the_string appendFormat:@"%@: Weight: %@ Resting HR: %@ Comments: %@",
+        [the_string appendFormat:@"%@: Weight: %@ Resting HR: %@ Comments: '%@'",
          health_record[@"health_date"],
          health_record[@"weight"],
          health_record[@"resting_heart_rate"],
