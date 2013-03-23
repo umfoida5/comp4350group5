@@ -7,12 +7,28 @@
 
 $(document).ready(function() 
 {
-	//get a list of activities and decide if we are going to draw a graph
-	//or show a message instead
-	$.getJSON('../activities/update_datatable', function(activity_list){
-		drawGraphOrShowMessageDependingOnListContent(activity_list['aaData']);
-	});	
+	//get a list of activities and decide whether we are going to draw a graph
+	//or show a message alerting the user to add activities
+	$.getJSON('../activities/update_datatable', function(activity_list)
+	{
+		if(activity_list['aaData'].length > 0)
+		{
+			appendGraphContainerHTMLtoDiv();
+			setUpdateButtonOnClickFunction();
 
+			//draw graph by simulating a click on update button
+			$("button").click(); 
+		}
+		else
+		{
+			appendNoActivitiesMessageToDiv();
+		}
+		
+	});	
+});//document ready
+
+function setUpdateButtonOnClickFunction()
+{
 	$("button").click(function()
 	{
 		var today = new Date();
@@ -59,40 +75,7 @@ $(document).ready(function()
 				});
 		}
 	});//button click function	
-});//document ready
-
-function drawGraphOrShowMessageDependingOnListContent(activity_list)
-{
-	if(activity_list.length > 0)
-	{
-		$('#noActivitiesMessage').hide();
-		$("button").click(); //simulate a click on the "update" button to draw graph
-	}
-	else
-	{
-		$('#graphContainer').hide();
-		$('#searchTerms').hide();
-		appendNoActivitiesMessageToDiv();
-	}
-}
-
-function appendNoActivitiesMessageToDiv()
-{
-	$("#noActivitiesMessage").append(
-		'<div style="padding-left:10%; padding-right:10%; padding-top:2%" align="center">' +
-			'<div class="well" style="height:150px">'+
-				'<dl>' +
-					'<dt>' +
-						'<h1>Workout Statistics</h1>' +
-						'<br />' +
-						'<p>You haven\'t logged any activities yet.<br/><a href="../activities">Click here</a> to log one! :)</p>' +
-					'</dt>' +
-					'<dd id="about_me" class="edit"></dd>' +
-				'</dl>' +
-			'</div>' +
-		'</div>'
-	);
-}
+}	
 
 //dateConversion function
 //-----------------------
@@ -207,37 +190,58 @@ function drawGraph(myData)
     });//draw graph function
 }//drawgraph function
 
+function appendNoActivitiesMessageToDiv()
+{
+	$("#bodyDiv").append(
+		'<div style="padding-left:10%; padding-right:10%; padding-top:2%" align="center">' +
+			'<div class="well" style="height:150px">'+
+				'<dl>' +
+					'<dt>' +
+						'<h1>Workout Statistics</h1>' +
+						'<br />' +
+						'<p>You haven\'t logged any activities yet.<br/><a href="../activities">Click here</a> to log one! :)</p>' +
+					'</dt>' +
+					'<dd id="about_me" class="edit"></dd>' +
+				'</dl>' +
+			'</div>' +
+		'</div>'
+	);
+}
+
+function appendGraphContainerHTMLtoDiv()
+{
+	$("#bodyDiv").append(
+		'<div id="graphContainer" style="width:100%; height:400px;"></div>' +
+		'<br><br>' +
+		'<div id="searchTerms" align="center">' +
+			'Activity:' +
+			'<select size="1" id="select1">' +
+				'<option value ="Run" selected="selected">Run</option>' +
+				'<option value ="Walk">Walk</option>' +
+				'<option value ="Bike">Bike</option>' +
+			'</select>' +
+			'Metric Used:' +
+			'<select size="1" id="select2">' +
+				'<option value="distance" selected="selected">Distance</option>' +
+				'<option value="duration">Duration</option>' +
+				'<option value="max_speed">Max Speed</option>' +
+			'</select>' +
+			'Time Frame:' +
+			'<select size="1" id="select3">' +
+				'<option value="week" selected="selected">Week</option>' +
+				'<option value="month">Month</option>' +
+				'<option value="year">Year</option>' +
+			'</select>' +
+			'<button type="button" class="btn btn-primary">Update</button>' +
+		'</div>' +
+		'<br>'
+	);
+}	
 </script>
 
 {% endblock script %}
 {% block body %}
 
-
-<div id="noActivitiesMessage"></div>
-
-<div id="graphContainer" style="width:100%; height:400px;"></div>
-<br><br>
-<div id="searchTerms" align="center">
-	Activity:
-	<select size="1" id="select1">
-		<option value ="Run" selected="selected">Run</option>
-		<option value ="Walk">Walk</option>
-		<option value ="Bike">Bike</option>
-	</select>
-	Metric Used:
-	<select size="1" id="select2">
-		<option value="distance" selected="selected">Distance</option>
-		<option value="duration">Duration</option>
-		<option value="max_speed">Max Speed</option>
-	</select>
-	Time Frame:
-	<select size="1" id="select3">
-		<option value="week" selected="selected">Week</option>
-		<option value="month">Month</option>
-		<option value="year">Year</option>
-	</select>
-	<button type="button" class="btn btn-primary">Update</button>
-</div>
-<br>
+<div id="bodyDiv"></div>
 
 {% endblock body %}
