@@ -39,7 +39,9 @@ NSString *measurementType;
     CGFloat viewWidth = viewSize.width;
     CGFloat viewHeight = viewSize.height;
     
-    graph = [[CDCgraph alloc] initWithFrame: CGRectMake(0, 0, viewWidth, viewHeight)];
+    graph = [[CDCgraph alloc] initWithFrame: CGRectMake(10, 150, viewWidth, viewHeight-700)];
+    graph.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.0];
+    [self.view addSubview:graph];
     activityTypes = [[NSArray alloc] initWithObjects:@"Bike", @"Run", @"Walk", nil];
     dateTypes = [[NSArray alloc] initWithObjects:@"Day", @"Week", @"Month", @"Year", nil];
     mesurementTypes = [[NSArray alloc] initWithObjects:@"Distance", @"Duration", @"Top Speed", nil];
@@ -128,9 +130,6 @@ NSString *measurementType;
     
     //make the graph update points by calling the server
     [graph triggerServerCall];
-    
-    //refresh the graph display
-    [self.view setNeedsDisplay];
 }
 
 

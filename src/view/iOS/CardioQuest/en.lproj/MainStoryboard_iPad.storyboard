@@ -778,7 +778,7 @@ Features
         <scene sceneID="pqD-Xo-Dq7">
             <objects>
                 <viewController title="Stats" id="3ce-q3-zVA" customClass="CDCStatsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Tyc-fj-aq3" customClass="CDCgraph">
+                    <view key="view" contentMode="scaleToFill" id="Tyc-fj-aq3">
                         <rect key="frame" x="0.0" y="20" width="768" height="955"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ASIHTTPRequest.h"
 
-@interface CDCgraph : UIView
+@interface CDCgraph : UIView <ASIHTTPRequestDelegate>
 -(void)setGraph:(NSString*)newActivity: (NSString*)newDateType: (NSString*)newMeasurementType;
-- (void)triggerServerCall;
+-(void)triggerServerCall;
 @end

@@ -94,7 +94,6 @@ NSArray* graphPoints;
     [graph setBackgroundColor:[UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:1]];
     [graph setPointType:ECGraphPointTypeSquare];
     [graph drawCurveWithLines:lines lineWidth:2 color:[UIColor blackColor]];
-    
 }
  
 -(void)setGraph:(NSString*)newActivity: (NSString*)newDateType: (NSString*)newMeasurementType
@@ -161,8 +160,6 @@ NSArray* graphPoints;
     [request addRequestHeader:@"Content-Type" value:@"application/json"];
     [request setDelegate:self];
     [request startAsynchronous];
-    
-    
 }
 
 - (void)requestFinished:(ASIHTTPRequest *)request
@@ -184,7 +181,6 @@ NSArray* graphPoints;
         graphPoint.xDateValue = [ECCommon dOfS:pointDate
                                 withFormat:kDEFAULT_DATE_FORMAT];
         
-        NSLog(@"%d, %@",graphPoint.yValue,graphPoint.xDateValue);
         [tempArray addObject:graphPoint];
     }
     
@@ -194,6 +190,11 @@ NSArray* graphPoints;
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     
     graphPoints = (NSArray*)[tempArray sortedArrayUsingDescriptors:sortDescriptors];
+    
+    if (graphPoints.count > 0)
+    {
+        [self setNeedsDisplay];
+    }
 }
 
 @end
