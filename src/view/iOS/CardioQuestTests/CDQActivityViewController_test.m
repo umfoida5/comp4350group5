@@ -79,7 +79,7 @@
 {
     
     // Log user in
-    [self.homeController loginRequest:@"justin" password:@"justin"];
+    [self.homeController loginRequest:@"ios_test_user" password:@"ios_test_user"];
     
     // test that goals page populates
     [self.activitiesController populateTable];
