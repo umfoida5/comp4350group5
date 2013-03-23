@@ -26,36 +26,39 @@ NSArray* graphPoints;
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {        
+    if (self) {
+        
+        //init graph points with dummy values
+        
         ECGraphPoint *point1 = [[ECGraphPoint alloc] init];
         point1.yValue = 3;
-        point1.xDateValue = [ECCommon dOfS:@"2010-4-23 12:00:00"
-                                withFormat:kDEFAULT_DATE_TIME_FORMAT];
+        point1.xDateValue = [ECCommon dOfS:@"2010-4-23"
+                                withFormat:kDEFAULT_DATE_FORMAT];
         
         ECGraphPoint *point2 = [[ECGraphPoint alloc] init];
         point2.yValue = 5;
-        point2.xDateValue = [ECCommon dOfS:@"2010-4-25 12:00:00"
-                                withFormat:kDEFAULT_DATE_TIME_FORMAT];
+        point2.xDateValue = [ECCommon dOfS:@"2010-4-25"
+                                withFormat:kDEFAULT_DATE_FORMAT];
         
         ECGraphPoint *point3 = [[ECGraphPoint alloc] init];
         point3.yValue = 3;
-        point3.xDateValue = [ECCommon dOfS:@"2010-4-28 12:00:00"
-                                withFormat:kDEFAULT_DATE_TIME_FORMAT];
+        point3.xDateValue = [ECCommon dOfS:@"2010-4-28"
+                                withFormat:kDEFAULT_DATE_FORMAT];
         
         ECGraphPoint *point4 = [[ECGraphPoint alloc] init];
         point4.yValue = 9;
-        point4.xDateValue = [ECCommon dOfS:@"2010-4-29 12:00:00"
-                                withFormat:kDEFAULT_DATE_TIME_FORMAT];
+        point4.xDateValue = [ECCommon dOfS:@"2010-4-29"
+                                withFormat:kDEFAULT_DATE_FORMAT];
         
         ECGraphPoint *point5 = [[ECGraphPoint alloc] init];
         point5.yValue = 3;
-        point5.xDateValue = [ECCommon dOfS:@"2010-4-30 12:00:00"
-                                withFormat:kDEFAULT_DATE_TIME_FORMAT];
+        point5.xDateValue = [ECCommon dOfS:@"2010-4-30"
+                                withFormat:kDEFAULT_DATE_FORMAT];
         
         ECGraphPoint *point6 = [[ECGraphPoint alloc] init];
         point6.yValue = 12;
-        point6.xDateValue = [ECCommon dOfS:@"2010-5-29 12:00:00"
-                                withFormat:kDEFAULT_DATE_TIME_FORMAT];
+        point6.xDateValue = [ECCommon dOfS:@"2010-5-29"
+                                withFormat:kDEFAULT_DATE_FORMAT];
         
         NSMutableArray *tempArray = [[NSMutableArray alloc] init];
         [tempArray addObject:point1];
@@ -66,7 +69,6 @@ NSArray* graphPoints;
         [tempArray addObject:point6];
         
         graphPoints = (NSArray*)tempArray;
-        //graphPoints = [[NSArray alloc] initWithObjects:point1,point2,point3,point4,point5,point6,nil];
     }
     return self;
 }
@@ -106,6 +108,7 @@ NSArray* graphPoints;
     dateType = newDateType;
     measurementType = newMeasurementType;
     
+    /*
     ECGraphPoint *point1 = [[ECGraphPoint alloc] init];
     point1.yValue = 8;
     point1.xDateValue = [ECCommon dOfS:@"2010-4-23"
@@ -145,8 +148,7 @@ NSArray* graphPoints;
     [tempArray addObject:point6];
     
     graphPoints = (NSArray*)tempArray;
-    
-    //graphPoints = [[NSArray alloc] initWithObjects:point1,point2,point3,point4,point5,point6,nil];
+    */
 }
 
 - (void)triggerServerCall
@@ -182,13 +184,8 @@ NSArray* graphPoints;
         [start setDay:[end day]-1];
     }
     
-    NSCalendar *cal = [NSCalendar currentCalendar];
-    NSDate *startDate = [cal dateFromComponents:start];
-    NSDate *endDate = [cal dateFromComponents:end];
-    
     NSString *args;
     
-    //production server
     if ([measurementType isEqual:@"Top Speed"])
     {
         args = [NSString stringWithFormat:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/stats/get_maximum?column_name=%@&activity_name=%@&athlete_id=1&start_date=%ld-%ld-%ld&end_date=%ld-%ld-%ld&group_by=day",measureLower,activity,(long)start.year,(long)start.month,(long)start.day,(long)end.year,(long)end.month,(long)end.day];
@@ -197,10 +194,7 @@ NSArray* graphPoints;
     {
         args = [NSString stringWithFormat:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/stats/get_total?column_name=%@&activity_name=%@&athlete_id=1&start_date=%ld-%ld-%ld&end_date=%ld-%ld-%ld&group_by=day",measureLower,activity,(long)start.year,(long)start.month,(long)start.day,(long)end.year,(long)end.month,(long)end.day];
     }
-    //must append arguments (NSString) to end of get request
     
-    
-    //NSURL *url = [NSURL URLWithString:args];
     NSURL *url = [NSURL URLWithString:[args stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
     
     NSLog(@"url = %@",url);
@@ -208,54 +202,43 @@ NSArray* graphPoints;
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request addRequestHeader:@"Accept" value:@"application/json"];
     [request addRequestHeader:@"Content-Type" value:@"application/json"];
-    
-    NSDictionary *rqstDict = [NSDictionary dictionaryWithObjectsAndKeys:
-                              measureLower,@"column_name",
-                              activity,@"activity_name",
-                              @"1",@"athlete_id",
-                              startDate,@"start_date",
-                              endDate,@"end_date",
-                              @"day",@"group_by",
-                              nil];
     [request setDelegate:self];
     [request startAsynchronous];
-    
-    /*
-     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
-    [request addPostValue:measureLower forKey:@"column_name"];
-    [request addPostValue:activityLower forKey:@"activity_name"];
-    [request addPostValue:@"1" forKey:@"athlete_id"];
-    [request addPostValue:startDate forKey:@"start_date"];
-    [request addPostValue:endDate forKey:@"end_date"];
-    [request addPostValue:@"day" forKey:@"group_by"];
-    [request setDelegate:self];
-    [request startAsynchronous];
-     */
     
     
 }
 
 - (void)requestFinished:(ASIHTTPRequest *)request
 {
-    // Use when fetching text data
     NSString *responseString = [request responseString];
-    NSLog(@"Info back from the server: %@",responseString);
+    NSLog(@"%@",responseString);
     
     SBJsonParser *parser = [[SBJsonParser alloc]init];
-    NSMutableDictionary* jsonDictionary = [parser objectWithString:responseString];
-    /*
-    if (jsonDictionary != nil)
-    {
-        //graphPoints
-        
-        //jsonDictionary[@"key"];
-        
-//        for (NSMutableDictionary *achieves in jsonDictionary[@"achievements"]) {
-//        }
-    }
-     */
+    NSMutableArray *points = [parser objectWithString:responseString];
+    NSMutableArray *tempArray = [[NSMutableArray alloc] init];
     
-    [self setNeedsDisplay];
+    for (NSInteger i=0;i<points.count;i++)
+    {
+        NSMutableArray *point = [points objectAtIndex:i];
+        
+        ECGraphPoint *graphPoint = [[ECGraphPoint alloc] init];
+        graphPoint.yValue = [[point objectAtIndex:0] integerValue];
+        NSString *pointDate = [[NSString alloc] initWithFormat:@"%@-%@-%@",[point objectAtIndex:1],[point objectAtIndex:2],[point objectAtIndex:3]];
+        graphPoint.xDateValue = [ECCommon dOfS:pointDate
+                                withFormat:kDEFAULT_DATE_FORMAT];
+        
+        NSLog(@"%d, %@",graphPoint.yValue,graphPoint.xDateValue);
+        [tempArray addObject:graphPoint];
+    }
+    
+    //sort the array
+    NSSortDescriptor *sortDescriptor;
+    sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"xDateValue" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    
+    graphPoints = (NSArray*)[tempArray sortedArrayUsingDescriptors:sortDescriptors];
+    
+    //[self setNeedsDisplay];
 }
 
 @end
