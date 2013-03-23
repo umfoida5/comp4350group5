@@ -34,8 +34,7 @@ function Profile(){
   
 
        this.get_athleteAjax = function(){
-          
-        
+
         var athlete = $.ajax({
             url: '../profiles/athlete',
             data: athlete,
@@ -48,8 +47,8 @@ function Profile(){
               setValueIfEmptyString("#about_me", athlete['about_me'], "Click to add your biography");
             }
         });
-        
-        return athlete; 
+        return athlete;
+  
       }
 
       this.get_achievesAjax = function(){

@@ -32,9 +32,9 @@
       asyncTest( "asynchronous test: one second later!", function() {
       expect( 1 );
       //stop();     
-      prof.get_athleteAjax();
+      var athlete = prof.get_athleteAjax();
       
-      setTimeout(function() {
+      setTimeout(function(athlete) {
         ok(prof.get_athleteAjax(), "Athlete not null");
         start();
       }, 1000);
