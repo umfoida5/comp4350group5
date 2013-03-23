@@ -530,12 +530,16 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="nVP-T8-TA2" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="4ug-8s-5tt"/>
                             <constraint firstItem="nVP-T8-TA2" firstAttribute="top" secondItem="16" secondAttribute="top" type="default" id="DMQ-kY-D9H"/>
                             <constraint firstItem="nVP-T8-TA2" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="YbN-dz-4Hy"/>
                             <constraint firstItem="nVP-T8-TA2" firstAttribute="bottom" secondItem="16" secondAttribute="bottom" type="default" id="hWP-2H-EgJ"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="D0G-UU-yef" appends="YES" id="ebu-HF-KLo"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Goals" image="first.png" id="6"/>
                     <navigationItem key="navigationItem" title="Goals" id="1le-f4-Ee1">
@@ -559,6 +563,11 @@
                         <outlet property="searchResultsDelegate" destination="3" id="5ra-mi-bT3"/>
                     </connections>
                 </searchDisplayController>
+                <swipeGestureRecognizer direction="left" id="D0G-UU-yef">
+                    <connections>
+                        <segue destination="Nf2-fs-v69" kind="push" id="T9K-Tu-6Jf"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1370" y="-363"/>
         </scene>
@@ -589,12 +598,16 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="KmJ-Q6-DS8" firstAttribute="leading" secondItem="YXX-SM-Kfh" secondAttribute="leading" type="default" id="0g4-5x-YGh"/>
                             <constraint firstItem="KmJ-Q6-DS8" firstAttribute="top" secondItem="YXX-SM-Kfh" secondAttribute="top" type="default" id="RKb-xf-vUS"/>
                             <constraint firstItem="KmJ-Q6-DS8" firstAttribute="bottom" secondItem="YXX-SM-Kfh" secondAttribute="bottom" type="default" id="dH1-9k-BAZ"/>
                             <constraint firstItem="KmJ-Q6-DS8" firstAttribute="trailing" secondItem="YXX-SM-Kfh" secondAttribute="trailing" type="default" id="zwG-rE-DuI"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="zoS-ly-2mn" appends="YES" id="VNt-aC-OtQ"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Activities" image="first.png" id="x4l-m2-bAM"/>
                     <navigationItem key="navigationItem" title="Activities" id="A2H-Ig-veS">
@@ -615,6 +628,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cxg-Jc-FKx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" numberOfTouchesRequired="2" id="zoS-ly-2mn">
+                    <connections>
+                        <segue destination="kYn-xJ-Yw6" kind="push" id="yK0-aa-OgA"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="638" y="881"/>
         </scene>
@@ -638,7 +656,7 @@
             <objects>
                 <viewController id="kYn-xJ-Yw6" customClass="CDQActivityInputController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n6W-9L-oWm">
-                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZL1-NY-iTl">
@@ -1138,12 +1156,16 @@ Features
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="6PP-HA-zV8" firstAttribute="trailing" secondItem="2E8-GT-HMU" secondAttribute="trailing" type="default" id="b8Z-27-BhG"/>
                             <constraint firstItem="6PP-HA-zV8" firstAttribute="top" secondItem="2E8-GT-HMU" secondAttribute="top" type="default" id="cY1-aK-MuD"/>
                             <constraint firstItem="6PP-HA-zV8" firstAttribute="bottom" secondItem="2E8-GT-HMU" secondAttribute="bottom" type="default" id="qtj-pd-os2"/>
                             <constraint firstItem="6PP-HA-zV8" firstAttribute="leading" secondItem="2E8-GT-HMU" secondAttribute="leading" type="default" id="wha-N5-tZ6"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="IK1-Ug-Azq" appends="YES" id="l2f-9Y-J9r"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Events" image="first.png" id="FaS-rx-bCc"/>
                     <navigationItem key="navigationItem" title="Events" id="zjd-CX-ukl">
@@ -1158,6 +1180,11 @@ Features
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="48j-FF-QX8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="IK1-Ug-Azq">
+                    <connections>
+                        <segue destination="OGF-ES-Qup" kind="push" id="aSa-Pj-N1K"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3119" y="-1856"/>
         </scene>
@@ -1166,7 +1193,7 @@ Features
             <objects>
                 <viewController id="OGF-ES-Qup" customClass="CDQEventsInputController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dSx-OM-xH6">
-                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ZPN-uA-wLQ">
@@ -1324,12 +1351,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="ActivityViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ActivityViewController.h"/>
             <relationships>
+                <relationship kind="action" name="clickCalendar:"/>
                 <relationship kind="outlet" name="activityTable" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="CDQActivityInputController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQActivityInputController.h"/>
             <relationships>
+                <relationship kind="action" name="createActivity:"/>
                 <relationship kind="outlet" name="dateInput" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="distanceInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="durationInput" candidateClass="UITextField"/>
@@ -1347,6 +1376,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="CDQEventsInputController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQEventsInputController.h"/>
             <relationships>
+                <relationship kind="action" name="postEvent:"/>
                 <relationship kind="outlet" name="cityInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="dateInput" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="descriptionInput" candidateClass="UITextView"/>
@@ -1357,6 +1387,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="CDQGoalInputController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQGoalInputController.h"/>
             <relationships>
+                <relationship kind="action" name="createGoal:"/>
                 <relationship kind="outlet" name="endDateInput" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="quantityInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="startDateInput" candidateClass="UIDatePicker"/>
@@ -1373,6 +1404,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="CDQHomeViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQHomeViewController.h"/>
             <relationships>
+                <relationship kind="action" name="doLogout:"/>
                 <relationship kind="outlet" name="loginButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="logoutButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="navBar" candidateClass="UINavigationItem"/>
@@ -1382,6 +1414,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQLoginController.h"/>
             <relationships>
                 <relationship kind="action" name="login:"/>
+                <relationship kind="action" name="logout:"/>
+                <relationship kind="action" name="signup:"/>
                 <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="loginPasswordField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="loginPasswordLabel" candidateClass="UILabel"/>
@@ -1411,6 +1445,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="ProfileViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
             <relationships>
+                <relationship kind="action" name="enterAddress:"/>
+                <relationship kind="action" name="enterDOB:"/>
+                <relationship kind="action" name="enterEmail:"/>
                 <relationship kind="outlet" name="aboutTextView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="achievementTable" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="addressField" candidateClass="UITextField"/>
@@ -1433,4 +1470,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="VMQ-w2-ZO9"/>
+        <segue reference="yK0-aa-OgA"/>
+        <segue reference="aSa-Pj-N1K"/>
+    </inferredMetricsTieBreakers>
 </document>
