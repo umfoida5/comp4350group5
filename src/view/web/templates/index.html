@@ -25,6 +25,7 @@
 			else {
 				$("#logout-button").hide();
 				$("#logged-in-username").hide();
+        $("#profile").hide();
 			}
         } );
     	
@@ -60,7 +61,7 @@
 
             <div class="nav-collapse collapse">
               <ul class="nav" id="main-menu-left">
-                <li><a href="../profiles">Profile</a></li>
+                <li><a id="profile" href="../profiles">Profile</a></li>
                 <li><a href="../activities">Activities</a></li>
                 <li><a href="../goals">Goals</a></li>
                 <li><a href="../events">Events</a></li>
