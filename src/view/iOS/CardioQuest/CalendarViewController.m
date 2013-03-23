@@ -29,6 +29,8 @@
 
 - (void) viewDidLoad
 {
+    self.activitiesArray = [NSMutableArray array];
+    
 	[super viewDidLoad];
 	[self.monthView selectDate:[NSDate month]];
     //UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -41,7 +43,9 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    [self.activitiesArray removeAllObjects];
     [self getActivitiesList];
+    
 }
 
 - (void) getActivitiesList
@@ -67,13 +71,9 @@
         NSRange range = NSMakeRange(0, [jsonDictionary[@"aaData"] count]);
         NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:range];
         [self.activitiesArray insertObjects:jsonDictionary[@"aaData"] atIndexes:indexSet];
+        [self.monthView reload];
     }
 }
-
-
-
-
-
 
 #pragma mark - MonthView Delegate & DataSource
 - (NSArray*) calendarMonthView:(TKCalendarMonthView*)monthView marksFromDate:(NSDate*)startDate toDate:(NSDate*)lastDate
@@ -82,16 +82,8 @@
 	return self.dataArray;
 }
 
-
-
-
-
-
-
-
-
-- (void) calendarMonthView:(TKCalendarMonthView*)monthView didSelectDate:(NSDate*)date{
-	
+- (void) calendarMonthView:(TKCalendarMonthView*)monthView didSelectDate:(NSDate*)date
+{	
 	// CHANGE THE DATE TO YOUR TIMEZONE
 	TKDateInformation info = [date dateInformationWithTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
 	NSDate *myTimeZoneDay = [NSDate dateFromDateInformation:info timeZone:[NSTimeZone systemTimeZone]];
@@ -100,11 +92,12 @@
 	
 	[self.tableView reloadData];
 }
-- (void) calendarMonthView:(TKCalendarMonthView*)mv monthDidChange:(NSDate*)d animated:(BOOL)animated{
+
+- (void) calendarMonthView:(TKCalendarMonthView*)mv monthDidChange:(NSDate*)d animated:(BOOL)animated
+{
 	[super calendarMonthView:mv monthDidChange:d animated:animated];
 	[self.tableView reloadData];
 }
-
 
 #pragma mark - UITableView Delegate & DataSource
 
@@ -151,9 +144,6 @@
 	
 }
 
-// this function sets up dataArray & dataDictionary
-// dataArray: has boolean markers for each day to pass to the calendar view (via the delegate function)
-// dataDictionary: has items that are associated with date keys (for tableview)
 - (void) getActivitiesData:(NSDate*)start endDate:(NSDate*)end
 {
 	NSLog(@"Delegate Range: %@ %@ %d",start,end,[start daysBetweenDate:end]);
@@ -165,7 +155,7 @@
     {
         NSArray *nameOfActivitiesOccuringOnStartDate = [self getListOfActivitiesForDate:start];
         
-        if ( [nameOfActivitiesOccuringOnStartDate count ] == 0 )
+        if ( [nameOfActivitiesOccuringOnStartDate count ] > 0 )
         {
 			[self.dataDictionary setObject:nameOfActivitiesOccuringOnStartDate forKey:start];
 			[self.dataArray addObject:[NSNumber numberWithBool:YES]];
@@ -186,13 +176,16 @@
 - (NSArray*) getListOfActivitiesForDate:(NSDate*)startDate
 {
     NSMutableArray *temp = [NSMutableArray array];
-    NSMutableString *activityName = [[NSMutableString alloc] init];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *strStartDate = [formatter stringFromDate:[startDate dateByAddingTimeInterval:60*60*24*1]];
     
     for(NSMutableDictionary *activity in self.activitiesArray)
     {
-        if(activity[@"date"] == startDate)
+        if([activity[@"date"] isEqual:strStartDate])
         {
-            [activityName appendFormat:@"%@ for %@ kilometers, during %@ minutes", activity[@"type"], activity[@"distance"], activity[@"duration"]];
+            NSMutableString *activityName = [[NSMutableString alloc] init];
+            [activityName appendFormat:@"%@ %@ kilometers for %@ minutes (Maximum speed: %@ km/h)", activity[@"type"], activity[@"distance"], activity[@"duration"], activity[@"max_speed"]];
             [temp addObject:activityName];
         }
     }
