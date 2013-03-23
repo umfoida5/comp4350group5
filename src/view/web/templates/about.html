@@ -2,9 +2,11 @@
 
 	<!-- those two br tags are weird; need to fix spacing with css (TODO)-->
 {% extends "index.html" %}
+{% block message_centre_message %}
+    <h3>Welcome to the about page!</h3>
+    <p>We at Group5 Software thank you for using our application!</p>
+{% endblock message_centre_message %}
 {% block body %}
-{% block message_centre %}
-{% endblock message_centre %}
 	<div class="span16">
 		<h1>About</h1>
 

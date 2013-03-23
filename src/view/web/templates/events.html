@@ -50,14 +50,14 @@
     } );
   </script>
 {% endblock script %}
-
+{% block message_centre_message %}
+    <h3>Welcome to the Events Page!</h3>
+    <p>Here you can post and share events in your community!</p>
+    <p>Click on <b>Post an Event in Your Area</b> to add an event! Search existing events to find one in your town!</p>
+{% endblock message_centre_message %}
 {% block body %}
 <div align="right">
-<<<<<<< HEAD
-    <button type="button" id="enterButton" class="btn">Post an Event in your Area</button><br/><br/>
-=======
     <button type="button" id="enterButton" class="btn">Post an Event in your Area</button></br></br>
->>>>>>> 9e5ba8d61b2bef0a48cd930f446161c333d1f528
 </div>
 
 <div class="modal hide fade" id="enter_event_modal" name="enter_event_modal">
