@@ -73,7 +73,7 @@ NSArray* graphPoints;
     return self;
 }
 
-//THIS IS THE CODE THAT DRAWS TO THE VIEW
+//THIS IS THE CODE THAT DRAWS TO THE VIEW (whenever you use SetNeedsDisplay from controller)
 - (void)drawRect:(CGRect)rect
 {
     context = UIGraphicsGetCurrentContext();
@@ -97,58 +97,11 @@ NSArray* graphPoints;
     
 }
  
-
-//SetGraph function
-//takes: elements from UI pickers for use in the graph labels
-//makes a call to the server for graph points
-//then sets class variables so that the drawRect function can draw everything correctly
 -(void)setGraph:(NSString*)newActivity: (NSString*)newDateType: (NSString*)newMeasurementType
 {    
     activity = newActivity;
     dateType = newDateType;
     measurementType = newMeasurementType;
-    
-    /*
-    ECGraphPoint *point1 = [[ECGraphPoint alloc] init];
-    point1.yValue = 8;
-    point1.xDateValue = [ECCommon dOfS:@"2010-4-23"
-                            withFormat:kDEFAULT_DATE_FORMAT];
-    
-    ECGraphPoint *point2 = [[ECGraphPoint alloc] init];
-    point2.yValue = 2;
-    point2.xDateValue = [ECCommon dOfS:@"2010-4-25"
-                            withFormat:kDEFAULT_DATE_FORMAT];
-    
-    ECGraphPoint *point3 = [[ECGraphPoint alloc] init];
-    point3.yValue = 10;
-    point3.xDateValue = [ECCommon dOfS:@"2010-4-28"
-                            withFormat:kDEFAULT_DATE_FORMAT];
-    
-    ECGraphPoint *point4 = [[ECGraphPoint alloc] init];
-    point4.yValue = 6;
-    point4.xDateValue = [ECCommon dOfS:@"2010-4-29"
-                            withFormat:kDEFAULT_DATE_FORMAT];
-    
-    ECGraphPoint *point5 = [[ECGraphPoint alloc] init];
-    point5.yValue = 3;
-    point5.xDateValue = [ECCommon dOfS:@"2010-4-30"
-                            withFormat:kDEFAULT_DATE_FORMAT];
-    
-    ECGraphPoint *point6 = [[ECGraphPoint alloc] init];
-    point6.yValue = 1;
-    point6.xDateValue = [ECCommon dOfS:@"2010-5-29"
-                            withFormat:kDEFAULT_DATE_FORMAT];
-    
-    NSMutableArray *tempArray = [[NSMutableArray alloc] init];
-    [tempArray addObject:point1];
-    [tempArray addObject:point2];
-    [tempArray addObject:point3];
-    [tempArray addObject:point4];
-    [tempArray addObject:point5];
-    [tempArray addObject:point6];
-    
-    graphPoints = (NSArray*)tempArray;
-    */
 }
 
 - (void)triggerServerCall
@@ -186,6 +139,8 @@ NSArray* graphPoints;
     
     NSString *args;
     
+    //set the url and querystring
+    
     if ([measurementType isEqual:@"Top Speed"])
     {
         args = [NSString stringWithFormat:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/stats/get_maximum?column_name=%@&activity_name=%@&athlete_id=1&start_date=%ld-%ld-%ld&end_date=%ld-%ld-%ld&group_by=day",measureLower,activity,(long)start.year,(long)start.month,(long)start.day,(long)end.year,(long)end.month,(long)end.day];
@@ -198,6 +153,8 @@ NSArray* graphPoints;
     NSURL *url = [NSURL URLWithString:[args stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
     
     NSLog(@"url = %@",url);
+    
+    //make server call
     
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request addRequestHeader:@"Accept" value:@"application/json"];
@@ -237,8 +194,6 @@ NSArray* graphPoints;
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     
     graphPoints = (NSArray*)[tempArray sortedArrayUsingDescriptors:sortDescriptors];
-    
-    //[self setNeedsDisplay];
 }
 
 @end
