@@ -31,7 +31,7 @@ class Jsonable:
                 if type(value) is datetime.date:
                     dict_representation[attribute] = str(value) 
                 elif type(value) is datetime.datetime:
-                    dict_representation[attribute] = value.strftime("%m/%d/%Y %H:%M:%S")                
+                    dict_representation[attribute] = value.strftime("%Y-%m-%d")                
                 elif hasattr(value.__class__, '_jsonFields'):
                     dict_representation[attribute] = value.to_dict()
                 else:
