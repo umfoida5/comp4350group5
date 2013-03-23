@@ -10,6 +10,5 @@
 #import "ASIHTTPRequest.h"
 
 @interface CDCgraph : UIView <ASIHTTPRequestDelegate>
--(void)setGraph:(NSString*)newActivity: (NSString*)newDateType: (NSString*)newMeasurementType;
--(void)triggerServerCall;
+-(void)triggerServerCall:(NSString*)query;
 @end

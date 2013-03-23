@@ -18,11 +18,10 @@
 @implementation CDCgraph
 
 CGContextRef context;
-NSString* activity;
-NSString* dateType;
-NSString* measurementType;
 NSArray* graphPoints;
 
+//initialize the graph with dumy values
+//
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -49,7 +48,9 @@ NSArray* graphPoints;
     return self;
 }
 
-//THIS IS THE CODE THAT DRAWS TO THE VIEW (whenever you use SetNeedsDisplay from controller)
+//THIS IS THE CODE THAT DRAWS TO THE VIEW
+//no code should call this method directly
+//it is called automatically when you use [view SetNeedsDisplay]
 - (void)drawRect:(CGRect)rect
 {
     context = UIGraphicsGetCurrentContext();
@@ -74,65 +75,15 @@ NSArray* graphPoints;
     //draw the graph
     [graph drawCurveWithLines:lines lineWidth:2 color:[UIColor blackColor]];
 }
- 
--(void)setGraph:(NSString*)newActivity: (NSString*)newDateType: (NSString*)newMeasurementType
-{    
-    activity = newActivity;
-    dateType = newDateType;
-    measurementType = newMeasurementType;
-}
 
-- (void)triggerServerCall
-{    
-    NSString *measureLower = [measurementType lowercaseString];
-    //NSString *activityLower = [activity lowercaseString];
-    
-    if ([measureLower isEqual:@"top speed"])
-    {
-        measureLower = @"max_speed";
-    }
-    
-    NSDateComponents *start = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:[NSDate date]];
-    NSDateComponents *end = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:[NSDate date]];
-    
-    if ([dateType isEqual:@"Year"])
-    {
-        [start setYear:[end year]-1];
-    }
-    
-    else if ([dateType isEqual:@"Month"])
-    {
-        [start setMonth:[end month]-1];
-    }
-    
-    else if ([dateType isEqual:@"Week"])
-    {
-        [start setDay:[end day]-7];
-    }
-    
-    else //if ([dateType isEqual:@"Day"])
-    {
-        [start setDay:[end day]-1];
-    }
-    
-    NSString *args;
-    
-    //set the url and querystring
-    
-    if ([measurementType isEqual:@"Top Speed"])
-    {
-        args = [NSString stringWithFormat:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/stats/get_maximum?column_name=%@&activity_name=%@&athlete_id=1&start_date=%ld-%ld-%ld&end_date=%ld-%ld-%ld&group_by=day",measureLower,activity,(long)start.year,(long)start.month,(long)start.day,(long)end.year,(long)end.month,(long)end.day];
-    }
-    else
-    {
-        args = [NSString stringWithFormat:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/stats/get_total?column_name=%@&activity_name=%@&athlete_id=1&start_date=%ld-%ld-%ld&end_date=%ld-%ld-%ld&group_by=day",measureLower,activity,(long)start.year,(long)start.month,(long)start.day,(long)end.year,(long)end.month,(long)end.day];
-    }
-    
-    NSURL *url = [NSURL URLWithString:[args stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
+//triggerServerCall method
+// query - the string used for the GET request
+// (this should include the URL followed by any query parameters)
+- (void)triggerServerCall:(NSString*)query
+{       
+    NSURL *url = [NSURL URLWithString:[query stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
     
     NSLog(@"url = %@",url);
-    
-    //make server call
     
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request addRequestHeader:@"Accept" value:@"application/json"];

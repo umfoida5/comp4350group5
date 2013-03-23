@@ -110,6 +110,7 @@ NSString *measurementType;
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     
+    //change the UIPicker values
     if ([pickerView tag] == 1)
     {
         activity = (NSString*)[activityTypes objectAtIndex:row];
@@ -125,11 +126,55 @@ NSString *measurementType;
         measurementType = (NSString*)[mesurementTypes objectAtIndex:row];
     }
     
-    //update labels for the graph
-    [graph setGraph:activity:dateType:measurementType];
+    ///////////////////////////
+    //PREPARE FOR SERVER CALL//
+    ///////////////////////////
+    
+    NSString *measureLower = [measurementType lowercaseString];
+    
+    if ([measureLower isEqual:@"top speed"])
+    {
+        measureLower = @"max_speed";
+    }
+    
+    NSDateComponents *start = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:[NSDate date]];
+    NSDateComponents *end = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:[NSDate date]];
+    
+    if ([dateType isEqual:@"Year"])
+    {
+        [start setYear:[end year]-1];
+    }
+    
+    else if ([dateType isEqual:@"Month"])
+    {
+        [start setMonth:[end month]-1];
+    }
+    
+    else if ([dateType isEqual:@"Week"])
+    {
+        [start setDay:[end day]-7];
+    }
+    
+    else //if ([dateType isEqual:@"Day"])
+    {
+        [start setDay:[end day]-1];
+    }
+    
+    NSString *query;
+    
+    //set the url and querystring
+    
+    if ([measurementType isEqual:@"Top Speed"])
+    {
+        query = [NSString stringWithFormat:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/stats/get_maximum?column_name=%@&activity_name=%@&athlete_id=1&start_date=%ld-%ld-%ld&end_date=%ld-%ld-%ld&group_by=day",measureLower,activity,(long)start.year,(long)start.month,(long)start.day,(long)end.year,(long)end.month,(long)end.day];
+    }
+    else
+    {
+        query = [NSString stringWithFormat:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/stats/get_total?column_name=%@&activity_name=%@&athlete_id=1&start_date=%ld-%ld-%ld&end_date=%ld-%ld-%ld&group_by=day",measureLower,activity,(long)start.year,(long)start.month,(long)start.day,(long)end.year,(long)end.month,(long)end.day];
+    }
     
     //make the graph update points by calling the server
-    [graph triggerServerCall];
+    [graph triggerServerCall:query];
 }
 
 
