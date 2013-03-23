@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -1122,7 +1122,7 @@ Features
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8C-ia-LbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4030" y="-275"/>
+            <point key="canvasLocation" x="4262" y="-617"/>
         </scene>
         <!--Navigation Controller - Events-->
         <scene sceneID="MzI-LE-3Xw">
@@ -1139,6 +1139,86 @@ Features
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AbX-6P-yvy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2287" y="-1863"/>
+        </scene>
+        <!--View Controller - Health-->
+        <scene sceneID="nLo-fL-Ffc">
+            <objects>
+                <viewController id="y3I-Vg-nOH" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ypt-2M-RrI">
+                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Health" id="4C8-n1-JeP">
+                        <barButtonItem key="rightBarButtonItem" title="Table View" id="iJZ-vi-6aI">
+                            <connections>
+                                <segue destination="AEk-9X-oSY" kind="push" id="3VB-wG-byp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iiA-eG-mZ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2450" y="-550"/>
+        </scene>
+        <!--Health Table View Controller - Health-->
+        <scene sceneID="Zn8-jU-L24">
+            <objects>
+                <viewController id="AEk-9X-oSY" customClass="CDQHealthTableViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q1q-0T-ROs">
+                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="amg-6K-1Sh">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="yyP-2c-MqD">
+                                        <rect key="frame" x="0.0" y="22" width="768" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="AEk-9X-oSY" id="Hfo-KY-9TL"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="amg-6K-1Sh" firstAttribute="bottom" secondItem="q1q-0T-ROs" secondAttribute="bottom" type="default" id="Iry-d8-bWo"/>
+                            <constraint firstItem="amg-6K-1Sh" firstAttribute="top" secondItem="q1q-0T-ROs" secondAttribute="top" type="default" id="XDc-So-ecm"/>
+                            <constraint firstItem="amg-6K-1Sh" firstAttribute="trailing" secondItem="q1q-0T-ROs" secondAttribute="trailing" type="default" id="aMc-gT-RC4"/>
+                            <constraint firstItem="amg-6K-1Sh" firstAttribute="leading" secondItem="q1q-0T-ROs" secondAttribute="leading" type="default" id="jOx-l1-11H"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Health" id="3yS-dm-WM0"/>
+                    <connections>
+                        <outlet property="healthTable" destination="amg-6K-1Sh" id="Xgg-GV-y0T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vG3-jp-nIm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3346" y="-538"/>
+        </scene>
+        <!--Navigation Controller - Health-->
+        <scene sceneID="Ryj-jQ-EQt">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="Aly-u4-NBX" userLabel="Navigation Controller - Health" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Health" id="PbU-Yw-evj" userLabel="Tab Bar Item - Health"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wDV-2j-1Me">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="y3I-Vg-nOH" kind="relationship" relationship="rootViewController" id="ENw-P0-FnR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cen-Ow-Ave" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1524" y="-534"/>
         </scene>
         <!--Events Controller - Events-->
         <scene sceneID="P4m-V4-DjK">
@@ -1334,11 +1414,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <segue destination="IPR-o0-Vs1" kind="relationship" relationship="viewControllers" id="N8X-cf-UEd"/>
                         <segue destination="Nim-bR-L6c" kind="relationship" relationship="viewControllers" id="Wj1-7G-Uat"/>
                         <segue destination="FY5-0r-oNa" kind="relationship" relationship="viewControllers" id="w2X-d1-DOy"/>
+                        <segue destination="Aly-u4-NBX" kind="relationship" relationship="viewControllers" id="feC-dv-epZ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1098" y="-1708"/>
+            <point key="canvasLocation" x="992" y="-1696"/>
         </scene>
     </scenes>
     <resources>
@@ -1395,6 +1476,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQGoalsViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="goalsTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="CDQHealthTableViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQHealthTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="healthTable" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="CDQHomeViewController" superclassName="UIViewController">
@@ -1462,7 +1549,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="VMQ-w2-ZO9"/>
-        <segue reference="yK0-aa-OgA"/>
         <segue reference="aSa-Pj-N1K"/>
+        <segue reference="yK0-aa-OgA"/>
     </inferredMetricsTieBreakers>
 </document>
