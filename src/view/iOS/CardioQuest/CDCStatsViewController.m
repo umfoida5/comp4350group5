@@ -39,7 +39,7 @@ NSString *measurementType;
     CGFloat viewWidth = viewSize.width;
     CGFloat viewHeight = viewSize.height;
     
-    graph = [[CDCgraph alloc] initWithFrame: CGRectMake(10, 150, viewWidth, viewHeight-700)];
+    graph = [[CDCgraph alloc] initWithFrame: CGRectMake(0, 150, viewWidth, viewHeight-700)];
     graph.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.0];
     [self.view addSubview:graph];
     activityTypes = [[NSArray alloc] initWithObjects:@"Bike", @"Run", @"Walk", nil];

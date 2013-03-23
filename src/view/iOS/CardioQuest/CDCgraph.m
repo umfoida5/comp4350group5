@@ -31,42 +31,18 @@ NSArray* graphPoints;
         //init graph points with dummy values
         
         ECGraphPoint *point1 = [[ECGraphPoint alloc] init];
-        point1.yValue = 3;
-        point1.xDateValue = [ECCommon dOfS:@"2010-4-23"
+        point1.yValue = 0;
+        point1.xDateValue = [ECCommon dOfS:@"2010-4-24"
                                 withFormat:kDEFAULT_DATE_FORMAT];
         
         ECGraphPoint *point2 = [[ECGraphPoint alloc] init];
-        point2.yValue = 5;
+        point2.yValue = 0;
         point2.xDateValue = [ECCommon dOfS:@"2010-4-25"
-                                withFormat:kDEFAULT_DATE_FORMAT];
-        
-        ECGraphPoint *point3 = [[ECGraphPoint alloc] init];
-        point3.yValue = 3;
-        point3.xDateValue = [ECCommon dOfS:@"2010-4-28"
-                                withFormat:kDEFAULT_DATE_FORMAT];
-        
-        ECGraphPoint *point4 = [[ECGraphPoint alloc] init];
-        point4.yValue = 9;
-        point4.xDateValue = [ECCommon dOfS:@"2010-4-29"
-                                withFormat:kDEFAULT_DATE_FORMAT];
-        
-        ECGraphPoint *point5 = [[ECGraphPoint alloc] init];
-        point5.yValue = 3;
-        point5.xDateValue = [ECCommon dOfS:@"2010-4-30"
-                                withFormat:kDEFAULT_DATE_FORMAT];
-        
-        ECGraphPoint *point6 = [[ECGraphPoint alloc] init];
-        point6.yValue = 12;
-        point6.xDateValue = [ECCommon dOfS:@"2010-5-29"
                                 withFormat:kDEFAULT_DATE_FORMAT];
         
         NSMutableArray *tempArray = [[NSMutableArray alloc] init];
         [tempArray addObject:point1];
         [tempArray addObject:point2];
-        [tempArray addObject:point3];
-        [tempArray addObject:point4];
-        [tempArray addObject:point5];
-        [tempArray addObject:point6];
         
         graphPoints = (NSArray*)tempArray;
     }
@@ -78,6 +54,7 @@ NSArray* graphPoints;
 {
     context = UIGraphicsGetCurrentContext();
     
+    //create the graph
     ECGraph *graph = [[ECGraph alloc] initWithFrame:rect withContext:context isPortrait:NO];
     
     ECGraphLine *line1 = [[ECGraphLine alloc] init];
@@ -86,13 +63,15 @@ NSArray* graphPoints;
     line1.color = [UIColor blackColor];
     
     NSArray *lines = [[NSArray alloc] initWithObjects:line1,nil];
-    [graph setXaxisTitle:@"Date"];
-    [graph setYaxisTitle:@"cummulative no of skills"];
-    [graph setGraphicTitle:@"Cummulative Number of imitations acquired"];
+    [graph setXaxisTitle:@""];
+    [graph setYaxisTitle:@""];
+    [graph setGraphicTitle:@""];
     [graph setXaxisDateFormat:@"MM/dd/YY"];
     [graph setDelegate:self];
     [graph setBackgroundColor:[UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:1]];
     [graph setPointType:ECGraphPointTypeSquare];
+    
+    //draw the graph
     [graph drawCurveWithLines:lines lineWidth:2 color:[UIColor blackColor]];
 }
  
