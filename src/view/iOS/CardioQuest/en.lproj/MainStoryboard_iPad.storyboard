@@ -1046,7 +1046,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKP-PR-hyJ">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKP-PR-hyJ">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="260" id="3MH-zv-hUC"/>
@@ -1064,7 +1064,7 @@ Features
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMD-Sx-2qd">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMD-Sx-2qd">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="214" id="EeP-Rc-Wh2"/>
@@ -1081,7 +1081,7 @@ Features
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cA-gz-vwb">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cA-gz-vwb">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="728" id="NgI-xk-xN0"/>
@@ -1351,14 +1351,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="ActivityViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ActivityViewController.h"/>
             <relationships>
-                <relationship kind="action" name="clickCalendar:"/>
                 <relationship kind="outlet" name="activityTable" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="CDQActivityInputController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQActivityInputController.h"/>
             <relationships>
-                <relationship kind="action" name="createActivity:"/>
                 <relationship kind="outlet" name="dateInput" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="distanceInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="durationInput" candidateClass="UITextField"/>
@@ -1376,7 +1374,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="CDQEventsInputController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQEventsInputController.h"/>
             <relationships>
-                <relationship kind="action" name="postEvent:"/>
                 <relationship kind="outlet" name="cityInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="dateInput" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="descriptionInput" candidateClass="UITextView"/>
@@ -1387,7 +1384,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="CDQGoalInputController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQGoalInputController.h"/>
             <relationships>
-                <relationship kind="action" name="createGoal:"/>
                 <relationship kind="outlet" name="endDateInput" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="quantityInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="startDateInput" candidateClass="UIDatePicker"/>
@@ -1404,7 +1400,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="CDQHomeViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQHomeViewController.h"/>
             <relationships>
-                <relationship kind="action" name="doLogout:"/>
                 <relationship kind="outlet" name="loginButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="logoutButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="navBar" candidateClass="UINavigationItem"/>
@@ -1414,8 +1409,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQLoginController.h"/>
             <relationships>
                 <relationship kind="action" name="login:"/>
-                <relationship kind="action" name="logout:"/>
-                <relationship kind="action" name="signup:"/>
                 <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="loginPasswordField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="loginPasswordLabel" candidateClass="UILabel"/>
@@ -1445,9 +1438,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="ProfileViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
             <relationships>
-                <relationship kind="action" name="enterAddress:"/>
-                <relationship kind="action" name="enterDOB:"/>
-                <relationship kind="action" name="enterEmail:"/>
                 <relationship kind="outlet" name="aboutTextView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="achievementTable" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="addressField" candidateClass="UITextField"/>

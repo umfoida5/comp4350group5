@@ -91,6 +91,11 @@
 
 - (IBAction)signup:(id)sender
 {
+    [self do_signup:self.signupUsernameField.text password:self.signupPasswordField.text firstname:self.signupFirstnameField.text lastname:self.signupLastnameField.text];
+}
+
+- (void)do_signup:(NSString*)username password:(NSString*)password firstname:(NSString*)firstname lastname:(NSString*)lastname
+{
     NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/login/signup"];
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request addPostValue:self.signupUsernameField.text forKey:@"username"];
@@ -154,6 +159,22 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self.view endEditing:YES];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField == self.loginUsernameField || textField == self.loginPasswordField)
+    {
+        [self loginRequest:self.loginUsernameField.text password:self.loginPasswordField.text];
+    }
+    
+    if (textField == self.signupUsernameField || textField == self.signupPasswordField
+        || textField == self.signupFirstnameField || textField == self.signupLastnameField)
+    {
+        [self do_signup:self.signupUsernameField.text password:self.signupPasswordField.text firstname:self.signupFirstnameField.text lastname:self.signupLastnameField.text];
+    }
+    
+    return YES;
 }
 
 @end
