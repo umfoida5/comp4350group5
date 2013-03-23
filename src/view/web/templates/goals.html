@@ -12,6 +12,13 @@
 
 {% endblock script %}
 
+{% block message_centre_message %}
+    <h3>Welcome to your Goals page!</h3>
+    <p>Here you can set and view your fitness goals!</p>
+    <p>Click on <b>'Create a Goal'</b> to add a new goal! Specify goals by selecting your <b>Activity</b>, your Target (<b>Operator</b>), your Goal's magnitude (<b>Quantity</b>) and the Goal's <b>Metric</b> you wish to achieve!  You can achieve your goal by logging workouts within your goal's range!</p>
+    <p>For Example: If you wish to Run a Total of 40 km in the month of March 2013, you would specify Activity: Run, Operator: Total, Quantity: 40, Metric: Distance, along with the date range 2013-03-01 to 2013-03-31! <b>UP AND AT THEM!</b></p>
+{% endblock message_centre_message %}
+
 {% block body %}
 
     <div class="modal hide fade" id="enter_goal_modal" name="enter_goal_modal">

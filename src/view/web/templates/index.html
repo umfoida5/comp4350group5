@@ -80,6 +80,16 @@
       <!-- .navbar-->
     {% endblock navigation_bar %}
 
+    {% block message_centre %}
+    <div class="alert alert-info">
+        <a class="close" data-dismiss="alert" id="close_message">x</a>
+        {% block message_centre_message %}
+            <h3>Welcome to CardioQuest!</h3>
+            <p>Play around with the site to try it out! Sign up to start logging your workouts!</p>
+            <p>These helpful hints will introduce you to our application! Just click the x if you don't want to see the tip!</p>
+        {% endblock message_centre_message %}
+    </div>
+    {% endblock message_centre%}
     {% block body %}
       <!-- HERO UNIT ======================================= -->
       <div class="hero-unit">
