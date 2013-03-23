@@ -539,7 +539,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Goals" image="first.png" id="6"/>
                     <navigationItem key="navigationItem" title="Goals" id="1le-f4-Ee1">
-                        <barButtonItem key="rightBarButtonItem" title="Add a Goal" id="gGn-bb-1eZ">
+                        <barButtonItem key="rightBarButtonItem" title="New Goal" id="gGn-bb-1eZ">
                             <connections>
                                 <segue destination="Nf2-fs-v69" kind="push" id="VMQ-w2-ZO9"/>
                             </connections>
@@ -633,7 +633,7 @@
             </objects>
             <point key="canvasLocation" x="638" y="2181"/>
         </scene>
-        <!--Activity Input Controller - Add Activity-->
+        <!--Activity Input Controller - New Activity-->
         <scene sceneID="YIS-Cl-CiF">
             <objects>
                 <viewController id="kYn-xJ-Yw6" customClass="CDQActivityInputController" sceneMemberID="viewController">
@@ -767,7 +767,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Activities" image="first.png" id="ebc-VP-uWB"/>
-                    <navigationItem key="navigationItem" title="Add Activity" id="EAE-P0-as9">
+                    <navigationItem key="navigationItem" title="New Activity" id="EAE-P0-as9">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="MqG-t8-ahS">
                             <connections>
                                 <action selector="createActivity:" destination="kYn-xJ-Yw6" id="QI1-bL-L0L"/>
@@ -787,7 +787,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="1471" y="881"/>
         </scene>
-        <!--Goal Input Controller - Add a Goal-->
+        <!--Goal Input Controller - New Goal-->
         <scene sceneID="nmC-dM-wet">
             <objects>
                 <viewController id="Nf2-fs-v69" customClass="CDQGoalInputController" sceneMemberID="viewController">
@@ -951,7 +951,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstItem="OGk-9q-l2N" firstAttribute="top" secondItem="eME-sr-EpY" secondAttribute="top" constant="351" id="xlb-1h-cYV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add a Goal" id="PIa-wh-zgG">
+                    <navigationItem key="navigationItem" title="New Goal" id="PIa-wh-zgG">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="aC5-6J-CMh">
                             <connections>
                                 <action selector="createGoal:" destination="Nf2-fs-v69" id="Nh9-xz-evD"/>
@@ -1147,7 +1147,7 @@ Features
                     </view>
                     <tabBarItem key="tabBarItem" title="Events" image="first.png" id="FaS-rx-bCc"/>
                     <navigationItem key="navigationItem" title="Events" id="zjd-CX-ukl">
-                        <barButtonItem key="rightBarButtonItem" title="Post an Event" id="3qH-Gc-Fkx">
+                        <barButtonItem key="rightBarButtonItem" title="New Event" id="3qH-Gc-Fkx">
                             <connections>
                                 <segue destination="OGF-ES-Qup" kind="push" id="AGY-m0-EIL"/>
                             </connections>
@@ -1161,7 +1161,7 @@ Features
             </objects>
             <point key="canvasLocation" x="3119" y="-1856"/>
         </scene>
-        <!--Events Input Controller - Post an Event-->
+        <!--Events Input Controller - New Event-->
         <scene sceneID="4IN-fX-365">
             <objects>
                 <viewController id="OGF-ES-Qup" customClass="CDQEventsInputController" sceneMemberID="viewController">
@@ -1271,8 +1271,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstItem="Dse-I4-FCq" firstAttribute="trailing" secondItem="vpP-2i-WAY" secondAttribute="trailing" type="default" id="zGT-NU-66a"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Post an Event" id="JGs-2G-Dx0">
-                        <barButtonItem key="rightBarButtonItem" title="Post Event" id="M4g-jW-dg1">
+                    <navigationItem key="navigationItem" title="New Event" id="JGs-2G-Dx0">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="M4g-jW-dg1">
                             <connections>
                                 <action selector="postEvent:" destination="OGF-ES-Qup" id="NQH-Dd-h4V"/>
                             </connections>
@@ -1324,14 +1324,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="ActivityViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ActivityViewController.h"/>
             <relationships>
-                <relationship kind="action" name="clickCalendar:"/>
                 <relationship kind="outlet" name="activityTable" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="CDQActivityInputController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQActivityInputController.h"/>
             <relationships>
-                <relationship kind="action" name="createActivity:"/>
                 <relationship kind="outlet" name="dateInput" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="distanceInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="durationInput" candidateClass="UITextField"/>
@@ -1349,7 +1347,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="CDQEventsInputController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQEventsInputController.h"/>
             <relationships>
-                <relationship kind="action" name="postEvent:"/>
                 <relationship kind="outlet" name="cityInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="dateInput" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="descriptionInput" candidateClass="UITextView"/>
@@ -1360,7 +1357,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="CDQGoalInputController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQGoalInputController.h"/>
             <relationships>
-                <relationship kind="action" name="createGoal:"/>
                 <relationship kind="outlet" name="endDateInput" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="quantityInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="startDateInput" candidateClass="UIDatePicker"/>
@@ -1377,7 +1373,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="CDQHomeViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQHomeViewController.h"/>
             <relationships>
-                <relationship kind="action" name="doLogout:"/>
                 <relationship kind="outlet" name="loginButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="logoutButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="navBar" candidateClass="UINavigationItem"/>
@@ -1387,8 +1382,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQLoginController.h"/>
             <relationships>
                 <relationship kind="action" name="login:"/>
-                <relationship kind="action" name="logout:"/>
-                <relationship kind="action" name="signup:"/>
                 <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="loginPasswordField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="loginPasswordLabel" candidateClass="UILabel"/>
@@ -1418,9 +1411,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="ProfileViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
             <relationships>
-                <relationship kind="action" name="enterAddress:"/>
-                <relationship kind="action" name="enterDOB:"/>
-                <relationship kind="action" name="enterEmail:"/>
                 <relationship kind="outlet" name="aboutTextView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="achievementTable" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="addressField" candidateClass="UITextField"/>
