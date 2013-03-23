@@ -25,45 +25,20 @@ db_session.add(Event(curr_time, "Do not miss La Tour De France! Find out more de
 db_session.commit()
 
 #Create Achivements
+
+# Running
 db_session.add(Achievement(
-	"Newbie",
-	"Congratulations, this is the very first time you are running!",
-	"../img/achievements/unlocked_achievement2.jpeg",
+	"Couch to 5K",
+	"Nice work! (run 5 km in one workout)",
+	"../img/achievements/unlocked_achievement1.jpeg",
 	"Run",
-	"total",
-	"10",
+	"max",
+	"5",
 	"distance"
 ))
 db_session.add(Achievement(
 	"Runner",
-	"Yay! You have achieved the title of runner",
-	"../img/achievements/unlocked_achievement4.jpeg",
-	"Bike",
-	"average",
-	"100",
-	"distance"
-))
-db_session.add(Achievement(
-	"Crazy",
-	"Yaaaahaaa, WOwhooo, beepee beepee",
-	"../img/achievements/unlocked_achievement3.jpeg",
-	"Run",
-	"total",
-	"100",
-	"distance"
-))
-db_session.add(Achievement(
-	"Local",
-	"You must know all the locals by now - you are always running around!",
-	"../img/achievements/unlocked_achievement5.jpeg",
-	"Run",
-	"total",
-	"10",
-	"distance"
-))
-db_session.add(Achievement(
-	"Adventurer",
-	"Walk through the same route everyday? That's not for you - congratulations, you have acquired the adventurer badge",
+	"Yay! You sure are going places! (run 50 km total)",
 	"../img/achievements/unlocked_achievement6.jpeg",
 	"Run",
 	"total",
@@ -71,176 +46,155 @@ db_session.add(Achievement(
 	"distance"
 ))
 db_session.add(Achievement(
-	"Inspired",
-	"You have been biking everyday since 1993! That deserves a celebrtion!",
-	"../img/achievements/unlocked_achievement7.jpeg",
+	"Marathoner",
+	"Wow, you are amazing! (run 42 km in one workout)",
+	"../img/achievements/unlocked_achievement1.jpeg",
 	"Run",
-	"total",
-	"10",
+	"max",
+	"42",
 	"distance"
 ))
 db_session.add(Achievement(
-	"Forest Gump",
-	"Run Forest, RUN!",
-	"../img/achievements/unlocked_achievement8.jpeg",
+	"Ultra-Runner",
+	"\"To give anything less than the best is to sacrifice the gift.\" (run 250 km total)",
+	"../img/achievements/unlocked_achievement6.jpeg",
 	"Run",
 	"total",
+	"250",
+	"distance"
+))
+db_session.add(Achievement(
+	"Forrest Gump",
+	"Run, Forrest, Run!! (run 1000 km total)",
+	"../img/achievements/unlocked_achievement10.jpeg",
+	"Run",
+	"total",
+	"1000",
+	"distance"
+))
+db_session.add(Achievement(
+	"Keep that Pace",
+	"Steady as she goes! (run an average top speed of 10 km/hr)",
+	"../img/achievements/unlocked_achievement2.jpeg",
+	"Run",
+	"average",
 	"10",
+	"max_speed"
+))
+db_session.add(Achievement(
+	"You're Crazy!",
+	"Are you up for the challenge? (run for over 4 hours in one workout)",
+	"../img/achievements/unlocked_achievement5.jpeg",
+	"Run",
+	"max",
+	"240",
+	"duration"
+))
+
+# Bike
+db_session.add(Achievement(
+	"Training Wheels",
+	"Nice work! (bike 10 km total)",
+	"../img/achievements/unlocked_achievement1.jpeg",
+	"Bike",
+	"total",
+	"5",
+	"distance"
+))
+db_session.add(Achievement(
+	"Bicycling 101",
+	"Good consistency! (bike 101 km total)",
+	"../img/achievements/unlocked_achievement12.jpeg",
+	"Bike",
+	"total",
+	"101",
 	"distance"
 ))
 db_session.add(Achievement(
 	"Iron Maiden",
-	"Run to the hiiiiiiiiiiillllsssssss, run for your liiiiiiiiiiives",
-	"../img/achievements/unlocked_achievement9.jpeg",
-	"Run",
-	"total",
-	"10",
+	"Run to the hiiiiiiiiiiillllsssssss, run for your liiiiiiiiiiives! (bike 80 km in one workout)",
+	"../img/achievements/unlocked_achievement12.jpeg",
+	"Bike",
+	"max",
+	"80",
 	"distance"
 ))
 db_session.add(Achievement(
-	"Healthy",
-	"Eat healthy, be healhy! <3",
-	"../img/achievements/unlocked_achievement1.jpeg",
-	"Run",
-	"total",
-	"10",
-	"distance"
-))
-db_session.add(Achievement(
-	"Inventor",
-	"Be creative!",
+	"Super Biker",
+	"Wow, your legs must be sore! (bike 1000 km total)",
 	"../img/achievements/unlocked_achievement10.jpeg",
-	"Run",
+	"Bike",
 	"total",
-	"10",
+	"1000",
 	"distance"
 ))
 db_session.add(Achievement(
-	"Lack of Imagination",
-	"Congratulations! This makes it two!",
-	"../img/achievements/unlocked_achievement11.jpeg",
-	"Run",
-	"total",
-	"10",
-	"distance"
-))
-db_session.add(Achievement(
-	"Newbie2",
-	"Congratulations, this is the very first time you are running!",
+	"Speed Demon",
+	"What a blur! (bike an average top speed of 20 km/hr)",
 	"../img/achievements/unlocked_achievement2.jpeg",
-	"Run",
-	"total",
-	"10",
-	"distance"
+	"Bike",
+	"average",
+	"20",
+	"max_speed"
 ))
 db_session.add(Achievement(
-	"Runner2",
-	"Yay! You have achieved the title of runner",
-	"../img/achievements/unlocked_achievement4.jpeg",
-	"Run",
-	"total",
-	"10",
-	"distance"
-))
-db_session.add(Achievement(
-	"Crazy2",
-	"Yaaaahaaa, WOwhooo, beepee beepee",
-	"../img/achievements/unlocked_achievement3.jpeg",
-	"Run",
-	"total",
-	"10",
-	"distance"
-))
-db_session.add(Achievement(
-	"Local2",
-	"You must know all the locals by now - you are always running around!",
+	"The Flash",
+	"WHOA! (bike a top speed of 50 km/hr in one workout)",
 	"../img/achievements/unlocked_achievement5.jpeg",
-	"Run",
-	"total",
-	"10",
-	"distance"
+	"Bike",
+	"max",
+	"50",
+	"max_speed"
 ))
+
+
+# Swim 
 db_session.add(Achievement(
-	"Adventurer2",
-	"Walk through the same route everyday? That's not for you - congratulations, you have acquired the adventurer badge",
-	"../img/achievements/unlocked_achievement6.jpeg",
-	"Run",
-	"total",
-	"10",
-	"distance"
-))
-db_session.add(Achievement(
-	"Inspired2",
-	"You have been biking everyday since 1993! That deserves a celebrtion!",
-	"../img/achievements/unlocked_achievement7.jpeg",
-	"Run",
-	"total",
-	"10",
-	"distance"
-))
-db_session.add(Achievement(
-	"Forest Gump2",
-	"Run Forest, RUN!",
-	"../img/achievements/unlocked_achievement8.jpeg",
-	"Run",
-	"total",
-	"10",
-	"distance"
-))
-db_session.add(Achievement(
-	"Iron Maiden2",
-	"Run to the hiiiiiiiiiiillllsssssss, run for your liiiiiiiiiiives",
-	"../img/achievements/unlocked_achievement9.jpeg",
-	"Run",
-	"total",
-	"10",
-	"distance"
-))
-db_session.add(Achievement(
-	"Healthy2",
-	"Eat healthy, be healhy! <3",
+	"Take a Dip",
+	"The water is so refreshing! (swim 1 km total)",
 	"../img/achievements/unlocked_achievement1.jpeg",
-	"Run",
+	"Swim",
 	"total",
-	"10",
+	"1",
 	"distance"
 ))
 db_session.add(Achievement(
-	"Inventor2",
-	"Be creative!",
-	"../img/achievements/unlocked_achievement10.jpeg",
-	"Run",
+	"Swimmer",
+	"Swimming is fun! (swim 20 km total)",
+	"../img/achievements/unlocked_achievement13.jpeg",
+	"Swim",
 	"total",
-	"10",
+	"1",
 	"distance"
 ))
 db_session.add(Achievement(
-	"Lack of Imagination2",
-	"Congratulations! This makes it two!",
+	"Under the Sea",
+	"Where eveything is better! (swim 100 km total)",
+	"../img/achievements/unlocked_achievement13.jpeg",
+	"Swim",
+	"total",
+	"1",
+	"distance"
+))
+db_session.add(Achievement(
+	"Like a Fish",
+	"Zoom zoom! (swim at an average 3 km/hr top speed)",
 	"../img/achievements/unlocked_achievement11.jpeg",
-	"Run",
-	"total",
-	"10",
-	"distance"
+	"Swim",
+	"average",
+	"3",
+	"max_speed"
 ))
 db_session.add(Achievement(
-	"Inventor3",
-	"Be creative!",
-	"../img/achievements/unlocked_achievement10.jpeg",
-	"Run",
-	"total",
-	"10",
-	"distance"
+	"Treading Water",
+	"Such endurance! (swim for over an hour in a workout)",
+	"../img/achievements/unlocked_achievement2.jpeg",
+	"Swim",
+	"max",
+	"60",
+	"duration"
 ))
-db_session.add(Achievement(
-	"Lack of Imagination3",
-	"Congratulations! This makes it two!",
-	"../img/achievements/unlocked_achievement11.jpeg",
-	"Run",
-	"total",
-	"10",
-	"distance"
-))
+
 db_session.commit()
 
 #Create Athletes
@@ -269,22 +223,22 @@ for athlete in athletes:
 	#Create Activities
 	db_session.add(Activity(athleteID, "Run", curr_time, 10, 50, 25))
 	db_session.add(Activity(athleteID, "Run", curr_time-timedelta(days=2), 12, 60, 25))
-	db_session.add(Activity(athleteID, "Walk", curr_time-timedelta(days=4), 3, 40, 10))
-	db_session.add(Activity(athleteID, "Walk", curr_time-timedelta(days=6), 4, 52, 10))
+	#db_session.add(Activity(athleteID, "Walk", curr_time-timedelta(days=4), 3, 40, 10))
+	#db_session.add(Activity(athleteID, "Walk", curr_time-timedelta(days=6), 4, 52, 10))
 	db_session.add(Activity(athleteID, "Bike", curr_time-timedelta(days=8), 30, 60, 52))
 	db_session.add(Activity(athleteID, "Bike", curr_time-timedelta(days=12), 35, 60, 55))
 
 	db_session.add(Activity(athleteID, "Run", curr_time-timedelta(days=14), 10, 50, 25))
 	db_session.add(Activity(athleteID, "Run", curr_time-timedelta(days=16), 12, 60, 25))
-	db_session.add(Activity(athleteID, "Walk", curr_time-timedelta(days=18), 3, 40, 10))
-	db_session.add(Activity(athleteID, "Walk", curr_time-timedelta(days=20), 4, 52, 10))
+	#db_session.add(Activity(athleteID, "Walk", curr_time-timedelta(days=18), 3, 40, 10))
+	#db_session.add(Activity(athleteID, "Walk", curr_time-timedelta(days=20), 4, 52, 10))
 	db_session.add(Activity(athleteID, "Bike", curr_time-timedelta(days=22), 30, 60, 52))
 	db_session.add(Activity(athleteID, "Bike", curr_time-timedelta(days=24), 35, 60, 55))
 
 	db_session.add(Activity(athleteID, "Run", curr_time-timedelta(days=26), 10, 50, 25))
 	db_session.add(Activity(athleteID, "Run", curr_time-timedelta(days=28), 12, 60, 25))
-	db_session.add(Activity(athleteID, "Walk", curr_time-timedelta(days=30), 3, 40, 10))
-	db_session.add(Activity(athleteID, "Walk", curr_time-timedelta(days=32), 4, 52, 10))
+	#db_session.add(Activity(athleteID, "Walk", curr_time-timedelta(days=30), 3, 40, 10))
+	#db_session.add(Activity(athleteID, "Walk", curr_time-timedelta(days=32), 4, 52, 10))
 	db_session.add(Activity(athleteID, "Bike", curr_time-timedelta(days=34), 30, 60, 52))
 	db_session.add(Activity(athleteID, "Bike", curr_time-timedelta(days=36), 35, 60, 55))
 
@@ -319,15 +273,15 @@ for athlete in athletes:
 		curr_time + timedelta(days=21)
 	))
 
-	db_session.add(Goal(
-		athleteID,
-		"Walk",
-		"total",
-		"100",
-		"distance",
-		curr_time + timedelta(days=25),
-		curr_time + timedelta(days=50)
-	))
+	#db_session.add(Goal(
+	#	athleteID,
+	#	"Walk",
+	#	"total",
+	#	"100",
+	#	"distance",
+	#	curr_time + timedelta(days=25),
+	#	curr_time + timedelta(days=50)
+	#))
 
 	db_session.commit()
 
