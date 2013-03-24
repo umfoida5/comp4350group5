@@ -7,7 +7,9 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
-
+#import "CDQGoalInputController.h"
+#import "CDQGoalsViewController.h"
 @interface CDQGoalInputController_test : SenTestCase
-
+@property(strong, nonatomic) CDQGoalInputController *giController;
+@property(strong, nonatomic) CDQGoalsViewController *gvController;
 @end
