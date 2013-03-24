@@ -31,7 +31,7 @@ class Login:
 					old_id = cherrypy.session.get('id')
 
                                         if not cherrypy.session.has_key('username'):
-					    self.__update_tables_athlete_id(old_id, athlete.id)
+					    self.update_tables_athlete_id(old_id, athlete.id)
                                             Athlete.query.filter(and_(
                                                 Athlete.id == old_id,
                                                 Athlete.username == None
@@ -82,7 +82,7 @@ class Login:
 		
 		return return_message
 
-	def __update_tables_athlete_id(self, old_id, new_id):
+	def update_tables_athlete_id(self, old_id, new_id):
 		db_session = database.session
 		
 		#unlocked_achievements table
