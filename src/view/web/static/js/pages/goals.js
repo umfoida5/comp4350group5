@@ -1,6 +1,6 @@
-($(document).ready(function() {
 
-  $('#enterButton').click(function() {
+
+  function EnterButton($){$('#enterButton').click(function() {
     $('#enter_goal_modal').modal('show');
     $('#activity').attr('value', '');
     $('#operator').attr('value', 'total');
@@ -8,13 +8,14 @@
     $('#metric').attr('value', 'distance');
     $('#start_date').attr('value', '');
     $('#end_date').attr('value', '');
-  });
+  });}
 
-  $('#closeButton').click(function() {
-    $('#enter_goal_modal').modal('hide');
-  });
-
-  var goalsTable = $('#goalsTable').dataTable( {
+  function CloseButton($){
+    $('#closeButton').click(function() {
+      $('#enter_goal_modal').modal('hide');
+    });
+  }
+  function GoalsTable($){$('#goalsTable').dataTable( {
     "bProcessing": true,
     "bServerSide": true,
     //"bLengthChange": false,
@@ -42,24 +43,24 @@
         }
       }
     ]
-  } );
+  } );}
 
   // for submitting the new goal
-  $("form").submit(function() {
+  function Form($){$("form").submit(function() {
     $.post("create", $(this).serialize(), function() {
       goalsTable.fnDraw();
       $('#enter_goal_modal').modal('hide');
     } );
     return false;
-  });
+  });}
 
   // for the start and end date inputs
-  $('#start_date').datepicker().on('changeDate', function(){
+  function StartDate($){$('#start_date').datepicker().on('changeDate', function(){
       $(this).datepicker('hide');
-  });
+  });}
   
-$('#end_date').datepicker().on('changeDate', function(){
+function EndDate($){$('#end_date').datepicker().on('changeDate', function(){
       $(this).datepicker('hide');
-  });
+  });}
 
-  }));
+  
