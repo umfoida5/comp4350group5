@@ -103,6 +103,16 @@ class LoginTest(unittest.TestCase):
 
 		self.assertEqual("fdart", cherrypy.session['username'])
 
+	def test_signup_failure(self):
+		self.populate_database_with_test_data()
+
+		#initialize temporary session id
+		self.login_controller.do_login("justin", "sha256andsalted")
+
+		temp_athlete_id = cherrypy.session.get('id')
+		message = self.login_controller.signup('justin', 'sha256andsalted', 'Joe', 'Smith')
+		self.assertEqual('Username already exists. Please enter a new username.', message)
+
 	def test_logout_success(self):
 		self.populate_database_with_test_data()
 		self.login_controller.do_login("ben", "anypassword")
