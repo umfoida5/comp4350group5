@@ -11,5 +11,5 @@
 @interface CDQActivityInputController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 @property (weak, nonatomic) IBOutlet UIPickerView *typeInput;
 @property (strong, nonatomic) NSMutableArray *typeContentArray;
-
+- (IBAction)createActivity:(id)sender;
 @end

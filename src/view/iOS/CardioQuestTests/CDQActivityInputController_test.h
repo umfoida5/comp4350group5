@@ -7,7 +7,9 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
-
+#import "CDQActivityInputController.h"
+#import "ActivityViewController.h"
 @interface CDQActivityInputController_test : SenTestCase
-
+@property(strong,nonatomic) CDQActivityInputController* aiController;
+@property(strong,nonatomic) ActivityViewController* avController;
 @end
