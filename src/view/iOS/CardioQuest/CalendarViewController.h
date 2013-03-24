@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <TapkuLibrary.h>
 
-@interface CalendarViewController : UIViewController
+@interface CalendarViewController : TKCalendarMonthTableViewController
+
+@property (strong,nonatomic) NSMutableArray *activitiesArray;
+@property (strong,nonatomic) NSMutableArray *dataArray;
+@property (strong,nonatomic) NSMutableDictionary *dataDictionary;
+
+- (void) getActivitiesData:(NSDate*)start endDate:(NSDate*)end;
 
 @end
+

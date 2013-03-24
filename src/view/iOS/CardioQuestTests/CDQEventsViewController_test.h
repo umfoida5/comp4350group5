@@ -7,10 +7,10 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
-#import "CDQHomeController.h"
+#import "CDQLoginController.h"
 #import "CDQEventsController.h"
 
 @interface CDQEventsViewController_test : SenTestCase
 @property (strong, nonatomic) CDQEventsController *eventsController;
-@property (strong, nonatomic) CDQHomeController   *homeController;
+@property (strong, nonatomic) CDQLoginController   *homeController;
 @end
