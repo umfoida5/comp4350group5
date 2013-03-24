@@ -1333,6 +1333,55 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="3286" y="-550"/>
         </scene>
+        <!--View Controller - Stats-->
+        <scene sceneID="P2Y-fG-DBj">
+            <objects>
+                <viewController id="MpW-K9-BtT" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x2L-Q8-nHt">
+                        <rect key="frame" x="0.0" y="20" width="768" height="955"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="15y-Cm-Ilq">
+                                <items>
+                                    <navigationItem title="Stats" id="fat-wh-DiJ"/>
+                                </items>
+                            </navigationBar>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4qx-Hf-rgn">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="216" id="411-Qk-j8z"/>
+                                </constraints>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qDE-XJ-97v">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="216" id="KEG-4F-dJu"/>
+                                </constraints>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wq-Db-KHU">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="216" id="wIP-sL-mGi"/>
+                                </constraints>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qDE-XJ-97v" firstAttribute="centerX" secondItem="15y-Cm-Ilq" secondAttribute="centerX" type="default" id="3kT-YR-WRR"/>
+                            <constraint firstAttribute="trailing" secondItem="6wq-Db-KHU" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="9Px-mb-PcF"/>
+                            <constraint firstItem="4qx-Hf-rgn" firstAttribute="leading" secondItem="x2L-Q8-nHt" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="KTP-iZ-feW"/>
+                            <constraint firstItem="15y-Cm-Ilq" firstAttribute="trailing" secondItem="x2L-Q8-nHt" secondAttribute="trailing" type="default" id="VDz-Ih-geK"/>
+                            <constraint firstAttribute="bottom" secondItem="6wq-Db-KHU" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="cpt-z1-5Ss"/>
+                            <constraint firstItem="15y-Cm-Ilq" firstAttribute="leading" secondItem="x2L-Q8-nHt" secondAttribute="leading" type="default" id="gwF-0x-TWM"/>
+                            <constraint firstAttribute="bottom" secondItem="qDE-XJ-97v" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="mUh-go-3Mv"/>
+                            <constraint firstItem="15y-Cm-Ilq" firstAttribute="top" secondItem="x2L-Q8-nHt" secondAttribute="top" type="default" id="u9U-RU-Tms"/>
+                            <constraint firstAttribute="bottom" secondItem="4qx-Hf-rgn" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="ybU-bU-1tB"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Stats" image="first.png" id="wDC-Cp-tWY"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CVf-lz-0WJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3278" y="890"/>
+        </scene>
         <!--Navigation Controller - Health-->
         <scene sceneID="Ryj-jQ-EQt">
             <objects>
@@ -1544,6 +1593,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <segue destination="Nim-bR-L6c" kind="relationship" relationship="viewControllers" id="Wj1-7G-Uat"/>
                         <segue destination="FY5-0r-oNa" kind="relationship" relationship="viewControllers" id="w2X-d1-DOy"/>
                         <segue destination="Aly-u4-NBX" kind="relationship" relationship="viewControllers" id="feC-dv-epZ"/>
+                        <segue destination="MpW-K9-BtT" kind="relationship" relationship="viewControllers" id="H6f-d2-NMv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
@@ -1567,6 +1617,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="CDQActivityInputController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQActivityInputController.h"/>
             <relationships>
+                <relationship kind="action" name="createActivity:"/>
                 <relationship kind="outlet" name="dateInput" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="distanceInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="durationInput" candidateClass="UITextField"/>
@@ -1584,6 +1635,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="CDQEventsInputController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQEventsInputController.h"/>
             <relationships>
+                <relationship kind="action" name="postEvent:"/>
                 <relationship kind="outlet" name="cityInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="dateInput" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="descriptionInput" candidateClass="UITextView"/>
@@ -1611,6 +1663,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="CDQHealthInputController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQHealthInputController.h"/>
             <relationships>
+                <relationship kind="action" name="postHealthRecord:"/>
                 <relationship kind="outlet" name="healthComments" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="healthDate" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="healthHeartRate" candidateClass="UITextField"/>

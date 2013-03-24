@@ -13,6 +13,11 @@
 		0D3A90B916FCCD5B00EDC3D0 /* TapkuLibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0D3A90B816FCCD5A00EDC3D0 /* TapkuLibrary.bundle */; };
 		1426EA6716FF93AF00D70AEC /* CDCgraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 1426EA6416FF93AF00D70AEC /* CDCgraph.m */; };
 		1426EA6816FF93AF00D70AEC /* CDCStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1426EA6616FF93AF00D70AEC /* CDCStatsViewController.m */; };
+		1426EA7616FF93F300D70AEC /* ECGraphPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 1426EA7116FF93F300D70AEC /* ECGraphPoint.m */; };
+		1426EA7716FF93F300D70AEC /* ECGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 1426EA7216FF93F300D70AEC /* ECGraph.m */; };
+		1426EA7816FF93F300D70AEC /* ECGraphItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1426EA7316FF93F300D70AEC /* ECGraphItem.m */; };
+		1426EA7916FF93F300D70AEC /* ECGraphLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1426EA7416FF93F300D70AEC /* ECGraphLine.m */; };
+		1426EA7A16FF93F300D70AEC /* ECCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1426EA7516FF93F300D70AEC /* ECCommon.m */; };
 		3788154C16FE412700E56CE3 /* CDQHealthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3788154B16FE412700E56CE3 /* CDQHealthTableViewController.m */; };
 		3788155016FE4DDF00E56CE3 /* CDQHealthInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3788154F16FE4DDF00E56CE3 /* CDQHealthInputController.m */; };
 		3788155316FE685200E56CE3 /* CDQGoalInputController_test.m in Sources */ = {isa = PBXBuildFile; fileRef = 3788155216FE685200E56CE3 /* CDQGoalInputController_test.m */; };
@@ -129,6 +134,16 @@
 		1426EA6416FF93AF00D70AEC /* CDCgraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDCgraph.m; sourceTree = "<group>"; };
 		1426EA6516FF93AF00D70AEC /* CDCStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDCStatsViewController.h; sourceTree = "<group>"; };
 		1426EA6616FF93AF00D70AEC /* CDCStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDCStatsViewController.m; sourceTree = "<group>"; };
+		1426EA6B16FF93F300D70AEC /* ECCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCommon.h; sourceTree = "<group>"; };
+		1426EA6D16FF93F300D70AEC /* ECGraphItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGraphItem.h; sourceTree = "<group>"; };
+		1426EA6E16FF93F300D70AEC /* ECGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGraph.h; sourceTree = "<group>"; };
+		1426EA6F16FF93F300D70AEC /* ECGraphPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGraphPoint.h; sourceTree = "<group>"; };
+		1426EA7016FF93F300D70AEC /* ECGraphLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGraphLine.h; sourceTree = "<group>"; };
+		1426EA7116FF93F300D70AEC /* ECGraphPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGraphPoint.m; sourceTree = "<group>"; };
+		1426EA7216FF93F300D70AEC /* ECGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGraph.m; sourceTree = "<group>"; };
+		1426EA7316FF93F300D70AEC /* ECGraphItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGraphItem.m; sourceTree = "<group>"; };
+		1426EA7416FF93F300D70AEC /* ECGraphLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGraphLine.m; sourceTree = "<group>"; };
+		1426EA7516FF93F300D70AEC /* ECCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECCommon.m; sourceTree = "<group>"; };
 		3788154A16FE412700E56CE3 /* CDQHealthTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQHealthTableViewController.h; sourceTree = "<group>"; };
 		3788154B16FE412700E56CE3 /* CDQHealthTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQHealthTableViewController.m; sourceTree = "<group>"; };
 		3788154E16FE4DDF00E56CE3 /* CDQHealthInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQHealthInputController.h; sourceTree = "<group>"; };
@@ -301,6 +316,31 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		1426EA6A16FF93F300D70AEC /* ECGraph */ = {
+			isa = PBXGroup;
+			children = (
+				1426EA6B16FF93F300D70AEC /* ECCommon.h */,
+				1426EA6C16FF93F300D70AEC /* ECGraph */,
+				1426EA7516FF93F300D70AEC /* ECCommon.m */,
+			);
+			path = ECGraph;
+			sourceTree = "<group>";
+		};
+		1426EA6C16FF93F300D70AEC /* ECGraph */ = {
+			isa = PBXGroup;
+			children = (
+				1426EA6D16FF93F300D70AEC /* ECGraphItem.h */,
+				1426EA6E16FF93F300D70AEC /* ECGraph.h */,
+				1426EA6F16FF93F300D70AEC /* ECGraphPoint.h */,
+				1426EA7016FF93F300D70AEC /* ECGraphLine.h */,
+				1426EA7116FF93F300D70AEC /* ECGraphPoint.m */,
+				1426EA7216FF93F300D70AEC /* ECGraph.m */,
+				1426EA7316FF93F300D70AEC /* ECGraphItem.m */,
+				1426EA7416FF93F300D70AEC /* ECGraphLine.m */,
+			);
+			path = ECGraph;
+			sourceTree = "<group>";
+		};
 		72975A6A16ED1DBB00FC7DB8 /* ASIHTTPRequest */ = {
 			isa = PBXGroup;
 			children = (
@@ -365,6 +405,7 @@
 		E4BEB5C016E5361500DD4526 = {
 			isa = PBXGroup;
 			children = (
+				1426EA6A16FF93F300D70AEC /* ECGraph */,
 				0D3A90B816FCCD5A00EDC3D0 /* TapkuLibrary.bundle */,
 				0D3530F716FCBDB700B3F622 /* QuartzCore.framework */,
 				0D3530F516FCBDAE00B3F622 /* MapKit.framework */,
@@ -738,6 +779,11 @@
 				3788156516FE6AE000E56CE3 /* CDQEventsInputController_test.m in Sources */,
 				1426EA6716FF93AF00D70AEC /* CDCgraph.m in Sources */,
 				1426EA6816FF93AF00D70AEC /* CDCStatsViewController.m in Sources */,
+				1426EA7616FF93F300D70AEC /* ECGraphPoint.m in Sources */,
+				1426EA7716FF93F300D70AEC /* ECGraph.m in Sources */,
+				1426EA7816FF93F300D70AEC /* ECGraphItem.m in Sources */,
+				1426EA7916FF93F300D70AEC /* ECGraphLine.m in Sources */,
+				1426EA7A16FF93F300D70AEC /* ECCommon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
