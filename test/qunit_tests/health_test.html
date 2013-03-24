@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Profile Test</title>
+  <link rel="stylesheet" href="./lib/css/qunit-1.11.0.css">
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="./lib/js/qunit-1.11.0.js"></script>
+  <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/bootstrap-datepicker.js"></script>
+  <script src="../../js/jquery.dataTables.min.js"></script>
+  <script src="../../js/bootstrapPagination.js"></script>
+  <script src="../../js/highcharts.js"></script>
+  <script src="../../js/pages/health.js"></script>
+  <script>
+   
+      asyncTest( "Get Graph", function() {
+      expect( 1 );
+      var event, $doc, healthTable;
+      $doc = $(document);
+      healthTable = healthTbl($);
+      event = $.Event("click");
+      $doc.trigger(event);
+      //stop();     
+     // var athlete = prof.get_athleteAjax();
+      
+      setTimeout(function(athlete) {
+        ok(true, "Retrieved Chart");
+        start();
+      }, 1000);
+      
+    });
+    
+  </script>
+  <div id="qunit-fixture">
+    <span>
+       <div id="graphContainer" style="width:100%; height:400px;"></div>
+
+    </span>
+  </div>
+</body>
+</html>

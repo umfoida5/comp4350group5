@@ -1,4 +1,4 @@
-(function($){$(document).ready(function() {
+function GetAthlete($){$(document).ready(function() {
       $('#athleteTable').dataTable( {
         "bProcessing": true,
         "bServerSide": true,
@@ -14,4 +14,4 @@
         ]
       } );
     } );
-})(jQuery);
+}
