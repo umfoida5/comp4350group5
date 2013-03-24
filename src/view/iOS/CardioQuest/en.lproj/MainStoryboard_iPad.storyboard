@@ -654,7 +654,7 @@
         <!--Activity Input Controller - New Activity-->
         <scene sceneID="YIS-Cl-CiF">
             <objects>
-                <viewController id="kYn-xJ-Yw6" customClass="CDQActivityInputController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ActivityInputController" id="kYn-xJ-Yw6" customClass="CDQActivityInputController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n6W-9L-oWm">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1400,7 +1400,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <!--Events Input Controller - New Event-->
         <scene sceneID="4IN-fX-365">
             <objects>
-                <viewController id="OGF-ES-Qup" customClass="CDQEventsInputController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventInputController" id="OGF-ES-Qup" customClass="CDQEventsInputController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dSx-OM-xH6">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

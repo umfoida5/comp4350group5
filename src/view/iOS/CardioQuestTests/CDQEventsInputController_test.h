@@ -7,7 +7,9 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
-
+#import "CDQEventsInputController.h"
+#import "CDQEventsController.h"
 @interface CDQEventsInputController_test : SenTestCase
-
+@property(strong,nonatomic) CDQEventsController* eventController;
+@property(strong,nonatomic) CDQEventsInputController *eiController;
 @end

@@ -120,8 +120,8 @@
     
     self.typeContentArray = [[NSMutableArray alloc] init];
     [self.typeContentArray addObject:@"Run"];
-    [self.typeContentArray addObject:@"Walk"];
     [self.typeContentArray addObject:@"Bike"];
+    [self.typeContentArray addObject:@"Swim"];
     
     self.operatorContentArray = [[NSMutableArray alloc] init];
     [self.operatorContentArray addObject:@"Total"];
@@ -132,6 +132,7 @@
     self.metricContentArray = [[NSMutableArray alloc] init];
     [self.metricContentArray addObject:@"Distance"];
     [self.metricContentArray addObject:@"Max Speed"];
+    [self.metricContentArray addObject:@"Duration"];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
