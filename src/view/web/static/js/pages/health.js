@@ -1,4 +1,5 @@
 function Health() {
+  var healthTable;
   this.controls = function() {
       $('#enterButton').click(function() {
         $('#enter_health_modal').modal('show');
@@ -8,21 +9,80 @@ function Health() {
         $('#enter_health_modal').modal('hide');
       });
 
-      $('#date_wrapper_start').datepicker();
-      $('#date_wrapper_end').datepicker();
+      $('#graph_from_date_div').datepicker();
+      $('#graph_to_date_div').datepicker();
       $('#date_wrapper_form').datepicker();
       
       $('form').submit(function() { 
         $.post("create", $(this).serialize(), function() {
             $('#enter_health_modal').modal('hide');
+            update_graph();       
             healthTable.fnDraw();
         });
         return false;
       });
+
+    // Makes asynchronous call to update graph based on date range.
+    var update_graph = function () {
+      $.ajax( {
+          "dataType": 'json',
+          "type": "GET",
+          "url": "/health/json",
+          "data": {start_date : $('#graph_from_date').attr('value') , end_date : $('#graph_to_date').attr('value')},
+          "success": drawGraph
+      })
+    }
+
+    update_graph();
+
+    $('#updateGraphBtn').click(function() {
+      update_graph();
+    });
+
+    // Callback function to update graph
+    function drawGraph(json) {
+    var graphData = new Array();
+
+    $.each(json.health, function() {
+        var d = new Date(this.health_date);
+        graphData.push([Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()), this.weight]);
+    });
+
+    chart = new Highcharts.Chart({
+        chart: {
+            renderTo: 'graphContainer',
+            type: 'spline'
+        },            
+        title: {
+            text: 'Weight:'
+        },
+        xAxis: {
+            type: 'datetime'
+        },
+        yAxis: {
+            title: {
+                text: 'Weight (lbs)'
+            },
+            min: 0
+        },
+        tooltip: {
+            formatter: function() {
+                    return '<b>'+ this.series.name +'</b><br/>'+
+                    Highcharts.dateFormat('%e. %b', this.x) +': '+ this.y +' m';
+            }
+        },
+        
+        series: [{
+            name: 'Weight',
+            data: graphData
+        }]
+    });
+
+    }
   }
   
   this.healthTable = function() {
-      var healthTable = $('#healthTable').dataTable( {
+      healthTable = $('#healthTable').dataTable( {
         "bProcessing": true,
         "bServerSide": true,
         "sAjaxSource": "/health/update_datatable",
@@ -41,50 +101,10 @@ function Health() {
             "type": "GET",
             "url": sSource,
             "data": aoData,
-            "success": [fnCallback, drawGraph]
-            } );
+            "success": fnCallback
+            });
         }
       });
-      
-      function drawGraph(json) {
-        var graphData = new Array();
-        
-        $.each(json.aaData, function() {
-            var d = new Date(this.health_date);
-            graphData.push([Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()), this.weight]);
-        });
-
-        chart = new Highcharts.Chart({
-            chart: {
-                renderTo: 'graphContainer',
-                type: 'spline'
-            },            
-            title: {
-                text: 'Weight:'
-            },
-            xAxis: {
-                type: 'datetime'
-            },
-            yAxis: {
-                title: {
-                    text: 'Weight (lbs)'
-                },
-                min: 0
-            },
-            tooltip: {
-                formatter: function() {
-                        return '<b>'+ this.series.name +'</b><br/>'+
-                        Highcharts.dateFormat('%e. %b', this.x) +': '+ this.y +' m';
-                }
-            },
-            
-            series: [{
-                name: 'Weight',
-                data: graphData
-            }]
-        });
-
-      }
 
       return healthTable;
   }
