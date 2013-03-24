@@ -25,7 +25,7 @@
     self.activitiesController = [storyboard instantiateViewControllerWithIdentifier:@"Activities"];
     [self.activitiesController performSelectorOnMainThread:@selector(loadView) withObject:nil waitUntilDone:YES];
     
-    self.homeController = [storyboard instantiateViewControllerWithIdentifier:@"Authentication"];
+    self.homeController = [storyboard instantiateViewControllerWithIdentifier:@"Home"];
     [self.homeController performSelectorOnMainThread:@selector(loadView) withObject:nil waitUntilDone:YES];
 }
 
@@ -71,15 +71,15 @@
 
 // -- ASYNCHRONOUS TEST --
 //
-// testActivityAfterLogin()
+// testEventsAfterLogin()
 //
 // Tests to see that without a login the asynchronous call returns valid objects
 //
-- (void)testActivityAfterLogin
+- (void)testEventsAfterLogin
 {
     
     // Log user in
-    [self.homeController loginRequest:@"ios_test_user" password:@"ios_test_user"];
+    [self.homeController loginRequest:@"justin" password:@"justin"];
     
     // test that goals page populates
     [self.activitiesController populateTable];

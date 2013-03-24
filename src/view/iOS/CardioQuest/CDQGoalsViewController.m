@@ -39,9 +39,7 @@ NSArray *tableData;
 	// Do any additional setup after loading the view.
     
     // Initialize table data
-    tableData = [NSArray arrayWithObjects:@"You have not inserted any records yet, or you aren't connected to the internet.", nil];
-    
-    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Ubuntu Orange.jpg"]];
+    tableData = [NSArray arrayWithObjects:@"NO RECORDS", nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,7 +74,7 @@ NSArray *tableData;
 
 -(void) populateTable
 {
-    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/goals/update_datatable?iDisplayLength=1000"];
+    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/goals/update_datatable"];
     
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request addRequestHeader:@"Accept" value:@"application/json"];
@@ -113,7 +111,7 @@ NSArray *tableData;
 
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
-    NSLog(@"ERROR: %@", [request responseString]);
+    NSError *error = [request error];
 }
 
 // hides keyboard

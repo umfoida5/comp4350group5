@@ -8,11 +8,11 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 #import "CDQGoalsViewController.h"
-#import "CDQLoginController.h"
+#import "CDQHomeController.h"
 
 @interface CDQGoalsViewController_test : SenTestCase
 
 @property (strong, nonatomic) CDQGoalsViewController *goalsController;
-@property (strong, nonatomic) CDQLoginController *loginController;
+@property (strong, nonatomic) CDQHomeController *homeController;
 
 @end

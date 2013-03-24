@@ -8,9 +8,9 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 #import "ActivityViewController.h"
-#import "CDQLoginController.h"
+#import "CDQHomeController.h"
 
 @interface CDQActivityViewController_test : SenTestCase
 @property (strong, nonatomic) ActivityViewController  *activitiesController;
-@property (strong, nonatomic) CDQLoginController      *homeController;
+@property (strong, nonatomic) CDQHomeController       *homeController;
 @end

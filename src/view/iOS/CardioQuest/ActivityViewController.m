@@ -33,11 +33,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	// Do any additional setup after loading the view.
     
     // Initialize table data
-    tableData = [NSArray arrayWithObjects:@"You have not inserted any records yet, or you aren't connected to the internet.", nil];
-    
-    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Ubuntu Orange.jpg"]];
+    tableData = [NSArray arrayWithObjects:@"NO RECORDS", nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,7 +71,7 @@
 
 -(void) populateTable
 {
-    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/activities/update_datatable?iDisplayLength=1000"];
+    NSURL *url = [NSURL URLWithString:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/activities/update_datatable"];
     
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request addRequestHeader:@"Accept" value:@"application/json"];
@@ -109,22 +108,8 @@
 
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
-    NSLog(@"ERROR: %@", [request responseString]);
+    NSError *error = [request error];
 }
-
-
-
-
-- (IBAction)clickCalendar:(id)sender {
-    
-    
-    
-    
-}
-
-
-
-
 
 // hides keyboard
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

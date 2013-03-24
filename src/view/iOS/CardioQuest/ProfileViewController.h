@@ -9,13 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ProfileViewController : UIViewController<UITextViewDelegate>
-@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UITextField *dobField;
-@property (weak, nonatomic) IBOutlet UITextField *addressField;
-@property (weak, nonatomic) IBOutlet UITextField *emailField;
-@property (weak, nonatomic) IBOutlet UITextView *aboutTextView;
-@property (weak, nonatomic) IBOutlet UITableView *achievementTable;
-@property (weak, nonatomic) IBOutlet UILabel *validationLabel;
-- (void)sendRequest:(NSURL *)url : (NSString *) userInfo;
+
 @end

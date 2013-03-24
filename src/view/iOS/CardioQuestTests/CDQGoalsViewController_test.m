@@ -25,8 +25,8 @@
     self.goalsController = [storyboard instantiateViewControllerWithIdentifier:@"Goals"];
     [self.goalsController performSelectorOnMainThread:@selector(loadView) withObject:nil waitUntilDone:YES];
     
-    self.loginController = [storyboard instantiateViewControllerWithIdentifier:@"Authentication"];
-    [self.loginController performSelectorOnMainThread:@selector(loadView) withObject:nil waitUntilDone:YES];
+    self.homeController = [storyboard instantiateViewControllerWithIdentifier:@"Home"];
+    [self.homeController performSelectorOnMainThread:@selector(loadView) withObject:nil waitUntilDone:YES];
 }
 
 //
@@ -80,7 +80,7 @@
 {
     
     // Log user in
-    [self.loginController loginRequest:@"ios_unit_test" password:@"ios_unit_test"];
+    [self.homeController loginRequest:@"justin" password:@"justin"];
     
     // test that goals page populates
     [self.goalsController populateTable];
