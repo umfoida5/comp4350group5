@@ -58,7 +58,7 @@
 
 // -- ASYNCHRONOUS TEST --
 //
-// testGoalsEmpty()
+// testHealthEmpty()
 //
 // Tests to see that without a login the asynchronous call returns no objects
 //
@@ -72,7 +72,7 @@
 
 // -- ASYNCHRONOUS TEST --
 //
-// testGoalsPopulated()
+// testHealthPopulated()
 //
 // Tests to see that without a login the asynchronous call returns valid objects
 //

@@ -20,16 +20,6 @@
 	NSArray *tableData;
 }
 
-@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-
-@property (weak, nonatomic) IBOutlet UITextField *dobField;
-@property (weak, nonatomic) IBOutlet UITextField *addressField;
-@property (weak, nonatomic) IBOutlet UITextField *emailField;
-@property (weak, nonatomic) IBOutlet UITextView *aboutTextView;
-@property (weak, nonatomic) IBOutlet UITableView *achievementTable;
-@property (weak, nonatomic) IBOutlet UILabel *validationLabel;
-
 @property (retain) ASINetworkQueue *queue;
 @property NSMutableArray *imgCollection;
 
