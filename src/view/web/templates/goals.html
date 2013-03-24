@@ -9,6 +9,12 @@
   <script type='text/javascript' src='../js/bootstrap.js'></script>
   <script src="../js/bootstrapPagination.js"></script>
   <script src="../js/pages/goals.js"></script>
+  <script>
+      $(document).ready(function() {
+          goals.goalsTable();
+          goals.controls();
+      });
+  </script>
 
 {% endblock script %}
 
