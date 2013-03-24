@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Activities Test</title>
+  <title>Events Test</title>
   <link rel="stylesheet" href="./lib/css/qunit-1.11.0.css">
 </head>
 <body>
@@ -13,16 +13,16 @@
   <script src="../../js/bootstrap-datepicker.js"></script>
   <script src="../../js/jquery.dataTables.min.js"></script> 
   <script src="../../js/bootstrapPagination.js"></script>
-  <script src="../../js/pages/activities.js"></script>
+  <script src="../../js/pages/events.js"></script>
   <script>
 
       asyncTest( "asynchronous test: one second later!", function() {
           expect( 1 );
 
-          var athleteTable = activity.athleteTable();
+          var eventTable = events.eventTable();
           
-          athleteTable.bind('draw', function() {
-            ok(true, "Athlete Table was loaded");
+          eventTable.bind('draw', function() {
+            ok(true, "Event Table was loaded");
           });
 
           setTimeout(function() {
@@ -33,7 +33,7 @@
     
   </script>
   <div style="display:none;">
-      <table id="athleteTable"></table>
+      <table id="eventTable"></table>
   </div>
 </body>
 </html>

@@ -19,7 +19,14 @@ function Activities(){
             $('#view_activity_modal').modal('hide'); 
         });
 
-        
+        $('form').submit(function() { 
+            $.post("create", $(this).serialize(), function() {
+                $('#enter_activity_modal').modal('hide');
+                $('#calendar').fullCalendar('refetchEvents');
+                athleteTable.fnDraw();
+            });
+            return false;
+        });
     }
     
     $('#dateInput').datepicker().on('changeDate', function(){
@@ -31,7 +38,7 @@ function Activities(){
         "bProcessing": true,
         "bServerSide": true,
         "sPaginationType": "bootstrap",
-        "sAjaxSource": "update_datatable",
+        "sAjaxSource": "/activities/update_datatable",
         "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
         "aoColumns": [
           { "mData": "type", "sWidth": '25%' },
@@ -41,14 +48,7 @@ function Activities(){
           { "mData": "max_speed", "sWidth": '15%', "bSearchable": false }
         ]} );
 
-        $('form').submit(function() { 
-            $.post("create", $(this).serialize(), function() {
-                $('#enter_activity_modal').modal('hide');
-                $('#calendar').fullCalendar('refetchEvents');
-                athleteTable.fnDraw();
-            });
-            return false;
-        });
+        return athleteTable;
     }
 
     this.ajax_calendar = function() {
