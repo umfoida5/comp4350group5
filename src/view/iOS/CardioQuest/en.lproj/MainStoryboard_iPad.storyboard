@@ -1524,7 +1524,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VEk-Qu-uhA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3951" y="-1863"/>
+            <point key="canvasLocation" x="3994" y="-1856"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -1567,7 +1567,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="CDQActivityInputController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQActivityInputController.h"/>
             <relationships>
-                <relationship kind="action" name="createActivity:"/>
                 <relationship kind="outlet" name="dateInput" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="distanceInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="durationInput" candidateClass="UITextField"/>
@@ -1690,7 +1689,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="VMQ-w2-ZO9"/>
-        <segue reference="yK0-aa-OgA"/>
         <segue reference="aSa-Pj-N1K"/>
+        <segue reference="yK0-aa-OgA"/>
     </inferredMetricsTieBreakers>
 </document>

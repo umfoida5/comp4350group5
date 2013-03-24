@@ -1,4 +1,4 @@
-import cherrypy, httplib
+import cherrypy
 from modules.transaction import commit_on_success
 from modules.jsonable import make_jsonable
 from modules.template import env
