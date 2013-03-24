@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *healthWeight;
 @property (weak, nonatomic) IBOutlet UITextField *healthHeartRate;
 @property (weak, nonatomic) IBOutlet UITextField *healthComments;
-
+- (IBAction)postHealthRecord:(id)sender;
 
 
 @end
