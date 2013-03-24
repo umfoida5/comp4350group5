@@ -16,6 +16,7 @@ class Profiles:
     @cherrypy.expose
     def athlete(self, **kwargs):
         result = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
+        print make_jsonable(result)
         return make_jsonable(result)
     
     @cherrypy.tools.json_out()
