@@ -11,10 +11,6 @@
 
 @interface CDQHomeViewController ()
 
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *logoutButton;
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *loginButton;
-@property (strong, nonatomic) IBOutlet UINavigationItem *navBar;
-
 @end
 
 @implementation CDQHomeViewController
