@@ -9,15 +9,11 @@
   <script type='text/javascript' src='../js/bootstrap.js'></script>
   <script src="../js/bootstrapPagination.js"></script>
   <script src="../js/pages/goals.js"></script>
-  <script type="text/javascript">
-  $(document).ready(function() {
-    EnterButton($);
-    CloseButton($);
-    var goalsTable = GoalsTable($);
-    Form($,goalsTable);
-    StartDate($);
-    EndDate($);
-  });
+  <script>
+      $(document).ready(function() {
+          goals.goalsTable();
+          goals.controls();
+      });
   </script>
 
 {% endblock script %}

@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Profile Test</title>
+  <title>Events Test</title>
   <link rel="stylesheet" href="./lib/css/qunit-1.11.0.css">
 </head>
 <body>
@@ -10,33 +10,30 @@
   <div id="qunit-fixture"></div>
   <script src="./lib/js/qunit-1.11.0.js"></script>
   <script src="../../js/jquery.min.js"></script>
-<link href="../../css/datepicker.css" rel="stylesheet">
   <script src="../../js/bootstrap-datepicker.js"></script>
-  <script src="../../js/jquery.dataTables.min.js"></script>
-  <link rel="stylesheet" href="../../css/datatables.css">
+  <script src="../../js/jquery.dataTables.min.js"></script> 
   <script src="../../js/bootstrapPagination.js"></script>
   <script src="../../js/pages/events.js"></script>
   <script>
-    
+
       asyncTest( "asynchronous test: one second later!", function() {
-      expect( 1 );
-      //stop();     
-      var event, $doc, eventTable;
-      $doc = $(document);
-      eventTable = EventTable($);
-      event = $.Event("click");
-      $doc.trigger(event);
-      
-      setTimeout(function(athlete) {
-        ok(true, "Retrieved the Event Table");
-        start();
-      }, 1000);
+          expect( 1 );
+
+          var eventTable = events.eventTable();
+          
+          eventTable.bind('draw', function() {
+            ok(true, "Event Table was loaded");
+          });
+
+          setTimeout(function() {
+              start();
+          }, 1000);
       
     });
     
   </script>
-  <div id="qunit-fixture">
-    <span></span>
+  <div style="display:none;">
+      <table id="eventTable"></table>
   </div>
 </body>
 </html>

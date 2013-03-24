@@ -60,9 +60,6 @@ class Goals:
     def mark_completed(self, goal):
         result = Goal.query.get(goal.goal_id)
         result.completed = True
-
-        #database.session.add(result)
-        #return make_jsonable(result)
         
     @cherrypy.tools.json_out()
     @cherrypy.expose

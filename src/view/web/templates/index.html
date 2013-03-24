@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block head %}
       <meta charset="utf-8">
-      <title>CardioQuest</title>
+      <title>Cardio Quest</title>
       <link rel="stylesheet" href="../css/bootstrap.min.css">
       <link rel="stylesheet" href="../css/bootstrap-responsive.min.css">
       <link rel="stylesheet" href="../css/font-awesome.min.css">
@@ -13,7 +13,16 @@
 
     {% endblock head %}
     {% block script %}
-
+  <script>
+    $(document).ready(function() {
+    	$.get("/get_current_username", function(username) {
+			if (username != "") {
+				$("#signupBtn").hide();
+			}
+        } );
+    } );
+  
+  </script>
     {% endblock script %}
   <script>
     $(document).ready(function() {
@@ -57,7 +66,7 @@
               <span class="icon-bar"></span>
             </a>
 
-            <a class="brand" href="../">CardioQuest</a>
+            <a class="brand" href="../">Cardio Quest</a>
 
             <div class="nav-collapse collapse">
               <ul class="nav" id="main-menu-left">
@@ -83,14 +92,14 @@
     {% block body %}
       <!-- HERO UNIT ======================================= -->
       <div class="hero-unit">
-        <h1>CardioQuest</h1>
+        <h1>Cardio Quest</h1>
         <ph>Your journey to a better life starts here.</p>
         </br>
         <p>Are you frustrated with your current cycling or running routine? Do you find it difficult to keep track of your progress? If so, you're in luck! CardioQuest lets amateur athletes track their workouts effortlessly.
         Play around with the site to try it out! Sign up to start logging your workouts!</p>
         <p><a class="btn btn-primary btn-large pull-right" href="../activities">Get Started &raquo;</a></p>
         <p class="pull-right">&nbsp;&nbsp;</p>
-        <p><a class="btn btn-primary btn-large pull-right" href="../login">Sign up</a></p>        
+        <p><a class="btn btn-primary btn-large pull-right" id="signupBtn" href="../login">Sign up</a></p>        
       </div><!-- .hero-unit -->
     {% endblock body %}
 

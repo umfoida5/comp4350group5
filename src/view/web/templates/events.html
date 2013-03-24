@@ -8,15 +8,11 @@
   <script src="../js/jquery.dataTables.min.js"></script>
   <link rel="stylesheet" href="../css/datatables.css">
   <script src="../js/bootstrapPagination.js"></script>
-  <script src="../js/pages/events.js"></script>
   <script>
     $(document).ready(function() {
-      EnterButton($);
-      CloseButton($);
-      eventTable = EventTable($);
-      DateWrapper($);
-      Form($,eventTable);
-    } );
+        events.controls();
+        events.eventTable();
+    });
   </script>
 {% endblock script %}
 {% block body %}

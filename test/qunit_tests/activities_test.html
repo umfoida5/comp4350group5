@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Profile Test</title>
+  <title>Activities Test</title>
   <link rel="stylesheet" href="./lib/css/qunit-1.11.0.css">
 </head>
 <body>
@@ -18,19 +18,22 @@
 
       asyncTest( "asynchronous test: one second later!", function() {
           expect( 1 );
-          //stop();     
+
           var athleteTable = activity.athleteTable();
           
+          athleteTable.bind('draw', function() {
+            ok(true, "Athlete Table was loaded");
+          });
+
           setTimeout(function() {
-            ok(athleteTable, "Athlete Table not null");
-            start();
+              start();
           }, 1000);
       
     });
     
   </script>
-  <div id="qunit-fixture">
-    <span></span>
+  <div style="display:none;">
+      <table id="athleteTable"></table>
   </div>
 </body>
 </html>

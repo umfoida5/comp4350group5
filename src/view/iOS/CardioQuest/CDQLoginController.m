@@ -12,29 +12,6 @@
 #import "ASIFormDataRequest.h"
 @interface CDQLoginController ()
 
-//Login Stuff:
-@property (weak, nonatomic) IBOutlet UILabel *loginTitle;
-@property (weak, nonatomic) IBOutlet UITextField *loginUsernameField;
-@property (weak, nonatomic) IBOutlet UITextField *loginPasswordField;
-@property (weak, nonatomic) IBOutlet UILabel *loginUsernameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *loginPasswordLabel;
-@property (weak, nonatomic) IBOutlet UIButton *loginButton;
-@property (weak, nonatomic) IBOutlet UILabel *loginResponseLabel;
-
-//Signup Stuff:
-@property (weak, nonatomic) IBOutlet UILabel *signupTitle;
-@property (weak, nonatomic) IBOutlet UITextField *signupUsernameField;
-@property (weak, nonatomic) IBOutlet UITextField *signupPasswordField;
-@property (weak, nonatomic) IBOutlet UITextField *signupFirstnameField;
-@property (weak, nonatomic) IBOutlet UITextField *signupLastnameField;
-@property (weak, nonatomic) IBOutlet UILabel *signupUsernameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *signupPasswordLabel;
-@property (weak, nonatomic) IBOutlet UILabel *signupFirstnameLabel;
-@property (weak, nonatomic) IBOutlet UITextField *signupLastnameLabel;
-@property (weak, nonatomic) IBOutlet UIButton *signupButton;
-@property (weak, nonatomic) IBOutlet UILabel *signupResponseLabel;
-
-
 @end
 
 @implementation CDQLoginController
@@ -72,7 +49,7 @@
     }
     else
     {
-        self.loginResponseLabel.text = @"Press the Login button to Login :)";     
+        self.loginResponseLabel.text = @"Login was successful.";     
         self.signupResponseLabel.text = responseString;
     }
     

@@ -17,4 +17,6 @@
 @property (strong, nonatomic) NSMutableArray *typeContentArray;
 @property (strong, nonatomic) NSMutableArray *operatorContentArray;
 @property (strong, nonatomic) NSMutableArray *metricContentArray;
+
+- (IBAction)createGoal:(id)sender;
 @end

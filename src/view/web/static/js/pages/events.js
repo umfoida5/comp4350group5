@@ -1,24 +1,35 @@
-function EnterButton($){
-  $('#enterButton').click(function() {
+function Events() {
+    this.controls = function() {
+      $('#enterButton').click(function() {
         $('#enter_event_modal').modal('show');
         $('#date').attr('value', '');
         $('#location').attr('value', '');
         $('#distance').attr('value', '');
         $('#description').attr('value', '');
       });
-      }
-
-      function CloseButton($){
+      
       $('#closeButton').click(function() {
         $('#enter_event_modal').modal('hide');
       });
-      }
+ 
+      $('#date_wrapper').datepicker().on('changeDate', function(){
+          $(this).datepicker('hide');
+      });
+      
+      $("form").submit(function() {
+        $.post("create", $(this).serialize(), function() {
+          eventTable.fnDraw();
+          $('#enter_event_modal').modal('hide');
+        } );
+        return false;
+      });
+    }
 
-      function EventTable($){
-        return $('#eventTable').dataTable( {
+    this.eventTable = function() {
+      var eventTable = $('#eventTable').dataTable( {
         "bProcessing": true,
         "bServerSide": true,
-        "sAjaxSource": "update_datatable",
+        "sAjaxSource": "/events/update_datatable",
         "sPaginationType": "bootstrap",
         "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
         "aoColumns": [
@@ -27,20 +38,10 @@ function EnterButton($){
           { "mData": "location", "sWidth": '15%' },
           { "mData": "distance", "sWidth": '15%', "bSearchable": false }
         ]
-      } );}
-      
-      function DateWrapper($){
-      $('#date_wrapper').datepicker().on('changeDate', function(){
-          $(this).datepicker('hide');
-      });}
+      });
 
-      function Form($, eventTable){
-        $("form").submit(function() {
-        $.post("create", $(this).serialize(), function() {
-          eventTable.fnDraw();
-          $('#enter_event_modal').modal('hide');
-        } );
+      return eventTable;
+    }
+}
 
-        return false;
-      } );
-      }
+var events = new Events();

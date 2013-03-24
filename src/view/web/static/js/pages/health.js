@@ -1,19 +1,31 @@
-function enterBtn($){
+function Health() {
+  this.controls = function() {
       $('#enterButton').click(function() {
         $('#enter_health_modal').modal('show');
       });
-}
-
-function closeBtn($){
+      
       $('#closeButton').click(function() {
         $('#enter_health_modal').modal('hide');
       });
-}
- 
-function healthTbl ($){$('#healthTable').dataTable( {
+
+      $('#date_wrapper_start').datepicker();
+      $('#date_wrapper_end').datepicker();
+      $('#date_wrapper_form').datepicker();
+      
+      $('form').submit(function() { 
+        $.post("create", $(this).serialize(), function() {
+            $('#enter_health_modal').modal('hide');
+            healthTable.fnDraw();
+        });
+        return false;
+      });
+  }
+  
+  this.healthTable = function() {
+      var healthTable = $('#healthTable').dataTable( {
         "bProcessing": true,
         "bServerSide": true,
-        "sAjaxSource": "update_datatable",
+        "sAjaxSource": "/health/update_datatable",
         "bFilter"    : false,
         "sPaginationType": "bootstrap",
         "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
@@ -33,26 +45,8 @@ function healthTbl ($){$('#healthTable').dataTable( {
             } );
         }
       });
-}
-      function wrappers($){
-      $('#date_wrapper_start').datepicker();
-      $('#date_wrapper_end').datepicker();
-      $('#date_wrapper_form').datepicker();
-      }
-
-      function submitForm($){
-        $('form').submit(function() { 
-            $.post("create", $(this).serialize(), function() {
-                $('#enter_health_modal').modal('hide');
-                  healthTable.fnDraw();
-                });
-                return false;
-            });
-
-    }
-
-    function drawGraph(json) 
-    {
+      
+      function drawGraph(json) {
         var graphData = new Array();
         
         $.each(json.aaData, function() {
@@ -89,4 +83,11 @@ function healthTbl ($){$('#healthTable').dataTable( {
                 data: graphData
             }]
         });
-    }
+
+      }
+
+      return healthTable;
+  }
+}
+
+var health = new Health();

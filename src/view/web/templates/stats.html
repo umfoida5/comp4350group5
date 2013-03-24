@@ -5,65 +5,77 @@
 <script src="../js/highcharts.js"></script>
 <script>
 
-$(document).ready(function() {
+$(document).ready(function() 
+{
+	//get a list of activities and decide whether we are going to draw a graph
+	//or show a message alerting the user to add activities
+	$.getJSON('../activities/update_datatable', function(activity_list)
+	{
+		if(activity_list['aaData'].length > 0)
+		{
+			appendGraphContainerHTMLtoDiv();
+			setUpdateButtonOnClickFunction();
 
-	$("button").click(function(){
+			//draw graph by simulating a click on update button
+			$("button").click(); 
+		}
+		else
+		{
+			appendNoActivitiesMessageToDiv();
+		}
+		
+	});	
+});//document ready
+
+function setUpdateButtonOnClickFunction()
+{
+	$("button").click(function()
+	{
 		var today = new Date();
 		var startDate = today;
 		var graphData = new Array();
 		var timeType = $("#select3").val();
 		var measureType = $("#select2").val();
-		var statType = $("#select1").val();
-		var actType = $("#select0").val();
+		var actType = $("#select1").val();
 
 		startDate = dateConversion(today,timeType);
 		today = dateConversion(today,"day");
 
 		//ask server for the data and dump it into the graphdata variable
-
 		//if the user wants max_speed, we look for a maximum
-		if (measureType == "max_speed"){
-
-		$.getJSON("get_maximum",
+		if (measureType == "max_speed")
 		{
-			column_name: measureType,
-			activity_name: actType,
-			athlete_id: 1,
-			start_date: startDate,
-			end_date: today,
-			group_by: "day"
-		},
-			function(result)
+			$.getJSON("get_maximum",
 			{
-				drawGraph(result);
-			});
+				column_name: measureType,
+				activity_name: actType,
+				start_date: startDate,
+				end_date: today,
+				group_by: "day"
+			},
+				function(activity_list)
+				{
+					drawGraph(activity_list);
+				});
 		}
-
 		//if the user does not want max_speed, we find a total
-		else{
-
-		$.getJSON("get_total",
+		else
 		{
-			column_name: measureType,
-			activity_name: actType,
-			athlete_id: 1,
-			start_date: startDate,
-			end_date: today,
-			group_by: "day"
-		},
-			function(result)
+			$.getJSON("get_total",
 			{
-				drawGraph(result);
-			});
+				column_name: measureType,
+				activity_name: actType,
+				start_date: startDate,
+				end_date: today,
+				group_by: "day"
+			},
+				function(activity_list)
+				{
+					drawGraph(activity_list);
+				});
 		}
-
-	});//button click function
-
-	//click the button to make a starting graph
-	$("button").click();
-
-});//document ready
-
+	});//button click function	
+}	
 
 //dateConversion function
 //-----------------------
@@ -72,8 +84,8 @@ $(document).ready(function() {
 // date - raw date to convert
 // timeframe - "day","week","month","year"
 
-function dateConversion(date,timeframe) {
-
+function dateConversion(date,timeframe) 
+{
     var result;
 
 	//find the correct startDate based on selection
@@ -95,15 +107,14 @@ function dateConversion(date,timeframe) {
 	return result;
 }
 
-
 //drawGraph function
 //------------------
 //takes the raw "data" returned from the server to create a line graph
 //	myData - the data sent back from the server after calling get_total, etc
 //	it is in the format (value,year,month,day,...), this will need to be converted
 
-function drawGraph(myData) {
-
+function drawGraph(myData) 
+{
 	var strData = [];
 	var splitStr = [];
 	var myValues = new Array();
@@ -143,7 +154,6 @@ function drawGraph(myData) {
 		}//for
 	}//for
 
-
 	myValues.sort();
 
 	//TODO: clean up hard-coded values in this function
@@ -154,7 +164,7 @@ function drawGraph(myData) {
             type: "spline"
         },
         title: {
-            text: $("#select0").val()  + " / " + $("#select3").val()
+            text: $("#select1").val()  + " / " + $("#select3").val()
         },
         xAxis: {
             type: 'datetime'
@@ -180,34 +190,58 @@ function drawGraph(myData) {
     });//draw graph function
 }//drawgraph function
 
+function appendNoActivitiesMessageToDiv()
+{
+	$("#bodyDiv").append(
+		'<div style="padding-left:10%; padding-right:10%; padding-top:2%" align="center">' +
+			'<div class="well" style="height:150px">'+
+				'<dl>' +
+					'<dt>' +
+						'<h1>Workout Statistics</h1>' +
+						'<br />' +
+						'<p>You haven\'t logged any activities yet.<br/><a href="../activities">Click here</a> to log one! :)</p>' +
+					'</dt>' +
+					'<dd id="about_me" class="edit"></dd>' +
+				'</dl>' +
+			'</div>' +
+		'</div>'
+	);
+}
+
+function appendGraphContainerHTMLtoDiv()
+{
+	$("#bodyDiv").append(
+		'<div id="graphContainer" style="width:100%; height:400px;"></div>' +
+		'<br><br>' +
+		'<div id="searchTerms" align="center">' +
+			'Activity:' +
+			'<select size="1" id="select1">' +
+				'<option value ="Run" selected="selected">Run</option>' +
+				'<option value ="Walk">Walk</option>' +
+				'<option value ="Bike">Bike</option>' +
+			'</select>' +
+			'Metric Used:' +
+			'<select size="1" id="select2">' +
+				'<option value="distance" selected="selected">Distance</option>' +
+				'<option value="duration">Duration</option>' +
+				'<option value="max_speed">Max Speed</option>' +
+			'</select>' +
+			'Time Frame:' +
+			'<select size="1" id="select3">' +
+				'<option value="week" selected="selected">Week</option>' +
+				'<option value="month">Month</option>' +
+				'<option value="year">Year</option>' +
+			'</select>' +
+			'<button type="button" class="btn btn-primary">Update</button>' +
+		'</div>' +
+		'<br>'
+	);
+}	
 </script>
 
 {% endblock script %}
 {% block body %}
 
-<div id="graphContainer" style="width:100%; height:400px;"></div>
-<br><br>
-<div id=search terms align="center">
-Activity:
-<select size="1" id="select0">
-	<option value ="Run">Run</option>
-	<option value ="Walk">Walk</option>
-	<option value ="Bike" selected="selected">Bike</option>
-</select>
-Metric Used:
-<select size="1" id="select2">
-	<option value ="distance" selected="selected">Distance</option>
-	<option value ="duration">Duration</option>
-	<option value ="max_speed">Top Speed</option>
-</select>
-Time Frame:
-<select size="1" id="select3">
-	<option value ="week">Week</option>
-	<option value ="month">Month</option>
-	<option value ="year" selected="selected">Year</option>
-</select>
-<button type="button" class="btn btn-primary">Update</button>
-</div>
-<br>
+<div id="bodyDiv"></div>
 
 {% endblock body %}

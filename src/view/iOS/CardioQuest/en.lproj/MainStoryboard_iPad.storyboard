@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -23,7 +23,7 @@
         <!--Home View Controller - Home-->
         <scene sceneID="uFq-al-7vP">
             <objects>
-                <viewController id="wBX-3I-ChS" customClass="CDQHomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" id="wBX-3I-ChS" customClass="CDQHomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FVa-6c-TPX">
                         <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -54,7 +54,7 @@
         <!--Login Controller - Authentication-->
         <scene sceneID="11">
             <objects>
-                <viewController storyboardIdentifier="Home" id="2" customClass="CDQLoginController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Authentication" id="2" customClass="CDQLoginController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="17">
                         <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -261,7 +261,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="first.png" id="7"/>
-                    <navigationItem key="navigationItem" title="Authentication" id="0Vs-je-nmy"/>
+                    <navigationItem key="navigationItem" title="Authentication" id="0Vs-je-nmy" userLabel="Authentication"/>
                     <connections>
                         <outlet property="loginButton" destination="a9H-Ti-8vm" id="1Vf-E6-yUB"/>
                         <outlet property="loginPasswordField" destination="c8G-Cz-QLB" id="n4H-tG-Z0v"/>
@@ -290,7 +290,7 @@
         <!--Profile View Controller - Profile-->
         <scene sceneID="RKZ-aw-ufg">
             <objects>
-                <viewController id="MVd-IC-GDg" customClass="ProfileViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Profile" id="MVd-IC-GDg" customClass="ProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TeR-Yy-i4r">
                         <rect key="frame" x="0.0" y="20" width="768" height="955"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -654,7 +654,7 @@
         <!--Activity Input Controller - New Activity-->
         <scene sceneID="YIS-Cl-CiF">
             <objects>
-                <viewController id="kYn-xJ-Yw6" customClass="CDQActivityInputController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ActivityInputController" id="kYn-xJ-Yw6" customClass="CDQActivityInputController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n6W-9L-oWm">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -808,7 +808,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <!--Goal Input Controller - New Goal-->
         <scene sceneID="nmC-dM-wet">
             <objects>
-                <viewController id="Nf2-fs-v69" customClass="CDQGoalInputController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GoalInputController" id="Nf2-fs-v69" customClass="CDQGoalInputController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eME-sr-EpY">
                         <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1122,7 +1122,7 @@ Features
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8C-ia-LbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4030" y="-275"/>
+            <point key="canvasLocation" x="4798" y="-1871"/>
         </scene>
         <!--Navigation Controller - Events-->
         <scene sceneID="MzI-LE-3Xw">
@@ -1139,6 +1139,264 @@ Features
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AbX-6P-yvy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2287" y="-1863"/>
+        </scene>
+        <!--View Controller - Health-->
+        <scene sceneID="nLo-fL-Ffc">
+            <objects>
+                <viewController storyboardIdentifier="HealthGraphView" id="y3I-Vg-nOH" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ypt-2M-RrI">
+                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Health" id="4C8-n1-JeP">
+                        <barButtonItem key="leftBarButtonItem" title="Log a Health Record" id="lzG-6C-Kjf">
+                            <connections>
+                                <segue destination="gpS-aL-9DL" kind="push" id="C43-Kw-uTu"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Table View" id="iJZ-vi-6aI">
+                            <connections>
+                                <segue destination="AEk-9X-oSY" kind="push" id="3VB-wG-byp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iiA-eG-mZ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2450" y="-550"/>
+        </scene>
+        <!--Health Table View Controller - Health-->
+        <scene sceneID="Zn8-jU-L24">
+            <objects>
+                <viewController storyboardIdentifier="HealthView" id="AEk-9X-oSY" customClass="CDQHealthTableViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q1q-0T-ROs">
+                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="amg-6K-1Sh">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="yyP-2c-MqD">
+                                        <rect key="frame" x="0.0" y="22" width="768" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="AEk-9X-oSY" id="Hfo-KY-9TL"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="amg-6K-1Sh" firstAttribute="bottom" secondItem="q1q-0T-ROs" secondAttribute="bottom" type="default" id="Iry-d8-bWo"/>
+                            <constraint firstItem="amg-6K-1Sh" firstAttribute="top" secondItem="q1q-0T-ROs" secondAttribute="top" type="default" id="XDc-So-ecm"/>
+                            <constraint firstItem="amg-6K-1Sh" firstAttribute="trailing" secondItem="q1q-0T-ROs" secondAttribute="trailing" type="default" id="aMc-gT-RC4"/>
+                            <constraint firstItem="amg-6K-1Sh" firstAttribute="leading" secondItem="q1q-0T-ROs" secondAttribute="leading" type="default" id="jOx-l1-11H"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Health" id="3yS-dm-WM0"/>
+                    <connections>
+                        <outlet property="healthTable" destination="amg-6K-1Sh" id="Xgg-GV-y0T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vG3-jp-nIm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4106" y="-539"/>
+        </scene>
+        <!--Health Input Controller - New Health Record-->
+        <scene sceneID="cDc-5B-ODp">
+            <objects>
+                <viewController storyboardIdentifier="HealthInput" id="gpS-aL-9DL" customClass="CDQHealthInputController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kSf-eb-LNU">
+                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w2Q-gm-lZg">
+                                <accessibility key="accessibilityConfiguration" label="healthWeight"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="213" id="SF8-wA-9AE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Weight:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hf4-ab-Ejc">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Resting Heart Rate:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoK-kb-36e">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uWI-9t-D0Y">
+                                <accessibility key="accessibilityConfiguration" label="healthHeartRate"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Comments:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mm1-mV-igm">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6E-wH-42l">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Save Health Record">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="postHealthRecord:" destination="gpS-aL-9DL" eventType="touchUpInside" id="JaW-AL-eJ9"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="twr-fO-214">
+                                <date key="date" timeIntervalSinceReferenceDate="385764603.34713">
+                                    <!--2013-03-23 20:50:03 +0000-->
+                                </date>
+                                <timeZone key="timeZone" name="America/Los_Angeles">
+                                    <data key="data">
+VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
+y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
+5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
+8n/BkPNvwKD0X6OQ9U+ioPY/hZD3L4Sg+CiiEPkPZqD6CIQQ+viDIPvoZhD82GUg/chIEP64RyD/qCoQ
+AJgpIAGIDBACeAsgA3EokARhJ6AFUQqQBkEJoAcw7JAHjUOgCRDOkAmtvyAK8LCQC+CvoAzZzRANwJGg
+DrmvEA+priAQmZEQEYmQIBJ5cxATaXIgFFlVEBVJVCAWOTcQFyk2IBgiU5AZCRggGgI1kBryNKAb4heQ
+HNIWoB3B+ZAesfigH6HbkCB2KyAhgb2QIlYNICNq2hAkNe8gJUq8ECYV0SAnKp4QJ/7toCkKgBAp3s+g
+KupiECu+saAs036QLZ6ToC6zYJAvfnWgMJNCkDFnkiAycySQM0d0IDRTBpA1J1YgNjLokDcHOCA4HAUQ
+OOcaIDn75xA6xvwgO9vJEDywGKA9u6sQPo/6oD+bjRBAb9ygQYSpkEJPvqBDZIuQRC+goEVEbZBF89Mg
+Ry2KEEfTtSBJDWwQSbOXIErtThBLnLOgTNZqkE18laBOtkyQT1x3oFCWLpBRPFmgUnYQkFMcO6BUVfKQ
+VPwdoFY11JBW5TogWB7xEFjFHCBZ/tMQWqT+IFvetRBchOAgXb6XEF5kwiBfnnkQYE3eoGGHlZBiLcCg
+Y2d3kGQNoqBlR1mQZe2EoGcnO5BnzWagaQcdkGmtSKBq5v+Qa5ZlIGzQHBBtdkcgbq/+EG9WKSBwj+AQ
+cTYLIHJvwhBzFe0gdE+kEHT/CaB2OMCQdt7roHgYopB4vs2gefiEkHqer6B72GaQfH6RoH24SJB+XnOg
+f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
+</data>
+                                </timeZone>
+                            </datePicker>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LJj-Wl-maj">
+                                <accessibility key="accessibilityConfiguration" label="healthComments"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7M-J7-ypz">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JoK-kb-36e" firstAttribute="trailing" secondItem="hf4-ab-Ejc" secondAttribute="trailing" type="default" id="12E-M9-nVc"/>
+                            <constraint firstItem="w2Q-gm-lZg" firstAttribute="baseline" secondItem="hf4-ab-Ejc" secondAttribute="baseline" type="user" id="LUn-PO-gzq"/>
+                            <constraint firstItem="s6E-wH-42l" firstAttribute="leading" secondItem="kSf-eb-LNU" secondAttribute="leading" constant="289" id="LnF-6E-wOl"/>
+                            <constraint firstItem="LJj-Wl-maj" firstAttribute="leading" secondItem="uWI-9t-D0Y" secondAttribute="leading" type="default" id="P1m-C3-4Xn"/>
+                            <constraint firstItem="hf4-ab-Ejc" firstAttribute="top" secondItem="twr-fO-214" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Q4M-3L-knA"/>
+                            <constraint firstItem="JoK-kb-36e" firstAttribute="top" secondItem="kSf-eb-LNU" secondAttribute="top" constant="404" id="RVX-Te-QqT"/>
+                            <constraint firstItem="JoK-kb-36e" firstAttribute="leading" secondItem="kSf-eb-LNU" secondAttribute="leading" constant="149" id="T7s-2N-Mtm"/>
+                            <constraint firstItem="LJj-Wl-maj" firstAttribute="trailing" secondItem="uWI-9t-D0Y" secondAttribute="trailing" type="default" id="Utu-s1-4Zp"/>
+                            <constraint firstItem="m7M-J7-ypz" firstAttribute="top" secondItem="kSf-eb-LNU" secondAttribute="top" constant="90" id="XNn-jr-9JU"/>
+                            <constraint firstItem="twr-fO-214" firstAttribute="top" secondItem="kSf-eb-LNU" secondAttribute="top" constant="129" id="akb-kq-gUZ"/>
+                            <constraint firstAttribute="bottom" secondItem="LJj-Wl-maj" secondAttribute="bottom" constant="421" id="awD-az-rXW"/>
+                            <constraint firstItem="w2Q-gm-lZg" firstAttribute="leading" secondItem="kSf-eb-LNU" secondAttribute="leading" constant="320" id="fUW-x2-xzO"/>
+                            <constraint firstItem="w2Q-gm-lZg" firstAttribute="trailing" secondItem="uWI-9t-D0Y" secondAttribute="trailing" type="default" id="gaf-U6-GlC"/>
+                            <constraint firstItem="Mm1-mV-igm" firstAttribute="trailing" secondItem="JoK-kb-36e" secondAttribute="trailing" type="default" id="i8J-9N-cjD"/>
+                            <constraint firstItem="uWI-9t-D0Y" firstAttribute="leading" secondItem="w2Q-gm-lZg" secondAttribute="leading" type="default" id="kOV-gt-KOl"/>
+                            <constraint firstItem="LJj-Wl-maj" firstAttribute="top" secondItem="Mm1-mV-igm" secondAttribute="top" type="default" id="kqB-54-CEv"/>
+                            <constraint firstItem="w2Q-gm-lZg" firstAttribute="top" secondItem="twr-fO-214" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="nty-63-qEi"/>
+                            <constraint firstItem="m7M-J7-ypz" firstAttribute="centerX" secondItem="s6E-wH-42l" secondAttribute="centerX" type="default" id="rzK-dN-pUc"/>
+                            <constraint firstItem="twr-fO-214" firstAttribute="leading" secondItem="kSf-eb-LNU" secondAttribute="leading" type="default" id="u2k-ol-WlF"/>
+                            <constraint firstItem="twr-fO-214" firstAttribute="trailing" secondItem="kSf-eb-LNU" secondAttribute="trailing" type="default" id="u9l-vc-D6a"/>
+                            <constraint firstAttribute="bottom" secondItem="s6E-wH-42l" secondAttribute="bottom" constant="217" id="uxK-oj-mdP"/>
+                            <constraint firstItem="uWI-9t-D0Y" firstAttribute="top" secondItem="JoK-kb-36e" secondAttribute="top" type="default" id="yGu-OK-cia"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Health Record" id="KeM-Nm-AYC"/>
+                    <connections>
+                        <outlet property="healthComments" destination="LJj-Wl-maj" id="8V5-ys-ZeJ"/>
+                        <outlet property="healthDate" destination="twr-fO-214" id="JgD-E4-i7y"/>
+                        <outlet property="healthHeartRate" destination="uWI-9t-D0Y" id="BKX-C6-2ak"/>
+                        <outlet property="healthWeight" destination="w2Q-gm-lZg" id="ZUl-ro-D7o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pQK-53-xlX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3286" y="-550"/>
+        </scene>
+        <!--View Controller - Stats-->
+        <scene sceneID="P2Y-fG-DBj">
+            <objects>
+                <viewController id="MpW-K9-BtT" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x2L-Q8-nHt">
+                        <rect key="frame" x="0.0" y="20" width="768" height="955"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="15y-Cm-Ilq">
+                                <items>
+                                    <navigationItem title="Stats" id="fat-wh-DiJ"/>
+                                </items>
+                            </navigationBar>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4qx-Hf-rgn">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="216" id="411-Qk-j8z"/>
+                                </constraints>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qDE-XJ-97v">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="216" id="KEG-4F-dJu"/>
+                                </constraints>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wq-Db-KHU">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="216" id="wIP-sL-mGi"/>
+                                </constraints>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qDE-XJ-97v" firstAttribute="centerX" secondItem="15y-Cm-Ilq" secondAttribute="centerX" type="default" id="3kT-YR-WRR"/>
+                            <constraint firstAttribute="trailing" secondItem="6wq-Db-KHU" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="9Px-mb-PcF"/>
+                            <constraint firstItem="4qx-Hf-rgn" firstAttribute="leading" secondItem="x2L-Q8-nHt" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="KTP-iZ-feW"/>
+                            <constraint firstItem="15y-Cm-Ilq" firstAttribute="trailing" secondItem="x2L-Q8-nHt" secondAttribute="trailing" type="default" id="VDz-Ih-geK"/>
+                            <constraint firstAttribute="bottom" secondItem="6wq-Db-KHU" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="cpt-z1-5Ss"/>
+                            <constraint firstItem="15y-Cm-Ilq" firstAttribute="leading" secondItem="x2L-Q8-nHt" secondAttribute="leading" type="default" id="gwF-0x-TWM"/>
+                            <constraint firstAttribute="bottom" secondItem="qDE-XJ-97v" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="mUh-go-3Mv"/>
+                            <constraint firstItem="15y-Cm-Ilq" firstAttribute="top" secondItem="x2L-Q8-nHt" secondAttribute="top" type="default" id="u9U-RU-Tms"/>
+                            <constraint firstAttribute="bottom" secondItem="4qx-Hf-rgn" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="ybU-bU-1tB"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Stats" image="first.png" id="wDC-Cp-tWY"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CVf-lz-0WJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3278" y="890"/>
+        </scene>
+        <!--Navigation Controller - Health-->
+        <scene sceneID="Ryj-jQ-EQt">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="Aly-u4-NBX" userLabel="Navigation Controller - Health" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Health" id="PbU-Yw-evj" userLabel="Tab Bar Item - Health"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wDV-2j-1Me">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="y3I-Vg-nOH" kind="relationship" relationship="rootViewController" id="ENw-P0-FnR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cen-Ow-Ave" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1524" y="-534"/>
         </scene>
         <!--Events Controller - Events-->
         <scene sceneID="P4m-V4-DjK">
@@ -1191,7 +1449,7 @@ Features
         <!--Events Input Controller - New Event-->
         <scene sceneID="4IN-fX-365">
             <objects>
-                <viewController id="OGF-ES-Qup" customClass="CDQEventsInputController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventInputController" id="OGF-ES-Qup" customClass="CDQEventsInputController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dSx-OM-xH6">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1315,7 +1573,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VEk-Qu-uhA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3951" y="-1863"/>
+            <point key="canvasLocation" x="3994" y="-1856"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -1334,11 +1592,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <segue destination="IPR-o0-Vs1" kind="relationship" relationship="viewControllers" id="N8X-cf-UEd"/>
                         <segue destination="Nim-bR-L6c" kind="relationship" relationship="viewControllers" id="Wj1-7G-Uat"/>
                         <segue destination="FY5-0r-oNa" kind="relationship" relationship="viewControllers" id="w2X-d1-DOy"/>
+                        <segue destination="Aly-u4-NBX" kind="relationship" relationship="viewControllers" id="feC-dv-epZ"/>
+                        <segue destination="MpW-K9-BtT" kind="relationship" relationship="viewControllers" id="H6f-d2-NMv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1098" y="-1708"/>
+            <point key="canvasLocation" x="992" y="-1696"/>
         </scene>
     </scenes>
     <resources>
@@ -1357,6 +1617,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="CDQActivityInputController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQActivityInputController.h"/>
             <relationships>
+                <relationship kind="action" name="createActivity:"/>
                 <relationship kind="outlet" name="dateInput" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="distanceInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="durationInput" candidateClass="UITextField"/>
@@ -1374,6 +1635,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="CDQEventsInputController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQEventsInputController.h"/>
             <relationships>
+                <relationship kind="action" name="postEvent:"/>
                 <relationship kind="outlet" name="cityInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="dateInput" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="descriptionInput" candidateClass="UITextView"/>
@@ -1384,6 +1646,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="CDQGoalInputController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQGoalInputController.h"/>
             <relationships>
+                <relationship kind="action" name="createGoal:"/>
                 <relationship kind="outlet" name="endDateInput" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="quantityInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="startDateInput" candidateClass="UIDatePicker"/>
@@ -1397,9 +1660,26 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="goalsTable" candidateClass="UITableView"/>
             </relationships>
         </class>
+        <class className="CDQHealthInputController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQHealthInputController.h"/>
+            <relationships>
+                <relationship kind="action" name="postHealthRecord:"/>
+                <relationship kind="outlet" name="healthComments" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="healthDate" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="healthHeartRate" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="healthWeight" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="CDQHealthTableViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQHealthTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="healthTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
         <class className="CDQHomeViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQHomeViewController.h"/>
             <relationships>
+                <relationship kind="action" name="doLogout:"/>
                 <relationship kind="outlet" name="loginButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="logoutButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="navBar" candidateClass="UINavigationItem"/>
@@ -1462,7 +1742,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="VMQ-w2-ZO9"/>
-        <segue reference="yK0-aa-OgA"/>
         <segue reference="aSa-Pj-N1K"/>
+        <segue reference="yK0-aa-OgA"/>
     </inferredMetricsTieBreakers>
 </document>

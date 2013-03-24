@@ -1,27 +1,38 @@
+function Goals() {
+ 
+  this.controls = function() {
+      $('#enterButton').click(function() {
+        $('#enter_goal_modal').modal('show');
+        $('#activity').attr('value', 'Run');
+        $('#operator').attr('value', 'Total');
+        $('#quantity').attr('value', '');
+        $('#metric').attr('value', 'distance');
+        $('#start_date').attr('value', '');
+        $('#end_date').attr('value', '');
+      });
 
+      $('#closeButton').click(function() {
+        $('#enter_goal_modal').modal('hide');
+      });
 
-  function EnterButton($){$('#enterButton').click(function() {
-    $('#enter_goal_modal').modal('show');
-    $('#activity').attr('value', '');
-    $('#operator').attr('value', 'total');
-    $('#quantity').attr('value', '');
-    $('#metric').attr('value', 'distance');
-    $('#start_date').attr('value', '');
-    $('#end_date').attr('value', '');
-  });}
+      // for submitting the new goal
+      $("form").submit(function() {
+        $.post("create", $(this).serialize(), function() {
+          goalsTable.fnDraw();
+          $('#enter_goal_modal').modal('hide');
+        } );
+        return false;
+      });
 
-  function CloseButton($){
-    $('#closeButton').click(function() {
-      $('#enter_goal_modal').modal('hide');
-    });
+      // for the start and end date inputs
+      $('#start_date').datepicker().on('changeDate', function(){
+          $(this).datepicker('hide');
+      });
+      
+      $('#end_date').datepicker().on('changeDate', function(){
+          $(this).datepicker('hide');
+      });
   }
-  function GoalsTable($){
-    return $('#goalsTable').dataTable( {
-    "bProcessing": true,
-    "bServerSide": true,
-    //"bLengthChange": false,
-    "sPaginationType": "bootstrap",
-    "sAjaxSource": "update_datatable",
 
 
     "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
@@ -41,27 +52,12 @@
             } else {
                 return 'No ';
             }
-        }
-      }
-    ]
-  } );}
+          }
+        ]
+      });
+      
+      return goalsTable;
+  }
+}
 
-  // for submitting the new goal
-  function Form($, goalsTable){$("form").submit(function() {
-    $.post("create", $(this).serialize(), function() {
-      goalsTable.fnDraw();
-      $('#enter_goal_modal').modal('hide');
-    } );
-    return false;
-  });}
-
-  // for the start and end date inputs
-  function StartDate($){$('#start_date').datepicker().on('changeDate', function(){
-      $(this).datepicker('hide');
-  });}
-  
-function EndDate($){$('#end_date').datepicker().on('changeDate', function(){
-      $(this).datepicker('hide');
-  });}
-
-  
+var goals = new Goals();

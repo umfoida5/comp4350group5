@@ -44,8 +44,8 @@
         [request addPostValue: activityType forKey:@"type"];
         [request addPostValue: date forKey:@"date"];
         [request addPostValue: self.distanceInput.text forKey:@"distance"];
-        [request addPostValue: self.durationInput.text forKey:@"duration"];
         [request addPostValue: self.maxSpeedInput.text forKey:@"max_speed"];
+        [request addPostValue: self.durationInput.text forKey:@"duration"];
         
         [request setDelegate:self];
         [request startAsynchronous];
@@ -111,9 +111,8 @@
 	
     self.typeContentArray = [[NSMutableArray alloc] init];
     [self.typeContentArray addObject:@"Run"];
-    [self.typeContentArray addObject:@"Walk"];
     [self.typeContentArray addObject:@"Bike"];
-    
+    [self.typeContentArray addObject:@"Swim"];
 }
 
 - (void)viewDidDisappear:(BOOL)animated

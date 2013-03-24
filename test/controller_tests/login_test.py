@@ -3,6 +3,8 @@ import cherrypy
 from modules import database
 from controller.login import Login
 from model.athlete import Athlete
+from model.health import Health
+from model.activity import Activity
 from Cookie import SimpleCookie
 
 class LoginTest(unittest.TestCase):
@@ -103,6 +105,16 @@ class LoginTest(unittest.TestCase):
 
 		self.assertEqual("fdart", cherrypy.session['username'])
 
+	def test_signup_failure(self):
+		self.populate_database_with_test_data()
+
+		#initialize temporary session id
+		self.login_controller.do_login("justin", "sha256andsalted")
+
+		temp_athlete_id = cherrypy.session.get('id')
+		message = self.login_controller.signup('justin', 'sha256andsalted', 'Joe', 'Smith')
+		self.assertEqual('Username already exists. Please enter a new username.', message)
+
 	def test_logout_success(self):
 		self.populate_database_with_test_data()
 		self.login_controller.do_login("ben", "anypassword")
@@ -112,3 +124,42 @@ class LoginTest(unittest.TestCase):
 		#test that session id is the same and session variable(s) are set back to default 
 		self.assertNotEqual(old_id, cherrypy.session.get('id'))
 		self.assertFalse(cherrypy.session.has_key('username'))
+
+
+	def test_logout_success(self):
+		self.populate_database_with_test_data()
+		db_session = database.session
+
+		athlete1 = Athlete.query.all()[0];
+		athlete2 = Athlete.query.all()[1];
+
+		health_record   = Health(athlete1.id, '1999-01-01', 123, 123, 'this is a test')
+		activity_record = Activity(athlete1.id, 'Run', '1999-01-01', 123, 123, 123)
+
+		db_session.add(health_record)
+		db_session.add(activity_record)
+		db_session.commit()
+
+		health_records_1 = Health.query.filter_by(athlete_id = athlete1.id).all()
+		health_records_2 = Health.query.filter_by(athlete_id = athlete2.id).all()
+		
+		activity_record_1 = Activity.query.filter_by(athlete_id = athlete1.id).all()
+		activity_record_2 = Activity.query.filter_by(athlete_id = athlete2.id).all()
+
+		self.assertEqual(1, len(health_records_1))
+		self.assertEqual(0, len(health_records_2))
+		self.assertEqual(1, len(activity_record_1))
+		self.assertEqual(0, len(activity_record_2))
+
+		self.login_controller.update_tables_athlete_id(athlete1.id, athlete2.id)
+
+		health_records_1 = Health.query.filter_by(athlete_id = athlete1.id).all()
+		health_records_2 = Health.query.filter_by(athlete_id = athlete2.id).all()
+		
+		activity_record_1 = Activity.query.filter_by(athlete_id = athlete1.id).all()
+		activity_record_2 = Activity.query.filter_by(athlete_id = athlete2.id).all()
+
+		self.assertEqual(0, len(health_records_1))
+		self.assertEqual(1, len(health_records_2))
+		self.assertEqual(0, len(activity_record_1))
+		self.assertEqual(1, len(activity_record_2))

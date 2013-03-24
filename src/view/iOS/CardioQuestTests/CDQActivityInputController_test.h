@@ -1,0 +1,15 @@
+//
+//  CDQActivityInputController_test.h
+//  CardioQuest
+//
+//  Created by Blake Beatty on 2013-03-23.
+//  Copyright (c) 2013 comp4350group5. All rights reserved.
+//
+
+#import <SenTestingKit/SenTestingKit.h>
+#import "CDQActivityInputController.h"
+#import "ActivityViewController.h"
+@interface CDQActivityInputController_test : SenTestCase
+@property(strong,nonatomic) CDQActivityInputController* aiController;
+@property(strong,nonatomic) ActivityViewController* avController;
+@end
