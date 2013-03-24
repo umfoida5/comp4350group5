@@ -7,7 +7,10 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import "CDQHealthTableViewController.h"
+#import "CDQLoginController.h"
 
 @interface CDQHealthTableViewController_test : SenTestCase
-
+@property (strong, nonatomic) CDQHealthTableViewController *healthController;
+@property (strong, nonatomic) CDQLoginController *loginController;
 @end
