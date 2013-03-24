@@ -7,7 +7,9 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
-
+#import "CDQHealthTableViewController.h"
+#import "CDQHealthInputController.h"
 @interface CDQHealthInputController_test : SenTestCase
-
+@property(strong,nonatomic) CDQHealthInputController* hiController;
+@property(strong,nonatomic) CDQHealthTableViewController* htvController;
 @end
