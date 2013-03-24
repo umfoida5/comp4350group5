@@ -9,14 +9,6 @@ from goals import Goals
 from login import Login
 from health import HealthController
 
-def http_methods_allowed(methods=['GET', 'HEAD']):
-    method = cherrypy.request.method.upper()
-    if method not in methods:
-        cherrypy.response.headers['Allow'] = ", ".join(methods)
-        raise cherrypy.HTTPError(httplib.METHOD_NOT_ALLOWED)
-
-cherrypy.tools.allow = cherrypy.Tool('on_start_resource', http_methods_allowed)
-
 class Root:
     activities = Activities()
     events = Events()
