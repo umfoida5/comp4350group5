@@ -15,7 +15,8 @@
       $('#enter_goal_modal').modal('hide');
     });
   }
-  function GoalsTable($){$('#goalsTable').dataTable( {
+  function GoalsTable($){
+    return $('#goalsTable').dataTable( {
     "bProcessing": true,
     "bServerSide": true,
     //"bLengthChange": false,
@@ -46,7 +47,7 @@
   } );}
 
   // for submitting the new goal
-  function Form($){$("form").submit(function() {
+  function Form($, goalsTable){$("form").submit(function() {
     $.post("create", $(this).serialize(), function() {
       goalsTable.fnDraw();
       $('#enter_goal_modal').modal('hide');

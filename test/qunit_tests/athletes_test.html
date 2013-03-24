@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Profile Test</title>
+  <link rel="stylesheet" href="./lib/css/qunit-1.11.0.css">
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="./lib/js/qunit-1.11.0.js"></script>
+  <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/jquery.jeditable.js"></script>
+  <script src="../../js/pages/profile.js"></script>
+  <script>
+    test("Test isEmail", function(){
+      ok(prof.isEmail("a@a.ca"), "Check minamilist email");
+      ok(!prof.isEmail("a"), "invalid email");
+      ok(!prof.isEmail("a@a"), "invalid email with @ sign");
+      ok(!prof.isEmail("a.c"), "invalid email wich .");
+      ok(!prof.isEmail("@."), "invalid email with @ and .");
+      ok(!prof.isEmail("@a.c"), "invalid email with no text before @");
+    });
+    test("Test isEmail", function(){
+      ok(prof.isDate("2001-12-12"), "Check valid date");
+      ok(!prof.isDate("21312"), "invalid date");
+      ok(!prof.isDate("Smarch 1, 2103"), "invalid date text");
+      ok(!prof.isDate("March"), "just a month");
+      ok(!prof.isDate("1991"), "just a year");
+      ok(prof.isDate("Feb 1, 2012"), "text date format");
+    });
+      asyncTest( "asynchronous test: one second later!", function() {
+      expect( 1 );
+      //stop();     
+      var athlete = prof.get_athleteAjax();
+      
+      setTimeout(function(athlete) {
+        ok(prof.get_athleteAjax(), "Athlete not null");
+        start();
+      }, 1000);
+      
+    });
+    
+  </script>
+  <div id="qunit-fixture">
+    <span></span>
+  </div>
+</body>
+</html>
