@@ -16,13 +16,7 @@ function Events() {
           $(this).datepicker('hide');
       });
       
-      $("form").submit(function() {
-        $.post("create", $(this).serialize(), function() {
-          eventTable.fnDraw();
-          $('#enter_event_modal').modal('hide');
-        } );
-        return false;
-      });
+      
     }
 
     this.eventTable = function() {
@@ -39,7 +33,13 @@ function Events() {
           { "mData": "distance", "sWidth": '15%', "bSearchable": false }
         ]
       });
-
+      $("form").submit(function() {
+        $.post("create", $(this).serialize(), function() {
+          eventTable.fnDraw();
+          $('#enter_event_modal').modal('hide');
+        } );
+        return false;
+      });
       return eventTable;
     }
 }
