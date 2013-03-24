@@ -6,6 +6,13 @@
 
   <script>
     $(document).ready(function() {
+		
+		$.get("/get_current_username", function(username) {
+			if (username != "") {
+				window.location.href = "../profiles";
+			}
+        } );
+		
       $("#loginForm").submit(function() {
 		formData = $(this).serialize();
         $.post("do_login", formData, function(errorMsg) {

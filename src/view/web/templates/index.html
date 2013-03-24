@@ -13,7 +13,16 @@
 
     {% endblock head %}
     {% block script %}
-
+  <script>
+    $(document).ready(function() {
+    	$.get("/get_current_username", function(username) {
+			if (username != "") {
+				$("#signupBtn").hide();
+			}
+        } );
+    } );
+  
+  </script>
     {% endblock script %}
   <script>
     $(document).ready(function() {
@@ -90,7 +99,7 @@
         Play around with the site to try it out! Sign up to start logging your workouts!</p>
         <p><a class="btn btn-primary btn-large pull-right" href="../activities">Get Started &raquo;</a></p>
         <p class="pull-right">&nbsp;&nbsp;</p>
-        <p><a class="btn btn-primary btn-large pull-right" href="../login">Sign up</a></p>        
+        <p><a class="btn btn-primary btn-large pull-right" id="signupBtn" href="../login">Sign up</a></p>        
       </div><!-- .hero-unit -->
     {% endblock body %}
 
