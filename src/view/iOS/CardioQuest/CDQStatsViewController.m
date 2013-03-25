@@ -34,6 +34,8 @@ NSString *measurementType;
 {
     [super viewDidLoad];
     
+    //add graph to the view as a subview
+    
     CGRect viewBound = [[UIScreen mainScreen] bounds];
     CGSize viewSize = viewBound.size;
     CGFloat viewWidth = viewSize.width;
@@ -42,6 +44,9 @@ NSString *measurementType;
     graph = [[CDQGraph alloc] initWithFrame: CGRectMake(0, 150, viewWidth, viewHeight-700)];
     graph.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.0];
     [self.view addSubview:graph];
+    
+    //set UIPicker arrays
+    
     activityTypes = [[NSArray alloc] initWithObjects:@"Bike", @"Run", @"Walk", nil];
     dateTypes = [[NSArray alloc] initWithObjects:@"Day", @"Week", @"Month", @"Year", nil];
     mesurementTypes = [[NSArray alloc] initWithObjects:@"Distance", @"Duration", @"Top Speed", nil];
