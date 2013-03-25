@@ -8,7 +8,7 @@
 
 #import "CDQHealthGraphViewController.h"
 #import "ECGraph.h"
-#import "CDQgraph.h"
+#import "CDQGraphHealth.h"
 
 @interface CDQHealthGraphViewController ()
 
@@ -16,7 +16,7 @@
 
 @implementation CDQHealthGraphViewController
 
-CDQGraph *graph;
+CDQGraphHealth *graph;
 NSString *healthType;
 NSString *dateType;
 
@@ -40,7 +40,7 @@ NSString *dateType;
     CGFloat viewWidth = viewSize.width;
     CGFloat viewHeight = viewSize.height;
     
-    graph = [[CDQGraph alloc] initWithFrame: CGRectMake(0, 150, viewWidth, viewHeight-700)];
+    graph = [[CDQGraphHealth alloc] initWithFrame: CGRectMake(0, 150, viewWidth, viewHeight-700)];
     graph.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.0];
     [self.view addSubview:graph];
     
@@ -113,6 +113,14 @@ NSString *dateType;
     //PREPARE FOR SERVER CALL//
     ///////////////////////////
     
+    NSString *query;
+    
+    //"GET /health/json?start_date=01-01-2013&end_date=31-12-2013 HTTP/1.1" 200 276 "http://ec2-54-234-225-137.compute-1.amazonaws.com:8080/health/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+    
+    query = [NSString stringWithFormat:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/health/json?start_date=01-01-2013&end_date=31-12-2013"];
+    
+    //make the graph update points by calling the server
+    [graph triggerServerCall:query];
 }
 
 @end

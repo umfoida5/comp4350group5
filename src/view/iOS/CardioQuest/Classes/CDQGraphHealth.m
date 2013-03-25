@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 comp4350group5. All rights reserved.
 //
 
-#import "CDQGraph.h"
+#import "CDQGraphHealth.h"
 #import "ECCommon.h"
 #import "ECGraph.h"
 #import "ECGraphItem.h"
@@ -15,7 +15,7 @@
 #import "ASIFormDataRequest.h"
 #import "Classes/SBJson.h"
 
-@implementation CDQGraph
+@implementation CDQGraphHealth
 
 CGContextRef context;
 NSArray* graphPoints;
