@@ -21,37 +21,19 @@ $(document).ready(function()
 
 		//ask server for the data and dump it into the graphdata variable
 		//if the user wants max_speed, we look for a maximum
-		if (measureType == "max_speed")
-		{
-			$.getJSON("get_maximum",
-			{
+		$.ajax( {
+              "dataType": 'json',
+              "type": "GET",
+              "url": "/stats/get_total",
+              "data": {
 				column_name: measureType,
 				activity_name: actType,
 				start_date: startDate,
 				end_date: today,
 				group_by: "day"
-			},
-				function(activity_list)
-				{
-					drawGraph(activity_list);
-				});
-		}
-		//if the user does not want max_speed, we find a total
-		else
-		{
-			$.getJSON("get_total",
-			{
-				column_name: measureType,
-				activity_name: actType,
-				start_date: startDate,
-				end_date: today,
-				group_by: "day"
-			},
-				function(activity_list)
-				{
-					drawGraph(activity_list);
-				});
-		}
+			    },
+              "success": drawGraph
+          })
     };//button click function		
 
     function dateConversion(date,timeframe) 
