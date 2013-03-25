@@ -116,8 +116,9 @@ $(document).ready(function()
             }]
         });//draw graph function
 
+        var message = "No " + $('#select1').val() + "s have been recorded this " + $('#select3').val();
         if (myValues.length <= 0)
-            myChart.showLoading("No Activity Data Recorded");
+            myChart.showLoading(message);
         else
             myChart.hideLoading();
     }//drawgraph function
@@ -133,12 +134,6 @@ $(document).ready(function()
 
 });//document ready
 
-function setUpdateButtonOnClickFunction()
-{
-	
-}	
-
-
 </script>
 
 {% endblock script %}
@@ -149,8 +144,8 @@ function setUpdateButtonOnClickFunction()
 	Activity:
 	<select size="1" id="select1">
 		<option value ="Run" selected="selected">Run</option>
-		<option value ="Walk">Walk</option>
 		<option value ="Bike">Bike</option>
+        <option value ="Swim">Swim</option>
 	</select>
 	Metric Used:
 	<select size="1" id="select2">
