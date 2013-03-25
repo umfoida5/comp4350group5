@@ -47,11 +47,11 @@ NSString *measurementType;
     
     //set UIPicker arrays
     
-    activityTypes = [[NSArray alloc] initWithObjects:@"Bike", @"Run", @"Walk", nil];
+    activityTypes = [[NSArray alloc] initWithObjects:@"Run", @"Bike", @"Swim", nil];
     dateTypes = [[NSArray alloc] initWithObjects:@"Month", @"Year", nil];
     mesurementTypes = [[NSArray alloc] initWithObjects:@"Distance", @"Duration", @"Top Speed", nil];
     
-    activity = @"Bike";
+    activity = @"Run";
     dateType = @"Month";
     measurementType = @"Distance";
     
