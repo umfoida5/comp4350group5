@@ -17,6 +17,8 @@
 @implementation CDQHealthGraphViewController
 
 CDQGraph *graph;
+NSString *healthType;
+NSString *dateType;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,6 +43,12 @@ CDQGraph *graph;
     graph = [[CDQGraph alloc] initWithFrame: CGRectMake(0, 150, viewWidth, viewHeight-700)];
     graph.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.0];
     [self.view addSubview:graph];
+    
+    dateTypes = [[NSArray alloc] initWithObjects:@"Day", @"Week", @"Month", @"Year", nil];
+    healthTypes = [[NSArray alloc] initWithObjects:@"Weight", @"Resting Heart Rate", nil];
+    
+    dateType = @"Day";
+    healthType = @"Weight";
 }
 
 //TODO: force interface orientation to landscape (this code does nothing)
@@ -65,17 +73,12 @@ CDQGraph *graph;
 {
     if ([pickerView tag] == 1)
     {
-        //return activityTypes.count;
+        return healthTypes.count;
     }
     
-    else if ([pickerView tag] == 2)
+    else //if ([pickerView tag] == 2)
     {
-        //return dateTypes.count;
-    }
-    
-    else //if ([pickerView tag] == 3)
-    {
-        //return mesurementTypes.count;
+        return dateTypes.count;
     }
 }
 
@@ -84,26 +87,32 @@ CDQGraph *graph;
 {
     if ([pickerView tag] == 1)
     {
-        //return [activityTypes objectAtIndex:row];
+        return [healthTypes objectAtIndex:row];
     }
     
-    else if ([pickerView tag] == 2)
+    else //if ([pickerView tag] == 2)
     {
-        //return [dateTypes objectAtIndex:row];
-    }
-    
-    else //if ([pickerView tag] == 3)
-    {
-        //return [mesurementTypes objectAtIndex:row];
+        return [dateTypes objectAtIndex:row];
     }
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
+    //change the UIPicker values
+    if ([pickerView tag] == 1)
+    {
+        healthType = (NSString*)[healthTypes objectAtIndex:row];
+    }
+    
+    else //if ([pickerView tag] == 2)
+    {
+        dateType = (NSString*)[dateTypes objectAtIndex:row];
+    }
     
     ///////////////////////////
     //PREPARE FOR SERVER CALL//
     ///////////////////////////
+    
 }
 
 @end

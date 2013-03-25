@@ -1147,7 +1147,33 @@ Features
                     <view key="view" contentMode="scaleToFill" id="Ypt-2M-RrI">
                         <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2RJ-xN-SyS">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="216" id="Zl9-aN-U0U"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="y3I-Vg-nOH" id="MfQ-0i-4zB"/>
+                                    <outlet property="delegate" destination="y3I-Vg-nOH" id="e9j-li-d65"/>
+                                </connections>
+                            </pickerView>
+                            <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zB-6L-bOj">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="216" id="Kl0-sp-Tsz"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="y3I-Vg-nOH" id="4lR-1N-2m6"/>
+                                    <outlet property="delegate" destination="y3I-Vg-nOH" id="65E-HQ-Cdq"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2RJ-xN-SyS" firstAttribute="leading" secondItem="Ypt-2M-RrI" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="deT-KE-e4b"/>
+                            <constraint firstAttribute="bottom" secondItem="2RJ-xN-SyS" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="qdQ-TJ-ZAy"/>
+                            <constraint firstAttribute="bottom" secondItem="1zB-6L-bOj" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="tvT-J0-8CA"/>
+                            <constraint firstAttribute="trailing" secondItem="1zB-6L-bOj" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="wHA-L3-mQ8"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Health" id="4C8-n1-JeP">
                         <barButtonItem key="leftBarButtonItem" title="Log a Health Record" id="lzG-6C-Kjf">
@@ -1161,6 +1187,10 @@ Features
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="datePicker" destination="1zB-6L-bOj" id="3D8-vs-BdS"/>
+                        <outlet property="healthPicker" destination="2RJ-xN-SyS" id="RpS-RA-8P9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iiA-eG-mZ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
