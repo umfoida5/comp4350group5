@@ -52,10 +52,10 @@ class Profiles:
         try:
             time.strptime(birth_date, '%Y-%m-%d')
         except ValueError:
-            ath = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
-            jathlete = make_jsonable(ath)
-            jathlete['birth_date'] = "Expected:(YYYY-MM-DD)"
-            return jathlete
+            #ath = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
+            #jathlete = make_jsonable(ath)
+            #jathlete['birth_date'] = "Expected:(YYYY-MM-DD)"
+            return "Expected:(YYYY-MM-DD)"#jathlete
 
         result = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
         result.birth_date = birth_date
