@@ -11,13 +11,18 @@
 		0D3530F616FCBDAE00B3F622 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3530F516FCBDAE00B3F622 /* MapKit.framework */; };
 		0D3530F816FCBDB700B3F622 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3530F716FCBDB700B3F622 /* QuartzCore.framework */; };
 		0D3A90B916FCCD5B00EDC3D0 /* TapkuLibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0D3A90B816FCCD5A00EDC3D0 /* TapkuLibrary.bundle */; };
-		1426EA6716FF93AF00D70AEC /* CDCgraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 1426EA6416FF93AF00D70AEC /* CDCgraph.m */; };
-		1426EA6816FF93AF00D70AEC /* CDCStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1426EA6616FF93AF00D70AEC /* CDCStatsViewController.m */; };
 		1426EA7616FF93F300D70AEC /* ECGraphPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 1426EA7116FF93F300D70AEC /* ECGraphPoint.m */; };
 		1426EA7716FF93F300D70AEC /* ECGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 1426EA7216FF93F300D70AEC /* ECGraph.m */; };
 		1426EA7816FF93F300D70AEC /* ECGraphItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1426EA7316FF93F300D70AEC /* ECGraphItem.m */; };
 		1426EA7916FF93F300D70AEC /* ECGraphLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1426EA7416FF93F300D70AEC /* ECGraphLine.m */; };
 		1426EA7A16FF93F300D70AEC /* ECCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1426EA7516FF93F300D70AEC /* ECCommon.m */; };
+		14E443FC16FFA8940016518F /* ECGraphPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 1426EA7116FF93F300D70AEC /* ECGraphPoint.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		14E443FD16FFA8940016518F /* ECGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 1426EA7216FF93F300D70AEC /* ECGraph.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		14E443FE16FFA8940016518F /* ECGraphItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1426EA7316FF93F300D70AEC /* ECGraphItem.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		14E443FF16FFA8940016518F /* ECGraphLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1426EA7416FF93F300D70AEC /* ECGraphLine.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		14E4440016FFA8940016518F /* ECCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1426EA7516FF93F300D70AEC /* ECCommon.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		14F38B0616FFA37500CB961D /* CDQStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F38B0516FFA37500CB961D /* CDQStatsViewController.m */; };
+		14F38B0916FFA3A400CB961D /* CDQGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F38B0816FFA3A400CB961D /* CDQGraph.m */; };
 		3788154C16FE412700E56CE3 /* CDQHealthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3788154B16FE412700E56CE3 /* CDQHealthTableViewController.m */; };
 		3788155016FE4DDF00E56CE3 /* CDQHealthInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3788154F16FE4DDF00E56CE3 /* CDQHealthInputController.m */; };
 		3788155316FE685200E56CE3 /* CDQGoalInputController_test.m in Sources */ = {isa = PBXBuildFile; fileRef = 3788155216FE685200E56CE3 /* CDQGoalInputController_test.m */; };
@@ -130,10 +135,6 @@
 		0D3530F516FCBDAE00B3F622 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0D3530F716FCBDB700B3F622 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		0D3A90B816FCCD5A00EDC3D0 /* TapkuLibrary.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TapkuLibrary.bundle; path = tapkulibrary/src/TapkuLibrary.bundle; sourceTree = "<group>"; };
-		1426EA6316FF93AF00D70AEC /* CDCgraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDCgraph.h; sourceTree = "<group>"; };
-		1426EA6416FF93AF00D70AEC /* CDCgraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDCgraph.m; sourceTree = "<group>"; };
-		1426EA6516FF93AF00D70AEC /* CDCStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDCStatsViewController.h; sourceTree = "<group>"; };
-		1426EA6616FF93AF00D70AEC /* CDCStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDCStatsViewController.m; sourceTree = "<group>"; };
 		1426EA6B16FF93F300D70AEC /* ECCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCommon.h; sourceTree = "<group>"; };
 		1426EA6D16FF93F300D70AEC /* ECGraphItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGraphItem.h; sourceTree = "<group>"; };
 		1426EA6E16FF93F300D70AEC /* ECGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGraph.h; sourceTree = "<group>"; };
@@ -144,6 +145,10 @@
 		1426EA7316FF93F300D70AEC /* ECGraphItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGraphItem.m; sourceTree = "<group>"; };
 		1426EA7416FF93F300D70AEC /* ECGraphLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGraphLine.m; sourceTree = "<group>"; };
 		1426EA7516FF93F300D70AEC /* ECCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECCommon.m; sourceTree = "<group>"; };
+		14F38B0416FFA37500CB961D /* CDQStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQStatsViewController.h; sourceTree = "<group>"; };
+		14F38B0516FFA37500CB961D /* CDQStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQStatsViewController.m; sourceTree = "<group>"; };
+		14F38B0716FFA3A400CB961D /* CDQGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQGraph.h; sourceTree = "<group>"; };
+		14F38B0816FFA3A400CB961D /* CDQGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQGraph.m; sourceTree = "<group>"; };
 		3788154A16FE412700E56CE3 /* CDQHealthTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQHealthTableViewController.h; sourceTree = "<group>"; };
 		3788154B16FE412700E56CE3 /* CDQHealthTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQHealthTableViewController.m; sourceTree = "<group>"; };
 		3788154E16FE4DDF00E56CE3 /* CDQHealthInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQHealthInputController.h; sourceTree = "<group>"; };
@@ -480,10 +485,10 @@
 				E461B6DE16EA700F00C43D87 /* ProfileViewController.m */,
 				E4DAFD0D16EA819300258D78 /* ActivityViewController.h */,
 				E4DAFD0E16EA819300258D78 /* ActivityViewController.m */,
-				1426EA6316FF93AF00D70AEC /* CDCgraph.h */,
-				1426EA6416FF93AF00D70AEC /* CDCgraph.m */,
-				1426EA6516FF93AF00D70AEC /* CDCStatsViewController.h */,
-				1426EA6616FF93AF00D70AEC /* CDCStatsViewController.m */,
+				14F38B0416FFA37500CB961D /* CDQStatsViewController.h */,
+				14F38B0516FFA37500CB961D /* CDQStatsViewController.m */,
+				14F38B0716FFA3A400CB961D /* CDQGraph.h */,
+				14F38B0816FFA3A400CB961D /* CDQGraph.m */,
 				E4BEB5D316E5361500DD4526 /* Supporting Files */,
 			);
 			path = CardioQuest;
@@ -721,6 +726,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14E443FC16FFA8940016518F /* ECGraphPoint.m in Sources */,
+				14E443FD16FFA8940016518F /* ECGraph.m in Sources */,
+				14E443FE16FFA8940016518F /* ECGraphItem.m in Sources */,
+				14E443FF16FFA8940016518F /* ECGraphLine.m in Sources */,
+				14E4440016FFA8940016518F /* ECCommon.m in Sources */,
 				E4BEB5D916E5361500DD4526 /* main.m in Sources */,
 				E4BEB5DD16E5361600DD4526 /* CDQAppDelegate.m in Sources */,
 				E461B6DF16EA700F00C43D87 /* ProfileViewController.m in Sources */,
@@ -758,6 +768,8 @@
 				7282B83116FB79CF003F2F30 /* CDQHomeViewController.m in Sources */,
 				3788154C16FE412700E56CE3 /* CDQHealthTableViewController.m in Sources */,
 				3788155016FE4DDF00E56CE3 /* CDQHealthInputController.m in Sources */,
+				14F38B0616FFA37500CB961D /* CDQStatsViewController.m in Sources */,
+				14F38B0916FFA3A400CB961D /* CDQGraph.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -777,8 +789,6 @@
 				3788155F16FE6A7600E56CE3 /* CDQLoginController_test.m in Sources */,
 				3788156216FE6AAC00E56CE3 /* CDQHealthTableViewController_test.m in Sources */,
 				3788156516FE6AE000E56CE3 /* CDQEventsInputController_test.m in Sources */,
-				1426EA6716FF93AF00D70AEC /* CDCgraph.m in Sources */,
-				1426EA6816FF93AF00D70AEC /* CDCStatsViewController.m in Sources */,
 				1426EA7616FF93F300D70AEC /* ECGraphPoint.m in Sources */,
 				1426EA7716FF93F300D70AEC /* ECGraph.m in Sources */,
 				1426EA7816FF93F300D70AEC /* ECGraphItem.m in Sources */,

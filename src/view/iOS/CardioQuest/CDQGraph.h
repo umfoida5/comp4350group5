@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ASIHTTPRequest.h"
 
-@interface CDQGraph : UIViewController
-
+@interface CDQGraph : UIView <ASIHTTPRequestDelegate>
+-(void)triggerServerCall:(NSString*)query;
 @end

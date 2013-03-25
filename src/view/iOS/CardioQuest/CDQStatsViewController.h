@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ECGraph.h"
 
-@interface CDQStatsViewController : UIViewController
+@interface CDQStatsViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate, ECGraphDelegate> {
+    NSArray *activityTypes;
+    NSArray *dateTypes;
+    NSArray *mesurementTypes;
+}
+@property (weak, nonatomic) IBOutlet UIPickerView *activityPicker;
+@property (weak, nonatomic) IBOutlet UIPickerView *measurePicker;
+@property (weak, nonatomic) IBOutlet UIPickerView *datePicker;
 
 @end
