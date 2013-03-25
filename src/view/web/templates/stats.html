@@ -21,7 +21,8 @@ $(document).ready(function()
 		}
 		else
 		{
-			appendNoActivitiesMessageToDiv();
+			//appendNoActivitiesMessageToDiv();
+            appendGraphContainerHTMLtoDiv();
 		}
 
 	});	
@@ -188,23 +189,20 @@ function drawGraph(myData)
             	data: myValues
         }]
     });//draw graph function
+
+    if (myValues.length <= 0)
+        chart.showLoading("No Health Data Recorded");
+    else
+        chart.hideLoading();
 }//drawgraph function
 
 function appendNoActivitiesMessageToDiv()
 {
 	$("#bodyDiv").append(
-		'<div style="padding-left:10%; padding-right:10%; padding-top:2%" align="center">' +
-			'<div class="well" style="height:150px">'+
-				'<dl>' +
-					'<dt>' +
-						'<h1>Workout Statistics</h1>' +
-						'<br />' +
-						'<p>You haven\'t logged any activities yet.<br/><a href="../activities">Click here</a> to log one! :)</p>' +
-					'</dt>' +
-					'<dd id="about_me" class="edit"></dd>' +
-				'</dl>' +
-			'</div>' +
-		'</div>'
+			'<div class="alert alert-info">'+
+				'<h3>Workout Statistics</h3>' +
+				'<p>No data to be displayed.  <a href="../activities">Click here</a> to log activities! :)</p>' +
+			'</div>'
 	);
 }
 
