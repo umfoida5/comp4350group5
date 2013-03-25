@@ -1,4 +1,5 @@
 import cherrypy, time, re
+import json
 from modules import database
 from model.athlete import Athlete
 from modules.template import env
@@ -16,6 +17,7 @@ class Profiles:
     @cherrypy.expose
     def athlete(self, **kwargs):
         result = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
+        print make_jsonable(result)
         return make_jsonable(result)
     
     @cherrypy.tools.json_out()
@@ -50,7 +52,10 @@ class Profiles:
         try:
             time.strptime(birth_date, '%Y-%m-%d')
         except ValueError:
-            return "Invalid birth date (format: MM-DD-YYYY)"
+            #ath = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
+            #jathlete = make_jsonable(ath)
+            #jathlete['birth_date'] = "Expected:(YYYY-MM-DD)"
+            return "Expected:(YYYY-MM-DD)"#jathlete
 
         result = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
         result.birth_date = birth_date

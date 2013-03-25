@@ -46,7 +46,7 @@
                         <th>Date</th>
                         <th>Duration</th>
                         <th>Distance</th>
-                        <th>Max speed</th>
+                        <th class="hidden-phone">Max speed</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -59,28 +59,27 @@
     <div class="modal hide fade" id="enter_activity_modal" name="enter_activity_modal">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3 id="modal_title">New Activity:</h3>
+            <h3 id="modal_title">New Activity</h3>
         </div>
         <form id="newAcitivityForm">
             <div class="modal-body">
                 <fieldset>
-                    <label for="date">Date:</label>
-                    <div class="input-append date" id="dateInput" data-date="26-02-2013" data-date-format="dd-mm-yyyy" style="display: inline;">
-                        <input class="span2" name="date" id="date" size="16" type="text" >
+                    <label>Date:</label>
+                    <div class="input-append date" id="dateInput" data-date="26-02-2013" data-date-format="dd-mm-yyyy">
+                        <input class="span2" name="date" id="date" size="16" type="text">
                         <span class="add-on"><i class="icon-th"></i></span>
                      </div>
-                    <br/>
-                    <label for="name">Type:</label>
+                    <label>Type:</label>
                     <select class="span2" name="type" id="type" required>
                         <option value="Run" selected="selected">Run</option>
                         <option value="Bike">Bike</option>
                         <option value="Swim">Swim</option>
                     </select>
-                    <label for="duration">Duration (minutes):</label>
+                    <label>Duration (minutes):</label>
                     <input type="number" name="duration" id="duration" min="0" value="0" required />
-                    <label for="distance">Distance (km):</label>
+                    <label>Distance (km):</label>
                     <input type="number" name="distance" id="distance" min="0" value="0" required />
-                    <label for="max_speed">Max Speed (km/h):</label>
+                    <label>Max Speed (km/h):</label>
                     <input type="number" name="max_speed" id="max_speed" min="0" value="0" required />
                 </fieldset>
             </div>

@@ -34,8 +34,7 @@ function Profile(){
   
 
        this.get_athleteAjax = function(){
-          
-        
+
         var athlete = $.ajax({
             url: '../profiles/athlete',
             data: athlete,
@@ -48,8 +47,8 @@ function Profile(){
               setValueIfEmptyString("#about_me", athlete['about_me'], "Click to add your biography");
             }
         });
-        
-        return athlete; 
+        return athlete;
+  
       }
 
       this.get_achievesAjax = function(){
@@ -90,7 +89,9 @@ function Profile(){
           type: 'text',
           intercept: function (jsondata) {
             obj = jQuery.parseJSON(jsondata);
-            // do something with obj.status and obj.other
+            // do something with obj.status and obj.other 
+            if(obj.birth_date == undefined)
+              return jsondata;
             return(obj.birth_date);
           }        
         });
@@ -139,6 +140,8 @@ function Profile(){
           type: 'text',
           intercept: function (jsondata) {
             obj = jQuery.parseJSON(jsondata);
+            if(obj == undefined)
+              return jsondata;
             // do something with obj.status and obj.other
             return(obj.email);
           }

@@ -36,8 +36,23 @@
     <div class="tab-content">
         <div class="tab-pane active" id="graph_tab">
             <!-- graph pane and filters -->
-
             <div id="graphContainer" style="width:100%; height:400px;"></div>
+            <div>            
+                <h4>Filter Graph Data By Date Range:</h4>
+                <form class="navbar-form pull-left form-inline" align="center">
+                    <label for="graph_from_date_div">Start Date:</label>                    
+                    <div class="input-append date" id="graph_from_date_div" data-date="01-01-2013" data-date-format="dd-mm-yyyy">
+                        <input class="span2" id="graph_from_date" name="graph_from_date_div" size="16" type="text" value='01-01-2013'>
+                        <span class="add-on"><i class="icon-th"></i></span>
+                    </div>
+                    <label for="graph_from_date_div">  End Date:</label>    
+                    <div class="input-append date" id="graph_to_date_div" data-date="31-12-2013" data-date-format="dd-mm-yyyy">
+                        <input class="span2" id="graph_to_date" name="graph_to_date_div" size="16" type="text" value="31-12-2013">
+                        <span class="add-on"><i class="icon-th"></i></span>
+                    </div>
+                    <a class="btn btn-primary" id="updateGraphBtn">Update Graph</a>
+                </form>
+            </div>
         </div>
         <div class="tab-pane" id="table_tab">
             <!-- TABLE ======================================= -->
@@ -46,8 +61,8 @@
                     <tr>
                         <th>Date</th>
                         <th>Weight</th>
-                        <th>Resting HR</th>
-                        <th>Comments</th>
+                        <th class="hidden-phone">Resting HR</th>
+                        <th class="hidden-phone">Comments</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -65,23 +80,23 @@
         <form>
             <div class="modal-body">
                 <div class="control-group">
-                    <label class="control-label" for="date_wrapper_form">Date:&nbsp;</label>
+                    <label class="control-label">Date:&nbsp;</label>
                     <div class="input-append date" id="date_wrapper_form" data-date="26-02-2013" data-date-format="dd-mm-yyyy">
                       <input class="span2" id="health_date" name="health_date" size="16" type="text">
                       <span class="add-on"><i class="icon-th"></i></span>
                     </div>
                 </div>
               <div class="control-group">
-                  <label class="control-label" for="weight">Weight (pounds):&nbsp;</label>
-                  <input type="number" name="weight" class="input-xlarge" id="weight">
+                  <label class="control-label">Weight (pounds):&nbsp;</label>
+                  <input type="number" id="weight" name="weight" class="input-xlarge" id="weight">
               </div>
               <div class="control-group">
-                  <label class="control-label" for="resting_heart_rate">Resting Heart Rate (beats/min):&nbsp;</label>
-                  <input type="number"  name="resting_heart_rate" class="input-xlarge" id="resting_heart_rate">
+                  <label class="control-label">Resting Heart Rate (beats/min):&nbsp;</label>
+                  <input type="number" id="resting_heart_rate"  name="resting_heart_rate" class="input-xlarge" id="resting_heart_rate">
               </div>
               <div class="control-group">
-                  <label class="control-label" for="comment">Comments:&nbsp;</label>
-                  <textarea class="input-xlarge" name="comment" id="comment" rows="7"></textarea>
+                  <label class="control-label">Comments:&nbsp;</label>
+                  <textarea class="input-xlarge" id="comment" name="comment" id="comment" rows="7"></textarea>
               </div>
             </div>
             <div class="modal-footer">

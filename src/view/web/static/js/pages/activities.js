@@ -1,5 +1,5 @@
 function Activities(){
-
+    var athleteTable;
     this.controls = function() {
         
         $('#enterButton').click(function() {
@@ -9,6 +9,7 @@ function Activities(){
             $('#duration').attr('value', '');
             $('#max_speed').attr('value', '');
             $('#dateInput').datepicker('setValue', new Date());
+            $('#dateInput').datepicker('update');
         });
 
         $('#closeButton').click(function() { 
@@ -27,14 +28,19 @@ function Activities(){
             });
             return false;
         });
-    }
     
-    $('#dateInput').datepicker().on('changeDate', function(){
-        $(this).datepicker('hide');
-    });
+        $('#dateInput').datepicker().on('changeDate', function(){
+            $(this).datepicker('hide');
+        });
+
+        $('#date').click(function() {
+            this.blur();
+            $('#dateInput').datepicker('show');
+        });
+    }
 
     this.athleteTable = function(){
-      var athleteTable = $('#athleteTable').dataTable( {
+      athleteTable = $('#athleteTable').dataTable( {
         "bProcessing": true,
         "bServerSide": true,
         "sPaginationType": "bootstrap",
@@ -45,7 +51,7 @@ function Activities(){
           { "mData": "date", "sWidth": '30%', "bSearchable": false },
           { "mData": "duration", "sWidth": '15%', "bSearchable": false },
           { "mData": "distance", "sWidth": '15%', "bSearchable": false },
-          { "mData": "max_speed", "sWidth": '15%', "bSearchable": false }
+          { "mData": "max_speed", "sWidth": '15%', "bSearchable": false, 'sClass':'hidden-phone' }
         ]} );
 
         return athleteTable;
@@ -68,7 +74,6 @@ function Activities(){
             dayClick: function(date) {
                 $('#enter_activity_modal').modal('show');
                 $('#dateInput').datepicker('setValue', new Date(date.getFullYear(), date.getMonth(), date.getDate()));
-                $('#modal_title').html("New Activity");
                 $('#type').attr('value', 'Run');
                 $('#distance').attr('value', '');
                 $('#duration').attr('value', '');
