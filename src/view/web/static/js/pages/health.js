@@ -30,6 +30,16 @@ function Health() {
           this.blur();
           $('#date_wrapper_form').datepicker('show');
       });
+
+      $('#date_wrapper_form').datepicker().on('changeDate', function(){
+            $(this).datepicker('hide');
+        });
+      $('#graph_to_date_div').datepicker().on('changeDate', function(){
+            $(this).datepicker('hide');
+        });
+      $('#graph_from_date_div').datepicker().on('changeDate', function(){
+            $(this).datepicker('hide');
+        });
       
       $('form').submit(function() { 
         $.post("create", $(this).serialize(), function() {
