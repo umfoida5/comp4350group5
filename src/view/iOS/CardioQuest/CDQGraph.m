@@ -95,7 +95,7 @@ NSArray* graphPoints;
 - (void)requestFinished:(ASIHTTPRequest *)request
 {
     NSString *responseString = [request responseString];
-    NSLog(@"%@",responseString);
+    //NSLog(@"%@",responseString);
     
     SBJsonParser *parser = [[SBJsonParser alloc]init];
     NSMutableArray *points = [parser objectWithString:responseString];

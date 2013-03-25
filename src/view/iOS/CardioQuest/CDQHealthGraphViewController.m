@@ -17,7 +17,6 @@
 @implementation CDQHealthGraphViewController
 
 CDQGraphHealth *graph;
-NSString *healthType;
 NSString *dateType;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -44,11 +43,9 @@ NSString *dateType;
     graph.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.0];
     [self.view addSubview:graph];
     
-    dateTypes = [[NSArray alloc] initWithObjects:@"Day", @"Week", @"Month", @"Year", nil];
-    healthTypes = [[NSArray alloc] initWithObjects:@"Weight", @"Resting Heart Rate", nil];
+    dateTypes = [[NSArray alloc] initWithObjects:@"Month", @"Year", nil];
     
-    dateType = @"Day";
-    healthType = @"Weight";
+    dateType = @"Month";
 }
 
 //TODO: force interface orientation to landscape (this code does nothing)
@@ -71,42 +68,40 @@ NSString *dateType;
 //set the number of rows
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    if ([pickerView tag] == 1)
-    {
-        return healthTypes.count;
-    }
-    
-    else //if ([pickerView tag] == 2)
-    {
         return dateTypes.count;
-    }
 }
 
 //set items in the rows
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    if ([pickerView tag] == 1)
-    {
-        return [healthTypes objectAtIndex:row];
-    }
-    
-    else //if ([pickerView tag] == 2)
-    {
         return [dateTypes objectAtIndex:row];
-    }
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    //change the UIPicker values
-    if ([pickerView tag] == 1)
+    dateType = (NSString*)[dateTypes objectAtIndex:row];
+    
+    NSDateComponents *start = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:[NSDate date]];
+    NSDateComponents *end = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:[NSDate date]];
+    
+    if ([dateType isEqual:@"Year"])
     {
-        healthType = (NSString*)[healthTypes objectAtIndex:row];
+        [start setYear:[end year]-1];
     }
     
-    else //if ([pickerView tag] == 2)
+    else if ([dateType isEqual:@"Month"])
     {
-        dateType = (NSString*)[dateTypes objectAtIndex:row];
+        [start setMonth:[end month]-1];
+    }
+    
+    else if ([dateType isEqual:@"Week"])
+    {
+        [start setDay:[end day]-7];
+    }
+    
+    else //if ([dateType isEqual:@"Day"])
+    {
+        [start setDay:[end day]-1];
     }
     
     ///////////////////////////
@@ -115,9 +110,8 @@ NSString *dateType;
     
     NSString *query;
     
-    //"GET /health/json?start_date=01-01-2013&end_date=31-12-2013 HTTP/1.1" 200 276 "http://ec2-54-234-225-137.compute-1.amazonaws.com:8080/health/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+    query = [NSString stringWithFormat:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/health/json?start_date=%ld-%ld-%ld&end_date=%ld-%ld-%ld",(long)start.day,(long)start.month,(long)start.year,(long)end.day,(long)end.month,(long)end.year];
     
-    query = [NSString stringWithFormat:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/health/json?start_date=01-01-2013&end_date=31-12-2013"];
     
     //make the graph update points by calling the server
     [graph triggerServerCall:query];
