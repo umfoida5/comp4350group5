@@ -30,6 +30,7 @@ function Goals() {
       var goalsTable = $('#goalsTable').dataTable({
         "bProcessing": true,
         "bServerSide": true,
+        "bFilter"    : false,
         "sPaginationType": "bootstrap",
         "sAjaxSource": "/goals/update_datatable",
         "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
@@ -38,9 +39,9 @@ function Goals() {
           { "mData": "operator", "bSearchable": false },
           { "mData": "quantity", "bSearchable": false },
           { "mData": "metric", "bSearchable": false },
-          { "mData": "start_date", "bSearchable": false },
-          { "mData": "end_date", "bSearchable": false },
-          { "mData": "completed", "bSearchable": false,
+          { "mData": "start_date", "bSearchable": false, 'sClass':'hidden-phone' },
+          { "mData": "end_date", "bSearchable": false, 'sClass':'hidden-phone' },
+          { "mData": "completed", "bSearchable": false, 'sClass':'hidden-phone',
             "mRender": function( data, type, row) {
                 if (data == true) {
                     return 'Yes ';

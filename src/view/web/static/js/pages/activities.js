@@ -45,7 +45,7 @@ function Activities(){
           { "mData": "date", "sWidth": '30%', "bSearchable": false },
           { "mData": "duration", "sWidth": '15%', "bSearchable": false },
           { "mData": "distance", "sWidth": '15%', "bSearchable": false },
-          { "mData": "max_speed", "sWidth": '15%', "bSearchable": false }
+          { "mData": "max_speed", "sWidth": '15%', "bSearchable": false, 'sClass':'hidden-phone' }
         ]} );
 
         return athleteTable;

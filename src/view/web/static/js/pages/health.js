@@ -97,8 +97,8 @@ function Health() {
         "aoColumns": [
           { "mData": "health_date", "sWidth": '15%', "bSearchable": false },
           { "mData": "weight", "sWidth": '15%',"bSearchable": false },
-          { "mData": "resting_heart_rate", "sWidth": '15%', "bSearchable": false },
-          { "mData": "comments", "sWidth": '55%', "bSearchable": false }
+          { "mData": "resting_heart_rate", "sWidth": '15%', "bSearchable": false, 'sClass':'hidden-phone' },
+          { "mData": "comments", "sWidth": '55%', "bSearchable": false, 'sClass':'hidden-phone' }
         ],
         "fnServerData": function ( sSource, aoData, fnCallback, oSettings ) {
             oSettings.jqXHR = $.ajax( {
