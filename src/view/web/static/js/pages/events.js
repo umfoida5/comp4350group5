@@ -28,7 +28,7 @@ function Events() {
         "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
         "aoColumns": [
           { "mData": "event_date", "sWidth": '15%', "bSearchable": false },
-          { "mData": "description", "sWidth": '55%' },
+          { "mData": "description", "sWidth": '55%', 'sClass':'hidden-phone' },
           { "mData": "location", "sWidth": '15%' },
           { "mData": "distance", "sWidth": '15%', "bSearchable": false }
         ]
