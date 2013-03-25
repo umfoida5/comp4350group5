@@ -1,5 +1,5 @@
 function Activities(){
-
+    var athleteTable;
     this.controls = function() {
         
         $('#enterButton').click(function() {
@@ -34,7 +34,7 @@ function Activities(){
     });
 
     this.athleteTable = function(){
-      var athleteTable = $('#athleteTable').dataTable( {
+      athleteTable = $('#athleteTable').dataTable( {
         "bProcessing": true,
         "bServerSide": true,
         "sPaginationType": "bootstrap",

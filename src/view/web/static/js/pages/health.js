@@ -2,7 +2,12 @@ function Health() {
   var healthTable;
   this.controls = function() {
       $('#enterButton').click(function() {
+        var date = new Date();
         $('#enter_health_modal').modal('show');
+        $('#date_wrapper_form').datepicker('setValue', (date.getDate()) + "-" + (date.getMonth() + 1) + "-" + (date.getFullYear()));
+        $('#weight').attr('value', '');
+        $('#resting_heart_rate').attr('value', '');
+        $('#comment').attr('value', '');
       });
       
       $('#closeButton').click(function() {
