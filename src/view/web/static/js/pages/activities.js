@@ -9,6 +9,7 @@ function Activities(){
             $('#duration').attr('value', '');
             $('#max_speed').attr('value', '');
             $('#dateInput').datepicker('setValue', new Date());
+            $('#dateInput').datepicker('update');
         });
 
         $('#closeButton').click(function() { 
@@ -27,11 +28,16 @@ function Activities(){
             });
             return false;
         });
-    }
     
-    $('#dateInput').datepicker().on('changeDate', function(){
-        $(this).datepicker('hide');
-    });
+        $('#dateInput').datepicker().on('changeDate', function(){
+            $(this).datepicker('hide');
+        });
+
+        $('#date').click(function() {
+            this.blur();
+            $('#dateInput').datepicker('show');
+        });
+    }
 
     this.athleteTable = function(){
       athleteTable = $('#athleteTable').dataTable( {
@@ -68,7 +74,6 @@ function Activities(){
             dayClick: function(date) {
                 $('#enter_activity_modal').modal('show');
                 $('#dateInput').datepicker('setValue', new Date(date.getFullYear(), date.getMonth(), date.getDate()));
-                $('#modal_title').html("New Activity");
                 $('#type').attr('value', 'Run');
                 $('#distance').attr('value', '');
                 $('#duration').attr('value', '');

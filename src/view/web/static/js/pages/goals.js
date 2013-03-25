@@ -7,8 +7,10 @@ function Goals() {
         $('#operator').attr('value', 'Total');
         $('#quantity').attr('value', '');
         $('#metric').attr('value', 'distance');
-        $('#start_date').attr('value', '');
-        $('#end_date').attr('value', '');
+        $('#start_date').datepicker('setValue', new Date());
+        $('#start_date').datepicker('update');
+        $('#end_date').datepicker('setValue', new Date((new Date()).getTime() + 24 * 60 * 60 * 1000));
+        $('#end_date').datepicker('update');
       });
 
       $('#closeButton').click(function() {
@@ -23,6 +25,16 @@ function Goals() {
       
       $('#end_date').datepicker().on('changeDate', function(){
           $(this).datepicker('hide');
+      });
+
+      $('#start_date input').click(function() {
+          this.blur();
+          $('#start_date').datepicker('show');
+      });
+
+      $('#end_date input').click(function() {
+          this.blur();
+          $('#end_date').datepicker('show');
       });
   }
 

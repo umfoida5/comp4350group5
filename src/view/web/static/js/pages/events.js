@@ -2,7 +2,8 @@ function Events() {
     this.controls = function() {
       $('#enterButton').click(function() {
         $('#enter_event_modal').modal('show');
-        $('#date').attr('value', '');
+        $('#date_wrapper').datepicker('setValue', new Date());
+        $('#date_wrapper').datepicker('update');
         $('#location').attr('value', '');
         $('#distance').attr('value', '');
         $('#description').attr('value', '');
@@ -16,7 +17,10 @@ function Events() {
           $(this).datepicker('hide');
       });
       
-      
+      $('#date').click(function() {
+          this.blur();
+          $('#date_wrapper').datepicker('show');
+      });
     }
 
     this.eventTable = function() {

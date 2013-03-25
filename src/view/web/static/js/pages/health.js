@@ -2,9 +2,9 @@ function Health() {
   var healthTable;
   this.controls = function() {
       $('#enterButton').click(function() {
-        var date = new Date();
         $('#enter_health_modal').modal('show');
-        $('#date_wrapper_form').datepicker('setValue', (date.getDate()) + "-" + (date.getMonth() + 1) + "-" + (date.getFullYear()));
+        $('#date_wrapper_form').datepicker('setValue', new Date());
+        $('#date_wrapper_form').datepicker('update');
         $('#weight').attr('value', '');
         $('#resting_heart_rate').attr('value', '');
         $('#comment').attr('value', '');
@@ -17,6 +17,19 @@ function Health() {
       $('#graph_from_date_div').datepicker();
       $('#graph_to_date_div').datepicker();
       $('#date_wrapper_form').datepicker();
+
+      $('#graph_from_date').click(function() {
+          this.blur();
+          $('#graph_from_date_div').datepicker('show');
+      });
+      $('#graph_to_date').click(function() {
+          this.blur();
+          $('#graph_to_date_div').datepicker('show');
+      });
+      $('#health_date').click(function() {
+          this.blur();
+          $('#date_wrapper_form').datepicker('show');
+      });
       
       $('form').submit(function() { 
         $.post("create", $(this).serialize(), function() {
