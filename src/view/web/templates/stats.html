@@ -11,19 +11,19 @@ $(document).ready(function()
 	//or show a message alerting the user to add activities
 	$.getJSON('../activities/update_datatable', function(activity_list)
 	{
-		if(activity_list['aaData'].length > 0)
-		{
-			appendGraphContainerHTMLtoDiv();
-			setUpdateButtonOnClickFunction();
+		//if(activity_list['aaData'].length > 0)
+		//{
+		//	appendGraphContainerHTMLtoDiv();
+		//	setUpdateButtonOnClickFunction();
 
 			//draw graph by simulating a click on update button
-			$("button").click(); 
-		}
-		else
-		{
+		//	$("button").click(); 
+		//}
+		//else
+		//{
 			//appendNoActivitiesMessageToDiv();
             appendGraphContainerHTMLtoDiv();
-		}
+		//}
 
 	});	
 });//document ready
@@ -191,9 +191,9 @@ function drawGraph(myData)
     });//draw graph function
 
     if (myValues.length <= 0)
-        chart.showLoading("No Health Data Recorded");
+        myChart.showLoading("No Health Data Recorded");
     else
-        chart.hideLoading();
+        myChart.hideLoading();
 }//drawgraph function
 
 function appendNoActivitiesMessageToDiv()
