@@ -21,7 +21,13 @@ class Stats:
     	athlete = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
     	params['athlete_id'] = str(athlete.id)
     	result = StatisticsEngine.total(Stats.mySE, **params)
-	return result
+
+        the_object = []        
+        for stat in result:
+            dictionary = {"year":stat.year, "month":stat.month, "day":stat.day, "value":stat.value}
+            the_object.append(dictionary)
+
+    	return the_object
 	
     @cherrypy.tools.json_out()
     @cherrypy.expose
@@ -29,7 +35,12 @@ class Stats:
     	athlete = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
     	params['athlete_id'] = str(athlete.id)
      	result = StatisticsEngine.average(Stats.mySE, **params)
-	return result
+        the_object = []        
+        for stat in result:
+            dictionary = {"year":stat.year, "month":stat.month, "day":stat.day, "value":stat.value}
+            the_object.append(dictionary)
+
+    	return the_object
 	
     @cherrypy.tools.json_out()
     @cherrypy.expose
@@ -37,7 +48,14 @@ class Stats:
     	athlete = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
     	params['athlete_id'] = str(athlete.id)
      	result = StatisticsEngine.minimum(Stats.mySE, **params)
-	return result
+
+        the_object = []        
+        for stat in result:
+            dictionary = {"year":stat.year, "month":stat.month, "day":stat.day, "value":stat.value}
+            the_object.append(dictionary)
+
+    	return the_object
+
 	
     @cherrypy.tools.json_out()
     @cherrypy.expose
@@ -45,4 +63,11 @@ class Stats:
     	athlete = Athlete.query.filter_by(id = cherrypy.session.get('id')).one()
     	params['athlete_id'] = str(athlete.id)
      	result = StatisticsEngine.maximum(Stats.mySE, **params)
-	return result
+
+        the_object = []        
+        for stat in result:
+            dictionary = {"year":stat.year, "month":stat.month, "day":stat.day, "value":stat.value}
+            the_object.append(dictionary)
+
+    	return the_object
+
