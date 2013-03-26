@@ -97,6 +97,16 @@ NSString *endDate;
     [dt setYear:[dt year]-1];
     
     [self.endDatePicker setDate:date];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+    NSString *tempDate = [dateFormatter stringFromDate:self.startDatePicker.date];
+    
+    startDate = tempDate;
+    
+    tempDate = [dateFormatter stringFromDate:self.endDatePicker.date];
+    
+    endDate = tempDate;
 }
 
 //TODO: force interface orientation to landscape (this code does nothing)
