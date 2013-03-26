@@ -5,7 +5,7 @@
 <script src="../js/highcharts.js"></script>
 <script>
 
-$(document).ready(function() 
+$(document).ready(function()
 {
     var update_graph = function()
 	{
@@ -34,9 +34,9 @@ $(document).ready(function()
 			    },
               "success": drawGraph
           })
-    };//button click function		
+    };//button click function
 
-    function dateConversion(date,timeframe) 
+    function dateConversion(date,timeframe)
     {
         var result;
 
@@ -58,14 +58,14 @@ $(document).ready(function()
 
 	    return result;
     }
-    
+
     //drawGraph function
     //------------------
     //takes the raw "data" returned from the server to create a line graph
     //	myData - the data sent back from the server after calling get_total, etc
     //	it is in the format (value,year,month,day,...), this will need to be converted
 
-    function drawGraph(myData) 
+    function drawGraph(myData)
     {
 	    var strData = [];
 	    var splitStr = [];
@@ -147,17 +147,18 @@ $(document).ready(function()
 		<option value ="Bike">Bike</option>
         <option value ="Swim">Swim</option>
 	</select>
-	Metric Used:
+	&nbsp;&nbsp;&nbsp;Metric Used:
 	<select size="1" id="select2">
 		<option value="distance" selected="selected">Distance</option>
 		<option value="duration">Duration</option>
 		<option value="max_speed">Max Speed</option>
 	</select>
-	Time Frame:
+	&nbsp;&nbsp;&nbsp;Time Frame:
 	<select size="1" id="select3">
 		<option value="month">Month</option>
 		<option value="year">Year</option>
 	</select>
+	&nbsp;&nbsp;&nbsp;
 	<button type="button" id="updateGraph" class="btn btn-primary">Update</button>
 </div>
 {% endblock body %}
