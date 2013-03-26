@@ -34,6 +34,9 @@ NSString *measurementType;
 {
     [super viewDidLoad];
     
+    //Set background
+    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Ubuntu Orange.jpg"]];
+    
     //add graph to the view as a subview
     
     CGRect viewBound = [[UIScreen mainScreen] bounds];

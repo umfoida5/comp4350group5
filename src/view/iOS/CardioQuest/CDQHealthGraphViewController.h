@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "ECGraph.h"
 
-@interface CDQHealthGraphViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, ECGraphDelegate>{
-    NSArray *dateTypes;
+@interface CDQHealthGraphViewController : UIViewController <ECGraphDelegate>{
 }
-@property (weak, nonatomic) IBOutlet UIPickerView *datePicker;
+
+@property (weak, nonatomic) IBOutlet UIDatePicker *startDatePicker;
+@property (weak, nonatomic) IBOutlet UIDatePicker *endDatePicker;
+
 @end
