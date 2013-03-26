@@ -6,6 +6,7 @@ from modules import database
 from modules.template import env
 from modules.datatables import send_datatable_response
 from datetime import datetime
+import time
 from modules.jsonable import make_jsonable
 
 class HealthController:
