@@ -233,15 +233,15 @@ for athlete in athletes:
 	athleteID = athlete.id
 
 	#Create Activities
-	db_session.add(Activity(athleteID, "Run", curr_time, 10, 50, 25))
-	db_session.add(Activity(athleteID, "Run", curr_time-timedelta(days=2), 12, 60, 25))
+	db_session.add(Activity(athleteID, "Run", curr_time, 50, 50, 25))
+	db_session.add(Activity(athleteID, "Run", curr_time-timedelta(days=2), 20, 60, 25))
 	db_session.add(Activity(athleteID, "Swim", curr_time-timedelta(days=4), 3, 40, 10))
 	db_session.add(Activity(athleteID, "Swim", curr_time-timedelta(days=6), 4, 52, 10))
 	db_session.add(Activity(athleteID, "Bike", curr_time-timedelta(days=8), 30, 60, 52))
 	db_session.add(Activity(athleteID, "Bike", curr_time-timedelta(days=12), 35, 60, 55))
 
-	db_session.add(Activity(athleteID, "Run", curr_time-timedelta(days=14), 10, 50, 25))
-	db_session.add(Activity(athleteID, "Run", curr_time-timedelta(days=16), 12, 60, 25))
+	db_session.add(Activity(athleteID, "Run", curr_time-timedelta(days=14), 5, 50, 25))
+	db_session.add(Activity(athleteID, "Run", curr_time-timedelta(days=16), 25, 60, 25))
 	db_session.add(Activity(athleteID, "Swim", curr_time-timedelta(days=18), 3, 40, 10))
 	db_session.add(Activity(athleteID, "Swim", curr_time-timedelta(days=20), 4, 52, 10))
 	db_session.add(Activity(athleteID, "Bike", curr_time-timedelta(days=22), 30, 60, 52))
@@ -269,9 +269,9 @@ for athlete in athletes:
 		athleteID,
 		"Run",
 		"total",
-		"500",
+		"10000",
 		"distance",
-		curr_time,
+		curr_time - timedelta(days=5),
 		curr_time + timedelta(days=10)
 	))
 
@@ -300,8 +300,16 @@ for athlete in athletes:
 	#Create Health Records
 	db_session.add(Health(
 		athleteID,
+		curr_time - timedelta(days=1),
+		300,
+		100,
+		"Here we go! First log!"
+	))
+
+	db_session.add(Health(
+		athleteID,
 		curr_time,
-		185,
+		130,
 		73,
 		"Here we go! First log!"
 	))

@@ -96,7 +96,7 @@ function Health() {
         tooltip: {
             formatter: function() {
                     return '<b>'+ this.series.name +'</b><br/>'+
-                    Highcharts.dateFormat('%e. %b', this.x) +': '+ this.y +' m';
+                    Highcharts.dateFormat('%e. %b', this.x) +': '+ this.y +' lbs';
             }
         },
         
