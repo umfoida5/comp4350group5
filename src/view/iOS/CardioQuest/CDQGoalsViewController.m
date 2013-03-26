@@ -99,7 +99,7 @@ NSArray *tableData;
     {   
         NSMutableString* the_string = [[NSMutableString alloc]init];
         [the_string appendFormat:@"%@! %@ %@ (Between: %@ and %@)",
-        (activity[@"completed"]== NULL)? @"ONGOING" : @"COMPLETED",
+        ([activity[@"completed"] boolValue] == FALSE)? @"ONGOING" : @"COMPLETED",
         activity[@"activity"],
         activity[@"quantity"],
         activity[@"start_date"],
