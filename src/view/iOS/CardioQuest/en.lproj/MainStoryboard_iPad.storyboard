@@ -1276,7 +1276,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="amg-6K-1Sh">
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="yyP-2c-MqD">
                                         <rect key="frame" x="0.0" y="22" width="768" height="44"/>
@@ -1781,7 +1781,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="ActivityViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ActivityViewController.h"/>
             <relationships>
-                <relationship kind="action" name="clickCalendar:"/>
                 <relationship kind="outlet" name="activityTable" candidateClass="UITableView"/>
             </relationships>
         </class>
@@ -1834,8 +1833,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="CDQHealthGraphViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQHealthGraphViewController.h"/>
             <relationships>
-                <relationship kind="action" name="endDateChanged:"/>
-                <relationship kind="action" name="startDateChanged:"/>
                 <relationship kind="outlet" name="endDatePicker" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="startDatePicker" candidateClass="UIDatePicker"/>
             </relationships>
@@ -1908,9 +1905,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="ProfileViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
             <relationships>
-                <relationship kind="action" name="enterAddress:"/>
-                <relationship kind="action" name="enterDOB:"/>
-                <relationship kind="action" name="enterEmail:"/>
                 <relationship kind="outlet" name="aboutTextView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="achievementTable" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="addressField" candidateClass="UITextField"/>
