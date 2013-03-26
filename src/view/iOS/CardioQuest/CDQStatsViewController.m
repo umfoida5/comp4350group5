@@ -16,7 +16,7 @@
 
 @implementation CDQStatsViewController
 
-CDQGraph *graph;
+CDQGraph *statsGraph;
 NSString *activity;
 NSString *dateType;
 NSString *measurementType;
@@ -41,9 +41,9 @@ NSString *measurementType;
     CGFloat viewWidth = viewSize.width;
     CGFloat viewHeight = viewSize.height;
     
-    graph = [[CDQGraph alloc] initWithFrame: CGRectMake(0, 150, viewWidth, viewHeight-700)];
-    graph.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.0];
-    [self.view addSubview:graph];
+    statsGraph = [[CDQGraph alloc] initWithFrame: CGRectMake(0, 150, viewWidth, viewHeight-700)];
+    statsGraph.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.0];
+    [self.view addSubview:statsGraph];
     
     //set UIPicker arrays
     
@@ -165,7 +165,7 @@ NSString *measurementType;
         [start setDay:[end day]-1];
     }
     
-    NSString *query;
+    NSString *query; 
     
     //set the url and querystring
     ///stats/get_total?column_name=distance&activity_name=Bike&start_date=2013-3-1&end_date=2013-3-25&group_by=day
@@ -180,7 +180,7 @@ NSString *measurementType;
     }
     
     //make the graph update points by calling the server
-    [graph triggerServerCall:query];
+    [statsGraph triggerServerCall:query];
 }
 
 
