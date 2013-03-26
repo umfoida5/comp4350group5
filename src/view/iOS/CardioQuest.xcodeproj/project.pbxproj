@@ -71,6 +71,7 @@
 		E4AF13CE170227D700341FAE /* TestActivities.js in Sources */ = {isa = PBXBuildFile; fileRef = E4AF13CD170227D700341FAE /* TestActivities.js */; };
 		E4AF13D017022AE800341FAE /* TestGoals.js in Sources */ = {isa = PBXBuildFile; fileRef = E4AF13CF17022AE800341FAE /* TestGoals.js */; };
 		E4AF13D217022C1B00341FAE /* TestEvents.js in Sources */ = {isa = PBXBuildFile; fileRef = E4AF13D117022C1B00341FAE /* TestEvents.js */; };
+		E4AF13D417022D4900341FAE /* TestStats.js in Sources */ = {isa = PBXBuildFile; fileRef = E4AF13D317022D4800341FAE /* TestStats.js */; };
 		E4BEB5CD16E5361500DD4526 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BEB5CC16E5361500DD4526 /* UIKit.framework */; };
 		E4BEB5CF16E5361500DD4526 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BEB5CE16E5361500DD4526 /* Foundation.framework */; };
 		E4BEB5D116E5361500DD4526 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BEB5D016E5361500DD4526 /* CoreGraphics.framework */; };
@@ -243,6 +244,7 @@
 		E4AF13CD170227D700341FAE /* TestActivities.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = TestActivities.js; path = AutomationTests/TestActivities.js; sourceTree = "<group>"; };
 		E4AF13CF17022AE800341FAE /* TestGoals.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = TestGoals.js; path = AutomationTests/TestGoals.js; sourceTree = "<group>"; };
 		E4AF13D117022C1B00341FAE /* TestEvents.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = TestEvents.js; path = AutomationTests/TestEvents.js; sourceTree = "<group>"; };
+		E4AF13D317022D4800341FAE /* TestStats.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = TestStats.js; path = AutomationTests/TestStats.js; sourceTree = "<group>"; };
 		E4BEB5C916E5361500DD4526 /* CardioQuest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardioQuest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4BEB5CC16E5361500DD4526 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E4BEB5CE16E5361500DD4526 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -432,6 +434,7 @@
 				E4AF13CD170227D700341FAE /* TestActivities.js */,
 				E4AF13CF17022AE800341FAE /* TestGoals.js */,
 				E4AF13D117022C1B00341FAE /* TestEvents.js */,
+				E4AF13D317022D4800341FAE /* TestStats.js */,
 				E4AF13C417021D9E00341FAE /* TestLogin.js */,
 				E4AF13C717021E6A00341FAE /* TestSignup.js */,
 				1426EA6A16FF93F300D70AEC /* ECGraph */,
@@ -806,6 +809,7 @@
 				E4AF13CE170227D700341FAE /* TestActivities.js in Sources */,
 				E4AF13D017022AE800341FAE /* TestGoals.js in Sources */,
 				E4AF13D217022C1B00341FAE /* TestEvents.js in Sources */,
+				E4AF13D417022D4900341FAE /* TestStats.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
