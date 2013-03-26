@@ -101,6 +101,7 @@ function Health() {
         },
         
         series: [{
+          showInLegend: false,
             name: 'Weight',
             data: graphData
         }]
