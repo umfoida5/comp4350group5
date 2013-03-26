@@ -75,6 +75,20 @@ $(document).ready(function()
 	    var month;
 	    var day;
 	    var myValue;
+	    var axisTitle;
+
+	    if ($("#select2").val().toLowerCase() == "distance")
+	    {
+	    	axisTitle = "Distance (kilometers)";
+	    }
+	    else if ($("#select2").val().toLowerCase() == "duration")
+	    {
+	    	axisTitle = "Duration (hours)";
+	    }
+	    else
+	    {
+	    	axisTitle = "Maximum Speed (km/h)";
+	    }
 
 	    $.each(myData, function() {
             var d = new Date(this.year, this.month - 1, this.day);
@@ -98,7 +112,7 @@ $(document).ready(function()
             },
             yAxis: {
                 title: {
-                    text: $("#select2").val()
+                    text: axisTitle
                 },
                 min: 0
             },
