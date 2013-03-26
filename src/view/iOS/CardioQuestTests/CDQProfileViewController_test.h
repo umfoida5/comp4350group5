@@ -10,9 +10,9 @@
 #import "CDQLoginController.h"
 #import "ProfileViewController.h"
 #import "CDQHomeViewController.h"
-
 @interface CDQProfileViewController_test : SenTestCase
 @property (strong, nonatomic) ProfileViewController *profileController;
 @property (strong, nonatomic) CDQLoginController *loginController;
 @property (strong, nonatomic) CDQHomeViewController *homeController;
+
 @end

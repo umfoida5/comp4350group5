@@ -11,7 +11,9 @@
 @interface CDQLoginController : UIViewController <UITableViewDelegate, UITableViewDataSource>
     - (IBAction)login:(id)sender;
     - (void)loginRequest:(NSString*)username password:(NSString*)password;
-
+- (void)do_signup:(NSString*)username password:(NSString*)password firstname:(NSString*)firstname lastname:(NSString*)lastname;
+- (IBAction)signup:(id)sender;
+- (IBAction)logout:(id)sender;
     //Login Stuff:
     @property (weak, nonatomic) IBOutlet UILabel *loginTitle;
     @property (weak, nonatomic) IBOutlet UITextField *loginUsernameField;

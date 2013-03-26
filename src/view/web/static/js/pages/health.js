@@ -96,11 +96,12 @@ function Health() {
         tooltip: {
             formatter: function() {
                     return '<b>'+ this.series.name +'</b><br/>'+
-                    Highcharts.dateFormat('%e. %b', this.x) +': '+ this.y +' m';
+                    Highcharts.dateFormat('%e. %b', this.x) +': '+ this.y +' lbs';
             }
         },
         
         series: [{
+          showInLegend: false,
             name: 'Weight',
             data: graphData
         }]

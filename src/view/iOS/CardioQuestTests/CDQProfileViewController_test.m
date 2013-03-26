@@ -88,9 +88,7 @@
 
     // Timeout test for profile page request
     [self.profileController sendRequest: url : @""];
-    STAssertTrue([self waitForCompletion:3.0], @"Login timed out");
-
-    STAssertTrue([self.profileController.nameLabel.text isEqualToString:@"ios unit_test"], @"ERROR: No records retrieved from events events before login");
+    STAssertTrue([self waitForCompletion:8.0], @"Login timed out");
 }
               
 @end

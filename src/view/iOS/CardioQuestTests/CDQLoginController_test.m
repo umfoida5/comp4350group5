@@ -8,11 +8,11 @@
 
 #import "CDQLoginController_test.h"
 #import "CDQLoginController.h"
-
+#import "CDQHomeViewController.h"
 @interface CDQLoginController_test ()
 
 @property (strong, nonatomic) CDQLoginController *loginController;
-
+@property(strong,nonatomic) CDQHomeViewController *homeController;
 @end
 
 @implementation CDQLoginController_test
@@ -27,6 +27,9 @@ BOOL done;
     
     self.loginController = [storyboard instantiateViewControllerWithIdentifier:@"Authentication"];
     [self.loginController performSelectorOnMainThread:@selector(loadView) withObject:nil waitUntilDone:YES];
+    
+    self.homeController = [storyboard instantiateViewControllerWithIdentifier:@"Home"];
+    [self.homeController performSelectorOnMainThread:@selector(loadView) withObject:nil waitUntilDone:YES];
 }
 
 - (void)tearDown
@@ -59,8 +62,7 @@ BOOL done;
     
     STAssertTrue([self waitForCompletion:3.0], @"Login timed out");
     
-    //NSLog(@"%@", [self.loginController getLoginLabelText]);
-    //STAssertTrue([[self.loginController getLoginLabelText] isEqualToString:@"Invalid username."], @"Login succeded but it shouldn't have");
+    STAssertTrue([self.loginController.loginResponseLabel.text isEqualToString:@"Invalid username."], @"Login succeded but it shouldn't have");
 }
 
 //
@@ -74,7 +76,7 @@ BOOL done;
     
     STAssertTrue([self waitForCompletion:3.0], @"Login timed out");
     
-    //STAssertTrue([[self.loginController getLoginLabelText] isEqualToString:@"Invalid username."], @"Login succeded but it shouldn't have");
+    STAssertTrue([self.loginController.loginResponseLabel.text isEqualToString:@"Invalid username."], @"Login succeded but it shouldn't have");
 }
 
 //
@@ -87,7 +89,6 @@ BOOL done;
     [self.loginController loginRequest:@"ios_unit_test" password:@"ios_unit_test"];
     //BOOL result = [self.loginController isUserLoggedIn];
     STAssertTrue([self waitForCompletion:3.0], @"Login timed out");
-    
     STAssertTrue([self.loginController.loginResponseLabel.text isEqualToString:@"Login was successful."], @"Login should have succeeded");
 }
 
@@ -99,12 +100,53 @@ BOOL done;
 - (void)testDoLogout
 {
     [self.loginController loginRequest:@"ios_unit_test" password:@"ios_unit_test"];
+    [self.homeController doLogout:@"Home"];
+    //[self.loginController logout:"];
+    STAssertTrue([self waitForCompletion:5.0], @"Logout timed out");
     
-    //[self.loginController doLogout];
-    STAssertTrue([self waitForCompletion:3.0], @"Logout timed out");
-    
-    //NSLog(@"%@", [self.loginController getLoginLabelText]);
-    //STAssertTrue([[self.loginController getLoginLabelText] isEqualToString:@"Logout was successful."], @"Logout failed");
 }
+-(void)testSignUpNoData
+{
+    [self.homeController doLogout:@"Home"];
+    [self.loginController do_signup:@"" password:@"1234" firstname:@"fname" lastname:@"lname"];
+    STAssertTrue([self waitForCompletion:5.0],@"Signup timed out");
+    STAssertTrue([self.loginController.signupResponseLabel.text isEqualToString:@"Username must be longer than 3 characters"], @"Signup should have failed.");
+}
+-(void)testSignupNoUserName
+{
+    [self.homeController doLogout:@"Home"];
+    [self.loginController do_signup:@"" password:@"1234" firstname:@"test" lastname:@"test"];
+    STAssertTrue([self waitForCompletion:5.0],@"Signup timed out");
+    STAssertTrue([self.loginController.signupResponseLabel.text isEqualToString:@"Username must be longer than 3 characters"], @"Signup should have failed.");
+}
+-(void)testSignupNoPassword
+{
+
+    [self.loginController do_signup:@"test12324241" password:@"" firstname:@"test" lastname:@"test"];
+    STAssertTrue([self waitForCompletion:5.0],@"Signup timed out");
+    NSLog(@"%@", self.loginController.signupResponseLabel.text);
+    NSLog(@"%@", self.loginController.loginResponseLabel.text);
+}
+-(void)testSignupBadPassword
+{
+
+    [self.loginController do_signup:@"test" password:@"12" firstname:@"test" lastname:@"test"];
+    STAssertTrue([self waitForCompletion:5.0],@"Signup timed out");
+}
+
+-(void)testSignupSuccess
+{
+    NSMutableString* uname = [[NSMutableString alloc]init];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    NSDate* now = [[NSDate alloc]init];
+    NSString* date = [formatter stringFromDate:now];
+    [uname appendFormat:@"signupTest%@", date];
+    [self.loginController do_signup:@"" password:@"" firstname:@"" lastname:@""];
+    STAssertTrue([self waitForCompletion:5.0],@"Signup timed out");
+}
+
+
+
 
 @end
