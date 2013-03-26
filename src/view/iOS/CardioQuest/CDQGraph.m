@@ -94,23 +94,27 @@ NSArray* graphPoints;
 
 - (void)requestFinished:(ASIHTTPRequest *)request
 {
+    // Use when fetching text data
     NSString *responseString = [request responseString];
-    //NSLog(@"%@",responseString);
+    NSLog(@"%@", responseString);
     
     SBJsonParser *parser = [[SBJsonParser alloc]init];
-    NSMutableArray *points = [parser objectWithString:responseString];
+    NSMutableDictionary* jsonDictionary = [parser objectWithString:responseString];
     NSMutableArray *tempArray = [[NSMutableArray alloc] init];
     
-    for (NSInteger i=0;i<points.count;i++)
-    {
-        NSMutableArray *point = [points objectAtIndex:i];
+    if (jsonDictionary != nil) {
         
-        ECGraphPoint *graphPoint = [[ECGraphPoint alloc] init];
-        graphPoint.yValue = [[point objectAtIndex:0] integerValue];
-        NSString *pointDate = [[NSString alloc] initWithFormat:@"%@-%@-%@",[point objectAtIndex:1],[point objectAtIndex:2],[point objectAtIndex:3]];
-        graphPoint.xDateValue = [ECCommon dOfS:pointDate withFormat:kDEFAULT_DATE_FORMAT];
-        
-        [tempArray addObject:graphPoint];
+        for (NSMutableDictionary *entry in jsonDictionary) {
+            ECGraphPoint *graphPoint = [[ECGraphPoint alloc] init];
+            //NSString *date = [[NSString alloc] init];
+            
+            //must convert message into point coordinates
+            graphPoint.yValue = [entry[@"value"] integerValue];
+            NSString *date = [[NSString alloc] initWithFormat:@"%@-%@-%@", entry[@"year"], entry[@"month"], entry[@"day"]];
+            graphPoint.xDateValue = [ECCommon dOfS:date withFormat:kDEFAULT_DATE_FORMAT];
+            
+            [tempArray addObject:graphPoint];
+        }
     }
     
     //sort the array

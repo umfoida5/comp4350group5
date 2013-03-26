@@ -47,12 +47,12 @@ NSString *measurementType;
     
     //set UIPicker arrays
     
-    activityTypes = [[NSArray alloc] initWithObjects:@"Bike", @"Run", @"Walk", nil];
-    dateTypes = [[NSArray alloc] initWithObjects:@"Day", @"Week", @"Month", @"Year", nil];
+    activityTypes = [[NSArray alloc] initWithObjects:@"Run", @"Bike", @"Swim", nil];
+    dateTypes = [[NSArray alloc] initWithObjects:@"Month", @"Year", nil];
     mesurementTypes = [[NSArray alloc] initWithObjects:@"Distance", @"Duration", @"Top Speed", nil];
     
-    activity = @"Bike";
-    dateType = @"Day";
+    activity = @"Run";
+    dateType = @"Month";
     measurementType = @"Distance";
     
 }
@@ -168,6 +168,7 @@ NSString *measurementType;
     NSString *query;
     
     //set the url and querystring
+    ///stats/get_total?column_name=distance&activity_name=Bike&start_date=2013-3-1&end_date=2013-3-25&group_by=day
     
     if ([measurementType isEqual:@"Top Speed"])
     {
