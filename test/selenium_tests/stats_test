@@ -5,28 +5,8 @@
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=select0</td>
+	<td>id=select1</td>
 	<td>label=Run</td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=select3</td>
-	<td>label=Day</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=select3</td>
-	<td>label=Week</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
-	<td></td>
 </tr>
 <tr>
 	<td>select</td>
@@ -59,28 +39,8 @@
 	<td>label=Duration</td>
 </tr>
 <tr>
-	<td>select</td>
-	<td>id=select3</td>
-	<td>label=Day</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>id=select3</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=select3</td>
-	<td>label=Week</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
 <tr>
@@ -106,27 +66,7 @@
 <tr>
 	<td>select</td>
 	<td>id=select2</td>
-	<td>label=Top Speed</td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=select3</td>
-	<td>label=Day</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=select3</td>
-	<td>label=Week</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
-	<td></td>
+	<td>label=Max Speed</td>
 </tr>
 <tr>
 	<td>select</td>
@@ -152,11 +92,6 @@
 	<td>click</td>
 	<td>css=button.btn.btn-primary</td>
 	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=select0</td>
-	<td>label=Walk</td>
 </tr>
 <tr>
 	<td>select</td>
@@ -164,28 +99,8 @@
 	<td>label=Distance</td>
 </tr>
 <tr>
-	<td>select</td>
-	<td>id=select3</td>
-	<td>label=Day</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>id=select3</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=select3</td>
-	<td>label=Week</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
 <tr>
@@ -216,26 +131,6 @@
 <tr>
 	<td>select</td>
 	<td>id=select3</td>
-	<td>label=Day</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=select3</td>
-	<td>label=Week</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=select3</td>
 	<td>label=Month</td>
 </tr>
 <tr>
@@ -256,32 +151,7 @@
 <tr>
 	<td>select</td>
 	<td>id=select2</td>
-	<td>label=Top Speed</td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=select3</td>
-	<td>label=Day</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=select3</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=select3</td>
-	<td>label=Week</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
-	<td></td>
+	<td>label=Max Speed</td>
 </tr>
 <tr>
 	<td>select</td>
@@ -310,7 +180,7 @@
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=select0</td>
+	<td>id=select1</td>
 	<td>label=Bike</td>
 </tr>
 <tr>
@@ -321,26 +191,6 @@
 <tr>
 	<td>select</td>
 	<td>id=select3</td>
-	<td>label=Day</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=select3</td>
-	<td>label=Week</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=select3</td>
 	<td>label=Month</td>
 </tr>
 <tr>
@@ -369,26 +219,6 @@
 	<td>label=Duration</td>
 </tr>
 <tr>
-	<td>select</td>
-	<td>id=select3</td>
-	<td>label=Day</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=select3</td>
-	<td>label=Week</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>id=select3</td>
 	<td></td>
@@ -416,27 +246,7 @@
 <tr>
 	<td>select</td>
 	<td>id=select2</td>
-	<td>label=Top Speed</td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=select3</td>
-	<td>label=Day</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=select3</td>
-	<td>label=Week</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
-	<td></td>
+	<td>label=Max Speed</td>
 </tr>
 <tr>
 	<td>select</td>

@@ -99,7 +99,7 @@ class ActivitiesTest(unittest.TestCase):
         self.assertTrue(the_json['aaData'][0]['distance']    == 10)
 
     def test_json(self):
-        data = self.activity.json('01-01-0001', '01-01-9999')
+        data = self.activity.json('0001-01-01', '9999-01-01')
         expected = {'activities': [{'date': '1000-01-01', 'duration': 10, 'max_speed': 10, 'type': u'run', 'distance': 10}, {'date': '2000-01-01', 'duration': 10, 'max_speed': 10, 'type': u'run', 'distance': 10}, {'date': '3000-01-01', 'duration': 10, 'max_speed': 10, 'type': u'run', 'distance': 10}, {'date': '2000-02-02', 'duration': 20, 'max_speed': 20, 'type': u'run', 'distance': 20}, {'date': '4000-02-02', 'duration': 20, 'max_speed': 20, 'type': u'run', 'distance': 20}, {'date': '6000-02-02', 'duration': 20, 'max_speed': 20, 'type': u'run', 'distance': 20}, {'date': '3000-03-03', 'duration': 30, 'max_speed': 30, 'type': u'run', 'distance': 30}, {'date': '6000-03-03', 'duration': 30, 'max_speed': 30, 'type': u'run', 'distance': 30}, {'date': '9000-03-03', 'duration': 30, 'max_speed': 30, 'type': u'run', 'distance': 30}]}
         self.assertEqual(data, expected)
 

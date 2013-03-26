@@ -12,13 +12,8 @@
 <tr><td rowspan="1" colspan="3">health_test</td></tr>
 </thead><tbody>
 <tr>
-	<td>open</td>
-	<td>/health/</td>
-	<td></td>
-</tr>
-<tr>
 	<td>clickAndWait</td>
-	<td>link=CardioQuest</td>
+	<td>link=Cardio Quest</td>
 	<td></td>
 </tr>
 <tr>
@@ -106,7 +101,6 @@
 	<td>link=Graph</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>
