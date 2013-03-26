@@ -1147,7 +1147,30 @@ Features
                     <view key="view" contentMode="scaleToFill" id="Ypt-2M-RrI">
                         <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zB-6L-bOj">
+                                <connections>
+                                    <outlet property="dataSource" destination="y3I-Vg-nOH" id="4lR-1N-2m6"/>
+                                    <outlet property="delegate" destination="y3I-Vg-nOH" id="65E-HQ-Cdq"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Graph the last:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xuf-CT-4Ra">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="216" id="Q6K-Sc-dgf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xuf-CT-4Ra" firstAttribute="leading" secondItem="1zB-6L-bOj" secondAttribute="leading" type="default" id="DZ8-l2-4XG"/>
+                            <constraint firstItem="1zB-6L-bOj" firstAttribute="top" secondItem="Xuf-CT-4Ra" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gEn-96-eSL"/>
+                            <constraint firstAttribute="bottom" secondItem="1zB-6L-bOj" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="tvT-J0-8CA"/>
+                            <constraint firstAttribute="trailing" secondItem="1zB-6L-bOj" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="wHA-L3-mQ8"/>
+                            <constraint firstAttribute="trailing" secondItem="Xuf-CT-4Ra" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="zq4-lS-2ya"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Health" id="4C8-n1-JeP">
                         <barButtonItem key="leftBarButtonItem" title="Log a Health Record" id="lzG-6C-Kjf">
@@ -1161,6 +1184,9 @@ Features
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="datePicker" destination="1zB-6L-bOj" id="3D8-vs-BdS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iiA-eG-mZ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1402,20 +1428,20 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="sM9-6e-D1x" firstAttribute="baseline" secondItem="Dmp-pZ-zzB" secondAttribute="baseline" type="default" id="9TB-vg-sRn"/>
-                            <constraint firstItem="sM9-6e-D1x" firstAttribute="leading" secondItem="XPy-5T-uRz" secondAttribute="leading" type="default" id="IAB-KZ-Q6y"/>
-                            <constraint firstItem="DFQ-08-z3u" firstAttribute="centerX" secondItem="XPy-5T-uRz" secondAttribute="centerX" type="default" id="IPi-Ng-yWT"/>
-                            <constraint firstItem="o9i-LT-1zT" firstAttribute="leading" secondItem="w4c-Sf-zG0" secondAttribute="leading" type="default" id="IY2-CP-y3z"/>
+                            <constraint firstItem="w4c-Sf-zG0" firstAttribute="centerX" secondItem="x2L-Q8-nHt" secondAttribute="centerX" type="default" id="FVp-Df-FBf"/>
+                            <constraint firstItem="w4c-Sf-zG0" firstAttribute="leading" secondItem="sM9-6e-D1x" secondAttribute="leading" type="default" id="GiG-LK-ZgZ"/>
+                            <constraint firstItem="sM9-6e-D1x" firstAttribute="top" secondItem="o9i-LT-1zT" secondAttribute="top" type="default" id="OKy-Af-UAl"/>
                             <constraint firstItem="o9i-LT-1zT" firstAttribute="baseline" secondItem="sM9-6e-D1x" secondAttribute="baseline" type="default" id="UFd-sg-hwK"/>
+                            <constraint firstItem="XPy-5T-uRz" firstAttribute="leading" secondItem="o9i-LT-1zT" secondAttribute="leading" type="default" id="WuB-Wj-Lbi"/>
                             <constraint firstAttribute="bottom" secondItem="xI7-hb-ll3" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="X3R-Up-Po4"/>
                             <constraint firstItem="xI7-hb-ll3" firstAttribute="leading" secondItem="x2L-Q8-nHt" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="XKM-vJ-qBZ"/>
                             <constraint firstAttribute="bottom" secondItem="w4c-Sf-zG0" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="XeC-yB-Td1"/>
-                            <constraint firstItem="o9i-LT-1zT" firstAttribute="top" secondItem="sM9-6e-D1x" secondAttribute="top" type="default" id="gWj-Y8-nKc"/>
-                            <constraint firstAttribute="trailing" secondItem="w4c-Sf-zG0" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="h5x-7t-bsI"/>
+                            <constraint firstItem="w4c-Sf-zG0" firstAttribute="centerX" secondItem="DFQ-08-z3u" secondAttribute="centerX" type="default" id="Zvw-Km-9OL"/>
+                            <constraint firstAttribute="trailing" secondItem="XPy-5T-uRz" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="c3K-Zt-m0G"/>
+                            <constraint firstAttribute="bottom" secondItem="XPy-5T-uRz" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="elB-tG-dT0"/>
                             <constraint firstItem="sM9-6e-D1x" firstAttribute="top" secondItem="Dmp-pZ-zzB" secondAttribute="top" type="default" id="hxy-ta-46U"/>
                             <constraint firstItem="Dmp-pZ-zzB" firstAttribute="leading" secondItem="x2L-Q8-nHt" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ikI-hV-ThO"/>
                             <constraint firstItem="xI7-hb-ll3" firstAttribute="top" secondItem="Dmp-pZ-zzB" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="jPD-EL-QrB"/>
-                            <constraint firstItem="DFQ-08-z3u" firstAttribute="trailing" secondItem="x2L-Q8-nHt" secondAttribute="trailing" type="default" id="kZk-zV-fq7"/>
-                            <constraint firstAttribute="bottom" secondItem="XPy-5T-uRz" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="vEX-aG-Lin"/>
                             <constraint firstItem="DFQ-08-z3u" firstAttribute="leading" secondItem="x2L-Q8-nHt" secondAttribute="leading" type="default" id="zEl-SP-S5S"/>
                             <constraint firstItem="DFQ-08-z3u" firstAttribute="top" secondItem="x2L-Q8-nHt" secondAttribute="top" type="default" id="zgY-Jv-rn0"/>
                         </constraints>
@@ -1655,6 +1681,151 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     <resources>
         <image name="first.png" width="30" height="30"/>
     </resources>
+    <classes>
+        <class className="AboutViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
+        </class>
+        <class className="ActivityViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ActivityViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="activityTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="CDQActivityInputController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQActivityInputController.h"/>
+            <relationships>
+                <relationship kind="action" name="createActivity:"/>
+                <relationship kind="outlet" name="dateInput" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="distanceInput" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="durationInput" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="maxSpeedInput" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="typeInput" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="validationLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="CDQEventsController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQEventsController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="eventsTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="CDQEventsInputController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQEventsInputController.h"/>
+            <relationships>
+                <relationship kind="action" name="postEvent:"/>
+                <relationship kind="outlet" name="cityInput" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="dateInput" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="descriptionInput" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="distanceInput" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="validationLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="CDQGoalInputController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQGoalInputController.h"/>
+            <relationships>
+                <relationship kind="action" name="createGoal:"/>
+                <relationship kind="outlet" name="endDateInput" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="quantityInput" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="startDateInput" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="typeOperatorMetricInput" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="validationLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="CDQGoalsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQGoalsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="goalsTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="CDQHealthGraphViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQHealthGraphViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="datePicker" candidateClass="UIPickerView"/>
+            </relationships>
+        </class>
+        <class className="CDQHealthInputController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQHealthInputController.h"/>
+            <relationships>
+                <relationship kind="action" name="postHealthRecord:"/>
+                <relationship kind="outlet" name="healthComments" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="healthDate" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="healthHeartRate" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="healthWeight" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="CDQHealthTableViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQHealthTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="healthTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="CDQHomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQHomeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doLogout:"/>
+                <relationship kind="outlet" name="loginButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="logoutButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="navBar" candidateClass="UINavigationItem"/>
+            </relationships>
+        </class>
+        <class className="CDQLoginController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQLoginController.h"/>
+            <relationships>
+                <relationship kind="action" name="login:"/>
+                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="loginPasswordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="loginPasswordLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="loginResponseLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="loginTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="loginUsernameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="loginUsernameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="signupButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="signupFirstnameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="signupFirstnameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="signupLastnameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="signupLastnameLabel" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="signupPasswordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="signupPasswordLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="signupResponseLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="signupTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="signupUsernameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="signupUsernameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="CDQStatsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDQStatsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="activityPicker" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="datePicker" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="measurePicker" candidateClass="UIPickerView"/>
+            </relationships>
+        </class>
+        <class className="CalendarViewController" superclassName="TKCalendarMonthTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalendarViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ProfileViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="aboutTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="achievementTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="addressField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="dobField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="emailField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="profileImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="validationLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="TKCalendarMonthTableViewController" superclassName="TKCalendarMonthViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TKCalendarMonthTableViewController.h"/>
+        </class>
+        <class className="TKCalendarMonthViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TKCalendarMonthViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

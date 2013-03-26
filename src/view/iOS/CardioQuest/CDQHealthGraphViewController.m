@@ -8,7 +8,7 @@
 
 #import "CDQHealthGraphViewController.h"
 #import "ECGraph.h"
-#import "CDQgraph.h"
+#import "CDQGraphHealth.h"
 
 @interface CDQHealthGraphViewController ()
 
@@ -16,7 +16,8 @@
 
 @implementation CDQHealthGraphViewController
 
-CDQGraph *graph;
+CDQGraphHealth *graph;
+NSString *dateType;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,9 +39,13 @@ CDQGraph *graph;
     CGFloat viewWidth = viewSize.width;
     CGFloat viewHeight = viewSize.height;
     
-    graph = [[CDQGraph alloc] initWithFrame: CGRectMake(0, 150, viewWidth, viewHeight-700)];
+    graph = [[CDQGraphHealth alloc] initWithFrame: CGRectMake(0, 150, viewWidth, viewHeight-700)];
     graph.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.0];
     [self.view addSubview:graph];
+    
+    dateTypes = [[NSArray alloc] initWithObjects:@"Month", @"Year", nil];
+    
+    dateType = @"Month";
 }
 
 //TODO: force interface orientation to landscape (this code does nothing)
@@ -63,47 +68,53 @@ CDQGraph *graph;
 //set the number of rows
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    if ([pickerView tag] == 1)
-    {
-        //return activityTypes.count;
-    }
-    
-    else if ([pickerView tag] == 2)
-    {
-        //return dateTypes.count;
-    }
-    
-    else //if ([pickerView tag] == 3)
-    {
-        //return mesurementTypes.count;
-    }
+        return dateTypes.count;
 }
 
 //set items in the rows
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    if ([pickerView tag] == 1)
-    {
-        //return [activityTypes objectAtIndex:row];
-    }
-    
-    else if ([pickerView tag] == 2)
-    {
-        //return [dateTypes objectAtIndex:row];
-    }
-    
-    else //if ([pickerView tag] == 3)
-    {
-        //return [mesurementTypes objectAtIndex:row];
-    }
+        return [dateTypes objectAtIndex:row];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
+    dateType = (NSString*)[dateTypes objectAtIndex:row];
+    
+    NSDateComponents *start = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:[NSDate date]];
+    NSDateComponents *end = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:[NSDate date]];
+    
+    if ([dateType isEqual:@"Year"])
+    {
+        [start setYear:[end year]-1];
+    }
+    
+    else if ([dateType isEqual:@"Month"])
+    {
+        [start setMonth:[end month]-1];
+    }
+    
+    else if ([dateType isEqual:@"Week"])
+    {
+        [start setDay:[end day]-7];
+    }
+    
+    else //if ([dateType isEqual:@"Day"])
+    {
+        [start setDay:[end day]-1];
+    }
     
     ///////////////////////////
     //PREPARE FOR SERVER CALL//
     ///////////////////////////
+    
+    NSString *query;
+    
+    query = [NSString stringWithFormat:@"http://ec2-107-21-196-190.compute-1.amazonaws.com:8000/health/json?start_date=%ld-%ld-%ld&end_date=%ld-%ld-%ld",(long)start.day,(long)start.month,(long)start.year,(long)end.day,(long)end.month,(long)end.year];
+    
+    
+    //make the graph update points by calling the server
+    [graph triggerServerCall:query];
 }
 
 @end

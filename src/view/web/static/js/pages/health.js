@@ -107,7 +107,7 @@ function Health() {
     });
 
     if (graphData.length <= 0) {
-        chart.showLoading("No Health Data Recorded");
+        chart.showLoading("No Health Data Recorded between " + $('#graph_from_date').attr('value') + " and " + $('#graph_to_date').attr('value'));
     } else {
         chart.hideLoading();
     }

@@ -6,16 +6,16 @@
 //  Copyright (c) 2013 comp4350group5. All rights reserved.
 //
 
-#import "CDQGraph.h"
+#import "CDQGraphHealth.h"
 #import "ECCommon.h"
 #import "ECGraph.h"
 #import "ECGraphItem.h"
 #import "ECGraphLine.h"
 #import "ECGraphPoint.h"
 #import "ASIFormDataRequest.h"
-#import "Classes/SBJson.h"
+#import "SBJson.h"
 
-@implementation CDQGraph
+@implementation CDQGraphHealth
 
 CGContextRef context;
 NSArray* graphPoints;
@@ -35,7 +35,7 @@ NSArray* graphPoints;
                                 withFormat:kDEFAULT_DATE_FORMAT];
         
         ECGraphPoint *point2 = [[ECGraphPoint alloc] init];
-        point2.yValue = 1;
+        point2.yValue = 0;
         point2.xDateValue = [ECCommon dOfS:@"2010-4-25"
                                 withFormat:kDEFAULT_DATE_FORMAT];
         
@@ -104,14 +104,16 @@ NSArray* graphPoints;
     
     if (jsonDictionary != nil) {
         
-        for (NSMutableDictionary *entry in jsonDictionary) {
+        for (NSMutableDictionary *entry in jsonDictionary[@"health"]) {
             ECGraphPoint *graphPoint = [[ECGraphPoint alloc] init];
             //NSString *date = [[NSString alloc] init];
             
             //must convert message into point coordinates
-            graphPoint.yValue = [entry[@"value"] integerValue];
-            NSString *date = [[NSString alloc] initWithFormat:@"%@-%@-%@", entry[@"year"], entry[@"month"], entry[@"day"]];
-            graphPoint.xDateValue = [ECCommon dOfS:date withFormat:kDEFAULT_DATE_FORMAT];
+            graphPoint.yValue = [entry[@"weight"] integerValue];
+            NSString *date = [[NSString alloc] initWithFormat:@"%@", entry [@"health_date"]];
+            NSArray *substrings = [date componentsSeparatedByString:@"-"];
+            NSString *pointDate = [[NSString alloc] initWithFormat:@"%@-%@-%@",[substrings objectAtIndex:0],[substrings objectAtIndex:1],[substrings objectAtIndex:2]];
+            graphPoint.xDateValue = [ECCommon dOfS:pointDate withFormat:kDEFAULT_DATE_FORMAT];
             
             [tempArray addObject:graphPoint];
         }
