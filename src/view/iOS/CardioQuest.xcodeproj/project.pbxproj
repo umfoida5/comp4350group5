@@ -66,6 +66,7 @@
 		E461B6DF16EA700F00C43D87 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E461B6DE16EA700F00C43D87 /* ProfileViewController.m */; };
 		E461B6E216EA70B500C43D87 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E461B6E116EA70B500C43D87 /* CalendarViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E4AF13C517021D9E00341FAE /* TestLogin.js in Sources */ = {isa = PBXBuildFile; fileRef = E4AF13C417021D9E00341FAE /* TestLogin.js */; };
+		E4AF13C817021E6A00341FAE /* TestSignup.js in Sources */ = {isa = PBXBuildFile; fileRef = E4AF13C717021E6A00341FAE /* TestSignup.js */; };
 		E4BEB5CD16E5361500DD4526 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BEB5CC16E5361500DD4526 /* UIKit.framework */; };
 		E4BEB5CF16E5361500DD4526 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BEB5CE16E5361500DD4526 /* Foundation.framework */; };
 		E4BEB5D116E5361500DD4526 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BEB5D016E5361500DD4526 /* CoreGraphics.framework */; };
@@ -233,6 +234,7 @@
 		E461B6E016EA70B500C43D87 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		E461B6E116EA70B500C43D87 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		E4AF13C417021D9E00341FAE /* TestLogin.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = TestLogin.js; path = AutomationTests/TestLogin.js; sourceTree = "<group>"; };
+		E4AF13C717021E6A00341FAE /* TestSignup.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = TestSignup.js; path = AutomationTests/TestSignup.js; sourceTree = "<group>"; };
 		E4BEB5C916E5361500DD4526 /* CardioQuest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardioQuest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4BEB5CC16E5361500DD4526 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E4BEB5CE16E5361500DD4526 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -419,6 +421,7 @@
 			isa = PBXGroup;
 			children = (
 				E4AF13C417021D9E00341FAE /* TestLogin.js */,
+				E4AF13C717021E6A00341FAE /* TestSignup.js */,
 				1426EA6A16FF93F300D70AEC /* ECGraph */,
 				0D3A90B816FCCD5A00EDC3D0 /* TapkuLibrary.bundle */,
 				0D3530F716FCBDB700B3F622 /* QuartzCore.framework */,
@@ -786,6 +789,7 @@
 				14B5AF0B1700D23000A1E380 /* CDQHealthGraphViewController.m in Sources */,
 				14B5AF121700EB3D00A1E380 /* CDQGraphHealth.m in Sources */,
 				E4AF13C517021D9E00341FAE /* TestLogin.js in Sources */,
+				E4AF13C817021E6A00341FAE /* TestSignup.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
