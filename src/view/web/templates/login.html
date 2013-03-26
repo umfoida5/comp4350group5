@@ -3,39 +3,11 @@
 {% block script  %}
   <script src="../js/jquery.min.js"></script>
   <script type='text/javascript' src='../js/bootstrap.js'></script>
-
+  <script src="../js/pages/login.js"></script>
   <script>
     $(document).ready(function() {
-		
-		$.get("/get_current_username", function(username) {
-			if (username != "") {
-				window.location.href = "../profiles";
-			}
-        } );
-		
-      $("#loginForm").submit(function() {
-		formData = $(this).serialize();
-        $.post("do_login", formData, function(errorMsg) {
-          if (errorMsg == "Login was successful.") {
-            window.location.href = "../profiles";
-          }
-          else {
-            $("#loginMessage").text(errorMsg);
-          }
-        } );
-        return false;
-      } );
-
-      $("#signupForm").submit(function() {
-        $.post("signup", $(this).serialize(), function(errorMsg) {
-		  if(errorMsg == "Login was successful.") {
-		    window.location.href = "../profiles";
-                  } else {
-		    $("#signupMessage").text(errorMsg);
-                  }
-		} );
-        return false;
-      } );
+      login($);
+      signup($);
     } );
   </script>
 {% endblock script %}

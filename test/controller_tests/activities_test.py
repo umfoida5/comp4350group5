@@ -62,10 +62,44 @@ class ActivitiesTest(unittest.TestCase):
         database.session.commit()
         
         
-    def test_create_(self):
+    def test_create(self):
         self.activity.create("test", "11-11-1111", 123, 123, 123)
         results = Activity.query.filter(Activity.type == "test").first()
         self.assertTrue(results.distance == 123)
         self.assertTrue(results.max_speed == 123)
         self.assertTrue(results.duration == 123)
-        
+
+        self.activity.create("test2", "10-11-2000", 222, 222, 222)
+        results = Activity.query.filter(Activity.type == "test2").first()
+        self.assertTrue(results.distance == 222)
+        self.assertTrue(results.max_speed == 222)
+        self.assertTrue(results.duration == 222)
+
+        self.activity.create("test3", "22-09-1999", 133, 111, 999)
+        results = Activity.query.filter(Activity.type == "test3").first()
+        self.assertTrue(results.distance == 133)
+        self.assertTrue(results.duration == 111)
+        self.assertTrue(results.max_speed == 999)      
+
+    def test_update_datatable(self):
+        #retrieves empty json from datatables method   
+        database.empty_database()     
+        the_json = self.activity.update_datatable()
+        self.assertTrue(len(the_json['aaData']) == 0)
+
+
+        self.setUp() 
+        the_json = self.activity.update_datatable()
+        self.assertTrue(len(the_json['aaData']) == 9)
+
+        self.assertTrue(the_json['aaData'][0]['date']  == "1000-01-01")
+        self.assertTrue(the_json['aaData'][0]['duration'] == 10)
+        self.assertTrue(the_json['aaData'][0]['max_speed']    == 10)
+        self.assertTrue(the_json['aaData'][0]['type']    == u'run')
+        self.assertTrue(the_json['aaData'][0]['distance']    == 10)
+
+    def test_json(self):
+        data = self.activity.json('0001-01-01', '9999-01-01')
+        expected = {'activities': [{'date': '1000-01-01', 'duration': 10, 'max_speed': 10, 'type': u'run', 'distance': 10}, {'date': '2000-01-01', 'duration': 10, 'max_speed': 10, 'type': u'run', 'distance': 10}, {'date': '3000-01-01', 'duration': 10, 'max_speed': 10, 'type': u'run', 'distance': 10}, {'date': '2000-02-02', 'duration': 20, 'max_speed': 20, 'type': u'run', 'distance': 20}, {'date': '4000-02-02', 'duration': 20, 'max_speed': 20, 'type': u'run', 'distance': 20}, {'date': '6000-02-02', 'duration': 20, 'max_speed': 20, 'type': u'run', 'distance': 20}, {'date': '3000-03-03', 'duration': 30, 'max_speed': 30, 'type': u'run', 'distance': 30}, {'date': '6000-03-03', 'duration': 30, 'max_speed': 30, 'type': u'run', 'distance': 30}, {'date': '9000-03-03', 'duration': 30, 'max_speed': 30, 'type': u'run', 'distance': 30}]}
+        self.assertEqual(data, expected)
+

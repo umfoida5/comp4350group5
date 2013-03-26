@@ -21,6 +21,16 @@ curr_time = datetime.datetime.now()
 db_session.add(Event(curr_time, "Join us at the Manitoba Marathon on Fathers Day.  More details at http://www.manitobamarathon.mb.ca/", "winnipeg", 2))
 db_session.add(Event(curr_time, "Come join one of the largest marathons in the world, the Boston marathon. Find out how to qualify at http://www.baa.org/races/boston-marathon.aspx", "boston", 3))
 db_session.add(Event(curr_time, "Do not miss La Tour De France! Find out more details at http://www.letour.fr/paris-nice/2013/us", "paris", 10))
+db_session.add(Event(curr_time, "Come join us for the MSWalk. It is a great cause and a lot of fun! More details at http://mssoc.convio.net/site/TR?fr_id=1996&pg=entry&s_locale=en_ca", "winnipeg", 15))
+db_session.add(Event(curr_time, "Come join us for the MSWalk. It is a great cause and a lot of fun! More details at http://mssoc.convio.net/site/TR?fr_id=2158&pg=entry&s_locale=en_ca", "flin flon", 15))
+db_session.add(Event(curr_time, "Come join us for the MSWalk. It is a great cause and a lot of fun! More details at http://mssoc.convio.net/site/TR?fr_id=2150&pg=entry&s_locale=en_ca", "lac du bonet", 15))
+db_session.add(Event(curr_time, "Come join us for the MSWalk. It is a great cause and a lot of fun! More details at http://mssoc.convio.net/site/TR?fr_id=2152&pg=entry&s_locale=en_ca", "morden", 15))
+db_session.add(Event(curr_time, "Come join us for the MSWalk. It is a great cause and a lot of fun! More details at http://mssoc.convio.net/site/TR?fr_id=2156&pg=entry&s_locale=en_ca", "parkland", 15))
+db_session.add(Event(curr_time, "Come join us for the MSWalk. It is a great cause and a lot of fun! More details at http://mssoc.convio.net/site/TR?fr_id=2151&pg=entry&s_locale=en_ca", "portage la prairie", 15))
+db_session.add(Event(curr_time, "Come join us for the MSWalk. It is a great cause and a lot of fun! More details at http://mssoc.convio.net/site/TR?fr_id=2154&pg=entry&s_locale=en_ca", "steinbach", 15))
+db_session.add(Event(curr_time, "Come join us for the MSWalk. It is a great cause and a lot of fun! More details at http://mssoc.convio.net/site/TR?fr_id=2157&pg=entry&s_locale=en_ca", "the pas", 15))
+db_session.add(Event(curr_time, "Come join us for the MSWalk. It is a great cause and a lot of fun! More details at http://mssoc.convio.net/site/TR?fr_id=2155&pg=entry&s_locale=en_ca", "thompson", 15))
+db_session.add(Event(curr_time, "Come join us for the MSWalk. It is a great cause and a lot of fun! More details at http://mssoc.convio.net/site/TR?fr_id=2153&pg=entry&s_locale=en_ca", "westman", 15))
 
 db_session.commit()
 
@@ -205,7 +215,9 @@ db_session.add(Athlete("blake", "blake", "Blake", "Beatty", "blake@email.com", "
 db_session.add(Athlete("phil", "phil", "Phil", "Latka", "phil@email.com", "1980-11-23", "Here's where I'm supposed to tell you my lifestory.  But I won't.  Really.  Those names, I remember them.", "123 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
 db_session.add(Athlete("alex", "alex", "Alex", "Salomon", "alex@email.com", "1980-11-23", "Here's where I'm supposed to tell you my lifestory.  But I won't.  Really.  I make some unreal food.", "123 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
 db_session.add(Athlete("andrew", "andrew", "Andrew", "Konkin", "andrew@email.com", "1980-11-23", "Here's where I'm supposed to tell you my lifestory.  But I won't.  Really.  I put up with these other 6 idiots in the group, that's a strong character trait.", "123 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
-db_session.add(Athlete("zapp", "zapp", "Michael", "Zapp", "fakeemail@email.com", "1980-11-23", "Computer Science professor at the University of Manitoba.", "123 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
+db_session.add(Athlete("cszapp", "cszapp", "Michael", "Zapp", "fakeemail@email.com", "1980-11-23", "Computer Science professor at the University of Manitoba.", "123 Fake Street Winnipeg, MB", "/comp4350group4/src/view/web/profile/pic.png"))
+db_session.add(Athlete("frank", "frank", "frank", "frank", "frank@frank.frank", "1999,01,01", "I am frank.", "123 Frank Street Winnipeg MB", "/comp4350group4/src/view/web/profile/pic.png"))
+db_session.add(Athlete("ios_unit_test", "ios_unit_test", "ios", "unit_test", "ios@apple.com", "1980-11-23", "IOS!!", "1 Infinite Loop Cupertino, CA", "/comp4350group4/src/view/web/profile/pic.png"))
 db_session.commit()
 
 #####################################################################
@@ -223,22 +235,22 @@ for athlete in athletes:
 	#Create Activities
 	db_session.add(Activity(athleteID, "Run", curr_time, 10, 50, 25))
 	db_session.add(Activity(athleteID, "Run", curr_time-timedelta(days=2), 12, 60, 25))
-	#db_session.add(Activity(athleteID, "Walk", curr_time-timedelta(days=4), 3, 40, 10))
-	#db_session.add(Activity(athleteID, "Walk", curr_time-timedelta(days=6), 4, 52, 10))
+	db_session.add(Activity(athleteID, "Swim", curr_time-timedelta(days=4), 3, 40, 10))
+	db_session.add(Activity(athleteID, "Swim", curr_time-timedelta(days=6), 4, 52, 10))
 	db_session.add(Activity(athleteID, "Bike", curr_time-timedelta(days=8), 30, 60, 52))
 	db_session.add(Activity(athleteID, "Bike", curr_time-timedelta(days=12), 35, 60, 55))
 
 	db_session.add(Activity(athleteID, "Run", curr_time-timedelta(days=14), 10, 50, 25))
 	db_session.add(Activity(athleteID, "Run", curr_time-timedelta(days=16), 12, 60, 25))
-	#db_session.add(Activity(athleteID, "Walk", curr_time-timedelta(days=18), 3, 40, 10))
-	#db_session.add(Activity(athleteID, "Walk", curr_time-timedelta(days=20), 4, 52, 10))
+	db_session.add(Activity(athleteID, "Swim", curr_time-timedelta(days=18), 3, 40, 10))
+	db_session.add(Activity(athleteID, "Swim", curr_time-timedelta(days=20), 4, 52, 10))
 	db_session.add(Activity(athleteID, "Bike", curr_time-timedelta(days=22), 30, 60, 52))
 	db_session.add(Activity(athleteID, "Bike", curr_time-timedelta(days=24), 35, 60, 55))
 
 	db_session.add(Activity(athleteID, "Run", curr_time-timedelta(days=26), 10, 50, 25))
 	db_session.add(Activity(athleteID, "Run", curr_time-timedelta(days=28), 12, 60, 25))
-	#db_session.add(Activity(athleteID, "Walk", curr_time-timedelta(days=30), 3, 40, 10))
-	#db_session.add(Activity(athleteID, "Walk", curr_time-timedelta(days=32), 4, 52, 10))
+	db_session.add(Activity(athleteID, "Swim", curr_time-timedelta(days=30), 3, 40, 10))
+	db_session.add(Activity(athleteID, "Swim", curr_time-timedelta(days=32), 4, 52, 10))
 	db_session.add(Activity(athleteID, "Bike", curr_time-timedelta(days=34), 30, 60, 52))
 	db_session.add(Activity(athleteID, "Bike", curr_time-timedelta(days=36), 35, 60, 55))
 
@@ -273,15 +285,15 @@ for athlete in athletes:
 		curr_time + timedelta(days=21)
 	))
 
-	#db_session.add(Goal(
-	#	athleteID,
-	#	"Walk",
-	#	"total",
-	#	"100",
-	#	"distance",
-	#	curr_time + timedelta(days=25),
-	#	curr_time + timedelta(days=50)
-	#))
+	db_session.add(Goal(
+		athleteID,
+		"Swim",
+		"total",
+		"100",
+		"distance",
+		curr_time + timedelta(days=25),
+		curr_time + timedelta(days=50)
+	))
 
 	db_session.commit()
 

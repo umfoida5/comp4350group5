@@ -8,13 +8,14 @@
 <body>
 <table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
 <tr><td><b>Test Suite</b></td></tr>
-<tr><td><a href="index_test">index_test</a></td></tr>
-<tr><td><a href="profile_test">profile_test</a></td></tr>
 <tr><td><a href="achievements_badges_test">achievements_badges_test</a></td></tr>
-<tr><td><a href="calendar_test">calendar_test</a></td></tr>
 <tr><td><a href="activity_test">activity_test</a></td></tr>
 <tr><td><a href="events_test">events_test</a></td></tr>
-<tr><td><a href="about_test">about_test</a></td></tr>
+<tr><td><a href="health_test">health_test</a></td></tr>
+<tr><td><a href="index_test">index_test</a></td></tr>
+<tr><td><a href="login_test">login_test</a></td></tr>
+<tr><td><a href="profile_test">profile_test</a></td></tr>
+<tr><td><a href="stats_test">stats_test</a></td></tr>
 </tbody></table>
 </body>
 </html>

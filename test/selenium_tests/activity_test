@@ -23,6 +23,101 @@
 </tr>
 <tr>
 	<td>click</td>
+	<td>link=Table</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Calendar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='calendar']/div/div/table/tbody/tr/td[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=duration</td>
+	<td>123</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>123</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=max_speed</td>
+	<td>123</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='calendar']/div/div/div/div[2]/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=closeButton_view</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.fc-button-effect &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='calendar']/div/div/table/tbody/tr/td[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=duration</td>
+	<td>123</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=distance</td>
+	<td>123</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=max_speed</td>
+	<td>123</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='calendar']/table/tbody/tr/td[3]/span[3]/span/span[2]/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='calendar']/div/div/div/div[7]/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=closeButton_view</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Table</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
 	<td>id=enterButton</td>
 	<td></td>
 </tr>
